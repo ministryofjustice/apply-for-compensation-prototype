@@ -44,7 +44,7 @@ router.post('/tutorials-and-examples', function (req, res) {
 
 // Passing data into a page
 router.get('/examples/template-data', function (req, res) {
-  res.render('examples/template-data', { 'name': 'Foo' })
+  res.render('examples/template-data', { 'name': 'Gavin' })
 })
 
 // Branching
