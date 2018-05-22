@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        Are you making this application on behalf of somone else?
+      </h1>
+      
+      <form action="compensation" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+
+            <legend class="visuallyhidden">Are you making this application on behalf of somone else?</legend>
+
+            <div class="multiple-choice">
+              <input id="repTrue" type="radio" name="rep" value="true">
+              <label for="repTrue">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="repFalse" type="radio" name="rep" value="false">
+              <label for="repFalse">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+      <!-- {{data|dump|safe}} -->
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

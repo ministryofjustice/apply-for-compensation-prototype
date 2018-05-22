@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Are you a British Citizen?
+        </h1>
+
+        <form action="criminal-convictions" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+
+            <legend class="visuallyhidden">Are you a British Citizen?</legend>
+
+            <div class="multiple-choice">
+              <input id="britishCitizenTrue" type="radio" name="britishCitizen" value="true">
+              <label for="britishCitizenTrue">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="britishCitizenFalse" type="radio" name="britishCitizen" value="false">
+              <label for="britishCitizenFalse">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

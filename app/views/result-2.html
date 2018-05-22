@@ -1,0 +1,58 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+
+  <div class="header-proposition">
+    <div class="content">
+      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+      <nav id="proposition-menu">
+        <a href="/" id="proposition-name">
+          {# Set serviceName in config.js. Use a block to override on a page. #}
+          {% block service_name %}
+            {% if serviceName %} {{ serviceName }} {% endif %}
+          {% endblock %}
+        </a>
+        <!--
+        <ul id="proposition-links">
+          <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
+          <li><a href="url-to-page-2">Navigation item #2</a></li>
+        </ul>
+        -->
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Result 2
+      </h1>
+      
+      {{data|dump|safe}}
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

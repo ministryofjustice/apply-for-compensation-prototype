@@ -1,0 +1,59 @@
+{% extends "../layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Form
+        
+      </h1>
+      
+      <form action="/application/result" method="post" class="form">
+
+        <h2 class="heading-large">
+          Branching
+        </h2>
+
+        <h2 class="heading-medium">
+          Are you 18 or over?
+        </h2>
+
+        <div class="form-group">
+          <fieldset class="inline">
+
+            <legend class="visuallyhidden">Are you 18 or over?</legend>
+
+            <div class="multiple-choice">
+              <input id="over18True" type="radio" name="over18" value="true">
+              <label for="over18True">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="over18False" type="radio" name="over18" value="false">
+              <label for="over18False">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

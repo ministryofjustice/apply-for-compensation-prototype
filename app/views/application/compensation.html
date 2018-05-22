@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Under 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Have you applied for compensation from any other sources?
+        </h1>
+
+        <form action="declaration" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+
+            <legend class="visuallyhidden">Have you applied for compensation from any other sources?</legend>
+
+            <div class="multiple-choice">
+              <input id="otherCompensationTrue" type="radio" name="otherCompensation" value="true">
+              <label for="otherCompensationTrue">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="otherCompensationFalse" type="radio" name="otherCompensation" value="false">
+              <label for="otherCompensationFalse">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+      <!-- {{data|dump|safe}} -->
+
+    </div>
+  </div>
+</main>
+{% endblock %}
