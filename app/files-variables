@@ -1,0 +1,25 @@
+File: unable-to-work
+Variable: unableToWork
+As a result of your injuries were you unable to work?
+yes/no
+
+File: return-to-work
+Variable: returnToWork
+Have you been able to return to paid work?
+yes/no
+
+File: date-returned-to-work
+Variable: dateReturnedToWork
+What date did you return to paid work?
+date
+
+File: equiptment-or-services
+Variable: equiptmentOrServices
+As a result of your injuries have you had to buy equiptment or services that you did not need before you were <mugged>
+yes no
+
+File: what-equiptment-or-services
+Variable: whatEquiptmentOrServices
+what have you had to buy?
+input
+add another

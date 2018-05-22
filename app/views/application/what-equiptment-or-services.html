@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          what have you had to buy?
+        </h1>
+
+        <form action="prototype" method="post" class="form">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visuallyhidden">
+              what have you had to buy?
+            </legend>
+
+            <label class="visually-hidden" for="whatEquiptmentOrServices">what have you had to buy?</label>
+            <input class="form-control" id="whatEquiptmentOrServices" name="whatEquiptmentOrServices" type="text" value="{{data['whatEquiptmentOrServices']}}">
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
