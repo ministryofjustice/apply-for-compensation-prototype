@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          What injuries did you suffer as a result of the incident?
+        </h1>
+
+        <form action="medical-treatment" method="post" class="form">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visuallyhidden">
+              What injuries did you suffer as a result of the incident?
+            </legend>
+
+            <label class="visually-hidden" for="injurySelection">What injuries did you suffer as a result of the incident?</label>
+            <input class="form-control" id="injurySelection" name="injurySelection" type="text" value="{{data['injurySelection']}}">
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

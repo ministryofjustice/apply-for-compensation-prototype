@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          What is the crime reference number for the incident?
+        </h1>
+
+        <form action="describe-incident" method="post" class="form">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visuallyhidden">
+              What is the crime reference number for the incident?
+            </legend>
+
+            <label class="visually-hidden" for="crimeReference">What is the crime reference number for the incident?</label>
+            <input class="form-control" id="crimeReferencee" name="crimeReference" type="text" value="{{data['crimeReference']}}">
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
