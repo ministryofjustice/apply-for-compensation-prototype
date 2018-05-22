@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Describe the incident in your own words
+        </h1>
+
+        <form action="injury-selection" method="post" class="form">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend class="visuallyhidden">
+              Describe the incident in your own words
+            </legend>
+
+            <label class="visually-hidden" for="describeIncident">Describe the incident in your own words?</label>
+            <!--input class="form-control-3-4" id="describeIncident" name="describeIncident" type="text" rows="5" value="{{data['describeIncident']}}"-->
+            <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="10"></textarea>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

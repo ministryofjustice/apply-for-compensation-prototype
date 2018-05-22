@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Did you receive medical treatment for your injuries?
+        </h1>
+
+        <form action="treatment-date" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+
+            <legend class="visuallyhidden">Did you receive medical treatment for your injuries?</legend>
+
+            <div class="multiple-choice">
+              <input id="medicalTreatmentTrue" type="radio" name="medicalTreatment" value="true">
+              <label for="medicalTreatmentTrue">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="medicalTreatmentFalse" type="radio" name="medicalTreatment" value="false">
+              <label for="medicalTreatmentFalse">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

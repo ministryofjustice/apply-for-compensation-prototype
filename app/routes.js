@@ -108,6 +108,12 @@ router.get('/application/criminal-convictions', function (req, res) {
 
 
 
+
+
+
+
+
+
 // router.get('/application/other-compensation', function (req, res) {
 
 // 	if (req.session.data.rep === 'false') {

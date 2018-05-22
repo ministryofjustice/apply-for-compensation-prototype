@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Example - Branching - Over 18
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Did the incident happen in the England, Scotland or Wales?
+        </h1>
+
+        <form action="crime-reference" method="get" class="form">
+
+        <div class="form-group">
+          <fieldset class="inline">
+
+            <legend class="visuallyhidden">Did the incident happen in the England, Scotland or Wales?</legend>
+
+            <div class="multiple-choice">
+              <input id="incidentLocationTrue" type="radio" name="incidentLocation" value="true">
+              <label for="incidentLocationTrue">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="incidentLocationFalse" type="radio" name="incidentLocation" value="false">
+              <label for="incidentLocationFalse">No</label>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
