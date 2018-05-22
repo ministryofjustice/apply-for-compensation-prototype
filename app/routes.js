@@ -59,19 +59,19 @@ router.get('/application/declaration', function (req, res) {
   }
 })
 
-// declaration
-router.get('/application/declaration', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var otherCompensation = req.query.otherCompensation
-
-  if (otherCompensation === 'false') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.render('application/declaration')
-  }
-})
+// // declaration
+// router.get('/application/declaration', function (req, res) {
+//   // Get the answer from the query string (eg. ?over18=false)
+//   var otherCompensation = req.query.otherCompensation
+//
+//   if (otherCompensation === 'false') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If over18 is any other value (or is missing) render the page requested
+//     res.render('application/declaration')
+//   }
+// })
 
 // name
 // router.get('/application/date-of-birth', function (req, res) {
@@ -92,6 +92,19 @@ router.get('/application/criminal-convictions', function (req, res) {
   }
 })
 
+//criminalConvictions
+router.get('/application/criminal-convictions', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var criminalConvictions = req.query.criminalConvictions
+
+  if (criminalConvictions === 'true') {
+    // Redirect to the relevant page
+    res.redirect('/application/prototype')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.render('application/incident-reported')
+  }
+})
 
 
 
@@ -102,7 +115,7 @@ router.get('/application/criminal-convictions', function (req, res) {
 // 	} else {
 // 		res.render('application/prototype')
 // 	}
-  
+
 // })
 
 
