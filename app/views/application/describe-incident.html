@@ -24,8 +24,14 @@
             </legend>
 
             <label class="visually-hidden" for="describeIncident">Describe the incident in your own words?</label>
-            <!--input class="form-control-3-4" id="describeIncident" name="describeIncident" type="text" rows="5" value="{{data['describeIncident']}}"-->
-            <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="10"></textarea>
+<!--             <input class="form-control-3-4" id="describeIncident" name="describeIncident" type="text" rows="5" value="{{data['describeIncident']}}"> -->
+
+            <span class="form-hint">
+              We will use this when we talk to you about the incident
+            </span>
+            </label>
+            <input class="form-control form-control-3-4" id="describeIncident" name="describeIncident" type="text" rows="5" value="{{data['describeIncident']}}">
+
           </fieldset>
         </div>
 
