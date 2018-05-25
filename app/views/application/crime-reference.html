@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Question page
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="/start-page">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" action="describe-incident" method="post">
+
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            "label": {
+            "text": "What is the crime reference number for the incident?",
+            "isPageHeading": true,
+            "classes": 'govuk-heading-l'
+            },
+            "classes": 'govuk-input--width-20',
+            "id": "national-insurance-number",
+            "name": "national-insurance-number"
+            }) }}
+
+            {% from "button/macro.njk" import govukButton %}
+            
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

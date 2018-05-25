@@ -1,0 +1,66 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+//Import GOV.UK Frontend
+@import "@govuk-frontend/frontend/all";
+
+// Patterns that aren't in Frontend
+@import 'patterns/check-your-answers';
+@import 'patterns/related-items';
+
+.code {
+  color: $govuk-text-colour;
+  background-color: $govuk-grey-4;
+
+  text-shadow: 0 1px $govuk-white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  border: 1px solid $govuk-border-colour;
+  padding: 4px 4px 2px;
+}
+
+
+// Local fixes to GOV.UK frontend
+
+.markdown hr {
+  @include govuk-responsive-margin($govuk-spacing-responsive-6, "top");
+  @include govuk-responsive-margin($govuk-spacing-responsive-6, "bottom");
+}
+
+.govuk-list + .govuk-heading-l,
+.govuk-list + .govuk-heading-m,
+.govuk-list + .govuk-heading-s,
+.govuk-prose-scope ul + h2,
+.govuk-prose-scope ul + h3,
+.govuk-prose-scope ul + h4,
+.govuk-prose-scope pre + h2,
+.govuk-prose-scope pre + h3,
+.govuk-prose-scope pre + h4 {
+  @include govuk-responsive-padding($govuk-spacing-responsive-4, "top");
+}
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+// @import 'patterns/check-your-answers';
+// @import 'patterns/task-list';
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you

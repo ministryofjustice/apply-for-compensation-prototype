@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Question page
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="/start-page">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+          Declaration
+          </h1>
+          <p class="govuk-body">All of the information you give on the following screens should be true to the best of your knowledge.</p>
+          <form class="form" action="name" method="post">
+            
+            {% from 'radios/macro.njk' import govukRadios %}
+            {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "declaration",
+            "name": "declaration",
+            "fieldset": {
+            "legend": {
+            "text": 'Do you agree to give the correct information?',
+            "isPageHeading": true,
+            "classes": 'govuk-fieldset__legend--m'
+            }
+            },
+            "items": [
+            {
+            "value": "yes",
+            "text": "Yes"
+            },
+            {
+            "value": "no",
+            "text": "No"
+            }
+            ]
+            }) }}
+
+            {% from "button/macro.njk" import govukButton %}
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+            
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
