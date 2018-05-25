@@ -6,8 +6,21 @@
       <div class="govuk-grid-column-two-thirds">
         <form class="form" action="medical-treatment" method="post">
 
-          {% from "input/macro.njk" import govukInput %} {{ govukInput({ "label": { "text": "What injuries did you suffer as a result of the incident?" }, "id": "national-insurance-number", "name": "national-insurance-number" }) }} {% from "button/macro.njk" import
-          govukButton %} {{ govukButton({ "text": "Continue" }) }}
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+          "label": {
+          "text": "What injuries did you suffer as a result of the incident?",
+          "isPageHeading": true,
+          "classes": 'govuk-label--xl'
+          },
+          "classes": 'govuk-input--width-20',
+          "id": "national-insurance-number",
+          "name": "national-insurance-number"
+          }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+          {{ govukButton({ "text": "Continue" }) }}
 
         </form>
       </div>

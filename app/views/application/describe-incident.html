@@ -11,7 +11,18 @@
           <form class="form" action="injury-selection" method="post">
 
             {% from "input/macro.njk" import govukInput %}
-            {{ govukInput({ "label": { "text": "Describe the incident in your own words" }, "hint": { "html": "We will use this when we talk to you about the incident." }, "id": "national-insurance-number", "name": "national-insurance-number"
+            {{ govukInput({
+            "label": {
+            "text": "Describe the incident in your own words",
+            "isPageHeading": true,
+            "classes": 'govuk-label--xl'
+            },
+            "hint": {
+              "html": "We will use this when we talk to you about the incident."
+            },
+            "classes": 'govuk-input--width-20',
+            "id": "national-insurance-number",
+            "name": "national-insurance-number"
             }) }}
 
             {% from "button/macro.njk" import govukButton %}

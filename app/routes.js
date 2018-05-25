@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // Route index page
-router.get('/', function (req, res) {
+router.post('/', function (req, res) {
   res.render('index')
 })
 
@@ -16,16 +16,16 @@ router.get('/', function (req, res) {
 // Question: Are you making this application on behalf of somone else?
 // Input type: yes/no
 
-router.get('/application/compensation', function (req, res) {
+router.post('/application/compensation', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var rep = req.query.rep
+  var rep = req.session.data['rep']
 
-  if (rep-1 === 'true') {
+  if (rep === 'yes') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.render('application/compensation')
+    res.redirect('/application/compensation')
   }
 })
 
@@ -40,16 +40,16 @@ router.get('/application/compensation', function (req, res) {
 // Question: Have you applied for compensation from any other sources?
 // Input type: yes/no
 
-router.get('/application/declaration', function (req, res) {
+router.post('/application/declaration', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var otherCompensation = req.query.otherCompensation
+  var otherCompensation = req.session.data['otherCompensation']
 
-  if (otherCompensation === 'false') {
+  if (otherCompensation === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/declaration')
+    res.redirect('/application/declaration')
   }
 })
 
@@ -64,16 +64,16 @@ router.get('/application/declaration', function (req, res) {
 // Question: Have you applied for compensation from any other sources?
 // Input type: yes/no
 
-router.get('/application/name', function (req, res) {
+router.post('/application/name', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var declaration = req.query.declaration
+  var declaration = req.session.data['declaration']
 
-  if (declaration === 'false') {
+  if (declaration === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/name')
+    res.redirect('/application/name')
   }
 })
 
@@ -114,16 +114,16 @@ router.get('/application/name', function (req, res) {
 // Question: Are you a British Citizen?
 // Input type: yes/no
 
-router.get('/application/criminal-convictions', function (req, res) {
+router.post('/application/criminal-convictions', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var britishCitizen = req.query.britishCitizen
+  var britishCitizen = req.session.data['britishCitizen']
 
-  if (britishCitizen === 'false') {
+  if (britishCitizen === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/criminal-convictions')
+    res.redirect('/application/criminal-convictions')
   }
 })
 
@@ -138,16 +138,16 @@ router.get('/application/criminal-convictions', function (req, res) {
 // Question: Do you have any unspent criminal convictions?
 // Input type: yes/no
 
-router.get('/application/incident-reported', function (req, res) {
+router.post('/application/incident-reported', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var criminalConvictions = req.query.criminalConvictions
+  var criminalConvictions = req.session.data['criminalConvictions']
 
-  if (criminalConvictions === 'true') {
+  if (criminalConvictions === 'yes') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/incident-reported')
+    res.redirect('/application/incident-reported')
   }
 })
 
@@ -164,11 +164,11 @@ router.get('/application/incident-reported', function (req, res) {
 // Question: Was the incident reported to the police?
 // Input type: yes/no
 
-router.get('/application/incident-date', function (req, res) {
+router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var incidentReported = req.query.incidentReported
+  var incidentReported = req.session.data['incidentReported']
 
-  if (incidentReported === 'false') {
+  if (incidentReported === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
@@ -203,11 +203,11 @@ router.get('/application/incident-date', function (req, res) {
 // Question: Did the incident happen in the England, Scotland or Wales?
 // Input type: yes/no
 
-router.get('/application/crime-reference', function (req, res) {
+router.post('/application/crime-reference', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var incidentLocation = req.query.incidentLocation
+  var incidentLocation = req.session.data['incidentLocation']
 
-  if (incidentLocation === 'false') {
+  if (incidentLocation === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
@@ -272,16 +272,16 @@ router.get('/application/crime-reference', function (req, res) {
 // Question: Did you receive medical treatment for your injuries?
 // Input type: yes/no
 
-router.get('/application/treatment-date', function (req, res) {
+router.post('/application/treatment-date', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var medicalTreatment = req.query.medicalTreatment
+  var medicalTreatment = req.session.data['medicalTreatment']
 
-  if (medicalTreatment === 'false') {
+  if (medicalTreatment === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/treatment-date')
+    res.redirect('/application/treatment-date')
   }
 })
 
@@ -311,16 +311,16 @@ router.get('/application/treatment-date', function (req, res) {
 // Question: As a result of your injuries were you unable to work?
 // Input type: yes/no
 
-router.get('/application/return-to-work', function (req, res) {
+router.post('/application/return-to-work', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var unableToWork = req.query.unableToWork
+  var unableToWork = req.session.data['unableToWork']
 
-  if (unableToWork === 'false') {
+  if (unableToWork === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/return-to-work')
+    res.redirect('/application/return-to-work')
   }
 })
 
@@ -336,16 +336,16 @@ router.get('/application/return-to-work', function (req, res) {
 // Question: Have you been able to return to paid work?
 // Input type: yes/no
 
-router.get('/application/date-returned-to-work', function (req, res) {
+router.post('/application/date-returned-to-work', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var returnToWork = req.query.returnToWork
+  var returnToWork = req.session.data['returnToWork']
 
-  if (returnToWork === 'false') {
+  if (returnToWork === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/date-returned-to-work')
+    res.redirect('/application/date-returned-to-work')
   }
 })
 
@@ -374,16 +374,16 @@ router.get('/application/date-returned-to-work', function (req, res) {
 // Question: As a result of your injuries have you had to buy equiptment or services that you did not need before you were <mugged>
 // Input type: yes/no
 
-router.get('/application/what-equiptment-or-services', function (req, res) {
+router.post('/application/what-equiptment-or-services', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
-  var equiptmentOrServices = req.query.equiptmentOrServices
+  var equiptmentOrServices = req.session.data['equiptmentOrServices']
 
-  if (equiptmentOrServices === 'false') {
+  if (equiptmentOrServices === 'no') {
     // Redirect to the relevant page
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/what-equiptment-or-services')
+    res.redirect('/application/what-equiptment-or-services')
   }
 })
 
