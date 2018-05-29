@@ -24,12 +24,12 @@
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            "classes": "govuk-radios--stacked",
             "idPrefix": "incidentLocation",
             "name": "incidentLocation",
             "fieldset": {
               "legend": {
-                "text": 'Did the incident happen in the England, Scotland or Wales?',
+                "text": 'Where did the crime happen?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -37,11 +37,19 @@
             "items": [
               {
                 "value": "yes",
-                "text": "Yes"
+                "text": "England"
               },
               {
-                "value": "no",
-                "text": "No"
+                "value": "yes",
+                "text": "Scotland"
+              },
+              {
+                "value": "yes",
+                "text": "Wales"
+              },
+              {
+                "value": "yes",
+                "text": "Somewhere else"
               }
             ]
           }) }}

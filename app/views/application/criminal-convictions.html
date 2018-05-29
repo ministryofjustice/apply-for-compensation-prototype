@@ -24,7 +24,7 @@
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            "classes": "govuk-radios--stacked",
             "idPrefix": "criminalConvictions",
             "name": "criminalConvictions",
             "fieldset": {
@@ -42,6 +42,10 @@
               {
                 "value": "no",
                 "text": "No"
+              },
+              {
+                "value": "I do not know",
+                "text": "I do not know"
               }
             ]
           }) }}
