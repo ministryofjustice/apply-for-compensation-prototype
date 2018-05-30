@@ -8,16 +8,18 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="compensation" method="post">
-
+          <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+          </h1> -->
+          <form class="form" action="treatment-date" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "rep",
-            "name": "rep",
+            "idPrefix": "treatmentOngoing",
+            "name": "treatmentOngoing",
             "fieldset": {
             "legend": {
-            "text": 'Are you making this application on behalf of someone else?',
+            "text": 'Are you still receiving medical treatment for your injuries?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }
@@ -33,12 +35,10 @@
             }
             ]
             }) }}
-
             {% from "button/macro.njk" import govukButton %}
             {{ govukButton({
             "text": "Continue"
             }) }}
-
           </form>
         </div>
       </div>
