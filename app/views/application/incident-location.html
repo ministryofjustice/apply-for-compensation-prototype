@@ -22,37 +22,52 @@
         <form class="form" action="crime-reference" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
+  {% from "input/macro.njk" import govukInput %}
 
-          {{ govukRadios({
-            "classes": "govuk-radios--stacked",
-            "idPrefix": "incidentLocation",
-            "name": "incidentLocation",
-            "fieldset": {
-              "legend": {
-                "text": 'Where did the crime happen?',
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            "items": [
-              {
-                "value": "yes",
-                "text": "England"
-              },
-              {
-                "value": "yes",
-                "text": "Scotland"
-              },
-              {
-                "value": "yes",
-                "text": "Wales"
-              },
-              {
-                "value": "yes",
-                "text": "Somewhere else"
-              }
-            ]
-          }) }}
+
+  {% set textHtml %}
+  {{ govukInput({
+    id: "somewhere-else",
+    name: "somewhere-else",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Tell us where the crime happened?"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "incident-location",
+    name: "incident-location",
+    fieldset: {
+      legend: {
+        text: "Where did the crime happen?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    items: [
+      {
+        value: "England",
+        text: "England"
+      },
+      {
+        value: "Scotland",
+        text: "Scotland"
+      },
+      {
+        value: "Wales",
+        text: "Wales"
+      },
+      {
+        value: "Somewhere else",
+        text: "Somewhere else",
+        conditional: {
+          html: textHtml
+        }
+      }
+    ]
+  }) }}
 
           <input class="govuk-button" type="submit" value="Continue">
 

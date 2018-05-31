@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Question page
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="/start-page">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" action="date-of-birth" method="post">
+
+            <!-- <h1 class="govuk-heading-l">
+            What is your full name?
+            </h1> -->
+
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            "label": {
+            "text": "How much compensation did you receive?",
+            "isPageHeading": true,
+            "classes": 'govuk-label--xl'
+            },
+            "classes": 'govuk-input--width-20',
+            "id": "national-insurance-number",
+            "name": "national-insurance-number"
+            }) }}
+
+            {% from "button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
