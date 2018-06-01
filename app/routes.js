@@ -311,16 +311,16 @@ router.post('/application/treatment-date', function (req, res) {
 // Question: As a result of your injuries were you unable to work?
 // Input type: yes/no
 
-router.post('/application/return-to-work', function (req, res) {
+router.post('/application/check-your-answers-page', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var unableToWork = req.session.data['unableToWork']
 
   if (unableToWork === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('/application/check-your-answers-page')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/return-to-work')
+    res.redirect('/application/date-stopped-work')
   }
 })
 
