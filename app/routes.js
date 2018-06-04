@@ -8,15 +8,11 @@ router.post('/', function (req, res) {
 
 // Add your routes here - above the module.exports line
 
-
 // START__####################################################################################################
-// Step: 1
 // File: who-is-making-the-application
-// Variable: applicationRep
-// Question: Are you making this application on behalf of somone else?
-// Input type: yes/no
+// Variable: rep
 
-router.post('/application/compensation', function (req, res) {
+router.post('/application/declaration', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var rep = req.session.data['rep']
 
@@ -25,22 +21,17 @@ router.post('/application/compensation', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/compensation')
+    res.redirect('/application/declaration')
   }
 })
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 2
 // File: compensation
 // Variable: otherCompensation
-// Question: Have you applied for compensation from any other sources?
-// Input type: yes/no
 
-router.post('/application/declaration', function (req, res) {
+router.post('/application/incident-reported', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var otherCompensation = req.session.data['otherCompensation']
 
@@ -49,22 +40,17 @@ router.post('/application/declaration', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/declaration')
+    res.redirect('/application/incident-reported')
   }
 })
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 3
 // File: declaration
 // Variable: declaration
-// Question: Have you applied for compensation from any other sources?
-// Input type: yes/no
 
-router.post('/application/name', function (req, res) {
+router.post('/application/compensation', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var declaration = req.session.data['declaration']
 
@@ -73,46 +59,15 @@ router.post('/application/name', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/name')
+    res.redirect('/application/compensation')
   }
 })
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 4
-// File: name
-// Variable: fullName
-// Question: What is your full name?
-// Input type: text
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 5
-// File: date-of-birth
-// Variable: 'dob-day', 'dob-month', 'dob-year'
-// Question: What is your date of birth?
-// Input type: number
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 5
 // File: british-citizen
 // Variable: britishCitizen
-// Question: Are you a British Citizen?
-// Input type: yes/no
 
 router.post('/application/criminal-convictions', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
@@ -129,16 +84,11 @@ router.post('/application/criminal-convictions', function (req, res) {
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 6
 // File: criminal-convictions
 // Variable: criminalConvictions
-// Question: Do you have any unspent criminal convictions?
-// Input type: yes/no
 
-router.post('/application/incident-reported', function (req, res) {
+router.post('/application/name', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var criminalConvictions = req.session.data['criminalConvictions']
 
@@ -147,24 +97,17 @@ router.post('/application/incident-reported', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/incident-reported')
+    res.redirect('/application/name')
   }
 })
 
-
-
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 7
 // File: incident-reported
 // Variable: incidentReported
-// Question: Was the incident reported to the police?
-// Input type: yes/no
 
-router.post('/application/incident-date', function (req, res) {
+router.post('/application/incident-location', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var incidentReported = req.session.data['incidentReported']
 
@@ -173,35 +116,15 @@ router.post('/application/incident-date', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.render('application/incident-date')
+    res.render('application/incident-location')
   }
 })
 
-
-
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 8
-// File: incident-date
-// Variable: 'incident-day', 'incident-month', 'incident-year'
-// Question: When did the incident happen?
-// Input type: number
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 9
 // File: incident-location
 // Variable: incidentLocation
-// Question: Did the incident happen in the England, Scotland or Wales?
-// Input type: yes/no
 
 router.post('/application/crime-reference', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
@@ -216,125 +139,11 @@ router.post('/application/crime-reference', function (req, res) {
   }
 })
 
-// Notes for Simon if I change 'false' above to 'true' both of the radio buttons take me to the prototype screen.
-// If I swap 'prototype' and 'crime-reference' I don't get a change in the routing of the pages.
-// so I'm confused
-
-
-
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 10
-// File: crime-reference
-// Variable: crimeReference
-// Question: What is the crime reference number for the incident?
-// Input type: text
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 11
-// File: describe-incident
-// Variable: describeIncident
-// Question: Describe the incident in your own words
-// Input type: text
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 12
-// File: injury-selection
-// Variable: injurySelection
-// Question: What injuries did you suffer as a result of the incident?
-// Input type: text
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 13
-// File: medical-treatment
-// Variable: medicalTreatment
-// Question: Did you receive medical treatment for your injuries?
-// Input type: yes/no
-
-router.post('/application/treatment-date', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var medicalTreatment = req.session.data['medicalTreatment']
-
-  if (medicalTreatment === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/treatment-date')
-  }
-})
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 14
-// File: treatment-date
-// Variable: 'treatment-day', 'treatment-month', 'treatment-year'
-// Question: What date did you first receive treatment for your injuries?
-// Input type: number
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 15
-// File: unable-to-work
-// Variable: unableToWork
-// Question: As a result of your injuries were you unable to work?
-// Input type: yes/no
-
-router.post('/application/check-your-answers-page', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var unableToWork = req.session.data['unableToWork']
-
-  if (unableToWork === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/check-your-answers-page')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/date-stopped-work')
-  }
-})
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 16
 // File: return-to-work
 // Variable: returnToWork
-// Question: Have you been able to return to paid work?
-// Input type: yes/no
 
 router.post('/application/date-returned-to-work', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
@@ -352,27 +161,9 @@ router.post('/application/date-returned-to-work', function (req, res) {
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 17
-// File: date-returned-to-work
-// Variable: dateReturnedToWork
-// Question: What date did you return to paid work?
-// Input type: date
-
-
-
-// END__######################################################################################################
-
-
-
-// START__####################################################################################################
-// Step: 18
 // File: equiptment-or-services
 // Variable: equiptmentOrServices
-// Question: As a result of your injuries have you had to buy equiptment or services that you did not need before you were <mugged>
-// Input type: yes/no
 
 router.post('/application/what-equiptment-or-services', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
@@ -389,30 +180,81 @@ router.post('/application/what-equiptment-or-services', function (req, res) {
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 19
-// File: what-equiptment-or-services
-// Variable: whatEquiptmentOrServices
-// Question: what have you had to buy?
-// Input type: text field with add another
+// File: treatment-ongoing
+// Variable: treatmentOngoing
 
+router.post('/application/obtain-medical', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var treatmentOngoing = req.session.data['treatmentOngoing']
+
+  if (treatmentOngoing === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/prototype')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.redirect('/application/obtain-medical')
+  }
+})
 
 // END__######################################################################################################
 
-
-
 // START__####################################################################################################
-// Step: 20
-// File: check-your-answers-page
-// Variable:
-// Question:
-// Input type:
+// File: obtain-medical
+// Variable: obtainMedical
 
+router.post('/application/pay-for-medical', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var obtainMedical = req.session.data['obtainMedical']
+
+  if (obtainMedical === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/prototype')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.redirect('/application/pay-for-medical')
+  }
+})
 
 // END__######################################################################################################
 
+// START__####################################################################################################
+// File: pay-for-medical
+// Variable: obtainMedical
+
+router.post('/application/unable-to-work', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var payforMedical = req.session.data['payforMedical']
+
+  if (payforMedical === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/prototype')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.redirect('/application/unable-to-work')
+  }
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: unable-to-work
+// Variable: obtainMedical
+
+router.post('/application/check-your-answers-page', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var unableToWork = req.session.data['unableToWork']
+
+  if (unableToWork === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/prototype')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.redirect('/application/check-your-answers-page')
+  }
+})
+
+// END__######################################################################################################
 
 
 module.exports = router

@@ -8,37 +8,74 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-          </h1> -->
-          <form class="form" action="treatment-date" method="post">
+
+          <form class="form" action="treatment-ongoing" method="post">
+
             {% from 'radios/macro.njk' import govukRadios %}
-            {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "medicalTreatment",
-            "name": "medicalTreatment",
-            "fieldset": {
-            "legend": {
-            "text": 'Did you receive medical treatment for your injuries?',
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
+            {% from "input/macro.njk" import govukInput %}
+            {% from "date-input/macro.njk" import govukDateInput %}
+
+            {% set dateHtml %}
+            {{ govukDateInput({
+            id: 'incidentReported',
+            name: 'incidentReported',
+            fieldset: {
+            legend: {
+            text: 'When did you first receive treatment?',
+            classes: 'govuk-fieldset__legend--m'
             }
             },
-            "items": [
+            hint: {
+            text: 'For example, 31 3 1980'
+            },
+            items:[
             {
-            "value": "yes",
-            "text": "Yes"
+            name: 'day'
             },
             {
-            "value": "no",
-            "text": "No"
+            name: 'month'
+            },
+            {
+            name: 'year'
             }
             ]
+            })
+            }}
+            {% endset -%}
+
+
+            {{ govukRadios({
+              idPrefix: "medicalTreatment",
+              name: "medicalTreatment",
+              classes: "govuk-radios--inline",
+              fieldset: {
+                legend: {
+                  text: "Did you receive medical treatment for your injuries?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  conditional: {
+                    html: dateHtml
+                  }
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
             }) }}
+
             {% from "button/macro.njk" import govukButton %}
+
             {{ govukButton({
             "text": "Continue"
             }) }}
+
           </form>
         </div>
       </div>
