@@ -8,17 +8,19 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="injury-selection" method="post">
+          <form class="form" action="date-of-birth" method="post">
+
+            <!-- <h1 class="govuk-heading-l">
+            What is your full name?
+            </h1> -->
 
             {% from "input/macro.njk" import govukInput %}
+
             {{ govukInput({
             "label": {
-            "text": "Describe the crime in your own words",
+            "text": "Who did you apply to for other compensation?",
             "isPageHeading": true,
             "classes": 'govuk-label--xl'
-            },
-            "hint": {
-              "html": "We'll use this when we talk to you about the crime."
             },
             "classes": 'govuk-input--width-20',
             "id": "national-insurance-number",
@@ -26,7 +28,10 @@
             }) }}
 
             {% from "button/macro.njk" import govukButton %}
-            {{ govukButton({ "text": "Continue" }) }}
+
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
 
           </form>
         </div>

@@ -8,7 +8,7 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="unable-to-work" method="post">
+          <form class="form" action="treatment-ongoing" method="post">
 
             {% from "date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
@@ -16,7 +16,7 @@
             name: 'dob',
             fieldset: {
             legend: {
-            text: 'What date did you first receive treatment for your injuries?',
+            text: 'When did you first receive treatment?',
             isPageHeading: true,
             classes: 'govuk-fieldset__legend--xl'
             }

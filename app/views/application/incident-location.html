@@ -19,32 +19,55 @@
           Have you applied for compensation from any other sources?
         </h1> -->
 
-        <form class="form" action="crime-reference" method="post">
+        <form class="form" action="british-citizen" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
+  {% from "input/macro.njk" import govukInput %}
 
-          {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "incidentLocation",
-            "name": "incidentLocation",
-            "fieldset": {
-              "legend": {
-                "text": 'Did the incident happen in the England, Scotland or Wales?',
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            "items": [
-              {
-                "value": "yes",
-                "text": "Yes"
-              },
-              {
-                "value": "no",
-                "text": "No"
-              }
-            ]
-          }) }}
+
+  {% set textHtml %}
+  {{ govukInput({
+    id: "somewhere-else",
+    name: "somewhere-else",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Tell us where the crime happened?"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "incident-location",
+    name: "incident-location",
+    fieldset: {
+      legend: {
+        text: "Where did the crime happen?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    items: [
+      {
+        value: "England",
+        text: "England"
+      },
+      {
+        value: "Scotland",
+        text: "Scotland"
+      },
+      {
+        value: "Wales",
+        text: "Wales"
+      },
+      {
+        value: "Somewhere else",
+        text: "Somewhere else",
+        conditional: {
+          html: textHtml
+        }
+      }
+    ]
+  }) }}
 
           <input class="govuk-button" type="submit" value="Continue">
 

@@ -8,7 +8,7 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="declaration" method="post">
+          <form class="form" action="who-is-making-the-application" method="post">
 
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
@@ -17,7 +17,7 @@
             "name": "rep",
             "fieldset": {
             "legend": {
-            "text": 'Are you applying on behalf of someone else?',
+            "text": 'Have you applied for compensation for the same crime before?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }

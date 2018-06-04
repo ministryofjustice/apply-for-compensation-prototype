@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="/start-page">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
+        <form class="form" action="crime-reference" method="post">
+
+          {% from "input/macro.njk" import govukInput %}
+    {% from "fieldset/macro.njk" import govukFieldset %}
+
+    {% call govukFieldset({
+      legend: {
+        text: "What is your address?",
+        classes: "govuk-fieldset__legend--xl",
+        isPageHeading: true
+      }
+    }) %}
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: 'Town or city'
+        },
+        classes: 'govuk-!-width-two-thirds',
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: 'County'
+        },
+        classes: 'govuk-!-width-two-thirds',
+        id: "address-county",
+        name: "address-county"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: 'Postcode'
+        },
+        classes: 'govuk-input--width-10',
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+    {% endcall %}
+
+          <input class="govuk-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -8,23 +8,15 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="describe-incident" method="post">
+          <h1 class="govuk-heading-xl">
+          Personal information
+          </h1>
+          <p class="govuk-body">The next series of questions will ask you for more personal information, details of the crime and your injuries.</p>
 
-            {% from "input/macro.njk" import govukInput %}
+          <form class="form" action="name" method="post">
 
-            {{ govukInput({
-            "label": {
-            "text": "What is the crime reference number?",
-            "isPageHeading": true,
-            "classes": 'govuk-label--xl'
-            },
-            "classes": 'govuk-input--width-20',
-            "id": "national-insurance-number",
-            "name": "national-insurance-number"
-            }) }}
 
             {% from "button/macro.njk" import govukButton %}
-
             {{ govukButton({
             "text": "Continue"
             }) }}

@@ -11,9 +11,17 @@
           <h1 class="govuk-heading-xl">
           Declaration
           </h1>
-          <p class="govuk-body">All of the information you give on the following screens should be true to the best of your knowledge.</p>
-          <form class="form" action="name" method="post">
+          <p class="govuk-body">By continuing you confirm that the information you're giving is correct.</p>
 
+          <form class="form" action="compensation" method="post">
+            {% from "warning-text/macro.njk" import govukWarningText %}
+
+            {{ govukWarningText(
+              {
+                text: "You could be prosecuted or have an award reduced if you give false or misleading information.",
+                iconFallbackText: "Warning"
+              })
+            }}
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
             "classes": "govuk-radios--inline",

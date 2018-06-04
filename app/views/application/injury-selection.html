@@ -10,15 +10,37 @@
 
           {{ govukInput({
           "label": {
-          "text": "What injuries did you suffer as a result of the incident?",
+          "text": "What injuries did you have as a result of the crime?",
           "isPageHeading": true,
           "classes": 'govuk-label--xl'
           },
+          hint: {
+          text: 'Briefly describe your injuries below. You can list up to five injuries.'
+        },
           "classes": 'govuk-input--width-20',
           "id": "national-insurance-number",
           "name": "national-insurance-number"
           }) }}
-
+          {{ govukInput({
+          "classes": 'govuk-input--width-20',
+          "id": "national-insurance-number",
+          "name": "national-insurance-number"
+          }) }}
+          {{ govukInput({
+          "classes": 'govuk-input--width-20',
+          "id": "national-insurance-number",
+          "name": "national-insurance-number"
+          }) }}
+          {{ govukInput({
+          "classes": 'govuk-input--width-20',
+          "id": "national-insurance-number",
+          "name": "national-insurance-number"
+          }) }}
+          {{ govukInput({
+          "classes": 'govuk-input--width-20',
+          "id": "national-insurance-number",
+          "name": "national-insurance-number"
+          }) }}
           {% from "button/macro.njk" import govukButton %}
           {{ govukButton({ "text": "Continue" }) }}
 

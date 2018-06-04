@@ -9,9 +9,9 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
+          Have you applied for any other compensation?
           </h1>
-          <form class="form" action="declaration" method="post">
+          <form class="form" action="incident-reported" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
             "classes": "govuk-radios--inline",
@@ -19,7 +19,7 @@
             "name": "otherCompensation",
             "fieldset": {
             "legend": {
-            "text": 'Have you applied for compensation from any other sources?',
+            "text": 'Have you applied for any other compensation?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }
