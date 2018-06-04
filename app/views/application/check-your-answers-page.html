@@ -21,7 +21,7 @@
 
         <!-- only add a heading for a list if there is more than one list -->
         <h2 class="govuk-heading-m">
-          Personal details
+          Your details
         </h2>
 
         <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
@@ -34,7 +34,7 @@
               Name
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              Sarah Philips
+              {{ data['fullName'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -48,7 +48,7 @@
               Date of birth
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              5 January 1978
+              {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -59,27 +59,10 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Home address
+              Email address
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              72 Guild Street<br />
-              London<br />
-              SE23 6FH
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> home address</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Contact details
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              07700 900457<br />
-              sarah.phillips@example.com
+              {{ data['emailAddress'] }}<br />
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -87,20 +70,42 @@
               </a>
             </dd>
           </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Address
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['address-line-1'] }}<br />
+              {{ data['address-line-2'] }}<br />
+              {{ data['address-town'] }}<br />
+              {{ data['address-county'] }}<br />
+              {{ data['address-postcode'] }}<br />
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
         </dl>
 
 
         <h2 class="govuk-heading-m">
-          Application details
+          Your answers
         </h2>
+
+        <h3 class="govuk-heading-s">
+          Elegability
+        </h3>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--short">
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Previous application number
+              Have you applied for any other compensation?
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              502135326
+              {{ data['otherCompensation'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -111,10 +116,10 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Licence type
+              Was the crime reported to the police?
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              For personal use
+              {{ data['incidentReported'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -125,12 +130,11 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Home address
+              Date the crime was reported
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              72 Guild Street<br />
-              London<br />
-              SE23 6FH
+              {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
+              <!-- @todo need to get dates pulling through correctly -->
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -141,11 +145,10 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Licence period
+              Where did the crime happen?
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              This is a longer paragraph of text provided by the user to provide additional information.<br /><br />
-              This is a second paragraph of text provided by the user.
+              {{ data['incident-location'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">
@@ -153,7 +156,153 @@
               </a>
             </dd>
           </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Were you legally resident in the UK when the crime happened?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['britishCitizen'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> licence period</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Do you have any unspent criminal convictions?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['criminalConvictions'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> licence period</span>
+              </a>
+            </dd>
+          </div>
+
         </dl>
+
+        <h3 class="govuk-heading-s">
+          About the crime
+        </h3>
+
+        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Crime reference number
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['crimeReferenceNumber'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              What injuries did you have as a result of the crime?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['injury-1'] }}<br>
+              {{ data['injury-2'] }}<br>
+              {{ data['injury-3'] }}<br>
+              {{ data['injury-4'] }}<br>
+              {{ data['injury-5'] }}<br>
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <h3 class="govuk-heading-s">
+          Your medical treatment
+        </h3>
+
+        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Date you started receiving medical treatment
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['medicalTreatmentStartDate-day'] }}/{{ data['medicalTreatmentStartDate-month'] }}/{{ data['medicalTreatmentStartDate-year'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Are you still receiving treatment for your injuries
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['treatmentOngoing'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Are you able to get a medical report from your doctor?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['obtainMedical'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Can you afford to pay up to £50 for a medical report?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['payforMedical'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Did your injuries stop you from doing any paid work?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['unableToWork'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="#">
+                Change<span class="visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
 
 
         <h2 class="govuk-heading-m">Now send your application</h2>
