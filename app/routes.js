@@ -9,6 +9,20 @@ router.post('/', function (req, res) {
 // Add your routes here - above the module.exports line
 
 // START__####################################################################################################
+// File: stepped-guide
+// Variable: step
+
+router.get('/stepped-guide', function (req, res) {
+	var step = req.query.step;
+	return res.render('stepped-guide', { step: step});
+})
+
+
+// END__######################################################################################################
+
+
+
+// START__####################################################################################################
 // File: who-is-making-the-application
 // Variable: rep
 
