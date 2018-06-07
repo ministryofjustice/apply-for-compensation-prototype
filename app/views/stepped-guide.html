@@ -9,15 +9,15 @@
     <main id="content" role="main" class="govuk-main-wrapper">
 
         <div class="govuk-grid-row">
-            <div class="gov-uk-grid-column-two-thirds">
+            <div class="govuk-grid-column-two-thirds">
                 <header class="page-header">
                     <div>
-                        <h1 class="heading-xlarge govuk-heading-xl">
+                        <h1 class="govuk-heading-xl">
                             Claim compensation for a criminal injury
                         </h1>
                     </div>
                 </header>
-                <ul class="govuk-list govuk-body-s list list-bullet">
+                <ul class="govuk-list govuk-list--bullet">
                     <li>
                         {% if step == 2 or step == 3  or step == 4  or step == 5 %}
                         <a href="/stepped-guide?step=1">Overview</a>
@@ -58,7 +58,7 @@
         </div>
                 
     <div class="govuk-grid-row">
-        <div class="gov-uk-grid-column-two-thirds">
+        <div class="govuk-grid-column-two-thirds">
             {% if step == 2  %}
             {% include "stepped-guide/2-eligibility.html" %}
             {% elif step == 3  %}
@@ -70,17 +70,17 @@
             {% else %}
             {% include "stepped-guide/1-overview.html" %}
             {% endif %}
-            <div class="app-c-print-link" style="padding-top: 1em">
+            <div>
                 <img src="public/images/icon-print.png" style="padding-right: 10px;">
-                <a href="/prototype" class="app-c-print-link__link" rel="alternate" >Print entire guide</a>
+                <a href="/prototype">Print entire guide</a>
             </div>
         </div>
-        <div class="gov-uk-grid-column-one-third">
-            <aside class="app-related-items govuk-related-items" role="complementary">
-                <h2 class="govuk-heading-m" id="subsection-title">
+        <div class="govuk-grid-column-one-third">
+            <aside class="app-related-items-small govuk-related-items" role="complementary">
+                <h2 class="govuk-heading-s" id="subsection-title">
                     Related content
                 </h2>
-                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="govuk-list govuk-body-s">
                     <li>
                         <a href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
                         Criminal injuries compensation tribunal
@@ -92,14 +92,12 @@
                         </a>
                     </li>
                     </ul>
-                </nav>
-                <hr>
-                <p>Explore the topic</p>
-                <strong class="bold-small">
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l govuk-!-mb-r3">
+                <p class="govuk-body-s govuk-!-mb-r1  govuk-!-mt-r1">Explore the topic</p>
                     <a href="https://www.gov.uk/browse/justice/reporting-crimes-compensation" class="govuk-!-w-bold">
                         Reporting crimes and getting compensation <span class="visuallyhidden">Reporting crimes and getting compensation</span>
                     </a>
-                </strong>
             </aside>
         </div>
     </div>
