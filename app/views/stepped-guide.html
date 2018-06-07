@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Guide - CICA
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+      </li>
+    </ol>
+  </div>
+
+    <main id="content" role="main" class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <header class="page-header">
+                    <div>
+                        <h1 class="govuk-heading-xl">
+                            Claim compensation for a criminal injury
+                        </h1>
+                    </div>
+                </header>
+                <h2 class="govuk-heading-s">Contents</h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        {% if step == 2 or step == 3  or step == 4  or step == 5 %}
+                        <a href="/stepped-guide?step=1">Overview</a>
+                        {% else %}
+                            Overview
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if step == 2 %}
+                            Eligibility
+                        {% else %}
+                            <a href="/stepped-guide?step=2">Eligibility</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if step == 3 %}
+                        Make a claim
+                        {% else %}
+                            <a href="/stepped-guide?step=3">Make a claim</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if step == 4 %}
+                            What happens next
+                        {% else %}
+                            <a href="/stepped-guide?step=4">What happens next</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if step == 5 %}
+                        Update your claim
+                        {% else %}
+                            <a href="/stepped-guide?step=5">Update your claim</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {% if step == 2  %}
+            {% include "stepped-guide/2-eligibility.html" %}
+            {% elif step == 3  %}
+            {% include "stepped-guide/3-make-a-claim.html" %}
+            {% elif step == 4  %}
+            {% include "stepped-guide/4-what-happens-next.html" %}
+            {% elif step == 5  %}
+            {% include "stepped-guide/5-update-your-claim.html" %}
+            {% else %}
+            {% include "stepped-guide/1-overview.html" %}
+            {% endif %}
+            <div class="govuk-!-mb-r6">
+                <img src="public/images/icon-print.png" style="padding-right: 10px;">
+                <a href="/application/prototype">Print entire guide</a>
+            </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+            <aside class="app-related-items-small govuk-related-items" role="complementary">
+                <h2 class="govuk-heading-s" id="subsection-title">
+                    Related content
+                </h2>
+                <ul class="govuk-list govuk-body-s">
+                    <li>
+                        <a href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                        Criminal injuries compensation tribunal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                        Get support as a victim of crime
+                        </a>
+                    </li>
+                    </ul>
+                </ul>
+                <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l govuk-!-mb-r3">
+                <p class="govuk-body-s govuk-!-mb-r1  govuk-!-mt-r1">Explore the topic</p>
+                    <a href="https://www.gov.uk/browse/justice/reporting-crimes-compensation" class="govuk-!-w-bold">
+                        Reporting crimes and getting compensation <span class="visuallyhidden">Reporting crimes and getting compensation</span>
+                    </a>
+            </aside>
+        </div>
+    </div>
+    </main>
+</div>
+{% endblock %}

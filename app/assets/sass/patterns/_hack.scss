@@ -1,0 +1,108 @@
+
+
+// the inset text doesn't seem to work for some reason, so adding the css here and I created a fine a dark one for showing phone contact on stepped guide pages 
+.govuk-inset-text {
+    border-left: 1em solid #dee0e2;
+    padding: 1em 0 1em 1em; margin: 2em 0;
+}
+
+.contact , .address {
+    border-left: 1px solid #bfc1c3; 
+    padding-left: 15px; 
+    margin-bottom: 30px; 
+    margin-top: 30px;
+}
+
+// re-writing this so it's smaller 2px instead of 10px - nothing in the guide for this for 'aside' - discussion on #govuk-design-system for it
+.app-related-items-small {
+    border-top: 2px solid #005ea5;
+    padding-top: 10px;
+}
+
+
+// added the CSS for the pagination at the bottom of the stepped guide - do not exist yet in the govuk-design-system
+.stepped-pagination{
+    display:block;
+    margin-top:30px;
+    margin-bottom:30px;
+    margin-left:-15px;
+    margin-right:-15px
+  }
+  .stepped-pagination__list{
+    margin:0;padding:0
+  }
+  .stepped-pagination__list:after{
+    content:"";
+    display:block;clear:both
+  }
+  .stepped-pagination__item{
+    font-family:"nta", Arial, sans-serif;
+    font-weight:400;
+    text-transform:none;
+    font-size:14px;
+    line-height:1.1428571429;
+    float:left;
+    list-style:none;
+    text-align:right;
+    margin:0;
+    padding:0;
+    width:50%
+  }
+  @media (min-width: 641px){
+    .stepped-pagination__item{
+      font-size:16px;line-height:1.25
+    }
+  }
+  .stepped-pagination__link{
+    display:block;
+    padding:15px;
+    text-decoration:none
+  }
+  .stepped-pagination__link:visited{
+    color:#005ea5
+  }
+  .stepped-pagination__link:hover, .stepped-pagination__link:active{
+    background-color:#f8f8f8
+  }
+  .stepped-pagination__link-title{
+    font-family:"nta", Arial, sans-serif;
+    font-weight:400;
+    text-transform:none;
+    font-size:20px;
+    line-height:1.1111111111;
+    display:block
+  }
+  @media (min-width: 641px){
+    .stepped-pagination__link-title{
+      font-size:27px;line-height:1.25
+    }
+  }
+  .stepped-pagination__item--previous{
+    float:left;
+    text-align:left
+  }
+  @media (max-width: 640px){
+    .stepped-pagination__item--previous{
+      float:none;
+      width:100%
+    }
+  }
+  .stepped-pagination__item--next{
+    float:right;text-align:right
+  }
+  @media (max-width: 640px){
+    .stepped-pagination__item--next{float:none;width:100%
+    }
+  }
+  .stepped-pagination__link-icon{
+    display:inline-block;
+    margin-bottom:1px;
+    height:.482em;
+    width:.63em
+  }
+  .stepped-pagination__link-label{
+    display:inline-block;
+    margin-top:0.1em;
+    text-decoration:underline
+  }
+  

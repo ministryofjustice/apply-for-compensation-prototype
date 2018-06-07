@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Sign in to your account - GOV.UK
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <main id="content" role="main" class="govuk-main-wrapper">
+        <h1 class="govuk-heading-xl">Sign in</h1>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <legend class="visuallyhidden">Sign in</legend>
+                <p>Sign in or <a href="application/prototype">create an account</a> to get started</p>
+
+                <div id="login-block">
+                    <div id="login-email" class="govuk-form-group">
+                        <label class="govuk-label" for="email">Enter your email address</label>
+                        <span class="govuk-hint">This is the email address you used to register your application</span>
+                        <input type="email" class="govuk-input govuk-!-width-two-thirds" id="email" name="email" value="{{ datum.email }}" required/>
+                    </div>
+
+                    <div id="login-password" class="gov-uk-form-group">
+                        <label class="govuk-label" for="password">Enter your password</label>
+                        <span class="govuk-hint">This is the password you used to register your application</span>
+                        <input type="password" class="govuk-input govuk-!-width-two-thirds" id="password" name="password" value="{{ datum.password }}" required/>
+                    </div>
+                </div>
+
+                <div class="govuk-!-mb-r4 govuk-!-mt-r4">
+                    <p><a role="button" class="govuk-button govuk-button-primary" href="application/prototype">Sign in</a></p>
+                </div>
+                <div class="form-group margin-top-1">
+                    <p><a href="application/prototype">I forgot my password</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

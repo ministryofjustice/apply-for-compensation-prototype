@@ -12,6 +12,9 @@ $govuk-global-styles: true;
 @import 'patterns/check-your-answers';
 @import 'patterns/related-items';
 
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import 'patterns/_hack';
+
 .code {
   color: $govuk-text-colour;
   background-color: $govuk-grey-4;
@@ -58,9 +61,3 @@ $govuk-global-styles: true;
 .govuk-prose-scope pre + h4 {
   @include govuk-responsive-padding($govuk-spacing-responsive-4, "top");
 }
-
-// Take a look at in app/assets/sass/patterns/ to see which files are imported.
-// @import 'patterns/check-your-answers';
-// @import 'patterns/task-list';
-
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
