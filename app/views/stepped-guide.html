@@ -4,8 +4,31 @@
   Guide - CICA
 {% endblock %}
 
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
 {% block content %}
 <div class="govuk-width-container">
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+      </li>
+    </ol>
+  </div>
+
     <main id="content" role="main" class="govuk-main-wrapper">
 
         <div class="govuk-grid-row">
@@ -17,6 +40,7 @@
                         </h1>
                     </div>
                 </header>
+                <h2 class="govuk-heading-s">Contents</h2>
                 <ul class="govuk-list govuk-list--bullet">
                     <li>
                         {% if step == 2 or step == 3  or step == 4  or step == 5 %}
@@ -56,7 +80,7 @@
                 </ul>
             </div>
         </div>
-                
+
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             {% if step == 2  %}
