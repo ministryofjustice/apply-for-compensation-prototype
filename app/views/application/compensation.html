@@ -13,6 +13,73 @@
           </h1>
           <form class="form" action="incident-reported" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
+            {% from "input/macro.njk" import govukInput %}
+
+            {% set emailHtml %}
+            {{ govukInput({
+              "id": "contact-by-email",
+              "name": "contact-by-email",
+              "classes": "govuk-!-width-one-third",
+              "label": {
+                "text": "Who paid you compensation?"
+              }
+            }) }},
+            {{ govukInput({
+              "id": "contact-by-email",
+              "name": "contact-by-email",
+              "classes": "govuk-!-width-one-third",
+              "label": {
+                "text": "How much compensation were you paid?"
+              }
+            }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              "classes": "govuk-radios--inline",
+              "idPrefix": "otherCompensation",
+              "name": "otherCompensation",
+              "fieldset": {
+              "legend": {
+              "text": "Have you applied for compensation from any other sources?",
+              "isPageHeading": true,
+              "classes": "govuk-fieldset__legend--xl"
+              }
+              },
+              "hint": {
+                "text": "This does not include any previous applications you have made to the Criminal Injury Compensation Scheme relating to this crime."
+              },
+              "items": [
+                {
+                  "value": "yes",
+                  "text": "Yes",
+                  "conditional": {
+                    "html": emailHtml
+                  }
+                },
+                {
+                  "value": "no",
+                  "text": "No"
+                }
+              ]
+            }) }}
+
+
+<!-- ////////////////////////////////////////////////////////// -->
+
+            <!-- {% from 'radios/macro.njk' import govukRadios %}
+            {% from "input/macro.njk" import govukInput %}
+
+            {% set emailHtml %}
+            {{ govukInput({
+              "id": "contact-by-email",
+              "name": "contact-by-email",
+              "classes": "govuk-!-width-one-third",
+              "label": {
+                "text": "Email address"
+              }
+            }) }}
+            {% endset -%}
+
             {{ govukRadios({
             "classes": "govuk-radios--inline",
             "idPrefix": "otherCompensation",
@@ -27,14 +94,18 @@
             "items": [
             {
             "value": "yes",
-            "text": "Yes"
+            "text": "Yes",
+            "conditional": {
+              "html": "emailHTML"
+            }
             },
             {
             "value": "no",
             "text": "No"
             }
             ]
-            }) }}
+            }) }} -->
+
             {% from "button/macro.njk" import govukButton %}
             {{ govukButton({
             "text": "Continue"
