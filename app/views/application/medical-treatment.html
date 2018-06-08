@@ -16,30 +16,30 @@
             {% from "date-input/macro.njk" import govukDateInput %}
 
             {% set dateHtml %}
-            {{ govukDateInput({
-            id: 'medicalTreatmentStartDate',
-            name: 'medicalTreatmentStartDate',
-            fieldset: {
-            legend: {
-            text: 'When did you first receive treatment?',
-            classes: 'govuk-fieldset__legend--m'
-            }
-            },
-            hint: {
-            text: 'For example, 31 3 1980'
-            },
-            items:[
-            {
-            name: 'day'
-            },
-            {
-            name: 'month'
-            },
-            {
-            name: 'year'
-            }
-            ]
-            })
+                {{ govukDateInput({
+                    id: 'medicalTreatmentStartDate',
+                    name: 'medicalTreatmentStartDate',
+                    fieldset: {
+                        legend: {
+                            text: 'When did you first receive treatment?',
+                            classes: 'govuk-fieldset__legend--m'
+                        }
+                    },
+                    hint: {
+                        text: 'For example, 31 3 1980'
+                    },
+                    items:[
+                        {
+                            name: 'day'
+                        },
+                        {
+                            name: 'month'
+                        },
+                        {
+                            name: 'year'
+                        }
+                    ]
+                })
             }}
             {% endset -%}
 
