@@ -7,6 +7,7 @@ $govuk-global-styles: true;
 
 //Import GOV.UK Frontend
 @import "@govuk-frontend/frontend/all";
+@import "components/all"; // importing all the scss that will extend, or override the styles of the GOVUK components in the govuk-frontend node module folder.
 
 // Patterns that aren't in Frontend
 @import 'patterns/check-your-answers';
