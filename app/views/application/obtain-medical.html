@@ -8,9 +8,10 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-          </h1> -->
+          <h1 class="govuk-heading-xl">
+          Medical report
+          </h1>
+          <p class="govuk-body-l">You will need to get a copy of your medical records relating to your injuries so we can assess your application</p>
           <form class="form" action="pay-for-medical" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
@@ -19,10 +20,13 @@
             "name": "obtainMedical",
             "fieldset": {
             "legend": {
-            "text": 'Are you able to get a medical report from your doctor?',
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
+            "text": 'Are you able to get a copy of your medical records?',
+            "isPageHeading": false,
+            "classes": 'govuk-fieldset__legend--m'
             }
+            },
+            hint: {
+            text: 'Your GP can charge you up to £50 for providing you with a medical report.'
             },
             "items": [
             {
