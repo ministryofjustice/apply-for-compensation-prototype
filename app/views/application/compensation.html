@@ -18,19 +18,19 @@
 
             {% set emailHtml %}
             {{ govukInput({
-              "id": "contact-by-email",
-              "name": "contact-by-email",
-              "classes": "govuk-!-width-one-third",
+              "idPrefix": "whoPaid",
+              "name": "whoPaid",
+              "classes": "govuk-!-width-two-thirds",
               "label": {
                 "text": "Who paid you compensation?"
               }
             }) }}
             {{ govukInput({
-              "id": "contact-by-email",
-              "name": "contact-by-email",
-              "classes": "govuk-!-width-one-third",
+              "idPrefix": "howMuch",
+              "name": "howMuch",
+              "classes": "govuk-!-width-one-quarter",
               "label": {
-                "text": "How much compensation were you paid?"
+                "text": "How much compensation did you get?"
               }
             }) }}
             {% endset -%}

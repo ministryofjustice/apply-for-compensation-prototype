@@ -96,7 +96,7 @@
         </h2>
 
         <h3 class="govuk-heading-s">
-          Elegability
+          Eligibility
         </h3>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--short">
@@ -113,6 +113,35 @@
               </a>
             </dd>
           </div>
+
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Who paid you compensation?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['whoPaid'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="#">
+                  Change<span class="visually-hidden"> previous application number</span>
+                </a>
+              </dd>
+            </div>
+
+              <div class="govuk-check-your-answers__contents">
+                <dt class="govuk-check-your-answers__question">
+                  How much compensation did you get?
+                </dt>
+                <dd class="govuk-check-your-answers__answer">
+                  {{ data['howMuch'] }}
+                </dd>
+                <dd class="govuk-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="visually-hidden"> previous application number</span>
+                  </a>
+                </dd>
+              </div>
+
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -159,7 +188,7 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Were you legally resident in the UK when the crime happened?
+              Are you a British citizen?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['britishCitizen'] }}
@@ -261,24 +290,10 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Are you able to get a medical report from your doctor?
+              Are you able to get a report from your doctor?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['obtainMedical'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Can you afford to pay up to £50 for a medical report?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['payforMedical'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="#">

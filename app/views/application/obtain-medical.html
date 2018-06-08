@@ -11,7 +11,7 @@
           <h1 class="govuk-heading-xl">
           Medical report
           </h1>
-          <p class="govuk-body-l">You will need to get a copy of your medical records relating to your injuries so we can assess your application</p>
+          <p class="govuk-body-l">You must get a report from your doctor detailing your injuries.</p>
           <form class="form" action="unable-to-work" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
@@ -20,13 +20,13 @@
             "name": "obtainMedical",
             "fieldset": {
             "legend": {
-            "text": 'Are you able to get a copy of your medical records?',
+            "text": 'Are you able to get a report from your doctor?',
             "isPageHeading": false,
             "classes": 'govuk-fieldset__legend--m'
             }
             },
             hint: {
-            text: 'Your GP can charge you up to £50 for providing you with a medical report.'
+            text: 'Your doctor may charge a fee for the report.  You must pay the first £50 of the charge.  CICA can pay the rest and deduct it from any compensation you get.'
             },
             "items": [
             {
