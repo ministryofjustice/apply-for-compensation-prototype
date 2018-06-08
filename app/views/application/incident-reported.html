@@ -22,31 +22,30 @@
             {% from "date-input/macro.njk" import govukDateInput %}
 
             {% set dateHtml %}
-            {{ govukDateInput({
-            id: 'incidentReported',
-            name: 'incidentReported',
-            fieldset: {
-            legend: {
-            text: 'When was the crime reported to police?',
-            classes: 'govuk-fieldset__legend--m'
-            }
-            },
-            hint: {
-            text: 'For example, 31 3 1980'
-            },
-            items:[
-            {
-            name: 'day'
-            },
-            {
-            name: 'month'
-            },
-            {
-            name: 'year'
-            }
-            ]
-            })
-            }}
+                {{ govukDateInput({
+                    id: 'incidentReported',
+                    name: 'incidentReported',
+                    fieldset: {
+                        legend: {
+                            text: 'When was the crime reported to police?',
+                            classes: 'govuk-fieldset__legend--m'
+                        }
+                    },
+                    hint: {
+                        text: 'For example, 31 3 1980'
+                    },
+                    items:[
+                        {
+                            name: 'day'
+                        },
+                        {
+                            name: 'month'
+                        },
+                        {
+                            name: 'year'
+                        }
+                    ]
+                }) }}
             {% endset -%}
 
 
