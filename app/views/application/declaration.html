@@ -11,7 +11,10 @@
           <h1 class="govuk-heading-xl">
           Declaration
           </h1>
-          <p class="govuk-body">By continuing you confirm that the information you're giving is correct.</p>
+          <p class="govuk-body">You must confirm that the information you are giving is correct, and that you consent to the Criminal Injurys Copensation Authority using your personalin information as described in our <a href="#">privacy notice</a>.</p>
+          <!-- **NOTE**
+          I don't like the way we are linking out to adtitional content here. Do we actually think that people will read this?
+          It would be much better if we could add a condensed version of the privacy notice. -->
 
           <form class="form" action="compensation" method="post">
             {% from "warning-text/macro.njk" import govukWarningText %}
@@ -29,7 +32,7 @@
             "name": "declaration",
             "fieldset": {
             "legend": {
-            "text": 'Do you agree to give the correct information?',
+            "text": 'Do you agree?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--m'
             }
