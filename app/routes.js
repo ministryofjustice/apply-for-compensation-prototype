@@ -51,7 +51,7 @@ router.post('/application/incident-reported', function (req, res) {
 
   if (otherCompensation === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('/application/incident-reported')
   } else {
     // If over18 is any other value (or is missing) render the page requested
     res.redirect('/application/incident-reported')
@@ -195,6 +195,25 @@ router.post('/application/what-equiptment-or-services', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: medical-treatment
+// Variable: medicalTreatment
+
+router.post('/application/treatment-ongoing', function (req, res) {
+  // Get the answer from the query string (eg. ?over18=false)
+  var medicalTreatment = req.session.data['medicalTreatment']
+
+  if (medicalTreatment === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/prototype')
+  } else {
+    // If over18 is any other value (or is missing) render the page requested
+    res.render('application/treatment-ongoing')
+  }
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
 // File: treatment-ongoing
 // Variable: treatmentOngoing
 
@@ -217,7 +236,7 @@ router.post('/application/obtain-medical', function (req, res) {
 // File: obtain-medical
 // Variable: obtainMedical
 
-router.post('/application/pay-for-medical', function (req, res) {
+router.post('/application/unable-to-work', function (req, res) {
   // Get the answer from the query string (eg. ?over18=false)
   var obtainMedical = req.session.data['obtainMedical']
 
@@ -226,7 +245,7 @@ router.post('/application/pay-for-medical', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/pay-for-medical')
+    res.redirect('/application/unable-to-work')
   }
 })
 
@@ -236,18 +255,18 @@ router.post('/application/pay-for-medical', function (req, res) {
 // File: pay-for-medical
 // Variable: obtainMedical
 
-router.post('/application/unable-to-work', function (req, res) {
-  // Get the answer from the query string (eg. ?over18=false)
-  var payforMedical = req.session.data['payforMedical']
-
-  if (payforMedical === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If over18 is any other value (or is missing) render the page requested
-    res.redirect('/application/unable-to-work')
-  }
-})
+// router.post('/application/unable-to-work', function (req, res) {
+//   // Get the answer from the query string (eg. ?over18=false)
+//   var payforMedical = req.session.data['payforMedical']
+//
+//   if (payforMedical === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If over18 is any other value (or is missing) render the page requested
+//     res.redirect('/application/unable-to-work')
+//   }
+// })
 
 // END__######################################################################################################
 

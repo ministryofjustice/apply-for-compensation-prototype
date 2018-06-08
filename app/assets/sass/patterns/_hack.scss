@@ -1,15 +1,15 @@
 
 
-// the inset text doesn't seem to work for some reason, so adding the css here and I created a fine a dark one for showing phone contact on stepped guide pages 
+// the inset text doesn't seem to work for some reason, so adding the css here and I created a fine a dark one for showing phone contact on stepped guide pages
 .govuk-inset-text {
     border-left: 1em solid #dee0e2;
     padding: 1em 0 1em 1em; margin: 2em 0;
 }
 
 .contact , .address {
-    border-left: 1px solid #bfc1c3; 
-    padding-left: 15px; 
-    margin-bottom: 30px; 
+    border-left: 1px solid #bfc1c3;
+    padding-left: 15px;
+    margin-bottom: 30px;
     margin-top: 30px;
 }
 
@@ -105,4 +105,13 @@
     margin-top:0.1em;
     text-decoration:underline
   }
-  
+  .design-notes{
+    color: red;
+    font-style: italic;
+    // display: none;
+  }
+  .design-notes-box{
+    border: solid 1px red;
+    padding: 10px;
+    margin: -10px;
+  }

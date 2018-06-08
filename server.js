@@ -64,6 +64,7 @@ if (env === 'production' && useAuth === 'true') {
 // Set up App
 var appViews = [path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/'),
+  path.join(__dirname, '/components/'), // this folder contains files used to extend, or override the GOVUK components in the govuk-frontend node module folder.
   path.join(__dirname, '/node_modules/govuk_template_jinja/views/layouts'),
   path.join(__dirname, '/node_modules/@govuk-frontend/frontend/components')]
 
