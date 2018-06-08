@@ -11,6 +11,7 @@
           <h1 class="govuk-heading-xl govuk-visually-hidden">
           Have you applied for any other compensation?
           </h1>
+          <!-- NOTE: the word elswhere should be a link as it is in the start page -->
           <form class="form" action="incident-reported" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
@@ -23,7 +24,7 @@
               "label": {
                 "text": "Who paid you compensation?"
               }
-            }) }},
+            }) }}
             {{ govukInput({
               "id": "contact-by-email",
               "name": "contact-by-email",
@@ -46,7 +47,8 @@
               }
               },
               "hint": {
-                "text": "This does not include any previous applications you have made to the Criminal Injury Compensation Scheme relating to this crime."
+                "text": "Before we can consider your application you must have tried to get compensation from elsewhere."
+
               },
               "items": [
                 {
