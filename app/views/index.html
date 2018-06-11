@@ -4,6 +4,14 @@
   GOV.UK prototype kit
 {% endblock %}
 
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
@@ -11,35 +19,127 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          The GOV.UK prototype kit
-          <span class="govuk-caption-xl">{{releaseVersion}}</span>
+          Apply for compensation for a criminal injury
+          <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
         </h1>{{releaseVersion | log }}
-        <p>
-          This kit lets you rapidly create HTML prototypes of GOV.UK services.
+        <p class="govuk-body-l">
+          This prototype details itterations of the application process users will go through to apply for compensation if they have suffered an injury through being a victim of violent crime.
         </p>
 
-        <p>
-          It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-        </p>
+        <h2 class="govuk-heading-l">
+          Defining our Minimum Viable Product
+          <span class="govuk-caption-m">Sprint 14 & 15</span>
+        </h2>
 
-        <h2 class="govuk-heading-m">About this page</h2>
+        <h3 class="govuk-heading-l">Simple journey</h3>
 
-        <p>We recommend you add links to your prototype to this page, rather than delete it.
-          You'll find this page in the kit at '/app/views/index.html'.</p>
+        <p>The focus of this journey is to see how simple we can make the application process by getting all but the simplest users out of the journey as early as possible.</p>
+        <p>Users that do not fall in to the simple group will be nudged in other directions. We have yet to define those other directions.</p>
+        <p>This journey focuses on users who:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>are direct applicants</li>
+          <li>are over 18</li>
+          <li>are British citizens</li>
+          <li>do not have any criminal convictions</li>
+          <li>have applied for compensation from other sources</li>
+          <li>do not have ongoing medical treatment</li>
+          <li>have suffered personal injury</li>
+        </ul>
 
-        <p>You can change the service name by editing the file '/app/config.js'.</p>
+        <h3 id="release-5" class="govuk-heading-m"><a target="_blank" href="https://cica-app-r5.herokuapp.com/start-page">Release 0.5</a><span class="govuk-caption-m">(opens in a new window)</span></h3>
+        <p>This release contains:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>added breadcrumbs to the start page</li>
+          <li>changed content around legally resident to focus on British citizens for now</li>
+          <li>removed "I don't know" radio button on criminal convictions question</li>
+          <li>added more content to the declaration as a result of Johns meeting with leagal</li>
+          <li>refined the content about getting a medical report</li>
+          <li>removed the £50 medical question</li>
+          <li>updated content on the confirmation page</li>
+          <li>fixed bug where conditional content for radio buttons would appear between radio buttons</li>
+        </ul>
 
-  			<h2 class="govuk-heading-m">Examples and documentation</h2>
+        <h3 id="release-4"  class="govuk-heading-m"><a target="_blank" href="https://cica-app-r4.herokuapp.com/start-page">Release 0.4</a><span class="govuk-caption-m">(opens in a new window)</span></h3>
+        <p>This release contains:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>added the stepped guide and content</li>
+          <li>made the back links work on all pages</li>
+        </ul>
 
-  			<ul class="govuk-list govuk-list--bullet">
-  				<li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-  				<li>
-  					<a href="https://govuk-design-system-production.cloudapps.digital">
-  						GOV.UK Design System
-  					</a>
-  				</li>
-  			</ul>
+        <h3 id="release-3"  class="govuk-heading-m"><a target="_blank" href="https://cica-app-r3.herokuapp.com/start-page">Release 0.3</a><span class="govuk-caption-m">(opens in a new window)</span></h3>
+        <p>This release contains:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a new page for collecting email address</li>
+          <li>started pulling data through to the check your answeres page</li>
+          <li>added placeholder content to the check your answeres page</li>
+        </ul>
+
+        <h3 id="release-2"  class="govuk-heading-m"><a target="_blank" href="https://cica-app-r2.herokuapp.com/start-page">Release 0.2</a><span class="govuk-caption-m">(opens in a new window)</span></h3>
+        <p>This release contains:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a new page for collecting address</li>
+          <li>a new page for collecting the date that people stopped work</li>
+          <li>new pages for obtaining and paying for medical treatment</li>
+          <li>a new page for ongoing medical treatment</li>
+          <li>refined content on the "who is making the application" page</li>
+          <li>modefied content around asking is users were living legally in the UK</li>
+          <li>new pages for asking more questions about compensation</li>
+          <li>a new page for the negative path if users have convictions in another country</li>
+          <li>a new page to collect the police force</li>
+          <li>a new page to ask about previous applications</li>
+          <li>a new page to collect the date that the crime was reported</li>
+        </ul>
+        <p>Some of the pages details above were removed from the prototype to focus on a smaller journey.</p>
+
+        <h3 id="release-1"  class="govuk-heading-m"><a target="_blank" href="https://cica-app-r1.herokuapp.com/start-page">Release 0.1</a><span class="govuk-caption-m">(opens in a new window)</span></h3>
+        <p>This release contains:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>placeholder content for all pages</li>
+          <li>back links do not work</li>
+          <li>a very simple declaration</li>
+          <li>some bugs with revelaling content</li>
+        </ul>
+        <a href="release-1-screens">Screens</a>
+
       </div>
+      <!-- <div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Releases
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-body-s">
+              <li>
+                <a href="#release-1">
+                  Release 0.5
+                </a>
+              </li>
+              <li>
+                <a href="#release-4">
+                  Release 0.4
+                </a>
+              </li>
+              <li>
+                <a href="#release-3">
+                  Release 0.3
+                </a>
+              </li>
+              <li>
+                <a href="#release-2">
+                  Release 0.2
+                </a>
+              </li>
+              <li>
+                <a href="#release-1">
+                  Release 0.1
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+      </div> -->
     </div>
   </main>
 </div>
