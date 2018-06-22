@@ -115,3 +115,109 @@
     padding: 10px;
     margin: -10px;
   }
+
+  // body parts diagram
+  .circle-big {  // head and neck
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+  .circle-medium { // face
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: 	#bfc1c3;
+    color:  #005ea5;
+    text-align: center;
+  }
+  .circle-small { // eye
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .circle-half-bottom { // hands
+    height: 40px;
+    width: 80px;
+    border-radius: 0 0 80px 80px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .rectangle-long {  // legs
+    height: 200px;
+    width: 80px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .rectangle-small {  // neck
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+  .arm-left {  
+    height: 200px;
+    width: 80px;
+    display: inline-block;
+    border-radius: 50px 0 0 0 ;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .arm-right {  
+    height: 200px;
+    width: 80px;
+    display: inline-block;
+    border-radius: 0 50px  0 0 ;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .rectangle-big { // torso
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .foot-left {
+    height: 50px;
+    width: 100px;
+    border-radius: 50px 0 0 50px ;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .foot-right {
+    height: 50px;
+    width: 100px;
+    border-radius: 0 50px 50px 0;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
