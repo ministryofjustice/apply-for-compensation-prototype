@@ -17,52 +17,122 @@
 <div class="govuk-width-container">
   
     <main id="content" role="main" class="govuk-main-wrapper">
-  
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-half-full">
-                    <header class="page-header">
-                        <div>
-                            <h1 class="govuk-heading-xl">
-                                Find your injuries
-                            </h1>
-                        </div>
-                    </header>
-                <div style="position: relative">
-                    <span class="circle-big" style="margin-left: 85px"></span>
-                    <div style="position: absolute; top:40px ; left: 125px">
-                        <span class="circle-medium" ></span>
-                        <div style="position: absolute; top:40px ; left: 30px">
-                            <span class="circle-small"></span>
-                        </div>
-                        <div style="position: absolute; top:40px ; left: 90px">
-                            <span class="circle-small"></span>
-                        </div>
-                    </div>
-                    <div style="position: absolute; top:230px ;">
-                        <span class="rectangle-small" style="margin-left: 165px"></span>
-                     </div>
-                </div>
-            
-                <div style="margin-top: 20px" >
-                    <span class="arm-left" style="margin-left: 15px"></span>
-                    <span class="rectangle-big" style="margin-left: 5px"></span>
-                    <span class="arm-right" style="margin-left: 5px"></span>
-     
-                </div>
-                <div>
-                    <span class="circle-half-bottom" style="margin-left: 15px; margin-bottom: 160px "></span>
-                    <span class="rectangle-long" style="margin-left: 25px"></span>
-                    <span class="rectangle-long" style="margin-left: 4px"></span>
-                    <span class="circle-half-bottom" style="margin-left: 18px; margin-bottom: 160px "></span>
-                </div>
-                <div>
-                    <span class="foot-left" style="margin-left: 102px"></span> 
-                    <span class="foot-right" style="margin-left: 5px"></span> 
-                </div>
-            </div >
-            <div class="govuk-grid-half-full">
+
+        <header class="page-header">
+            <div>
+                <h1 class="govuk-heading-xl">
+                    Find your injuries
+                </h1>
             </div>
+        </header>
+        <div style="position: relative">
+            <span onclick=showHeadNeck() class="circle-big" style="margin-left: 85px"></span>
+            <div style="position: absolute; top:40px ; left: 125px">
+                <span onclick=showFace() class="circle-medium" ></span>
+                <div style="position: absolute; top:40px ; left: 30px">
+                    <span onclick=showEyes() class="circle-small"></span>
+                </div>
+                <div style="position: absolute; top:40px ; left: 90px">
+                    <span onclick=showEyes() class="circle-small"></span>
+                </div>
+            </div>
+            <div style="position: absolute; top:230px ;">
+                <span onclick=showHeadNeck() class="rectangle-small" style="margin-left: 165px"></span>
+                </div>
         </div>
+    
+        <div style="margin-top: 20px" >
+            <span onclick=showArms() class="arm-left" style="margin-left: 15px"></span>
+            <span onclick=showTorso() class="rectangle-big" onclick=showTorso() style="margin-left: 5px"></span>
+            <span  onclick=showArms() class="arm-right" style="margin-left: 5px"></span>
+
+        </div>
+        <div>
+            <span onclick=showHands() class="circle-half-bottom" style="margin-left: 15px; margin-bottom: 160px "></span>
+            <span onclick=showLegs() class="rectangle-long" style="margin-left: 25px"></span>
+            <span onclick=showLegs() class="rectangle-long" style="margin-left: 4px"></span>
+            <span onclick=showHands() class="circle-half-bottom" style="margin-left: 18px; margin-bottom: 160px "></span>
+        </div>
+        <div>
+            <span  onclick=showFeet() class="foot-left" style="margin-left: 102px"></span> 
+            <span onclick=showFeet() class="foot-right" style="margin-left: 5px"></span> 
+            <span onclick=showOtherInjuries() style="border: solid 4px #005eaa; padding: 8px; margin-left: 10px; position: absolute; top:800px ;">OTHER INJURIES</span>
+        </div>
+
+        <div id="other-injuries-panel"> 
+            <p>This is other injuries panel text</p>
+            <ul>
+                <li>one injury</li>
+                <li> another one injury</li>
+                <li>another one injury</li>
+            </ul>
+        </div>
+
+        <div id="torso-panel"> 
+            <p>Torso list</p>
+            <ul>
+                <li>one injury</li>
+                <li> another one injury</li>
+                <li>another one injury</li>
+            </ul>
+        </div>
+        <div id="legs-panel"> 
+            <p>Legs list</p>
+            <ul>
+                <li>one injury</li>
+                <li> another one injury</li>
+                <li>another one injury</li>
+            </ul>
+        </div>
+        <div id="arms-panel"> 
+            <p>Arms list</p>
+            <ul>
+                <li>one injury</li>
+                <li> another one injury</li>
+                <li>another one injury</li>
+            </ul>
+        </div>
+        <div id="head-neck-panel"> 
+            <p>Head and Neck list</p>
+            <ul>
+                <li>one injury</li>
+                <li> another one injury</li>
+                <li>another one injury</li>
+            </ul>
+        </div>
+        <div id="eyes-panel"> 
+            <p>Eyes list</p>
+            <ul>
+                <li>one injury</li>
+                <li> another one injury</li>
+                <li>another one injury</li>
+            </ul>
+        </div>
+        <div id="face-panel"> 
+                <p>Face list</p>
+                <ul>
+                    <li>one injury</li>
+                    <li> another one injury</li>
+                    <li>another one injury</li>
+                </ul>
+            </div>
+            <div id="hands-panel"> 
+                <p>Hands list</p>
+                <ul>
+                    <li>one injury</li>
+                    <li> another one injury</li>
+                    <li>another one injury</li>
+                </ul>
+            </div>
+            <div id="feet-panel"> 
+                    <p>Feet list</p>
+                    <ul>
+                        <li>one injury</li>
+                        <li> another one injury</li>
+                        <li>another one injury</li>
+                    </ul>
+                </div>
+
     </main>
 </div>
 
