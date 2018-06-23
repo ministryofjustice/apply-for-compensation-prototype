@@ -26,112 +26,156 @@
             </div>
         </header>
         <div style="position: relative">
-            <span onclick=showHeadNeck() class="circle-big" style="margin-left: 85px"></span>
-            <div style="position: absolute; top:40px ; left: 125px">
-                <span onclick=showFace() class="circle-medium" ></span>
-                <div style="position: absolute; top:40px ; left: 30px">
-                    <span onclick=showEyes() class="circle-small"></span>
+            <div style="position: relative">
+                <span onclick=showHeadNeck() class="head-neck-shape" style="margin-left: 85px"></span>
+                <div style="position: absolute; top:40px ; left: 125px">
+                    <span onclick=showFace() class="face-shape" ></span>
+                    <div style="position: absolute; top:40px ; left: 30px">
+                        <span onclick=showEyes() class="eye-shape"></span>
+                    </div>
+                    <div style="position: absolute; top:40px ; left: 90px">
+                        <span onclick=showEyes() class="eye-shape"></span>
+                    </div>
                 </div>
-                <div style="position: absolute; top:40px ; left: 90px">
-                    <span onclick=showEyes() class="circle-small"></span>
-                </div>
+                <div style="position: absolute; top:230px ;">
+                    <span onclick=showHeadNeck() class="neck-shape" style="margin-left: 165px"></span>
+                    </div>
             </div>
-            <div style="position: absolute; top:230px ;">
-                <span onclick=showHeadNeck() class="rectangle-small" style="margin-left: 165px"></span>
-                </div>
-        </div>
-    
-        <div style="margin-top: 20px" >
-            <span onclick=showArms() class="arm-left" style="margin-left: 15px"></span>
-            <span onclick=showTorso() class="rectangle-big" onclick=showTorso() style="margin-left: 5px"></span>
-            <span  onclick=showArms() class="arm-right" style="margin-left: 5px"></span>
+        
+            <div style="margin-top: 20px" >
+                <span onclick=showArms() class="arm-left" style="margin-left: 15px"></span>
+                <span onclick=showTorso() class="torso-shape" onclick=showTorso() style="margin-left: 5px"></span>
+                <span  onclick=showArms() class="arm-right" style="margin-left: 5px"></span>
 
-        </div>
-        <div>
-            <span onclick=showHands() class="circle-half-bottom" style="margin-left: 15px; margin-bottom: 160px "></span>
-            <span onclick=showLegs() class="rectangle-long" style="margin-left: 25px"></span>
-            <span onclick=showLegs() class="rectangle-long" style="margin-left: 4px"></span>
-            <span onclick=showHands() class="circle-half-bottom" style="margin-left: 18px; margin-bottom: 160px "></span>
-        </div>
-        <div>
-            <span  onclick=showFeet() class="foot-left" style="margin-left: 102px"></span> 
-            <span onclick=showFeet() class="foot-right" style="margin-left: 5px"></span> 
-            <span onclick=showOtherInjuries() style="border: solid 4px #005eaa; padding: 8px; margin-left: 10px; position: absolute; top:800px ;">OTHER INJURIES</span>
-        </div>
-
-        <div id="other-injuries-panel"> 
-            <p>This is other injuries panel text</p>
-            <ul>
-                <li>one injury</li>
-                <li> another one injury</li>
-                <li>another one injury</li>
-            </ul>
-        </div>
-
-        <div id="torso-panel"> 
-            <p>Torso list</p>
-            <ul>
-                <li>one injury</li>
-                <li> another one injury</li>
-                <li>another one injury</li>
-            </ul>
-        </div>
-        <div id="legs-panel"> 
-            <p>Legs list</p>
-            <ul>
-                <li>one injury</li>
-                <li> another one injury</li>
-                <li>another one injury</li>
-            </ul>
-        </div>
-        <div id="arms-panel"> 
-            <p>Arms list</p>
-            <ul>
-                <li>one injury</li>
-                <li> another one injury</li>
-                <li>another one injury</li>
-            </ul>
-        </div>
-        <div id="head-neck-panel"> 
-            <p>Head and Neck list</p>
-            <ul>
-                <li>one injury</li>
-                <li> another one injury</li>
-                <li>another one injury</li>
-            </ul>
-        </div>
-        <div id="eyes-panel"> 
-            <p>Eyes list</p>
-            <ul>
-                <li>one injury</li>
-                <li> another one injury</li>
-                <li>another one injury</li>
-            </ul>
-        </div>
-        <div id="face-panel"> 
-                <p>Face list</p>
-                <ul>
-                    <li>one injury</li>
-                    <li> another one injury</li>
-                    <li>another one injury</li>
-                </ul>
             </div>
-            <div id="hands-panel"> 
-                <p>Hands list</p>
-                <ul>
-                    <li>one injury</li>
-                    <li> another one injury</li>
-                    <li>another one injury</li>
-                </ul>
+
+            <div>
+                <span onclick=showHands() class="hand-shape" style="margin-left: 15px; margin-bottom: 160px "></span>
+                <span onclick=showLegs() class="leg-shape" style="margin-left: 25px"></span>
+                <span onclick=showLegs() class="leg-shape" style="margin-left: 4px"></span>
+                <span onclick=showHands() class="hand-shape" style="margin-left: 18px; margin-bottom: 160px "></span>
             </div>
-            <div id="feet-panel"> 
-                    <p>Feet list</p>
+            <div>
+                <span  onclick=showFeet() class="foot-left" style="margin-left: 102px"></span> 
+                <span onclick=showFeet() class="foot-right" style="margin-left: 5px"></span> 
+                <span onclick=showOtherInjuries() 
+                    style="background-color: #005eaa; color: #ffffff ; padding: 10px; position: absolute; top:600px ; left: 350px;"
+                    class="govuk-heading-m">Other injuries</span>
+            </div>
+
+
+            <div style="position: absolute; right: 0; top: 0; width: 400px" >
+            
+                <div id="head-neck-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Head and neck injuries</h2>
                     <ul>
-                        <li>one injury</li>
-                        <li> another one injury</li>
-                        <li>another one injury</li>
+                        <li>Burns</li>
+                        <li>Scarring</li>
+                        <li>Brain damage</li>
+                        <li>Epilepsy</li>
+                        <li>Nerve Damage</li>
+                        <li>Deafness (partial or total)</li>
+                        <li>Partial loss of ear(s)</li>
+                        <li>Loss of ear(s)</li>
+                        <li>Perforated ear drum (both ears)</li>
+                        <li>Tinnitus</li>
+                        <li>Vestibular damage</li>
+                        <li>Whiplash injury</li>
+                        <li>Fracture</li>
                     </ul>
                 </div>
+                <div id="face-panel" class="body-list-panel"> 
+                        <h2 class="govuk-heading-m">Face injuries</h2>
+                    <ul>
+                        <li>Burns</li>
+                        <li>Scarring</li>
+                        <li>Clicking jaw</li>
+                        <li>Dislocated jaw</li>
+                        <li>Fractured ethmoid (operation required)</li>
+                        <li>Fractured zygoma</li>
+                        <li>Fractured jaw bone(s)</li>
+                        <li>Multiple fractures to face</li>
+                        <li>Numbness / loss of feeling</li>
+                        <li>Loss of smell</li>
+                        <li>Partial loss of nose (at least 10%)</li>
+                        <li>Damaged tooth / teeth</li>
+                        <li>Fractured tooth / teeth</li>
+                        <li>Loss of crowns</li>
+                        <li>Impaired speech</li>
+                        <li>Permanent loss of speech</li>
+                        <li>Loss of tongue</li>
+                    </ul>
+                </div>
+                <div id="eyes-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Eyes injuries</h2>
+                    <ul>                                
+                        <li >Blurred or double vision (permanent)</li>          
+                        <li >Cataract(s)</li>          
+                        <li >Damaged or detached retina</li>          
+                        <li >Dislocation of lens(es)</li>          
+                        <li >Glaucoma</li>          
+                        <li >Hyphaema requiring operation (both eyes)</li>          
+                        <li >Loss of eye(s)</li>          
+                        <li >Loss of sight in eye(s)</li>          
+                        <li >Loss of visual field (permanent)</li>          
+                        <li >Orbital fracture</li>          
+                        <li >Partial loss of vision</li>          
+                        <li >Residual central floater affecting vision</li>          
+                        <li >Retina - damage not involving detachment (both eyes)</li>          
+                        <li >Retina - detached (both eyes)</li>          
+                        <li >Significant penetrating injury</li>          
+                        <li >Traumatic angle recession</li> 
+                    </ul>
+                </div>
+                <div id="torso-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Torso injuries</h2>
+                    <ul>
+                    </ul>
+                </div>
+                <div id="arms-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Arms injuries</h2>
+                    <ul>
+                    </ul>
+                </div>
+                <div id="hands-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Hands injuries</h2>
+                    <ul>
+                    </ul>
+                </div>
+                <div id="legs-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Legs injuries</h2>
+                    <ul>
+                    </ul>
+                </div>
+                <div id="feet-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Feet injuries</h2>
+                    <ul>
+                        <li>Fractured metatarsal</li>          
+                        <li>Fractured tarsal</li>          
+                        <li>Fractured heel bone</li>          
+                        <li >Fractured great toe</li>          
+                        <li >Fractured toe</li>          
+                        <li >Loss of great toe(s)</li>          
+                        <li >Loss of two or more toes</li>          
+                        <li >Partial loss of great toe(s)</li>                             
+                    </ul>
+                </div>
+                <div id="other-injuries-panel" class="body-list-panel">
+                    <h2 class="govuk-heading-m">Other injuries</h2>
+                    <ul>
+                        <li >Hemiplegia</li>          
+                        <li >Infection with one or more of HIV, Hepatitis B or Hepatitis C</li>          
+                        <li >Loss of foetus</li>          
+                        <li >Major paralysis (other than as a result of brain damage)</li>          
+                        <li >Mental injuries</li>          
+                        <li >Paraplegia</li>          
+                        <li >Quadriplegia/tetraplegia</li>          
+                        <li >Sexual offences</li>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+      
 
     </main>
 </div>
