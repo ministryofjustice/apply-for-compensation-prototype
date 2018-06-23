@@ -11,64 +11,40 @@ $(document).ready(function () {
 
 })
 
-function hidePanels (){
-  $("#other-injuries-panel").hide();
-  $("#torso-panel").hide();
-  $("#legs-panel").hide();  
-  $("#arms-panel").hide();
-  $("#head-neck-panel").hide();
-  $("#eyes-panel").hide();  
-  $("#face-panel").hide();
-  $("#feet-panel").hide();
-  $("#hands-panel").hide();
-}
-
+// JQuery for the body part diagram view
 function showOtherInjuries () {
-  hidePanels();
-  panel = document.getElementById ("other-injuries-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#other-injuries-panel").show();
 }
-
 function showTorso () {
-  hidePanels();
-  panel = document.getElementById ("torso-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#torso-panel").show();
 }
-
 function showFace () {
-  hidePanels();
-  panel = document.getElementById ("face-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#face-panel").show();
 }
-
 function showEyes () {
-  hidePanels();
-  panel = document.getElementById ("eyes-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#eyes-panel").show();
 }
-
 function showHeadNeck () {
-  hidePanels();
-  panel = document.getElementById ("head-neck-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#head-neck-panel").show();
 }
 function showArms () {
-  hidePanels();
-  panel = document.getElementById ("arms-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#arms-panel").show();
 }
 function showLegs () {
-  hidePanels();
-  panel = document.getElementById ("legs-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#legs-panel").show();
 }
 function showFeet () {
-  hidePanels();
-  panel = document.getElementById ("feet-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#feet-panel").show();
 }
 function showHands () {
-  hidePanels();
-  panel = document.getElementById ("hands-panel");
-  panel.style = "display: block; position: absolute; top:230px; left: 700px ;" 
+  $(".body-list-panel").hide();
+  $("#hands-panel").show();
 }

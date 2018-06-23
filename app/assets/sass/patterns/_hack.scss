@@ -116,8 +116,8 @@
     margin: -10px;
   }
 
-  // body parts diagram
-  .circle-big {  // head and neck
+  // -----------------------   body parts diagram CSS needed   --------------------------------------
+  .head-neck-shape { 
     height: 240px;
     width: 240px;
     border-radius: 50%;
@@ -126,7 +126,7 @@
     color: white;
     text-align: center;
   }
-  .circle-medium { // face
+  .face-shape { 
     height: 160px;
     width: 160px;
     border-radius: 50%;
@@ -135,7 +135,7 @@
     color:  #005ea5;
     text-align: center;
   }
-  .circle-small { // eye
+  .eye-shape {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -145,7 +145,7 @@
     text-align: center;
   }
 
-  .circle-half-bottom { // hands
+  .hand-shape {
     height: 40px;
     width: 80px;
     border-radius: 0 0 80px 80px;
@@ -155,7 +155,7 @@
     text-align: center;
   }
 
-  .rectangle-long {  // legs
+  .leg-shape { 
     height: 200px;
     width: 80px;
     display: inline-block;
@@ -164,7 +164,7 @@
     text-align: center;
   }
 
-  .rectangle-small {  // neck
+  .neck-shape {
     height: 30px;
     width: 80px;
     display: inline-block;
@@ -192,7 +192,7 @@
     text-align: center;
   }
 
-  .rectangle-big { // torso
+  .torso-shape { // torso
     height: 200px;
     width: 200px;
     display: inline-block;
@@ -221,32 +221,11 @@
     text-align: center;
   }
 
-  // body - injuries list panels
+  // body - injuries list panels styling
 
-  #other-injuries-panel {
-    display: none;
-  }
-  #torso-panel {
-    display: none;
-  }
-  #legs-panel {
-    display: none;
-  }
-  #arms-panel {
-    display: none;
-  }
-  #head-neck-panel {
-    display: none;
-  }
-  #eyes-panel {
-    display: none;
-  }
-  #face-panel {
-    display: none;
-  }
-  #feet-panel {
-    display: none;
-  }
-  #hands-panel {
-    display: none;
+  .body-list-panel {
+    display: none; // by default we don't want to display them, but it will be shown if associated body shape is selected (see application.js in assets)
+    position: absolute; 
+    background-color: 	#f8f8f8;
+    padding: 10px;
   }
