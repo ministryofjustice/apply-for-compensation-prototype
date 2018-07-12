@@ -13,105 +13,66 @@
           </h1>
           <!-- NOTE: the word elswhere should be a link as it is in the start page -->
           <form class="form" action="incident-reported" method="post">
-            {% from 'radios/macro.njk' import govukRadios %}
-            {% from "input/macro.njk" import govukInput %}
+            <div class="govuk-form-group">
 
-            {% set emailHtml %}
-            {{ govukInput({
-              "idPrefix": "whoPaid",
-              "name": "whoPaid",
-              "classes": "govuk-!-width-two-thirds",
-              "label": {
-                "text": "Who paid you compensation?"
-              }
-            }) }}
-            {{ govukInput({
-              "idPrefix": "howMuch",
-              "name": "howMuch",
-              "classes": "govuk-!-width-one-quarter",
-              "label": {
-                "text": "How much compensation did you get?"
-              }
-            }) }}
-            {% endset -%}
+              <fieldset class="govuk-fieldset" aria-describedby="otherCompensation-hint">
+    
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Have you applied for compensation from any other sources?
+                  </h1>
+                </legend>
+        
+                <span id="otherCompensation-hint" class="govuk-hint">
+                  Before we assess your application you must try to get compensation from elsewhere.
+                </span>
+              
+                <div class="govuk-radios govuk-radios--inline" data-module="radios">
 
-            {{ govukRadios({
-              "classes": "govuk-radios--inline",
-              "idPrefix": "otherCompensation",
-              "name": "otherCompensation",
-              "fieldset": {
-              "legend": {
-              "text": "Have you applied for compensation from any other sources?",
-              "isPageHeading": true,
-              "classes": "govuk-fieldset__legend--xl"
-              }
-              },
-              "hint": {
-                "text": "Before we assess your application you must try to get compensation from elsewhere."
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="otherCompensation-1" name="otherCompensation" type="radio" value="yes" aria-controls="conditional-otherCompensation-1" aria-expanded="true">
+                    <label class="govuk-label govuk-radios__label" for="otherCompensation-1">
+                      Yes
+                    </label>
+                  </div>
+ 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="otherCompensation-2" name="otherCompensation" type="radio" value="no" aria-controls="conditional-otherCompensation-2" aria-expanded="true">
+                    <label class="govuk-label govuk-radios__label" for="otherCompensation-2">
+                      No
+                    </label>
+                  </div>
+  
+                  <div class="govuk-radios__conditional" id="conditional-otherCompensation-1" aria-hidden="true">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label">
+                        Who paid you compensation?
+                      </label>
+                      <input class="govuk-input govuk-!-width-two-thirds" id="" name="whoPaid" type="text">
+                    </div>
 
-              },
-              "items": [
-                {
-                  "value": "yes",
-                  "text": "Yes",
-                  "conditional": {
-                    "html": emailHtml
-                  }
-                },
-                {
-                  "value": "no",
-                  "text": "No"
-                }
-              ]
-            }) }}
+                    <div class="govuk-form-group">
+                      <label class="govuk-label">
+                        How much compensation did you get?
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-quarter" id="" name="howMuch" type="number">
+                    </div>
+                  </div> 
 
+                  <div class="govuk-radios__conditional" id="conditional-otherCompensation-2" aria-hidden="true">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label">
+                        Why did you not apply for compensation from another source?
+                      </label>
+                      <!--input class="govuk-input govuk-!-width-two-thirds" id="" name="whynot" type="text"-->
+                      <textarea class="govuk-textarea " id="whynot" name="whynot" rows="3" aria-describedby="whynot-hint"></textarea>
+                    </div>
+                  </div> 
 
-<!-- ////////////////////////////////////////////////////////// -->
-
-            <!-- {% from 'radios/macro.njk' import govukRadios %}
-            {% from "input/macro.njk" import govukInput %}
-
-            {% set emailHtml %}
-            {{ govukInput({
-              "id": "contact-by-email",
-              "name": "contact-by-email",
-              "classes": "govuk-!-width-one-third",
-              "label": {
-                "text": "Email address"
-              }
-            }) }}
-            {% endset -%}
-
-            {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "otherCompensation",
-            "name": "otherCompensation",
-            "fieldset": {
-            "legend": {
-            "text": 'Have you applied for any other compensation?',
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
-            }
-            },
-            "items": [
-            {
-            "value": "yes",
-            "text": "Yes",
-            "conditional": {
-              "html": "emailHTML"
-            }
-            },
-            {
-            "value": "no",
-            "text": "No"
-            }
-            ]
-            }) }} -->
-
-            {% from "button/macro.njk" import govukButton %}
-            {{ govukButton({
-            "text": "Continue"
-            }) }}
+              </div>
+              </fieldset>
+              <input class="govuk-button" type="submit" value="Continue">
+            </div>
           </form>
         </div>
       </div>
