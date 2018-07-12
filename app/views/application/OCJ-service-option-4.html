@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Service option
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <a href="#" class="govuk-back-link">Back</a>
+  
+    <div class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                    Victims of sexual assault: service options
+                </h1>
+            </legend>
+            <p>We want to make your application for compensation as easy as possible.  We pay compensation for crimes of sexual violence in recognition of the distress and mental trauma you've suffered. We can use fixed payments based on the nature of the assault to settle your application quickly and with minimal intrusion.</p>
+            <p>If you choose this service we'll:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>check your eligibility </li>
+                <li>ask the police to send us the crime report</li>
+                <li>not need to obtain and examine your medical records</li>
+                <li>make a decision on your application within 8 weeks, provided there are no police investigations that prevent the report being released</li>
+            </ul>
+            <p>If we can’t make a decision within 8 weeks we'll contact you to tell you why.</p>
+            <p>This service isn’t appropriate for you if:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>you have additional physical injuries</li>
+                <li>you have suffered a disabling mental injury</li>
+                <li>you want to claim for loss of earnings or special expenses</li>
+            </ul>
+
+            <p>These types of applications are more complex and take longer to decide as we need to examine your medical records or get a diagnosis from a psychiatrist or clinical psychologist</p>
+    
+            <form action="/form-handler" method="post">
+    
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="service-option">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h2 class="govuk-fieldset__heading">
+                                Tell us how you want to proceed
+                            </h2>
+                        </legend>
+
+                        <div class="govuk-radios govuk-radios--inline">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="police-only" name="service-option" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="police-only">
+                                    I want CICA to make my decision using only the police evidence
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="medical-evidence" name="service-option" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="medical-evidence">
+                                    I have suffered physical or disabling mental injuries. I want CICA to consider medical evidence before you make a decision
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <input class="govuk-button" type="submit" value="Continue">
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
