@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Question page
+  Your name
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
@@ -10,29 +10,30 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" action="date-of-birth" method="post">
 
-            <!-- <h1 class="govuk-heading-l">
-            What is your full name?
-            </h1> -->
+            <form action="/form-handler" method="post">
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--xl" for="name">
+                      What is your full name?
+                  </label>
+                </h1>
+                <input class="govuk-input govuk-input--width-20" id="name" name="names" type="text">
+              </div>
 
-            {% from "input/macro.njk" import govukInput %}
-
-            {{ govukInput({
-            "label": {
-            "text": "What is your full name?",
-            "isPageHeading": true,
-            "classes": 'govuk-label--xl'
-            },
-            "classes": 'govuk-input--width-20',
-            "id": "fullName",
-            "name": "fullName"
-            }) }}
-
-            {% from "button/macro.njk" import govukButton %}
-
-            {{ govukButton({
-            "text": "Continue"
-            }) }}
-
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                      have you ever been known by any other names?
+                  </span>
+                </summary>
+                <div class="govuk-form-group govuk-details__text">
+                      <label class="govuk-label" for="other-names">
+                          Provide any other names you've used previously (optional)
+                      </label>
+                    <input class="govuk-input govuk-input--width-20" id="other-names" name="other-names" type="text">
+                  </div>
+              </details>
+              <input class="govuk-button" type="submit" value="Continue">
           </form>
         </div>
       </div>
