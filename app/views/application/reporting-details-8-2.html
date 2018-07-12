@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reporting details
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <a href="#" class="govuk-back-link">Back</a>
+  
+    <div class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                    Reporting details
+                </h1>
+            </legend>
+           
+            <p>This information will help us get the correct report from the police.</p>
+        
+            <form action="/form-handler" method="post">
+    
+                <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="who-reported">
+                            <h2 class="govuk-heading-l">
+                                Who reported the incident to the police? (optional)
+                            </h2>
+                        </label>
+                            <input class="govuk-input" id="who-reported" name="who-reported" type="text" aria-describedby="who-reported-hint">
+                    </div>
+                </div>
+
+                <input class="govuk-button" type="submit" value="Continue">
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
