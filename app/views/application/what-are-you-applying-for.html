@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Representation
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form"  method="post">
+
+            {% from "radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              idPrefix: "what-type-of-application-would-you-like-to-make?",
+              name: "what-type-of-application-would-you-like-to-make?",
+              fieldset: {
+                legend: {
+                  text: "What would you like to apply for?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              hint: {
+                text: "We can asses your application for one of the following things:"
+              },
+              items: [
+                {
+                  value: "sexual-assult",
+                  text: "I was sexualy assulted"
+                },
+                {
+                  value: "period-of-sexual-abuse",
+                  text: "I was subject to a number of sexual assults over a period of time"
+                },
+                {
+                  value: "physical-injury",
+                  text: "I was physically injured as a result of an attack"
+                },
+                {
+                  value: "physical-injury",
+                  text: "I have mantal injuries"
+                },
+                {
+                  value: "fatal",
+                  text: "A close relative died"
+                }
+              ]
+            }) }}
+            {% from "button/macro.njk" import govukButton %}
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+          </form>
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">We need to look at the way the options are presented on this page would 'rape' be a better phrase than 'sexual assult' user research needed - GW</p>
+        <p class="design-notes">Not sure if we should be using hint text as a lead in here maybe they text should be black not grey, need to check the pattern. - GW</p>
+      </div>
+    </main>
+  </div>
+{% endblock %}
