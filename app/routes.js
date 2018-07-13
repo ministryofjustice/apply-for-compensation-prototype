@@ -158,8 +158,8 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 
 router.post('/application/what-are-you-applying-for', function (req, res) {
   // Get the answer from the query string 
-  var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?']
-  if ((applicationType === 'sexual-assault')|| (applicationType === 'period-of-sexual-abuse')) {
+  var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
+  if (applicationType.includes('sexual-assault') || applicationType.includes('period-of-sexual-abuse')) {
     // Redirect to the relevant page
     res.redirect('/application/OCJ-service-option-4')
   } else {
