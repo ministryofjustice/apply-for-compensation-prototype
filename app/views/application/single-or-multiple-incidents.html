@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Single or multiple incidents
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" action="incident-date" method="post">
+              {% from "radios/macro.njk" import govukRadios %}
+
+              {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "single-or-multiple-incidents",
+                name: "single-or-multiple-incidents",
+                fieldset: {
+                  legend: {
+                    text: "Are you making an application for a single incident or multiple incidents?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                  }
+                },
+                items: [
+                  {
+                    value: "single-incident",
+                    text: "A single incident"
+                  },
+                  {
+                    value: "multiple-incidents",
+                    text: "Multiple incidents"
+                  }
+                ]
+              }) }}
+              {% from "button/macro.njk" import govukButton %}
+              {{ govukButton({
+              "text": "Continue"
+              }) }}
+  
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

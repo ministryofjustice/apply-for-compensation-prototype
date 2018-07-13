@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Question page
+  Compensation from other sources
 {% endblock %}
 {% block content %}
-  <div class="govuk-width-container">
+<div class="govuk-width-container">
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
@@ -11,8 +11,8 @@
           <h1 class="govuk-heading-xl govuk-visually-hidden">
           Have you applied for any other compensation?
           </h1>
-          <!-- NOTE: the word elswhere should be a link as it is in the start page -->
-          <form class="form" action="incident-reported" method="post">
+          <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
+          <form class="form" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
 
@@ -64,49 +64,6 @@
                 }
               ]
             }) }}
-
-
-<!-- ////////////////////////////////////////////////////////// -->
-
-            <!-- {% from 'radios/macro.njk' import govukRadios %}
-            {% from "input/macro.njk" import govukInput %}
-
-            {% set emailHtml %}
-            {{ govukInput({
-              "id": "contact-by-email",
-              "name": "contact-by-email",
-              "classes": "govuk-!-width-one-third",
-              "label": {
-                "text": "Email address"
-              }
-            }) }}
-            {% endset -%}
-
-            {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "otherCompensation",
-            "name": "otherCompensation",
-            "fieldset": {
-            "legend": {
-            "text": 'Have you applied for any other compensation?',
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
-            }
-            },
-            "items": [
-            {
-            "value": "yes",
-            "text": "Yes",
-            "conditional": {
-              "html": "emailHTML"
-            }
-            },
-            {
-            "value": "no",
-            "text": "No"
-            }
-            ]
-            }) }} -->
 
             {% from "button/macro.njk" import govukButton %}
             {{ govukButton({

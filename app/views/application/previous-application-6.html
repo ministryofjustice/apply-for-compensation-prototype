@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Previous applications
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <a href="#" class="govuk-back-link">Back</a>
+  
+    <div class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+        
+            <form action="/form-handler" method="post">
+    
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="previous-applications">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                Have you applied to us for compensation for this crime before?
+                            </h1>
+                        </legend>
+                        <p>We can only pay compensation for the same incident once.</p>
+                        <div class="govuk-radios govuk-radios--inline">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="previous-applications-1" name="previous-applications" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="previous-applications-1">
+                                    Yes
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="previous-applications-2" name="previous-applications" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="previous-applications-2">
+                                    No
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <input class="govuk-button" type="submit" value="Continue">
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

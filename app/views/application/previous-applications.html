@@ -5,19 +5,21 @@
 {% block content %}
   <div class="govuk-width-container">
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">UPDATED</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form"  method="post">
 
-            {% from 'radios/macro.njk' import govukRadios %}
+            {% from "radios/macro.njk" import govukRadios %}
+
             {{ govukRadios({
             "classes": "govuk-radios--inline",
             "idPrefix": "rep",
             "name": "rep",
             "fieldset": {
             "legend": {
-            "text": 'Are you applying on behalf of someone else?',
+            "text": 'Is this the first time you have applied for compensation for this incident?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }

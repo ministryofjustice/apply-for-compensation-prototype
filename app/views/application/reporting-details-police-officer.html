@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reporting details
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <a href="#" class="govuk-back-link">Back</a>
+    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+  
+    <div class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="/form-handler" action="crime-reference" method="post">
+                {% from "input/macro.njk" import govukInput %}
+
+                {{ govukInput({
+                "label": {
+                "text": "What's the police officer's name?",
+                "isPageHeading": true,
+                "classes": 'govuk-label--l'
+                },
+                "hint": {
+                    "text": "If you don't have this information, contact the police and they will give it to you."
+                  },
+                "classes": 'govuk-input--width-20',
+                "id": "police-officer-name",
+                "name": "police-officer-name"
+                }) }}
+    
+
+                {% from "input/macro.njk" import govukInput %}
+
+                {{ govukInput({
+                "label": {
+                "text": "What's the police officer's ID number?",
+                "isPageHeading": true,
+                "classes": 'govuk-label--l'
+                },
+                "hint": {
+                    "text": "If you don't have this information, contact the police and they will give it to you."
+                  },
+                "classes": 'govuk-input--width-20',
+                "id": "police-officer-name",
+                "name": "police-officer-name"
+                }) }}
+
+
+                {% from "button/macro.njk" import govukButton %}
+    
+                {{ govukButton({
+                "text": "Continue"
+                }) }}
+    
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+

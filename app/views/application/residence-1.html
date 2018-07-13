@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Are you ordinarily resident in the UK?
+                </h1>
+              </legend>
+            <div class="govuk-radios govuk-radios--inline">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ordinarily-resident-1" name="ordinarily-resident" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="ordinarily-resident-1">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ordinarily-resident-2" name="ordinarily-resident" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ordinarily-resident-2">
+                  No
+                </label>
+              </div>
+
+            </div>
+            </fieldset>
+    
+            </div>
+          <input class="govuk-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
