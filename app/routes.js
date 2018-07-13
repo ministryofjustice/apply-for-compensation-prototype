@@ -49,13 +49,13 @@ router.post('/application/declaration', function (req, res) {
   // Get the answer from the query string
   var declaration = req.session.data['declaration']
 
-  if (declaration === 'no') {
+ // if (declaration === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
+    //res.redirect('/application/prototype')
+  //} else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/compensation')
-  }
+  //}
 })
 
 // END__######################################################################################################
@@ -128,6 +128,25 @@ router.post('/application/residence-1', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: compensation
+// Variable: otherCompensation
+
+router.post('/application/compensation', function (req, res) {
+  // Get the answer from the query string 
+  var otherCompensation = req.session.data['otherCompensation']
+
+  if (otherCompensation === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/whynot')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/british-citizen')
+  }
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
 // File: criminal-convictions
 // Variable: criminalConvictions
 
@@ -137,14 +156,31 @@ router.post('/application/name', function (req, res) {
 
   if (criminalConvictions === 'yes') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('/application/tell-criminal-convictions')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/name')
+    res.redirect('/application/selection')
   }
 })
 
 // END__######################################################################################################
+
+// START__####################################################################################################
+// File: tell-criminal-convictions 
+// this view is called if user says yes to convicted of a criminal offence
+
+router.get('/tell-criminal-convictions', function (req, res) {
+	return res.render('tell-criminal-convictions');
+})
+
+router.post('/application/tell-criminal-convictions', function (req, res) {
+    res.redirect('/application/selection')
+  }
+)
+
+
+// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: incident-reported
