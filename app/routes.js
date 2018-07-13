@@ -135,7 +135,7 @@ router.post('/application/name', function (req, res) {
     res.redirect('/application/tell-criminal-convictions')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/what-are-you-applying-for  ')
+    res.redirect('/application/what-are-you-applying-for')
   }
 })
 
@@ -146,7 +146,7 @@ router.post('/application/name', function (req, res) {
 // this view is called if user says yes to convicted of a criminal offence
 
 router.post('/application/tell-criminal-convictions', function (req, res) {
-    res.redirect('/application/what-are-you-applying-for  ')
+    res.redirect('/application/what-are-you-applying-for')
   }
 )
 
@@ -154,12 +154,19 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 
 // START__####################################################################################################
 // File: what-are-you-applying-for  
-// variable: 
+// variable: what-type-of-application-would-you-like-to-make?
 
-router.post('/application/what-are-you-applying-for  ', function (req, res) {
-  res.redirect('/application/OCJ-service-option-4')
-}
-)
+router.post('/application/what-are-you-applying-for', function (req, res) {
+  // Get the answer from the query string 
+  var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?']
+  if ((applicationType === 'sexual-assault')|| (applicationType === 'period-of-sexual-abuse')) {
+    // Redirect to the relevant page
+    res.redirect('/application/OCJ-service-option-4')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/prototype')
+  }
+})
 
 // END__######################################################################################################
 
