@@ -193,18 +193,18 @@ router.post('/application/OCJ-service-option-4', function (req, res) {
 // File: incident-reported
 // Variable: incidentReported
 
-router.post('/application/incident-location', function (req, res) {
-  // Get the answer from the query string 
-  var incidentReported = req.session.data['incidentReported']
+// router.post('/application/incident-location', function (req, res) {
+//   // Get the answer from the query string 
+//   var incidentReported = req.session.data['incidentReported']
 
-  if (incidentReported === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.render('application/incident-location')
-  }
-})
+//   if (incidentReported === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.render('application/incident-location')
+//   }
+// })
 
 // END__######################################################################################################
 
@@ -212,18 +212,18 @@ router.post('/application/incident-location', function (req, res) {
 // File: incident-location
 // Variable: incidentLocation
 
-router.post('/application/crime-reference', function (req, res) {
-  // Get the answer from the query string 
-  var incidentLocation = req.session.data['incidentLocation']
+// router.post('/application/crime-reference', function (req, res) {
+//   // Get the answer from the query string 
+//   var incidentLocation = req.session.data['incidentLocation']
 
-  if (incidentLocation === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.render('application/crime-reference')
-  }
-})
+//   if (incidentLocation === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.render('application/crime-reference')
+//   }
+// })
 
 // END__######################################################################################################
 
