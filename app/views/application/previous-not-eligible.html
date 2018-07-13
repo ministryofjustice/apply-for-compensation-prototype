@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Representation
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">You can only make a single application for each incident</h1>
+
+          <p class="govuk-body-l">If you would like to track the progress of your application you can do that using our <a href="#">application tracker</a>.</p>
+
+          <p class="govuk-body">To track the progress of your application you will need to provide:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your application reference number</li>
+            <li>the email address you used when you applied</li>
+          </ul>
+
+          <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I don't know my application reference number
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <p class="govuk-body">When you submitted your application you would have been given a reference number at the end of the application. We would have also emailed that reference number to you.</p>
+            <p class="govuk-body">If you have lost the reference number you can phone us on 0141 234 5678 lines are open 9-5 Monday to Friday.</p>
+            <p class="govuk-body-s">Info about call charges</p>
+            <p class="govuk-body-s">calls are charged at 50p per min etc etc etc...</p>
+
+          </div>
+        </details>
+
+
+
+            
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}
