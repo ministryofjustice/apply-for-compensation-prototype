@@ -17,10 +17,7 @@ router.get('/stepped-guide', function (req, res) {
 	return res.render('stepped-guide', { step: step});
 })
 
-
 // END__######################################################################################################
-
-
 
 // START__####################################################################################################
 // File: who-is-making-the-application
@@ -64,11 +61,6 @@ router.post('/application/declaration', function (req, res) {
 // File: compensation
 // variable: otherCompensation   but also others - not used at the moment
 
-router.get('/compensation', function (req, res) {
-	return res.render('compensation');
-})
-
-
 router.post('/application/compensation', function (req, res) {
   // Get the answer from the query string 
   var britishCitizen = req.session.data['otherCompensation ']
@@ -76,16 +68,6 @@ router.post('/application/compensation', function (req, res) {
     res.redirect('/application/british-citizen')
   }
 )
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: british-citizen 
-// this view is called in all cases from the compensation view if you click submit
-
-router.get('/british-citizen', function (req, res) {
-	return res.render('british-citizen');
-})
 
 // END__######################################################################################################
 
@@ -169,18 +151,42 @@ router.post('/application/name', function (req, res) {
 // File: tell-criminal-convictions 
 // this view is called if user says yes to convicted of a criminal offence
 
-router.get('/tell-criminal-convictions', function (req, res) {
-	return res.render('tell-criminal-convictions');
-})
-
 router.post('/application/tell-criminal-convictions', function (req, res) {
     res.redirect('/application/selection')
   }
 )
 
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: selection  
+// variable: 
+
+router.post('/application/selection', function (req, res) {
+  res.redirect('/application/selection')
+}
+)
 
 // END__######################################################################################################
 
+// START__####################################################################################################
+// File: OCJ-service-option-4  
+// variable: service-option
+
+router.post('/application/OCJ-service-option-4', function (req, res) {
+  // Get the answer from the query string 
+  var serviceOption = req.session.data['service-option']
+
+  if (serviceOption === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/name')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/prototype')
+  }
+})
+
+// END__######################################################################################################
 
 // START__####################################################################################################
 // File: incident-reported
@@ -224,18 +230,18 @@ router.post('/application/crime-reference', function (req, res) {
 // File: return-to-work
 // Variable: returnToWork
 
-router.post('/application/date-returned-to-work', function (req, res) {
-  // Get the answer from the query string 
-  var returnToWork = req.session.data['returnToWork']
+// router.post('/application/date-returned-to-work', function (req, res) {
+//   // Get the answer from the query string 
+//   var returnToWork = req.session.data['returnToWork']
 
-  if (returnToWork === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/date-returned-to-work')
-  }
-})
+//   if (returnToWork === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/date-returned-to-work')
+//   }
+// })
 
 
 // END__######################################################################################################
@@ -244,18 +250,18 @@ router.post('/application/date-returned-to-work', function (req, res) {
 // File: equiptment-or-services
 // Variable: equiptmentOrServices
 
-router.post('/application/what-equiptment-or-services', function (req, res) {
-  // Get the answer from the query string 
-  var equiptmentOrServices = req.session.data['equiptmentOrServices']
+// router.post('/application/what-equiptment-or-services', function (req, res) {
+//   // Get the answer from the query string 
+//   var equiptmentOrServices = req.session.data['equiptmentOrServices']
 
-  if (equiptmentOrServices === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/what-equiptment-or-services')
-  }
-})
+//   if (equiptmentOrServices === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/what-equiptment-or-services')
+//   }
+// })
 
 // END__######################################################################################################
 
@@ -263,18 +269,18 @@ router.post('/application/what-equiptment-or-services', function (req, res) {
 // File: medical-treatment
 // Variable: medicalTreatment
 
-router.post('/application/treatment-ongoing', function (req, res) {
-  // Get the answer from the query string 
-  var medicalTreatment = req.session.data['medicalTreatment']
+// router.post('/application/treatment-ongoing', function (req, res) {
+//   // Get the answer from the query string 
+//   var medicalTreatment = req.session.data['medicalTreatment']
 
-  if (medicalTreatment === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.render('application/treatment-ongoing')
-  }
-})
+//   if (medicalTreatment === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.render('application/treatment-ongoing')
+//   }
+// })
 
 // END__######################################################################################################
 
@@ -282,18 +288,18 @@ router.post('/application/treatment-ongoing', function (req, res) {
 // File: treatment-ongoing
 // Variable: treatmentOngoing
 
-router.post('/application/unable-to-work', function (req, res) {
-  // Get the answer from the query string 
-  var treatmentOngoing = req.session.data['treatmentOngoing']
+// router.post('/application/unable-to-work', function (req, res) {
+//   // Get the answer from the query string 
+//   var treatmentOngoing = req.session.data['treatmentOngoing']
 
-  if (treatmentOngoing === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/unable-to-work')
-  }
-})
+//   if (treatmentOngoing === 'yes') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/unable-to-work')
+//   }
+// })
 
 // END__######################################################################################################
 
@@ -339,18 +345,18 @@ router.post('/application/unable-to-work', function (req, res) {
 // File: unable-to-work
 // Variable: obtainMedical
 
-router.post('/application/check-your-answers-page', function (req, res) {
-  // Get the answer from the query string 
-  var unableToWork = req.session.data['unableToWork']
+// router.post('/application/check-your-answers-page', function (req, res) {
+//   // Get the answer from the query string 
+//   var unableToWork = req.session.data['unableToWork']
 
-  if (unableToWork === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/check-your-answers-page')
-  }
-})
+//   if (unableToWork === 'yes') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/check-your-answers-page')
+//   }
+// })
 
 // END__######################################################################################################
 
