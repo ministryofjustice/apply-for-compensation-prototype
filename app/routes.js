@@ -59,16 +59,30 @@ router.post('/application/declaration', function (req, res) {
 
 // START__####################################################################################################
 // File: compensation
-// variable: otherCompensation   but also others - not used at the moment
+// Variable: otherCompensation
 
 router.post('/application/compensation', function (req, res) {
   // Get the answer from the query string 
-  var britishCitizen = req.session.data['otherCompensation ']
-    // goes to british-citizen in all cases for now
+  var otherCompensation = req.session.data['otherCompensation']
+
+  if (otherCompensation === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/did-not-apply-for-compensation')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/british-citizen')
   }
-)
+})
+// END__######################################################################################################
 
+// START__####################################################################################################
+// File: did-not-apply-for-compensation
+// 
+
+router.post('/application/did-not-apply-for-compensation', function (req, res) {
+    res.redirect('/application/british-citizen')
+
+})
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -104,25 +118,6 @@ router.post('/application/residence-1', function (req, res) {
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/criminal-convictions')
-  }
-})
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: compensation
-// Variable: otherCompensation
-
-router.post('/application/compensation', function (req, res) {
-  // Get the answer from the query string 
-  var otherCompensation = req.session.data['otherCompensation']
-
-  if (otherCompensation === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/whynot')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/british-citizen')
   }
 })
 
