@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div><strong class="govuk-tag warning-tag">DRAFT - EXAMPLE OF AN IMEDIATE DECISION</strong></div>
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
+          <h2 class="govuk-panel__title">
+            Application submitted
+          </h2>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>CICA2123GW</strong>
+          </div>
+        </div>
+
+        <p>Under the rules of the scheme you must make an application for compensation within two years of reporting the incident to the police. Because you did not apply the incident within two years because “ you did not know about CICA” we can not pay you compensation</p>
+        <p>We have made a record of your application.</p>
+        <p>You can apply to have your application reviewed if you would like.</p>
+       
+        {% from "radios/macro.njk" import govukRadios %}
+        {% from "input/macro.njk" import govukInput %}
+
+        {% set reviewReason %}
+
+        {{ govukTextarea({
+          "id": "why-review",
+          "name": "why-review",
+          label: {
+            text: "Why would you like a review?",
+            "isPageHeading": true,
+            "classes": 'govuk-label--m'
+          }
+        }) }}
+
+        {% endset -%}
+
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "apply-for-review",
+          name: "apply-for-review",
+          fieldset: {
+            legend: {
+              text: "Would you like CICA to review this decision?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              "conditional": {
+                "html": reviewReason
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+   
+
+        {% from "button/macro.njk" import govukButton %}
+        {{ govukButton({
+        "text": "Continue"
+        }) }}
+
+      </div>
+    </div>
+   
+  </main>
+
+</div>
+
+{% endblock %}
