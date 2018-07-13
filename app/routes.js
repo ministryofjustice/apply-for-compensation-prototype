@@ -78,7 +78,6 @@ router.post('/application/compensation', function (req, res) {
 // START__####################################################################################################
 // File: did-not-apply-for-compensation
 // 
-
 router.post('/application/did-not-apply-for-compensation', function (req, res) {
     res.redirect('/application/british-citizen')
 
@@ -136,7 +135,7 @@ router.post('/application/name', function (req, res) {
     res.redirect('/application/tell-criminal-convictions')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/selection')
+    res.redirect('/application/what-are-you-applying-for  ')
   }
 })
 
@@ -147,18 +146,18 @@ router.post('/application/name', function (req, res) {
 // this view is called if user says yes to convicted of a criminal offence
 
 router.post('/application/tell-criminal-convictions', function (req, res) {
-    res.redirect('/application/selection')
+    res.redirect('/application/what-are-you-applying-for  ')
   }
 )
 
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: selection  
+// File: what-are-you-applying-for  
 // variable: 
 
-router.post('/application/selection', function (req, res) {
-  res.redirect('/application/selection')
+router.post('/application/what-are-you-applying-for  ', function (req, res) {
+  res.redirect('/application/OCJ-service-option-4')
 }
 )
 
