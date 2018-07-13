@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirmation of review
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div><strong class="govuk-tag warning-tag">NEW AND JUST a DRAFT</strong></div>
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
+          <h2 class="govuk-panel__title">
+              Your request for a review has been submitted
+          </h2>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>CICA2123GW</strong>
+          </div>
+        </div>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>We will review your application. Once your application has been reviewed we will email you a link to view your decision to name@domain.com</p>
+    
+        <p><a href="#">What did you think of this service?</a> (takes 30 seconds)</p>
+
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

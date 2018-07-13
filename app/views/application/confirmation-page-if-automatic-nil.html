@@ -24,7 +24,8 @@
         <p>Under the rules of the scheme you must make an application for compensation within two years of reporting the incident to the police. Because you did not apply the incident within two years because “ you did not know about CICA” we can not pay you compensation</p>
         <p>We have made a record of your application.</p>
         <p>You can apply to have your application reviewed if you would like.</p>
-       
+
+        <form class="form" method="post">
         {% from "radios/macro.njk" import govukRadios %}
         {% from "input/macro.njk" import govukInput %}
 
@@ -74,7 +75,7 @@
         {{ govukButton({
         "text": "Continue"
         }) }}
-
+        </form>
       </div>
     </div>
    
