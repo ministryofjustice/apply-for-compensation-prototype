@@ -11,17 +11,20 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
-            
+
           {% from "textarea/macro.njk" import govukTextarea %}
 
           {{ govukTextarea({
             "id": "convictions",
             "name": "convictions",
             label: {
-              text: "Tell us about your criminal convictions?",
+              text: "Tell us about your unspent convictions?",
               "isPageHeading": true,
               "classes": 'govuk-label--xl'
-            }
+            },
+          hint: {
+            text: "Include the date and location of the conviction and the length of the sentence you received."
+          }
           }) }}
 
           {% from "button/macro.njk" import govukButton %}
@@ -34,5 +37,10 @@
         </div>
       </div>
     </main>
+    <div class="design-notes-box">
+      <h3 class="design-notes">Design notes</h3>
+      <p class="design-notes">Added a short piece of guidance - JK</p>
+    </div>
   </div>
+
 {% endblock %}

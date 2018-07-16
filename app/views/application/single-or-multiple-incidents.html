@@ -18,19 +18,19 @@
                 name: "single-or-multiple-incidents",
                 fieldset: {
                   legend: {
-                    text: "Are you making an application for a single incident or multiple incidents?",
+                    text: "How many times did the crime happen?",
                     isPageHeading: true,
-                    classes: "govuk-fieldset__legend--l"
+                    classes: "govuk-fieldset__legend--xl"
                   }
                 },
                 items: [
                   {
                     value: "single-incident",
-                    text: "A single incident"
+                    text: "It happened once"
                   },
                   {
                     value: "multiple-incidents",
-                    text: "Multiple incidents"
+                    text: "It happened more than once"
                   }
                 ]
               }) }}
@@ -38,9 +38,13 @@
               {{ govukButton({
               "text": "Continue"
               }) }}
-  
+
           </form>
         </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">changed content, returns v good readability scores - JK</p>
       </div>
     </main>
   </div>
