@@ -35,9 +35,7 @@
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
-            hint: {
-            text: 'Convictions are unspent until a period of time known as a rehabilitation period expires.  The rehabilitation period depends on the length of the sentence received'
-            },
+
             "items": [
               {
                 "value": "yes",
@@ -49,7 +47,19 @@
               }
             ]
           }) }}
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                  How do I know if my conviction is unspent?
+              </span>
+            </summary>
+            <div class="govuk-form-group govuk-details__text">
+                  <label class="govuk-label" for="other-names">
+                      Convictions are unspent until a period of time, known as a rehabilitation period, expires.  The length of the rehabilitation period depends on the length of the sentence you received.
+                  </label>
 
+              </div>
+          </details>
           <input class="govuk-button" type="submit" value="Continue">
 
         </form>
@@ -60,6 +70,8 @@
       <h3 class="design-notes">Design notes</h3>
       <p class="design-notes">Changed this back and added guidance re unspent.  We couldnt ask the applicant if they have any previous convictions as Rehab of Offenders act doesnt allow us to do so.  Users with spent convictions have no obligation to declare convictions - JK</p>
       <p class="design-notes">providing a comprehensive table/list of rehab periods for different sentences/jurisdictions is difficult.  A calculator would be a good tool to consider future iterations.</p>
+      <p class="design-notes">moved hint text to a hidden toggle text 17/7/18 - JK</p>
+    </div>
     </div>
     </div>
   </main>
