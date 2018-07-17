@@ -11,9 +11,9 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form-handler"  method="post">
 
-              {% from "checkboxes/macro.njk" import govukCheckboxes %}
+              {% from "radios/macro.njk" import govukRadios %}
 
-              {{ govukCheckboxes({
+              {{ govukRadios({
                 idPrefix: "what-type-of-application-would-you-like-to-make?",
                 name: "what-type-of-application-would-you-like-to-make?",
                 fieldset: {
@@ -29,23 +29,15 @@
                 items: [
                 {
                   value: "sexual-assault",
-                  text: "I was sexually assaulted"
+                  text: "A sexual assault"
                 },
                 {
                   value: "period-of-sexual-abuse",
-                  text: "I was subject to a number of sexual assaults over a period of time"
+                  text: "More than one sexual assault over a period of time"
                 },
                 {
                   value: "physical-injury",
-                  text: "I was physically injured as a result of an attack"
-                },
-                {
-                  value: "mental-injury",
-                  text: "I have mental injuries"
-                },
-                {
-                  value: "fatal",
-                  text: "A close relative died"
+                  text: "None of the above"
                 }
                 ]
               }) }}
@@ -67,6 +59,7 @@
       <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
         <p class="design-notes">I think this screen would be better positioned at the start of the journey rather than half way through. It feels to me that these could be service options rather than options in the MVP.  At this point in the MVP we should already have established with the user that they are only claiming for sexual assault  - JK</p>
+          <p class="design-notes">5 checkboxes changed to 3 radio button.</p>
       </div>
     </main>
   </div>
