@@ -30,10 +30,13 @@
             "name": "criminalConvictions",
             "fieldset": {
               "legend": {
-                "text": 'Do you have any unspent criminal convictions?',
+                "text": 'Do you have any criminal convictions?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
+            },
+            hint: {
+              text: "You do not need to declare convictions that are spent"
             },
 
             "items": [
@@ -47,7 +50,7 @@
               }
             ]
           }) }}
-          <details class="govuk-details">
+          <!--details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
                   How do I know if my conviction is unspent?
@@ -58,7 +61,7 @@
                       Convictions are unspent until a period of time, known as a rehabilitation period, expires.  The length of the rehabilitation period depends on the length of the sentence you received.
                   </label>
 
-              </div>
+              </div-->
           </details>
           <input class="govuk-button" type="submit" value="Continue">
 
@@ -72,7 +75,8 @@
       <p class="design-notes">providing a comprehensive table/list of rehab periods for different sentences/jurisdictions is difficult.  A calculator would be a good tool to consider future iterations.</p>
       <p class="design-notes">moved hint text to a hidden toggle text 17/7/18 - JK</p>
       <p class="design-notes">data shows only 44 cases were rejected under para 27 in 2017/18 (approx 0.1% of decisions).  What value is added to business by asking users what is a difficult concept to understand and explain?</p>
-    </div>
+      <p class="design-notes">18/7/18 changed this to ask if user has convictions, and provided hint text to let those user with spent convictions they arent obliged to tell us</p>
+</div>
     </div>
     </div>
   </main>
