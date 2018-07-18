@@ -183,9 +183,18 @@ router.post('/application/criminal-convictions', function (req, res) {
 // this view is called if user says yes to convicted of a criminal offence
 
 router.post('/application/tell-criminal-convictions', function (req, res) {
-    res.redirect('/application/name')
-  }
-)
+  res.redirect('/application/name')
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: incident-location
+// 
+
+router.post('/application/incident-location', function (req, res) {
+  res.redirect('/application/incident-reported')
+})
 
 // END__######################################################################################################
 
@@ -199,10 +208,10 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 
    if (incidentReported === 'no') {
      // Redirect to the relevant page
-     res.redirect('/application/know-the-person')
+     res.redirect('/application/do-you-know-offender')
    } else {
      // If the variable is any other value (or is missing) render the page requested
-     res.redirect('/application/incident-location')
+     res.redirect('/application/reporting-details-what-force')
    }
  })
 
