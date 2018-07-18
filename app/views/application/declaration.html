@@ -12,50 +12,50 @@
           Declaration
           </h1>
           <p class="govuk-body">CICA must process applications applying the rules of the Criminal Injuries Compensation Scheme. I understand this requires CICA to share and obtain information about me from:</p>
-  <ul>
-<li class="govuk-body">the police, prosecuting authorities, fraud prevention agencies and ACRO Criminal Records Office (including to carry out convictions checks on me and, in fatal injury applications, the deceased)</li>
-<li class="govuk-body">medical authorities and practitioners (including police doctors and surgeons)</li>
-<li class="govuk-body">the representative (if any) named by me</li>
-<li class="govuk-body">any other third party where necessary to process my application (including to obtain an expert medical or other expert report)</li>
-</ul>
+          <ul>
+            <li class="govuk-body">the police, prosecuting authorities, fraud prevention agencies and ACRO Criminal Records Office (including to carry out convictions checks on me and, in fatal injury applications, the deceased)</li>
+            <li class="govuk-body">medical authorities and practitioners (including police doctors and surgeons)</li>
+            <li class="govuk-body">the representative (if any) named by me</li>
+            <li class="govuk-body">any other third party where necessary to process my application (including to obtain an expert medical or other expert report)</li>
+          </ul>
 
-<p>You can find out more about how we handle your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a></p>
-<ul>
-<li class="govuk-body">I confirm that the information I will give CICA is true and complete</li>
-<li class="govuk-body">I accept that online communications constitute ‘in writing’ for the purposes of the Scheme</li>
-<li class="govuk-body">I agree to notify CICA of any change in my circumstances</li>
-<li class="govuk-body">I understand that if I knowingly give information that is misleading or incorrect, CICA may withhold or reduce any award and I may be liable to prosecution or other action</li>
-</ul>
-</p>
-  <!-- **NOTE**
-  I don't like the way we are linking out to adtitional content here. Do we actually think that people will read this?
-  It would be much better if we could add a condensed version of the privacy notice. -->
+          <p>You can find out more about how we handle your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a></p>
+          <ul>
+            <li class="govuk-body">I confirm that the information I will give CICA is true and complete</li>
+            <li class="govuk-body">I accept that online communications constitute ‘in writing’ for the purposes of the Scheme</li>
+            <li class="govuk-body">I agree to notify CICA of any change in my circumstances</li>
+            <li class="govuk-body">I understand that if I knowingly give information that is misleading or incorrect, CICA may withhold or reduce any award and I may be liable to prosecution or other action</li>
+          </ul>
+          </p>
+          <!-- **NOTE**
+          I don't like the way we are linking out to aditional content here. Do we actually think that people will read this?
+          It would be much better if we could add a condensed version of the privacy notice. -->
 
-  <form class="form" action="compensation" method="post">
+          <form class="form" method="post">
 
-    {% from 'radios/macro.njk' import govukRadios %}
-    {{ govukRadios({
-    "classes": "govuk-radios--inline",
-    "idPrefix": "declaration",
-    "name": "declaration",
-    "fieldset": {
-    "legend": {
-    "text": 'I confirm that I have read and agree with the above statements',
-    "isPageHeading": true,
-    "classes": 'govuk-fieldset__legend--m'
-    }
-    },
-    "items": [
-    {
-    "value": "yes",
-    "text": "Yes"
-    },
-    {
-    "value": "no",
-    "text": "No"
-    }
-    ]
-    }) }}
+            {% from 'radios/macro.njk' import govukRadios %}
+            {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "declaration",
+            "name": "declaration",
+            "fieldset": {
+            "legend": {
+            "text": 'I confirm that I have read and agree with the above statements',
+            "isPageHeading": true,
+            "classes": 'govuk-fieldset__legend--m'
+            }
+            },
+            "items": [
+            {
+            "value": "yes",
+            "text": "Yes"
+            },
+            {
+            "value": "no",
+            "text": "No"
+            }
+            ]
+            }) }}
 
 
             {% from "button/macro.njk" import govukButton %}
