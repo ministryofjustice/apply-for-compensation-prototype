@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Do you live with the offender
+  What is your realtionship
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="living-with-offender-now" method="post">
+        <form class="form"  method="post">
           {% from "input/macro.njk" import govukInput %}
 
           {{ govukInput({
@@ -25,8 +25,8 @@
           "classes": 'govuk-label--xl'
         },
           "classes": 'govuk-input--width-20',
-          "id": "emailAddress",
-          "name": "emailAddress"
+          "id": "relationship-text",
+          "name": "relationship-text"
           }) }}
 
           {% from "button/macro.njk" import govukButton %}

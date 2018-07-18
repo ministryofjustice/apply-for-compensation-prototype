@@ -263,7 +263,6 @@ router.post('/application/previous-applications', function (req, res) {
   // Get the answer from the query string 
   var previousApplications = req.session.data['previous-applications']
 
-
   if (previousApplications === 'no')  {
     // Redirect to the relevant page
     res.redirect('/application/previous-not-eligible')
@@ -272,6 +271,88 @@ router.post('/application/previous-applications', function (req, res) {
     res.redirect('/application/incident-location')
   }
 })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: do-you-know-offender
+// Variable: know-offender
+
+router.post('/application/do-you-know-offender', function (req, res) {
+  // Get the answer from the query string 
+  var knowOffender = req.session.data['know-offender']
+
+  if (knowOffender === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/application/check-your-answers-page')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/living-with-offender-before')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: living-with-offender-before
+// Variable: living-with-offender-before
+
+router.post('/application/living-with-offender-before', function (req, res) {
+  // Get the answer from the query string 
+  var withOffenderBefore = req.session.data['living-with-offender-before']
+
+  if (withOffenderBefore === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/application/ongoing-relationship')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/living-with-offender-now')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: living-with-offender-now
+// Variable: living-with-offender-now
+
+router.post('/application/living-with-offender-now', function (req, res) {
+  // Get the answer from the query string 
+  var withOffenderNow = req.session.data['living-with-offender-now']
+
+  if (withOffenderNow === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/application/ongoing-relationship')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/prototype')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: ongoing-relationship
+// Variable: ongoing-relationship
+
+router.post('/application/ongoing-relationship', function (req, res) {
+  // Get the answer from the query string 
+  var ongoingRelationship = req.session.data['ongoing-relationship']
+
+  if (ongoingRelationship === 'yes')  {
+    // Redirect to the relevant page
+    res.redirect('/application/what-is-relationship')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/check-your-answers-page')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: what-is-relationship
+// 
+
+router.post('/application/what-is-relationship', function (req, res) {
+  res.redirect('/application/check-your-answers-page')
+})
+
 // END__######################################################################################################
 
 // START__####################################################################################################
