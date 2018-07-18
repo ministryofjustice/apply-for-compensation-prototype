@@ -202,7 +202,7 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
      res.redirect('/application/know-the-person')
    } else {
      // If the variable is any other value (or is missing) render the page requested
-     res.render('application/incident-location')
+     res.redirect('/application/incident-location')
    }
  })
 
@@ -221,7 +221,7 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
     res.redirect('/application/period-of-abuse-start')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.render('application/incident-date')
+    res.redirect('/application/incident-date')
   }
 })
 // END__######################################################################################################
@@ -241,7 +241,7 @@ router.post('/application/incident-date', function (req, res) {
     res.redirect('/application/previous-applications')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.render('application/incident-location')
+    res.redirect('/application/incident-location')
   }
 })
 // END__######################################################################################################
@@ -260,7 +260,7 @@ router.post('/application/previous-applications', function (req, res) {
     res.redirect('/application/previous-not-eligible')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.render('application/incident-location')
+    res.redirect('/application/incident-location')
   }
 })
 // END__######################################################################################################
