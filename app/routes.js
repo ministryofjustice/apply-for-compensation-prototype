@@ -227,5 +227,23 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 
 // END__######################################################################################################
 
+// START__####################################################################################################
+// File: single-or-multiple-incidents
+// Variable: single-or-multiple-incidents
+
+router.post('/application/single-or-multiple-incidents', function (req, res) {
+  // Get the answer from the query string 
+  var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
+
+  if (singleOrMultipleIncidents === 'multiple-incidents') {
+    // Redirect to the relevant page
+    res.redirect('/application/period-of-abuse-start')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.render('application/incident-date')
+  }
+})
+
+// END__######################################################################################################
 
 module.exports = router
