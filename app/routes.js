@@ -83,12 +83,12 @@ router.post('/application/OCJ-service-option', function (req, res) {
   // Get the answer from the query string 
   var serviceOption = req.session.data['service-option']
 
-  if (serviceOption === 'yes') {
+  if (serviceOption === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/compensation')
+    res.redirect('/application/prototype')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/prototype')
+    res.redirect('/application/compensation')
   }
 })
 
@@ -189,32 +189,47 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: incident-location
+// File: name
 // 
-
-router.post('/application/incident-location', function (req, res) {
-  res.redirect('/application/incident-reported')
+router.post('/application/name', function (req, res) {
+  res.redirect('/application/date-of-birth')
 })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: incident-reported
-// Variable: incidentReported
+// File: date-of-birth
+// 
+router.post('/application/date-of-birth', function (req, res) {
+  res.redirect('/application/email-address')
+})
+// END__######################################################################################################
 
- router.post('/application/incident-reported', function (req, res) {
-   // Get the answer from the query string 
-   var incidentReported = req.session.data['incidentReported']
+// START__####################################################################################################
+// File: email-address
+// varialbe: email-address
+// if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
+router.post('/application/email-address', function (req, res) {
+  if (!req.session.data['emailAddress']) {
+    req.session.data['emailAddress'] = 'name@domain.com'
+  }
+  res.redirect('/application/address')
+})
+// END__######################################################################################################
 
-   if (incidentReported === 'no') {
-     // Redirect to the relevant page
-     res.redirect('/application/do-you-know-offender')
-   } else {
-     // If the variable is any other value (or is missing) render the page requested
-     res.redirect('/application/reporting-details-what-force')
-   }
- })
+// START__####################################################################################################
+// File: address
+// 
+router.post('/application/address', function (req, res) {
+  res.redirect('/application/phone-number')
+})
+// END__######################################################################################################
 
+// START__####################################################################################################
+// File: phone-number
+// 
+router.post('/application/phone-number', function (req, res) {
+  res.redirect('/application/about-the-crime')
+})
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -232,6 +247,22 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/incident-date')
   }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: period-of-abuse-start
+// 
+router.post('/application/period-of-abuse-start', function (req, res) {
+  res.redirect('/application/period-of-abuse-end')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: period-of-abuse-end
+// 
+router.post('/application/period-of-abuse-end', function (req, res) {
+  res.redirect('/application/incident-location')
 })
 // END__######################################################################################################
 
@@ -270,6 +301,58 @@ router.post('/application/previous-applications', function (req, res) {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/incident-location')
   }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: incident-location
+// 
+router.post('/application/incident-location', function (req, res) {
+  res.redirect('/application/incident-reported')
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: incident-reported
+// Variable: incidentReported
+
+ router.post('/application/incident-reported', function (req, res) {
+   // Get the answer from the query string 
+   var incidentReported = req.session.data['incidentReported']
+
+   if (incidentReported === 'no') {
+     // Redirect to the relevant page
+     res.redirect('/application/do-you-know-offender')
+   } else {
+     // If the variable is any other value (or is missing) render the page requested
+     res.redirect('/application/reporting-details-what-force')
+   }
+ })
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: reporting-details-what-force
+// 
+router.post('/application/reporting-details-what-force', function (req, res) {
+  res.redirect('/application/reporting-details-police-officer')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: reporting-details-police-officer
+// 
+router.post('/application/reporting-details-police-officer', function (req, res) {
+  res.redirect('/application/crime-reference')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: crime-reference
+// 
+router.post('/application/crime-reference', function (req, res) {
+  res.redirect('/application/do-you-know-offender')
 })
 // END__######################################################################################################
 
@@ -348,11 +431,9 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // START__####################################################################################################
 // File: what-is-relationship
 // 
-
 router.post('/application/what-is-relationship', function (req, res) {
   res.redirect('/application/check-your-answers-page')
 })
-
 // END__######################################################################################################
 
 // START__####################################################################################################

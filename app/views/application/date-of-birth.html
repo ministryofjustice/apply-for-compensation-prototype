@@ -8,7 +8,7 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="email-address" method="post">
+          <form class="form" method="post">
 
             {% from "date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
@@ -46,6 +46,10 @@
 
           </form>
         </div>
+      </div>
+      <div class="design-notes-box">
+          <h3 class="design-notes">Design notes</h3>
+          <p class="design-notes">The logic is not in place but if you are a minor when you apply, then you would be taken out of the service - Stéphanie</p>
       </div>
     </main>
   </div>

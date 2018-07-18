@@ -100,19 +100,6 @@
         </h3>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--short">
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Are you applying on behalf of someone else?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['rep'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> previous application number</span>
-              </a>
-            </dd>
-          </div>
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -248,105 +235,7 @@
               </a>
             </dd>
           </div>
-
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              What injuries did you have as a result of the crime?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['injury-1'] }}<br>
-              {{ data['injury-2'] }}<br>
-              {{ data['injury-3'] }}<br>
-              {{ data['injury-4'] }}<br>
-              {{ data['injury-5'] }}<br>
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
         </dl>
-
-        <h3 class="govuk-heading-s">
-          Your medical treatment
-        </h3>
-
-        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Date you started receiving medical treatment
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['medicalTreatmentStartDate-day'] }}/{{ data['medicalTreatmentStartDate-month'] }}/{{ data['medicalTreatmentStartDate-year'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Are you still receiving treatment for your injuries
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['treatmentOngoing'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
-          <!-- <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Are you able to get a report from your doctor?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['obtainMedical'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div> -->
-
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Did your injuries stop you from doing any paid work?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['unableToWork'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
-          <!-- <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              All of the information you have given is correct and you consent to the Criminal Injuries Compensation Authority using your personal information.
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['declaration'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div> -->
-
-        </dl>
-
-
 
         <h2 class="govuk-heading-m">Send your application</h2>
 
