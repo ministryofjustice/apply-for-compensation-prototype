@@ -190,25 +190,6 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: confirmation-page-if-automatic-nil
-// variable: apply-for-review
-
-router.post('/application/confirmation-page-if-automatic-nil', function (req, res) {
-  // Get the answer from the query string 
-  var applyForReview = req.session.data['apply-for-review']
-
-  if (applyForReview  === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/application/confirmation-of-review')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/prototype')
-  }
-})
-
-// END__######################################################################################################
-
-// START__####################################################################################################
 // File: incident-reported
 // Variable: incidentReported
 
@@ -241,6 +222,63 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.render('application/incident-date')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: incident-date
+// Variables: incident-date-day, incident-date-month, incident-date-year
+
+router.post('/application/incident-date', function (req, res) {
+  // Get the answer from the query string 
+  var incidentDateDay = req.session.data['incident-date-day']
+  var incidentDateMonth = req.session.data['incident-date-month']
+  var incidentDateYear = req.session.data['incident-date-year']
+
+  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+    // Redirect to the relevant page
+    res.redirect('/application/previous-applications')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.render('application/incident-location')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: previous-applications
+// Variable: previous-applications
+
+router.post('/application/previous-applications', function (req, res) {
+  // Get the answer from the query string 
+  var previousApplications = req.session.data['previous-applications']
+
+
+  if (previousApplications === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/application/previous-not-eligible')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.render('application/incident-location')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: confirmation-page-if-automatic-nil
+// variable: apply-for-review
+
+router.post('/application/confirmation-page-if-automatic-nil', function (req, res) {
+  // Get the answer from the query string 
+  var applyForReview = req.session.data['apply-for-review']
+
+  if (applyForReview  === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/confirmation-of-review')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/prototype')
   }
 })
 
