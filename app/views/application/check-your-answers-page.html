@@ -29,19 +29,36 @@
         <!--   * `govuk-check-your-answers__questions-long` for long questions -->
         <!--   * none for single group of q&a -->
         <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               Name
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              {{ data['fullName'] }}
+              {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }} 
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
+              <a href="name">
                 Change<span class="visually-hidden"> name</span>
               </a>
             </dd>
           </div>
+
+          {% if data['other-names'] %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Other names
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['other-names'] }} 
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="name">
+                  Change<span class="visually-hidden"> other name</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -51,7 +68,7 @@
               {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
+              <a href="date-of-birth">
                 Change<span class="visually-hidden"> date of birth</span>
               </a>
             </dd>
@@ -65,8 +82,8 @@
               {{ data['emailAddress'] }}<br />
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> contact details</span>
+              <a href="email-address">
+                Change<span class="visually-hidden"> email address</span>
               </a>
             </dd>
           </div>
@@ -83,39 +100,49 @@
               {{ data['address-postcode'] }}<br />
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
+              <a href="address">
                 Change<span class="visually-hidden"> address</span>
               </a>
             </dd>
           </div>
+
+          <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Phone number
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['phoneNumber'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="phone-number">
+                  Change<span class="visually-hidden"> phone number</span>
+                </a>
+              </dd>
+            </div>
         </dl>
 
-
         <h2 class="govuk-heading-m">
-          Your answers
+          Your Eligibility
         </h2>
 
-        <h3 class="govuk-heading-s">
-          Eligibility
-        </h3>
-
-        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+        <dl class="govuk-check-your-answers govuk-check-your-answers--long">
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Have you applied for any other compensation?
+                Have you applied for compensation from any other sources?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['otherCompensation'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> previous application number</span>
+              <a href="compensation">
+                Change<span class="visually-hidden"> compensation</span>
               </a>
             </dd>
           </div>
 
-            <div class="govuk-check-your-answers__contents">
+          {% if data['otherCompensation'] === 'yes' %}
+          <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
                 Who paid you compensation?
               </dt>
@@ -123,13 +150,12 @@
                 {{ data['whoPaid'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
-                <a href="#">
-                  Change<span class="visually-hidden"> previous application number</span>
+                <a href="compensation">
+                  Change<span class="visually-hidden"> who paid?</span>
                 </a>
               </dd>
             </div>
-
-              <div class="govuk-check-your-answers__contents">
+            <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                   How much compensation did you get?
                 </dt>
@@ -137,11 +163,88 @@
                   {{ data['howMuch'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
-                  <a href="#">
-                    Change<span class="visually-hidden"> previous application number</span>
+                  <a href="compensation">
+                    Change<span class="visually-hidden"> compensation</span>
                   </a>
                 </dd>
               </div>
+          {% endif %}
+
+          {% if data['otherCompensation'] === 'no' %}
+          <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  Why did you not apply for compensation from another source?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['why-not-apply-compensation-other'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="did-not-apply-for-compensation">
+                  Change<span class="visually-hidden"> did not apply</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Are you a British citizen?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['britishCitizen'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="british-citizen">
+                  Change<span class="visually-hidden">British citizen </span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['britishCitizen'] === 'no' %}
+            <div class="govuk-check-your-answers__contents">
+                <dt class="govuk-check-your-answers__question">
+                    Are you ordinarily resident in the UK?
+                </dt>
+                <dd class="govuk-check-your-answers__answer">
+                  {{ data['ordinarily-resident'] }}
+                </dd>
+                <dd class="govuk-check-your-answers__change">
+                  <a href="residence-1">
+                    Change<span class="visually-hidden"> ordinarily resident </span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  Have you ever been convicted of a crime?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['criminalConvictions'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="criminal-convictions">
+                  Change<span class="visually-hidden"> criminal convictions</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['criminalConvictions'] === 'yes' %}
+            <div class="govuk-check-your-answers__contents">
+                <dt class="govuk-check-your-answers__question">
+                    Tell us about your convictions
+                </dt>
+                <dd class="govuk-check-your-answers__answer">
+                  {{ data['convictions'] }}
+                </dd>
+                <dd class="govuk-check-your-answers__change">
+                  <a href="tell-criminal-convictions">
+                    Change<span class="visually-hidden"> tell us your convictions</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
 
 
           <div class="govuk-check-your-answers__contents">
@@ -187,33 +290,8 @@
             </dd>
           </div>
 
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Are you a British citizen?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['britishCitizen'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> licence period</span>
-              </a>
-            </dd>
-          </div>
 
-          <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Do you have any unspent criminal convictions?
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['criminalConvictions'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> licence period</span>
-              </a>
-            </dd>
-          </div>
+
 
         </dl>
 
