@@ -30,7 +30,7 @@
             "name": "criminalConvictions",
             "fieldset": {
               "legend": {
-                "text": 'Do you have any criminal convictions?',
+                "text": 'Have you ever been convicted of a crime?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -50,18 +50,21 @@
               }
             ]
           }) }}
-          <!--details class="govuk-details">
+          <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                  How do I know if my conviction is unspent?
+                  How do I know if my conviction is spent?
               </span>
             </summary>
             <div class="govuk-form-group govuk-details__text">
                   <label class="govuk-label" for="other-names">
-                      Convictions are unspent until a period of time, known as a rehabilitation period, expires.  The length of the rehabilitation period depends on the length of the sentence you received.
+                    A conviction is spent when a period of time, known as the rehabilitation period, expires.  The length of this period depends on the crime and your sentence.
                   </label>
-
-              </div-->
+                  <br>
+                  <label class="govuk-label" for="other-names">
+                    If you were sentenced to 4 years or more in prison in England and Wales, or 30 months or more in Scotland, your conviction will never be spent.
+            </label>
+            </div>
           </details>
           <input class="govuk-button" type="submit" value="Continue">
 
