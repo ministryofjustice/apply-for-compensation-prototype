@@ -246,6 +246,7 @@
               </div>
             {% endif %}
 
+          <!--///////////////////////////////////////////////////////////////////////////   start again from here for update  -->  
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -255,23 +256,22 @@
               {{ data['incidentReported'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> licence type</span>
+              <a href="incident-reported">
+                Change<span class="visually-hidden"> incident reported</span>
               </a>
             </dd>
           </div>
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Date the crime was reported
+                When was the crime reported to police?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
-              <!-- @todo need to get dates pulling through correctly -->
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> home address</span>
+              <a href="incident-reported">
+                Change<span class="visually-hidden"> date incident was reported</span>
               </a>
             </dd>
           </div>
@@ -284,36 +284,181 @@
               {{ data['incident-location'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> licence period</span>
+              <a href="incident-location">
+                Change<span class="visually-hidden"> incident location</span>
               </a>
             </dd>
           </div>
 
-
+          {% if data['incident-location'] === 'Somewhere else' %}
+          <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Tell us where the crime happened
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['somewhere-else'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="incident-location">
+                  Change<span class="visually-hidden"> other place crime happened</span>
+                </a>
+              </dd>
+            </div>
+            {% endif%}
 
 
         </dl>
 
-        <h3 class="govuk-heading-s">
+        <h2 class="govuk-heading-m">
           About the crime
-        </h3>
+        </h2>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+
           <div class="govuk-check-your-answers__contents">
-            <dt class="govuk-check-your-answers__question">
-              Crime reference number
-            </dt>
-            <dd class="govuk-check-your-answers__answer">
-              {{ data['crimeReferenceNumber'] }}
-            </dd>
-            <dd class="govuk-check-your-answers__change">
-              <a href="#">
-                Change<span class="visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
+              <dt class="govuk-check-your-answers__question">
+                Did the crime happen once or over a period of time?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['single-or-multiple-incidents'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="single-or-multiple-incidents">
+                  Change<span class="visually-hidden"> single or multiple incident</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['single-or-multiple-incidents'] === 'It happened once' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                When did the crime happen?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                  {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="incident-date">
+                  Change<span class="visually-hidden"> incident date</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['single-or-multiple-incidents'] === 'It happened over a period of time' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                 When did it start?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['period-of-abuse-start-day'] }}//{{ data['period-of-abuse-start-month'] }}//{{ data['period-of-abuse-start-year'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="period-of-abuse-start">
+                  Change<span class="visually-hidden"> start of the incidents</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-check-your-answers__contents">
+                <dt class="govuk-check-your-answers__question">
+                    When did it end?
+                </dt>
+                <dd class="govuk-check-your-answers__answer">
+                  {{ data['period-of-abuse-end-day'] }}//{{ data['period-of-abuse-end-month'] }}//{{ data['period-of-abuse-end-year'] }}
+                </dd>
+                <dd class="govuk-check-your-answers__change">
+                  <a href="period-of-abuse-end">
+                    Change<span class="visually-hidden"> end of the incidents</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+            {% if data['incidentReported'] === 'yes' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  What police force was the crime reported to?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['police-force'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="reporting-details-what-force">
+                  Change<span class="visually-hidden"> what police force</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  What are the police officer's details?
+              </dt>
+            </div>
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  police officer's name
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['police-officer-name'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="reporting-details-police-officer">
+                  Change<span class="visually-hidden"> police officer name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-check-your-answers__contents">
+                <dt class="govuk-check-your-answers__question">
+                    police officer's ID number
+                </dt>
+                <dd class="govuk-check-your-answers__answer">
+                  {{ data['police-officer-id'] }}
+                </dd>
+                <dd class="govuk-check-your-answers__change">
+                  <a href="reporting-details-police-officer">
+                    Change<span class="visually-hidden"> police officer ID</span>
+                  </a>
+                </dd>
+              </div>
+
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                What's the crime reference number?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['crimeReferenceNumber'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="crime-reference">
+                  Change<span class="visually-hidden"> crime reference</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
         </dl>
+
+        <h2 class="govuk-heading-m">
+          About the offender
+        </h2>
+
+        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+
+          <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Did the crime happen once or over a period of time?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['single-or-multiple-incidents'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="single-or-multiple-incidents">
+                  Change<span class="visually-hidden"> single or multiple incident</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
 
         <h2 class="govuk-heading-m">Send your application</h2>
 
@@ -325,10 +470,6 @@
 
       </div>
     </div>
-    <div class="design-notes-box">
-        <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">This will be updated later - Stéphanie</p>
-      </div>
   </main>
 </div>
 

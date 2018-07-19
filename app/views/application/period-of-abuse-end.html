@@ -17,55 +17,39 @@
       <div class="govuk-grid-column-two-thirds">
 
         <form class="form"  method="post">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="incident-date-hint" role="group">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                    <h1 class="govuk-fieldset__heading">
-                        When did it end?
-                    </h1>
-                </legend>
+          {% from "date-input/macro.njk" import govukDateInput %}
+          {{ govukDateInput({
+          id: 'period-of-abuse-end',
+          name: 'period-of-abuse-end',
+          fieldset: {
+          legend: {
+          text: "When did it end?",
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--xl'
+          }
+          },
+          hint: {
+          text: 'For example, 31 3 2018. You can enter an approximate date '
+          },
+          items:[
+          {
+          name: 'day'
+          },
+          {
+          name: 'month'
+          },
+          {
+          name: 'year'
+          }
+          ]
+          })
+          }}
 
-                <span id="incident-date-hint" class="govuk-hint">
-                  For example, 31 3 2018. You can enter an approximate date <br>
+          {% from "button/macro.njk" import govukButton %}
 
-                </span>
-
-                <div class="govuk-date-input" id="incident-date">
-
-                  <div class="govuk-date-input__item govuk-date-input__item--day">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="incident-date-day">
-                        Day
-                      </label>
-
-                      <input class="govuk-input govuk-date-input__input" id="incident-date-day" name="incident-date-day" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-
-                  <div class="govuk-date-input__item govuk-date-input__item--month">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="incident-date-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input" id="incident-date-month" name="incident-date-month" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-
-                  <div class="govuk-date-input__item govuk-date-input__item--year">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="incident-date-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input" id="incident-date-year" name="incident-date-year" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-
-                </div>
-              </fieldset>
-            </div>
-            <input class="govuk-button" type="submit" value="Continue">
-        </form>
-
+          {{ govukButton({
+          "text": "Continue"
+          }) }}
       </div>
     </div>
   </main>

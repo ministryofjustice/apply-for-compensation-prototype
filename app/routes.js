@@ -240,7 +240,7 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
   // Get the answer from the query string 
   var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
 
-  if (singleOrMultipleIncidents === 'multiple-incidents') {
+  if (singleOrMultipleIncidents === 'It happened over a period of time') {
     // Redirect to the relevant page
     res.redirect('/application/period-of-abuse-start')
   } else {
