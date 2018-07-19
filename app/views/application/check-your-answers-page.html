@@ -313,7 +313,7 @@
           About the crime
         </h2>
 
-        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+        <dl class="govuk-check-your-answers govuk-check-your-answers--long">
 
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
@@ -351,7 +351,7 @@
                  When did it start?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['period-of-abuse-start-day'] }}//{{ data['period-of-abuse-start-month'] }}//{{ data['period-of-abuse-start-year'] }}
+                {{ data['period-of-abuse-start-day'] }}/{{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="period-of-abuse-start">
@@ -364,7 +364,7 @@
                     When did it end?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
-                  {{ data['period-of-abuse-end-day'] }}//{{ data['period-of-abuse-end-month'] }}//{{ data['period-of-abuse-end-year'] }}
+                  {{ data['period-of-abuse-end-day'] }}/{{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="period-of-abuse-end">
@@ -389,11 +389,6 @@
               </dd>
             </div>
 
-            <div class="govuk-check-your-answers__contents">
-              <dt class="govuk-check-your-answers__question">
-                  What are the police officer's details?
-              </dt>
-            </div>
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
                   police officer's name
@@ -442,18 +437,18 @@
           About the offender
         </h2>
 
-        <dl class="govuk-check-your-answers govuk-check-your-answers--short">
+        <dl class="govuk-check-your-answers govuk-check-your-answers--long">
 
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Did the crime happen once or over a period of time?
+                Do you know the person who attacked you?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['single-or-multiple-incidents'] }}
+                {{ data['know-offender'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
-                <a href="single-or-multiple-incidents">
-                  Change<span class="visually-hidden"> single or multiple incident</span>
+                <a href="do-you-know-offender">
+                  Change<span class="visually-hidden"> know the offender</span>
                 </a>
               </dd>
             </div>
