@@ -429,10 +429,21 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: check-your-answers-page
+// Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
+
+// router.get('/application/check-your-answers-page', function (req, res) {
+//   // Get the answer from the query string 
+//   req.session.checking_answers = true
+//   return res.render('application/check-your-answers-page')
+// })
+// END__######################################################################################################
+
+// START__####################################################################################################
 // File: what-is-relationship
 // 
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/check-your-answers-page')
+  res.redirect('application/check-your-answers-page')
 })
 // END__######################################################################################################
 
