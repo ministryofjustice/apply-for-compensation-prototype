@@ -15,12 +15,12 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">
+        <h1 class="govuk-heading-xl">
           Check your answers before sending your application
         </h1>
 
         <!-- only add a heading for a list if there is more than one list -->
-        <h2 class="govuk-heading-m">
+        <h2 class="govuk-heading-l">
           Your details
         </h2>
 
@@ -121,7 +121,7 @@
             </div>
         </dl>
 
-        <h2 class="govuk-heading-m">
+        <h2 class="govuk-heading-l">
           Your Eligibility
         </h2>
 
@@ -309,7 +309,7 @@
 
         </dl>
 
-        <h2 class="govuk-heading-m">
+        <h2 class="govuk-heading-l">
           About the crime
         </h2>
 
@@ -433,29 +433,94 @@
 
         </dl>
 
-        <h2 class="govuk-heading-m">
+        <h2 class="govuk-heading-l">
           About the offender
         </h2>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--long">
 
           <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Do you know the person who attacked you?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['know-offender'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="do-you-know-offender">
+                Change<span class="visually-hidden"> know the offender</span>
+              </a>
+            </dd>
+          </div>
+            
+          {% if data['know-offender'] === 'yes' %}
+            <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Do you know the person who attacked you?
+                Were you and the person who attacked you living together as family at the time?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['know-offender'] }}
+                {{ data['living-with-offender-before'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
-                <a href="do-you-know-offender">
-                  Change<span class="visually-hidden"> know the offender</span>
+                <a href="living-with-offender-before">
+                  Change<span class="visually-hidden"> living with the offender at the time</span>
                 </a>
               </dd>
             </div>
 
+            {% if data['living-with-offender-before'] === 'yes' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Do you and the person who attacked you live together as family now?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['living-with-offender-now'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="living-with-offender-now">
+                  Change<span class="visually-hidden"> living with the offender now</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['living-with-offender-before'] === 'no' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Do you have an ongoing relationship with them?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['ongoing-relationship'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="ongoing-relationship">
+                  Change<span class="visually-hidden"> ongoing relationship with the offender</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['ongoing-relationship'] === 'yes' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  What's your relationship with them?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['relationship-text'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="what-is-relationship">
+                  Change<span class="visually-hidden"> type of relationship with the offender</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% endif %}  <!-- end if  you know the offender -->
+
           </dl>
 
-        <h2 class="govuk-heading-m">Send your application</h2>
+        <h2 class="govuk-heading-l">Send your application</h2>
 
         <p>
           When you send this application you confirm that the information in it is correct as far as you know.
