@@ -24,7 +24,7 @@ router.get('/stepped-guide', function (req, res) {
 // Variable: rep
 
 router.post('/application/who-is-making-the-application', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var rep = req.session.data['rep']
 
   if (rep === 'yes') {
@@ -39,8 +39,8 @@ router.post('/application/who-is-making-the-application', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: declaration 
-// Variable: declaration  
+// File: declaration
+// Variable: declaration
 
 router.post('/application/declaration', function (req, res) {
   // Get the answer from the query string
@@ -58,11 +58,11 @@ router.post('/application/declaration', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: what-are-you-applying-for  
+// File: what-are-you-applying-for
 // variable: what-type-of-application-would-you-like-to-make?
 
 router.post('/application/what-are-you-applying-for', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
   if (applicationType === 'physical-injury') {
     // Redirect to the relevant page
@@ -76,11 +76,11 @@ router.post('/application/what-are-you-applying-for', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: OCJ-service-option  
+// File: OCJ-service-option
 // variable: service-option
 
 router.post('/application/OCJ-service-option', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var serviceOption = req.session.data['service-option']
 
   if (serviceOption === 'no') {
@@ -99,7 +99,7 @@ router.post('/application/OCJ-service-option', function (req, res) {
 // Variable: otherCompensation
 
 router.post('/application/compensation', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var otherCompensation = req.session.data['otherCompensation']
 
   if (otherCompensation === 'no') {
@@ -114,7 +114,7 @@ router.post('/application/compensation', function (req, res) {
 
 // START__####################################################################################################
 // File: did-not-apply-for-compensation
-// 
+//
 router.post('/application/did-not-apply-for-compensation', function (req, res) {
     res.redirect('/application/british-citizen')
 
@@ -126,7 +126,7 @@ router.post('/application/did-not-apply-for-compensation', function (req, res) {
 // Variable: britishCitizen
 
 router.post('/application/british-citizen', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var britishCitizen = req.session.data['britishCitizen']
 
   if (britishCitizen === 'no') {
@@ -145,7 +145,7 @@ router.post('/application/british-citizen', function (req, res) {
 // Variable: ordinarily-resident
 
 router.post('/application/residence-1', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var ordinarilyResident = req.session.data['ordinarily-resident']
 
   if (ordinarilyResident === 'no') {
@@ -164,7 +164,7 @@ router.post('/application/residence-1', function (req, res) {
 // Variable: criminalConvictions
 
 router.post('/application/criminal-convictions', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var criminalConvictions = req.session.data['criminalConvictions']
 
   if (criminalConvictions === 'yes') {
@@ -179,7 +179,7 @@ router.post('/application/criminal-convictions', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: tell-criminal-convictions 
+// File: tell-criminal-convictions
 // this view is called if user says yes to convicted of a criminal offence
 
 router.post('/application/tell-criminal-convictions', function (req, res) {
@@ -190,7 +190,7 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 
 // START__####################################################################################################
 // File: name
-// 
+//
 router.post('/application/name', function (req, res) {
   res.redirect('/application/date-of-birth')
 })
@@ -198,7 +198,7 @@ router.post('/application/name', function (req, res) {
 
 // START__####################################################################################################
 // File: date-of-birth
-// 
+//
 router.post('/application/date-of-birth', function (req, res) {
   res.redirect('/application/email-address')
 })
@@ -218,7 +218,7 @@ router.post('/application/email-address', function (req, res) {
 
 // START__####################################################################################################
 // File: address
-// 
+//
 router.post('/application/address', function (req, res) {
   res.redirect('/application/phone-number')
 })
@@ -226,7 +226,7 @@ router.post('/application/address', function (req, res) {
 
 // START__####################################################################################################
 // File: phone-number
-// 
+//
 router.post('/application/phone-number', function (req, res) {
   res.redirect('/application/about-the-crime')
 })
@@ -237,7 +237,7 @@ router.post('/application/phone-number', function (req, res) {
 // Variable: single-or-multiple-incidents
 
 router.post('/application/single-or-multiple-incidents', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
 
   if (singleOrMultipleIncidents === 'It happened over a period of time') {
@@ -252,7 +252,7 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
 
 // START__####################################################################################################
 // File: period-of-abuse-start
-// 
+//
 router.post('/application/period-of-abuse-start', function (req, res) {
   res.redirect('/application/period-of-abuse-end')
 })
@@ -260,7 +260,7 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 
 // START__####################################################################################################
 // File: period-of-abuse-end
-// 
+//
 router.post('/application/period-of-abuse-end', function (req, res) {
   res.redirect('/application/incident-location')
 })
@@ -271,7 +271,7 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 // Variables: incident-date-day, incident-date-month, incident-date-year
 
 router.post('/application/incident-date', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
@@ -291,7 +291,7 @@ router.post('/application/incident-date', function (req, res) {
 // Variable: previous-applications
 
 router.post('/application/previous-applications', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var previousApplications = req.session.data['previous-applications']
 
   if (previousApplications === 'no')  {
@@ -306,7 +306,7 @@ router.post('/application/previous-applications', function (req, res) {
 
 // START__####################################################################################################
 // File: incident-location
-// 
+//
 router.post('/application/incident-location', function (req, res) {
   res.redirect('/application/incident-reported')
 })
@@ -318,7 +318,7 @@ router.post('/application/incident-location', function (req, res) {
 // Variable: incidentReported
 
  router.post('/application/incident-reported', function (req, res) {
-   // Get the answer from the query string 
+   // Get the answer from the query string
    var incidentReported = req.session.data['incidentReported']
 
    if (incidentReported === 'no') {
@@ -334,7 +334,7 @@ router.post('/application/incident-location', function (req, res) {
 
 // START__####################################################################################################
 // File: reporting-details-what-force
-// 
+//
 router.post('/application/reporting-details-what-force', function (req, res) {
   res.redirect('/application/reporting-details-police-officer')
 })
@@ -342,7 +342,7 @@ router.post('/application/reporting-details-what-force', function (req, res) {
 
 // START__####################################################################################################
 // File: reporting-details-police-officer
-// 
+//
 router.post('/application/reporting-details-police-officer', function (req, res) {
   res.redirect('/application/crime-reference')
 })
@@ -350,7 +350,7 @@ router.post('/application/reporting-details-police-officer', function (req, res)
 
 // START__####################################################################################################
 // File: crime-reference
-// 
+//
 router.post('/application/crime-reference', function (req, res) {
   res.redirect('/application/do-you-know-offender')
 })
@@ -361,7 +361,7 @@ router.post('/application/crime-reference', function (req, res) {
 // Variable: know-offender
 
 router.post('/application/do-you-know-offender', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var knowOffender = req.session.data['know-offender']
 
   if (knowOffender === 'no')  {
@@ -369,17 +369,25 @@ router.post('/application/do-you-know-offender', function (req, res) {
     res.redirect('/application/check-your-answers-page')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/living-with-offender-before')
+    res.redirect('/application/offender-name')
   }
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: offender-name
+
+router.post('/application/offender-name', function (req, res) {
+
+    res.redirect('/application/living-with-offender-before')
+})
+// END__######################################################################################################
+// START__####################################################################################################
 // File: living-with-offender-before
 // Variable: living-with-offender-before
 
 router.post('/application/living-with-offender-before', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var withOffenderBefore = req.session.data['living-with-offender-before']
 
   if (withOffenderBefore === 'no')  {
@@ -397,7 +405,7 @@ router.post('/application/living-with-offender-before', function (req, res) {
 // Variable: living-with-offender-now
 
 router.post('/application/living-with-offender-now', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var withOffenderNow = req.session.data['living-with-offender-now']
 
   if (withOffenderNow === 'no')  {
@@ -415,7 +423,7 @@ router.post('/application/living-with-offender-now', function (req, res) {
 // Variable: ongoing-relationship
 
 router.post('/application/ongoing-relationship', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var ongoingRelationship = req.session.data['ongoing-relationship']
 
   if (ongoingRelationship === 'yes')  {
@@ -433,7 +441,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
 
 // router.get('/application/check-your-answers-page', function (req, res) {
-//   // Get the answer from the query string 
+//   // Get the answer from the query string
 //   req.session.checking_answers = true
 //   return res.render('application/check-your-answers-page')
 // })
@@ -441,7 +449,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 
 // START__####################################################################################################
 // File: what-is-relationship
-// 
+//
 router.post('/application/what-is-relationship', function (req, res) {
   res.redirect('application/check-your-answers-page')
 })
@@ -452,7 +460,7 @@ router.post('/application/what-is-relationship', function (req, res) {
 // variable: apply-for-review
 
 router.post('/application/confirmation-page-if-automatic-nil', function (req, res) {
-  // Get the answer from the query string 
+  // Get the answer from the query string
   var applyForReview = req.session.data['apply-for-review']
 
   if (applyForReview  === 'yes') {

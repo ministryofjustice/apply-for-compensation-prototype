@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Your name
+  offender name
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
@@ -14,7 +14,7 @@
             <form action="/form-handler" method="post">
               <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--xl" for="name">
+                  <label class="govuk-label govuk-label--xl" for="offender-name">
                       What's the name of the person who attacked you?
                   </label>
                 </h1>
@@ -26,8 +26,8 @@
                 label: {
                   text: "First name"
                 },
-                id: "first-name",
-                name: "first-name"
+                id: "first-name-offender",
+                name: "first-name-offender"
               }) }}
 
               {% from "input/macro.njk" import govukInput %}
@@ -36,8 +36,8 @@
                 label: {
                   text: "Last name"
                 },
-                id: "last-name",
-                name: "last-name"
+                id: "last-name-offender",
+                name: "last-name-offender"
               }) }}
 
 

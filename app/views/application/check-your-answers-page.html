@@ -35,7 +35,7 @@
               Name
             </dt>
             <dd class="govuk-check-your-answers__answer">
-              {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }} 
+              {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="name">
@@ -50,7 +50,7 @@
                 Other names
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['other-names'] }} 
+                {{ data['other-names'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="name">
@@ -108,7 +108,7 @@
 
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Phone number
+                Telephone number
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['phoneNumber'] }}
@@ -144,7 +144,7 @@
           {% if data['otherCompensation'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Who paid you compensation?
+                Who did you claim compensation from?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['whoPaid'] }}
@@ -157,7 +157,7 @@
             </div>
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                  How much compensation did you get?
+                  How much compensation did you get, if applicable?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
                   {{ data['howMuch'] }}
@@ -266,7 +266,7 @@
                   </a>
                 </dd>
               </div>
-    
+
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                     When was the crime reported to police?
@@ -280,7 +280,7 @@
                   </a>
                 </dd>
               </div>
-    
+
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                   Where did the crime happen?
@@ -294,7 +294,7 @@
                   </a>
                 </dd>
               </div>
-    
+
               {% if data['incident-location'] === 'Somewhere else' %}
               <div class="govuk-check-your-answers__contents">
                   <dt class="govuk-check-your-answers__question">
@@ -310,7 +310,7 @@
                   </dd>
                 </div>
                 {% endif%}
-    
+
 
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
@@ -449,8 +449,22 @@
               </a>
             </dd>
           </div>
-            
+
           {% if data['know-offender'] === 'yes' %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                What's the name of the person who attacked you?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['first-name-offender'] }}&nbsp;{{ data['last-name-offender'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="offender-name">
+                  Change<span class="visually-hidden"> living with the offender at the time</span>
+                </a>
+              </dd>
+            </div>
+
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
                 Were you and the person who attacked you living together as family at the time?
@@ -464,11 +478,10 @@
                 </a>
               </dd>
             </div>
-
             {% if data['living-with-offender-before'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Do you and the person who attacked you live together as family now?
+                Do you and the person who attacked you live together now?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['living-with-offender-now'] }}
@@ -484,7 +497,7 @@
             {% if data['living-with-offender-before'] === 'no' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Do you have an ongoing relationship with them?
+                Do you still have contact with them?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['ongoing-relationship'] }}
@@ -500,7 +513,7 @@
             {% if data['ongoing-relationship'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                  What's your relationship with them?
+                  What contact do you have with them?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['relationship-text'] }}
