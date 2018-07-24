@@ -99,22 +99,24 @@ router.post('/application/OCJ-service-option', function (req, res) {
 // Variable: otherCompensation
 
 router.post('/application/compensation', function (req, res) {
-  // Get the answer from the query string
-  var otherCompensation = req.session.data['otherCompensation']
 
-  if (otherCompensation === 'no') {
+  // Get the answer from the query string 
+ // var otherCompensation = req.session.data['otherCompensation']
+ // if (otherCompensation === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/did-not-apply-for-compensation')
-  } else {
+ //   res.redirect('/application/did-not-apply-for-compensation')
+ // } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/british-citizen')
-  }
+  //}
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: did-not-apply-for-compensation
-//
+
+// File: did-not-apply-for-compensation - not used anymore (see above commented)
+// 
+
 router.post('/application/did-not-apply-for-compensation', function (req, res) {
     res.redirect('/application/british-citizen')
 
@@ -228,7 +230,7 @@ router.post('/application/address', function (req, res) {
 // File: phone-number
 //
 router.post('/application/phone-number', function (req, res) {
-  res.redirect('/application/about-the-crime')
+  res.redirect('/application/single-or-multiple-incidents')
 })
 // END__######################################################################################################
 
