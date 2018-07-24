@@ -451,7 +451,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('application/check-your-answers-page')
+  res.redirect('/application/check-your-answers-page')
 })
 // END__######################################################################################################
 
