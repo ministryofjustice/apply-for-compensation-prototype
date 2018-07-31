@@ -1,0 +1,248 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Body diagram
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  
+    <main id="content" role="main" class="govuk-main-wrapper">
+
+        <header class="page-header">
+            <div>
+                <h1 class="govuk-heading-xl">
+                    Find your injuries
+                </h1>
+            </div>
+        </header>
+        <div style="position: relative">
+            <div style="position: relative">
+                <span onclick=showHeadNeck() class="head-neck-shape" style="margin-left: 85px"></span>
+                <div style="position: absolute; top:40px ; left: 125px">
+                    <span onclick=showFace() class="face-shape" ></span>
+                    <div style="position: absolute; top:40px ; left: 30px">
+                        <span onclick=showEyes() class="eye-shape"></span>
+                    </div>
+                    <div style="position: absolute; top:40px ; left: 90px">
+                        <span onclick=showEyes() class="eye-shape"></span>
+                    </div>
+                </div>
+                <div style="position: absolute; top:230px ;">
+                    <span onclick=showHeadNeck() class="neck-shape" style="margin-left: 165px"></span>
+                    </div>
+            </div>
+        
+            <div style="margin-top: 20px" >
+                <span onclick=showArms() class="arm-left" style="margin-left: 15px"></span>
+                <span onclick=showTorso() class="torso-shape" onclick=showTorso() style="margin-left: 5px"></span>
+                <span  onclick=showArms() class="arm-right" style="margin-left: 5px"></span>
+
+            </div>
+
+            <div>
+                <span onclick=showHands() class="hand-shape" style="margin-left: 15px; margin-bottom: 160px "></span>
+                <span onclick=showLegs() class="leg-shape" style="margin-left: 25px"></span>
+                <span onclick=showLegs() class="leg-shape" style="margin-left: 4px"></span>
+                <span onclick=showHands() class="hand-shape" style="margin-left: 18px; margin-bottom: 160px "></span>
+            </div>
+            <div>
+                <span  onclick=showFeet() class="foot-left" style="margin-left: 102px"></span> 
+                <span onclick=showFeet() class="foot-right" style="margin-left: 5px"></span> 
+                <span onclick=showOtherInjuries() 
+                    style="background-color: #005eaa; color: #ffffff ; padding: 10px; position: absolute; top:600px ; left: 350px;"
+                    class="govuk-heading-m">Other injuries</span>
+            </div>
+
+
+            <!-- below are all the possible injuries panels -->
+            <div id="head-neck-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Head and neck injuries</h2>
+                <ul>
+                    <li>Burns</li>
+                    <li>Brain damage</li>
+                    <li>Deafness (partial or total)</li>
+                    <li>Epilepsy</li>
+                    <li>Fracture</li>
+                    <li>Loss of ear(s)</li>
+                    <li>Nerve Damage</li>
+                    <li>Partial loss of ear(s)</li>
+                    <li>Perforated ear drum (both ears)</li>
+                    <li>Scarring</li>
+                    <li>Tinnitus</li>
+                    <li>Vestibular damage</li>
+                    <li>Whiplash injury</li>
+                    
+                </ul>
+            </div>
+            <div id="face-panel" class="body-list-panel"> 
+                    <h2 class="govuk-heading-m">Face injuries</h2>
+                <ul>
+                    <li>Burns</li>
+                    <li>Clicking jaw</li>
+                    <li>Damaged tooth / teeth</li>
+                    <li>Dislocated jaw</li>
+                    <li>Fractured ethmoid (operation required)</li>
+                    <li>Fractured jaw bone(s)</li>
+                    <li>Fractured tooth / teeth</li>
+                    <li>Fractured zygoma</li>
+                    <li>Impaired speech</li>
+                    <li>Loss of crowns</li>
+                    <li>Loss of smell</li>
+                    <li>Loss of tongue</li>
+                    <li>Multiple fractures to face</li>
+                    <li>Numbness / loss of feeling</li>
+                    <li>Partial loss of nose (at least 10%)</li>
+                    <li>Permanent loss of speech</li>
+                    <li>Scarring</li>
+                </ul>
+            </div>
+            <div id="eyes-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Eyes injuries</h2>
+                <ul>                                
+                    <li >Blurred or double vision (permanent)</li>          
+                    <li >Cataract(s)</li>          
+                    <li >Damaged or detached retina</li>          
+                    <li >Dislocation of lens(es)</li>          
+                    <li >Glaucoma</li>          
+                    <li >Hyphaema requiring operation (both eyes)</li>          
+                    <li >Loss of eye(s)</li>          
+                    <li >Loss of sight in eye(s)</li>          
+                    <li >Loss of visual field (permanent)</li>          
+                    <li >Orbital fracture</li>          
+                    <li >Partial loss of vision</li>          
+                    <li >Residual central floater affecting vision</li>          
+                    <li >Retina - damage not involving detachment (both eyes)</li>          
+                    <li >Retina - detached (both eyes)</li>          
+                    <li >Significant penetrating injury</li>          
+                    <li >Traumatic angle recession</li> 
+                </ul>
+            </div>
+            <div id="torso-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Torso injuries</h2>
+                <ul>
+                    <li>Burns</li>
+                    <li>Collapsed lung</li>
+                    <li>Fractured clavicle</li>
+                    <li>Fractured coccyx (tail bone)</li>
+                    <li>Fractured pelvis</li>
+                    <li>Fractured scapula (shoulder blade)</li>
+                    <li>Fracture of sternum</li>                        
+                    <li>Fracture of vertebra</li>
+                    <li>Hernia</li>
+                    <li>Injury requiring laparoscopy / laparotomy (three organs)</li>
+                    <li>Injury requiring laparoscopy / laparotomy (two organs)</li>
+                    <li>Injury requiring laparotomy (one organ)</li>
+                    <li>Injury requiring thoracotomy</li>
+                    <li>Laparotomy with permanent colostomy / ileostomy / uterostomy</li>
+                    <li>Loss of kidney</li>
+                    <li>Loss of pancreas</li>
+                    <li>Loss of spleen</li>
+                    <li>Permanent damage from smoke / chemical inhalation</li>
+                    <li>Permanent damage to or loss of both or only functioning kidney</li>
+                    <li>Prolapsed intervertebral disc(s)</li>
+                    <li>Punctured lung</li>
+                    <li>Scarring</li>
+                    <li>Strained back</li>
+                </ul>
+            </div>
+            <div id="arms-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Arms injuries</h2>
+                <ul>
+                    <li>Burns</li>
+                    <li>Dislocation of elbow</li>
+                    <li>Dislocated shoulder</li>
+                    <li>Fracture of distal radius</li>
+                    <li>Fracture of elbow</li>
+                    <li>Fractured humerus (upper arm bone)</li>
+                    <li>Fractured radius (forearm bone)</li>
+                    <li>Fracture of scaphoid</li>
+                    <li>Fractured ulna (forearm bone)</li>
+                    <li>Frozen shoulder</li>
+                    <li>Loss of both arm(s)</li>
+                    <li>Paralysis of arm(s)</li>
+                    <li>Scarring</li>
+                    <li>Sprained wrist</li>
+                    <li>Tendon, ligament or cartilage damage to arm</li>
+                </ul>
+            </div>
+            <div id="hands-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Hands injuries</h2>
+                <ul>
+                   <li>Dislocation of fingers other than index (both hands)</li>
+                   <li>Dislocation of index finger</li> 
+                   <li>Dislocation of thumb</li>
+                   <li>Fracture of finger other than index (both hands)</li>
+                   <li>Fracture of hand</li>
+                   <li>Fracture of index finger</li>
+                   <li>Fracture of thumb</li>
+                   <li>Loss of or equivalent loss of function of hand(s)</li>
+                   <li>Loss of finger(s) or thumb(s)</li>
+                   <li>Partial loss of finger(s) of thumb(s)</li>
+                   <li>Permanently impaired grip</li>
+                </ul>
+            </div>
+            <div id="legs-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Legs injuries</h2>
+                <ul>
+                    <li>Burns</li>
+                    <li>Dislocation of ankle</li>
+                    <li>Dislocated hip</li>
+                    <li>Dislocated patella</li>
+                    <li>Fractured ankle</li>
+                    <li>Fractured femur (thigh bone)</li>
+                    <li>Fractured fibula (leg)</li>
+                    <li>Fractured hip</li>
+                    <li>Fractured patella</li>
+                    <li>Fractured tibia (shin)</li>
+                    <li>Loss of one leg(s) (above or below knee)</li>
+                    <li>Paralysis of leg</li>
+                    <li>Removal of knee(s)</li>
+                    <li>Scarring</li>
+                    <li>Sprained ankle</li>
+                    <li>Tendon, ligament or cartilage damage to leg</li>
+                </ul>
+            </div>
+            <div id="feet-panel" class="body-list-panel"> 
+                <h2 class="govuk-heading-m">Feet injuries</h2>
+                <ul>
+                    <li>Fractured great toe</li>  
+                    <li>Fractured heel bone</li>   
+                    <li>Fractured metatarsal</li>          
+                    <li>Fractured tarsal</li>          
+                    <li >Fractured toe</li>          
+                    <li >Loss of great toe(s)</li>          
+                    <li >Loss of two or more toes</li>          
+                    <li >Partial loss of great toe(s)</li>                             
+                </ul>
+            </div>
+            <div id="other-injuries-panel" class="body-list-panel">
+                <h2 class="govuk-heading-m">Other injuries</h2>
+                <ul>
+                    <li >Hemiplegia</li>          
+                    <li >Infection with one or more of HIV, Hepatitis B or Hepatitis C</li>          
+                    <li >Loss of foetus</li>          
+                    <li >Major paralysis (other than as a result of brain damage)</li>          
+                    <li >Mental injuries</li>          
+                    <li >Paraplegia</li>          
+                    <li >Quadriplegia/tetraplegia</li>          
+                    <li >Sexual offences</li>  
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+
+{% endblock %}

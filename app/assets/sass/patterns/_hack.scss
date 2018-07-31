@@ -121,3 +121,121 @@
     background:red;
     display: none
   }
+
+  // -----------------------   body parts diagram CSS needed   --------------------------------------
+  .head-neck-shape { 
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+  .face-shape { 
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: 	#bfc1c3;
+    color:  #005ea5;
+    text-align: center;
+  }
+  .eye-shape {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .hand-shape {
+    height: 40px;
+    width: 80px;
+    border-radius: 0 0 80px 80px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .leg-shape { 
+    height: 200px;
+    width: 80px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .neck-shape {
+    height: 30px;
+    width: 80px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+  .arm-left {  
+    height: 200px;
+    width: 80px;
+    display: inline-block;
+    border-radius: 50px 0 0 0 ;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .arm-right {  
+    height: 200px;
+    width: 80px;
+    display: inline-block;
+    border-radius: 0 50px  0 0 ;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .torso-shape { // torso
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .foot-left {
+    height: 50px;
+    width: 100px;
+    border-radius: 50px 0 0 50px ;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  .foot-right {
+    height: 50px;
+    width: 100px;
+    border-radius: 0 50px 50px 0;
+    display: inline-block;
+    background-color: #005ea5;
+    color: white;
+    text-align: center;
+  }
+
+  // body - injuries list panels styling
+
+  .body-list-panel {
+    display: none; // by default we don't want to display them, but it will be shown if associated body shape is selected (see application.js in assets)
+    position: absolute; 
+    background-color: 	#f8f8f8;
+    padding: 10px;
+    right: 0; 
+    top: 0; 
+    width: 400px;
+  }
+  
