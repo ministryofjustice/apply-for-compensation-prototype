@@ -16,35 +16,34 @@
       <div class="govuk-grid-column-two-thirds">
 
         <form class="form" method="post">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Are you ordinarily resident in the UK?
-                </h1>
-              </legend>
-            <div class="govuk-radios govuk-radios--inline">
+            {% from 'radios/macro.njk' import govukRadios %}
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="ordinarily-resident-1" name="ordinarily-resident" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="ordinarily-resident-1">
-                  Yes
-                </label>
-              </div>
+            {{ govukRadios({
+              "classes": "govuk-radios--inline",
+              "idPrefix": "ordinarily-resident",
+              "name": "ordinarily-resident",
+              "fieldset": {
+                "legend": {
+                  "text": 'Are you ordinarily resident in the UK?',
+                  "isPageHeading": true,
+                  "classes": 'govuk-fieldset__legend--xl'
+                }
+              },
+              "items": [
+                {
+                  "value": "yes",
+                  "text": "Yes"
+                },
+                {
+                  "value": "no",
+                  "text": "No"
+                }
+              ]
+            }) }}
 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="ordinarily-resident-2" name="ordinarily-resident" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="ordinarily-resident-2">
-                  No
-                </label>
-              </div>
-
-            </div>
-            </fieldset>
-
-            </div>
-          <input class="govuk-button" type="submit" value="Continue">
-
+            {{ govukButton({
+              "text": "Continue"
+              }) }}
         </form>
 
       </div>
