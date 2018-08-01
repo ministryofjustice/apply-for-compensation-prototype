@@ -65,7 +65,9 @@
                     <input class="govuk-input govuk-input--width-30" id="other-names" name="other-names" type="text">
                   </div>
               </details>
-              <input class="govuk-button" type="submit" value="Continue">
+              {{ govukButton({
+                "text": "Continue"
+                }) }}
           </form>
         </div>
       </div>
