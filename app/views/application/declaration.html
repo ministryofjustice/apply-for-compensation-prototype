@@ -11,22 +11,14 @@
           <h1 class="govuk-heading-xl">
           Declaration
           </h1>
-          <p class="govuk-body">CICA must process applications applying the rules of the Criminal Injuries Compensation Scheme. I understand this requires you to share and obtain information about me from:</p>
-          <ul>
-            <li class="govuk-body">the police, prosecuting authorities, fraud prevention agencies and ACRO Criminal Records Office (including to carry out convictions checks on me)</li>
-            <li class="govuk-body">medical authorities and practitioners (including police doctors and surgeons)</li>
-            <li class="govuk-body">my representative (if any)</li>
-            <li class="govuk-body">any other third party where necessary to process my application (including expert reports)</li>
-          </ul>
+        <p class="govuk-body">I confirm that the information I will give is true and complete.</p>
+        {% from "warning-text/macro.njk" import govukWarningText %}
 
-          <p>You can find out more about how we handle your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a></p>
-          <ul>
-            <li class="govuk-body">I confirm that the information I will give is true and complete</li>
-            <li class="govuk-body">I accept that online communications constitute ‘in writing’ for the purposes of the Scheme</li>
-            <li class="govuk-body">I agree to notify you of any <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#co-operation-with-cica-or-another-body" target="_blank">change in my circumstances</a></li>
-            <li class="govuk-body">I understand that if I knowingly give information that is misleading or incorrect, you may withhold or reduce any award and I may be liable to prosecution or other action</li>
-          </ul>
-          </p>
+{{ govukWarningText({
+  text: "I understand that I could be prosecuted or get less compensation if I give false or misleading information.",
+  iconFallbackText: "Warning"
+}) }}
+
           <!-- **NOTE**
           I don't like the way we are linking out to aditional content here. Do we actually think that people will read this?
           It would be much better if we could add a condensed version of the privacy notice. -->
@@ -68,7 +60,14 @@
       </div>
       <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">This is the previous Declaration content signed off by PLADS and re-inserted at their request.  It scores poorly on readability.  Neilsen Norman group research suggests that a typical user will read only 40% of this screens content - JK</p>
+        <br>
+        <p class="design-notes">Designed in collaboration with Pat from PLADS
+            <ul class="govuk-list govuk-list--bullet">
+            <li class="design-notes">"In writing" bullet point removed as users do not understand it and Electronic communications act covers this situation</li>
+            <li class="design-notes">"Change of circumstances" bullet removed as content already in stepped guide</li>
+            <li class="design-notes">Third bullet point changed to a warning as per GDS pattern guidance re legal consequences</li>
+          </ul>
+        </p>
 
       </div>
       </div>
