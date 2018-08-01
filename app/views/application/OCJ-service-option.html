@@ -66,7 +66,9 @@
                     </fieldset>
                 </div>
 
-                <input class="govuk-button" type="submit" value="Continue">
+                {{ govukButton({
+                    "text": "Continue"
+                    }) }}
             </form>
             <div class="design-notes-box">
               <h3 class="design-notes">Design notes</h3>
