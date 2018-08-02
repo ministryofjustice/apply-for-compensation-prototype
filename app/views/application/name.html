@@ -52,19 +52,6 @@
               }) }}
               {% from "input/macro.njk" import govukInput %}
 
-              <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                      Have you used any other names before?
-                  </span>
-                </summary>
-                <div class="govuk-form-group govuk-details__text">
-                      <label class="govuk-label" for="other-names">
-                          Tell us what  other names you've used (optional)
-                      </label>
-                    <input class="govuk-input govuk-input--width-30" id="other-names" name="other-names" type="text">
-                  </div>
-              </details>
               {{ govukButton({
                 "text": "Continue"
                 }) }}
@@ -74,6 +61,7 @@
       <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
         <p class="design-notes">Small alteration to "other name" toggle - JK</p>
+          <p class="design-notes">1/8/18 - other name hidden text removed as users not seeing</p>
       </div>
     </main>
   </div>

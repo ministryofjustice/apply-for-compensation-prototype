@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" method="post">
+
+          {% from "radios/macro.njk" import govukRadios %}
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {% set yesHtml %}
+          {{ govukTextarea({
+            "id": "other-names",
+            "name": "other-names",
+            label: {
+              text: "Enter your previous names",
+              "isPageHeading": false,
+              "classes": 'govuk-body'
+            }
+          }) }}
+
+
+          {% endset -%}
+
+
+          {{ govukRadios({
+            idPrefix: "how-contacted-conditional",
+            name: "other-names-text",
+            fieldset: {
+              legend: {
+                text: "Have you ever been known by any other names?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              },
+              {
+                value: "No",
+                text: "No"
+                }
+              }
+            ]
+          ) }}
+
+          {% from "button/macro.njk" import govukButton %}
+          {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+        </form>
+
+      </div>
+    </div>
+    <div class="design-notes-box">
+      <h3 class="design-notes">Design notes</h3>
+      <p class="design-notes">1/8/18 - sceen added to prototype.  Nunjucks copied from Design system not behaving properly. Text box provided rather than a complicted "add another name" pattern.</p>
+        </div>
+  </main>
+</div>
+
+{% endblock %}

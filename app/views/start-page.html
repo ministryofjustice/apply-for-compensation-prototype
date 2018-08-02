@@ -39,33 +39,70 @@
           {% if serviceName %} {{ serviceName }} {% endif %}
         </h1>
 
-        <p>Use this service to apply for compensation if you have been affected by a violent crime or sexual assault and:</p>
+        <p>We recognise the distress and mental trauma victims (survivors) of sexual assault experience and offer two compensation claim options.</p>
 
+        <h2 class="govuk-heading-m">Simple assessment of your claim</h2>
+
+        <p>A simple assessment uses only the details recorded in the police report to decide how much compensation you will get.</p>
+        <p>To complete a simple assessment we will not need to ask to see your medical records or other evidence.</p>
+        <p>We can usually complete this assessment in 8 weeks, if there are no problems getting the police report.</p>
+
+        <h2 class="govuk-heading-m">Detailed assessment of your claim</h2>
+
+        <p>You should choose a detailed assessment if you want to claim additional compensation for:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <!-- <li>you can not get compensation <a href="https://www.victimsinformationservice.org.uk/getting-compensation/">elsewhere</a></li> -->
-          <li>it has been two years or less since you reported the crime to the police</li>
-          <li>the crime happened in the UK</li>
-          <li>you are over 18 years old</li>
-          <li>you are a British Citizen</li>
-          <li>you have no unspent criminal convictions</li>
+            <li>physical injuries</li>
+            <li>disabling mental injuries</li>
+            <li><a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings-payments" target="_blank">loss of earnings</a> or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">special expenses</a></li>
         </ul>
+        <p>We will need to see more evidence such as medical records and it can take up to a year to make a decision, depending on how complicated the case is.</p>
+
+        <h2 class="govuk-heading-m">Eligibility</h2>
+
+        <p>You must meet the requirements below:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the crime was reported to the police</li>
+          <li>the crime happened in England, Scotland or Wales</li>
+          <li>it’s been two years or less since the crime was reported</li>
+          <li>crime reference number the police gave you</li>
+        </ul>
+        <p>Our guidance pages explain more about the <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#eligibility" target="_blank">eligibility rules.</a>
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p>You will need to have:</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>dates the crime happened</li>
+          <li>name of the police force who recorded the crime</li>
+          <li>name and ID number of the police officer who recorded the crime</li>
+          <li>crime reference number the police gave you</li>
+        </ul>
+
+        {% from 'radios/macro.njk' import govukRadios %}
+        {{ govukRadios({
+        "classes": "govuk-radios--stacked",
+        "idPrefix": "declaration",
+        "name": "declaration",
+        "fieldset": {
+        "legend": {
+        "text": 'What assessment option do you want to choose?',
+        "isPageHeading": true,
+        "classes": 'govuk-fieldset__legend--l'
+        }
+        },
+        "items": [
+        {
+        "value": "Simple",
+        "text": "Simple assessment"
+        },
+        {
+        "value": "Detailed",
+        "text": "Detailed assessment"
+        }
+        ]
+        }) }}
 
         <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="application/who-is-making-the-application" role="button">Start now</a>
 
-        <h2 class="govuk-heading-m">Before you start</h2>
-
-        <p>To complete your application you will need to know:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>your crime reference number</li>
-          <li>the date the crime happened</li>
-        </uL>
-
-        <p>You do not need to use a legal representative to help you with your application unless you want to. If you do use a representative, they may charge you a percentage of any money you get.</p>
-
-        <p>If you are a legal representative applying for compensation on behalf of a client you should use <a href="#">[ service name ]</a>. </p>
-
-        <!-- <p>You can not use this service if you’re in the UK illegally.</p> -->
 
       </div>
 
