@@ -274,11 +274,10 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 
 router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string
-  var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
 
-  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+  if ((incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
