@@ -9,6 +9,7 @@
 <div class="govuk-width-container">
 
   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
 
   <main role="main" class="govuk-main-wrapper">
 
@@ -18,51 +19,49 @@
 
         <form class="form" method="post">
 
-    {% from "radios/macro.njk" import govukRadios %}
-    {% from "textarea/macro.njk" import govukTextarea %}
+          {% from "radios/macro.njk" import govukRadios %}
+          {% from "textarea/macro.njk" import govukTextarea %}
 
-    {% set yesHtml %}
-    {{ govukTextarea({
-      "id": "convictions",
-      "name": "convictions",
-      label: {
-        text: "Enter your previous names",
-        "isPageHeading": false,
-        "classes": 'govuk-body'
-      }
-    }) }}
-
-
-    {% endset -%}
+          {% set yesHtml %}
+          {{ govukTextarea({
+            "id": "other-names",
+            "name": "other-names",
+            label: {
+              text: "Enter your previous names",
+              "isPageHeading": false,
+              "classes": 'govuk-body'
+            }
+          }) }}
 
 
-    {{ govukRadios({
-      idPrefix: "how-contacted-conditional",
-      name: "how-contacted",
-      fieldset: {
-        legend: {
-          text: "Have you ever been known by any other names?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes",
-          conditional: {
-            html: yesHtml
-          }
-        },
-        {
-          value: "No",
-          text: "No"
-          }
-        }
-      ]
-    ) }}
+          {% endset -%}
 
 
+          {{ govukRadios({
+            idPrefix: "how-contacted-conditional",
+            name: "other-names-text",
+            fieldset: {
+              legend: {
+                text: "Have you ever been known by any other names?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              },
+              {
+                value: "No",
+                text: "No"
+                }
+              }
+            ]
+          ) }}
 
           {% from "button/macro.njk" import govukButton %}
           {{ govukButton({

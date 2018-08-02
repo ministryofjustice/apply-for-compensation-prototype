@@ -14,11 +14,6 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
-
         <form class="form" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
@@ -69,7 +64,9 @@
     ]
   }) }}
 
-          <input class="govuk-button" type="submit" value="Continue">
+  {{ govukButton({
+    "text": "Continue"
+    }) }}
 
         </form>
 
