@@ -250,7 +250,7 @@
                   </a>
                 </dd>
               </div>
-
+              {% if data['incidentReported'] === 'yes' %}
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                     When was the crime reported to police?
@@ -264,6 +264,7 @@
                   </a>
                 </dd>
               </div>
+              {% endif %}
 
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
