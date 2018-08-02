@@ -367,7 +367,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 
   if (knowOffender === 'no')  {
     // Redirect to the relevant page
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/additional-info')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/offender-name')
@@ -383,6 +383,7 @@ router.post('/application/offender-name', function (req, res) {
     res.redirect('/application/living-with-offender-before')
 })
 // END__######################################################################################################
+
 // START__####################################################################################################
 // File: living-with-offender-before
 // Variable: living-with-offender-before
@@ -432,10 +433,20 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/additional-info')
   }
 })
 // END__######################################################################################################
+
+// START__####################################################################################################
+// File: additional-info
+
+router.post('/application/additional-info', function (req, res) {
+
+  res.redirect('/application/check-your-answers-page')
+})
+// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: check-your-answers-page
@@ -452,7 +463,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/check-your-answers-page')
+  res.redirect('/application/additional-info')
 })
 // END__######################################################################################################
 
