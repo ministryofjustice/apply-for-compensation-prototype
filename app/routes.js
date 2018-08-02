@@ -269,9 +269,6 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
 // File: period-of-abuse-start
 //
 router.post('/application/period-of-abuse-start', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page') 
-  }
   res.redirect('/application/period-of-abuse-end')
 })
 // END__######################################################################################################
@@ -359,9 +356,6 @@ router.post('/application/incident-location', function (req, res) {
      res.redirect('/application/do-you-know-offender')
    } else {
      // If the variable is any other value (or is missing) render the page requested
-     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page') 
-    }
      res.redirect('/application/reporting-details-what-force')
    }
  })
@@ -372,9 +366,6 @@ router.post('/application/incident-location', function (req, res) {
 // File: reporting-details-what-force
 //
 router.post('/application/reporting-details-what-force', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page') 
-  }
   res.redirect('/application/reporting-details-police-officer')
 })
 // END__######################################################################################################
@@ -383,9 +374,6 @@ router.post('/application/reporting-details-what-force', function (req, res) {
 // File: reporting-details-police-officer
 //
 router.post('/application/reporting-details-police-officer', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page') 
-  }
   res.redirect('/application/crime-reference')
 })
 // END__######################################################################################################
@@ -423,9 +411,6 @@ router.post('/application/do-you-know-offender', function (req, res) {
 // File: offender-name
 
 router.post('/application/offender-name', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page') 
-  }
     res.redirect('/application/living-with-offender-before')
 })
 // END__######################################################################################################

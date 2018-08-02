@@ -20,6 +20,7 @@
             {{ govukInput({
               "idPrefix": "whoPaid",
               "name": "whoPaid",
+              value: data['whoPaid'],
               "classes": "govuk-!-width-two-thirds",
               "label": {
                 "text": "Who did you claim compensation from?"
@@ -28,6 +29,7 @@
             {{ govukInput({
               "idPrefix": "howMuch",
               "name": "howMuch",
+              value: data['howMuch'],
               "classes": "govuk-!-width-one-quarter",
               "label": {
                 "text": "How much compensation did you get, if applicable?"
@@ -39,6 +41,7 @@
               "classes": "govuk-radios--inline",
               "idPrefix": "otherCompensation",
               "name": "otherCompensation",
+              value: data['otherCompensation'],
               "fieldset": {
               "legend": {
               "text": "Have you applied for compensation from any other sources?",
