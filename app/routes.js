@@ -201,7 +201,24 @@ router.post('/application/name', function (req, res) {
 // START__####################################################################################################
 // File: date-of-birth
 //
+
 router.post('/application/date-of-birth', function (req, res) {
+  const moment = require('moment');
+  var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
+  var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+  var day = Number.parseInt(req.session.data['dob-day'], 10);
+  
+  var currentDate = moment();
+  var dateOfBirth = moment([year, month, day]);
+
+  var duration = moment.duration(currentDate.diff(dateOfBirth));
+  var ageInYears = duration.asYears();
+
+  console.log(ageInYears);
+
+  if(ageInYears < 18) { // it's a minor -
+    return res.redirect('/application/prototype')
+  }
   res.redirect('/application/email-address')
 })
 // END__######################################################################################################
