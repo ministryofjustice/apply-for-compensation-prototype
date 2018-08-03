@@ -24,6 +24,7 @@
   {{ govukInput({
     id: "somewhere-else",
     name: "somewhere-else",
+    value: data['somewhere-else'],
     classes: "govuk-!-width-two-thirds",
     label: {
       text: "Tell us where the crime happened"
@@ -34,6 +35,7 @@
   {{ govukRadios({
     idPrefix: "incident-location",
     name: "incident-location",
+    currentValue: data['incident-location'],
     fieldset: {
       legend: {
         text: "Where did the crime happen?",

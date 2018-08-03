@@ -28,7 +28,8 @@
               },
               "classes": "govuk-input--width-10",
               "id": "title",
-              "name": "title"
+              "name": "title",
+              "value": data['title']
               }) }}
 
               {% from "input/macro.njk" import govukInput %}
@@ -38,7 +39,8 @@
                   text: "First name"
                 },
                 id: "first-name",
-                name: "first-name"
+                name: "first-name",
+                value: data['first-name']
               }) }}
 
               {% from "input/macro.njk" import govukInput %}
@@ -48,7 +50,8 @@
                   text: "Last name"
                 },
                 id: "last-name",
-                name: "last-name"
+                name: "last-name",
+                value: data['last-name']
               }) }}
               {% from "input/macro.njk" import govukInput %}
 
