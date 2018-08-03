@@ -100,7 +100,7 @@ router.post('/application/OCJ-service-option', function (req, res) {
 
 router.post('/application/compensation', function (req, res) {
 
-  // Get the answer from the query string 
+  // Get the answer from the query string
  // var otherCompensation = req.session.data['otherCompensation']
  // if (otherCompensation === 'no') {
     // Redirect to the relevant page
@@ -115,7 +115,7 @@ router.post('/application/compensation', function (req, res) {
 // START__####################################################################################################
 
 // File: did-not-apply-for-compensation - not used anymore (see above commented)
-// 
+//
 
 router.post('/application/did-not-apply-for-compensation', function (req, res) {
     res.redirect('/application/british-citizen')
@@ -194,6 +194,33 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 // File: name
 //
 router.post('/application/name', function (req, res) {
+  res.redirect('/application/name-have-other')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: name-have-other
+// Variable: haveOtherName
+
+router.post('/application/name-have-other', function (req, res) {
+
+  var haveOtherName = req.session.data['haveOtherName'];
+
+  if (haveOtherName === 'no')  {
+    return res.redirect('/application/date-of-birth')
+  }
+
+  res.redirect('/application/name-other')
+
+})
+
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: name=other
+//
+router.post('/application/name-other', function (req, res) {
   res.redirect('/application/date-of-birth')
 })
 // END__######################################################################################################
@@ -207,7 +234,7 @@ router.post('/application/date-of-birth', function (req, res) {
   var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
   var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var day = Number.parseInt(req.session.data['dob-day'], 10);
-  
+
   var currentDate = moment();
   var dateOfBirth = moment([year, month, day]);
 
