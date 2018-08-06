@@ -16,11 +16,12 @@
 
         <form class="form"  method="post">
             {% from "radios/macro.njk" import govukRadios %}
-
+            
             {{ govukRadios({
               classes: "govuk-radios--inline",
               idPrefix: "know-offender",
               name: "know-offender",
+              currentValue: data['know-offender'],
               fieldset: {
                 legend: {
                   text: "Do you know the person who attacked you?",

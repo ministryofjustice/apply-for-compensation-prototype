@@ -15,22 +15,17 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
-
-        <form class="form" method="post">
+              <form class="form" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "britishCitizen",
-            "name": "britishCitizen",
-            currentValue: data['britishCitizen'],
+            "idPrefix": "haveOtherName",
+            "name": "haveOtherName",
             "fieldset": {
               "legend": {
-                "text": 'Are you a British citizen?',
+                "text": 'Have you ever been known by any other names?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -57,8 +52,7 @@
     </div>
     <div class="design-notes-box">
       <h3 class="design-notes">Design notes</h3>
-      <p class="design-notes">suggested alternative "do you live in the UK".  Applicant's status not routinely checked by caseworkers.</p>
-      <p class="design-notes">CSC data indicates 0.06% of rejections based on lack of qualifying residence.  Given this do we need to ask this question and the other 8 or 9 associated residence Q's?</p>
+      <p class="design-notes">3/8/18 - screen created for MVP-108 - JK</p>
     </div>
   </main>
 </div>
