@@ -195,6 +195,32 @@ router.post('/application/name', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
+  res.redirect('/application/name-have-other')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: name-have-other
+// Variable: haveOtherName
+
+router.post('/application/name-have-other', function (req, res) {
+
+  var haveOtherName = req.session.data['haveOtherName'];
+
+  if (haveOtherName === 'no')  {
+    return res.redirect('/application/date-of-birth')
+  }
+
+  res.redirect('/application/name-other')
+
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: name=other
+//
+router.post('/application/name-other', function (req, res) {
   res.redirect('/application/date-of-birth')
 })
 // END__######################################################################################################
