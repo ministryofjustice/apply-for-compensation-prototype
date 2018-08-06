@@ -21,14 +21,16 @@
           </div>
         </div>
 
+        <p> We have sent a confirmation email to {{ data['emailAddress'] }}</p>
+
         <h2 class="govuk-heading-m">What happens next</h2>
 
 
-      <p>We'll use the information you've given us to:
+      <p>We'll check you are eligible and:
         <ul class="govuk-list govuk-list--bullet">
-          <li>assess your application</li>
-          <li>request a police report, if needed</li>
-          <li>tell you of our decision by email to {{ data['emailAddress'] }}</li>
+          <li>request information from the police, if it is needed</li>
+          <li>assess your claim when we get the police information</li>
+          <li>send our decision to {{ data['emailAddress'] }}</li>
       </p>
 
         <p><a href="/application/confirmation-page-if-automatic-nil">What did you think of this service?</a> (takes 30 seconds)</p>
@@ -37,6 +39,7 @@
     </div>
     <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">6/8/18 updated for MVP-114.  First sentence was missed off last prototype.  Reinstated. JK</p>
         <p class="design-notes">There is a different screen if we can do an automatic NIL decision: <a href="/application/confirmation-page-if-automatic-nil">View this alternative screen</a></p>
       </div>
 
