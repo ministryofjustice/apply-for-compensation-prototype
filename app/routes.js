@@ -100,24 +100,46 @@ router.post('/application/OCJ-service-option', function (req, res) {
 
 router.post('/application/compensation', function (req, res) {
 
-  // Get the answer from the query string 
- // var otherCompensation = req.session.data['otherCompensation']
- // if (otherCompensation === 'no') {
+  // Get the answer from the query string
+    var otherCompensation = req.session.data['otherCompensation']
+    if (otherCompensation === 'no') {
     // Redirect to the relevant page
- //   res.redirect('/application/did-not-apply-for-compensation')
- // } else {
+    res.redirect('/application/compensation-why-not')
+    } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/british-citizen')
-  //}
+    res.redirect('/application/compensation-who')
+    }
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
 
 // File: did-not-apply-for-compensation - not used anymore (see above commented)
-// 
+//
 
-router.post('/application/did-not-apply-for-compensation', function (req, res) {
+router.post('/application/compensation-why-not', function (req, res) {
+    res.redirect('/application/british-citizen')
+  
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+
+// File: who-apply-to-for-compensation
+//
+
+router.post('/application/compensation-who', function (req, res) {
+    res.redirect('/application/compensation-amount')
+
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+
+// File: how-much-compensation
+//
+
+router.post('/application/compensation-amount', function (req, res) {
     res.redirect('/application/british-citizen')
 
 })

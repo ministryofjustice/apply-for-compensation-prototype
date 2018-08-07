@@ -8,7 +8,7 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="date-of-birth" method="post">
+          <form class="form" method="post">
 
             <!-- <h1 class="govuk-heading-l">
             What is your full name?
@@ -18,13 +18,13 @@
 
             {{ govukInput({
             "label": {
-            "text": "Who did you apply to for other compensation?",
+            "text": "Who else have you claimed compensation from?",
             "isPageHeading": true,
             "classes": 'govuk-label--xl'
             },
             "classes": 'govuk-input--width-20',
-            "id": "national-insurance-number",
-            "name": "national-insurance-number"
+            "id": "who-claim-from",
+            "name": "who-claim-from"
             }) }}
 
             {% from "button/macro.njk" import govukButton %}

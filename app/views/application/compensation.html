@@ -14,42 +14,12 @@
           <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
           <form class="form" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
-            {% from "input/macro.njk" import govukInput %}
-
-            {% set yesHtml %}
-            {{ govukInput({
-              "idPrefix": "whoPaid",
-              "name": "whoPaid",
-              "classes": "govuk-!-width-two-thirds",
-              "label": {
-                "text": "Who did you claim compensation from?"
-              }
-            }) }}
-            {{ govukInput({
-              "idPrefix": "howMuch",
-              "name": "howMuch",
-              "classes": "govuk-!-width-one-quarter",
-              "label": {
-                "text": "How much did you get, if applicable?"
-              }
-            }) }}
-            {% endset -%}
-
-            {% set noHtml %}
-            {{ govukTextarea({
-              "idPrefix": "whyNot",
-              "name": "whyNot",
-              "classes": "govuk-label--xl",
-              "label": {
-                "text": "Why have you not claimed compensation from another source?"
-              }
-            }) }}
-            {% endset -%}
 
             {{ govukRadios({
               "classes": "govuk-radios--inline",
               "idPrefix": "otherCompensation",
               "name": "otherCompensation",
+              value: data['otherCompensation'],
               "fieldset": {
               "legend": {
               "text": "Have you claimed compensation from any other source?",
@@ -58,23 +28,17 @@
               }
               },
               "hint": {
-                "text": "Other sources include for example, benefits, insurance, civil damages and court compensation."
+                "text": "Other sources include for example, insurance, civil damages and court compensation."
 
               },
               "items": [
                 {
                   "value": "yes",
-                  "text": "Yes",
-                  "conditional": {
-                    "html": yesHtml
-                  }
+                  "text": "Yes"
                 },
                 {
                   "value": "no",
-                  "text": "No",
-                  "conditional": {
-                    "html": noHtml
-                  }
+                  "text": "No"
                 }
               ]
             }) }}
