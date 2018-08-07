@@ -514,6 +514,25 @@
             {% endif %}  <!-- end if  you know the offender -->
 
           </dl>
+        
+        {% if data['additional-information'] %}
+        <h2 class="govuk-heading-l">Additional information</h2>
+        <dl class="govuk-check-your-answers govuk-check-your-answers--long">
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Tell us more
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['additional-information'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="additional-info">
+                Change<span class="visually-hidden"> additional information</span>
+              </a>
+            </dd>
+          </div>
+          </dl>
+        {% endif %}
 
         <h2 class="govuk-heading-l">Consent and submit your application</h2>
 
