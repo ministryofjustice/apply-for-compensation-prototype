@@ -45,6 +45,8 @@ router.post('/application/who-is-making-the-application', function (req, res) {
 router.post('/application/declaration', function (req, res) {
   // Get the answer from the query string
   var declaration = req.session.data['declaration']
+  //setting the session variable for check your answer page to false
+  req.session.checking_answers = false
 
  // if (declaration === 'no') {
     // Redirect to the relevant page
@@ -109,22 +111,25 @@ router.post('/application/compensation', function (req, res) {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/compensation-who')
     }
+
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-
 // File: did-not-apply-for-compensation - not used anymore (see above commented)
 //
 
 router.post('/application/compensation-why-not', function (req, res) {
+  
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
     res.redirect('/application/british-citizen')
   
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-
 // File: who-apply-to-for-compensation
 //
 
@@ -135,11 +140,14 @@ router.post('/application/compensation-who', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-
 // File: how-much-compensation
 //
 
 router.post('/application/compensation-amount', function (req, res) {
+  
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
     res.redirect('/application/british-citizen')
 
 })
@@ -157,6 +165,9 @@ router.post('/application/british-citizen', function (req, res) {
     // Redirect to the relevant page
     res.redirect('/application/residence-1')
   } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/criminal-convictions')
   }
@@ -177,6 +188,9 @@ router.post('/application/residence-1', function (req, res) {
     res.redirect('/application/prototype')
   } else {
     // If the variable is any other value (or is missing) render the page requested
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     res.redirect('/application/criminal-convictions')
   }
 })
@@ -195,6 +209,9 @@ router.post('/application/criminal-convictions', function (req, res) {
     // Redirect to the relevant page
     res.redirect('/application/tell-criminal-convictions')
   } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/name')
   }
@@ -207,6 +224,9 @@ router.post('/application/criminal-convictions', function (req, res) {
 // this view is called if user says yes to convicted of a criminal offence
 
 router.post('/application/tell-criminal-convictions', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/name')
 })
 
@@ -216,6 +236,35 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 // File: name
 //
 router.post('/application/name', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/name-have-other')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: name-have-other
+// Variable: haveOtherName
+
+router.post('/application/name-have-other', function (req, res) {
+
+  var haveOtherName = req.session.data['haveOtherName'];
+
+  if (haveOtherName === 'no')  {
+    return res.redirect('/application/date-of-birth')
+  }
+
+  res.redirect('/application/name-other')
+
+})
+
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: name=other
+//
+router.post('/application/name-other', function (req, res) {
   res.redirect('/application/date-of-birth')
 })
 // END__######################################################################################################
@@ -223,7 +272,27 @@ router.post('/application/name', function (req, res) {
 // START__####################################################################################################
 // File: date-of-birth
 //
+
 router.post('/application/date-of-birth', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  const moment = require('moment');
+  var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
+  var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+  var day = Number.parseInt(req.session.data['dob-day'], 10);
+
+  var currentDate = moment();
+  var dateOfBirth = moment([year, month, day]);
+
+  var duration = moment.duration(currentDate.diff(dateOfBirth));
+  var ageInYears = duration.asYears();
+
+  console.log(ageInYears);
+
+  if(ageInYears < 18) { // it's a minor -
+    return res.redirect('/application/prototype')
+  }
   res.redirect('/application/email-address')
 })
 // END__######################################################################################################
@@ -236,6 +305,9 @@ router.post('/application/email-address', function (req, res) {
   if (!req.session.data['emailAddress']) {
     req.session.data['emailAddress'] = 'name@domain.com'
   }
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/address')
 })
 // END__######################################################################################################
@@ -244,6 +316,9 @@ router.post('/application/email-address', function (req, res) {
 // File: address
 //
 router.post('/application/address', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/phone-number')
 })
 // END__######################################################################################################
@@ -252,6 +327,9 @@ router.post('/application/address', function (req, res) {
 // File: phone-number
 //
 router.post('/application/phone-number', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/single-or-multiple-incidents')
 })
 // END__######################################################################################################
@@ -286,6 +364,9 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 // File: period-of-abuse-end
 //
 router.post('/application/period-of-abuse-end', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/incident-location')
 })
 // END__######################################################################################################
@@ -296,14 +377,16 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 
 router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string
-  var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
 
-  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+  if ((incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/incident-location')
   }
@@ -318,11 +401,14 @@ router.post('/application/previous-applications', function (req, res) {
   // Get the answer from the query string
   var previousApplications = req.session.data['previous-applications']
 
-  if (previousApplications === 'no')  {
+  if (previousApplications === 'yes')  {
     // Redirect to the relevant page
     res.redirect('/application/previous-not-eligible')
   } else {
     // If the variable is any other value (or is missing) render the page requested
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     res.redirect('/application/incident-location')
   }
 })
@@ -332,6 +418,9 @@ router.post('/application/previous-applications', function (req, res) {
 // File: incident-location
 //
 router.post('/application/incident-location', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/incident-reported')
 })
 
@@ -347,6 +436,9 @@ router.post('/application/incident-location', function (req, res) {
 
    if (incidentReported === 'no') {
      // Redirect to the relevant page
+     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
      res.redirect('/application/do-you-know-offender')
    } else {
      // If the variable is any other value (or is missing) render the page requested
@@ -376,6 +468,9 @@ router.post('/application/reporting-details-police-officer', function (req, res)
 // File: crime-reference
 //
 router.post('/application/crime-reference', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/do-you-know-offender')
 })
 // END__######################################################################################################
@@ -390,7 +485,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 
   if (knowOffender === 'no')  {
     // Redirect to the relevant page
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/additional-info')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/offender-name')
@@ -402,10 +497,10 @@ router.post('/application/do-you-know-offender', function (req, res) {
 // File: offender-name
 
 router.post('/application/offender-name', function (req, res) {
-
     res.redirect('/application/living-with-offender-before')
 })
 // END__######################################################################################################
+
 // START__####################################################################################################
 // File: living-with-offender-before
 // Variable: living-with-offender-before
@@ -415,9 +510,15 @@ router.post('/application/living-with-offender-before', function (req, res) {
   var withOffenderBefore = req.session.data['living-with-offender-before']
 
   if (withOffenderBefore === 'no')  {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     // Redirect to the relevant page
     res.redirect('/application/ongoing-relationship')
   } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/living-with-offender-now')
   }
@@ -455,27 +556,38 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/additional-info')
   }
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: additional-info
+
+router.post('/application/additional-info', function (req, res) {
+
+  res.redirect('/application/check-your-answers-page')
+})
+// END__######################################################################################################
+
+
+// START__####################################################################################################
 // File: check-your-answers-page
 // Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
 
-// router.get('/application/check-your-answers-page', function (req, res) {
-//   // Get the answer from the query string
-//   req.session.checking_answers = true
-//   return res.render('application/check-your-answers-page')
-// })
+ router.get('/application/check-your-answers-page', function (req, res) {
+   // Get the answer from the query string
+   req.session.checking_answers = true // this is initially set to false on the declaration page to avoid false results if using the prototype more than once
+   return res.render('application/check-your-answers-page')
+ })
+
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/check-your-answers-page')
+  res.redirect('/application/additional-info')
 })
 // END__######################################################################################################
 

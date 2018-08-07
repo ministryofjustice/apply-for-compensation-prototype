@@ -49,7 +49,12 @@
     {% set conditionalId = "conditional-" + id %}
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="{{ id }}" name="{{ params.name }}" type="radio" value="{{ item.value }}"
-      {{-" checked" if item.checked }}
+      {% if params.currentValue %}
+        {{-" checked" if params.currentValue === item.value }}
+      {% endif %}
+      {% if not params.currentValue %}
+        {{-" checked" if item.checked }}
+      {% endif %}
       {{-" disabled" if item.disabled }}
       {%- if item.conditional %} data-aria-controls="{{ conditionalId }}"{% endif -%}>
       {{ govukLabel({
