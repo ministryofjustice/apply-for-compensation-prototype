@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Question page
+Compensation from other sources
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
-    <a class="govuk-back-link" href="/start-page">Back</a>
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="date-of-birth" method="post">
+          <form class="form" method="post">
 
             <!-- <h1 class="govuk-heading-l">
             What is your full name?
@@ -18,13 +19,18 @@
 
             {{ govukInput({
             "label": {
-            "text": "Why did you not apply for other compensation?",
+            "text": "How much compensation did you get?",
             "isPageHeading": true,
             "classes": 'govuk-label--xl'
             },
+            "hint": {
+              "text": "You can also tell us if you are still waiting to find out."
+
+            },
             "classes": 'govuk-input--width-20',
-            "id": "national-insurance-number",
-            "name": "national-insurance-number"
+            "id": "how-much-compensation",
+            "name": "how-much-compensation",
+            'value': data['how-much-compensation']
             }) }}
 
             {% from "button/macro.njk" import govukButton %}
