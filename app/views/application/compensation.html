@@ -9,17 +9,18 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for any other compensation?
+          Have you claimed compensation from any other source?
           </h1>
           <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
           <form class="form" method="post">
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
 
-            {% set emailHtml %}
+            {% set yesHtml %}
             {{ govukInput({
               "idPrefix": "whoPaid",
               "name": "whoPaid",
+              value: data['whoPaid'],
               "classes": "govuk-!-width-two-thirds",
               "label": {
                 "text": "Who did you claim compensation from?"
@@ -28,9 +29,21 @@
             {{ govukInput({
               "idPrefix": "howMuch",
               "name": "howMuch",
+              currentValue: data['howMuch'],
               "classes": "govuk-!-width-one-quarter",
               "label": {
-                "text": "How much compensation did you get, if applicable?"
+                "text": "How much did you get, if applicable?"
+              }
+            }) }}
+            {% endset -%}
+
+            {% set noHtml %}
+            {{ govukTextarea({
+              "idPrefix": "whyNot",
+              "name": "whyNot",
+              "classes": "govuk-label--xl",
+              "label": {
+                "text": "Why have you not claimed compensation from another source?"
               }
             }) }}
             {% endset -%}
@@ -39,15 +52,16 @@
               "classes": "govuk-radios--inline",
               "idPrefix": "otherCompensation",
               "name": "otherCompensation",
+              value: data['otherCompensation'],
               "fieldset": {
               "legend": {
-              "text": "Have you applied for compensation from any other sources?",
+              "text": "Have you claimed compensation from any other source?",
               "isPageHeading": true,
               "classes": "govuk-fieldset__legend--xl"
               }
               },
               "hint": {
-                "text": "Before we assess your application you must try to get compensation from elsewhere."
+                "text": "Other sources include for example, benefits, insurance, civil damages and court compensation."
 
               },
               "items": [
@@ -55,12 +69,15 @@
                   "value": "yes",
                   "text": "Yes",
                   "conditional": {
-                    "html": emailHtml
+                    "html": yesHtml
                   }
                 },
                 {
                   "value": "no",
-                  "text": "No"
+                  "text": "No",
+                  "conditional": {
+                    "html": noHtml
+                  }
                 }
               ]
             }) }}
@@ -71,6 +88,13 @@
             }) }}
           </form>
         </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">6/8/18 - Question changed to more readable style.</p>
+        <p class="design-notes">Hint text changed to more helpful content style.</p>
+        <p class="design-notes">Conditionally revealed text box for No answer provided. JK</p>
+      </div>
       </div>
     </main>
   </div>

@@ -250,7 +250,7 @@
                   </a>
                 </dd>
               </div>
-
+              {% if data['incidentReported'] === 'yes' %}
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                     When was the crime reported to police?
@@ -264,6 +264,7 @@
                   </a>
                 </dd>
               </div>
+              {% endif %}
 
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
@@ -316,7 +317,7 @@
                 When did the crime happen?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                  {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
+                  {{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="incident-date">
@@ -332,7 +333,7 @@
                  When did it start?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['period-of-abuse-start-day'] }}/{{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
+                {{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="period-of-abuse-start">
@@ -345,7 +346,7 @@
                     When did it end?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
-                  {{ data['period-of-abuse-end-day'] }}/{{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
+                  {{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="period-of-abuse-end">
@@ -533,11 +534,27 @@
           </dl>
         {% endif %}
 
-        <h2 class="govuk-heading-l">Send your application</h2>
+        <h2 class="govuk-heading-l">Consent and submit your application</h2>
 
-        <p>
-          When you send this application you confirm that the information in it is correct as far as you know.
-        </p>
+          <p class="govuk-body">I understand that you must share and obtain information about me from the police and prosecuting authorities to process my application.</p>
+
+            <a href="confirmation-page" class="govuk-button">Consent and submit</a>
+  <!-- <p>You can find out more about how we handle your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a></p> -->
+
+</div>
+</div>
+<div class="design-notes-box">
+<h3 class="design-notes">Design notes</h3>
+<p class="design-notes">Designed in collaboration with Pat from PLADS.
+<ul class="govuk-list govuk-list--bullet">
+<li class="design-notes">First bullet reduced to two items.  UR showed that users were scared by the volume of third parties we potentially share info with and would stop</li>
+<li class="design-notes">Fraud prevention agencies - does this refer to payments (eg Experian checks)?  If so then we should be mentioning this only at the point we are going to pay someone, it would not be required for Nils</il>
+<li class="design-notes">2nd bullet point removed - current MVP would not require med evidence</li>
+<li class="design-notes">3rd bullet point removed - current MVP would not include repped cases</li>
+<li class="design-notes">4th bullet point removed - current MVP would not require referral to any third parties</li>
+</ul>
+</p>
+
 
         <a href="confirmation-page" class="govuk-button">Send your application</a>
 

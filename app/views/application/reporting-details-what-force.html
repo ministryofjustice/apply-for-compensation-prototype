@@ -24,19 +24,26 @@
 
             <form class="/form-handler" method="post">
 
-                <div class="govuk-form-group">
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="police-force">
-                            <h1 class="govuk-heading-xl">
-                                What police force was the crime reported to?
-                            </h1>
-                          <!--p class="govuk-hint">Enter the police force name in the box to search for example, West Midlands Police or Police Scotland</p-->
-                        </label>
-                            <input class="govuk-input" id="police-force" name="police-force" type="text" aria-describedby="police-force-hint">
-                    </div>
-                </div>
+                {% from "input/macro.njk" import govukInput %}
 
-                <input class="govuk-button" type="submit" value="Continue">
+                {{ govukInput({
+                "label": {
+                "text": "What police force was the crime reported to?",
+                "isPageHeading": true,
+                "classes": 'govuk-label--xl'
+              },
+                "classes": 'govuk-input--width-40',
+                "id": "police-force",
+                "name": "police-force",
+                "value": data['police-force'] 
+                }) }}
+    
+                {% from "button/macro.njk" import govukButton %}
+    
+                {{ govukButton({
+                "text": "Continue"
+                }) }}
+
             </form>
 
         </div>
