@@ -357,7 +357,7 @@ router.post('/application/previous-applications', function (req, res) {
   // Get the answer from the query string
   var previousApplications = req.session.data['previous-applications']
 
-  if (previousApplications === 'no')  {
+  if (previousApplications === 'yes')  {
     // Redirect to the relevant page
     res.redirect('/application/previous-not-eligible')
   } else {
