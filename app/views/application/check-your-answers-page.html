@@ -129,7 +129,7 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-                Have you applied for compensation from any other sources?
+              Have you claimed compensation from any other source?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['otherCompensation'] }}
@@ -144,31 +144,47 @@
           {% if data['otherCompensation'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Who did you claim compensation from?
+                Who else have you claimed compensation from?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['whoPaid'] }}
+                {{ data['who-claim-from'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
-                <a href="compensation">
-                  Change<span class="visually-hidden"> who paid?</span>
+                <a href="compensation-who">
+                  Change<span class="visually-hidden"> Who else have you claimed compensation from?</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                  How much compensation did you get, if applicable?
+                  How much compensation did you get?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
-                  {{ data['howMuch'] }}
+                  {{ data['how-much-compensation'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
-                  <a href="compensation">
-                    Change<span class="visually-hidden"> compensation</span>
+                  <a href="compensation-amount">
+                    Change<span class="visually-hidden"> compensation amount</span>
                   </a>
                 </dd>
               </div>
           {% endif %}
+
+          {% if data['otherCompensation'] === 'no' %}
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Why did you not claim compensation from another source?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['why-not-claim'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="compensation-why-not">
+                Change<span class="visually-hidden"> reason you didn't apply for compensation</span>
+              </a>
+            </dd>
+          </div>
+      {% endif %}
 
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
