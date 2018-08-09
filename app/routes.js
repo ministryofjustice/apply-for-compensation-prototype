@@ -101,11 +101,55 @@ router.post('/application/OCJ-service-option', function (req, res) {
 // Variable: otherCompensation
 
 router.post('/application/compensation', function (req, res) {
+
+  // Get the answer from the query string
+    var otherCompensation = req.session.data['otherCompensation']
+    if (otherCompensation === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/compensation-why-not')
+    } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/compensation-who')
+    }
+
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: did-not-apply-for-compensation - not used anymore (see above commented)
+//
+
+router.post('/application/compensation-why-not', function (req, res) {
+  
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
     res.redirect('/application/british-citizen')
-  //}
+  
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: who-apply-to-for-compensation
+//
+
+router.post('/application/compensation-who', function (req, res) {
+    res.redirect('/application/compensation-amount')
+
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: how-much-compensation
+//
+
+router.post('/application/compensation-amount', function (req, res) {
+  
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+    res.redirect('/application/british-citizen')
+
 })
 // END__######################################################################################################
 
@@ -333,11 +377,10 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 
 router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string
-  var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
 
-  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+  if ((incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
@@ -358,7 +401,7 @@ router.post('/application/previous-applications', function (req, res) {
   // Get the answer from the query string
   var previousApplications = req.session.data['previous-applications']
 
-  if (previousApplications === 'no')  {
+  if (previousApplications === 'yes')  {
     // Redirect to the relevant page
     res.redirect('/application/previous-not-eligible')
   } else {
@@ -442,7 +485,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 
   if (knowOffender === 'no')  {
     // Redirect to the relevant page
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/additional-info')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/offender-name')
@@ -457,6 +500,7 @@ router.post('/application/offender-name', function (req, res) {
     res.redirect('/application/living-with-offender-before')
 })
 // END__######################################################################################################
+
 // START__####################################################################################################
 // File: living-with-offender-before
 // Variable: living-with-offender-before
@@ -512,10 +556,20 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/additional-info')
   }
 })
 // END__######################################################################################################
+
+// START__####################################################################################################
+// File: additional-info
+
+router.post('/application/additional-info', function (req, res) {
+
+  res.redirect('/application/check-your-answers-page')
+})
+// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: check-your-answers-page
@@ -533,7 +587,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/check-your-answers-page')
+  res.redirect('/application/additional-info')
 })
 // END__######################################################################################################
 

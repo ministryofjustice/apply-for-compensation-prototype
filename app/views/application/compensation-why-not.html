@@ -1,30 +1,32 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Question page
+Compensation from other sources
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
-    <a class="govuk-back-link" href="/start-page">Back</a>
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="date-of-birth" method="post">
+          <form class="form" method="post">
 
             <!-- <h1 class="govuk-heading-l">
             What is your full name?
             </h1> -->
 
-            {% from "input/macro.njk" import govukInput %}
+            {% from "textarea/macro.njk" import govukTextarea %}
 
-            {{ govukInput({
+            {{ govukTextarea({
             "label": {
-            "text": "Who did you apply to for other compensation?",
+            "text": "Why did you not claim compensation from another source?",
             "isPageHeading": true,
             "classes": 'govuk-label--xl'
             },
             "classes": 'govuk-input--width-20',
-            "id": "national-insurance-number",
-            "name": "national-insurance-number"
+            "id": "why-not-claim",
+            "name": "why-not-claim",
+            'value' : data['why-not-claim']
             }) }}
 
             {% from "button/macro.njk" import govukButton %}

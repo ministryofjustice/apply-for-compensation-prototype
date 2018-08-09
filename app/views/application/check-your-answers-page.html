@@ -129,7 +129,7 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-                Have you applied for compensation from any other sources?
+              Have you claimed compensation from any other source?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['otherCompensation'] }}
@@ -144,31 +144,47 @@
           {% if data['otherCompensation'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Who did you claim compensation from?
+                Who else have you claimed compensation from?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                {{ data['whoPaid'] }}
+                {{ data['who-claim-from'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
-                <a href="compensation">
-                  Change<span class="visually-hidden"> who paid?</span>
+                <a href="compensation-who">
+                  Change<span class="visually-hidden"> Who else have you claimed compensation from?</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                  How much compensation did you get, if applicable?
+                  How much compensation did you get?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
-                  {{ data['howMuch'] }}
+                  {{ data['how-much-compensation'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
-                  <a href="compensation">
-                    Change<span class="visually-hidden"> compensation</span>
+                  <a href="compensation-amount">
+                    Change<span class="visually-hidden"> compensation amount</span>
                   </a>
                 </dd>
               </div>
           {% endif %}
+
+          {% if data['otherCompensation'] === 'no' %}
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Why did you not claim compensation from another source?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['why-not-claim'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="compensation-why-not">
+                Change<span class="visually-hidden"> reason you didn't apply for compensation</span>
+              </a>
+            </dd>
+          </div>
+      {% endif %}
 
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
@@ -514,12 +530,47 @@
             {% endif %}  <!-- end if  you know the offender -->
 
           </dl>
+        
+        {% if data['additional-information'] %}
+        <h2 class="govuk-heading-l">Additional information</h2>
+        <dl class="govuk-check-your-answers govuk-check-your-answers--long">
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Tell us more
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['additional-information'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="additional-info">
+                Change<span class="visually-hidden"> additional information</span>
+              </a>
+            </dd>
+          </div>
+          </dl>
+        {% endif %}
 
-        <h2 class="govuk-heading-l">Send your application</h2>
+        <h2 class="govuk-heading-l">Consent and submit your application</h2>
 
-        <p>
-          When you send this application you confirm that the information in it is correct as far as you know.
-        </p>
+          <p class="govuk-body">I understand that you must share and obtain information about me from the police and prosecuting authorities to process my application.</p>
+
+            <a href="confirmation-page" class="govuk-button">Consent and submit</a>
+  <!-- <p>You can find out more about how we handle your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a></p> -->
+
+</div>
+</div>
+<div class="design-notes-box">
+<h3 class="design-notes">Design notes</h3>
+<p class="design-notes">Designed in collaboration with Pat from PLADS.
+<ul class="govuk-list govuk-list--bullet">
+<li class="design-notes">First bullet reduced to two items.  UR showed that users were scared by the volume of third parties we potentially share info with and would stop</li>
+<li class="design-notes">Fraud prevention agencies - does this refer to payments (eg Experian checks)?  If so then we should be mentioning this only at the point we are going to pay someone, it would not be required for Nils</il>
+<li class="design-notes">2nd bullet point removed - current MVP would not require med evidence</li>
+<li class="design-notes">3rd bullet point removed - current MVP would not include repped cases</li>
+<li class="design-notes">4th bullet point removed - current MVP would not require referral to any third parties</li>
+</ul>
+</p>
+
 
         <a href="confirmation-page" class="govuk-button">Send your application</a>
 
