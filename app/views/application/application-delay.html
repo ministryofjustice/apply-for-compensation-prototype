@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Reporting delay
+  Application delay
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
@@ -14,10 +14,10 @@
           {% from "textarea/macro.njk" import govukTextarea %}
 
           {{ govukTextarea({
-            "id": "reportingDelay",
-            "name": "reportingDelay",
+            "id": "applicationDelay",
+            "name": "applicationDelay",
             label: {
-              text: "Why was there a delay in reporting the crime to police?",
+              text: "Why did you delay making your claim?",
               "isPageHeading": true,
               "classes": 'govuk-label--xl'
             }
@@ -34,7 +34,7 @@
       </div>
       <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">9/8/18 - new screen MVP-123. Will be displayed if difference between incident date and reporting date is > 48hrs - JK</p>
+        <p class="design-notes">9/8/18 - new screen MVP-124 - JK</p>
       </div>
     </main>
   </div>
