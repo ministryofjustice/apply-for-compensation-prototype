@@ -20,8 +20,9 @@
             {% from 'radios/macro.njk' import govukRadios %}
 
             {{ govukRadios({
-              idPrefix: "incidentReported",
-              name: "incidentReported",
+              idPrefix: "crimeReported",
+              name: "crimeReported",
+              currentValue : data['crimeReported'],
               classes: "govuk-radios--inline",
               fieldset: {
                 legend: {

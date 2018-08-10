@@ -258,7 +258,7 @@
                   Was the crime reported to the police?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
-                  {{ data['incidentReported'] }}
+                  {{ data['crimeReported'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="incident-reported">
@@ -266,7 +266,7 @@
                   </a>
                 </dd>
               </div>
-              {% if data['incidentReported'] === 'yes' %}
+              {% if data['crimeReported'] === 'yes' %}
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                     When was the crime reported to police?
@@ -275,7 +275,7 @@
                   {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
-                  <a href="incident-reported">
+                  <a href="crime-reported-date">
                     Change<span class="visually-hidden"> date incident was reported</span>
                   </a>
                 </dd>
@@ -333,7 +333,7 @@
                 When did the crime happen?
               </dt>
               <dd class="govuk-check-your-answers__answer">
-                  {{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
+                {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="incident-date">
@@ -372,7 +372,7 @@
               </div>
             {% endif %}
 
-            {% if data['incidentReported'] === 'yes' %}
+            {% if data['crimeReported'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
                   What police force was the crime reported to?
