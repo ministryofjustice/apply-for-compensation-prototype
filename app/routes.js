@@ -120,12 +120,12 @@ router.post('/application/compensation', function (req, res) {
 //
 
 router.post('/application/compensation-why-not', function (req, res) {
-  
+
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
     res.redirect('/application/british-citizen')
-  
+
 })
 // END__######################################################################################################
 
@@ -144,7 +144,7 @@ router.post('/application/compensation-who', function (req, res) {
 //
 
 router.post('/application/compensation-amount', function (req, res) {
-  
+
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
@@ -377,10 +377,11 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 
 router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string
+  var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
 
-  if ((incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
@@ -432,9 +433,9 @@ router.post('/application/incident-location', function (req, res) {
 
  router.post('/application/incident-reported', function (req, res) {
    // Get the answer from the query string
-   var incidentReported = req.session.data['incidentReported']
+   var crimeReported = req.session.data['crimeReported']
 
-   if (incidentReported === 'no') {
+   if (crimeReported === 'no') {
      // Redirect to the relevant page
      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
@@ -442,10 +443,21 @@ router.post('/application/incident-location', function (req, res) {
      res.redirect('/application/do-you-know-offender')
    } else {
      // If the variable is any other value (or is missing) render the page requested
-     res.redirect('/application/reporting-details-what-force')
+     res.redirect('/application/crime-reported-date')
    }
  })
 
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: crime-reported-date
+//
+router.post('/application/crime-reported-date', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/reporting-details-what-force')
+})
 // END__######################################################################################################
 
 // START__####################################################################################################
