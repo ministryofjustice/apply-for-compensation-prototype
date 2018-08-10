@@ -277,18 +277,19 @@ router.post('/application/date-of-birth', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  const moment = require('moment');
+  const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
+  // getting the inputs to be able to calculate if the user is a minor or not on the day of application
   var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
   var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var day = Number.parseInt(req.session.data['dob-day'], 10);
 
-  var currentDate = moment();
-  var dateOfBirth = moment([year, month, day]);
+  var currentDate = moment(); //create a date that is 'just now ' so today
+  var dateOfBirth = moment([year, month, day]); //create a date that is the DOB from the 3 elements we received on the date of birth page from the user)
 
-  var duration = moment.duration(currentDate.diff(dateOfBirth));
-  var ageInYears = duration.asYears();
+  var duration = moment.duration(currentDate.diff(dateOfBirth));// calculate the difference between the two
+  var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
-  if(ageInYears < 18) { // it's a minor -
+  if(ageInYears < 18) { // it's a minor 
     return res.redirect('/application/prototype')
   }
   res.redirect('/application/email-address')
@@ -375,20 +376,22 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 
 router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string
-  const moment = require('moment');
+  const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
+  // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
   var incidentDateDay = req.session.data['incident-date-day'] 
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
+  // now I'm also using the 3 variables above to create a date object with moment to check if they delayed applying over 2 years
   var year = Number.parseInt(incidentDateYear, 10); // making sure with have a well formated number for year, month and day
   var month = Number.parseInt(incidentDateMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var day = Number.parseInt(incidentDateDay, 10); 
-  var currentDate = moment().startOf('day'); // this line of code make sure that the day is only counted at midnight, we are not counting against a certain time of the day
-  var dateOfIncident = moment([year, month, day]);
-  var duration = moment.duration(currentDate.diff(dateOfIncident));
-  var delayInYears = duration.asYears();
+  var currentDate = moment().startOf('day'); // this line of code make sure that the day (today) is only counted at midnight, we are not counting against a certain time of the day
+  var dateOfIncident = moment([year, month, day]); //create a date that is the incident date from the 3 elements we received from the user
+  var duration = moment.duration(currentDate.diff(dateOfIncident)); // / calculate the difference between the two (that's in milliseconds or something)
+  var delayInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
   
-  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) { // mocking linked cases by checking against a set trigger date = 01/01/2017
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
@@ -400,7 +403,6 @@ router.post('/application/incident-date', function (req, res) {
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
           return res.redirect('/application/check-your-answers-page')
         }
-        // If the variable is any other value (or is missing) render the page requested
         res.redirect('/application/incident-location')
   }
 })
