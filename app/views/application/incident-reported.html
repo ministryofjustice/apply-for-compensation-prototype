@@ -18,44 +18,11 @@
         <form class="form" method="post">
 
             {% from 'radios/macro.njk' import govukRadios %}
-            {% from "input/macro.njk" import govukInput %}
-            {% from "date-input/macro.njk" import govukDateInput %}
-
-            {% set dateHtml %}
-                {{ govukDateInput({
-                    id: 'incidentReported',
-                    name: 'incidentReported',
-                    currentValue : data['incidentReported'],
-                    fieldset: {
-                        legend: {
-                            text: 'When was the crime reported to police?',
-                            classes: 'govuk-fieldset__legend--m'
-                        }
-                    },
-                    hint: {
-                        text: 'For example, 31 3 1980. You can enter an approximate date'
-                    },
-                    items:[
-                        {
-                            name: 'day',
-                            value: data['incidentReported-day']
-                        },
-                        {
-                            name: 'month',
-                            value: data['incidentReported-month']
-                        },
-                        {
-                            name: 'year',
-                            value: data['incidentReported-year']
-                        }
-                    ]
-                }) }}
-            {% endset -%}
-
 
             {{ govukRadios({
-              idPrefix: "incidentReported",
-              name: "incidentReported",
+              idPrefix: "crimeReported",
+              name: "crimeReported",
+              currentValue : data['crimeReported'],
               classes: "govuk-radios--inline",
               fieldset: {
                 legend: {
@@ -67,10 +34,7 @@
               items: [
                 {
                   value: "yes",
-                  text: "Yes",
-                  conditional: {
-                    html: dateHtml
-                  }
+                  text: "Yes"
                 },
                 {
                   value: "no",
