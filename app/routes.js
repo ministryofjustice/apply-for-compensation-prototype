@@ -284,11 +284,13 @@ router.post('/application/date-of-birth', function (req, res) {
 
   var currentDate = moment();
   var dateOfBirth = moment([year, month, day]);
+  console.log ('DOB year: ', year)
+  console.log ('DOB month: ', month)
+  console.log ('DOB day: ', day)
+  console.log ('DOB: ', dateOfBirth)
 
   var duration = moment.duration(currentDate.diff(dateOfBirth));
   var ageInYears = duration.asYears();
-
-  console.log(ageInYears);
 
   if(ageInYears < 18) { // it's a minor -
     return res.redirect('/application/prototype')
@@ -377,19 +379,40 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 
 router.post('/application/incident-date', function (req, res) {
   // Get the answer from the query string
-  var incidentDateDay = req.session.data['incident-date-day']
+  const moment = require('moment');
+  var incidentDateDay = req.session.data['incident-date-day'] 
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
+  var year = Number.parseInt(incidentDateYear, 10); // making sure with have a well formated number for year, month and day
+  var month = Number.parseInt(incidentDateMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+  var day = Number.parseInt(incidentDateDay, 10); 
+  var currentDate = moment().startOf('day');
+  var dateOfIncident = moment([year, month, day]);
+  var duration = moment.duration(currentDate.diff(dateOfIncident));
+  var delayInYears = duration.asYears();
+  console.log ('current day: ', currentDate)
+  console.log ('incident year: ', year)
+  console.log ('incident month: ', month)
+  console.log ('incident day: ', day)
+  console.log ('date incident: ', dateOfIncident)
+  console.log ('delay in years: ', delayInYears)
+  console.log ('duration: ', duration)
+  
+  
 
   if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/incident-location')
+        if (delayInYears > 2){ //apply more than 2 years after the incident
+          return res.redirect('/application/application-delay')
+        }
+        // else we're under 2 years
+        if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+          return res.redirect('/application/check-your-answers-page')
+        }
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/incident-location')
   }
 })
 // END__######################################################################################################
@@ -412,6 +435,19 @@ router.post('/application/previous-applications', function (req, res) {
     }
     res.redirect('/application/incident-location')
   }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: application-delay
+// we see that screen if the indicent date (or when the incident stopped for POA) is over 2 years from the date of application
+//logic for it is for incident-date and period-of-abuse-end
+
+router.post('/application/application-delay', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/incident-location')
 })
 // END__######################################################################################################
 

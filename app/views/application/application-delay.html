@@ -5,6 +5,7 @@
 {% block content %}
   <div class="govuk-width-container">
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -16,6 +17,7 @@
           {{ govukTextarea({
             "id": "applicationDelay",
             "name": "applicationDelay",
+            'value': data ['applicationDelay'],
             label: {
               text: "Why did you delay making your claim?",
               "isPageHeading": true,
