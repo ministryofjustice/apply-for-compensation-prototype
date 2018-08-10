@@ -245,6 +245,22 @@
                 </dd>
               </div>
             {% endif %}
+
+            {% if data['previous-applications'] %}
+            <div class="govuk-check-your-answers__contents">
+                <dt class="govuk-check-your-answers__question">
+                  Have you claimed compensation from us for this crime before?
+                </dt>
+                <dd class="govuk-check-your-answers__answer">
+                  {{ data['previous-applications'] }}
+                </dd>
+                <dd class="govuk-check-your-answers__change">
+                  <a href="previous-applications.html">
+                    Change<span class="visually-hidden"> have you claimed compensation from us for this crime before</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
         </dl>
 
         <h2 class="govuk-heading-l">
