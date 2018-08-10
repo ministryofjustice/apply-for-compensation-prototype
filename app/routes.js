@@ -284,10 +284,6 @@ router.post('/application/date-of-birth', function (req, res) {
 
   var currentDate = moment();
   var dateOfBirth = moment([year, month, day]);
-  console.log ('DOB year: ', year)
-  console.log ('DOB month: ', month)
-  console.log ('DOB day: ', day)
-  console.log ('DOB: ', dateOfBirth)
 
   var duration = moment.duration(currentDate.diff(dateOfBirth));
   var ageInYears = duration.asYears();
@@ -386,20 +382,12 @@ router.post('/application/incident-date', function (req, res) {
   var year = Number.parseInt(incidentDateYear, 10); // making sure with have a well formated number for year, month and day
   var month = Number.parseInt(incidentDateMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var day = Number.parseInt(incidentDateDay, 10); 
-  var currentDate = moment().startOf('day');
+  var currentDate = moment().startOf('day'); // this line of code make sure that the day is only counted at midnight, we are not counting against a certain time of the day
   var dateOfIncident = moment([year, month, day]);
   var duration = moment.duration(currentDate.diff(dateOfIncident));
   var delayInYears = duration.asYears();
-  console.log ('current day: ', currentDate)
-  console.log ('incident year: ', year)
-  console.log ('incident month: ', month)
-  console.log ('incident day: ', day)
-  console.log ('date incident: ', dateOfIncident)
-  console.log ('delay in years: ', delayInYears)
-  console.log ('duration: ', duration)
-  
-  
 
+  
   if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
@@ -407,6 +395,7 @@ router.post('/application/incident-date', function (req, res) {
         if (delayInYears > 2){ //apply more than 2 years after the incident
           return res.redirect('/application/application-delay')
         }
+        req.session.data['applicationDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
         // else we're under 2 years
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
           return res.redirect('/application/check-your-answers-page')

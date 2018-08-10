@@ -388,6 +388,22 @@
               </div>
             {% endif %}
 
+            {% if data['applicationDelay']  %}
+            <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                Why did you delay making your claim?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{data['applicationDelay']}}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="application-delay">
+                  Change<span class="visually-hidden"> delay reporting reason</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
             {% if data['crimeReported'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
