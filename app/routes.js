@@ -363,6 +363,22 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 // File: period-of-abuse-end
 //
 router.post('/application/period-of-abuse-end', function (req, res) {
+  const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
+  // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
+  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndYear = req.session.data['period-of-abuse-end-year']
+  // now I'm using the 2 variables above to create a date object with moment to check if they delayed applying over 2 years
+  var year = Number.parseInt(POAEndYear, 10); // making sure with have a well formated number for year and month
+  var month = Number.parseInt(POAEndMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract
+  var currentDate = moment().endOf('month'); // this line of code make sure that the date is using the last day of the current month
+  var deadlineDate = moment(currentDate).subtract(2, 'year'); // this is two years ago, the end date will be compared to that deadline
+  var dateOfEndOfPOA = moment([year, month]).endOf('month'); //create a date that is the end of the period of abuse from the 2 elements we received from the user (+making it the last day of that month)
+
+  if (dateOfEndOfPOA < deadlineDate){ //apply more than 2 years after the end of the period of abuse
+    return res.redirect('/application/application-delay')
+  }
+  req.session.data['applicationDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+  // else we're under 2 years
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
@@ -375,7 +391,6 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 // Variables: incident-date-day, incident-date-month, incident-date-year
 
 router.post('/application/incident-date', function (req, res) {
-  // Get the answer from the query string
   const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
   // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
   var incidentDateDay = req.session.data['incident-date-day'] 
