@@ -429,10 +429,36 @@ router.post('/application/incident-location', function (req, res) {
 // START__####################################################################################################
 // File: incident-reported
 // Variable: incidentReported
-
  router.post('/application/incident-reported', function (req, res) {
    // Get the answer from the query string
    var incidentReported = req.session.data['incidentReported']
+    // we need the incident date to compare for delay reporting over 48h
+    var incidentDateDay = req.session.data['incident-date-day'] 
+     var incidentDateMonth = req.session.data['incident-date-month']
+    var incidentDateYear = req.session.data['incident-date-year']
+    // now I'm also using the 3 variables above to create a date object with moment
+    var year = Number.parseInt(incidentDateYear, 10); // making sure with have a well formated number for year, month and day
+    var month = Number.parseInt(incidentDateMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+    var day = Number.parseInt(incidentDateDay, 10); 
+    var dateOfIncident = moment([year, month, day]); //create a date that is the incident date from the 3 elements we received from the user
+    //we need the reporting date for the 48h
+    var reportingDateDay = req.session.data['incidentReported-day'] 
+    var reportingDateMonth = req.session.data['incidentReported-month']
+    var reportingDateYear = req.session.data['incidentReported-year']
+    var yearReport = Number.parseInt(reportingDateYear, 10); // making sure with have a well formated number for year, month and day
+    var monthReport = Number.parseInt(reportingDateMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+    var dayReport = Number.parseInt(reportingDateDay, 10); 
+    var dateOfReport = moment([yearReport, monthReport, dayReport]); //create a date that is the report date from the 3 elements we received from the user
+    
+    var delay = moment.duration(dateOfReport.diff(dateOfIncident)); // / calculate the difference between the two (that's in milliseconds or something)
+    var delayInDays = duration.asDays(); // take that number in days  - we can do that thanks to the Moment library
+
+
+    if (delayInDays > 2){ //reported more than 48h = 2 days after the incident
+      return res.redirect('/application/reporting-delay')
+    }
+    req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+    // else we're under 2 years
 
    if (incidentReported === 'no') {
      // Redirect to the relevant page

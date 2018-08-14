@@ -280,6 +280,21 @@
                   </a>
                 </dd>
               </div>
+                  {% if data['reportingDelay']  %}
+                  <div class="govuk-check-your-answers__contents">
+                    <dt class="govuk-check-your-answers__question">
+                      Why was there a delay in reporting the crime to police?
+                    </dt>
+                    <dd class="govuk-check-your-answers__answer">
+                      {{data['reportingDelay']}}
+                    </dd>
+                    <dd class="govuk-check-your-answers__change">
+                      <a href="reporting-delay">
+                        Change<span class="visually-hidden"> delay reporting reason</span>
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
               {% endif %}
 
               <div class="govuk-check-your-answers__contents">
