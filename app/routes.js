@@ -369,9 +369,12 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
 
   if (singleOrMultipleIncidents === 'It happened over a period of time') {
     // Redirect to the relevant page
+    req.session.data['incident-date-day'] = null; // this line is here to clear the data if the user had chosen a single incident initially because I use that session as a test in the code for POST crime-reported-date
+
     res.redirect('/application/period-of-abuse-start')
   } else {
-    // If the variable is any other value (or is missing) render the page requested
+    req.session.data['period-of-abuse-end-month'] = null; // this line is here to clear the data if the user had chosen a period of abuse initially because I use that session as a test in the code for POST crime-reported-date
+    // else we're under 2 days
     res.redirect('/application/incident-date')
   }
 })
@@ -401,6 +404,8 @@ router.post('/application/period-of-abuse-end', function (req, res) {
     return res.redirect('/application/reporting-delay')
   }
 }
+req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+// else we're under 2 days
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
@@ -428,6 +433,8 @@ router.post('/application/incident-date', function (req, res) {
       return res.redirect('/application/reporting-delay')
     }
   }
+  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+  // else we're under 2 days
 
   if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
@@ -529,7 +536,7 @@ router.post('/application/crime-reported-date', function (req, res) {
   if (incidentDate && reportingDate && isReportedOver48h(incidentDate, reportingDate)){ 
     return res.redirect('/application/reporting-delay')
   }
-  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or inicdent date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
   // else we're under 2 days
 
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
