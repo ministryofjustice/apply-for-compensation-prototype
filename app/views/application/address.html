@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Question page
+  Address
 {% endblock %}
 
 {% block content %}
@@ -15,76 +15,88 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
-
         <form class="form" method="post">
 
-          {% from "input/macro.njk" import govukInput %}
-    {% from "fieldset/macro.njk" import govukFieldset %}
+        {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+        {% from "details/macro.njk" import govukDetails %}
 
-    {% call govukFieldset({
-      legend: {
-        text: "What's your address?",
-        classes: "govuk-fieldset__legend--xl",
-        isPageHeading: true
-      }
-    }) %}
+        {% call govukFieldset({
+          legend: {
+            text: "What's your address?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+        {% endcall %}
 
-      {{ govukInput({
-        label: {
-          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
-        },
-        id: "address-line-1",
-        name: "address-line-1",
-        value: data['address-line-1']
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          classes: "govuk-input--width-10",
+          id: "postcode",
+          name: "postcode",
+          value: data['postcode']
+        }) }}
 
-      {{ govukInput({
-        label: {
-          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-        },
-        id: "address-line-2",
-        name: "address-line-2",
-        value: data['address-line-2']
-      }) }}
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I don't know the postcode
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can find your postcode using the <a href="https://www.royalmail.com/find-a-postcode" target="_blank" rel="external">Royal Mail</a> website.
+          </div>
+        </details>
 
-      {{ govukInput({
-        label: {
-          html: 'Town or city'
-        },
-        classes: 'govuk-!-width-two-thirds',
-        id: "address-town",
-        name: "address-town",
-        value: data['address-town']
-      }) }}
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I do not live in the UK
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Building and street
+                  <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  Country
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+              </div>
+            </fieldset>
+          </div>
+        </details>
 
-      {{ govukInput({
-        label: {
-          html: 'County'
-        },
-        classes: 'govuk-!-width-two-thirds',
-        id: "address-county",
-        name: "address-county",
-        value: data['address-county']
-      }) }}
-
-      {{ govukInput({
-        label: {
-          html: 'Postcode'
-        },
-        classes: 'govuk-input--width-10',
-        id: "address-postcode",
-        name: "address-postcode",
-        value: data['address-postcode']
-      }) }}
-
-    {% endcall %}
-
-    {{ govukButton({
-      "text": "Continue"
-      }) }}
+        {{ govukButton({
+          "text": "Find address"
+          }) }}
 
         </form>
 
