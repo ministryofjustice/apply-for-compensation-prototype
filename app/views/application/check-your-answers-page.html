@@ -269,6 +269,81 @@
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--long">
 
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Did the crime happen once or over a period of time?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['single-or-multiple-incidents'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="single-or-multiple-incidents">
+                Change<span class="visually-hidden"> single or multiple incident</span>
+              </a>
+            </dd>
+          </div>
+
+          {% if data['single-or-multiple-incidents'] === 'It happened once' %}
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              When did the crime happen?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="incident-date">
+                Change<span class="visually-hidden"> incident date</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['single-or-multiple-incidents'] === 'It happened over a period of time' %}
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+               When did it start?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="period-of-abuse-start">
+                Change<span class="visually-hidden"> start of the incidents</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-check-your-answers__contents">
+              <dt class="govuk-check-your-answers__question">
+                  When did it end?
+              </dt>
+              <dd class="govuk-check-your-answers__answer">
+                {{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
+              </dd>
+              <dd class="govuk-check-your-answers__change">
+                <a href="period-of-abuse-end">
+                  Change<span class="visually-hidden"> end of the incidents</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['applicationDelay']  %}
+          <div class="govuk-check-your-answers__contents">
+            <dt class="govuk-check-your-answers__question">
+              Why did you delay making your claim?
+            </dt>
+            <dd class="govuk-check-your-answers__answer">
+              {{data['applicationDelay']}}
+            </dd>
+            <dd class="govuk-check-your-answers__change">
+              <a href="application-delay">
+                Change<span class="visually-hidden"> delay applying reason</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
                   Was the crime reported to the police?
@@ -296,6 +371,21 @@
                   </a>
                 </dd>
               </div>
+                  {% if data['reportingDelay']  %}
+                  <div class="govuk-check-your-answers__contents">
+                    <dt class="govuk-check-your-answers__question">
+                      Why was there a delay in reporting the crime to police?
+                    </dt>
+                    <dd class="govuk-check-your-answers__answer">
+                      {{data['reportingDelay']}}
+                    </dd>
+                    <dd class="govuk-check-your-answers__change">
+                      <a href="reporting-delay">
+                        Change<span class="visually-hidden"> delay reporting reason</span>
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
               {% endif %}
 
               <div class="govuk-check-your-answers__contents">
@@ -327,82 +417,6 @@
                   </dd>
                 </div>
                 {% endif%}
-
-
-          <div class="govuk-check-your-answers__contents">
-              <dt class="govuk-check-your-answers__question">
-                Did the crime happen once or over a period of time?
-              </dt>
-              <dd class="govuk-check-your-answers__answer">
-                {{ data['single-or-multiple-incidents'] }}
-              </dd>
-              <dd class="govuk-check-your-answers__change">
-                <a href="single-or-multiple-incidents">
-                  Change<span class="visually-hidden"> single or multiple incident</span>
-                </a>
-              </dd>
-            </div>
-
-            {% if data['single-or-multiple-incidents'] === 'It happened once' %}
-            <div class="govuk-check-your-answers__contents">
-              <dt class="govuk-check-your-answers__question">
-                When did the crime happen?
-              </dt>
-              <dd class="govuk-check-your-answers__answer">
-                {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
-              </dd>
-              <dd class="govuk-check-your-answers__change">
-                <a href="incident-date">
-                  Change<span class="visually-hidden"> incident date</span>
-                </a>
-              </dd>
-            </div>
-            {% endif %}
-
-            {% if data['single-or-multiple-incidents'] === 'It happened over a period of time' %}
-            <div class="govuk-check-your-answers__contents">
-              <dt class="govuk-check-your-answers__question">
-                 When did it start?
-              </dt>
-              <dd class="govuk-check-your-answers__answer">
-                {{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
-              </dd>
-              <dd class="govuk-check-your-answers__change">
-                <a href="period-of-abuse-start">
-                  Change<span class="visually-hidden"> start of the incidents</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-check-your-answers__contents">
-                <dt class="govuk-check-your-answers__question">
-                    When did it end?
-                </dt>
-                <dd class="govuk-check-your-answers__answer">
-                  {{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
-                </dd>
-                <dd class="govuk-check-your-answers__change">
-                  <a href="period-of-abuse-end">
-                    Change<span class="visually-hidden"> end of the incidents</span>
-                  </a>
-                </dd>
-              </div>
-            {% endif %}
-
-            {% if data['applicationDelay']  %}
-            <div class="govuk-check-your-answers__contents">
-              <dt class="govuk-check-your-answers__question">
-                Why did you delay making your claim?
-              </dt>
-              <dd class="govuk-check-your-answers__answer">
-                {{data['applicationDelay']}}
-              </dd>
-              <dd class="govuk-check-your-answers__change">
-                <a href="application-delay">
-                  Change<span class="visually-hidden"> delay reporting reason</span>
-                </a>
-              </dd>
-            </div>
-            {% endif %}
 
             {% if data['crimeReported'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
@@ -591,22 +605,7 @@
 
 </div>
 </div>
-<div class="design-notes-box">
-<h3 class="design-notes">Design notes</h3>
-<p class="design-notes">Designed in collaboration with Pat from PLADS.
-<ul class="govuk-list govuk-list--bullet">
-<li class="design-notes">First bullet reduced to two items.  UR showed that users were scared by the volume of third parties we potentially share info with and would stop</li>
-<li class="design-notes">Fraud prevention agencies - does this refer to payments (eg Experian checks)?  If so then we should be mentioning this only at the point we are going to pay someone, it would not be required for Nils</il>
-<li class="design-notes">2nd bullet point removed - current MVP would not require med evidence</li>
-<li class="design-notes">3rd bullet point removed - current MVP would not include repped cases</li>
-<li class="design-notes">4th bullet point removed - current MVP would not require referral to any third parties</li>
-</ul>
-</p>
 
-
-        <a href="confirmation-page" class="govuk-button">Send your application</a>
-
-      </div>
     </div>
   </main>
 </div>
