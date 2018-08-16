@@ -302,21 +302,22 @@ router.post('/application/name-other', function (req, res) {
 // File: date-of-birth
 //
 router.post('/application/date-of-birth', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
+  // getting the inputs to be able to calculate if the user is a minor or not on the day of application
   var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
   var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var day = Number.parseInt(req.session.data['dob-day'], 10);
 
-  var currentDate = moment();
-  var dateOfBirth = moment([year, month, day]);
+  var currentDate = moment(); //create a date that is 'just now ' so today
+  var dateOfBirth = moment([year, month, day]); //create a date that is the DOB from the 3 elements we received on the date of birth page from the user)
 
-  var duration = moment.duration(currentDate.diff(dateOfBirth));
-  var ageInYears = duration.asYears();
+  var duration = moment.duration(currentDate.diff(dateOfBirth));// calculate the difference between the two
+  var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
-  if(ageInYears < 18) { // it's a minor -
+  if(ageInYears < 18) { // it's a minor 
     return res.redirect('/application/prototype')
+  }
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
   }
   res.redirect('/application/email-address')
 })
@@ -392,6 +393,21 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 // File: period-of-abuse-end
 //
 router.post('/application/period-of-abuse-end', function (req, res) {
+  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndYear = req.session.data['period-of-abuse-end-year']
+  // now I'm using the 2 variables above to create a date object with moment to check if they delayed applying over 2 years
+  var year = Number.parseInt(POAEndYear, 10); // making sure with have a well formated number for year and month
+  var month = Number.parseInt(POAEndMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract
+  var currentDate = moment().endOf('month'); // this line of code make sure that the date is using the last day of the current month
+  var deadlineDate = moment(currentDate).subtract(2, 'year'); // this is two years ago, the end date will be compared to that deadline
+  var dateOfEndOfPOA = moment([year, month]).endOf('month'); //create a date that is the end of the period of abuse from the 2 elements we received from the user (+making it the last day of that month)
+
+  if (dateOfEndOfPOA < deadlineDate){ //apply more than 2 years after the end of the period of abuse
+    return res.redirect('/application/application-delay')
+  }
+  req.session.data['applicationDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+  // else we're under 2 years
+
   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
   var reportingDateDay = req.session.data['incidentReported-day'] 
   var reportingDateMonth = req.session.data['incidentReported-month']
@@ -406,6 +422,7 @@ router.post('/application/period-of-abuse-end', function (req, res) {
 }
 req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
 // else we're under 2 days
+
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
@@ -418,33 +435,41 @@ req.session.data['reportingDelay'] = null; // this line is here to clear the dat
 // Variables: incident-date-day, incident-date-month, incident-date-year
 
 router.post('/application/incident-date', function (req, res) {
-  // Get the answer from the query string
-  var incidentDateDay = req.session.data['incident-date-day']
+  // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
+  var incidentDateDay = req.session.data['incident-date-day'] 
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
+  var  incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
+  // get today's date   and compare it to the date of incident
+  var currentDate = moment().startOf('day'); // this line of code make sure that the day (today) is only counted at midnight, we are not counting against a certain time of the day
+  var duration = moment.duration(currentDate.diff(incidentDate)); // / calculate the difference between the two (that's in milliseconds or something)
+  var delayInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
     var reportingDateDay = req.session.data['incidentReported-day'] 
     var reportingDateMonth = req.session.data['incidentReported-month']
     var reportingDateYear = req.session.data['incidentReported-year']
     var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-    var incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
+    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
     if ( isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
       return res.redirect('/application/reporting-delay')
     }
   }
   req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
-  // else we're under 2 days
 
-  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) { // mocking linked cases by checking against a set trigger date = 01/01/2017
     // Redirect to the relevant page
     res.redirect('/application/previous-applications')
   } else {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/incident-location')
+        if (delayInYears > 2){ //apply more than 2 years after the incident
+          return res.redirect('/application/application-delay')
+        }
+        req.session.data['applicationDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+        // else we're under 2 years
+        if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+          return res.redirect('/application/check-your-answers-page')
+        }
+        res.redirect('/application/incident-location')
   }
 })
 // END__######################################################################################################
@@ -467,6 +492,19 @@ router.post('/application/previous-applications', function (req, res) {
     }
     res.redirect('/application/incident-location')
   }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: application-delay
+// we see that screen if the indicent date (or when the incident stopped for POA) is over 2 years from the date of application
+//logic for it is for incident-date and period-of-abuse-end
+
+router.post('/application/application-delay', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/incident-location')
 })
 // END__######################################################################################################
 

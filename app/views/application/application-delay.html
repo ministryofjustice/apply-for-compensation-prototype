@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Application delay
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            "id": "applicationDelay",
+            "name": "applicationDelay",
+            'value': data ['applicationDelay'],
+            label: {
+              text: "Why did you delay making your claim?",
+              "isPageHeading": true,
+              "classes": 'govuk-label--xl'
+            }
+          }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+          {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+          </form>
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">9/8/18 - new screen MVP-124 - JK</p>
+      </div>
+    </main>
+  </div>
+
+{% endblock %}
