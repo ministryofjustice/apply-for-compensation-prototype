@@ -1,6 +1,35 @@
 const express = require('express')
 const router = express.Router()
+const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 
+// START__Helpers functions ####################################################################################################################################
+
+// the functions below will help get the date we need to cover the over 2 years delay for applying and the over 48h delay for reporting
+
+function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
+    // using the 3 variables above to create a date object with moment
+    var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
+    var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+    var day = Number.parseInt(inputDay, 10); 
+    var date = moment([year, month, day]); //create a date from the 3 elements we received from the user
+    return date
+}
+
+function getDatefrom2inputs(inputMonth, inputYear) {
+  // using the 2 variables above to create a date object with moment which will be the last day of the month
+  var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
+  var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1 
+  var date = moment([year, month]).endOf('month'); //create a date from the 2 elements we received from the user which is the last day of the month
+  return date
+}
+
+function isReportedOver48h(incident, report) {
+  var delay = moment.duration(report.diff(incident)); // / calculate the difference between the two (that's in milliseconds or something)
+  var delayInDays = delay.asDays(); // take that number in days  - we can do that thanks to the Moment library
+  return (delayInDays > 2) //reported more than 48h = 2 days after the incident
+}
+
+// END__#############################################################################################################################################################
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
@@ -272,12 +301,10 @@ router.post('/application/name-other', function (req, res) {
 // START__####################################################################################################
 // File: date-of-birth
 //
-
 router.post('/application/date-of-birth', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  const moment = require('moment');
   var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
   var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var day = Number.parseInt(req.session.data['dob-day'], 10);
@@ -287,8 +314,6 @@ router.post('/application/date-of-birth', function (req, res) {
 
   var duration = moment.duration(currentDate.diff(dateOfBirth));
   var ageInYears = duration.asYears();
-
-  console.log(ageInYears);
 
   if(ageInYears < 18) { // it's a minor -
     return res.redirect('/application/prototype')
@@ -365,9 +390,12 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
 
   if (singleOrMultipleIncidents === 'It happened over a period of time') {
     // Redirect to the relevant page
+    req.session.data['incident-date-day'] = null; // this line is here to clear the data if the user had chosen a single incident initially because I use that session as a test in the code for POST crime-reported-date
+
     res.redirect('/application/period-of-abuse-start')
   } else {
-    // If the variable is any other value (or is missing) render the page requested
+    req.session.data['period-of-abuse-end-month'] = null; // this line is here to clear the data if the user had chosen a period of abuse initially because I use that session as a test in the code for POST crime-reported-date
+    // else we're under 2 days
     res.redirect('/application/incident-date')
   }
 })
@@ -385,6 +413,20 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 // File: period-of-abuse-end
 //
 router.post('/application/period-of-abuse-end', function (req, res) {
+  if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
+  var reportingDateDay = req.session.data['incidentReported-day'] 
+  var reportingDateMonth = req.session.data['incidentReported-month']
+  var reportingDateYear = req.session.data['incidentReported-year']
+  var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndYear = req.session.data['period-of-abuse-end-year']
+  var endofPeriodOfAbuseDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h 
+  if ( isReportedOver48h(endofPeriodOfAbuseDate, reportingDate)){ // changing the end of period of abuse date is now triggering the reporting delay screen
+    return res.redirect('/application/reporting-delay')
+  }
+}
+req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+// else we're under 2 days
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
@@ -401,6 +443,19 @@ router.post('/application/incident-date', function (req, res) {
   var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
+
+  if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
+    var reportingDateDay = req.session.data['incidentReported-day'] 
+    var reportingDateMonth = req.session.data['incidentReported-month']
+    var reportingDateYear = req.session.data['incidentReported-year']
+    var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+    var incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
+    if ( isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
+      return res.redirect('/application/reporting-delay')
+    }
+  }
+  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+  // else we're under 2 days
 
   if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
     // Redirect to the relevant page
@@ -451,11 +506,9 @@ router.post('/application/incident-location', function (req, res) {
 // START__####################################################################################################
 // File: incident-reported
 // Variable: incidentReported
-
  router.post('/application/incident-reported', function (req, res) {
    // Get the answer from the query string
-   var crimeReported = req.session.data['crimeReported']
-
+  var crimeReported = req.session.data['crimeReported']   
    if (crimeReported === 'no') {
      // Redirect to the relevant page
      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
@@ -474,9 +527,50 @@ router.post('/application/incident-location', function (req, res) {
 // File: crime-reported-date
 //
 router.post('/application/crime-reported-date', function (req, res) {
+  // all the functions used here are defined higher up in the code (near the start)
+  var reportingDate
+  var incidentDate
+
+  if (req.session.data['incident-date-day']) { // this is a single incident and we have the data for the date (day, month and year)
+    var incidentDateDay = req.session.data['incident-date-day'] 
+    var incidentDateMonth = req.session.data['incident-date-month']
+    var incidentDateYear = req.session.data['incident-date-year']
+    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
+    }
+     else { if (req.session.data['period-of-abuse-end-month']){ // this is a period of abuse and we have the data for the end date (month and year)
+      var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+      var POAEndYear = req.session.data['period-of-abuse-end-year']
+      incidentDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h 
+      } else {
+        incidentDate = false
+      }
+    }
+    if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported
+      var reportingDateDay = req.session.data['incidentReported-day'] 
+      var reportingDateMonth = req.session.data['incidentReported-month']
+      var reportingDateYear = req.session.data['incidentReported-year']
+      reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+    } else {
+      reportingDate = false
+    }
+  
+  if (incidentDate && reportingDate && isReportedOver48h(incidentDate, reportingDate)){ 
+    return res.redirect('/application/reporting-delay')
+  }
+  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+  // else we're under 2 days
+
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
+  res.redirect('/application/reporting-details-what-force')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: reporting-delay
+//
+router.post('/application/reporting-delay', function (req, res) {
   res.redirect('/application/reporting-details-what-force')
 })
 // END__######################################################################################################
