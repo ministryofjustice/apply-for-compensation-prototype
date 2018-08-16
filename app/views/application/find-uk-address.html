@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+        {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+        {% from "details/macro.njk" import govukDetails %}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What's your address?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+        {% endcall %}
+
+        {{ govukButton({
+          "text": "Continue"
+          }) }}
+          <p><a href="address-manually">I can not find my address in the list</a></p>
+        </form>
+      </div>
+    </div>
+    <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">Any post code on the previous page would trigger this page. If you select the link 'can't find address' it takes you to the same manual entry page for the non UK residents - SK</p>
+        <p class="design-notes"> -SK</p>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

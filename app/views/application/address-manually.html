@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+        {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+        {% from "details/macro.njk" import govukDetails %}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What's your address?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+            },
+            id: "address-line-1",
+            name: "address-line-1"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "address-postcode"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Country"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-country",
+            name: "address-country"
+          }) }}
+        
+        {% endcall %}
+        {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+        </form>
+      </div>
+    </div>
+    <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">The only changes to the UK format are: </p>
+        <ul class="govuk-list govuk-list--bullet design-notes">
+            <li>putting the postcode just after the city</li>
+            <li>not using 'County'</li>
+            <li>asking for the Country name</li>
+        </ul>
+        <p class="design-notes">- SK</p>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
