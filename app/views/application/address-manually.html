@@ -35,7 +35,8 @@
               html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
             },
             id: "address-line-1",
-            name: "address-line-1"
+            name: "address-line-1",
+            value: data['address-line-1']
           }) }}
         
           {{ govukInput({
@@ -43,7 +44,8 @@
               html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
             },
             id: "address-line-2",
-            name: "address-line-2"
+            name: "address-line-2",
+            value: data['address-line-2']
           }) }}
         
           {{ govukInput({
@@ -52,7 +54,8 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
-            name: "address-town"
+            name: "address-town",
+            value: data['address-town']
           }) }}
 
           {{ govukInput({
@@ -61,7 +64,8 @@
             },
             classes: "govuk-input--width-10",
             id: "address-postcode",
-            name: "address-postcode"
+            name: "address-postcode",
+            value: data['address-postcode']
           }) }}
         
           {{ govukInput({
@@ -70,7 +74,8 @@
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-country",
-            name: "address-country"
+            name: "address-country",
+            value: data['address-country']
           }) }}
         
         {% endcall %}
@@ -89,7 +94,6 @@
             <li>not using 'County'</li>
             <li>asking for the Country name</li>
         </ul>
-        <p class="design-notes">- SK</p>
     </div>
   </main>
 </div>

@@ -18,19 +18,60 @@
 
         <form class="form" method="post">
 
-        {% from "input/macro.njk" import govukInput %}
-        {% from "fieldset/macro.njk" import govukFieldset %}
-        {% from "details/macro.njk" import govukDetails %}
+            <div class="govuk-form-group">
+                <h1 class="govuk-heading-xl">What's your address?</h1>
+                <h2 class="govuk-heading-l">Postcode</h2>
+                <p>
+                  <span style="font-size: 24px; margin-right:1em"><strong>
+                  {% if data['postcode'] %} 
+                  {{ data['postcode'] }}
+                  {% else %}
+                  SW1A 1AA
+                  {% endif %}
+                </strong></span>
+                <a href="address">Change</a></p>
+    
+            </div>
+            {% from "select/macro.njk" import govukSelect %}
 
-        {% call govukFieldset({
-          legend: {
-            text: "What's your address?",
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
-        {% endcall %}
+            {{ govukSelect({
+              id: "address-lookup-result",
+              name: "address-lookup-result",
+              label: {
+                text: "Select an address",
+                "classes": 'govuk-label--l'
+              },
 
+      
+              items: [
+                {
+                  value: "nb-of-addresses",
+                  text: "5 addresses found",
+                  selected: true
+
+                },
+                {
+                  value: "1 Testing street, Glasgow ",
+                  text: "1 Testing street, Glasgow"
+                },
+                {
+                  value: "2 Testing street, Glasgow ",
+                  text: "2 Testing street, Glasgow"
+                },
+                {
+                  value: "3 Testing street, Glasgow ",
+                  text: "3 Testing street, Glasgow"
+                },
+                {
+                  value: "4 Testing street, Glasgow ",
+                  text: "4 Testing street, Glasgow"
+                },
+                {
+                  value: "5 Testing street, Glasgow ",
+                  text: "5 Testing street, Glasgow"
+                }
+              ]
+            }) }}
         {{ govukButton({
           "text": "Continue"
           }) }}
@@ -40,8 +81,8 @@
     </div>
     <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">Any post code on the previous page would trigger this page. If you select the link 'can't find address' it takes you to the same manual entry page for the non UK residents - SK</p>
-        <p class="design-notes"> -SK</p>
+        <p class="design-notes">Any postcode on the previous page would trigger this page. If you select the link 'can't find address' it takes you to the same manual entry page for the non UK residents - SK</p>
+        <p class="design-notes">If no postcode was entered before I'm displaying a default one SW1A 1AA - SK</p>
     </div>
   </main>
 </div>

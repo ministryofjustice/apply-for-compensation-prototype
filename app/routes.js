@@ -314,15 +314,16 @@ router.post('/application/email-address', function (req, res) {
 
 // START__####################################################################################################
 // File: address
-//
+// this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address' 
+// or uses the link in the reveal to enter the address manually and goes to the view 'address-manually'
 router.post('/application/address', function (req, res) {
   res.redirect('/application/find-uk-address')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: find-uk-address
-//
+// File: find-uk-address 
+// will produce an address on one line one the 'check your answers page'
 router.post('/application/find-uk-address', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
@@ -333,8 +334,9 @@ router.post('/application/find-uk-address', function (req, res) {
 
 // START__####################################################################################################
 // File: address-manually
-//
+// will produce an address on multiple line on the 'check your answers page'
 router.post('/application/address-manually', function (req, res) {
+  req.session.data['address-lookup-result'] = null; // this line is here to clear the data if the user had used the postcode look-up initially as we don't want to have duplicated data in the end
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }

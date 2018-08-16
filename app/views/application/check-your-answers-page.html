@@ -93,11 +93,17 @@
               Address
             </dt>
             <dd class="govuk-check-your-answers__answer">
+              {% if data['address-lookup-result'] %}
+              {{  data['address-lookup-result'] }}{{ data['postcode'] }}
+              {% else %}
               {{ data['address-line-1'] }}<br />
-              {{ data['address-line-2'] }}<br />
+              {% if data['address-line-2'] %}
+                {{ data['address-line-2'] }}<br />
+              {% endif %}  
               {{ data['address-town'] }}<br />
-              {{ data['address-county'] }}<br />
               {{ data['address-postcode'] }}<br />
+              {{ data['address-country'] }}<br />
+              {% endif %}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="address">
