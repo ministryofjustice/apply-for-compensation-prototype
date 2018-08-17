@@ -41,11 +41,10 @@ router.get('/', function (req, res) {
 // START__####################################################################################################
 // File: stepped-guide
 // Variable: step
-
-router.get('/stepped-guide', function (req, res) {
-	var step = req.query.step;
-	return res.render('stepped-guide', { step: step});
-})
+// router.get('/stepped-guide', function (req, res) {
+// 	var step = req.query.step;
+// 	return res.render('stepped-guide', { step: step});
+// })
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -272,9 +271,28 @@ router.post('/application/compensation', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: did-not-apply-for-compensation - not used anymore (see above commented)
+// File: did-not-apply-for-compensation
 //
 router.post('/application/compensation-why-not', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+    res.redirect('/application/single-or-multiple-incidents')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: compensation-who - not used anymore (see above commented)
+//
+router.post('/application/compensation-who', function (req, res) {
+    res.redirect('/application/compensation-amount')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: compensation-amount'
+//
+router.post('/application/compensation-amount', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }

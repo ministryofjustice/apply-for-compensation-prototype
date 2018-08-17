@@ -15,7 +15,7 @@
 {% block content %}
 
 <div class="govuk-width-container">
-
+    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">
       <li class="govuk-breadcrumbs__list-item">
@@ -36,14 +36,12 @@
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl">
-          {% if serviceName %} {{ serviceName }} {% endif %}
+          Apply for compensation if you've survived a sexual assault
         </h1>
 
-        <p>Use this service to apply for compensation if you have been affected by a violent crime or sexual assault and:</p>
+        <p>Use this service to apply for compensation if you've survived a sexual assault and:</p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <!-- <li>you can not get compensation <a href="https://www.victimsinformationservice.org.uk/getting-compensation/">elsewhere</a></li> -->
-          <li>it has been two years or less since you reported the crime to the police</li>
           <li>the crime happened in the UK</li>
           <li>you are over 18 years old</li>
           <li>you are a British Citizen</li>
@@ -54,16 +52,16 @@
 
         <h2 class="govuk-heading-m">Before you start</h2>
 
-        <p>To complete your application you will need to know:</p>
+        <p>To complete your application you'll need to know:</p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <li>your crime reference number</li>
           <li>the date the crime happened</li>
+          <li>the crime reference number the police gave you when you reported the crime</li>
         </uL>
 
         <p>You do not need to use a legal representative to help you with your application unless you want to. If you do use a representative, they may charge you a percentage of any money you get.</p>
 
-        <p>If you are a legal representative applying for compensation on behalf of a client you should use <a href="#">[ service name ]</a>. </p>
+        <p>If you are a legal representative applying for compensation on behalf of a client you should use the <a href="https://beta.cica.gov.uk/">Apply for compensation as a legal represenative</a> service.</p>
 
         <!-- <p>You can not use this service if you’re in the UK illegally.</p> -->
 
@@ -71,34 +69,38 @@
 
       <div class="govuk-grid-column-one-third">
 
-        <!-- <aside class="app-related-items" role="complementary">
+        <aside class="app-related-items" role="complementary">
           <h2 class="govuk-heading-m" id="subsection-title">
-            Subsection
+            Related content
           </h2>
           <nav role="navigation" aria-labelledby="subsection-title">
             <ul class="govuk-list govuk-body-s">
               <li>
                 <a href="#">
-                  Related link
+                  Apply for compensation if you have been violently attacked
                 </a>
               </li>
               <li>
                 <a href="#">
-                  Related link
+                  Apply for compensation for the death of a loved one as a result of a violent attack
                 </a>
               </li>
+              <li style="border-top: 2px solid #bfc1c3; margin-bottom: 1.5em; margin-top: 1.5em"><!-- this line is just for the grey line as I can't find a class for it--></li>
               <li>
-                <a href="#" class="govuk-!-w-bold">
-                  More <span class="visuallyhidden">in Subsection</span>
+                <a href="#">
+                  A guide to the Criminal Injuries Compensation Scheme
                 </a>
               </li>
             </ul>
           </nav>
-        </aside> -->
+        </aside>
 
       </div>
     </div>
-
+    <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <br>
+        <p class="design-notes">Reworded by Gavin in the new flow - not checked by John for Content yet (17/08) - SK</p>
   </main>
 </div>
 
