@@ -223,7 +223,7 @@ router.post('/application/crime-reported-date', function (req, res) {
 // File: reporting-delay
 //
 router.post('/application/reporting-delay', function (req, res) {
- res.redirect('/application/reporting-details-what-force')
+ res.redirect('/application/incident-location')
 })
 // END__######################################################################################################
 
@@ -252,39 +252,6 @@ router.post('/application/crime-reference', function (req, res) {
  }
  res.redirect('/application/compensation')
 })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: what-are-you-applying-for
-// variable: what-type-of-application-would-you-like-to-make?
-// router.post('/application/what-are-you-applying-for', function (req, res) {
-//   // Get the answer from the query string
-//   var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
-//   if (applicationType === 'physical-injury') {
-//     // Redirect to the relevant page
-//     res.redirect('/application/prototype')
-//   } else {
-//     // If the variable is any other value (or is missing) render the page requested
-//     res.redirect('/application/OCJ-service-option')
-//   }
-// })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: OCJ-service-option
-// variable: service-option
-// router.post('/application/OCJ-service-option', function (req, res) {
-//   // Get the answer from the query string
-//   var serviceOption = req.session.data['service-option']
-
-//   if (serviceOption === 'no') {
-//     // Redirect to the relevant page
-//     res.redirect('/application/prototype')
-//   } else {
-//     // If the variable is any other value (or is missing) render the page requested
-//     res.redirect('/application/compensation')
-//   }
-// })
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -581,7 +548,7 @@ router.post('/application/phone-number', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/single-or-multiple-incidents')
+  res.redirect('/application/do-you-know-offender')
 })
 // END__######################################################################################################
 
@@ -595,7 +562,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 
   if (knowOffender === 'no')  {
     // Redirect to the relevant page
-    res.redirect('/application/additional-info')
+    res.redirect('/application/your-application-OCJ-path')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/offender-name')
@@ -656,7 +623,6 @@ router.post('/application/living-with-offender-now', function (req, res) {
 // START__####################################################################################################
 // File: ongoing-relationship
 // Variable: ongoing-relationship
-
 router.post('/application/ongoing-relationship', function (req, res) {
   // Get the answer from the query string
   var ongoingRelationship = req.session.data['ongoing-relationship']
@@ -666,39 +632,54 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/additional-info')
+    res.redirect('/application/your-application-OCJ-path')
   }
 })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: additional-info
-
-router.post('/application/additional-info', function (req, res) {
-
-  res.redirect('/application/check-your-answers-page')
-})
-// END__######################################################################################################
-
-
-// START__####################################################################################################
-// File: check-your-answers-page
-// Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
-
- router.get('/application/check-your-answers-page', function (req, res) {
-   // Get the answer from the query string
-   req.session.checking_answers = true // this is initially set to false on the declaration page to avoid false results if using the prototype more than once
-   return res.render('application/check-your-answers-page')
- })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/additional-info')
+  res.redirect('/application/your-application-OCJ-path')
 })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: your-application-OCJ-path
+ router.post('/application/your-application-OCJ-path', function (req, res) {
+    // Get the answer from the query string
+    var selectOCJ = req.session.data['OCJ-chosen']
+    if (selectOCJ === 'yes') {
+      //Redirect to the relevant page
+      return res.redirect('/application/check-your-answers-page')
+    } else {
+      res.redirect('/application/your-application-long-path')
+    }
+ })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: your-application-long-path
+router.post('/application/your-application-long-path', function (req, res) {
+  // Get the answer from the query string
+  var selectLongPath = req.session.data['long-path-chosen']
+  if (selectLongPath === 'yes') {
+    //Redirect to the relevant page
+    return res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
+  } else {
+    res.redirect('/application/your-application-OCJ-path')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: check-your-answers-page
+// Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
+ router.get('/application/check-your-answers-page', function (req, res) {
+   req.session.checking_answers = true // this is initially set to false on the declaration page to avoid false results if using the prototype more than once
+   return res.render('application/check-your-answers-page')
+ })
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -717,7 +698,47 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
     res.redirect('/application/prototype')
   }
 })
+// END__######################################################################################################
 
+
+// START__####################################################################################################
+// File: what-are-you-applying-for
+// variable: what-type-of-application-would-you-like-to-make?
+// router.post('/application/what-are-you-applying-for', function (req, res) {
+//   // Get the answer from the query string
+//   var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
+//   if (applicationType === 'physical-injury') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/OCJ-service-option')
+//   }
+// })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: OCJ-service-option
+// variable: service-option
+// router.post('/application/OCJ-service-option', function (req, res) {
+//   // Get the answer from the query string
+//   var serviceOption = req.session.data['service-option']
+
+//   if (serviceOption === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/compensation')
+//   }
+// })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: additional-info
+// router.post('/application/additional-info', function (req, res) {
+//   res.redirect('/application/check-your-answers-page')
+// })
 // END__######################################################################################################
 
 module.exports = router
