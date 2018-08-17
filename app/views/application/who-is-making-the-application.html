@@ -5,6 +5,7 @@
 {% block content %}
   <div class="govuk-width-container">
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -13,11 +14,11 @@
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "rep",
-            "name": "rep",
+            "idPrefix": "direct-applicant",
+            "name": "direct-applicant",
             "fieldset": {
             "legend": {
-            "text": 'Are you applying on behalf of someone else?',
+            "text": 'Are you making this application for yourself?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }

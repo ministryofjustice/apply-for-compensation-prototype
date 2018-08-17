@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block page_title %}
+ Not Eligible
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="name">
+                  You are not eligible for compensation
+              </label>
+            </h1>
+            <p class="govuk-body">The scheme requires that all incidents, for which a claim is made, be reported to the police. If the crime you're seeking compensation for has not been reported to the police, we cannot make a payment.</p>
+            <p class="govuk-body">Read more about this in the <a href="#">scheme guidance</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">Screen from Gavin's new flow, not checked by John for Content yet - SK</p>
+      </div>
+    </main>
+  </div>
+{% endblock %}

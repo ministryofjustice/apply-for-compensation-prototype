@@ -10,13 +10,13 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl">
-          Declaration
+          Completing your application
           </h1>
-        <p class="govuk-body">I confirm that the information I will give is true and complete.</p>
+        <p class="govuk-body">The information you give during the following application must be true and complete to the best of your knowledge.</p>
         {% from "warning-text/macro.njk" import govukWarningText %}
 
 {{ govukWarningText({
-  text: "I understand that I could be prosecuted or get less compensation if I give false or misleading information.",
+  text: "You could be prosecuted or get less compensation if you give false or misleading information.",
   iconFallbackText: "Warning"
 }) }}
 
@@ -33,7 +33,7 @@
             "name": "declaration",
             "fieldset": {
             "legend": {
-            "text": 'I confirm that I have read and agree with the above statements',
+            "text": 'Do you agree?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--m'
             }
@@ -62,6 +62,7 @@
       <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
         <br>
+        <p class="design-notes">Reworded by Gavin in the new flow - not checked by John for Content yet (17/08) - SK</p>
         <p class="design-notes">Designed in collaboration with Pat from PLADS
             <ul class="govuk-list govuk-list--bullet">
             <li class="design-notes">"In writing" bullet point removed as users do not understand it and Electronic communications act covers this situation</li>
