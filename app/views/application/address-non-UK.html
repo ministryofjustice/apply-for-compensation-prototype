@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            'name': "address-non-UK",
+            'id': "address-non-UK",
+            'value': data ['address-non-UK'],
+            label: {
+              text: "What is your address?",
+              classes: "govuk-fieldset__legend--xl govuk-label--xl",
+              isPageHeading: true
+            }
+          }) }}
+
+          {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+        </form>
+      </div>
+    </div>
+    <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">If it is a non-UK address then we let the user enter it as text so that if their home address doesn't match the UK format, they are not confused. 
+          The downside is they might forget part of it if not prompted? Not sure if we needs some guidance here - SK</p>
+        <p class="design-notes">Also at the moment, on live OAS and private beta OAS we give a users the exact same fields as a UK address and they can't enter their country - SK</p>
+          {% from "warning-text/macro.njk" import govukWarningText %}
+
+          {{ govukWarningText({
+            text: "The IT system is expecting a specific format for an address so using a free text area will have IT implications",
+            iconFallbackText: "Warning"
+          }) }}
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
