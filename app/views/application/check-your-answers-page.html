@@ -94,15 +94,21 @@
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {% if data['address-lookup-result'] %}
-              {{  data['address-lookup-result'] }}{{ data['postcode'] }}
-              {% else %}
-              {{ data['address-line-1'] }}<br />
-              {% if data['address-line-2'] %}
-                {{ data['address-line-2'] }}<br />
-              {% endif %}  
-              {{ data['address-town'] }}<br />
-              {{ data['address-postcode'] }}<br />
-              {{ data['address-country'] }}<br />
+                {{  data['address-lookup-result'] }}{{ data['postcode'] }}
+                {% elif  data['address-non-UK'] %}
+                {{  data['address-non-UK'] }}
+                {% else %}
+                {{ data['address-line-1'] }}<br />
+                {% if data['address-line-2'] %}
+                  {{ data['address-line-2'] }}<br />
+                {% endif %}  
+                {{ data['address-town'] }}<br />
+                {% if data['address-county'] %}
+                  {{ data['address-county'] }}<br />
+                {% endif %} 
+                {% if data['address-postcode'] %}
+                  {{ data['address-postcode'] }}<br />
+                {% endif %} 
               {% endif %}
             </dd>
             <dd class="govuk-check-your-answers__change">
