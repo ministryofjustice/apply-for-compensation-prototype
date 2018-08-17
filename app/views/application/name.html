@@ -10,50 +10,48 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--xl" for="name">
+                    What's your name?
+                </label>
+              </h1>
+            </div>
 
-            <form action="/form-handler" method="post">
-              <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--xl" for="name">
-                      What's your name?
-                  </label>
-                </h1>
-              </div>
+            {% from "input/macro.njk" import govukInput %}
 
-              {% from "input/macro.njk" import govukInput %}
+            {{ govukInput({
+            "label": {
+            "text": "Title"
+            },
+            "classes": "govuk-input--width-10",
+            "id": "title",
+            "name": "title",
+            "value": data['title']
+            }) }}
 
-              {{ govukInput({
-              "label": {
-              "text": "Title"
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                text: "First name"
               },
-              "classes": "govuk-input--width-10",
-              "id": "title",
-              "name": "title",
-              "value": data['title']
-              }) }}
+              id: "first-name",
+              name: "first-name",
+              value: data['first-name']
+            }) }}
 
-              {% from "input/macro.njk" import govukInput %}
+            {% from "input/macro.njk" import govukInput %}
 
-              {{ govukInput({
-                label: {
-                  text: "First name"
-                },
-                id: "first-name",
-                name: "first-name",
-                value: data['first-name']
-              }) }}
-
-              {% from "input/macro.njk" import govukInput %}
-
-              {{ govukInput({
-                label: {
-                  text: "Last name"
-                },
-                id: "last-name",
-                name: "last-name",
-                value: data['last-name']
-              }) }}
-              {% from "input/macro.njk" import govukInput %}
+            {{ govukInput({
+              label: {
+                text: "Last name"
+              },
+              id: "last-name",
+              name: "last-name",
+              value: data['last-name']
+            }) }}
+            {% from "input/macro.njk" import govukInput %}
 
             {{ govukButton({
                 "text": "Continue"
