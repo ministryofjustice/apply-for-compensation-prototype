@@ -49,7 +49,7 @@ router.get('/', function (req, res) {
 
 // START__####################################################################################################
 // File: who-is-making-the-application
-// Variable: rep
+// Variable: direct-applicant
 
 router.post('/application/who-is-making-the-application', function (req, res) {
   // Get the answer from the query string
@@ -57,10 +57,28 @@ router.post('/application/who-is-making-the-application', function (req, res) {
 
   if (directApplicant === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('/application/representative-type')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/declaration')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: representative-type
+// Variable: friend-or-family
+
+router.post('/application/representative-type', function (req, res) {
+  // Get the answer from the query string
+  var friendOrFamily = req.session.data['friend-or-family']
+
+  if (friendOrFamily === 'no') {
+    // Redirect to the relevant page which is the private beta for rep
+    res.redirect('https://beta.cica.gov.uk/')
+  } else {
+    // taking them to the OAS website live to create an account there
+    res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
   }
 })
 // END__######################################################################################################
@@ -116,7 +134,7 @@ router.post('/application/residence-1', function (req, res) {
 
   if (ordinarilyResident === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
