@@ -4,8 +4,14 @@
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -19,10 +25,6 @@
   text: "You could be prosecuted or get less compensation if you give false or misleading information.",
   iconFallbackText: "Warning"
 }) }}
-
-          <!-- **NOTE**
-          I don't like the way we are linking out to aditional content here. Do we actually think that people will read this?
-          It would be much better if we could add a condensed version of the privacy notice. -->
 
           <form class="form" method="post">
 
@@ -58,19 +60,6 @@
 
           </form>
         </div>
-      </div>
-      <div class="design-notes-box">
-        <h3 class="design-notes">Design notes</h3>
-        <br>
-        <p class="design-notes">Reworded by Gavin in the new flow - not checked by John for Content yet (17/08) - SK</p>
-        <p class="design-notes">Designed in collaboration with Pat from PLADS
-            <ul class="govuk-list govuk-list--bullet">
-            <li class="design-notes">"In writing" bullet point removed as users do not understand it and Electronic communications act covers this situation</li>
-            <li class="design-notes">"Change of circumstances" bullet removed as content already in stepped guide</li>
-            <li class="design-notes">Third bullet point changed to a warning as per GDS pattern guidance re legal consequences</li>
-          </ul>
-        </p>
-
       </div>
       </div>
     </main>
