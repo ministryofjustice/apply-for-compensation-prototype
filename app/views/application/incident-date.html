@@ -7,9 +7,15 @@
 {% block content %}
 
 <div class="govuk-width-container">
-
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+
   <main role="main" class="govuk-main-wrapper">
 
     <div class="govuk-grid-row">
@@ -22,7 +28,7 @@
           name: 'incident-date',
           fieldset: {
           legend: {
-          text: "When did the crime happen?",
+          text: "When did the assault happen?",
           isPageHeading: true,
           classes: 'govuk-fieldset__legend--xl'
           }

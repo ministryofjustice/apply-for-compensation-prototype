@@ -19,12 +19,12 @@
 
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            "classes": "govuk-radios",
             "idPrefix": "direct-applicant",
             "name": "direct-applicant",
             "fieldset": {
             "legend": {
-            "text": 'Are you making this application for yourself?',
+            "text": 'Who are you applying for?',
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }
@@ -32,11 +32,11 @@
             "items": [
             {
             "value": "yes",
-            "text": "Yes"
+            "text": "Myself"
             },
             {
             "value": "no",
-            "text": "No"
+            "text": "Someone else"
             }
             ]
             }) }}

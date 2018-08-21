@@ -4,8 +4,14 @@ Compensation from other sources
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
+    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -19,7 +25,7 @@ Compensation from other sources
 
             {{ govukInput({
             "label": {
-            "text": "Who else have you claimed compensation from?",
+            "text": "Who else have you applied to for compensation?",
             "isPageHeading": true,
             "classes": 'govuk-label--xl'
             },
