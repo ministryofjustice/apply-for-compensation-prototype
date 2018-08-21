@@ -10,7 +10,7 @@ function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
     // using the 3 variables above to create a date object with moment
     var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
     var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
-    var day = Number.parseInt(inputDay, 10); 
+    var day = Number.parseInt(inputDay, 10);
     var date = moment([year, month, day]); //create a date from the 3 elements we received from the user
     return date
 }
@@ -18,7 +18,7 @@ function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
 function getDatefrom2inputs(inputMonth, inputYear) {
   // using the 2 variables above to create a date object with moment which will be the last day of the month
   var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
-  var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1 
+  var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var date = moment([year, month]).endOf('month'); //create a date from the 2 elements we received from the user which is the last day of the month
   return date
 }
@@ -161,8 +161,20 @@ router.post('/application/criminal-convictions', function (req, res) {
       return res.redirect('/application/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/incident-reported')
+    res.redirect('/application/bridge')
   }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: bridge
+// Variable: criminalConvictions
+
+router.post('/application/bridge', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/incident-reported')
 })
 // END__######################################################################################################
 
@@ -183,7 +195,7 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
 // Variable: incidentReported
 router.post('/application/incident-reported', function (req, res) {
   // Get the answer from the query string
- var crimeReported = req.session.data['crimeReported']   
+ var crimeReported = req.session.data['crimeReported']
   if (crimeReported === 'no') {
      return res.redirect('/application/reporting-crime-not-reported')
   } else {
@@ -201,29 +213,29 @@ router.post('/application/crime-reported-date', function (req, res) {
  var incidentDate
 
  if (req.session.data['incident-date-day']) { // this is a single incident and we have the data for the date (day, month and year)
-   var incidentDateDay = req.session.data['incident-date-day'] 
+   var incidentDateDay = req.session.data['incident-date-day']
    var incidentDateMonth = req.session.data['incident-date-month']
    var incidentDateYear = req.session.data['incident-date-year']
-   incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
+   incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
    }
     else { if (req.session.data['period-of-abuse-end-month']){ // this is a period of abuse and we have the data for the end date (month and year)
-     var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+     var POAEndMonth = req.session.data['period-of-abuse-end-month']
      var POAEndYear = req.session.data['period-of-abuse-end-year']
-     incidentDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h 
+     incidentDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h
      } else {
        incidentDate = false
      }
    }
    if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported
-     var reportingDateDay = req.session.data['incidentReported-day'] 
+     var reportingDateDay = req.session.data['incidentReported-day']
      var reportingDateMonth = req.session.data['incidentReported-month']
      var reportingDateYear = req.session.data['incidentReported-year']
      reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
    } else {
      reportingDate = false
    }
- 
- if (incidentDate && reportingDate && isReportedOver48h(incidentDate, reportingDate)){ 
+
+ if (incidentDate && reportingDate && isReportedOver48h(incidentDate, reportingDate)){
    return res.redirect('/application/reporting-delay')
  }
  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
@@ -320,8 +332,8 @@ router.post('/application/compensation-amount', function (req, res) {
 
 // START__####################################################################################################
 // File: address
-// this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address' 
-// or uses the link in the reveal to enter the address manually and goes to the view 'address-manually' 
+// this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address'
+// or uses the link in the reveal to enter the address manually and goes to the view 'address-manually'
 // or  uses the link in the reveal to enter an on uk address and goes to the view 'address-non-UK'
 router.post('/application/address', function (req, res) {
   res.redirect('/application/find-uk-address')
@@ -329,7 +341,7 @@ router.post('/application/address', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: find-uk-address 
+// File: find-uk-address
 // will produce an address on one line on the 'check your answers page'
 router.post('/application/find-uk-address', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
@@ -408,7 +420,7 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 // File: period-of-abuse-end
 //
 router.post('/application/period-of-abuse-end', function (req, res) {
-  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndMonth = req.session.data['period-of-abuse-end-month']
   var POAEndYear = req.session.data['period-of-abuse-end-year']
   // now I'm using the 2 variables above to create a date object with moment to check if they delayed applying over 2 years
   var year = Number.parseInt(POAEndYear, 10); // making sure with have a well formated number for year and month
@@ -424,13 +436,13 @@ router.post('/application/period-of-abuse-end', function (req, res) {
   // else we're under 2 years
 
   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
-  var reportingDateDay = req.session.data['incidentReported-day'] 
+  var reportingDateDay = req.session.data['incidentReported-day']
   var reportingDateMonth = req.session.data['incidentReported-month']
   var reportingDateYear = req.session.data['incidentReported-year']
   var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndMonth = req.session.data['period-of-abuse-end-month']
   var POAEndYear = req.session.data['period-of-abuse-end-year']
-  var endofPeriodOfAbuseDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h 
+  var endofPeriodOfAbuseDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h
   if ( isReportedOver48h(endofPeriodOfAbuseDate, reportingDate)){ // changing the end of period of abuse date is now triggering the reporting delay screen
     return res.redirect('/application/reporting-delay')
   }
@@ -451,7 +463,7 @@ req.session.data['reportingDelay'] = null; // this line is here to clear the dat
 
 router.post('/application/incident-date', function (req, res) {
   // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
-  var incidentDateDay = req.session.data['incident-date-day'] 
+  var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
   var  incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
@@ -461,11 +473,11 @@ router.post('/application/incident-date', function (req, res) {
   var delayInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
-    var reportingDateDay = req.session.data['incidentReported-day'] 
+    var reportingDateDay = req.session.data['incidentReported-day']
     var reportingDateMonth = req.session.data['incidentReported-month']
     var reportingDateYear = req.session.data['incidentReported-year']
     var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
+    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
     if ( isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
       return res.redirect('/application/reporting-delay')
     }
@@ -580,7 +592,7 @@ router.post('/application/date-of-birth', function (req, res) {
   var duration = moment.duration(currentDate.diff(dateOfBirth));// calculate the difference between the two
   var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
-  if(ageInYears < 18) { // it's a minor 
+  if(ageInYears < 18) { // it's a minor
     return res.redirect('/application/prototype')
   }
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
