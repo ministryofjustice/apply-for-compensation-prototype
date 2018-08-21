@@ -7,6 +7,13 @@
 {% block content %}
 
 <div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <main role="main" class="govuk-main-wrapper">
@@ -16,7 +23,7 @@
 
         <form class="form"  method="post">
             {% from "radios/macro.njk" import govukRadios %}
-            
+
             {{ govukRadios({
               classes: "govuk-radios--inline",
               idPrefix: "know-offender",
@@ -24,7 +31,7 @@
               currentValue: data['know-offender'],
               fieldset: {
                 legend: {
-                  text: "Do you know the person who attacked you?",
+                  text: "Do you know the person who assaulted you?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--xl"
                 }

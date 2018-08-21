@@ -7,9 +7,15 @@
 {% block content %}
 
 <div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
     <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
 
     <div class="govuk-main-wrapper">
       <div class="govuk-grid-row">
@@ -28,18 +34,18 @@
 
                 {{ govukInput({
                 "label": {
-                "text": "What police force was the crime reported to?",
+                "text": "What police force was the assault reported to?",
                 "isPageHeading": true,
                 "classes": 'govuk-label--xl'
               },
                 "classes": 'govuk-input--width-40',
                 "id": "police-force",
                 "name": "police-force",
-                "value": data['police-force'] 
+                "value": data['police-force']
                 }) }}
-    
+
                 {% from "button/macro.njk" import govukButton %}
-    
+
                 {{ govukButton({
                 "text": "Continue"
                 }) }}

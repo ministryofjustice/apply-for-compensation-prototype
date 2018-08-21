@@ -7,9 +7,16 @@
 {% block content %}
 
 <div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+  
 
   <main role="main" class="govuk-main-wrapper">
 
@@ -23,14 +30,14 @@
                 <h2 class="govuk-heading-l">Postcode</h2>
                 <p>
                   <span style="font-size: 24px; margin-right:1em"><strong>
-                  {% if data['postcode'] %} 
+                  {% if data['postcode'] %}
                   {{ data['postcode'] }}
                   {% else %}
                   SW1A 1AA
                   {% endif %}
                 </strong></span>
                 <a href="address">Change</a></p>
-    
+
             </div>
             {% from "select/macro.njk" import govukSelect %}
 
@@ -42,7 +49,7 @@
                 "classes": 'govuk-label--l'
               },
 
-      
+
               items: [
                 {
                   value: "nb-of-addresses",

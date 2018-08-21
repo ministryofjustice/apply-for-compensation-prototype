@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Declaration
+  Representation
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
@@ -15,29 +15,18 @@
     <main role="main" class="govuk-main-wrapper">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">
-          Declaration
-          </h1>
-        <p class="govuk-body-l">By continuing you confirm that the information you will give is true as far as you know.</p>
-        {% from "warning-text/macro.njk" import govukWarningText %}
-
-{{ govukWarningText({
-  text: "You could be prosecuted or get less compensation if you give false or misleading information.",
-  iconFallbackText: "Warning"
-}) }}
-
-          <form class="form" method="post">
+          <form class="form"  method="post">
 
             {% from 'radios/macro.njk' import govukRadios %}
             {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "declaration",
-            "name": "declaration",
+            "idPrefix": "friend-or-family",
+            "name": "friend-or-family",
             "fieldset": {
             "legend": {
-            "text": 'Do you agree?',
+            "text": 'Are you making this application for a friend or relative?',
             "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--m'
+            "classes": 'govuk-fieldset__legend--xl'
             }
             },
             "items": [
@@ -52,7 +41,6 @@
             ]
             }) }}
 
-
             {% from "button/macro.njk" import govukButton %}
             {{ govukButton({
             "text": "Continue"
@@ -61,7 +49,11 @@
           </form>
         </div>
       </div>
-      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <br>
+        <p class="design-notes">Reworded by Gavin in the new flow - not checked by John for Content yet (17/08) - SK</p>
+    </div>
     </main>
   </div>
 {% endblock %}

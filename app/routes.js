@@ -10,7 +10,7 @@ function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
     // using the 3 variables above to create a date object with moment
     var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
     var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
-    var day = Number.parseInt(inputDay, 10); 
+    var day = Number.parseInt(inputDay, 10);
     var date = moment([year, month, day]); //create a date from the 3 elements we received from the user
     return date
 }
@@ -18,7 +18,7 @@ function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
 function getDatefrom2inputs(inputMonth, inputYear) {
   // using the 2 variables above to create a date object with moment which will be the last day of the month
   var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
-  var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1 
+  var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
   var date = moment([year, month]).endOf('month'); //create a date from the 2 elements we received from the user which is the last day of the month
   return date
 }
@@ -28,8 +28,9 @@ function isReportedOver48h(incident, report) {
   var delayInDays = delay.asDays(); // take that number in days  - we can do that thanks to the Moment library
   return (delayInDays > 2) //reported more than 48h = 2 days after the incident
 }
-
 // END__#############################################################################################################################################################
+
+
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
@@ -40,31 +41,46 @@ router.get('/', function (req, res) {
 // START__####################################################################################################
 // File: stepped-guide
 // Variable: step
-
-router.get('/stepped-guide', function (req, res) {
-	var step = req.query.step;
-	return res.render('stepped-guide', { step: step});
-})
-
+// router.get('/stepped-guide', function (req, res) {
+// 	var step = req.query.step;
+// 	return res.render('stepped-guide', { step: step});
+// })
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: who-is-making-the-application
-// Variable: rep
+// Variable: direct-applicant
 
 router.post('/application/who-is-making-the-application', function (req, res) {
   // Get the answer from the query string
-  var rep = req.session.data['rep']
+  var directApplicant = req.session.data['direct-applicant']
 
-  if (rep === 'yes') {
+  if (directApplicant === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('/application/representative-type')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/declaration')
   }
 })
+// END__######################################################################################################
 
+// START__####################################################################################################
+// File: representative-type
+// Variable: friend-or-family
+
+router.post('/application/representative-type', function (req, res) {
+  // Get the answer from the query string
+  var friendOrFamily = req.session.data['friend-or-family']
+
+  if (friendOrFamily === 'no') {
+    // Redirect to the relevant page which is the private beta for rep
+    res.redirect('https://beta.cica.gov.uk/')
+  } else {
+    // taking them to the OAS website live to create an account there
+    res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
+  }
+})
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -82,103 +98,8 @@ router.post('/application/declaration', function (req, res) {
     //res.redirect('/application/prototype')
   //} else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/what-are-you-applying-for')
+    res.redirect('/application/british-citizen')
   //}
-})
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: what-are-you-applying-for
-// variable: what-type-of-application-would-you-like-to-make?
-
-router.post('/application/what-are-you-applying-for', function (req, res) {
-  // Get the answer from the query string
-  var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
-  if (applicationType === 'physical-injury') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/OCJ-service-option')
-  }
-})
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: OCJ-service-option
-// variable: service-option
-
-router.post('/application/OCJ-service-option', function (req, res) {
-  // Get the answer from the query string
-  var serviceOption = req.session.data['service-option']
-
-  if (serviceOption === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/compensation')
-  }
-})
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: compensation
-// Variable: otherCompensation
-
-router.post('/application/compensation', function (req, res) {
-
-  // Get the answer from the query string
-    var otherCompensation = req.session.data['otherCompensation']
-    if (otherCompensation === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/compensation-why-not')
-    } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/compensation-who')
-    }
-
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: did-not-apply-for-compensation - not used anymore (see above commented)
-//
-
-router.post('/application/compensation-why-not', function (req, res) {
-
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-    res.redirect('/application/british-citizen')
-
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: who-apply-to-for-compensation
-//
-
-router.post('/application/compensation-who', function (req, res) {
-    res.redirect('/application/compensation-amount')
-
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: how-much-compensation
-//
-
-router.post('/application/compensation-amount', function (req, res) {
-
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-    res.redirect('/application/british-citizen')
-
 })
 // END__######################################################################################################
 
@@ -201,7 +122,6 @@ router.post('/application/british-citizen', function (req, res) {
     res.redirect('/application/criminal-convictions')
   }
 })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -214,7 +134,7 @@ router.post('/application/residence-1', function (req, res) {
 
   if (ordinarilyResident === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
@@ -223,7 +143,6 @@ router.post('/application/residence-1', function (req, res) {
     res.redirect('/application/criminal-convictions')
   }
 })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -242,10 +161,21 @@ router.post('/application/criminal-convictions', function (req, res) {
       return res.redirect('/application/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/name')
+    res.redirect('/application/bridge')
   }
 })
+// END__######################################################################################################
 
+// START__####################################################################################################
+// File: bridge
+// Variable: criminalConvictions
+
+router.post('/application/bridge', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/incident-reported')
+})
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -256,92 +186,154 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/name')
+  res.redirect('/application/incident-reported')
 })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: name
+// File: incident-reported
+// Variable: incidentReported
+router.post('/application/incident-reported', function (req, res) {
+  // Get the answer from the query string
+ var crimeReported = req.session.data['crimeReported']
+  if (crimeReported === 'no') {
+     return res.redirect('/application/reporting-crime-not-reported')
+  } else {
+    res.redirect('/application/crime-reported-date')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: crime-reported-date
 //
-router.post('/application/name', function (req, res) {
+router.post('/application/crime-reported-date', function (req, res) {
+ // all the functions used here are defined higher up in the code (near the start)
+ var reportingDate
+ var incidentDate
+
+ if (req.session.data['incident-date-day']) { // this is a single incident and we have the data for the date (day, month and year)
+   var incidentDateDay = req.session.data['incident-date-day']
+   var incidentDateMonth = req.session.data['incident-date-month']
+   var incidentDateYear = req.session.data['incident-date-year']
+   incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
+   }
+    else { if (req.session.data['period-of-abuse-end-month']){ // this is a period of abuse and we have the data for the end date (month and year)
+     var POAEndMonth = req.session.data['period-of-abuse-end-month']
+     var POAEndYear = req.session.data['period-of-abuse-end-year']
+     incidentDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h
+     } else {
+       incidentDate = false
+     }
+   }
+   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported
+     var reportingDateDay = req.session.data['incidentReported-day']
+     var reportingDateMonth = req.session.data['incidentReported-month']
+     var reportingDateYear = req.session.data['incidentReported-year']
+     reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+   } else {
+     reportingDate = false
+   }
+
+ if (incidentDate && reportingDate && isReportedOver48h(incidentDate, reportingDate)){
+   return res.redirect('/application/reporting-delay')
+ }
+ req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+ // else we're under 2 days
+
+ if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+   return res.redirect('/application/check-your-answers-page')
+ }
+ res.redirect('/application/reporting-details-what-force')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: reporting-delay
+//
+router.post('/application/reporting-delay', function (req, res) {
+ res.redirect('/application/incident-location')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: reporting-details-what-force
+//
+router.post('/application/reporting-details-what-force', function (req, res) {
+ res.redirect('/application/reporting-details-police-officer')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: reporting-details-police-officer
+//
+router.post('/application/reporting-details-police-officer', function (req, res) {
+ res.redirect('/application/crime-reference')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: crime-reference
+//
+router.post('/application/crime-reference', function (req, res) {
+ if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+   return res.redirect('/application/check-your-answers-page')
+ }
+ res.redirect('/application/compensation')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: compensation
+// Variable: otherCompensation
+
+router.post('/application/compensation', function (req, res) {
+  // Get the answer from the query string
+    var otherCompensation = req.session.data['otherCompensation']
+    if (otherCompensation === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/application/compensation-why-not')
+    } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/compensation-who')
+    }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: did-not-apply-for-compensation
+//
+router.post('/application/compensation-why-not', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/name-have-other')
+    res.redirect('/application/single-or-multiple-incidents')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: name-have-other
-// Variable: haveOtherName
-
-router.post('/application/name-have-other', function (req, res) {
-
-  var haveOtherName = req.session.data['haveOtherName'];
-
-  if (haveOtherName === 'no')  {
-    return res.redirect('/application/date-of-birth')
-  }
-
-  res.redirect('/application/name-other')
-
-})
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: name=other
+// File: compensation-who - not used anymore (see above commented)
 //
-router.post('/application/name-other', function (req, res) {
-  res.redirect('/application/date-of-birth')
+router.post('/application/compensation-who', function (req, res) {
+    res.redirect('/application/compensation-amount')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: date-of-birth
+// File: compensation-amount'
 //
-router.post('/application/date-of-birth', function (req, res) {
-  // getting the inputs to be able to calculate if the user is a minor or not on the day of application
-  var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
-  var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
-  var day = Number.parseInt(req.session.data['dob-day'], 10);
-
-  var currentDate = moment(); //create a date that is 'just now ' so today
-  var dateOfBirth = moment([year, month, day]); //create a date that is the DOB from the 3 elements we received on the date of birth page from the user)
-
-  var duration = moment.duration(currentDate.diff(dateOfBirth));// calculate the difference between the two
-  var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
-
-  if(ageInYears < 18) { // it's a minor 
-    return res.redirect('/application/prototype')
-  }
+router.post('/application/compensation-amount', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/email-address')
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: email-address
-// varialbe: email-address
-// if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
-router.post('/application/email-address', function (req, res) {
-  if (!req.session.data['emailAddress']) {
-    req.session.data['emailAddress'] = 'name@domain.com'
-  }
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/address')
+    res.redirect('/application/single-or-multiple-incidents')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: address
-// this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address' 
-// or uses the link in the reveal to enter the address manually and goes to the view 'address-manually' 
+// this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address'
+// or uses the link in the reveal to enter the address manually and goes to the view 'address-manually'
 // or  uses the link in the reveal to enter an on uk address and goes to the view 'address-non-UK'
 router.post('/application/address', function (req, res) {
   res.redirect('/application/find-uk-address')
@@ -349,7 +341,7 @@ router.post('/application/address', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: find-uk-address 
+// File: find-uk-address
 // will produce an address on one line on the 'check your answers page'
 router.post('/application/find-uk-address', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
@@ -386,20 +378,19 @@ router.post('/application/address-non-UK', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: phone-number
+// File: how-much-compensation
 //
-router.post('/application/phone-number', function (req, res) {
+router.post('/application/compensation-amount', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/single-or-multiple-incidents')
+    res.redirect('/application/single-or-multiple-incidents')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: single-or-multiple-incidents
 // Variable: single-or-multiple-incidents
-
 router.post('/application/single-or-multiple-incidents', function (req, res) {
   // Get the answer from the query string
   var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
@@ -429,7 +420,7 @@ router.post('/application/period-of-abuse-start', function (req, res) {
 // File: period-of-abuse-end
 //
 router.post('/application/period-of-abuse-end', function (req, res) {
-  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndMonth = req.session.data['period-of-abuse-end-month']
   var POAEndYear = req.session.data['period-of-abuse-end-year']
   // now I'm using the 2 variables above to create a date object with moment to check if they delayed applying over 2 years
   var year = Number.parseInt(POAEndYear, 10); // making sure with have a well formated number for year and month
@@ -445,13 +436,13 @@ router.post('/application/period-of-abuse-end', function (req, res) {
   // else we're under 2 years
 
   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
-  var reportingDateDay = req.session.data['incidentReported-day'] 
+  var reportingDateDay = req.session.data['incidentReported-day']
   var reportingDateMonth = req.session.data['incidentReported-month']
   var reportingDateYear = req.session.data['incidentReported-year']
   var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-  var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
+  var POAEndMonth = req.session.data['period-of-abuse-end-month']
   var POAEndYear = req.session.data['period-of-abuse-end-year']
-  var endofPeriodOfAbuseDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h 
+  var endofPeriodOfAbuseDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h
   if ( isReportedOver48h(endofPeriodOfAbuseDate, reportingDate)){ // changing the end of period of abuse date is now triggering the reporting delay screen
     return res.redirect('/application/reporting-delay')
   }
@@ -472,7 +463,7 @@ req.session.data['reportingDelay'] = null; // this line is here to clear the dat
 
 router.post('/application/incident-date', function (req, res) {
   // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
-  var incidentDateDay = req.session.data['incident-date-day'] 
+  var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
   var  incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
@@ -482,11 +473,11 @@ router.post('/application/incident-date', function (req, res) {
   var delayInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
   if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
-    var reportingDateDay = req.session.data['incidentReported-day'] 
+    var reportingDateDay = req.session.data['incidentReported-day']
     var reportingDateMonth = req.session.data['incidentReported-month']
     var reportingDateYear = req.session.data['incidentReported-year']
     var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
+    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
     if ( isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
       return res.redirect('/application/reporting-delay')
     }
@@ -507,6 +498,19 @@ router.post('/application/incident-date', function (req, res) {
         }
         res.redirect('/application/incident-location')
   }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: application-delay
+// we see that screen if the indicent date (or when the incident stopped for POA) is over 2 years from the date of application
+//logic for it is for incident-date and period-of-abuse-end
+
+router.post('/application/application-delay', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/incident-location')
 })
 // END__######################################################################################################
 
@@ -532,122 +536,102 @@ router.post('/application/previous-applications', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: application-delay
-// we see that screen if the indicent date (or when the incident stopped for POA) is over 2 years from the date of application
-//logic for it is for incident-date and period-of-abuse-end
-
-router.post('/application/application-delay', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/incident-location')
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
 // File: incident-location
 //
 router.post('/application/incident-location', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/incident-reported')
+  res.redirect('/application/name')
 })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: incident-reported
-// Variable: incidentReported
- router.post('/application/incident-reported', function (req, res) {
-   // Get the answer from the query string
-  var crimeReported = req.session.data['crimeReported']   
-   if (crimeReported === 'no') {
-     // Redirect to the relevant page
-     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-     res.redirect('/application/do-you-know-offender')
-   } else {
-     // If the variable is any other value (or is missing) render the page requested
-     res.redirect('/application/crime-reported-date')
-   }
- })
-
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: crime-reported-date
+// File: name
 //
-router.post('/application/crime-reported-date', function (req, res) {
-  // all the functions used here are defined higher up in the code (near the start)
-  var reportingDate
-  var incidentDate
-
-  if (req.session.data['incident-date-day']) { // this is a single incident and we have the data for the date (day, month and year)
-    var incidentDateDay = req.session.data['incident-date-day'] 
-    var incidentDateMonth = req.session.data['incident-date-month']
-    var incidentDateYear = req.session.data['incident-date-year']
-    incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h 
-    }
-     else { if (req.session.data['period-of-abuse-end-month']){ // this is a period of abuse and we have the data for the end date (month and year)
-      var POAEndMonth = req.session.data['period-of-abuse-end-month'] 
-      var POAEndYear = req.session.data['period-of-abuse-end-year']
-      incidentDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h 
-      } else {
-        incidentDate = false
-      }
-    }
-    if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported
-      var reportingDateDay = req.session.data['incidentReported-day'] 
-      var reportingDateMonth = req.session.data['incidentReported-month']
-      var reportingDateYear = req.session.data['incidentReported-year']
-      reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-    } else {
-      reportingDate = false
-    }
-  
-  if (incidentDate && reportingDate && isReportedOver48h(incidentDate, reportingDate)){ 
-    return res.redirect('/application/reporting-delay')
-  }
-  req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
-  // else we're under 2 days
-
+router.post('/application/name', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/reporting-details-what-force')
+  res.redirect('/application/name-have-other')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: reporting-delay
-//
-router.post('/application/reporting-delay', function (req, res) {
-  res.redirect('/application/reporting-details-what-force')
+// File: name-have-other
+// Variable: haveOtherName
+router.post('/application/name-have-other', function (req, res) {
+  var haveOtherName = req.session.data['haveOtherName'];
+  if (haveOtherName === 'no')  {
+    return res.redirect('/application/date-of-birth')
+  }
+  res.redirect('/application/name-other')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: reporting-details-what-force
+// File: name=other
 //
-router.post('/application/reporting-details-what-force', function (req, res) {
-  res.redirect('/application/reporting-details-police-officer')
+router.post('/application/name-other', function (req, res) {
+  res.redirect('/application/date-of-birth')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: reporting-details-police-officer
+// File: date-of-birth
 //
-router.post('/application/reporting-details-police-officer', function (req, res) {
-  res.redirect('/application/crime-reference')
+router.post('/application/date-of-birth', function (req, res) {
+  // getting the inputs to be able to calculate if the user is a minor or not on the day of application
+  var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
+  var month = Number.parseInt(req.session.data['dob-month'] - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+  var day = Number.parseInt(req.session.data['dob-day'], 10);
+
+  var currentDate = moment(); //create a date that is 'just now ' so today
+  var dateOfBirth = moment([year, month, day]); //create a date that is the DOB from the 3 elements we received on the date of birth page from the user)
+
+  var duration = moment.duration(currentDate.diff(dateOfBirth));// calculate the difference between the two
+  var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
+
+  if(ageInYears < 18) { // it's a minor
+    return res.redirect('/application/prototype')
+  }
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/email-address')
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: crime-reference
+// File: email-address
+// varialbe: email-address
+// if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
+router.post('/application/email-address', function (req, res) {
+  if (!req.session.data['emailAddress']) {
+    req.session.data['emailAddress'] = 'name@domain.com'
+  }
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/address')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: address
 //
-router.post('/application/crime-reference', function (req, res) {
+router.post('/application/address', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/phone-number')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: phone-number
+//
+router.post('/application/phone-number', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
@@ -665,7 +649,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 
   if (knowOffender === 'no')  {
     // Redirect to the relevant page
-    res.redirect('/application/additional-info')
+    res.redirect('/application/your-application-OCJ-path')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/offender-name')
@@ -726,7 +710,6 @@ router.post('/application/living-with-offender-now', function (req, res) {
 // START__####################################################################################################
 // File: ongoing-relationship
 // Variable: ongoing-relationship
-
 router.post('/application/ongoing-relationship', function (req, res) {
   // Get the answer from the query string
   var ongoingRelationship = req.session.data['ongoing-relationship']
@@ -736,39 +719,54 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/additional-info')
+    res.redirect('/application/your-application-OCJ-path')
   }
 })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: additional-info
-
-router.post('/application/additional-info', function (req, res) {
-
-  res.redirect('/application/check-your-answers-page')
-})
-// END__######################################################################################################
-
-
-// START__####################################################################################################
-// File: check-your-answers-page
-// Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
-
- router.get('/application/check-your-answers-page', function (req, res) {
-   // Get the answer from the query string
-   req.session.checking_answers = true // this is initially set to false on the declaration page to avoid false results if using the prototype more than once
-   return res.render('application/check-your-answers-page')
- })
-
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/additional-info')
+  res.redirect('/application/your-application-OCJ-path')
 })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: your-application-OCJ-path
+ router.post('/application/your-application-OCJ-path', function (req, res) {
+    // Get the answer from the query string
+    var selectOCJ = req.session.data['OCJ-chosen']
+    if (selectOCJ === 'yes') {
+      //Redirect to the relevant page
+      return res.redirect('/application/check-your-answers-page')
+    } else {
+      res.redirect('/application/your-application-long-path')
+    }
+ })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: your-application-long-path
+router.post('/application/your-application-long-path', function (req, res) {
+  // Get the answer from the query string
+  var selectLongPath = req.session.data['long-path-chosen']
+  if (selectLongPath === 'yes') {
+    //Redirect to the relevant page
+    return res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
+  } else {
+    res.redirect('/application/your-application-OCJ-path')
+  }
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: check-your-answers-page
+// Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
+ router.get('/application/check-your-answers-page', function (req, res) {
+   req.session.checking_answers = true // this is initially set to false on the declaration page to avoid false results if using the prototype more than once
+   return res.render('application/check-your-answers-page')
+ })
 // END__######################################################################################################
 
 // START__####################################################################################################
@@ -787,7 +785,47 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
     res.redirect('/application/prototype')
   }
 })
+// END__######################################################################################################
 
+
+// START__####################################################################################################
+// File: what-are-you-applying-for
+// variable: what-type-of-application-would-you-like-to-make?
+// router.post('/application/what-are-you-applying-for', function (req, res) {
+//   // Get the answer from the query string
+//   var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
+//   if (applicationType === 'physical-injury') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/OCJ-service-option')
+//   }
+// })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: OCJ-service-option
+// variable: service-option
+// router.post('/application/OCJ-service-option', function (req, res) {
+//   // Get the answer from the query string
+//   var serviceOption = req.session.data['service-option']
+
+//   if (serviceOption === 'no') {
+//     // Redirect to the relevant page
+//     res.redirect('/application/prototype')
+//   } else {
+//     // If the variable is any other value (or is missing) render the page requested
+//     res.redirect('/application/compensation')
+//   }
+// })
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: additional-info
+// router.post('/application/additional-info', function (req, res) {
+//   res.redirect('/application/check-your-answers-page')
+// })
 // END__######################################################################################################
 
 module.exports = router

@@ -7,6 +7,13 @@
 {% block content %}
 
 <div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -101,14 +108,14 @@
                 {{ data['address-line-1'] }}<br />
                 {% if data['address-line-2'] %}
                   {{ data['address-line-2'] }}<br />
-                {% endif %}  
+                {% endif %}
                 {{ data['address-town'] }}<br />
                 {% if data['address-county'] %}
                   {{ data['address-county'] }}<br />
-                {% endif %} 
+                {% endif %}
                 {% if data['address-postcode'] %}
                   {{ data['address-postcode'] }}<br />
-                {% endif %} 
+                {% endif %}
               {% endif %}
             </dd>
             <dd class="govuk-check-your-answers__change">
@@ -588,7 +595,7 @@
             {% endif %}  <!-- end if  you know the offender -->
 
           </dl>
-        
+
         {% if data['additional-information'] %}
         <h2 class="govuk-heading-l">Additional information</h2>
         <dl class="govuk-check-your-answers govuk-check-your-answers--long">

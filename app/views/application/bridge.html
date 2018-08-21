@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  What is your realtionship
+  Blank page
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-width-container">
   {% from "phase-banner/macro.njk" import govukPhaseBanner %}
   {{ govukPhaseBanner({
@@ -16,39 +15,25 @@
   }) }}
 
   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
   <main role="main" class="govuk-main-wrapper">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
+        <h1 class="govuk-heading-xl">
+          About the sexual assault
+        </h1>
+        <p class="govuk-body-l">The following questions are about the assault you are applying for compensation for.</p>
         <form class="form"  method="post">
-          {% from "input/macro.njk" import govukInput %}
-
-          {{ govukInput({
-          "label": {
-          "text": "What contact do you have with them?",
-          "isPageHeading": true,
-          "classes": 'govuk-label--xl'
-        },
-          "classes": 'govuk-input--width-20',
-          "id": "relationship-text",
-          "name": "relationship-text",
-          value:  data['relationship-text']
-          }) }}
-
-          {% from "button/macro.njk" import govukButton %}
-
-          {{ govukButton({
+        {{ govukButton({
           "text": "Continue"
           }) }}
-
         </form>
-        </div>
+      </div>
     </div>
+
   </main>
+
 </div>
 
 {% endblock %}
-
-
-<!-- NOTE: do people understand the context of this question? -->
