@@ -395,7 +395,7 @@ router.post('/application/single-or-multiple-incidents', function (req, res) {
   // Get the answer from the query string
   var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
 
-  if (singleOrMultipleIncidents === 'It happened over a period of time') {
+  if (singleOrMultipleIncidents === 'Over a period of time') {
     // Redirect to the relevant page
     req.session.data['incident-date-day'] = null; // this line is here to clear the data if the user had chosen a single incident initially because I use that session as a test in the code for POST crime-reported-date
 
