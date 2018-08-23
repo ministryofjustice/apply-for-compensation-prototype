@@ -148,7 +148,7 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Have you claimed compensation from any other source?
+              Have you applied for compensation from any other source?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['otherCompensation'] }}
@@ -163,14 +163,14 @@
           {% if data['otherCompensation'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Who else have you claimed compensation from?
+                Who else have you applied to for compensation?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['who-claim-from'] }}
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="compensation-who">
-                  Change<span class="visually-hidden"> Who else have you claimed compensation from?</span>
+                  Change<span class="visually-hidden">Who else have you applied to for compensation?</span>
                 </a>
               </dd>
             </div>
@@ -192,7 +192,7 @@
           {% if data['otherCompensation'] === 'no' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Why did you not claim compensation from another source?
+              Why did you not apply compensation from another source?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['why-not-claim'] }}
@@ -268,14 +268,14 @@
             {% if data['previous-applications'] %}
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                  Have you claimed compensation from us for this crime before?
+                  Have you applied for compensation from us for this crime before?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
                   {{ data['previous-applications'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="previous-applications.html">
-                    Change<span class="visually-hidden"> have you claimed compensation from us for this crime before</span>
+                    Change<span class="visually-hidden"> have you applied compensation from us for this crime before</span>
                   </a>
                 </dd>
               </div>
@@ -283,14 +283,14 @@
         </dl>
 
         <h2 class="govuk-heading-l">
-          About the crime
+          About the assault 
         </h2>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--long">
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Did the crime happen once or over a period of time?
+              Did the assault happen once or over a period of time?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['single-or-multiple-incidents'] }}
@@ -302,23 +302,23 @@
             </dd>
           </div>
 
-          {% if data['single-or-multiple-incidents'] === 'It happened once' %}
+          {% if data['single-or-multiple-incidents'] === 'Once' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              When did the crime happen?
+              When did the assault happen?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="incident-date">
-                Change<span class="visually-hidden"> incident date</span>
+                Change<span class="visually-hidden"> assault date</span>
               </a>
             </dd>
           </div>
           {% endif %}
 
-          {% if data['single-or-multiple-incidents'] === 'It happened over a period of time' %}
+          {% if data['single-or-multiple-incidents'] === 'Over a period of time' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
                When did it start?
@@ -328,7 +328,7 @@
             </dd>
             <dd class="govuk-check-your-answers__change">
               <a href="period-of-abuse-start">
-                Change<span class="visually-hidden"> start of the incidents</span>
+                Change<span class="visually-hidden"> start of the assaults</span>
               </a>
             </dd>
           </div>
@@ -341,7 +341,7 @@
               </dd>
               <dd class="govuk-check-your-answers__change">
                 <a href="period-of-abuse-end">
-                  Change<span class="visually-hidden"> end of the incidents</span>
+                  Change<span class="visually-hidden"> end of the assaults</span>
                 </a>
               </dd>
             </div>
@@ -350,7 +350,7 @@
           {% if data['applicationDelay']  %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Why did you delay making your claim?
+              Why did you delay applying?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{data['applicationDelay']}}
@@ -365,35 +365,35 @@
 
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                  Was the crime reported to the police?
+                  Was the assault reported to the police?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
                   {{ data['crimeReported'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="incident-reported">
-                    Change<span class="visually-hidden"> incident reported</span>
+                    Change<span class="visually-hidden"> assault reported</span>
                   </a>
                 </dd>
               </div>
               {% if data['crimeReported'] === 'yes' %}
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                    When was the crime reported to police?
+                    When was the assault reported to police?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
                   {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="crime-reported-date">
-                    Change<span class="visually-hidden"> date incident was reported</span>
+                    Change<span class="visually-hidden"> date assault was reported</span>
                   </a>
                 </dd>
               </div>
                   {% if data['reportingDelay']  %}
                   <div class="govuk-check-your-answers__contents">
                     <dt class="govuk-check-your-answers__question">
-                      Why was there a delay in reporting the crime to police?
+                      Why was there a delay in reporting the assault to police?
                     </dt>
                     <dd class="govuk-check-your-answers__answer">
                       {{data['reportingDelay']}}
@@ -409,14 +409,14 @@
 
               <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                  Where did the crime happen?
+                  Where did the assault happen?
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
                   {{ data['incident-location'] }}
                 </dd>
                 <dd class="govuk-check-your-answers__change">
                   <a href="incident-location">
-                    Change<span class="visually-hidden"> incident location</span>
+                    Change<span class="visually-hidden"> assault location</span>
                   </a>
                 </dd>
               </div>
@@ -424,14 +424,14 @@
               {% if data['incident-location'] === 'Somewhere else' %}
               <div class="govuk-check-your-answers__contents">
                   <dt class="govuk-check-your-answers__question">
-                    Tell us where the crime happened
+                    Tell us where the assault happened
                   </dt>
                   <dd class="govuk-check-your-answers__answer">
                     {{ data['somewhere-else'] }}
                   </dd>
                   <dd class="govuk-check-your-answers__change">
                     <a href="incident-location">
-                      Change<span class="visually-hidden"> other place crime happened</span>
+                      Change<span class="visually-hidden"> other place assault happened</span>
                     </a>
                   </dd>
                 </div>
@@ -440,7 +440,7 @@
             {% if data['crimeReported'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                  What police force was the crime reported to?
+                  What police force was the assault reported to?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['police-force'] }}
@@ -454,7 +454,7 @@
 
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                  police officer's name
+                  Police officer's name
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['police-officer-name'] }}
@@ -467,7 +467,7 @@
             </div>
             <div class="govuk-check-your-answers__contents">
                 <dt class="govuk-check-your-answers__question">
-                    police officer's ID number
+                    Police officer's ID number
                 </dt>
                 <dd class="govuk-check-your-answers__answer">
                   {{ data['police-officer-id'] }}
@@ -504,7 +504,7 @@
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
-              Do you know the person who attacked you?
+              Do you know the person who assaulted you?
             </dt>
             <dd class="govuk-check-your-answers__answer">
               {{ data['know-offender'] }}
@@ -519,7 +519,7 @@
           {% if data['know-offender'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                What's the name of the person who attacked you?
+                What's their name?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['first-name-offender'] }}&nbsp;{{ data['last-name-offender'] }}
@@ -533,7 +533,7 @@
 
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Were you and the person who attacked you living together as family at the time?
+                Were you both living together as family at the time?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['living-with-offender-before'] }}
@@ -547,7 +547,7 @@
             {% if data['living-with-offender-before'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
-                Do you and the person who attacked you live together now?
+                Do you still live together?
               </dt>
               <dd class="govuk-check-your-answers__answer">
                 {{ data['living-with-offender-now'] }}
