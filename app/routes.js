@@ -60,7 +60,7 @@ router.post('/application/who-is-making-the-application', function (req, res) {
     res.redirect('/application/representative-type')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/declaration')
+    res.redirect('/application/british-citizen')
   }
 })
 // END__######################################################################################################
@@ -98,7 +98,7 @@ router.post('/application/declaration', function (req, res) {
     //res.redirect('/application/prototype')
   //} else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/british-citizen')
+    res.redirect('/application/who-is-making-the-application')
   //}
 })
 // END__######################################################################################################
