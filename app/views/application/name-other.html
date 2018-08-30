@@ -19,14 +19,26 @@
 
 
           {% from "textarea/macro.njk" import govukTextarea %}
-
+          {% from "error-message/macro.njk" import govukErrorMessage %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "Enter the other names you have used",
+                href: "#nameOther"
+              }
+            ]
+          }) }}
           {{ govukTextarea({
             "id": "nameOther",
             "name": "nameOther",
             label: {
-              text: "What other names have you used?",
+              text: "Enter the other names you have used",
               "isPageHeading": true,
               "classes": 'govuk-label--xl'
+            },
+            errorMessage: {
+            text: "Enter the other names you have used"
             }
           }) }}
 
