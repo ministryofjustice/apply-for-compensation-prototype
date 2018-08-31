@@ -19,6 +19,16 @@
 
             {% from "input/macro.njk" import govukInput %}
 
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "Enter your telephone number",
+                  href: "#phoneNumber"
+                }
+              ]
+            }) }}
+
             {{ govukInput({
             "label": {
             "text": "Enter your telephone number",
@@ -27,6 +37,9 @@
             },
             hint: {
               text: "We'll use this to contact you about your application for example, to request more information"
+            },
+            errorMessage: {
+            text: "Enter your telephone number"
             },
             "classes": 'govuk-input--width-20',
             "id": "phoneNumber",
