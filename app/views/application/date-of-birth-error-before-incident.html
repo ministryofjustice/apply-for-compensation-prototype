@@ -16,6 +16,17 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
+            {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "Your date of birth must be before the assault happened",
+                  href: "#dob-day"
+                }
+              ]
+            }) }}
 
             {% from "date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
@@ -30,6 +41,9 @@
             },
             hint: {
             text: 'For example, 31 3 1980'
+            },
+            errorMessage: {
+              text: "Your date of birth must be before the assault happened"
             },
             items:[
             {
