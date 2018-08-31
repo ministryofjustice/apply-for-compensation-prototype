@@ -23,7 +23,17 @@
       <div class="govuk-grid-column-two-thirds">
 
               <form class="form" method="post">
+            {% from "error-summary/macro.njk" import govukErrorSummary %}
 
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "Select yes or no",
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
@@ -37,6 +47,9 @@
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
+            errorMessage: {
+            text: "Select yes or no"
+          },
             "items": [
               {
                 "value": "yes",
