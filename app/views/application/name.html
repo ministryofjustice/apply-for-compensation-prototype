@@ -20,30 +20,12 @@
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--xl" for="name">
-                  {{ govukErrorSummary({
-                    titleText: "There is a problem",
-                    errorList: [
-                      {
-                        text: "Enter your title",
-                        href: "#title"
-                      },
-                      {
-                        text: "Enter your first name",
-                        href: "#first-name"
-                      },
-                      {
-                        text: "Enter your last name",
-                        href: "#last-name"
-                      }
-                    ]
-                  }) }}
-                  Enter your name
+                Enter your name
                 </label>
               </h1>
             </div>
 
             {% from "input/macro.njk" import govukInput %}
-            {% from "error-message/macro.njk" import govukErrorMessage %}
 
             {{ govukInput({
             "label": {
@@ -52,10 +34,7 @@
             "classes": "govuk-input--width-10",
             "id": "title",
             "name": "title",
-            "value": data['title'],
-            errorMessage: {
-            text: "Enter your title"
-            }
+            "value": data['title']
             }) }}
 
             {% from "input/macro.njk" import govukInput %}
@@ -66,10 +45,7 @@
               },
               id: "first-name",
               name: "first-name",
-              value: data['first-name'],
-              errorMessage: {
-              text: "Enter your first name"
-              }
+              value: data['first-name']
             }) }}
 
             {% from "input/macro.njk" import govukInput %}
@@ -80,10 +56,7 @@
               },
               id: "last-name",
               name: "last-name",
-              value: data['last-name'],
-              errorMessage: {
-              text: "Enter your last name"
-              }
+              value: data['last-name']
             }) }}
             {% from "input/macro.njk" import govukInput %}
 
