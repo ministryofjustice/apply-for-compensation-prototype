@@ -21,10 +21,58 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Your choices
+          Choose an option
         </h1>
-        <p class="govuk-body-l">Option 1 and option 2 explained.</p>
+        <h2>Option 1</h2>
+  <p>
+  </p>
+    <p class="govuk-body">If you choose option 1 we will get the police report and may also need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>medical reports from your doctor about any physical injuries</li>
+        <li>a report from a clinical psychologist about any mental injuries</li>
+        <li>evidence of any <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a> or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a></li>
+      </ul>
+
+
+    <h2>Option 2</h2>
+    <p>
+    </p>
+    <p class="govuk-body">If you choose option 2 we will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>only need to get the police report</li>
+        <li>use the information in the report to make a decision</li>
+        <li>give you a decision within 16 weeks</li>
+        </ul>
+
+    <p>Option 2 will not consider any other injuries, losses or expenses you may have.</p>
+
         <form class="form"  method="post">
+
+          {% from 'radios/macro.njk' import govukRadios %}
+                 {{ govukRadios({
+                 "classes": "govuk-radios",
+                 "idPrefix": "long-path-chosen",
+                 "name": "long-path-chosen",
+                 'currentValue': data['long-path-chosen'],
+                 "fieldset": {
+                 "legend": {
+                 "text": 'Choose an option',
+                 "isPageHeading": true,
+                 "classes": 'govuk-fieldset__legend--m'
+                 }
+                 },
+                 "items": [
+                 {
+                 "value": "yes",
+                 "text": "Option 1"
+                 },
+                 {
+                 "value": "no",
+                 "text": "Option 2"
+                 }
+                 ]
+                 }) }}
+
         {{ govukButton({
           "text": "Continue"
           }) }}
