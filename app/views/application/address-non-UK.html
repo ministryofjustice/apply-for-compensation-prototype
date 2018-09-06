@@ -25,7 +25,7 @@
             'id': "address-non-UK",
             'value': data ['address-non-UK'],
             label: {
-              text: "What's your address?",
+              text: "Enter your address",
               classes: "govuk-fieldset__legend--xl govuk-label--xl",
               isPageHeading: true
             }
@@ -40,7 +40,7 @@
     </div>
     <div class="design-notes-box">
         <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">If it is a non-UK address then we let the user enter it as text so that if their home address doesn't match the UK format, they are not confused. 
+        <p class="design-notes">If it is a non-UK address then we let the user enter it as text so that if their home address doesn't match the UK format, they are not confused.
           The downside is they might forget part of it if not prompted? Not sure if we needs some guidance here - SK</p>
         <p class="design-notes">Also at the moment, on live OAS and private beta OAS we give a users the exact same fields as a UK address and they can't enter their country - SK</p>
           {% from "warning-text/macro.njk" import govukWarningText %}
