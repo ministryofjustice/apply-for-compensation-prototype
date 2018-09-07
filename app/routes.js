@@ -57,7 +57,7 @@ router.post('/application/who-is-making-the-application', function (req, res) {
 
   if (directApplicant === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/sexual-assault-application')
@@ -75,7 +75,7 @@ router.post('/application/sexual-assault-application', function (req, res) {
 
   if (sexualAssault === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/after-1979')
@@ -114,7 +114,7 @@ router.post('/application/same-family', function (req, res) {
     res.redirect('/application/you-have-a-choice')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   }
 })
 // END__######################################################################################################
@@ -156,7 +156,7 @@ router.post('/application/your-choices', function (req, res) {
     res.redirect('/application/declaration')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   }
 })
 // END__######################################################################################################
@@ -191,7 +191,7 @@ router.post('/application/declaration', function (req, res) {
 
  // if (declaration === 'no') {
     // Redirect to the relevant page
-    //res.redirect('/application/prototype')
+    //res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   //} else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/criminal-convictions')
@@ -209,7 +209,7 @@ router.post('/application/british-citizen', function (req, res) {
 
   if (britishCitizen === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
@@ -230,7 +230,7 @@ router.post('/application/over-18', function (req, res) {
 
   if (over18 === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
@@ -303,7 +303,7 @@ router.post('/application/tell-criminal-convictions', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/incident-reported')
+  res.redirect('/application/bridge')
 })
 // END__######################################################################################################
 
@@ -329,7 +329,7 @@ router.post('/application/reporting-crime-not-reported', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/name')
+  res.redirect('/application/single-or-multiple-incidents')
 })
 // END__######################################################################################################
 
@@ -740,7 +740,7 @@ router.post('/application/date-of-birth', function (req, res) {
   var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
   if(ageInYears < 18) { // it's a minor
-    return res.redirect('/application/prototype')
+    return res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   }
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
@@ -808,7 +808,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 // File: offender-name
 
 router.post('/application/offender-name', function (req, res) {
-    res.redirect('/application/living-with-offender-before')
+    res.redirect('/application/ongoing-relationship')
 })
 // END__######################################################################################################
 
@@ -849,7 +849,7 @@ router.post('/application/living-with-offender-now', function (req, res) {
     res.redirect('/application/ongoing-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   }
 })
 // END__######################################################################################################
@@ -875,7 +875,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/your-application-OCJ-path')
+  res.redirect('/application/name')
 })
 // END__######################################################################################################
 
@@ -929,7 +929,7 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
     res.redirect('/application/confirmation-of-review')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/prototype')
+    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   }
 })
 // END__######################################################################################################
@@ -943,7 +943,7 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 //   var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
 //   if (applicationType === 'physical-injury') {
 //     // Redirect to the relevant page
-//     res.redirect('/application/prototype')
+//     res.redirect('https://www.cica.gov.uk/oas/Account/Create')
 //   } else {
 //     // If the variable is any other value (or is missing) render the page requested
 //     res.redirect('/application/OCJ-service-option')
@@ -960,7 +960,7 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 
 //   if (serviceOption === 'no') {
 //     // Redirect to the relevant page
-//     res.redirect('/application/prototype')
+//     res.redirect('https://www.cica.gov.uk/oas/Account/Create')
 //   } else {
 //     // If the variable is any other value (or is missing) render the page requested
 //     res.redirect('/application/compensation')
