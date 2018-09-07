@@ -21,19 +21,20 @@ Blank page
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Choose an option
+          Your options
         </h1>
 
-        <p>Your choice can affect how much information and evidence we will need to assess your application.</p>
+        <p class="govuk-body-l">Your choice can affect how much information and evidence we need to assess your application.</p>
 
         <h2 class="govuk-heading-m">
           Option 1
         </h2>
   <p>
   </p>
-    <p class="govuk-body">We will get the police report, but you may need to:</p>
+    <p class="govuk-body">We will get information from the police.</p>
+    <p class="govuk-body">Based on the facts of your case, you may need to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>provide medical reports about your physical injuries</li>
+        <li>get medical evidence of your physical injuries</li>
         <li>have your mental injuries assessed by an expert</li>
         <li>give us evidence of any <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a> or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a></li>
       </ul>
@@ -44,12 +45,12 @@ Blank page
     </p>
     <p class="govuk-body">We will:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>only need to get the police report</li>
-        <li>use the information in the report to make a decision</li>
-        <li>usually give you a decision within 16 weeks</li>
+        <li>only need to get information from the police</li>
+        <li>use that information to make a decision</li>
+        <li>not consider any other injuries, loss of earnings, expenses or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank">other consequences</a> of the crime</li>
       </ul>
 
-    <p>This option will not consider any other injuries, loss of earnings, expenses or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank">other consequences</a> of the crime.</p>
+    <p class="govuk-body">We will usually give you a decision within 16 weeks.</p>
 
         <form class="form"  method="post">
 
@@ -62,9 +63,9 @@ Blank page
             currentValue: data['yourChoice'],
             "fieldset": {
               "legend": {
-                "text": 'Choose an option',
+                "text": 'Which option do you want to choose?',
                 "isPageHeading": false,
-                "classes": 'govuk-fieldset__legend--l'
+                "classes": 'govuk-fieldset__legend--m'
               }
             },
             "items": [
