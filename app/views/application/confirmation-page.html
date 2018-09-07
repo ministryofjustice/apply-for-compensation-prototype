@@ -18,7 +18,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        
+
         <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
           <h2 class="govuk-panel__title">
             Application submitted
@@ -26,9 +26,11 @@
           <div class="govuk-panel__body">
             Your reference number<br><strong>CICA2123GW</strong>
           </div>
+          <br>
+          <div class="govuk-body-l">
+            We have sent a confirmation email to <strong>{{ data['emailAddress'] }}</strong>
+          </div>
         </div>
-
-        <p> We have sent a confirmation email to {{ data['emailAddress'] }}</p>
 
         <h2 class="govuk-heading-m">What happens next</h2>
 
