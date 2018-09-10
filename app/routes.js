@@ -866,7 +866,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/name')
+    res.redirect('/application/compensation')
   }
 })
 // END__######################################################################################################
