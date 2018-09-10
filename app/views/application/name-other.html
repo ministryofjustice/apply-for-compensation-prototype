@@ -17,8 +17,21 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
+            {% from "input/macro.njk" import govukInput %}
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+            {{ govukInput({
+              id: "nameOther",
+              name: "nameOther",
+              label: {
+                text: "What other names have you used?",
+                "isPageHeading": true,
+                "classes": 'govuk-label--xl'
+              },
+              id: "name",
+              name: "name"
+            }) }}
+
+          <!-- {% from "textarea/macro.njk" import govukTextarea %}
 
           {{ govukTextarea({
             "id": "nameOther",
@@ -28,7 +41,7 @@
               "isPageHeading": true,
               "classes": 'govuk-label--xl'
             }
-          }) }}
+          }) }} -->
 
           {% from "button/macro.njk" import govukButton %}
 

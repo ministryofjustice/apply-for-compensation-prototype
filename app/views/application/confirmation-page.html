@@ -18,7 +18,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        
+
         <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
           <h2 class="govuk-panel__title">
             Application submitted
@@ -26,20 +26,23 @@
           <div class="govuk-panel__body">
             Your reference number<br><strong>CICA2123GW</strong>
           </div>
+          <br>
+          <div class="govuk-body-l">
+            We have sent a confirmation email to <strong>{{ data['emailAddress'] }}</strong>
+          </div>
         </div>
-
-        <p> We have sent a confirmation email to {{ data['emailAddress'] }}</p>
 
         <h2 class="govuk-heading-m">What happens next</h2>
 
 
-      <p>If you are eligible we will:</p>
+      <p>We will check if you can get compensation, and then:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>request information from the police, if it is needed</li>
-          <li>assess your claim when we get the police information</li>
+          <li>ask the police for evidence, if it is needed</li>
+          <li>use the police evidence to make a decision</li>
           <li>send our decision to {{ data['emailAddress'] }}</li>
         </ul>
 
+        <p class="govuk-body">We will usually make a decision within 4 months.</p>
         <p><a href="/application/confirmation-page-if-automatic-nil">What did you think of this service?</a> (takes 30 seconds)</p>
 
       </div>
