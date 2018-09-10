@@ -875,7 +875,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/name')
+  res.redirect('/application/compensation')
 })
 // END__######################################################################################################
 
