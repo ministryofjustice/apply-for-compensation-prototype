@@ -473,7 +473,7 @@ router.post('/application/compensation-amount', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-    res.redirect('/application/name')
+    res.redirect('/application/check-your-answers-page')
 })
 // END__######################################################################################################
 
@@ -782,7 +782,7 @@ router.post('/application/phone-number', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
-  res.redirect('/application/check-your-answers-page')
+  res.redirect('/application/compensation')
 })
 // END__######################################################################################################
 
@@ -796,7 +796,7 @@ router.post('/application/do-you-know-offender', function (req, res) {
 
   if (knowOffender === 'no')  {
     // Redirect to the relevant page
-    res.redirect('/application/compensation')
+    res.redirect('/application/name')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/offender-name')
@@ -866,7 +866,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
     res.redirect('/application/what-is-relationship')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/compensation')
+    res.redirect('/application/name')
   }
 })
 // END__######################################################################################################
@@ -875,7 +875,7 @@ router.post('/application/ongoing-relationship', function (req, res) {
 // File: what-is-relationship
 //
 router.post('/application/what-is-relationship', function (req, res) {
-  res.redirect('/application/compensation')
+  res.redirect('/application/name')
 })
 // END__######################################################################################################
 
