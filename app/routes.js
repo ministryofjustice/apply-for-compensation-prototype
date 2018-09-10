@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+var fs = require('fs'); //I think this is for the file listing stuff that Ive stolen from an old prototype.
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 
 // START__Helpers functions ####################################################################################################################################
@@ -980,3 +981,5 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 // END__######################################################################################################
 
 module.exports = router
+
+require('./routes-filelist')(router);
