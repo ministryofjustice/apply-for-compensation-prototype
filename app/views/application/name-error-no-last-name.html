@@ -20,12 +20,22 @@
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--xl" for="name">
-                    Enter your name
+                  {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: "Enter your last name",
+                        href: "#last-name"
+                      }
+                    ]
+                  }) }}
+                  Enter your name
                 </label>
               </h1>
             </div>
 
             {% from "input/macro.njk" import govukInput %}
+            {% from "error-message/macro.njk" import govukErrorMessage %}
 
             {{ govukInput({
             "label": {
@@ -56,7 +66,10 @@
               },
               id: "last-name",
               name: "last-name",
-              value: data['last-name']
+              value: data['last-name'],
+              errorMessage: {
+              text: "Enter your last name"
+              }
             }) }}
             {% from "input/macro.njk" import govukInput %}
 
