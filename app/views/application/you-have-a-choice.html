@@ -21,17 +21,20 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Before you continue
+          You have a choice
         </h1>
-        <p class="govuk-body-l">On the next few pages we will ask questions about the crime.</p>
+        <p class="govuk-body-l">We need to get evidence of the crime to make a decision on your application.</p>
+        <p class="govuk-body">You can choose how we do this.</p>
+        <p class="govuk-body">We always get evidence from the police to confirm that the crime happened and help us make a decision.</p>
+        <p class="govuk-body">Depending on the facts of your case, we may ask you for more information or evidence.</p>
 
-        <p class="govuk-body">We understand talking about the crime may be difficult.</p>
-        <p class="govuk-body">Organisations such as the <a class="govuk-body" href="https://www.victimsinformationservice.org.uk/" target="_blank">Victim's Information Service</a> can offer specialist help and advice.</li>
+         <form class="form" method="post">
 
-        <form class="form"  method="post">
-        {{ govukButton({
-          "text": "Continue"
-          }) }}
+           {% from "button/macro.njk" import govukButton %}
+           {{ govukButton({
+           "text": "View your choices"
+           }) }}
+
         </form>
       </div>
     </div>
