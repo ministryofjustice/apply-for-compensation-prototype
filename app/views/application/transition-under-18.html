@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          You need a different service
+        </h1>
+        <p class="govuk-body-l">You must be 18 or over to use this service.</p>
+
+        <p class="govuk-body">You can continue your application for compensation using our other <a class="govuk-body" href="https://www.cica.gov.uk/oas/Account/Create" target="_blank">Online Application Service</a>.</li>
+
+        <form class="form"  method="post">
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}
