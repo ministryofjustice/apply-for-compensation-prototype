@@ -156,7 +156,7 @@ router.post('/application/your-choices', function (req, res) {
     res.redirect('/application/declaration')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
+    res.redirect('/application/transition-not-OCJ')
   }
 })
 // END__######################################################################################################
