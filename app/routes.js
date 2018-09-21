@@ -55,17 +55,7 @@ router.get('/', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: you-have-a-choice
 
-
-router.post('/application/you-have-a-choice', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/your-choices')
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: your-choices
@@ -889,3 +879,4 @@ require('./views/application/who-is-making-the-application/routes')(router);
 require('./views/application/sexual-assault-application/routes')(router);
 require('./views/application/after-1979/routes')(router);
 require('./views/application/same-family/routes')(router);
+require('./views/application/you-have-a-choice/routes')(router);
