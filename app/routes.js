@@ -249,3 +249,9 @@ require('./views/application/compensation/routes')(router);
   require('./views/application/compensation-why-not/routes')(router);
   require('./views/application/compensation-who/routes')(router);
     require('./views/application/compensation-amount/routes')(router);
+
+// @todo these files need to go in the right place in the list above
+require('./views/application/previous-applications/routes')(router);
+require('./views/application/application-delay/routes')(router);
+require('./views/application/find-uk-address/routes')(router);
+require('./views/application/reporting-delay/routes')(router);
