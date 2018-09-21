@@ -122,19 +122,7 @@ router.post('/application/residence-1', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: incident-reported
-// Variable: incidentReported
-router.post('/application/incident-reported', function (req, res) {
-  // Get the answer from the query string
- var crimeReported = req.session.data['crimeReported']
-  if (crimeReported === 'no') {
-     return res.redirect('/application/reporting-crime-not-reported')
-  } else {
-    res.redirect('/application/crime-reported-date')
-  }
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: Reporting-crime-not-reported
@@ -812,3 +800,4 @@ require('./views/application/declaration/routes')(router);
 require('./views/application/criminal-convictions/routes')(router);
 require('./views/application/tell-criminal-convictions/routes')(router);
 require('./views/application/bridge/routes')(router);
+require('./views/application/incident-reported/routes')(router);
