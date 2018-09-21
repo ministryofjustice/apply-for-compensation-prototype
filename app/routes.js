@@ -277,13 +277,7 @@ router.post('/application/compensation-amount', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: period-of-abuse-start
-//
-router.post('/application/period-of-abuse-start', function (req, res) {
-  res.redirect('/application/period-of-abuse-end')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: period-of-abuse-end
@@ -725,3 +719,4 @@ require('./views/application/reporting-details-what-force/routes')(router);
 require('./views/application/reporting-details-police-officer/routes')(router);
 require('./views/application/crime-reference/routes')(router);
 require('./views/application/single-or-multiple-incidents/routes')(router);
+  require('./views/application/period-of-abuse-start/routes')(router);
