@@ -53,23 +53,7 @@ router.get('/', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: same-family
-// Variable: sameFamily
 
-router.post('/application/same-family', function (req, res) {
-  // Get the answer from the query string
-  var sameFamily = req.session.data['sameFamily']
-
-  if (sameFamily === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/application/you-have-a-choice')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: you-have-a-choice
@@ -904,3 +888,4 @@ require('./views/application/over-18/routes')(router);
 require('./views/application/who-is-making-the-application/routes')(router);
 require('./views/application/sexual-assault-application/routes')(router);
 require('./views/application/after-1979/routes')(router);
+require('./views/application/same-family/routes')(router);
