@@ -32,64 +32,6 @@ router.get('/', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: confirmation-page-if-automatic-nil
-// variable: apply-for-review
-
-router.post('/application/confirmation-page-if-automatic-nil', function (req, res) {
-  // Get the answer from the query string
-  var applyForReview = req.session.data['apply-for-review']
-
-  if (applyForReview  === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/application/confirmation-of-review')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  }
-})
-// END__######################################################################################################
-
-
-// START__####################################################################################################
-// File: what-are-you-applying-for
-// variable: what-type-of-application-would-you-like-to-make?
-// router.post('/application/what-are-you-applying-for', function (req, res) {
-//   // Get the answer from the query string
-//   var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
-//   if (applicationType === 'physical-injury') {
-//     // Redirect to the relevant page
-//     res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-//   } else {
-//     // If the variable is any other value (or is missing) render the page requested
-//     res.redirect('/application/OCJ-service-option')
-//   }
-// })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: OCJ-service-option
-// variable: service-option
-// router.post('/application/OCJ-service-option', function (req, res) {
-//   // Get the answer from the query string
-//   var serviceOption = req.session.data['service-option']
-
-//   if (serviceOption === 'no') {
-//     // Redirect to the relevant page
-//     res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-//   } else {
-//     // If the variable is any other value (or is missing) render the page requested
-//     res.redirect('/application/compensation')
-//   }
-// })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: additional-info
-// router.post('/application/additional-info', function (req, res) {
-//   res.redirect('/application/check-your-answers-page')
-// })
-// END__######################################################################################################
 
 module.exports = router
 
@@ -143,3 +85,4 @@ require('./views/application/previous-applications/routes')(router);
 require('./views/application/application-delay/routes')(router);
 require('./views/application/find-uk-address/routes')(router);
 require('./views/application/reporting-delay/routes')(router);
+require('./views/application/confirmation-page-if-automatic-nil/routes')(router);
