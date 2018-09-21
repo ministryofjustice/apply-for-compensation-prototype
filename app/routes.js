@@ -166,13 +166,7 @@ router.post('/application/reporting-delay', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: reporting-details-police-officer
-//
-router.post('/application/reporting-details-police-officer', function (req, res) {
- res.redirect('/application/crime-reference')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: crime-reference
@@ -755,3 +749,4 @@ require('./views/application/bridge/routes')(router);
 require('./views/application/incident-reported/routes')(router);
 require('./views/application/crime-reported-date/routes')(router);
 require('./views/application/reporting-details-what-force/routes')(router);
+require('./views/application/reporting-details-police-officer/routes')(router);
