@@ -456,13 +456,7 @@ router.post('/application/phone-number', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: offender-name
 
-router.post('/application/offender-name', function (req, res) {
-    res.redirect('/application/ongoing-relationship')
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: living-with-offender-before
@@ -659,3 +653,4 @@ require('./views/application/single-or-multiple-incidents/routes')(router);
   require('./views/application/period-of-abuse-end/routes')(router);
 require('./views/application/incident-location/routes')(router);
 require('./views/application/do-you-know-offender/routes')(router);
+  require('./views/application/offender-name/routes')(router);
