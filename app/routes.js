@@ -500,22 +500,7 @@ router.post('/application/living-with-offender-now', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: ongoing-relationship
-// Variable: ongoing-relationship
-router.post('/application/ongoing-relationship', function (req, res) {
-  // Get the answer from the query string
-  var ongoingRelationship = req.session.data['ongoing-relationship']
 
-  if (ongoingRelationship === 'yes')  {
-    // Redirect to the relevant page
-    res.redirect('/application/what-is-relationship')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/name')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: what-is-relationship
@@ -654,3 +639,4 @@ require('./views/application/single-or-multiple-incidents/routes')(router);
 require('./views/application/incident-location/routes')(router);
 require('./views/application/do-you-know-offender/routes')(router);
   require('./views/application/offender-name/routes')(router);
+  require('./views/application/ongoing-relationship/routes')(router);
