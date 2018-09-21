@@ -365,13 +365,7 @@ router.post('/application/previous-applications', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: name=other
-//
-router.post('/application/name-other', function (req, res) {
-  res.redirect('/application/date-of-birth')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: date-of-birth
@@ -614,3 +608,4 @@ require('./views/application/do-you-know-offender/routes')(router);
     require('./views/application/what-is-relationship/routes')(router);
 require('./views/application/name/routes')(router);
 require('./views/application/name-have-other/routes')(router);
+  require('./views/application/name-other/routes')(router);
