@@ -199,26 +199,7 @@ router.post('/application/declaration', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: british-citizen
-// Variable: britishCitizen
 
-router.post('/application/british-citizen', function (req, res) {
-  // Get the answer from the query string
-  var britishCitizen = req.session.data['britishCitizen']
-
-  if (britishCitizen === 'no') {
-    // Redirect to the relevant page
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  } else {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/over-18')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: over-18
@@ -471,9 +452,9 @@ router.post('/application/compensation-who', function (req, res) {
 //
 router.post('/application/compensation-amount', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
+    return res.redirect('/application/check-your-answers-page/')
   }
-    res.redirect('/application/check-your-answers-page')
+    res.redirect('/application/check-your-answers-page/index')
 })
 // END__######################################################################################################
 
@@ -980,3 +961,5 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 // END__######################################################################################################
 
 module.exports = router
+
+require('./views/application/british-citizen/routes')(router);
