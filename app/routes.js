@@ -359,16 +359,7 @@ router.post('/application/previous-applications', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: incident-location
-//
-router.post('/application/incident-location', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/do-you-know-offender')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: name
@@ -682,3 +673,4 @@ require('./views/application/crime-reference/routes')(router);
 require('./views/application/single-or-multiple-incidents/routes')(router);
   require('./views/application/period-of-abuse-start/routes')(router);
   require('./views/application/period-of-abuse-end/routes')(router);
+require('./views/application/incident-location/routes')(router);
