@@ -49,23 +49,7 @@ router.get('/', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: sexual-assault-application
-// Variable: sexualAssault
 
-router.post('/application/sexual-assault-application', function (req, res) {
-  // Get the answer from the query string
-  var sexualAssault = req.session.data['sexualAssault']
-
-  if (sexualAssault === 'no') {
-    // Redirect to the relevant page
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/after-1979')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: after-1979
@@ -927,6 +911,11 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 
 module.exports = router
 
+// Try to keep these inclued in the same order as the journey.
+// This makes it easy to find things.
+//   Indent routes that relate to questions that are dependant on the previous one
+
 require('./views/application/british-citizen/routes')(router);
 require('./views/application/over-18/routes')(router);
 require('./views/application/who-is-making-the-application/routes')(router);
+require('./views/application/sexual-assault-application/routes')(router);
