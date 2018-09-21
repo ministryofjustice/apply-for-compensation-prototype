@@ -164,13 +164,7 @@ router.post('/application/reporting-delay', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: reporting-details-what-force
-//
-router.post('/application/reporting-details-what-force', function (req, res) {
- res.redirect('/application/reporting-details-police-officer')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: reporting-details-police-officer
@@ -760,3 +754,4 @@ require('./views/application/tell-criminal-convictions/routes')(router);
 require('./views/application/bridge/routes')(router);
 require('./views/application/incident-reported/routes')(router);
 require('./views/application/crime-reported-date/routes')(router);
+require('./views/application/reporting-details-what-force/routes')(router);
