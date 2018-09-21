@@ -217,15 +217,7 @@ router.post('/application/compensation-amount', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: address
-// this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address'
-// or uses the link in the reveal to enter the address manually and goes to the view 'address-manually'
-// or  uses the link in the reveal to enter an on uk address and goes to the view 'address-non-UK'
-router.post('/application/address', function (req, res) {
-  res.redirect('/application/find-uk-address')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: find-uk-address
@@ -575,3 +567,4 @@ require('./views/application/name-have-other/routes')(router);
   require('./views/application/name-other/routes')(router);
 require('./views/application/date-of-birth/routes')(router);
 require('./views/application/email-address/routes')(router);
+require('./views/application/address/routes')(router);
