@@ -275,25 +275,7 @@ router.post('/application/compensation-amount', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: single-or-multiple-incidents
-// Variable: single-or-multiple-incidents
-router.post('/application/single-or-multiple-incidents', function (req, res) {
-  // Get the answer from the query string
-  var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
 
-  if (singleOrMultipleIncidents === 'Over a period of time') {
-    // Redirect to the relevant page
-    req.session.data['incident-date-day'] = null; // this line is here to clear the data if the user had chosen a single incident initially because I use that session as a test in the code for POST crime-reported-date
-
-    res.redirect('/application/period-of-abuse-start')
-  } else {
-    req.session.data['period-of-abuse-end-month'] = null; // this line is here to clear the data if the user had chosen a period of abuse initially because I use that session as a test in the code for POST crime-reported-date
-    // else we're under 2 days
-    res.redirect('/application/incident-date')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: period-of-abuse-start
@@ -742,3 +724,4 @@ require('./views/application/crime-reported-date/routes')(router);
 require('./views/application/reporting-details-what-force/routes')(router);
 require('./views/application/reporting-details-police-officer/routes')(router);
 require('./views/application/crime-reference/routes')(router);
+require('./views/application/single-or-multiple-incidents/routes')(router);
