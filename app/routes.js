@@ -230,18 +230,7 @@ router.post('/application/find-uk-address', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: address-manually
-// will produce an address on multiple lines on the 'check your answers page'
-router.post('/application/address-manually', function (req, res) {
-  req.session.data['address-non-UK'] = null; // this line is here to clear the data if the user had used the non UK address initially as we don't want to have duplicated data in the end
-  req.session.data['address-lookup-result'] = null; // this line is here to clear the data if the user had used the postcode look-up initially as we don't want to have duplicated data in the end
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/phone-number')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: address-non-UK
@@ -568,3 +557,4 @@ require('./views/application/name-have-other/routes')(router);
 require('./views/application/date-of-birth/routes')(router);
 require('./views/application/email-address/routes')(router);
 require('./views/application/address/routes')(router);
+  require('./views/application/address-manually/routes')(router);
