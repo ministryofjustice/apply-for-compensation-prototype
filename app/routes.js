@@ -502,17 +502,7 @@ router.post('/application/living-with-offender-now', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: what-is-relationship
-//
-router.post('/application/what-is-relationship', function (req, res) {
 
-  if(req.session.checking_answers) {
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/name')
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: your-application-OCJ-path
@@ -640,3 +630,4 @@ require('./views/application/incident-location/routes')(router);
 require('./views/application/do-you-know-offender/routes')(router);
   require('./views/application/offender-name/routes')(router);
   require('./views/application/ongoing-relationship/routes')(router);
+    require('./views/application/what-is-relationship/routes')(router);
