@@ -130,17 +130,7 @@ router.post('/application/bridge', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: tell-criminal-convictions
-// this view is called if user says yes to convicted of a criminal offence
 
-router.post('/application/tell-criminal-convictions', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/bridge')
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: incident-reported
@@ -825,8 +815,9 @@ require('./views/application/over-18/routes')(router);
 require('./views/application/who-is-making-the-application/routes')(router);
 require('./views/application/sexual-assault-application/routes')(router);
 require('./views/application/after-1979/routes')(router);
-require('./views/application/same-family/routes')(router);
+  require('./views/application/same-family/routes')(router);
 require('./views/application/you-have-a-choice/routes')(router);
 require('./views/application/your-choices/routes')(router);
 require('./views/application/declaration/routes')(router);
 require('./views/application/criminal-convictions/routes')(router);
+require('./views/application/tell-criminal-convictions/routes')(router);
