@@ -114,17 +114,7 @@ router.post('/application/residence-1', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: Reporting-crime-not-reported
-// Variable: none
 
-router.post('/application/reporting-crime-not-reported', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/single-or-multiple-incidents')
-})
-// END__######################################################################################################
 
 
 
@@ -428,6 +418,7 @@ require('./views/application/criminal-convictions/routes')(router);
 require('./views/application/tell-criminal-convictions/routes')(router);
 require('./views/application/bridge/routes')(router);
 require('./views/application/incident-reported/routes')(router);
+  require('./views/application/reporting-crime-not-reported/routes')(router);
 require('./views/application/crime-reported-date/routes')(router);
 require('./views/application/reporting-details-what-force/routes')(router);
 require('./views/application/reporting-details-police-officer/routes')(router);
