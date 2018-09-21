@@ -118,17 +118,7 @@ router.post('/application/residence-1', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: bridge
-// Variable: criminalConvictions
 
-router.post('/application/bridge', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/incident-reported')
-})
-// END__######################################################################################################
 
 
 
@@ -821,3 +811,4 @@ require('./views/application/your-choices/routes')(router);
 require('./views/application/declaration/routes')(router);
 require('./views/application/criminal-convictions/routes')(router);
 require('./views/application/tell-criminal-convictions/routes')(router);
+require('./views/application/bridge/routes')(router);
