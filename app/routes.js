@@ -201,26 +201,7 @@ router.post('/application/declaration', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: over-18
-// Variable: over18
 
-router.post('/application/over-18', function (req, res) {
-  // Get the answer from the query string
-  var over18 = req.session.data['over18']
-
-  if (over18 === 'no') {
-    // Redirect to the relevant page
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  } else {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/who-is-making-the-application')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: residence-1
@@ -963,3 +944,4 @@ router.post('/application/confirmation-page-if-automatic-nil', function (req, re
 module.exports = router
 
 require('./views/application/british-citizen/routes')(router);
+require('./views/application/over-18/routes')(router);
