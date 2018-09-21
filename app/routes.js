@@ -32,118 +32,6 @@ router.get('/', function (req, res) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// START__####################################################################################################
-// File: address
-//
-router.post('/application/address', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/phone-number')
-})
-// END__######################################################################################################
-
-
-
-
-
-
-
-// START__####################################################################################################
-// File: living-with-offender-before
-// Variable: living-with-offender-before
-
-router.post('/application/living-with-offender-before', function (req, res) {
-  // Get the answer from the query string
-  var withOffenderBefore = req.session.data['living-with-offender-before']
-
-  if (withOffenderBefore === 'no')  {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-    // Redirect to the relevant page
-    res.redirect('/application/ongoing-relationship')
-  } else {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/check-your-answers-page')
-    }
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/living-with-offender-now')
-  }
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: living-with-offender-now
-// Variable: living-with-offender-now
-
-router.post('/application/living-with-offender-now', function (req, res) {
-  // Get the answer from the query string
-  var withOffenderNow = req.session.data['living-with-offender-now']
-
-  if (withOffenderNow === 'no')  {
-    // Redirect to the relevant page
-    res.redirect('/application/ongoing-relationship')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  }
-})
-// END__######################################################################################################
-
-
-
-
-
-// START__####################################################################################################
-// File: your-application-OCJ-path
- router.post('/application/your-application-OCJ-path', function (req, res) {
-    // Get the answer from the query string
-    var selectOCJ = req.session.data['OCJ-chosen']
-    if (selectOCJ === 'yes') {
-      //Redirect to the relevant page
-      return res.redirect('/application/check-your-answers-page')
-    } else {
-      res.redirect('/application/your-application-long-path')
-    }
- })
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: your-application-long-path
-router.post('/application/your-application-long-path', function (req, res) {
-  // Get the answer from the query string
-  var selectLongPath = req.session.data['long-path-chosen']
-  if (selectLongPath === 'yes') {
-    //Redirect to the relevant page
-    return res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
-  } else {
-    res.redirect('/application/your-application-OCJ-path')
-  }
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: check-your-answers-page
-// Variable: checking_answers is a session variable to know if we go back to this page or not when a user press 'continue' on some question pages
- router.get('/application/check-your-answers-page', function (req, res) {
-   req.session.checking_answers = true // this is initially set to false on the declaration page to avoid false results if using the prototype more than once
-   return res.render('application/check-your-answers-page')
- })
-// END__######################################################################################################
-
 // START__####################################################################################################
 // File: confirmation-page-if-automatic-nil
 // variable: apply-for-review
@@ -249,7 +137,7 @@ require('./views/application/compensation/routes')(router);
   require('./views/application/compensation-why-not/routes')(router);
   require('./views/application/compensation-who/routes')(router);
     require('./views/application/compensation-amount/routes')(router);
-
+require('./views/application/check-your-answers-page/routes')(router);
 // @todo these files need to go in the right place in the list above
 require('./views/application/previous-applications/routes')(router);
 require('./views/application/application-delay/routes')(router);
