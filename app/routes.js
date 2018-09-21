@@ -454,23 +454,7 @@ router.post('/application/phone-number', function (req, res) {
 })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: do-you-know-offender
-// Variable: know-offender
 
-router.post('/application/do-you-know-offender', function (req, res) {
-  // Get the answer from the query string
-  var knowOffender = req.session.data['know-offender']
-
-  if (knowOffender === 'no')  {
-    // Redirect to the relevant page
-    res.redirect('/application/name')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/offender-name')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: offender-name
@@ -674,3 +658,4 @@ require('./views/application/single-or-multiple-incidents/routes')(router);
   require('./views/application/period-of-abuse-start/routes')(router);
   require('./views/application/period-of-abuse-end/routes')(router);
 require('./views/application/incident-location/routes')(router);
+require('./views/application/do-you-know-offender/routes')(router);
