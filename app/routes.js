@@ -174,13 +174,7 @@ router.post('/application/reporting-delay', function (req, res) {
 
 
 
-// START__####################################################################################################
-// File: compensation-who - not used anymore (see above commented)
-//
-router.post('/application/compensation-who', function (req, res) {
-    res.redirect('/application/compensation-amount')
-})
-// END__######################################################################################################
+
 
 // START__####################################################################################################
 // File: compensation-amount'
@@ -518,3 +512,4 @@ require('./views/application/address/routes')(router);
 require('./views/application/phone-number/routes')(router);
 require('./views/application/compensation/routes')(router);
   require('./views/application/compensation-why-not/routes')(router);
+  require('./views/application/compensation-who/routes')(router);
