@@ -69,23 +69,7 @@ router.get('/', function (req, res) {
 // })
 // END__######################################################################################################
 
-// START__####################################################################################################
-// File: your-choices
-// Variable: yourChoice
 
-router.post('/application/your-choices', function (req, res) {
-  // Get the answer from the query string
-  var yourChoice = req.session.data['yourChoice']
-
-  if (yourChoice === 'option2') {
-    // Redirect to the relevant page
-    res.redirect('/application/declaration')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
-  }
-})
-// END__######################################################################################################
 
 // START__####################################################################################################
 // File: representative-type
@@ -880,3 +864,4 @@ require('./views/application/sexual-assault-application/routes')(router);
 require('./views/application/after-1979/routes')(router);
 require('./views/application/same-family/routes')(router);
 require('./views/application/you-have-a-choice/routes')(router);
+require('./views/application/your-choices/routes')(router);
