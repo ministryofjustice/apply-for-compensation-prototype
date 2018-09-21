@@ -242,6 +242,26 @@ router.post('/application/over-18', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: transition-under-18
+// Variable:
+
+router.post('/application/transition-under-18', function (req, res) {
+//continue takes user to OAS page
+  res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: transition-under-18
+// Variable:
+
+router.post('/application/transition-not-direct-applicant', function (req, res) {
+//continue takes user to OAS page
+  res.redirect('https://www.cica.gov.uk/OAS/Account/Create')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
 // File: residence-1
 // Variable: ordinarily-resident
 
