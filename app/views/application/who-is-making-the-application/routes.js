@@ -15,5 +15,10 @@ module.exports = function (router) {
       res.redirect('/application/sexual-assault-application')
     }
   })
+
+  // Pass the question in to the page
+router.get('/application/who-is-making-the-application/', function (req, res) {
+  res.render('application/who-is-making-the-application/index', { 'whoIsMakingTheApplicationQuestion': 'Who are you applying for?' })
+})
   // END__######################################################################################################
 }
