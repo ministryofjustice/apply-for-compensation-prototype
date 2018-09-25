@@ -15,5 +15,10 @@ module.exports = function (router) {
       res.redirect('/application/you-have-a-choice')
     }
   })
+
+  // Pass the question in to the page
+  router.get('/application/after-1979/', function (req, res) {
+    res.render('application/after-1979/index', { 'after1979Question': 'Did the crime happen on or after 1st October 1979?' })
+  })
   // END__######################################################################################################
 }
