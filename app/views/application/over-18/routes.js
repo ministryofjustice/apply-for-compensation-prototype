@@ -18,5 +18,11 @@ module.exports = function (router) {
       res.redirect('/application/who-is-making-the-application')
     }
   })
+
+
+  // Pass the question in to the page
+  router.get('/application/over-18/', function (req, res) {
+    res.render('application/over-18/index', { 'over18Question': 'Are you 18 or over?' })
+  })
   // END__######################################################################################################
 }
