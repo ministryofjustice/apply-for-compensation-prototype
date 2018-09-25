@@ -1,5 +1,12 @@
+// Core dependencies
+const fs = require('fs')
+const path = require('path')
+
+// NPM dependencies
 const express = require('express')
 const router = express.Router()
+const marked = require('marked')
+
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 
 // START__Helpers functions ####################################################################################################################################
@@ -25,14 +32,8 @@ router.get('/', function (req, res) {
   res.render('index')
 })
 
+
 // Add your routes here - above the module.exports line
-
-
-
-
-
-
-
 module.exports = router
 
 // Try to keep these inclued in the same order as the journey.

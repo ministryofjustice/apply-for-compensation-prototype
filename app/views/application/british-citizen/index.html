@@ -22,10 +22,6 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
-
         <form class="form" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
@@ -37,7 +33,7 @@
             currentValue: data['britishCitizen'],
             "fieldset": {
               "legend": {
-                "text": 'Are you a British citizen?',
+                "text": britishCitizenQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }

@@ -18,5 +18,12 @@ router.post('/application/british-citizen', function (req, res) {
     res.redirect('/application/over-18')
   }
 })
+
+// Pass the question in to the page
+router.get('/application/british-citizen/', function (req, res) {
+  res.render('application/british-citizen/index', { 'britishCitizenQuestion': 'Are you a British citizen?' })
+})
+
+
 // END__######################################################################################################
 }
