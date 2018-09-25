@@ -195,7 +195,7 @@ router.post('/application/declaration', function (req, res) {
     //res.redirect('https://www.cica.gov.uk/oas/Account/Create')
   //} else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/criminal-convictions')
+    res.redirect('/application/bridge')
   //}
 })
 // END__######################################################################################################
