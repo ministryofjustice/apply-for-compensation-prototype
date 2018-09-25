@@ -15,5 +15,10 @@ module.exports = function (router) {
       res.redirect('/application/after-1979')
     }
   })
+
+  // Pass the question in to the page
+router.get('/application/sexual-assault-application/', function (req, res) {
+  res.render('application/sexual-assault-application/index', { 'sexualAbuseQuestion': 'Are you a survivor of sexual violence or abuse?' })
+})
   // END__######################################################################################################
 }
