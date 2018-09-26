@@ -11,5 +11,10 @@ module.exports = function (router) {
       res.redirect('/application/crime-reported-date')
     }
   })
+
+  // Pass the question in to the page
+  router.get('/application/incident-reported/', function (req, res) {
+    res.render('application/incident-reported/index', { 'incidentReportedQuestion': 'Was the crime reported to the police?' })
+  })
   // END__######################################################################################################
 }
