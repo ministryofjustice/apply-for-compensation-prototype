@@ -9,5 +9,10 @@ module.exports = function (router) {
     }
     res.redirect('/application/bridge')
   })
+
+  // Pass the question in to the page
+  router.get('/application/tell-criminal-convictions/', function (req, res) {
+    res.render('application/tell-criminal-convictions/index', { 'tellCriminalConvictionsQuestion': 'Tell us about your convictions' })
+  })
   // END__######################################################################################################
 }

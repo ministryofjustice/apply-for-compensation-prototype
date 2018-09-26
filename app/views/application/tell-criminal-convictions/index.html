@@ -17,15 +17,14 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
-
           {% from "textarea/macro.njk" import govukTextarea %}
 
           {{ govukTextarea({
             "id": "convictions",
             "name": "convictions",
             'value': data ['convictions'],
-            label: {
-              text: "Tell us about your convictions",
+            "label": {
+              "text": tellCriminalConvictionsQuestion,
               "isPageHeading": true,
               "classes": 'govuk-label--xl'
             },
