@@ -27,21 +27,35 @@
         </h1> -->
 
         <form class="form" method="post">
+        {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+           {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "Select yes if you are a British Citizen",
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
 
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "sexualAssault",
-            "name": "sexualAssault",
-            currentValue: data['sexualAssault'],
+            "idPrefix": "britishCitizen",
+            "name": "britishCitizen",
+            currentValue: data['britishCitizen'],
             "fieldset": {
               "legend": {
-                "text": 'Are you a victim of sexual violence or abuse?',
+                "text": 'Are you a British citizen?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
+            errorMessage: {
+            text: "Select yes if you are a British Citizen"
+          },
             "items": [
               {
                 "value": "yes",

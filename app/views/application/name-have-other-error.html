@@ -22,26 +22,34 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
+              <form class="form" method="post">
+            {% from "error-summary/macro.njk" import govukErrorSummary %}
 
-        <form class="form" method="post">
-
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "Select yes if you have been known by any other names",
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "sexualAssault",
-            "name": "sexualAssault",
-            currentValue: data['sexualAssault'],
+            "idPrefix": "haveOtherName",
+            "name": "haveOtherName",
             "fieldset": {
               "legend": {
-                "text": 'Are you a victim of sexual violence or abuse?',
+                "text": 'Have you ever been known by any other names?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
+            errorMessage: {
+            text: "Select yes if you have been known by any other names"
+          },
             "items": [
               {
                 "value": "yes",
@@ -61,6 +69,10 @@
         </form>
 
       </div>
+    </div>
+    <div class="design-notes-box">
+      <h3 class="design-notes">Design notes</h3>
+      <p class="design-notes">3/8/18 - screen created for MVP-108 - JK</p>
     </div>
   </main>
 </div>
