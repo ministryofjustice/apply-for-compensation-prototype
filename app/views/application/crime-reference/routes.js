@@ -8,5 +8,10 @@ module.exports = function (router) {
    }
    res.redirect('/application/single-or-multiple-incidents')
   })
+
+  // Pass the question in to the page
+  router.get('/application/crime-reference/', function (req, res) {
+    res.render('application/crime-reference/index', { 'crimeReferenceNumberQuestion': 'What\'s the crime reference number?' })
+  })
   // END__######################################################################################################
 }
