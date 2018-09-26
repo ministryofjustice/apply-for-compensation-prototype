@@ -18,5 +18,10 @@ module.exports = function (router) {
       res.redirect('/application/bridge')
     }
   })
+
+  // Pass the question in to the page
+  router.get('/application/criminal-convictions/', function (req, res) {
+    res.render('application/criminal-convictions/index', { 'criminalConvictionsQuestion': 'Have you ever been convicted of a crime?' })
+  })
   // END__######################################################################################################
 }
