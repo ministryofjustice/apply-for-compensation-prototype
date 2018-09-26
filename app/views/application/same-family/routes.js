@@ -15,5 +15,10 @@ module.exports = function (router) {
       res.redirect('https://www.cica.gov.uk/oas/Account/Create')
     }
   })
+
+  // Pass the question in to the page
+  router.get('/application/same-family/', function (req, res) {
+    res.render('application/same-family/index', { 'sameFamilyQuestion': 'Were you and your attacker living together as family at the time?' })
+  })
   // END__######################################################################################################
 }
