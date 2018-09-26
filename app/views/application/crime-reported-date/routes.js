@@ -41,5 +41,10 @@ module.exports = function (router) {
    }
    res.redirect('/application/reporting-details-what-force')
   })
+
+  // Pass the question in to the page
+  router.get('/application/crime-reported-date/', function (req, res) {
+    res.render('application/crime-reported-date/index', { 'crimeReportedDateQuestion': 'When was the crime reported to police?' })
+  })
   // END__######################################################################################################
 }
