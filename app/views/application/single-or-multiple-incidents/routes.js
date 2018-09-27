@@ -1,4 +1,7 @@
 module.exports = function (router) {
+
+
+
   // START__####################################################################################################
   // File: single-or-multiple-incidents
   // Variable: single-or-multiple-incidents
@@ -18,14 +21,23 @@ module.exports = function (router) {
     }
   })
 
-  // Pass the question in to the page
-  router.get('/application/single-or-multiple-incidents/', function (req, res) {
-    res.render('application/single-or-multiple-incidents/index', { 'singleOrMultipleIncidentsQuestion': 'Did the crime happen once or over a period of time?' })
-  })
+  // Add content key/value pairs here
+  const content = {
+    singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
+    itemOneValue: 'Once',
+    itemTwoValue: 'Over a period of time',
+    errorMessageContent: 'Select Once or Over a period of time',
+    errorMessageTitle: 'There is a problem'
+  };
 
   // Pass the question in to the page
   router.get('/application/single-or-multiple-incidents/', function (req, res) {
-    res.render('/application/single-or-multiple-incidents/single-or-multiple-incidents-error', { 'singleOrMultipleIncidentsQuestion': 'Did the crime happen once or over a period of time?' })
+    res.render('application/single-or-multiple-incidents/index', content)
+  })
+
+  // Pass the question in to the page
+  router.get('/application/single-or-multiple-incidents/error', function (req, res) {
+    res.render('application/single-or-multiple-incidents/error', content)
   })
   // END__######################################################################################################
 }

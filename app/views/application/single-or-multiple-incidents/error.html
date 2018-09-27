@@ -19,10 +19,10 @@
 
             {% from "error-summary/macro.njk" import govukErrorSummary %}
             {{ govukErrorSummary({
-              titleText: "There is a problem",
+              titleText: errorMessageTitle,
               errorList: [
                 {
-                  text: "Select Once or Over a period of time",
+                  text: errorMessageContent,
                   href: "#haveOtherName"
                 }
               ]
@@ -42,16 +42,16 @@
                   }
                 },
                 errorMessage: {
-           text: "Select Once or Over a period of time"
+           text: errorMessageContent
          },
                 items: [
                   {
-                    value: "Once",
-                    text: "Once"
+                    value: itemOneValue,
+                    text: itemOneValue
                   },
                   {
-                    value: "Over a period of time",
-                    text: "Over a period of time"
+                    value: itemTwoValue,
+                    text: itemTwoValue
                   }
                 ]
               }) }}
