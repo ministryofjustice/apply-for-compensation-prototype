@@ -32,7 +32,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Enter your address",
+            text: addressQuestion,
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
@@ -41,7 +41,7 @@
 
         {{ govukInput({
           label: {
-            text: "Postcode"
+            text: postcodeLabel
           },
           classes: "govuk-input--width-10",
           id: "postcode",
