@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">
+            Have you suffered a disabling mental injury?
+          </h1>
+
+          <p class="govuk-body-m">A disabling mental injury has a substantial adverse effect on your ability to carry out normal day to day activities.  It does not include temporary mental anxiety, but may include:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>impaired performance at work or school</li>
+          <li>negative effects on social relationships</li>
+          <li>sexual dysfunction</a></li>
+        </ul>
+
+          <form class="form"  method="post">
+
+          {% from 'radios/macro.njk' import govukRadios %}
+
+          {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "dMi",
+            "name": "dMi",
+            currentValue: data['DmI'],
+            "fieldset": {
+              "legend": {
+                "text": 'Have you suffered a disabling mental injury?',
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--m'
+              }
+            },
+            "items": [
+              {
+                "value": "yes",
+                "text": "Yes"
+              },
+              {
+                "value": "no",
+                "text": "No"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
