@@ -17,5 +17,15 @@ module.exports = function (router) {
       res.redirect('/application/incident-date')
     }
   })
+
+  // Pass the question in to the page
+  router.get('/application/single-or-multiple-incidents/', function (req, res) {
+    res.render('application/single-or-multiple-incidents/index', { 'singleOrMultipleIncidentsQuestion': 'Did the crime happen once or over a period of time?' })
+  })
+
+  // Pass the question in to the page
+  router.get('/application/single-or-multiple-incidents/', function (req, res) {
+    res.render('/application/single-or-multiple-incidents/single-or-multiple-incidents-error', { 'singleOrMultipleIncidentsQuestion': 'Did the crime happen once or over a period of time?' })
+  })
   // END__######################################################################################################
 }
