@@ -23,10 +23,15 @@
         <h1 class="govuk-heading-xl">
           Summary
         </h1>
-        <p class="govuk-body-l">Based on your answers, and the evidence required, it will take us 11 months to make a decision</p>
+        <p class="govuk-body-l">Based on your answers, and the evidence we will need, we will make a decision in around 11 months</p>
 
-        <p class="govuk-body">Alternatively, we can make a fixed payment award, based solely on the police report of the crime within 4 months.</p>
-        <p class="govuk-body">This payment takes account of the mental trauma a sexual crime causes, but means you do not have to get any other evidence.  We woul dnot consider any other injuries, loss of earnings, expenses or other consequences of the crime.</p>
+        <p class="govuk-body">Alternatively, we can make a fixed payment award within 4 months which:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>is based only on the police report</li>
+            <li>does not need you to get any other evidence or be assessed by a clinical psychologist</li>
+            <li>includes an element that compensates you for the mental trauma you have suffered</li>
+            <li>will not consider any other injuries, loss of earnings, expenses or other consequences of the crime</li>
+        </p>
 
         {% from "table/macro.njk" import govukTable %}
 
@@ -147,7 +152,7 @@
     ]
   }) }}
 
-
+  
         <form class="form"  method="post">
         {{ govukButton({
           "text": "Continue"
