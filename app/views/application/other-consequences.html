@@ -28,31 +28,33 @@
 
         <form class="form" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
-          {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "dmiSymptoms",
-            "name": "dmiSymptoms",
-            currentValue: data['dmiSymptoms'],
-            "fieldset": {
-              "legend": {
-                "text": 'Did the symptoms of your disabling mental injury last for 6 weeks or more?',
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+          {{ govukCheckboxes({
+            idPrefix: "waste",
+            name: "waste",
+            fieldset: {
+              legend: {
+                text: "Do you want to claim compensation for any of the following?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-            text: 'We will ask you for evidence of this, and may ask you to have your mental injuries assessed by a clinical psychologist.'
+              text: "Select all that apply."
             },
-            "items": [
+            items: [
               {
-                "value": "yes",
-                "text": "Yes"
+                value: "pregnancy",
+                text: "Pregnancy"
               },
               {
-                "value": "no",
-                "text": "No"
+                value: "lossofFoetus",
+                text: "Loss of foetus"
+              },
+              {
+                value: "STD",
+                text: "Sexually transmitted disease"
               }
             ]
           }) }}
