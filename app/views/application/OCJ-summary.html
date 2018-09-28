@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Summary
+        </h1>
+        <p class="govuk-body-l">Based on your answers, and the evidence required, it will take us 11 months to make a decision</p>
+
+        <p class="govuk-body">Alternatively, we can make a fixed payment award, based solely on the police report of the crime within 4 months.</p>
+        <p class="govuk-body">This payment takes account of the mental trauma a sexual crime causes, but means you do not have to get any other evidence.  We woul dnot consider any other injuries, loss of earnings, expenses or other consequences of the crime.</p>
+
+        {% from "table/macro.njk" import govukTable %}
+
+  {{ govukTable({
+    caption: "",
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Injury component"
+      },
+      {
+        text: "Your selection"
+      },
+      {
+        text: "Police report only"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "Physical injury"
+        },
+        {
+          text: "Yes"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Disabling mental injury (DMI)"
+        },
+        {
+          text: "Yes"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Duration of DMI symptoms"
+        },
+        {
+          text: "6 weeks or more"
+        },
+        {
+          text: "N/A"
+        }
+      ],
+      [
+        {
+          text: "Loss of earnings"
+        },
+        {
+          text: "Yes"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Special expenses"
+        },
+        {
+          text: "No"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Pregnancy"
+        },
+        {
+          text: "No"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Loss of foetus"
+        },
+        {
+          text: "No"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Sexually transmitted disease"
+        },
+        {
+          text: "Yes"
+        },
+        {
+          text: "No"
+        }
+      ],
+      [
+        {
+          text: "Average time to get a decision"
+        },
+        {
+          text: "11 months"
+        },
+        {
+          text: "4 months"
+        }
+      ]
+    ]
+  }) }}
+
+
+        <form class="form"  method="post">
+        {{ govukButton({
+          "text": "Continue"
+          }) }}
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}
