@@ -1,4 +1,5 @@
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
+const dateHelper = require('../../../helpers/date');
 module.exports = function (router, content) {
   // START__####################################################################################################
   // File: period-of-abuse-end
@@ -23,11 +24,11 @@ module.exports = function (router, content) {
     var reportingDateDay = req.session.data['incidentReported-day']
     var reportingDateMonth = req.session.data['incidentReported-month']
     var reportingDateYear = req.session.data['incidentReported-year']
-    var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+    var reportingDate = dateHelper.getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
     var POAEndMonth = req.session.data['period-of-abuse-end-month']
     var POAEndYear = req.session.data['period-of-abuse-end-year']
-    var endofPeriodOfAbuseDate = getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h
-    if ( isReportedOver48h(endofPeriodOfAbuseDate, reportingDate)){ // changing the end of period of abuse date is now triggering the reporting delay screen
+    var endofPeriodOfAbuseDate = dateHelper.getDatefrom2inputs(POAEndMonth, POAEndYear) // we need the date  of the last day of the month of the end of the period of abuse to compare for delay reporting over 48h
+    if ( dateHelper.isReportedOver48h(endofPeriodOfAbuseDate, reportingDate)){ // changing the end of period of abuse date is now triggering the reporting delay screen
       return res.redirect('/application/reporting-delay')
     }
   }
