@@ -17,7 +17,6 @@ module.exports = function (router) {
         };
 
         var getFiles = function (callback) {
-            console.log("HELLO 1");
             fs.readdir(__dirname + '/views/application/', function (err, files) { // '/' denotes the root folder
                 if (err) {
                     throw err;
