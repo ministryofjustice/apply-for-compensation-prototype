@@ -23,17 +23,10 @@
         <h1 class="govuk-heading-xl">
           Summary
         </h1>
-        <p class="govuk-body-l">Based on your answers, and the evidence we will need, we will make a decision in around 11 months</p>
 
-        <p class="govuk-body">Alternatively, we can make a fixed payment award within 4 months which:
-          <ul class="govuk-list govuk-list--bullet">
-            <li>is based only on the police report</li>
-            <li>does not need you to get any other evidence or be assessed by a clinical psychologist</li>
-            <li>includes an element that compensates you for the mental trauma you have suffered</li>
-            <li>will not consider any other injuries, loss of earnings, expenses or other consequences of the crime</li>
-        </p>
+        <p class="govuk-body-l">Based on your answers, and the evidence required, it will normally take 11 months to make a decision.</p>
 
-        {% from "table/macro.njk" import govukTable %}
+  {% from "table/macro.njk" import govukTable %}
 
   {{ govukTable({
     caption: "",
@@ -46,7 +39,7 @@
         text: "Your selection"
       },
       {
-        text: "Police report only"
+        text: "Evidence required"
       }
     ],
     rows: [
@@ -58,7 +51,7 @@
           text: "Yes"
         },
         {
-          text: "No"
+          text: "Police report"
         }
       ],
       [
@@ -69,7 +62,7 @@
           text: "Yes"
         },
         {
-          text: "No"
+          text: "Expert medical report"
         }
       ],
       [
@@ -80,7 +73,7 @@
           text: "6 weeks or more"
         },
         {
-          text: "N/A"
+          text: "Expert medical report"
         }
       ],
       [
@@ -91,7 +84,7 @@
           text: "Yes"
         },
         {
-          text: "No"
+          text: "Employment and income"
         }
       ],
       [
@@ -102,7 +95,7 @@
           text: "No"
         },
         {
-          text: "No"
+          text: "Dependant on circumstances"
         }
       ],
       [
@@ -113,7 +106,7 @@
           text: "No"
         },
         {
-          text: "No"
+          text: "Medical report"
         }
       ],
       [
@@ -124,7 +117,7 @@
           text: "No"
         },
         {
-          text: "No"
+          text: "Medical report"
         }
       ],
       [
@@ -135,28 +128,51 @@
           text: "Yes"
         },
         {
-          text: "No"
-        }
-      ],
-      [
-        {
-          text: "Average time to get a decision"
-        },
-        {
-          text: "11 months"
-        },
-        {
-          text: "4 months"
+          text: "Medical report"
         }
       ]
     ]
   }) }}
 
-  
+
         <form class="form"  method="post">
-        {{ govukButton({
-          "text": "Continue"
+
+          <p class="govuk-body">Alternatively, we can make a fixed payment award within 4 months which:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>is based only on the police report</li>
+              <li>does not need you to get any other evidence or be assessed by a clinical psychologist</li>
+              <li>includes an element that compensates you for the mental trauma you have suffered</li>
+              <li>will not consider any other injuries, loss of earnings, expenses or other consequences of the crime</li>
+          </p>
+          {% from 'radios/macro.njk' import govukRadios %}
+
+          {{ govukRadios({
+            "classes": "govuk-radios--stacked",
+            "idPrefix": "OcJsummary",
+            "name": "ocJsummary",
+            currentValue: data['ocJsummary'],
+            "fieldset": {
+              "legend": {
+                "text": 'Which option do you wish to choose?',
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--m'
+              }
+            },
+            "items": [
+              {
+                "value": "yes",
+                "text": "Your selections"
+              },
+              {
+                "value": "no",
+                "text": "Police report only"
+              }
+            ]
           }) }}
+
+          {{ govukButton({
+            "text": "Continue"
+            }) }}
         </form>
       </div>
     </div>

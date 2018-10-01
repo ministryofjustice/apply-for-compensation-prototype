@@ -31,13 +31,13 @@
           {% from 'radios/macro.njk' import govukRadios %}
 
           {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            "classes": "govuk-radios--stacked",
             "idPrefix": "dmiSymptoms",
             "name": "dmiSymptoms",
             currentValue: data['dmiSymptoms'],
             "fieldset": {
               "legend": {
-                "text": 'Did the symptoms of your disabling mental injury last for 6 weeks or more?',
+                "text": 'How long did the symptoms of your disabling mental injury last?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -48,11 +48,11 @@
             "items": [
               {
                 "value": "yes",
-                "text": "Yes"
+                "text": "Less than 6 weeks"
               },
               {
                 "value": "no",
-                "text": "No"
+                "text": "6 weeks or more"
               }
             ]
           }) }}

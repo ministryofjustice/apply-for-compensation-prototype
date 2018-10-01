@@ -162,6 +162,77 @@ router.post('/application/your-choices', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
+// File: OCJ-intro
+
+router.post('/application/OCJ-intro', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/DMI')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: DMI
+
+router.post('/application/DMI', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/DMI-symptoms')
+
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: DMI-symptoms
+
+router.post('/application/DMI-symptoms', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/loss-of-earnings')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: Loss-of-earnings
+
+router.post('/application/loss-of-earnings', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/special-expenses')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: Special-expenses
+
+router.post('/application/special-expenses', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/other-consequences')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: Special-expenses
+
+router.post('/application/other-consequences', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
+  res.redirect('/application/OCJ-summary')
+})
+// END__######################################################################################################
+
+
+
+
+
+// START__####################################################################################################
 // File: representative-type
 // Variable: friend-or-family
 
