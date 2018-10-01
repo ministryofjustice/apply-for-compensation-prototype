@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: confirmation-page-if-automatic-nil
   // variable: apply-for-review

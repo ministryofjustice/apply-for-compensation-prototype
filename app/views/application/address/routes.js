@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: address
   // this is the first step of getting an address - from here either the user select 'Find UK address' and goes to the view 'find-uk-address'
@@ -7,17 +7,6 @@ module.exports = function (router) {
   router.post('/application/address', function (req, res) {
     res.redirect('/application/find-uk-address')
   })
-
-  // Add content key/value pairs here
-  // Content variables are isted in the same order as folders when sorted a-z
-  // If a variable has been defined in a previous file it is not defined again
-  // Comments sepperate the list
-  // This list should be moved in to it's own file in the future
-  const content = {
-    // Postcode lookup
-    addressQuestion:'Enter your address',
-    postcodeLabel:'Postcode',
-  };
 
   // Pass the question in to the page
   router.get('/application/address/', function (req, res) {

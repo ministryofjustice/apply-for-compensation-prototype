@@ -1,6 +1,4 @@
-module.exports = function (router) {
-
-
+module.exports = function (router, content) {
 
   // START__####################################################################################################
   // File: single-or-multiple-incidents
@@ -20,16 +18,7 @@ module.exports = function (router) {
       res.redirect('/application/incident-date')
     }
   })
-
-  // // Add content key/value pairs here
-  const content = {
-    singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
-    itemOneValue: 'Once',
-    itemTwoValue: 'Over a period of time',
-    errorMessageTitle: 'There is a problem',
-    errorMessageContent: 'Select Once or Over a period of time'
-  };
-
+  
   // Pass the question in to the page
   router.get('/application/single-or-multiple-incidents/', function (req, res) {
     res.render('application/single-or-multiple-incidents/index', content)
