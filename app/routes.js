@@ -191,6 +191,17 @@ router.post('/application/DMI-symptoms', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
     return res.redirect('/application/check-your-answers-page')
   }
+  res.redirect('/application/physical-injury')
+})
+// END__######################################################################################################
+
+// START__####################################################################################################
+// File: DMI-symptoms
+
+router.post('/application/physical-injury', function (req, res) {
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+    return res.redirect('/application/check-your-answers-page')
+  }
   res.redirect('/application/loss-of-earnings')
 })
 // END__######################################################################################################
@@ -218,7 +229,7 @@ router.post('/application/special-expenses', function (req, res) {
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: Special-expenses
+// File: Other-consequences
 
 router.post('/application/other-consequences', function (req, res) {
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
