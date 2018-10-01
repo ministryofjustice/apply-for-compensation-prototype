@@ -26,22 +26,22 @@
               titleText: "There is a problem",
               errorList: [
                 {
-                  text: "Enter your email address, for example john.smith@email.com",
+                  text: emailAddressQuestion,
                   href: "#emailAddress"
                 }
               ]
             }) }}
             {{ govukInput({
             "label": {
-            "text": "Enter your email address?",
+            "text": emailAddressErrorSubHeader,
             "isPageHeading": true,
             "classes": 'govuk-label--xl'
           },
           hint: {
-            text: "We'll use this to contact you about your application for example, to request more information"
+            text: emailAddressHint
           },
           errorMessage: {
-          text: "Enter your email address, for example john.smith@email.com"
+          text: emailAddressError
           },
             "classes": 'govuk-input--width-20',
             "id": "emailAddress",

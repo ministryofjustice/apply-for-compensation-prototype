@@ -18,12 +18,12 @@
           <form class="form" method="post">
 
             {% from "input/macro.njk" import govukInput %}
-
+            <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
             {{ govukInput({
             "label": {
-            "text": "What's the crime reference number?",
+            "text": crimeReferenceNumberQuestion,
             hint: {
-            text: 'For example, 31 3 2018. You can enter an approximate date '
+            text: crimeReferenceNumberHint
             },
             "isPageHeading": true,
             "classes": 'govuk-label--xl'

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: crime-reference
   //
@@ -7,6 +7,11 @@ module.exports = function (router) {
      return res.redirect('/application/check-your-answers-page')
    }
    res.redirect('/application/single-or-multiple-incidents')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/crime-reference/', function (req, res) {
+    res.render('application/crime-reference/index', content)
   })
   // END__######################################################################################################
 }

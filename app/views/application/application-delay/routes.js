@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: application-delay
   // we see that screen if the indicent date (or when the incident stopped for POA) is over 2 years from the date of application
@@ -9,6 +9,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/incident-location')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/application-delay/', function (req, res) {
+    res.render('application/application-delay/index', content)
   })
   // END__######################################################################################################
 }

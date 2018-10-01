@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: previous-applications
   // Variable: previous-applications
@@ -17,6 +17,11 @@ module.exports = function (router) {
       }
       res.redirect('/application/incident-location')
     }
+  })
+  
+  // Pass the question in to the page
+  router.get('/application/previous-applications/', function (req, res) {
+    res.render('application/previous-applications/index', content)
   })
   // END__######################################################################################################
 }

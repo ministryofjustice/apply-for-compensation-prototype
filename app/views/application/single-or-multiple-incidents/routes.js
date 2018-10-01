@@ -1,4 +1,5 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
+
   // START__####################################################################################################
   // File: single-or-multiple-incidents
   // Variable: single-or-multiple-incidents
@@ -16,6 +17,16 @@ module.exports = function (router) {
       // else we're under 2 days
       res.redirect('/application/incident-date')
     }
+  })
+  
+  // Pass the question in to the page
+  router.get('/application/single-or-multiple-incidents/', function (req, res) {
+    res.render('application/single-or-multiple-incidents/index', content)
+  })
+
+  // Pass the question in to the page
+  router.get('/application/single-or-multiple-incidents/error', function (req, res) {
+    res.render('application/single-or-multiple-incidents/error', content)
   })
   // END__######################################################################################################
 }

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: find-uk-address
   // will produce an address on one line on the 'check your answers page'
@@ -7,6 +7,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/phone-number')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/find-uk-address/', function (req, res) {
+    res.render('application/find-uk-address/index', content)
   })
   // END__######################################################################################################
 }

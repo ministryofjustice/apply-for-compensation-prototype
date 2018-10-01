@@ -1,5 +1,5 @@
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: period-of-abuse-end
   //
@@ -38,6 +38,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/incident-location')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/period-of-abuse-end/', function (req, res) {
+    res.render('application/period-of-abuse-end/index', content)
   })
   // END__######################################################################################################
 }

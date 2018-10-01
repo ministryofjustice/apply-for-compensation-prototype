@@ -1,5 +1,5 @@
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
-module.exports = function (router) {
+module.exports = function (router, content) {
 
   // the functions below will help get the date we need to cover the over 2 years delay for applying and the over 48h delay for reporting
   function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
@@ -52,6 +52,11 @@ module.exports = function (router) {
           }
           res.redirect('/application/incident-location')
     }
+  })
+
+  // Pass the question in to the page
+  router.get('/application/incident-date/', function (req, res) {
+    res.render('application/incident-date/index', content)
   })
   // END__######################################################################################################
 }

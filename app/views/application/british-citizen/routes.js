@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
 // START__####################################################################################################
 // File: british-citizen
 // Variable: britishCitizen
@@ -18,5 +18,11 @@ router.post('/application/british-citizen', function (req, res) {
     res.redirect('/application/over-18')
   }
 })
+
+// Pass the question in to the page
+router.get('/application/british-citizen/', function (req, res) {
+  res.render('application/british-citizen/index', content)
+})
+
 // END__######################################################################################################
 }

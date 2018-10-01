@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: tell-criminal-convictions
   // this view is called if user says yes to convicted of a criminal offence
@@ -9,5 +9,11 @@ module.exports = function (router) {
     }
     res.redirect('/application/bridge')
   })
+  
+  // Pass the question in to the page
+  router.get('/application/tell-criminal-convictions/', function (req, res) {
+    res.render('application/tell-criminal-convictions/index', content)
+  })
+
   // END__######################################################################################################
 }

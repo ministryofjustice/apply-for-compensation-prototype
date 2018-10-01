@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: incident-location
   //
@@ -7,6 +7,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/do-you-know-offender')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/incident-location/', function (req, res) {
+    res.render('application/incident-location/index', content)
   })
   // END__######################################################################################################
 }

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: over-18
   // Variable: over18
@@ -17,6 +17,11 @@ module.exports = function (router) {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/who-is-making-the-application')
     }
+  })
+
+  // Pass the question in to the page
+  router.get('/application/over-18/', function (req, res) {
+    res.render('application/over-18/index', content)
   })
   // END__######################################################################################################
 }

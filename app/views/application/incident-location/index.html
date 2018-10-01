@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Crime location
+Crime location
 {% endblock %}
 
 {% block content %}
@@ -24,58 +24,58 @@
         <form class="form" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
-  {% from "input/macro.njk" import govukInput %}
+          {% from "input/macro.njk" import govukInput %}
 
 
-  {% set textHtml %}
-  {{ govukInput({
-    id: "somewhere-else",
-    name: "somewhere-else",
-    value: data['somewhere-else'],
-    classes: "govuk-!-width-two-thirds",
-    label: {
-      text: "Tell us where the crime happened"
-    }
-  }) }}
-  {% endset -%}
+          {% set textHtml %}
+          {{ govukInput({
+            id: "somewhere-else",
+            name: "somewhere-else",
+            value: data['somewhere-else'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: incidentLocationOther
+            }
+          }) }}
+          {% endset -%}
 
-  {{ govukRadios({
-    idPrefix: "incident-location",
-    name: "incident-location",
-    currentValue: data['incident-location'],
-    fieldset: {
-      legend: {
-        text: "Where did the crime happen?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--xl"
-      }
-    },
-    items: [
-      {
-        value: "England",
-        text: "England"
-      },
-      {
-        value: "Scotland",
-        text: "Scotland"
-      },
-      {
-        value: "Wales",
-        text: "Wales"
-      },
-      {
-        value: "Somewhere else",
-        text: "Somewhere else",
-        conditional: {
-          html: textHtml
-        }
-      }
-    ]
-  }) }}
+          {{ govukRadios({
+            idPrefix: "incident-location",
+            name: "incident-location",
+            currentValue: data['incident-location'],
+            fieldset: {
+              legend: {
+                text: incidentLocationHeading,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+            {
+              value: "England",
+              text: "England"
+            },
+            {
+              value: "Scotland",
+              text: "Scotland"
+            },
+            {
+              value: "Wales",
+              text: "Wales"
+            },
+            {
+              value: "Somewhere else",
+              text: "Somewhere else",
+              conditional: {
+                html: textHtml
+              }
+            }
+            ]
+          }) }}
 
-  {{ govukButton({
-    "text": "Continue"
-    }) }}
+          {{ govukButton({
+            "text": "Continue"
+          }) }}
 
         </form>
 

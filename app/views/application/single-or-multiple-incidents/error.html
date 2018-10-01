@@ -19,10 +19,10 @@
 
             {% from "error-summary/macro.njk" import govukErrorSummary %}
             {{ govukErrorSummary({
-              titleText: "There is a problem",
+              titleText: errorMessageTitle,
               errorList: [
                 {
-                  text: "Select Once or Over a period of time",
+                  text: errorMessageContent,
                   href: "#haveOtherName"
                 }
               ]
@@ -36,22 +36,22 @@
                 currentValue: data['single-or-multiple-incidents'] ,
                 fieldset: {
                   legend: {
-                    text: "Did the crime happen once or over a period of time?",
+                    text: singleOrMultipleIncidentsQuestion,
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }
                 },
                 errorMessage: {
-           text: "Select Once or Over a period of time"
+           text: errorMessageContent
          },
                 items: [
                   {
-                    value: "Once",
-                    text: "Once"
+                    value: itemOneValue,
+                    text: itemOneValue
                   },
                   {
-                    value: "Over a period of time",
-                    text: "Over a period of time"
+                    value: itemTwoValue,
+                    text: itemTwoValue
                   }
                 ]
               }) }}

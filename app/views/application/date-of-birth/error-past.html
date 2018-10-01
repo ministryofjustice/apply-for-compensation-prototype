@@ -22,7 +22,7 @@
               titleText: "There is a problem",
               errorList: [
                 {
-                  text: "Your date of birth must be in the past",
+                  text: errorPastMessage,
                   href: "#dob-day"
                 }
               ]
@@ -34,7 +34,7 @@
             name: 'dob',
             fieldset: {
             legend: {
-            text: "Enter your date of birth",
+            text: dateOfBirthQuestion,
             isPageHeading: true,
             classes: 'govuk-fieldset__legend--xl'
             }
@@ -43,7 +43,7 @@
             text: 'For example, 31 3 1980'
             },
             errorMessage: {
-              text: "Your date of birth must be in the past"
+              text: errorPastMessage
             },
             items:[
             {

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: phone-number
   //
@@ -7,6 +7,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/compensation')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/phone-number/', function (req, res) {
+    res.render('application/phone-number/index', content)
   })
   // END__######################################################################################################
 }

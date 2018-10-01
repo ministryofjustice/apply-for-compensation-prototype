@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: check-your-answers-page
    router.post('/application/check-your-answers-page', function (req, res) {
@@ -6,6 +6,11 @@ module.exports = function (router) {
        return res.redirect('/application/check-your-answers-page')
      }
      res.redirect('/application/confirmation-page')
+   })
+
+   // Pass the question in to the page
+   router.get('/application/check-your-answers-page/', function (req, res) {
+     res.render('application/check-your-answers-page/index', content)
    })
   // END__######################################################################################################
 }

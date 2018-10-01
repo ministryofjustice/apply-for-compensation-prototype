@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: address-manually
   // will produce an address on multiple lines on the 'check your answers page'
@@ -9,6 +9,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/phone-number')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/address-manually/', function (req, res) {
+    res.render('application/address-manually/index', content)
   })
   // END__######################################################################################################
 }

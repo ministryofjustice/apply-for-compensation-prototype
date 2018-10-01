@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Question page
+Question page
 {% endblock %}
 
 {% block content %}
@@ -23,75 +23,69 @@
       <div class="govuk-grid-column-two-thirds">
 
         <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
+        Have you applied for compensation from any other sources?
+      </h1> -->
 
-        <form class="form"  method="post">
+      <form class="form"  method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
+        {% from 'radios/macro.njk' import govukRadios %}
 
-          {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "criminalConvictions",
-            "name": "criminalConvictions",
-            currentValue: data['criminalConvictions'],
-            "fieldset": {
-              "legend": {
-                "text": 'Have you ever been convicted of a crime?',
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            hint: {
-              text: "You do not need to declare convictions that are spent"
-            },
+        {{ govukRadios({
+          "classes": "govuk-radios--inline",
+          "idPrefix": "criminalConvictions",
+          "name": "criminalConvictions",
+          currentValue: data['criminalConvictions'],
+          "fieldset": {
+            "legend": {
+              "text": criminalConvictionsQuestion,
+              "isPageHeading": true,
+              "classes": 'govuk-fieldset__legend--xl'
+            }
+          },
+          "hint": {
+            "text": criminalConvictionsHint
+          },
+          "items": [
+          {
+            "value": "yes",
+            "text": "Yes"
+          },
+          {
+            "value": "no",
+            "text": "No"
+          }
+          ]
+        }) }}
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How do I know if my conviction is spent?
+            </span>
+          </summary>
+          <div class="govuk-form-group govuk-details__text">
+            <p class="govuk-body"> A conviction is spent when a period of time, known as the rehabilitation period, expires.  The length of this period depends on the type and length of your sentence.</p>
+            <p class="govuk-body">If you were sentenced to 4 years or more in prison in England and Wales, or 30 months or more in Scotland, your conviction will never be spent.</p>
+          </div>
+        </details>
+        {{ govukButton({
+          "text": "Continue"
+        }) }}
 
-            "items": [
-              {
-                "value": "yes",
-                "text": "Yes"
-              },
-              {
-                "value": "no",
-                "text": "No"
-              }
-            ]
-          }) }}
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                  How do I know if my conviction is spent?
-              </span>
-            </summary>
-            <div class="govuk-form-group govuk-details__text">
-                  <label class="govuk-label" for="other-names">
-                    A conviction is spent when a period of time, known as the rehabilitation period, expires.  The length of this period depends on the type and length of your sentence.
-                  </label>
-                  <br>
-                  <label class="govuk-label" for="other-names">
-                    If you were sentenced to 4 years or more in prison in England and Wales, or 30 months or more in Scotland, your conviction will never be spent.
-            </label>
-            </div>
-          </details>
-          {{ govukButton({
-            "text": "Continue"
-            }) }}
+      </form>
 
-        </form>
-
-      </div>
     </div>
-    <div class="design-notes-box">
-      <h3 class="design-notes">Design notes</h3>
-      <p class="design-notes">Changed this back and added guidance re unspent.  We couldnt ask the applicant if they have any previous convictions as Rehab of Offenders act doesnt allow us to do so.  Users with spent convictions have no obligation to declare convictions - JK</p>
-      <p class="design-notes">providing a comprehensive table/list of rehab periods for different sentences/jurisdictions is difficult.  A calculator would be a good tool to consider future iterations.</p>
-      <p class="design-notes">moved hint text to a hidden toggle text 17/7/18 - JK</p>
-      <p class="design-notes">data shows only 44 cases were rejected under para 27 in 2017/18 (approx 0.1% of decisions).  What value is added to business by asking users what is a difficult concept to understand and explain?</p>
-      <p class="design-notes">18/7/18 changed this to ask if user has convictions, and provided hint text to let those user with spent convictions they arent obliged to tell us</p>
+  </div>
+  <div class="design-notes-box">
+    <h3 class="design-notes">Design notes</h3>
+    <p class="design-notes">Changed this back and added guidance re unspent.  We couldnt ask the applicant if they have any previous convictions as Rehab of Offenders act doesnt allow us to do so.  Users with spent convictions have no obligation to declare convictions - JK</p>
+    <p class="design-notes">providing a comprehensive table/list of rehab periods for different sentences/jurisdictions is difficult.  A calculator would be a good tool to consider future iterations.</p>
+    <p class="design-notes">moved hint text to a hidden toggle text 17/7/18 - JK</p>
+    <p class="design-notes">data shows only 44 cases were rejected under para 27 in 2017/18 (approx 0.1% of decisions).  What value is added to business by asking users what is a difficult concept to understand and explain?</p>
+    <p class="design-notes">18/7/18 changed this to ask if user has convictions, and provided hint text to let those user with spent convictions they arent obliged to tell us</p>
+  </div>
 </div>
-    </div>
-    </div>
-  </main>
+</div>
+</main>
 </div>
 
 {% endblock %}

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: what-is-relationship
   //
@@ -9,5 +9,11 @@ module.exports = function (router) {
     }
     res.redirect('/application/name')
   })
+
+  // Pass the question in to the page
+  router.get('/application/what-is-relationship/', function (req, res) {
+    res.render('application/what-is-relationship/index', content)
+  })
+
   // END__######################################################################################################
 }

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: address-non-UK
   // will produce an address as text on the 'check your answers page'
@@ -9,6 +9,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/phone-number')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/address-non-uk/', function (req, res) {
+    res.render('application/address-non-uk/index', content)
   })
   // END__######################################################################################################
 }

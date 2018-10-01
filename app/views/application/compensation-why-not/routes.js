@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: compensation-why-not
   //
@@ -7,6 +7,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
       res.redirect('/application/check-your-answers-page')
+  })
+
+  // Pass the question in to the page
+  router.get('/application/compensation-why-not/', function (req, res) {
+    res.render('application/compensation-why-not/index', content)
   })
   // END__######################################################################################################
 }

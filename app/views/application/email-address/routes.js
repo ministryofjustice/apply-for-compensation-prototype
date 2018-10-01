@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: email-address
   // varialbe: email-address
@@ -11,6 +11,15 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
     res.redirect('/application/address')
+  })
+  
+  // Pass the question in to the page
+  router.get('/application/email-address/', function (req, res) {
+    res.render('application/email-address/index', content)
+  })
+  // Pass the question in to the page
+  router.get('/application/email-address/error', function (req, res) {
+    res.render('application/email-address/error', content)
   })
   // END__######################################################################################################
 }

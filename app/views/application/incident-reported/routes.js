@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: incident-reported
   // Variable: incidentReported
@@ -10,6 +10,11 @@ module.exports = function (router) {
     } else {
       res.redirect('/application/crime-reported-date')
     }
+  })
+
+  // Pass the question in to the page
+  router.get('/application/incident-reported/', function (req, res) {
+    res.render('application/incident-reported/index', content)
   })
   // END__######################################################################################################
 }

@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: reporting-delay
   //
@@ -22,6 +22,11 @@ module.exports = function (router) {
       return res.redirect('/application/check-your-answers-page')
     }
    res.redirect('/application/incident-location')
+  })
+  
+  // Pass the question in to the page
+  router.get('/application/reporting-delay/', function (req, res) {
+    res.render('application/reporting-delay/index', content)
   })
   // END__######################################################################################################
 }

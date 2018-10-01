@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Question page
+Question page
 {% endblock %}
 
 {% block content %}
@@ -22,10 +22,6 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
-
         <form class="form" method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
@@ -37,26 +33,26 @@
             currentValue: data['sameFamily'],
             "fieldset": {
               "legend": {
-                "text": 'Were you and your attacker living together as family at the time?',
+                "text": sameFamilyQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
-              {
-                "value": "yes",
-                "text": "Yes"
-              },
-              {
-                "value": "no",
-                "text": "No"
-              }
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
             ]
           }) }}
 
           {{ govukButton({
             "text": "Continue"
-            }) }}
+          }) }}
 
         </form>
 

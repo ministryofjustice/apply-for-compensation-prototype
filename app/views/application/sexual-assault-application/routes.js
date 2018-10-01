@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: sexual-assault-application
   // Variable: sexualAssault
@@ -14,6 +14,11 @@ module.exports = function (router) {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/after-1979')
     }
+  })
+  
+  // Pass the question in to the page
+  router.get('/application/sexual-assault-application/', function (req, res) {
+    res.render('application/sexual-assault-application/index', content)
   })
   // END__######################################################################################################
 }

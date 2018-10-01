@@ -1,4 +1,4 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
   // START__####################################################################################################
   // File: same-family
   // Variable: sameFamily
@@ -15,5 +15,10 @@ module.exports = function (router) {
       res.redirect('https://www.cica.gov.uk/oas/Account/Create')
     }
   })
+  
+  // Pass the question in to the page
+  router.get('/application/same-family/', function (req, res) {
+    res.render('application/same-family/index', content)
+  })
   // END__######################################################################################################
-}
+  }

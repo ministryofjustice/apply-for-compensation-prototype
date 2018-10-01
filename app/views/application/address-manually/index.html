@@ -30,7 +30,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Enter your address",
+            text: addressQuestion,
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
@@ -38,7 +38,7 @@
 
           {{ govukInput({
             label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+              html: addressLine1Label
             },
             id: "address-line-1",
             name: "address-line-1",
@@ -47,7 +47,7 @@
 
           {{ govukInput({
             label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+              html: addressLine2Label
             },
             id: "address-line-2",
             name: "address-line-2",
@@ -56,7 +56,7 @@
 
           {{ govukInput({
             label: {
-              text: "Town or city"
+              text: townOrCityLabel
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
@@ -66,7 +66,7 @@
 
           {{ govukInput({
             label: {
-              text: "County (optional)"
+              text: countyLabel
             },
             classes: "govuk-!-width-two-thirds",
             id: "address-county",
@@ -76,7 +76,7 @@
 
           {{ govukInput({
             label: {
-              text: "Postcode (optional)"
+              text: postcodeOptionalLabel
             },
             classes: "govuk-input--width-10",
             id: "address-postcode",
