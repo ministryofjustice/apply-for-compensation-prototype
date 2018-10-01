@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-    Reporting details - What force?
+Reporting details - What force?
 {% endblock %}
 
 {% block content %}
@@ -15,53 +15,45 @@
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
-    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
-    <div class="govuk-main-wrapper">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <!--legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                    Reporting details
-                </h1>
-            </legend>
+  <div class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="/form-handler" method="post">
 
-            <p>This information will help us get the correct report from the police.</p-->
+          {% from "input/macro.njk" import govukInput %}
 
-            <form class="/form-handler" method="post">
+          {{ govukInput({
+            "label": {
+              "text": policeForceQuestion,
+              "isPageHeading": true,
+              "classes": 'govuk-label--xl'
+            },
+            hint: {
+              text: policeForceHint
+            },
+            "classes": 'govuk-input--width-40',
+            "id": "police-force",
+            "name": "police-force",
+            "value": data['police-force']
+          }) }}
 
-                {% from "input/macro.njk" import govukInput %}
+          {% from "button/macro.njk" import govukButton %}
 
-                {{ govukInput({
-                "label": {
-                "text": policeForceQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-label--xl'
-              },
-              hint: {
-                text: "Enter the police force name, for example, Humberside police."
-              },
-                "classes": 'govuk-input--width-40',
-                "id": "police-force",
-                "name": "police-force",
-                "value": data['police-force']
-                }) }}
+          {{ govukButton({
+            "text": "Continue"
+          }) }}
 
-                {% from "button/macro.njk" import govukButton %}
+        </form>
 
-                {{ govukButton({
-                "text": "Continue"
-                }) }}
-
-            </form>
-
-        </div>
       </div>
-      <div class="design-notes-box">
-        <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">added guidance for completing police search field - JK</p>
     </div>
+    <div class="design-notes-box">
+      <h3 class="design-notes">Design notes</h3>
+      <p class="design-notes">added guidance for completing police search field - JK</p>
     </div>
- </div>
+  </div>
+</div>
 
 {% endblock %}

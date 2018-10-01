@@ -6,7 +6,6 @@ const path = require('path')
 const express = require('express')
 const router = express.Router()
 const marked = require('marked')
-
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 
 // START__Helpers functions ####################################################################################################################################
@@ -26,12 +25,10 @@ function isReportedOver48h(incident, report) {
 }
 // END__#############################################################################################################################################################
 
-
 // Route index page
 router.get('/', function (req, res) {
   res.render('index')
 })
-
 
 // Add your routes here - above the module.exports line
 module.exports = router
@@ -39,7 +36,6 @@ module.exports = router
 // Try to keep these inclued in the same order as the journey.
 // This makes it easy to find things.
 //   Indent routes that relate to questions that are dependant on the previous one
-
 require('./views/application/british-citizen/routes')(router);
 require('./views/application/over-18/routes')(router);
 require('./views/application/who-is-making-the-application/routes')(router);

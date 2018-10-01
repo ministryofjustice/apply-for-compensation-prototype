@@ -26,8 +26,8 @@
         <form class="form" method="post">
 
             <div class="govuk-form-group">
-                <h1 class="govuk-heading-xl">Enter your address</h1>
-                <h2 class="govuk-heading-l">Postcode</h2>
+                <h1 class="govuk-heading-xl">{{ addressQuestion }}</h1>
+                <h2 class="govuk-heading-l">{{ postcodeLabel }}</h2>
                 <p>
                   <span style="font-size: 24px; margin-right:1em"><strong>
                   {% if data['postcode'] %}
@@ -45,7 +45,7 @@
               id: "address-lookup-result",
               name: "address-lookup-result",
               label: {
-                text: "Select an address",
+                text: selectAddressLable,
                 "classes": 'govuk-label--l'
               },
 

@@ -29,7 +29,7 @@
               titleText: "There is a problem",
               errorList: [
                 {
-                  text: "Select yes if you have been known by any other names",
+                  text: otherNameError,
                   href: "#haveOtherName"
                 }
               ]
@@ -42,13 +42,13 @@
             "name": "haveOtherName",
             "fieldset": {
               "legend": {
-                "text": 'Have you ever been known by any other names?',
+                "text": otherNameQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
             errorMessage: {
-            text: "Select yes if you have been known by any other names"
+            text: otherNameError
           },
             "items": [
               {

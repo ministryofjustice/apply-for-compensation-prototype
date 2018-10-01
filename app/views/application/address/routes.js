@@ -9,9 +9,14 @@ module.exports = function (router) {
   })
 
   // Add content key/value pairs here
+  // Content variables are isted in the same order as folders when sorted a-z
+  // If a variable has been defined in a previous file it is not defined again
+  // Comments sepperate the list
+  // This list should be moved in to it's own file in the future
   const content = {
+    // Postcode lookup
     addressQuestion:'Enter your address',
-    postcodeLabel:'Postcode'
+    postcodeLabel:'Postcode',
   };
 
   // Pass the question in to the page

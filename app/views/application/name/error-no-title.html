@@ -24,12 +24,12 @@
                     titleText: "There is a problem",
                     errorList: [
                       {
-                        text: "Enter your first name",
-                        href: "#first-name"
+                        text: nameErrorNoTitle,
+                        href: "#title"
                       }
                     ]
                   }) }}
-                  Enter your name
+                  {{ nameQuestion }}
                 </label>
               </h1>
             </div>
@@ -44,7 +44,10 @@
             "classes": "govuk-input--width-10",
             "id": "title",
             "name": "title",
-            "value": data['title']
+            "value": data['title'],
+            errorMessage: {
+            text: nameErrorNoTitle
+            }
             }) }}
 
             {% from "input/macro.njk" import govukInput %}
@@ -55,10 +58,7 @@
               },
               id: "first-name",
               name: "first-name",
-              value: data['first-name'],
-              errorMessage: {
-              text: "Enter your first name"
-              }
+              value: data['first-name']
             }) }}
 
             {% from "input/macro.njk" import govukInput %}

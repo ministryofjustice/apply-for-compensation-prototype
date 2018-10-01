@@ -24,12 +24,12 @@
                     titleText: "There is a problem",
                     errorList: [
                       {
-                        text: "Enter your last name",
+                        text: nameErrorNoLastName,
                         href: "#last-name"
                       }
                     ]
                   }) }}
-                  Enter your name
+                  {{ nameQuestion }}
                 </label>
               </h1>
             </div>
@@ -68,7 +68,7 @@
               name: "last-name",
               value: data['last-name'],
               errorMessage: {
-              text: "Enter your last name"
+              text: nameErrorNoLastName
               }
             }) }}
             {% from "input/macro.njk" import govukInput %}
