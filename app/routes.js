@@ -96,7 +96,7 @@ router.post('/application/after-1979', function (req, res) {
     res.redirect('/application/same-family')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/OCJ-intro')
+    res.redirect('/application/DMI')
   }
 })
 // END__######################################################################################################
