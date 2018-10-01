@@ -23,9 +23,9 @@
           <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
         </h1>
 
-        <ul id="foldertree">
+        <ul class="govuk-list" id="foldertree">
           {% if files %}
-            {{ files }}
+            {{ files | safe }}
           {% else %}
             no items
           {% endif %}

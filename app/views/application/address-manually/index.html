@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+        {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+
+        {% call govukFieldset({
+          legend: {
+            text: addressQuestion,
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              html: addressLine1Label
+            },
+            id: "address-line-1",
+            name: "address-line-1",
+            value: data['address-line-1']
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: addressLine2Label
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            value: data['address-line-2']
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: townOrCityLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town",
+            value: data['address-town']
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: countyLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "address-county",
+            value: data['address-county']
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: postcodeOptionalLabel
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "address-postcode",
+            value: data['address-postcode']
+          }) }}
+
+        {% endcall %}
+        {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+        </form>
+      </div>
+    </div>
+    <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">This is one of the patterns agreed by the design system. I've made 'county' optional as it didn't make sense to some users. I left the postcode field even though users would reach that page if they don't know their postcode, because they might also reach this page when the postcode lookup do not work. I've noted it as (optional) so people who don't know it can still go through. - SK
+
+        </p>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
