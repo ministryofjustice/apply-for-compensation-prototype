@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Reporting delay
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="form" method="post">
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            "id": "reportingDelay",
+            "name": "reportingDelay",
+            value: data['reportingDelay'],
+            label: {
+              text: reportingDelayQuestion,
+              "isPageHeading": true,
+              "classes": 'govuk-label--xl'
+            }
+          }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+          {{ govukButton({
+            "text": "Continue"
+          }) }}
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
