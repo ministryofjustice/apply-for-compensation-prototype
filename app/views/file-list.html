@@ -25,7 +25,7 @@
 
         <ul id="foldertree">
           {% if files %}
-            {{ files }}
+            {{ files | safe }}
           {% else %}
             no items
           {% endif %}
