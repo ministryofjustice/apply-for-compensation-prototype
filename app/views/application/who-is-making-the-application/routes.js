@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (directApplicant === 'no') {
       // Redirect to the relevant page
-      res.redirect('https://www.cica.gov.uk/oas/Account/Create')
+      res.redirect('/application/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/sexual-assault-application')
