@@ -109,7 +109,7 @@ module.exports = {
     // Same family
     sameFamilyQuestion: 'Were you and your attacker living together as family at the time?',
     // Sexual assult application
-    sexualAbuseQuestion: 'Are you a survivor of sexual violence or abuse?',
+    sexualAbuseQuestion: 'Are you a victim of sexual violence or abuse?',
     // Single or multiple incidents
     singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
     itemOneValue: 'Once',
