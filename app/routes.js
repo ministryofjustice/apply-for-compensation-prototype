@@ -96,7 +96,7 @@ router.post('/application/after-1979', function (req, res) {
     res.redirect('/application/same-family')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/you-have-a-choice')
+    res.redirect('/application/OCJ-intro')
   }
 })
 // END__######################################################################################################
@@ -111,10 +111,10 @@ router.post('/application/same-family', function (req, res) {
 
   if (sameFamily === 'no') {
     // Redirect to the relevant page
-    res.redirect('/application/you-have-a-choice')
+    res.redirect('/application/OCJ-intro')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('https://www.cica.gov.uk/oas/Account/Create')
+    res.redirect('/application/transition')
   }
 })
 // END__######################################################################################################
@@ -176,33 +176,39 @@ router.post('/application/OCJ-intro', function (req, res) {
 // File: DMI
 
 router.post('/application/DMI', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/DMI-symptoms')
+  // Get the answer from the query string
+  var dMi = req.session.data['DMI']
 
+  if (dMi === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/transition')
+  } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/physical-injury')
+  }
 })
 // END__######################################################################################################
 
 // START__####################################################################################################
-// File: DMI-symptoms
-
-router.post('/application/DMI-symptoms', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/physical-injury')
-})
-// END__######################################################################################################
-
-// START__####################################################################################################
-// File: DMI-symptoms
+// File: physical-injury
 
 router.post('/application/physical-injury', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
+  // Get the answer from the query string
+  var physInjury = req.session.data['physInjury']
+
+  if (physInjury === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/transition')
+  } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/loss-of-earnings')
   }
-  res.redirect('/application/loss-of-earnings')
 })
 // END__######################################################################################################
 
@@ -210,10 +216,19 @@ router.post('/application/physical-injury', function (req, res) {
 // File: Loss-of-earnings
 
 router.post('/application/loss-of-earnings', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
+  // Get the answer from the query string
+  var lOe = req.session.data['lOe']
+
+  if (lOe === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/transition')
+  } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/special-expenses')
   }
-  res.redirect('/application/special-expenses')
 })
 // END__######################################################################################################
 
@@ -221,22 +236,42 @@ router.post('/application/loss-of-earnings', function (req, res) {
 // File: Special-expenses
 
 router.post('/application/special-expenses', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
+  // Get the answer from the query string
+  var specExp = req.session.data['specExp']
+
+  if (specExp === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/application/transition')
+  } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/other-consequences')
   }
-  res.redirect('/application/other-consequences')
-})
+  })
 // END__######################################################################################################
 
 // START__####################################################################################################
 // File: Other-consequences
 
 router.post('/application/other-consequences', function (req, res) {
-  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
+  // Get the answer from the query string
+  var otherCons = req.session.data['otherCons'];
+
+  console.log("otherCons:", otherCons);
+
+  if (otherCons && (otherCons.includes('pregnancy') || otherCons.includes('lossofFoetus') || otherCons.includes('STD'))) {
+    // Redirect to the relevant page
+    res.redirect('/application/transition')
+  } else {
+    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/check-your-answers-page')
+    }
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/application/declaration')
   }
-  res.redirect('/application/OCJ-summary')
-})
+  })
 // END__######################################################################################################
 
 

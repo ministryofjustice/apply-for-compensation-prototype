@@ -32,18 +32,18 @@
 
           {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "dmiSymptoms",
-            "name": "dmiSymptoms",
-            currentValue: data['dmiSymptoms'],
+            "idPrefix": "physInjury",
+            "name": "physInjury",
+            currentValue: data['physInjury'],
             "fieldset": {
               "legend": {
-                "text": 'Do you want to apply for compensation for any physical injuries?',
+                "text": 'Have you suffered any physical injuries?',
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-            text: 'We will ask you to get a report about your physical injuries from your doctor.'
+            text: 'We may ask you to get a report about your physical injuries from your doctor.'
             },
             "items": [
               {

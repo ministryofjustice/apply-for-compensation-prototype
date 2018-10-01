@@ -28,14 +28,17 @@
 
         <form class="form" method="post">
 
+
+
           {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
           {{ govukCheckboxes({
-            idPrefix: "waste",
-            name: "waste",
+            idPrefix: "otherCons",
+            name: "otherCons",
+            currentValue: data['otherCons'],
             fieldset: {
               legend: {
-                text: "Do you want to apply for compensation for any of the following?",
+                text: "Have you suffered any of the following?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -55,6 +58,10 @@
               {
                 value: "STD",
                 text: "Sexually transmitted disease"
+              },
+              {
+                value: "none",
+                text: "None of the above"
               }
             ]
           }) }}
