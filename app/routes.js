@@ -8,23 +8,6 @@ const router = express.Router()
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 const viewContent = require('./routes-content');
 
-// START__Helpers functions ####################################################################################################################################
-
-function getDatefrom2inputs(inputMonth, inputYear) {
-    // using the 2 variables above to create a date object with moment which will be the last day of the month
-    var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
-    var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
-    var date = moment([year, month]).endOf('month'); //create a date from the 2 elements we received from the user which is the last day of the month
-    return date
-}
-
-function isReportedOver48h(incident, report) {
-    var delay = moment.duration(report.diff(incident)); // / calculate the difference between the two (that's in milliseconds or something)
-    var delayInDays = delay.asDays(); // take that number in days  - we can do that thanks to the Moment library
-    return (delayInDays > 2) //reported more than 48h = 2 days after the incident
-}
-// END__#############################################################################################################################################################
-
 // Route index page
 router.get('/', function (req, res) {
     res.render('index')

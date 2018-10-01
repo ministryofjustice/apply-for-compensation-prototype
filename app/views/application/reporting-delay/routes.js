@@ -1,3 +1,4 @@
+const dateHelper = require('../../../helpers/date');
 module.exports = function (router, content) {
   // START__####################################################################################################
   // File: reporting-delay
@@ -7,7 +8,7 @@ module.exports = function (router, content) {
     var incidentDateDay = req.session.data['incident-date-day']
     var incidentDateMonth = req.session.data['incident-date-month']
     var incidentDateYear = req.session.data['incident-date-year']
-    var  incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
+    var  incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
     // get today's date   and compare it to the date of incident
     var currentDate = moment().startOf('day'); // this line of code make sure that the day (today) is only counted at midnight, we are not counting against a certain time of the day
     var duration = moment.duration(currentDate.diff(incidentDate)); // / calculate the difference between the two (that's in milliseconds or something)

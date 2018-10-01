@@ -1,15 +1,6 @@
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
+const dateHelper = require('../../../helpers/date');
 module.exports = function (router, content) {
-
-  // the functions below will help get the date we need to cover the over 2 years delay for applying and the over 48h delay for reporting
-  function getDatefrom3inputs(inputDay, inputMonth, inputYear) {
-      // using the 3 variables above to create a date object with moment
-      var year = Number.parseInt(inputYear, 10); // making sure with have a well formated number for year, month and day
-      var month = Number.parseInt(inputMonth - 1, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
-      var day = Number.parseInt(inputDay, 10);
-      var date = moment([year, month, day]); //create a date from the 3 elements we received from the user
-      return date
-  }
 
   // START__####################################################################################################
   // File: incident-date
@@ -20,7 +11,7 @@ module.exports = function (router, content) {
     var incidentDateDay = req.session.data['incident-date-day']
     var incidentDateMonth = req.session.data['incident-date-month']
     var incidentDateYear = req.session.data['incident-date-year']
-    var  incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
+    var  incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
     // get today's date   and compare it to the date of incident
     var currentDate = moment().startOf('day'); // this line of code make sure that the day (today) is only counted at midnight, we are not counting against a certain time of the day
     var duration = moment.duration(currentDate.diff(incidentDate)); // / calculate the difference between the two (that's in milliseconds or something)
@@ -30,9 +21,9 @@ module.exports = function (router, content) {
       var reportingDateDay = req.session.data['incidentReported-day']
       var reportingDateMonth = req.session.data['incidentReported-month']
       var reportingDateYear = req.session.data['incidentReported-year']
-      var reportingDate = getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-      incidentDate = getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
-      if ( isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
+      var reportingDate = dateHelper.getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+      incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
+      if ( dateHelper.isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
         return res.redirect('/application/reporting-delay')
       }
     }
