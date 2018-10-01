@@ -142,7 +142,7 @@
         </dl>
 
         <h2 class="govuk-heading-l">
-          Your Eligibility
+          Your eligibility
         </h2>
 
         <dl class="govuk-check-your-answers govuk-check-your-answers--long">
@@ -614,7 +614,14 @@
               <li>fraud prevention agencies</li>
             </ul>
           </p>
-            <a href="confirmation-page" class="govuk-button">Consent and submit</a>
+            <!-- <a href="../confirmation-page/index" class="govuk-button">Consent and submit</a> -->
+            <form class="form" method="post">
+            {% from "button/macro.njk" import govukButton %}
+            {{ govukButton({
+            "text": "Consent and submit"
+            }) }}
+
+            </form>
   <!-- <p>You can find out more about how we handle your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a></p> -->
 
 </div>
