@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       res.redirect('/application/mental-injuries')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('https://www.cica.gov.uk/oas/Account/Create')
+      res.redirect('/application/transition')
     }
   })
 
