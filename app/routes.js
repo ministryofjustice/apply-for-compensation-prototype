@@ -27,8 +27,6 @@ require('./views/application/physical-injuries/routes')(router, viewContent);
 require('./views/application/loss-of-earnings/routes')(router, viewContent);
 require('./views/application/special-expenses/routes')(router, viewContent);
 require('./views/application/other-consequences/routes')(router, viewContent);
-require('./views/application/you-have-a-choice/routes')(router, viewContent);
-require('./views/application/your-choices/routes')(router, viewContent);
 require('./views/application/declaration/routes')(router, viewContent);
 require('./views/application/criminal-convictions/routes')(router, viewContent);
 require('./views/application/tell-criminal-convictions/routes')(router, viewContent);
