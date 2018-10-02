@@ -25,8 +25,6 @@ require('./views/application/same-family/routes')(router, viewContent);
 require('./views/application/you-have-a-choice/routes')(router, viewContent);
 require('./views/application/your-choices/routes')(router, viewContent);
 require('./views/application/declaration/routes')(router, viewContent);
-require('./views/application/criminal-convictions/routes')(router, viewContent);
-require('./views/application/tell-criminal-convictions/routes')(router, viewContent);
 require('./views/application/bridge/routes')(router, viewContent);
 require('./views/application/incident-reported/routes')(router, viewContent);
 require('./views/application/reporting-crime-not-reported/routes')(router, viewContent);
