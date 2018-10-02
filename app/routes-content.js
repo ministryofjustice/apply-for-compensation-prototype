@@ -45,6 +45,7 @@ module.exports = {
     incidentReportedQuestion: 'Was the crime reported to the police?',
     itemOneValue: 'Once',
     itemTwoValue: 'Over a period of time',
+    mentalInjuriesQuestion: 'Have you suffered a disabling mental injury?',
     nameErrorNoFirstName: "Enter your first name",
     nameErrorNoLastName: "Enter your last name",
     nameErrorNoTitle: "Enter your title",
@@ -82,6 +83,18 @@ module.exports = {
     whoCompensationQuestion: 'Who else have you applied to for compensation?',
     whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
     whyDelayQuestion: 'Why did you not apply to us for compensation sooner?',
+    physicalInjuriesQuestion: 'Have you suffered any physical injuries?',
+    physicalInjuriesHint: 'We may ask you to get a report about your physical injuries from your doctor.',
+    lossOfEarningsQuestion: 'Have you suffered loss of earnings?',
+    lossOfEarningsHint: 'You must have been unable to work for 28 weeks or more.  We will ask you for evidence of this.',
+    otherCostsQuestion: 'Have you incurred any other costs or expenses?',
+    otherCostsHint: 'You must have been unable to for work for 28 weeks or more. Expenses you can apply for will depend on your circumstances.  We will ask you for evidence of this.',
+    otherConsequencesQuestion: "Have you suffered any of the following?",
+    otherConsequencesHint: "Select all that apply.",
+    otherConsequencesItemPregnancy: "Pregnancy",
+    otherConsequencesItemLossOfFoetus: "Loss of foetus",
+    otherConsequencesItemSexuallyTransmittedDisease: "Sexually transmitted disease",
+    otherConsequencesItemNoneOfTheAbove: "None of the above",
 };
 // // END__######################################################################################################
 // }

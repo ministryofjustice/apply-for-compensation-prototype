@@ -22,7 +22,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-xl">
-            Have you suffered a disabling mental injury?
+            {{ mentalInjuriesQuestion }}
           </h1>
 
           <p class="govuk-body-m">A disabling mental injury has a substantial adverse effect on your ability to carry out normal day to day activities.  It does not include temporary mental anxiety, but may include:</p>
@@ -47,7 +47,7 @@
             currentValue: data['dMi'],
             "fieldset": {
               "legend": {
-                "text": 'Have you suffered a disabling mental injury?',
+                "text": mentalInjuriesQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--m'
               }

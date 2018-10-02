@@ -1,6 +1,6 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: physical-injuries
+  // File: special-expenses
   // Variable: incidentReported
   router.post('/application/special-expenses', function (req, res) {
     // Get the answer from the query string
@@ -18,8 +18,8 @@ module.exports = function (router, content) {
     })
 
   // Pass the question in to the page
-  router.get('/application/physical-injuries/', function (req, res) {
-    res.render('application/physical-injuries/index', content)
+  router.get('/application/special-expenses/', function (req, res) {
+    res.render('application/special-expenses/index', content)
   })
   // END__######################################################################################################
 }

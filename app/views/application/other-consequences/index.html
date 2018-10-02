@@ -26,30 +26,30 @@
             currentValue: data['otherCons'],
             fieldset: {
               legend: {
-                text: "Have you suffered any of the following?",
+                text: otherConsequencesQuestion,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-              text: "Select all that apply."
+              text: otherConsequencesHint
             },
             items: [
               {
                 value: "pregnancy",
-                text: "Pregnancy"
+                text: otherConsequencesItemPregnancy
               },
               {
                 value: "lossofFoetus",
-                text: "Loss of foetus"
+                text: otherConsequencesItemLossOfFoetus
               },
               {
                 value: "STD",
-                text: "Sexually transmitted disease"
+                text: otherConsequencesItemSexuallyTransmittedDisease
               },
               {
                 value: "none",
-                text: "None of the above"
+                text: otherConsequencesItemNoneOfTheAbove
               }
             ]
           }) }}
