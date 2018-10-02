@@ -9,13 +9,13 @@ module.exports = function (router, content) {
 
     if (sameFamily === 'no') {
       // Redirect to the relevant page
-      res.redirect('/application/you-have-a-choice')
+      res.redirect('/application/mental-injuries')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('https://www.cica.gov.uk/oas/Account/Create')
     }
   })
-  
+
   // Pass the question in to the page
   router.get('/application/same-family/', function (req, res) {
     res.render('application/same-family/index', content)

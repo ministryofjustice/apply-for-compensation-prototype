@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       res.redirect('/application/same-family')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/you-have-a-choice')
+      res.redirect('/application/mental-injuries')
     }
   })
 
