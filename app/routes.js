@@ -23,6 +23,10 @@ require('./views/application/sexual-assault-application/routes')(router, viewCon
 require('./views/application/after-1979/routes')(router, viewContent);
 require('./views/application/same-family/routes')(router, viewContent);
 require('./views/application/mental-injuries/routes')(router, viewContent);
+require('./views/application/physical-injuries/routes')(router, viewContent);
+require('./views/application/loss-of-earnings/routes')(router, viewContent);
+require('./views/application/special-expenses/routes')(router, viewContent);
+require('./views/application/other-consequences/routes')(router, viewContent);
 require('./views/application/you-have-a-choice/routes')(router, viewContent);
 require('./views/application/your-choices/routes')(router, viewContent);
 require('./views/application/declaration/routes')(router, viewContent);

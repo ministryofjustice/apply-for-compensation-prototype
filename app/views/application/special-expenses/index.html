@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+ {% block page_title %}
+  Question page
+{% endblock %}
+ {% block content %}
+ <div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+   <main role="main" class="govuk-main-wrapper">
+     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+         <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+         <form class="form" method="post">
+           {% from 'radios/macro.njk' import govukRadios %}
+           {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "specExp",
+            "name": "specExp",
+            currentValue: data['specExp'],
+            "fieldset": {
+              "legend": {
+                "text": 'Have you incurred any other costs or expenses?',
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+            text: 'You must have been unable to for work for 28 weeks or more. Expenses you can apply for will depend on your circumstances.  We will ask you for evidence of this.'
+            },
+            "items": [
+              {
+                "value": "yes",
+                "text": "Yes"
+              },
+              {
+                "value": "no",
+                "text": "No"
+              }
+            ]
+          }) }}
+           {{ govukButton({
+            "text": "Continue"
+            }) }}
+         </form>
+       </div>
+    </div>
+  </main>
+</div>
+ {% endblock %}

@@ -1,20 +1,20 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: incident-reported
+  // File: physical-injuries
   // Variable: incidentReported
-  router.post('/application/mental-injuries', function (req, res) {
+  router.post('/application/physical-injuries', function (req, res) {
     // Get the answer from the query string
-   var DMI = req.session.data['DMI']
-    if (DMI === 'no') {
-       return res.redirect('/application/physical-injuries')
+   var physInjury = req.session.data['physInjury']
+    if (physInjury === 'no') {
+       return res.redirect('/application/loss-of-earnings')
     } else {
       res.redirect('/application/transition')
     }
   })
 
   // Pass the question in to the page
-  router.get('/application/incident-reported/', function (req, res) {
-    res.render('application/incident-reported/index', content)
+  router.get('/application/physical-injuries/', function (req, res) {
+    res.render('application/physical-injuries/index', content)
   })
   // END__######################################################################################################
 }
