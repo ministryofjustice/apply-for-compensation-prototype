@@ -63,6 +63,7 @@ require('./views/application/application-delay/routes')(router, viewContent);
 require('./views/application/find-uk-address/routes')(router, viewContent);
 require('./views/application/reporting-delay/routes')(router, viewContent);
 require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
+require('./views/application/transition/routes')(router, viewContent);
 
 require('./routes-filelist')(router);
 
