@@ -57,6 +57,7 @@ module.exports = {
     declarationQuestion: 'Do you agree?',
     // Do you know offender
     doYouKnowOfdfenderQuestion: "Do you know the name of the person who attacked you?",
+    doYouKnowOfdfenderHint: "We will never contact the offender.",
     // Email address
     emailAddressQuestion: "Enter your email address",
     emailAddressHint: "We'll use this to contact you about your application for example, to request more information and tell you about our decision",
@@ -86,6 +87,7 @@ module.exports = {
     offenderNameQuestion: 'Enter their name',
     // Ongoing relationship
     ongoingRelationshipQuestion: "Do you have any contact with this person?",
+    ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
     // Over 18
     over18Question: 'Are you 18 or over?',
     // Period of abuse start and end
