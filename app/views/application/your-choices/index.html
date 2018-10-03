@@ -21,36 +21,36 @@ Blank page
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Your choices
+          What other injuries or other losses have you suffered?
         </h1>
 
-        <p class="govuk-body-l">Your choice can affect how much information and evidence we need to assess your application.</p>
+        <p class="govuk-body">We can make a fixed payment, based only on the police report, which contains an element that acknowledges the mental trauama you have suffered.</p>
+        <p class="govuk-body">We would make our decision within 4 months but would not consider any other mental or physical injuries, loss of earnings, expenses or other consequences you suffered.</p>
 
         <h2 class="govuk-heading-m">
-          Full assessment
+          Disabling mental injuries
         </h2>
-  <p>
-  </p>
-    <p class="govuk-body">We will get evidence from the police.</p>
-    <p class="govuk-body">Based on the facts of your case, you may need to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>get medical evidence of your physical injuries</li>
-        <li>have your mental injuries assessed by an expert</li>
-        <li>give us evidence of any <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a> or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a></li>
-      </ul>
-      <p>We usually take around 11 months to make a decision.</p>
+        <p class="govuk-body-m">A disabling mental injury has a substantial adverse effect on your ability to carry out normal day to day activities.  It does not include temporary mental anxiety, but may include:</p>
 
-    <h2 class="govuk-heading-m">Police evidence only</h2>
-    <p>
-    </p>
-    <p class="govuk-body">We will:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>only need to get evidence from the police</li>
-        <li>use that evidence to make a decision</li>
-        <li>not consider any other injuries, loss of earnings, expenses or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank">other consequences</a> of the crime</li>
-      </ul>
+             <ul class="govuk-list govuk-list--bullet">
+               <li>impaired performance at work or school</li>
+               <li>negative effects on social relationships</li>
+               <li>negative impacts on your sex life and intimacy</li>
+             </ul>
 
-    <p class="govuk-body">We usually take around 4 months to make a decision.</p>
+             <p class="govuk-body-m">Your disabling mental injury symptoms must have lasted for 6 weeks or more for us to consider paying compensation.  We may also ask you to have your mental injuries assessed by a clinical psychologist.</p>
+
+          <h2 class="govuk-heading-m">Compensation for other losses</h2>
+          <p></p>
+          <p class="govuk-body">We can also consider applications for compensation for:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>physical injuries</li>
+              <li>loss of earnings</li>
+              <li>other expenses for example, special equipment, providing care</li>
+              <li>other consequences of the crime for example, pregnancy, loss of foetus and sexually transmitted disease</li>
+            </ul>
+
+    <p class="govuk-body">Cases involving disabling mental and physical injuries and other losses are usually more complex and take more time for us to make a deicsion.</p>
 
         <form class="form"  method="post">
 
@@ -63,7 +63,7 @@ Blank page
             currentValue: data['yourChoice'],
             "fieldset": {
               "legend": {
-                "text": 'Which do you want to choose?',
+                "text": 'Have you suffered any disabling mental injury, physical injury or other loss?',
                 "isPageHeading": false,
                 "classes": 'govuk-fieldset__legend--m'
               }
@@ -71,11 +71,11 @@ Blank page
             "items": [
             {
               "value": "option1",
-              "text": "Full assessment"
+              "text": "Yes"
             },
             {
               "value": "option2",
-              "text": "Police evidence only"
+              "text": "No"
             }
             ]
           }) }}
