@@ -8,45 +8,6 @@
 // Comments sepperate the list
 // This list should be moved in to it's own file in the future
 module.exports = {
-    // After 1979
-    // Application delay
-    // British citizen
-    // Compensation
-    // Compensation amount
-    // Compensation why not
-    // Crime reference number
-    // Crime reporting date
-    // Criminal convictions
-    // Criminal convictions
-    // Date of birth
-    // Declaration
-    // Do you know offender
-    // Email address
-    // Find uk addresse
-    // Incident date
-    // Incident location
-    // Incident reported
-    // Manual address entry
-    // Name
-    // Name have other
-    // Name other
-    // Non uk address
-    // Offender name
-    // Ongoing relationship
-    // Over 18
-    // Period of abuse start and end
-    // Phone number
-    // Police force
-    // Police officer details
-    // Postcode lookup
-    // Previous applications
-    // Reporting delay
-    // Same family
-    // Sexual assult application
-    // Single or multiple incidents
-    // What is relationship
-    // Who have you applied to for compensation
-    // Who is making the application
     addressLine1Label: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>',
     addressLine2Label: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>',
     addressPostcodeLabel: 'Postcode',
@@ -88,14 +49,16 @@ module.exports = {
     nameErrorNoFirstName: "Enter your first name",
     nameErrorNoLastName: "Enter your last name",
     nameErrorNoTitle: "Enter your title",
+    nameOtherError: "Select yes if you have been known by any other names",
+    nameOtherQuestion: 'Have you ever been known by any other names?',
     nameOtherQuestion: "What other names have you used?",
     nameQuestion: 'Enter your name',
+    nameTitleField: 'title',
+    nameFirstNameField: 'First name',
     offenderNameQuestion: 'Enter their name',
     ongoingRelationshipQuestion: "Do you have any contact with this person?",
     otherCompensationHint: 'Other compensation can include, for example, insurance, civil damages and court compensation.',
     otherCompensationQuestion: 'Have you applied for any other compensation for this crime?',
-    otherNameError: "Select yes if you have been known by any other names",
-    otherNameQuestion: 'Have you ever been known by any other names?',
     over18Question: 'Are you 18 or over?',
     periodOfAbuseEndQuestion: 'When did it stop?',
     periodOfAbuseHint: 'For example, 03 2018. You can enter an approximate date',
