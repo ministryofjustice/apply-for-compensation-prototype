@@ -73,6 +73,9 @@ module.exports = {
     incidentLocationOther: "Tell us where the crime happened",
     // Incident reported
     incidentReportedQuestion: 'Was the crime reported to the police?',
+    //Location town
+    locationTownQuestion: 'Enter the town or city where the crime happened',
+    locationTownHint: 'If it happened outside a town or city enter the name of the nearest one.',
     // Name
     nameQuestion: 'Enter your name',
     nameErrorNoTitle: "Enter your title",
@@ -106,8 +109,8 @@ module.exports = {
     policeOfficerName: 'Name',
     policeOfficerIdNumber: 'ID number (collar number)',
     // Police force
-    policeForceQuestion: 'What police force was the crime reported to?',
-    policeForceHint: "Enter the police force name, for example, Humberside police.",
+    policeForceQuestion: 'Was the crime reported to Police Scotland Tayside?',
+    //policeForceHint: "Enter the police force name, for example, Humberside police.",
     // Same family
     sameFamilyQuestion: 'Were you and your attacker living together as family at the time?',
     // Sexual assult application

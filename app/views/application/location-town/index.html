@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-Reporting details - What force?
+Location town
 {% endblock %}
 
 {% block content %}
@@ -22,35 +22,28 @@ Reporting details - What force?
       <div class="govuk-grid-column-two-thirds">
         <form class="/form-handler" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
+          {% from "input/macro.njk" import govukInput %}
 
-          {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "policeForceQuestion",
-            "name": "policeForceQuestion",
-            currentValue: data['policeForceQuestion'],
-            "fieldset": {
-              "legend": {
-                "text": policeForceQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
+          {{ govukInput({
+            "label": {
+              "text": locationTownQuestion,
+              "isPageHeading": true,
+              "classes": 'govuk-label--xl'
             },
-            "items": [
-              {
-                "value": "yes",
-                "text": "Yes"
-              },
-              {
-                "value": "no",
-                "text": "No"
-              }
-            ]
+            hint: {
+              text: locationTownHint
+            },
+            "classes": 'govuk-input--width-40',
+            "id": "location-town",
+            "name": "location-town",
+            "value": data['location-town']
           }) }}
+
+          {% from "button/macro.njk" import govukButton %}
 
           {{ govukButton({
             "text": "Continue"
-            }) }}
+          }) }}
 
         </form>
 

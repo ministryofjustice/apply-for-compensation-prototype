@@ -438,6 +438,20 @@
                 </div>
                 {% endif%}
 
+                <div class="govuk-check-your-answers__contents">
+                  <dt class="govuk-check-your-answers__question">
+                    Town or city where the crime happened
+                  </dt>
+                  <dd class="govuk-check-your-answers__answer">
+                    {{ data['location-town'] }}
+                  </dd>
+                  <dd class="govuk-check-your-answers__change">
+                    <a href="location-town">
+                      Change<span class="visually-hidden"> location town</span>
+                    </a>
+                  </dd>
+                </div>
+
             {% if data['crimeReported'] === 'yes' %}
             <div class="govuk-check-your-answers__contents">
               <dt class="govuk-check-your-answers__question">
