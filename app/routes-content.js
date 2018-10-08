@@ -52,7 +52,7 @@ module.exports = {
     nameErrorNoTitle: "Enter your title",
     nameOtherError: "Select yes if you have been known by any other names",
     nameOtherQuestion: 'Have you ever been known by any other names?',
-    nameOtherQuestion: "What other names have you used?",
+    nameOtherWhatQuestion: "What other names have you used?",
     nameQuestion: 'Enter your name',
     nameTitleField: 'Title',
     nameFirstNameField: 'First name',
