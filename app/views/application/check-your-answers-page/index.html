@@ -42,7 +42,7 @@
             </dd>
           </div>
 
-          {#% if data['other-names'] %#}
+          {% if data['other-names'] %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               Other names
@@ -56,7 +56,7 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -167,7 +167,7 @@
             </dd>
           </div>
 
-          {#% if data['otherCompensation'] === 'yes' %#}
+          {% if data['otherCompensation'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ whoCompensationQuestion }}
@@ -194,8 +194,8 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
-          {#% if data['otherCompensation'] === 'no' %#}
+          {% endif %}
+          {% if data['otherCompensation'] === 'no' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ compensationWhyNotQuestion }}
@@ -209,9 +209,9 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
-          {#% if data['previous-applications'] %#}
+          {% if data['previous-applications'] %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ previousApplicationsQuestion }}
@@ -225,7 +225,7 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -265,7 +265,7 @@
             </dd>
           </div>
 
-          {#% if data['crimeReported'] === 'yes' %#}
+          {% if data['crimeReported'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ crimeReportedDateQuestion }}
@@ -279,9 +279,9 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
-          {#% if data['crimeReported'] === 'yes' %#}
+          {% if data['crimeReported'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ policeForceQuestion }}
@@ -336,7 +336,7 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -352,7 +352,7 @@
             </dd>
           </div>
 
-          {#% if data['single-or-multiple-incidents'] === 'Once' %#}
+          {% if data['single-or-multiple-incidents'] === 'Once' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ incidentDateHeading }}
@@ -366,9 +366,9 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
-          {#% if data['single-or-multiple-incidents'] === 'Over a period of time' %#}
+          {% if data['single-or-multiple-incidents'] === 'Over a period of time' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ periodOfAbuseStartQuestion }}
@@ -395,9 +395,9 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
-          {#% if data['reportingDelay']  %#}
+          {% if data['reportingDelay']  %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ reportingDelayQuestion }}
@@ -411,7 +411,7 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
@@ -427,7 +427,7 @@
             </dd>
           </div>
 
-          {#% if data['incident-location'] === 'Somewhere else' %#}
+          {% if data['incident-location'] === 'Somewhere else' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ incidentLocationOther }}
@@ -441,7 +441,7 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
         </dl>
         <!-- /About the crime -->
@@ -467,7 +467,7 @@
             </dd>
           </div>
 
-          {#% if data['know-offender'] === 'yes' %#}
+          {% if data['know-offender'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ offenderNameQuestionCA }}
@@ -481,9 +481,9 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
-          {#% if data['living-with-offender-before'] === 'yes' %#}
+          {% if data['living-with-offender-before'] === 'yes' %}
           <div class="govuk-check-your-answers__contents">
             <dt class="govuk-check-your-answers__question">
               {{ ongoingRelationshipQuestion }}
@@ -511,7 +511,7 @@
               </a>
             </dd>
           </div>
-          {#% endif %#}
+          {% endif %}
 
         </dl>
         <!-- /About the offender -->
