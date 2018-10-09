@@ -43,8 +43,8 @@ module.exports = {
     crimeReportedDateQuestion: 'When was the crime reported to police?',
     crimeReportedDateHint: 'For example, 31 3 2018. You can enter an approximate date',
     // Criminal convictions
-    criminalConvictionsQuestion: 'Have you ever been convicted of a crime?',
-    criminalConvictionsHint: 'You do not need to declare convictions that are spent',
+    // criminalConvictionsQuestion: 'Have you ever been convicted of a crime?',
+    // criminalConvictionsHint: 'You do not need to declare convictions that are spent',
     // Date of birth
     dateOfBirthQuestion: "Enter your date of birth",
     errorPastMessage: "Your date of birth must be in the past",
@@ -74,8 +74,8 @@ module.exports = {
     // Incident reported
     incidentReportedQuestion: 'Was the crime reported to the police?',
     //Location town
-    locationTownQuestion: 'Enter the town or city where the crime happened',
-    locationTownHint: 'If it happened outside a town or city enter the name of the nearest one.',
+    locationTownQuestion: 'Enter more details about the place where the crime happened',
+    //locationTownHint: 'If it happened outside a town or city enter the name of the nearest one.',
     // Name
     nameQuestion: 'Enter your name',
     nameErrorNoTitle: "Enter your title",
@@ -110,6 +110,7 @@ module.exports = {
     policeOfficerIdNumber: 'ID number (collar number)',
     // Police force
     policeForceQuestion: 'Was the crime reported to Police Scotland Tayside?',
+    policeForceManualQuestion: 'Enter the name of the police force the crime was reported to',
     //policeForceHint: "Enter the police force name, for example, Humberside police.",
     // Same family
     sameFamilyQuestion: 'Were you and your attacker living together as family at the time?',
@@ -122,7 +123,7 @@ module.exports = {
     errorMessageTitle: 'There is a problem',
     errorMessageContent: 'Select Once or Over a period of time',
     // Criminal convictions
-    tellCriminalConvictionsQuestion: 'Tell us about your convictions',
+    // tellCriminalConvictionsQuestion: 'Tell us about your convictions',
     // What is relationship
     whatIsRelationshipQuestion: "What type of contact do you have with them?",
     // Who is making the application
