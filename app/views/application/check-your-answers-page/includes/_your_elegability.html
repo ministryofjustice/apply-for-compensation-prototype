@@ -91,35 +91,5 @@
 </div>
 {% endif %}
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    {{ criminalConvictionsQuestion }}
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['criminalConvictions'] }}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="criminal-convictions">
-      Change<span class="visually-hidden">{{ criminalConvictionsQuestion }} </span>
-    </a>
-  </dd>
-</div>
-
-{% if data['criminalConvictions'] === 'yes' %}
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    {{ tellCriminalConvictionsQuestion }}
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['criminalConvictions'] }}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="criminal-convictions">
-      Change<span class="visually-hidden">{{ tellCriminalConvictionsQuestion }} </span>
-    </a>
-  </dd>
-</div>
-{% endif %}
-
 </dl>
 <!-- ** /Your eligibility ************************************************************************************************************************ -->
