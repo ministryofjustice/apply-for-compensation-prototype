@@ -96,6 +96,23 @@
   </div>
   {% endif %}
 
+
+
+  {% if data['incident-location'] === 'Somewhere else' %}
+  <div class="govuk-check-your-answers__contents">
+    <dt class="govuk-check-your-answers__question">
+      {{ incidentLocationHeading }}
+    </dt>
+    <dd class="govuk-check-your-answers__answer">
+      {{ data['somewhere-else'] }}
+    </dd>
+    <dd class="govuk-check-your-answers__change">
+      <a href="incident-location">
+        Change<span class="visually-hidden"> {{ incidentLocationOther }}</span>
+      </a>
+    </dd>
+  </div>
+  {% elseif data['incident-location']%}
   <div class="govuk-check-your-answers__contents">
     <dt class="govuk-check-your-answers__question">
       {{ incidentLocationHeading }}
@@ -106,21 +123,6 @@
     <dd class="govuk-check-your-answers__change">
       <a href="incident-location">
         Change<span class="visually-hidden"> {{ incidentLocationHeading }}</span>
-      </a>
-    </dd>
-  </div>
-
-  {% if data['incident-location'] === 'Somewhere else' %}
-  <div class="govuk-check-your-answers__contents">
-    <dt class="govuk-check-your-answers__question">
-      {{ incidentLocationOther }}
-    </dt>
-    <dd class="govuk-check-your-answers__answer">
-      {{ data['somewhere-else'] }}
-    </dd>
-    <dd class="govuk-check-your-answers__change">
-      <a href="incident-location">
-        Change<span class="visually-hidden"> {{ incidentLocationOther }}</span>
       </a>
     </dd>
   </div>
