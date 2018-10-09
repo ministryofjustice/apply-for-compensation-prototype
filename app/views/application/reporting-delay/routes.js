@@ -1,3 +1,4 @@
+const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 const dateHelper = require('../../../helpers/date');
 module.exports = function (router, content) {
   // START__####################################################################################################
@@ -24,7 +25,7 @@ module.exports = function (router, content) {
     }
    res.redirect('/application/incident-location')
   })
-  
+
   // Pass the question in to the page
   router.get('/application/reporting-delay/', function (req, res) {
     res.render('application/reporting-delay/index', content)
