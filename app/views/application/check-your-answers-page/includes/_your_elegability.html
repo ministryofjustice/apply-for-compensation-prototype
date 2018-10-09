@@ -1,0 +1,125 @@
+<!-- ** Your eligibility ************************************************************************************************************************ -->
+<h2 class="govuk-heading-l">
+  Your eligibility
+</h2>
+
+<dl class="govuk-check-your-answers govuk-check-your-answers--long">
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ britishCitizenQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['britishCitizen'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="british-citizen">
+      Change<span class="visually-hidden">British citizen </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ over18Question }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['over18'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="over-18">
+      Change<span class="visually-hidden">{{ over18Question }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ whoIsMakingTheApplicationQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['direct-applicant'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="who-is-making-the-application">
+      Change<span class="visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ sexualAbuseQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['sexualAssault'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="sexual-assault-application">
+      Change<span class="visually-hidden">{{ sexualAbuseQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ after1979Question }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['sexualAssault'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="after-1979">
+      Change<span class="visually-hidden">{{ after1979Question }} </span>
+    </a>
+  </dd>
+</div>
+
+{% if data['sameFamily'] === 'no' %}
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ sameFamilyQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['sameFamily'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="same-family">
+      Change<span class="visually-hidden">{{ sameFamilyQuestion }} </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ criminalConvictionsQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['criminalConvictions'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="criminal-convictions">
+      Change<span class="visually-hidden">{{ criminalConvictionsQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+{% if data['criminalConvictions'] === 'yes' %}
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ tellCriminalConvictionsQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['criminalConvictions'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="criminal-convictions">
+      Change<span class="visually-hidden">{{ tellCriminalConvictionsQuestion }} </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+</dl>
+<!-- ** /Your eligibility ************************************************************************************************************************ -->
