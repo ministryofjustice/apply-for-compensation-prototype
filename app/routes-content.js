@@ -42,9 +42,6 @@ module.exports = {
     // Crime reporting date
     crimeReportedDateQuestion: 'When was the crime reported to police?',
     crimeReportedDateHint: 'For example, 31 3 2018. You can enter an approximate date',
-    // Criminal convictions
-    criminalConvictionsQuestion: 'Have you ever been convicted of a crime?',
-    criminalConvictionsHint: 'You do not need to declare convictions that are spent',
     // Date of birth
     dateOfBirthQuestion: "Enter your date of birth",
     errorPastMessage: "Your date of birth must be in the past",
@@ -118,8 +115,6 @@ module.exports = {
     itemTwoValue: 'Over a period of time',
     errorMessageTitle: 'There is a problem',
     errorMessageContent: 'Select Once or Over a period of time',
-    // Criminal convictions
-    tellCriminalConvictionsQuestion: 'Tell us about your convictions',
     // What is relationship
     whatIsRelationshipQuestion: "What type of contact do you have with them?",
     // Who is making the application
