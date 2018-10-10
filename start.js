@@ -15,11 +15,11 @@ if (usageDataConfig.collectUsageData === undefined) {
   // No recorded answer, so ask for permission
   let promptPromise = usageData.askForUsageDataPermission()
   promptPromise.then(function (answer) {
-    if (answer === 'yes') {
+    if (answer === 'Yes') {
       usageDataConfig.collectUsageData = true
       usageData.setUsageDataConfig(usageDataConfig)
       usageData.startTracking(usageDataConfig)
-    } else if (answer === 'no') {
+    } else if (answer === 'No') {
       usageDataConfig.collectUsageData = false
       usageData.setUsageDataConfig(usageDataConfig)
     } else {

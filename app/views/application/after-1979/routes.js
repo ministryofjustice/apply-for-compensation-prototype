@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var after1979 = req.session.data['after1979']
 
-    if (after1979 === 'no') {
+    if (after1979 === 'No') {
       // Redirect to the relevant page
       res.redirect('/application/same-family')
     } else {

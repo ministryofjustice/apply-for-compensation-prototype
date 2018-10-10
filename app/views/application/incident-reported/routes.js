@@ -5,7 +5,7 @@ module.exports = function (router, content) {
   router.post('/application/incident-reported', function (req, res) {
     // Get the answer from the query string
    var crimeReported = req.session.data['crimeReported']
-    if (crimeReported === 'no') {
+    if (crimeReported === 'No') {
        return res.redirect('/application/reporting-crime-not-reported')
     } else {
       res.redirect('/application/crime-reported-date')

@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var previousApplications = req.session.data['previous-applications']
 
-    if (previousApplications === 'yes')  {
+    if (previousApplications === 'Yes')  {
       // Redirect to the relevant page
       res.redirect('/application/previous-not-eligible')
     } else {

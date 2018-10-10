@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var knowOffender = req.session.data['know-offender']
 
-    if (knowOffender === 'no')  {
+    if (knowOffender === 'No')  {
       // Redirect to the relevant page
       res.redirect('/application/name')
     } else {

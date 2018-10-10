@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var sexualAssault = req.session.data['sexualAssault']
 
-    if (sexualAssault === 'no') {
+    if (sexualAssault === 'No') {
       // Redirect to the relevant page
       res.redirect('/application/transition')
     } else {

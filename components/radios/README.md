@@ -31,14 +31,14 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       <div class="govuk-radios">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <input class="govuk-radios__input" id="example-1" name="example" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="example-1">
             Yes
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-2" name="example" type="radio" value="no" checked>
+          <input class="govuk-radios__input" id="example-2" name="example" type="radio" value="No" checked>
           <label class="govuk-label govuk-radios__label" for="example-2">
             No
           </label>
@@ -66,11 +66,11 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       },
       "items": [
         {
-          "value": "yes",
+          "value": "Yes",
           "text": "Yes"
         },
         {
-          "value": "no",
+          "value": "No",
           "text": "No",
           "checked": true
         }
@@ -98,14 +98,14 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       <div class="govuk-radios govuk-radios--inline">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <input class="govuk-radios__input" id="example-1" name="example" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="example-1">
             Yes
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-2" name="example" type="radio" value="no" checked>
+          <input class="govuk-radios__input" id="example-2" name="example" type="radio" value="No" checked>
           <label class="govuk-label govuk-radios__label" for="example-2">
             No
           </label>
@@ -134,11 +134,11 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       },
       "items": [
         {
-          "value": "yes",
+          "value": "Yes",
           "text": "Yes"
         },
         {
-          "value": "no",
+          "value": "No",
           "text": "No",
           "checked": true
         }
@@ -166,14 +166,14 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       <div class="govuk-radios">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-disabled-1" name="example-disabled" type="radio" value="yes" disabled>
+          <input class="govuk-radios__input" id="example-disabled-1" name="example-disabled" type="radio" value="Yes" disabled>
           <label class="govuk-label govuk-radios__label" for="example-disabled-1">
             Yes
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-disabled-2" name="example-disabled" type="radio" value="no" disabled>
+          <input class="govuk-radios__input" id="example-disabled-2" name="example-disabled" type="radio" value="No" disabled>
           <label class="govuk-label govuk-radios__label" for="example-disabled-2">
             No
           </label>
@@ -201,12 +201,12 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       },
       "items": [
         {
-          "value": "yes",
+          "value": "Yes",
           "text": "Yes",
           "disabled": true
         },
         {
-          "value": "no",
+          "value": "No",
           "text": "No",
           "disabled": true
         }
@@ -361,14 +361,14 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       <div class="govuk-radios">
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+          <input class="govuk-radios__input" id="example-1" name="example" type="radio" value="Yes">
           <label class="govuk-label govuk-radios__label" for="example-1">
             Yes
           </label>
         </div>
 
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="example-2" name="example" type="radio" value="no" checked>
+          <input class="govuk-radios__input" id="example-2" name="example" type="radio" value="No" checked>
           <label class="govuk-label govuk-radios__label" for="example-2">
             No
           </label>
@@ -404,11 +404,11 @@ Find out when to use the Radios component in your service in the [GOV.UK Design 
       },
       "items": [
         {
-          "value": "yes",
+          "value": "Yes",
           "text": "Yes"
         },
         {
-          "value": "no",
+          "value": "No",
           "text": "No",
           "checked": true
         }
