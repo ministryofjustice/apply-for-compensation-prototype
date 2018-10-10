@@ -7,7 +7,7 @@ router.post('/application/british-citizen', function (req, res) {
   // Get the answer from the query string
   var britishCitizen = req.session.data['britishCitizen']
 
-  if (britishCitizen === 'no') {
+  if (britishCitizen === 'No') {
     // Redirect to the relevant page
     res.redirect('/application/transition')
   } else {

@@ -1,0 +1,68 @@
+
+<h2 class="govuk-heading-l">
+  Other compensation
+</h2>
+
+<dl class="govuk-check-your-answers govuk-check-your-answers--long">
+
+
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ otherCompensationQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['otherCompensation'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="compensation">
+      Change<span class="visually-hidden"> compensation</span>
+    </a>
+  </dd>
+</div>
+
+{% if data['otherCompensation'] === 'Yes' %}
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ whoCompensationQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['who-claim-from'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="compensation-who">
+      Change<span class="visually-hidden">{{ whoCompensationQuestion }}</span>
+    </a>
+  </dd>
+</div>
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ howMuchCompensationQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['how-much-compensation'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="compensation-amount">
+      Change<span class="visually-hidden"> compensation amount</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['otherCompensation'] === 'No' %}
+<div class="govuk-check-your-answers__contents">
+  <dt class="govuk-check-your-answers__question">
+    {{ compensationWhyNotQuestion }}
+  </dt>
+  <dd class="govuk-check-your-answers__answer">
+    {{ data['why-not-claim'] }}
+  </dd>
+  <dd class="govuk-check-your-answers__change">
+    <a href="compensation-why-not">
+      Change<span class="visually-hidden"> reason you didn't apply for compensation</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+</dl>

@@ -12,5 +12,10 @@ module.exports = function (router, content) {
    router.get('/application/check-your-answers-page/', function (req, res) {
      res.render('application/check-your-answers-page/index', content)
    })
+
+   // Pass the question in to the page
+   router.get('/application/check-your-answers-page/', function (req, res) {
+     res.render('application/check-your-answers-page/cya', content)
+   })
   // END__######################################################################################################
 }

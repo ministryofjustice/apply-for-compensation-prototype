@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var yourChoice = req.session.data['yourChoice']
 
-    if (yourChoice === 'option2') {
+    if (yourChoice === 'Police evidence only') {
       // Redirect to the relevant page
       res.redirect('/application/declaration')
     } else {

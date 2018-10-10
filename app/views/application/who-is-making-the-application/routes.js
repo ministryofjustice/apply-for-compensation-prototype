@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var directApplicant = req.session.data['direct-applicant']
 
-    if (directApplicant === 'no') {
+    if (directApplicant === 'No') {
       // Redirect to the relevant page
       res.redirect('/application/transition')
     } else {
