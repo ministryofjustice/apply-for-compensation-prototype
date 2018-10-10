@@ -24,13 +24,13 @@
   </dd>
 </div>
 
-{% if data['other-names'] %}
+{% if data['haveOtherName'] === 'yes' %}
 <div class="govuk-check-your-answers__contents">
   <dt class="govuk-check-your-answers__question">
     Other names
   </dt>
   <dd class="govuk-check-your-answers__answer">
-    {{ data['other-names'] }}
+    {{ data['nameOther'] }}
   </dd>
   <dd class="govuk-check-your-answers__change">
     <a href="name">
