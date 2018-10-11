@@ -109,8 +109,8 @@ module.exports = {
     policeOfficerName: 'Name',
     policeOfficerIdNumber: 'ID number (collar number)',
     // Police force
-    policeForceQuestion: 'Was the crime reported to Police Scotland Tayside?',
-    policeForceManualQuestion: 'Enter the name of the police force the crime was reported to',
+    policeForceQuestion: 'Was the crime reported to Police Scotland Greater Glasgow?',
+    policeForceManualQuestion: 'Enter the police force that the crime was reported to',
     //policeForceHint: "Enter the police force name, for example, Humberside police.",
     // Same family
     sameFamilyQuestion: 'Were you and your attacker living together as family at the time?',
