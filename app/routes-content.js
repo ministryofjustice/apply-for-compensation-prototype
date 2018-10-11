@@ -74,7 +74,7 @@ module.exports = {
     // Incident reported
     incidentReportedQuestion: 'Was the crime reported to the police?',
     //Location town
-    locationTownQuestion: 'Enter more details about the place where the crime happened',
+    locationTownQuestion: 'Enter more details about where the crime happened',
     //locationTownHint: 'If it happened outside a town or city enter the name of the nearest one.',
     // Name
     nameQuestion: 'Enter your name',
