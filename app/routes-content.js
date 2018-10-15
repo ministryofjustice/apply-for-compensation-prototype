@@ -77,7 +77,7 @@ module.exports = {
     reportingDelayQuestion: "Why was the crime not reported sooner?",
     sameFamilyQuestion: 'Were you and your attacker living together as family at the time?',
     selectAddressLable: 'Select an address',
-    sexualAbuseQuestion: 'Are you a victim of sexual violence or abuse?',
+    sexualAbuseQuestion: 'Were you a victim of sexual violence or abuse?',
     singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
     townOrCityLabel: 'Town or city',
     warningText: "You could be prosecuted or get less compensation if you give false or misleading information.",
