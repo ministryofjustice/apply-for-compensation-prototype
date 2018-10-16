@@ -21,37 +21,23 @@ Blank page
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Your choices
+          Page title required
         </h1>
 
-        <p class="govuk-body-l">Your choice can affect how much information and evidence we need to assess your application.</p>
+        <p class="govuk-body-l">Any award we make would contain an element that acknowledges the mental trauma you suffered.</p>
 
-        <h2 class="govuk-heading-m">
-          Full assessment
-        </h2>
-  <p>
-  </p>
-    <p class="govuk-body">We will get evidence from the police.</p>
-    <p class="govuk-body">Based on the facts of your case, you may need to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>get medical evidence of your physical injuries</li>
-        <li>have your mental injuries assessed by an expert</li>
-        <li>give us evidence of any <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a> or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a></li>
-      </ul>
-      <p>We usually take around 11 months to make a decision.</p>
+        <p class="govuk-body">If you are applying for compensation for a sexual assault or abuse only, we can usually make our decision based on the police report alone and within a short period of time.</p>
 
-    <h2 class="govuk-heading-m">Police evidence only</h2>
-    <p>
-    </p>
-    <p class="govuk-body">We will:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>only need to get evidence from the police</li>
-        <li>use that evidence to make a decision</li>
-        <li>not consider any other injuries, loss of earnings, expenses or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank">other consequences</a> of the crime</li>
-      </ul>
+        <!-- <p>If you are applying for compensation in respect of other mental or physical injuries, <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a>, <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a> or<a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank"> other consequences</a> suffered, we will require additional evidence from you in order to make our decision.  This usually means it will longer to make a decision.</p> -->
 
-    <p class="govuk-body">We usually take around 4 months to make a decision.</p>
-
+        <p>We will require additional evidence from you if you are applying for compensation for sexual abuse or assault and any of the following:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>other mental or physical injuries</li>
+          <li><a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a></li>
+          <li><a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a></li>
+          <li><a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank"> other consequences</a></li>
+        </ul>
+        <p>This usually means it will longer to make a decision.</p>
         <form class="form"  method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
@@ -63,19 +49,19 @@ Blank page
             currentValue: data['yourChoice'],
             "fieldset": {
               "legend": {
-                "text": 'Which do you want to choose?',
+                "text": 'What have you experienced?',
                 "isPageHeading": false,
                 "classes": 'govuk-fieldset__legend--m'
               }
             },
             "items": [
             {
-              "value": "Full assessment",
-              "text": "Full assessment"
+              "value": "Police evidence only",
+              "text": "Sexual assault or abuse only"
             },
             {
-              "value": "Police evidence only",
-              "text": "Police evidence only"
+              "value": "Full assessment",
+              "text": "Sexual assault or abuse and other injuries or losses"
             }
             ]
           }) }}
