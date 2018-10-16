@@ -59,6 +59,7 @@ module.exports = {
     offenderNameQuestion: 'Enter their name',
     offenderNameQuestionCA: 'Offenders name',
     ongoingRelationshipQuestion: "Do you have any contact with this person?",
+    ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
     otherCompensationHint: 'Other compensation can include, for example, insurance, civil damages and court compensation.',
     otherCompensationQuestion: 'Have you applied for any other compensation for this crime?',
     over18Question: 'Are you 18 or over?',
