@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var applyForReview = req.session.data['apply-for-review']
 
-    if (applyForReview  === 'yes') {
+    if (applyForReview  === 'Yes') {
       // Redirect to the relevant page
       res.redirect('/application/confirmation-of-review')
     } else {

@@ -6,7 +6,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var ongoingRelationship = req.session.data['ongoing-relationship']
 
-    if (ongoingRelationship === 'yes')  {
+    if (ongoingRelationship === 'Yes')  {
       // Redirect to the relevant page
       res.redirect('/application/what-is-relationship')
     } else {

@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var over18 = req.session.data['over18']
 
-    if (over18 === 'no') {
+    if (over18 === 'No') {
       // Redirect to the relevant page
       res.redirect('/application/transition')
     } else {
