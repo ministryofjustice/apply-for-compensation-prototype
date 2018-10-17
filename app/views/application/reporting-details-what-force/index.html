@@ -22,28 +22,35 @@ Reporting details - What force?
       <div class="govuk-grid-column-two-thirds">
         <form class="/form-handler" method="post">
 
-          {% from "input/macro.njk" import govukInput %}
+          {% from 'radios/macro.njk' import govukRadios %}
 
-          {{ govukInput({
-            "label": {
-              "text": policeForceQuestion,
-              "isPageHeading": true,
-              "classes": 'govuk-label--xl'
+          {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "policeForceQuestion",
+            "name": "policeForceQuestion",
+            currentValue: data['policeForceQuestion'],
+            "fieldset": {
+              "legend": {
+                "text": policeForceQuestion,
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
             },
-            hint: {
-              text: policeForceHint
-            },
-            "classes": 'govuk-input--width-40',
-            "id": "police-force",
-            "name": "police-force",
-            "value": data['police-force']
+            "items": [
+              {
+                "value": "yes",
+                "text": "Yes"
+              },
+              {
+                "value": "no",
+                "text": "No"
+              }
+            ]
           }) }}
-
-          {% from "button/macro.njk" import govukButton %}
 
           {{ govukButton({
             "text": "Continue"
-          }) }}
+            }) }}
 
         </form>
 
