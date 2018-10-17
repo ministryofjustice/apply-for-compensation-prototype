@@ -46,6 +46,7 @@ module.exports = {
     incidentReportedQuestion: 'Was the crime reported to the police?',
     itemOneValue: 'Once',
     itemTwoValue: 'Over a period of time',
+    locationTownQuestion: 'Enter more details about where the crime happened',
     nameErrorNoFirstName: "Enter your first name",
     nameErrorNoLastName: "Enter your last name",
     nameErrorNoTitle: "Enter your title",
