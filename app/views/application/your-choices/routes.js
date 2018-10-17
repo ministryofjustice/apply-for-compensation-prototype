@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var yourChoice = req.session.data['yourChoice']
 
-    if (yourChoice === 'Sexual assault or abuse only') {
+    if (yourChoice === 'Sexual assault or abuse') {
       // Redirect to the relevant page
       res.redirect('/application/declaration')
     } else {
