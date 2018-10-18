@@ -20,8 +20,6 @@ require('./views/application/british-citizen/routes')(router, viewContent);
 require('./views/application/over-18/routes')(router, viewContent);
 require('./views/application/who-is-making-the-application/routes')(router, viewContent);
 require('./views/application/sexual-assault-application/routes')(router, viewContent);
-require('./views/application/after-1979/routes')(router, viewContent);
-require('./views/application/same-family/routes')(router, viewContent);
 require('./views/application/you-have-a-choice/routes')(router, viewContent);
 require('./views/application/your-choices/routes')(router, viewContent);
 require('./views/application/declaration/routes')(router, viewContent);
