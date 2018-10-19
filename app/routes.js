@@ -31,7 +31,6 @@ require('./views/application/reporting-crime-not-reported/routes')(router, viewC
 require('./views/application/crime-reported-date/routes')(router, viewContent);
 require('./views/application/reporting-details-what-force/routes')(router, viewContent);
 require('./views/application/reporting-details-what-force-manual/routes')(router, viewContent);
-require('./views/application/reporting-details-police-officer/routes')(router, viewContent);
 require('./views/application/crime-reference/routes')(router, viewContent);
 require('./views/application/single-or-multiple-incidents/routes')(router, viewContent);
 require('./views/application/period-of-abuse-start/routes')(router, viewContent);
