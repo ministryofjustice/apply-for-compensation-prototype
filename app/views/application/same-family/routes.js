@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (sameFamily === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/you-have-a-choice')
+      res.redirect('/application/your-choices')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/transition')
