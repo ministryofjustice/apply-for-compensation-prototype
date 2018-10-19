@@ -21,32 +21,34 @@ Blank page
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          What have you suffered?
+          What happened to you?
         </h1>
 
 
-        <!-- <p class="govuk-body-l">Any award would contain an element that acknowledges the mental trauma you have suffered.</p> -->
+        <p class="govuk-body-l">We want to make applying for compensation as easy as possible for you. We pay compensation for sexual assault or abuse to recognise the distress and mental trauma you have suffered.</p>
 
         <h2 class="govuk-heading-m">
           Sexual assault or abuse
         </h2>
 
-        <p class="govuk-body">When you apply because of sexual assault or abuse, we can normally make a quicker decision based on information we get from the police.</p>
-        <p class="govuk-body">If we pay you compensation, some of that money acknowledges the mental trauma you have suffered.</p>
-        <!-- <p>If you are applying for compensation in respect of other mental or physical injuries, <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings" target="_blank">loss of earnings</a>, <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">other expenses</a> or<a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#what-happens-if-you-have-more-than-one-injury" target="_blank"> other consequences</a> suffered, we will require additional evidence from you in order to make our decision.  This usually means it will longer to make a decision.</p> -->
-        <h2 class="govuk-heading-m">
-          Sexual assault or abuse and other injuries or losses
-        </h2>
-
-        <p>We will need more evidence from you if you apply for compensation for:</p>
+        <p>We will:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>other mental or physical injuries</li>
-          <li>loss of earnings</li>
-          <li>other expenses</li>
-          <li>pregnancy, loss of foetus or a sexually transmitted disease</li>
+          <li>ask the police to send us a report of the crime</li>
+          <li>not normally ask for your medical records</li>
+          <li>usually give you a decision within 3 months </li>
         </ul>
 
-        <p>It will normally take longer to make a decision in these cases.</p>
+        <h2 class="govuk-heading-m">
+          Sexual assault or abuse and additional injuries or losses
+        </h2>
+
+        <p>As well as a police report, we:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>will need information about your additional injuries or losses</li>
+          <li>will normally ask for your medical records</li>
+          <li>may arrange for an expert to diagnose your medical condition</li>
+          <li>will usually give you a decision within 12 months</li>
+        </ul>
 
         <form class="form"  method="post">
 
@@ -59,19 +61,19 @@ Blank page
             currentValue: data['yourChoice'],
             "fieldset": {
               "legend": {
-                "text": 'What have you suffered?',
+                "text": 'What happened to you?',
                 "isPageHeading": false,
                 "classes": 'govuk-fieldset__legend--m'
               }
             },
             "items": [
             {
-              "value": "Sexual assault or abuse",
-              "text": "Sexual assault or abuse"
+              "value": "Sexual assault or abuse only",
+              "text": "Sexual assault or abuse only"
             },
             {
-              "value": "Sexual assault or abuse and other injuries or losses",
-              "text": "Sexual assault or abuse and other injuries or losses"
+              "value": "Sexual assault or abuse and additional injuries or losses",
+              "text": "Sexual assault or abuse and additional injuries or losses"
             }
             ]
           }) }}
