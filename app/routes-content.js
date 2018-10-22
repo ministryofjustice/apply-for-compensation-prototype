@@ -63,6 +63,7 @@
 	    otherCompensationHint: 'Other compensation can include, for example, insurance, civil damages and court compensation.',
 	    otherCompensationQuestion: 'Have you applied for any other compensation for this crime?',
 	    over18Question: 'Are you 18 or over?',
+			over18errorGuidance: 'Select yes if you are over 18',
 	    periodOfAbuseEndQuestion: 'When did it stop?',
 	    periodOfAbuseHint: 'For example, 03 2018. You can enter an approximate date',
 	    periodOfAbuseStartQuestion: 'When did it start?',

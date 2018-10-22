@@ -23,5 +23,9 @@ module.exports = function (router, content) {
   router.get('/application/over-18/', function (req, res) {
     res.render('application/over-18/index', content)
   })
+  //error page
+  router.get('/application/over-18/error', function (req, res) {
+    res.render('application/over-18/error', content)
+  })
   // END__######################################################################################################
 }
