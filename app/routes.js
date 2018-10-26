@@ -38,6 +38,7 @@ require('./views/application/incident-location/routes')(router, viewContent);
 require('./views/application/location-town/routes')(router, viewContent);
 require('./views/application/do-you-know-offender/routes')(router, viewContent);
 require('./views/application/offender-name/routes')(router, viewContent);
+require('./views/application/same-family/routes')(router, viewContent);
 require('./views/application/ongoing-relationship/routes')(router, viewContent);
 require('./views/application/what-is-relationship/routes')(router, viewContent);
 require('./views/application/name/routes')(router, viewContent);
