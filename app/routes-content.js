@@ -73,6 +73,8 @@
       policeForceManualQuestion: 'What force was the crime reported to?',
 	    previousApplicationsQuestion: 'Have you applied for compensation from us for this crime before?',
 	    reportingDelayQuestion: "Why was the crime not reported sooner?",
+			sameFamilyQuestion: 'Were you and the offender living together as family at the time?',
+			sameFamilyError: 'Select yes if you and the offender were living together as family when the crime happened',
 	    selectAddressLable: 'Select an address',
 	    sexualAbuseQuestion: 'Were you a victim of sexual assault or abuse?',
 			sexualAbuseError: 'Select yes if you were a victim of sexual assault or abuse',
