@@ -20,6 +20,9 @@ module.exports = function (router, content) {
   router.get('/application/who-is-making-the-application/', function (req, res) {
     res.render('application/who-is-making-the-application/index', content)
   })
-
+  // Error state
+  router.get('/application/who-is-making-the-application/error', function (req, res) {
+    res.render('application/who-is-making-the-application/error', content)
+  })
   // END__######################################################################################################
 }

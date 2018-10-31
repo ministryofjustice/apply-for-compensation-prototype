@@ -80,6 +80,7 @@
 	    whatIsRelationshipQuestion: "What type of contact do you have with them?",
 	    whoCompensationQuestion: 'Who else have you applied to for compensation?',
 	    whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
+			whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
 	    whyDelayQuestion: 'Why did you not apply to us for compensation sooner?',
 	};
 	// // END__######################################################################################################
