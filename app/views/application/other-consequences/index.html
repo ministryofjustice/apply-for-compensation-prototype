@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+ {% block page_title %}
+  Question page
+{% endblock %}
+ {% block content %}
+ <div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+   <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+   <main role="main" class="govuk-main-wrapper">
+     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+         <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+         <form class="form" method="post">
+           {% from "checkboxes/macro.njk" import govukCheckboxes %}
+           {{ govukCheckboxes({
+            idPrefix: "otherCons",
+            name: "otherCons",
+            currentValue: data['otherCons'],
+            fieldset: {
+              legend: {
+                text: otherConsequencesQuestion,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: otherConsequencesHint
+            },
+            items: [
+              {
+                value: "pregnancy",
+                text: otherConsequencesItemPregnancy
+              },
+              {
+                value: "lossofFoetus",
+                text: otherConsequencesItemLossOfFoetus
+              },
+              {
+                value: "STD",
+                text: otherConsequencesItemSexuallyTransmittedDisease
+              },
+              {
+                value: "none",
+                text: otherConsequencesItemNoneOfTheAbove
+              }
+            ]
+          }) }}
+           {{ govukButton({
+            "text": "Continue"
+            }) }}
+         </form>
+       </div>
+    </div>
+  </main>
+</div>
+ {% endblock %}

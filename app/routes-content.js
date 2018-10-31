@@ -86,6 +86,16 @@
 	    whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
 			whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
 	    whyDelayQuestion: 'Why did you not apply to us for compensation sooner?',
+			TwentyeightWeeksQuestion: 'Were you unable to work for at least 28 weeks as a result of the crime?',
+			physicalInjuriesQuestion: 'Did you suffer any physical injuries?',
+			physicalInjuriesHint: 'We will normally ask to see evidence from your doctor of any injuries.',
+			mentalInjuriesQuestion: 'Did you suffer serious mental trauma as a result of the crime?',
+			otherConsequencesQuestion: 'Did any of the following happen to you as a result of the crime?',
+			otherConsequencesHint: "Select all that apply.",
+			otherConsequencesItemPregnancy: "Pregnancy",
+			otherConsequencesItemLossOfFoetus: "Loss of foetus",
+			otherConsequencesItemSexuallyTransmittedDisease: "Sexually transmitted disease",
+			otherConsequencesItemNoneOfTheAbove: "None of the above",
 	};
 	// // END__######################################################################################################
 	// }
