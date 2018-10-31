@@ -14,7 +14,7 @@ module.exports = function (router, content) {
         return res.redirect('/application/check-your-answers-page')
       }
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/declaration')
+      res.redirect('/application/OCJ-result')
     }
     })
 

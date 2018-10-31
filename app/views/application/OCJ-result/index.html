@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Blank page
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          {{ OCJresultQuestion }}
+        </h1>
+
+
+        <p class="govuk-body">Based on your answers we will normally process your application within 12 months.  We will also need the following evidence from you:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a diagnosis of your serious mental trauma</li>
+          <li>medical evidence of your injuries</li>
+          <li>evidence of your incapacity for work</li>
+        </ul>
+
+        <p class="govuk-body">Alternatively, we can process your application within 4 months without any evidence from you.  Our decision would be based only on the information that the police have about the crime, and would not consider:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>any serious mental trauma</li>
+          <li>your physical injuries</li>
+          <li>any other </li>
+        </ul>
+
+
+        <form class="form"  method="post">
+
+          {% from 'radios/macro.njk' import govukRadios %}
+
+          {{ govukRadios({
+            "classes": "govuk-radios",
+            "idPrefix": "OCJresult",
+            "name": "OCJresult",
+            currentValue: data['OCJresult'],
+            "fieldset": {
+              "legend": {
+                "text": OCJresultQuestion,
+                "isPageHeading": false,
+                "classes": 'govuk-fieldset__legend--m'
+              }
+            },
+            "items": [
+            {
+              "value": "I want you to consider everything",
+              "text": "I want you to consider everything"
+            },
+            {
+              "value": "I want you to consider Police evidence only",
+              "text": "I want you to consider Police evidence only"
+            }
+            ]
+          }) }}
+
+          {{ govukButton({
+            "text": "Continue"
+          }) }}
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+{% endblock %}

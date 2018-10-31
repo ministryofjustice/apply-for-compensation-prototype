@@ -96,6 +96,7 @@
 			otherConsequencesItemLossOfFoetus: "Loss of foetus",
 			otherConsequencesItemSexuallyTransmittedDisease: "Sexually transmitted disease",
 			otherConsequencesItemNoneOfTheAbove: "None of the above",
+			OCJresultQuestion: "How do you want to proceed?",
 	};
 	// // END__######################################################################################################
 	// }

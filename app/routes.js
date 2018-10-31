@@ -21,6 +21,7 @@ require('./views/application/over-18/routes')(router, viewContent);
 require('./views/application/who-is-making-the-application/routes')(router, viewContent);
 require('./views/application/sexual-assault-application/routes')(router, viewContent);
 require('./views/application/OCJ-interstitial/routes')(router, viewContent);
+require('./views/application/OCJ-result/routes')(router, viewContent);
 require('./views/application/28-weeks/routes')(router, viewContent);
 require('./views/application/physical-injuries/routes')(router, viewContent);
 require('./views/application/mental-injuries/routes')(router, viewContent);
