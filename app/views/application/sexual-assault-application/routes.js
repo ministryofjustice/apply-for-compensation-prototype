@@ -20,5 +20,9 @@ module.exports = function (router, content) {
   router.get('/application/sexual-assault-application/', function (req, res) {
     res.render('application/sexual-assault-application/index', content)
   })
+  // Error state
+  router.get('/application/sexual-assault-application/error', function (req, res) {
+    res.render('application/sexual-assault-application/error', content)
+  })
   // END__######################################################################################################
 }
