@@ -97,6 +97,7 @@
 			otherConsequencesItemSexuallyTransmittedDisease: "Sexually transmitted disease",
 			otherConsequencesItemNoneOfTheAbove: "None of the above",
 			OCJresultQuestion: "How do you want to proceed?",
+			OCJinterstitialQuestion: "What happened to you?",
 	};
 	// // END__######################################################################################################
 	// }

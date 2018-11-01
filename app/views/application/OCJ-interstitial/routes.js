@@ -9,5 +9,10 @@ module.exports = function (router, content) {
     }
     res.redirect('/application/28-weeks')
   })
+
+  // Pass the question in to the page
+  router.get('/application/OCJ-interstitial/', function (req, res) {
+    res.render('application/OCJ-interstitial/index', content)
+  })
   // END__######################################################################################################
 }

@@ -21,13 +21,20 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          OCJ interstitial
+          {{ OCJinterstitialQuestion }}
         </h1>
-        <p class="govuk-body-l">On the next few pages we will ask questions about what happened to you.</p>
 
-        <p class="govuk-body">You will be asked about your physical injuries, mental trauma, if you were unable to work.</p>
-        <p class="govuk-body">Awards for victims of sexual assault recognise the distress and mental trauma you have suffered.</p>
-        <p class="govuk-body">At the end of the section we will ask you how you want to proceed.</p>
+        <p class="govuk-body-l">We pay compensation for sexual assault or abuse to recognise the distress and mental trauma you have suffered.</p>
+
+        <p class="govuk-body">On the next few pages we will ask how the crime affected your:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ability to work</li>
+          <li>physical health</li>
+          <li>mental health</li>
+        </ul>
+
+        <p class="govuk-body">We will then ask you how you want to proceed.</p>
 
         <form class="form"  method="post">
         {{ govukButton({
@@ -36,9 +43,8 @@
         </form>
 
         <h2 class="govuk-heading-m">
-          If you need help or support
+          If you need help
         </h2>
-        <p class="govuk-body">You can get information about organisations that offer help and support from the <a class="govuk-body" href="https://www.victimsinformationservice.org.uk/" target="_blank">Victims' Information Service</a>.</p>
         <p class="govuk-body">You can contact us for help with your application by calling 0300 003 3601 and selecting option 8.</p>
         <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
 

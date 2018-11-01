@@ -56,6 +56,13 @@
            {{ govukButton({
             "text": "Continue"
             }) }}
+
+            {% from "details/macro.njk" import govukDetails %}
+
+            {{ govukDetails({
+              summaryText: "Why do we ask this?",
+              text: "Some text to explain other consequences."
+            }) }}
          </form>
        </div>
     </div>

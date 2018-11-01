@@ -54,6 +54,12 @@
             "text": "Continue"
             }) }}
 
+            {% from "details/macro.njk" import govukDetails %}
+
+            {{ govukDetails({
+              summaryText: "Why do we ask this?",
+              text: "Some text to explain the conditions attached to loss of earnings and special expenses claims."
+            }) }}
         </form>
 
       </div>
