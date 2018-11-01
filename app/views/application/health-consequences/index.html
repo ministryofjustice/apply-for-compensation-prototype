@@ -32,18 +32,18 @@
 
           {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "physInjury",
-            "name": "physInjury",
-            currentValue: data['physInjury'],
+            "idPrefix": "healthConsequences",
+            "name": "healthConsequences",
+            currentValue: data['healthConsequences'],
             "fieldset": {
               "legend": {
-                "text": physicalInjuriesQuestion,
+                "text": healthConsequencesQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-            text: physicalInjuriesHint
+            text: healthConsequencesHint
             },
             "items": [
               {
@@ -65,7 +65,7 @@
 
             {{ govukDetails({
               summaryText: "Why do we ask this?",
-              text: "If you want to apply for compensation for physical injuries caused by the crime, you will need to give us medical evidence from your doctor."
+              text: "Guidance about the other consequences"
             }) }}
         </form>
 

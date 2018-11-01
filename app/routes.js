@@ -25,6 +25,7 @@ require('./views/application/OCJ-result/routes')(router, viewContent);
 require('./views/application/28-weeks/routes')(router, viewContent);
 require('./views/application/physical-injuries/routes')(router, viewContent);
 require('./views/application/mental-injuries/routes')(router, viewContent);
+require('./views/application/health-consequences/routes')(router, viewContent);
 require('./views/application/other-consequences/routes')(router, viewContent);
 require('./views/application/declaration/routes')(router, viewContent);
 require('./views/application/bridge/routes')(router, viewContent);
