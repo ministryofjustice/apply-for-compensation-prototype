@@ -25,15 +25,14 @@
             {{ mentalInjuriesQuestion }}
           </h1>
 
-          <p class="govuk-body">We can pay compensation for mental trauma that had a significant negative effect on your day to day life such as:</p>
+          <p class="govuk-body">Any compensation we pay for sexual assault and abuse already contains an element that recognises your mental trauma and distress.  If you want to apply for compensation for additional mental trauma we will need more evidence.</p>
+          <p class="govuk-body">We can pay compensation for additional mental trauma that had a significant negative effect on your day to day life such as:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>performance at work or school</li>
             <li>personal and social relationships</li>
             <li>sexual relationships</li>
           </ul>
-          <p class="govuk-body">It does not include temporary mental anxiety.</p>
-
-
+  
           <form class="form"  method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
@@ -70,7 +69,7 @@
 
             {{ govukDetails({
               summaryText: "Why do we ask this?",
-              text: "Any compensation we pay for sexual assault and abuse already contains an element that recognises the mental trauma caused by the crime.  If you want to apply for compensation for a more serious mental trauama, we will need a diagnosis from a clinical psychologist."
+              text: "If you want to apply for compensation for additional mental trauma we will need a diagnosis from a clinical psychologist, and it will normally take us longer to make a decision."
             }) }}
         </form>
 

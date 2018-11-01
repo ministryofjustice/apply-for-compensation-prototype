@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var OCJresult = req.session.data['OCJresult']
 
-    if (OCJresult === 'No') {
+    if (OCJresult === 'OCJ') {
       // Redirect to the relevant page
       res.redirect('/application/declaration')
     } else {
