@@ -86,7 +86,7 @@
 	    whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
 			whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
 	    whyDelayQuestion: 'Why did you not apply to us for compensation sooner?',
-			OCJresultQuestion: "Do you have any other injuries or losses?",
+			OCJresultQuestion: "Do you have any additional injuries or losses?",
 	};
 	// // END__######################################################################################################
 	// }
