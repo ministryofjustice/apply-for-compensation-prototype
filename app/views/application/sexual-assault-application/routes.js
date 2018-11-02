@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       res.redirect('/application/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/OCJ-interstitial')
+      res.redirect('/application/OCJ-result')
     }
   })
 

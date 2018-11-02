@@ -21,32 +21,42 @@ Blank page
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Your results
+        {{ OCJresultQuestion }}
         </h1>
 
 
-        <p class="govuk-body">Based on your answers, we will normally process your application within 11 months. We will need you to give us the following:</p>
+        <p class="govuk-body">Any compensation we may pay for sexual assault or abuse contains an element that recognises your distress and trauma.</p>
+        <p class="govuk-body">By other injuries and losses we mean:</p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <li>evidence of your incapacity for work</li>
-          <li>medical evidence of your physical injuries</li>
-          <li>a diagnosis of your mental trauma from a clinical psychologist</li>
-          <li>medical evidence of the other health consequences</li>
+          <li>additional mental trauma that has had a substantial adverse effect on your ability to carry out routine activities for at least 6 weeks</li>
+          <li>a physical injury</li>
+          <li>a pregnancy, loss of foetus or sexually transmitted disease</li>
+          <li>loss of earnings where you have been unable to work for 28 weeks or more</li>
         </ul>
-
-        <p class="govuk-body">We can process your application within 4 months based only on the information that the police have about the crime. You would not have to give us any evidence, but we would not consider or compensate you for:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>any loss of earnings or expenses</li>
-          <li>your physical injuries</li>
-          <li>any additional mental trauma</li>
-          <li>any other health consequences</li>
-        </ul>
-
 
         <form class="form"  method="post">
 
           {% from 'radios/macro.njk' import govukRadios %}
+          {% from "inset-text/macro.njk" import govukInsetText %}
+
+          {% set yesHtml %}
+          {{ govukInsetText({
+            id: "Yes",
+            name: "Yes",
+            value: data['Yes'],
+            text: "We will need you to provide your medical records.  You may need to be assessed by a clinical psychologist to diagnose your additional mental trauma.We will make a decision within 11 months."
+          }) }}
+          {% endset -%}
+
+          {% set noHtml %}
+          {{ govukInsetText({
+            id: "No",
+            name: "No",
+            value: data['No'],
+            text: "We will make a decision in 4 months. We will base our decision on the information we get from the police.  We will not pay compensation for any other injuries or losses."
+          }) }}
+          {% endset -%}
 
           {{ govukRadios({
             "classes": "govuk-radios",
@@ -62,12 +72,18 @@ Blank page
             },
             "items": [
             {
-              "value": "OAS",
-              "text": "I want to continue based on my answers"
+              "value": "Yes",
+              "text": "Yes",
+              conditional: {
+                html: yesHtml
+              }
             },
             {
-              "value": "OCJ",
-              "text": "I want you to assess my application using the Police evidence only"
+              "value": "No",
+              "text": "No",
+              conditional: {
+                html: noHtml
+              }
             }
             ]
           }) }}
