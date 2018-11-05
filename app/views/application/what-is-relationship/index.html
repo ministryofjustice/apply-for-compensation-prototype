@@ -28,11 +28,31 @@
           {{ govukTextarea({
             name: "relationship-text",
             id: "relationship-text",
+            currentValue: data['relationship-text'],
             label: {
               text: whatIsRelationshipQuestion,
               isPageHeading: true,
               classes: "govuk-label--xl"
             }
+          }) }}
+
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+          {{ govukCheckboxes({
+            idPrefix: "noContactWithOffender",
+            name: "noContactWithOffender",
+            currentValue: data['noContactWithOffender'],
+            fieldset: {
+              legend: {
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "I haven't had any contact with the offender",
+                text: "I haven't had any contact with the offender"
+              }
+            ]
           }) }}
 
           {% from "button/macro.njk" import govukButton %}

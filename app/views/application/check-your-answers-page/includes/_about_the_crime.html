@@ -158,34 +158,26 @@
   </div>
   {% endif %}
 
-  {% if data['ongoing-relationship'] === 'Yes' %}
-  <div class="govuk-check-your-answers__contents">
-    <dt class="govuk-check-your-answers__question">
-      {{ ongoingRelationshipQuestion }}
-    </dt>
-    <dd class="govuk-check-your-answers__answer">
-      {{ data['ongoing-relationship'] }}
-    </dd>
-    <dd class="govuk-check-your-answers__change">
-      <a href="ongoing-relationship">
-        Change<span class="visually-hidden"> {{ ongoingRelationshipQuestion }}</span>
-      </a>
-    </dd>
-  </div>
 
   <div class="govuk-check-your-answers__contents">
     <dt class="govuk-check-your-answers__question">
       {{ whatIsRelationshipQuestion }}
     </dt>
+    {% if data['relationship-text']%}
     <dd class="govuk-check-your-answers__answer">
       {{ data['relationship-text'] }}
     </dd>
+    {% elseif data['noContactWithOffender']%}
+    <dd class="govuk-check-your-answers__answer">
+      {{ data['noContactWithOffender'] }}
+    </dd>
+    {% endif %}
     <dd class="govuk-check-your-answers__change">
       <a href="what-is-relationship">
         Change<span class="visually-hidden"> {{ whatIsRelationshipQuestion }}</span>
       </a>
     </dd>
   </div>
-  {% endif %}
+
 
 </dl>

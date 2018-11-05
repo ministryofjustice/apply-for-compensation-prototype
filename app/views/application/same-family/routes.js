@@ -12,7 +12,7 @@ module.exports = function (router, content) {
     //   res.redirect('/application/your-choices')
     // } else {
     //   // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/ongoing-relationship')
+      res.redirect('/application/what-is-relationship')
 
   })
 
