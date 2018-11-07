@@ -21,36 +21,55 @@ Blank page
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          What happened to you?
+          Select the option that applies to you
         </h1>
 
 
-        <p class="govuk-body-l">We want to make applying for compensation as easy as possible for you. We pay compensation for sexual assault or abuse to recognise the distress and mental trauma you have suffered.</p>
+        <p class="govuk-body-l">We process applications in different ways depending on what happened to you.</p>
 
         <h2 class="govuk-heading-m">
           Sexual assault or abuse
         </h2>
 
-        <p>We will:</p>
+        <p class="govuk-body">We can pay compensation:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>ask the police to send us a report of the crime</li>
-          <li>not normally ask for your medical records</li>
-          <li>usually give you a decision within 3 months </li>
+          <li>for the nature of the sexual assault or abuse</li>
+          <li>to recognise the distress and mental trauma you have suffered</li>
         </ul>
 
+        <p class="govuk-body">We will normally base our decision on the information we get from the police and your application.</p>
+        <p class="govuk-body">We will usually make a decision within 4 months.</p>
+
         <h2 class="govuk-heading-m">
-          Sexual assault or abuse and additional injuries or losses
+          Sexual assault or abuse and other injuries or losses
         </h2>
 
-        <p>As well as a police report, we:</p>
+        <p class="govuk-body">We can pay compensation for:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>will need information about your additional injuries or losses</li>
-          <li>will normally ask for your medical records</li>
-          <li>may arrange for an expert to diagnose your medical condition</li>
-          <li>will usually give you a decision within 12 months</li>
+          <li>financial losses, for example, if you were unable to work</li>
+          <li>physical injuries</li>
+          <li>pregnancy, loss of foetus or sexually transmitted disease</li>
+          <li>disabling mental injuries that are additional to the distress and mental trauma already suffered</li>
         </ul>
 
         <form class="form"  method="post">
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What is a disabling mental injury?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              A disabling mental injury is a condition that adversely affects your ability to perform routine tasks. These include work, social relationships and sexual relations.
+            </div>
+            <div class="govuk-details__text">
+              A medical expert must diagnose your disabling mental injury. It must last for at least 28 weeks to qualify for compensation over what we pay for distress and mental trauma.
+            </div>
+          </details>
+
+          <p class="govuk-body">You will normally have to give us your medical records. We may also ask a medical expert to diagnose your disabling mental injury.</p>
+          <p class="govuk-body">We will usually make a decision within 11 months. It takes longer because we need more information from you and the cases are more complex.</p>
 
           {% from 'radios/macro.njk' import govukRadios %}
 
@@ -61,19 +80,19 @@ Blank page
             currentValue: data['yourChoice'],
             "fieldset": {
               "legend": {
-                "text": 'What happened to you?',
+                "text": 'Select the option that applies to you',
                 "isPageHeading": false,
                 "classes": 'govuk-fieldset__legend--m'
               }
             },
             "items": [
             {
-              "value": "Sexual assault or abuse only",
-              "text": "Sexual assault or abuse only"
+              "value": "Sexual assault or abuse",
+              "text": "Sexual assault or abuse"
             },
             {
-              "value": "Sexual assault or abuse and additional injuries or losses",
-              "text": "Sexual assault or abuse and additional injuries or losses"
+              "value": "Sexual assault or abuse and other injuries or losses",
+              "text": "Sexual assault or abuse and other injuries or losses"
             }
             ]
           }) }}
