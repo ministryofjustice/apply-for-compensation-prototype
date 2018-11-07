@@ -13,5 +13,9 @@ module.exports = function (router, content) {
   router.get('/application/crime-reference/', function (req, res) {
     res.render('application/crime-reference/index', content)
   })
+
+  router.get('/application/crime-reference/error', function (req, res) {
+    res.render('application/crime-reference/error', content)
+  })
   // END__######################################################################################################
 }
