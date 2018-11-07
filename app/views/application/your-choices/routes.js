@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (yourChoice === 'Sexual assault or abuse only') {
       // Redirect to the relevant page
-      res.redirect('/application/declaration')
+      res.redirect('/application/bridge')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/transition')
