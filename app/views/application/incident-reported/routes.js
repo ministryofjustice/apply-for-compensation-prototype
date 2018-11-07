@@ -16,5 +16,9 @@ module.exports = function (router, content) {
   router.get('/application/incident-reported/', function (req, res) {
     res.render('application/incident-reported/index', content)
   })
+  //error page
+  router.get('/application/incident-reported/error', function (req, res) {
+    res.render('application/incident-reported/error', content)
+  })
   // END__######################################################################################################
 }
