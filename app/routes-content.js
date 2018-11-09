@@ -81,7 +81,7 @@
 	    singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
 	    townOrCityLabel: 'Town or city',
 	    warningText: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
-	    whatIsRelationshipQuestion: "If you have had contact with the offender since the crime, describe it below",
+	    whatIsRelationshipQuestion: "If you have contact with the offender, describe it below",
 	    whoCompensationQuestion: 'Who else have you applied to for compensation?',
 	    whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
 			whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
