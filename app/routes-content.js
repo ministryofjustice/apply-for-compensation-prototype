@@ -19,6 +19,7 @@
 	    crimeReferenceNumberHint: 'This is the reference number the police gave the crime when it was reported.',
 	    crimeReferenceNumberQuestion: 'What\'s the crime reference number?',
 	    crimeReferenceNumberQuestionCA: 'Crime reference number?',
+			crimeReferenceError: 'Enter the crime reference number',
 	    crimeReportedDateHint: 'For example, 31 3 2018. You can enter an approximate date',
 	    crimeReportedDateQuestion: 'When was the crime reported to police?',
 	    dateOfBirthQuestion: "Enter your date of birth",
