@@ -42,6 +42,7 @@
 	    incidentLocationHeading: "Where did the crime happen?",
 	    incidentLocationOther: "Tell us where the crime happened",
 	    incidentReportedQuestion: 'Was the crime reported to the police?',
+			incidentReportedError: "Select yes if the crime was reported to the police",
 	    itemOneValue: 'Once',
 	    itemTwoValue: 'Over a period of time',
       locationTownQuestion: 'Enter more details about where the crime happened',
