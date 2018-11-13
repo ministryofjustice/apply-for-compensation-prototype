@@ -47,5 +47,21 @@ module.exports = function (router, content) {
   router.get('/application/crime-reported-date/', function (req, res) {
     res.render('application/crime-reported-date/index', content)
   })
+
+  router.get('/application/crime-reported-date/error-blank', function (req, res) {
+    res.render('application/crime-reported-date/error-blank', content)
+  })
+
+  router.get('/application/crime-reported-date/error-past', function (req, res) {
+    res.render('application/crime-reported-date/error-past', content)
+  })
+
+  router.get('/application/crime-reported-date/error-format', function (req, res) {
+    res.render('application/crime-reported-date/error-format', content)
+  })
+
+  router.get('/application/crime-reported-date/error-incomplete', function (req, res) {
+      res.render('application/crime-reported-date/error-incomplete', content)
+    })
   // END__######################################################################################################
 }
