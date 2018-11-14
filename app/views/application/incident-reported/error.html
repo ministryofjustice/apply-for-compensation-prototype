@@ -1,82 +1,81 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  Question page
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+    Have you applied for compensation from any other sources?
+  </h1> -->
 
-  <main role="main" class="govuk-main-wrapper">
+  <form class="form" method="post">
+    {% from "error-summary/macro.njk" import govukErrorSummary %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+      {
+        text: incidentReportedError,
+        href: "#haveOtherName"
+      }
+      ]
+    }) }}
 
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
+    {% from 'radios/macro.njk' import govukRadios %}
 
-        <form class="form" method="post">
-        {% from "error-summary/macro.njk" import govukErrorSummary %}
+    {{ govukRadios({
+      "classes": "govuk-radios--inline",
+      "idPrefix": "crimeReported",
+      "name": "crimeReported",
+      currentValue: data['crimeReported'],
+      "fieldset": {
+        "legend": {
+          "text": incidentReportedQuestion,
+          "isPageHeading": true,
+          "classes": 'govuk-fieldset__legend--xl'
+        }
+      },
+      errorMessage: {
+        text: incidentReportedError
+      },
+      "items": [
+      {
+        "value": "Yes",
+        "text": "Yes"
+      },
+      {
+        "value": "No",
+        "text": "No"
+      }
+      ]
+    }) }}
 
-           {{ govukErrorSummary({
-              titleText: "There is a problem",
-              errorList: [
-                {
-                  text: incidentReportedError,
-                  href: "#haveOtherName"
-                }
-              ]
-            }) }}
+    {{ govukButton({
+      "text": "Continue"
+    }) }}
 
-          {% from 'radios/macro.njk' import govukRadios %}
+  </form>
 
-          {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "crimeReported",
-            "name": "crimeReported",
-            currentValue: data['crimeReported'],
-            "fieldset": {
-              "legend": {
-                "text": incidentReportedQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            errorMessage: {
-            text: incidentReportedError
-          },
-            "items": [
-              {
-                "value": "Yes",
-                "text": "Yes"
-              },
-              {
-                "value": "No",
-                "text": "No"
-              }
-            ]
-          }) }}
-
-          {{ govukButton({
-            "text": "Continue"
-            }) }}
-
-        </form>
-
-      </div>
-    </div>
-  </main>
+</div>
+</div>
+</main>
 </div>
 
 {% endblock %}

@@ -1,59 +1,55 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
-  Confirmation page example
+{% block pageTitle %}
+Confirmation page example
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
 
-  <main role="main" class="govuk-main-wrapper">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
-          <h2 class="govuk-panel__title">
-            Application submitted
-          </h2>
-          <div class="govuk-panel__body">
-            Your reference number<br><strong>CICA2123GW</strong>
-          </div>
-          <br>
-          <div class="govuk-body-l">
-            We have sent a confirmation email to <strong>{{ data['emailAddress'] }}</strong>
-          </div>
-        </div>
-
-        <h2 class="govuk-heading-m">What happens next</h2>
-
-
-      <p>We will check if you can get compensation, and then:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>ask the police for evidence, if it is needed</li>
-          <li>use the police evidence to make a decision</li>
-          <li>send our decision to {{ data['emailAddress'] }}</li>
-        </ul>
-
-        <p class="govuk-body">We will usually make a decision within 4 months.</p>
-        <p><a href="/application/confirmation-page-if-automatic-nil">What did you think of this service?</a> (takes 30 seconds)</p>
-
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
+      <h2 class="govuk-panel__title">
+        Application submitted
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>CICA2123GW</strong>
+      </div>
+      <br>
+      <div class="govuk-body-l">
+        We have sent a confirmation email to <strong>{{ data['emailAddress'] }}</strong>
       </div>
     </div>
-    <div class="design-notes-box">
-        <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">6/8/18 updated for MVP-114.  First sentence was missed off last prototype.  Reinstated. JK</p>
-        <p class="design-notes">There is a different screen if we can do an automatic NIL decision: <a href="/application/confirmation-page-if-automatic-nil">View this alternative screen</a></p>
-      </div>
 
-  </main>
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+
+    <p>We will check if you can get compensation, and then:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ask the police for evidence, if it is needed</li>
+      <li>use the police evidence to make a decision</li>
+      <li>send our decision to {{ data['emailAddress'] }}</li>
+    </ul>
+
+    <p class="govuk-body">We will usually make a decision within 4 months.</p>
+    <p><a href="/application/confirmation-page-if-automatic-nil">What did you think of this service?</a> (takes 30 seconds)</p>
+
+  </div>
+</div>
+</main>
 
 </div>
 
