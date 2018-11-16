@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Check your answers {% endblock %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
 {% block content %}
 
 <div class="govuk-width-container">
@@ -17,7 +18,7 @@
           Check your answers before sending your application
         </h1>
         <div class="govuk-!-padding-bottom-9">
-        {% include "./includes/_your_details.html" %}  
+        {% include "./includes/_your_details.html" %}
         </div>
 
 

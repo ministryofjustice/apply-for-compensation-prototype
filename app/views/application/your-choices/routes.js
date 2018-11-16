@@ -15,5 +15,14 @@ module.exports = function (router, content) {
       res.redirect('/application/transition')
     }
   })
+  
+  // Pass the question in to the page
+  router.get('/application/your-choices/', function (req, res) {
+    res.render('application/your-choices/index', content)
+  })
+  // Error state
+  router.get('/application/your-choices/error', function (req, res) {
+    res.render('application/your-choices/error', content)
+  })
   // END__######################################################################################################
 }

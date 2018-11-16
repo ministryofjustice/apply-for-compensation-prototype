@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  offender name
+{{ offenderNameQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
@@ -24,7 +24,7 @@
                       {{ offenderNameQuestion }}
                   </label>
                 </h1>
-              
+
               </div>
 
               {% from "input/macro.njk" import govukInput %}

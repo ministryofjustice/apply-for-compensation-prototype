@@ -9,5 +9,11 @@ module.exports = function (router, content) {
     }
     res.redirect('/application/single-or-multiple-incidents')
   })
+
+  // Pass the question in to the page
+  router.get('/application/reporting-crime-not-reported/', function (req, res) {
+    res.render('application/reporting-crime-not-reported/index', content)
+  })
+
   // END__######################################################################################################
 }

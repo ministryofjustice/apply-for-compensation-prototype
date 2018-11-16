@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  Question page
+{{ emailAddressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
@@ -22,7 +22,7 @@
             </h1> -->
 
             {% from "input/macro.njk" import govukInput %}
-            
+
             {{ govukErrorSummary({
               titleText: "There is a problem",
               errorList: [
