@@ -65,8 +65,7 @@
         for: id
       }) | indent(6) | trim }}
     </div>
-    {% endfor %}
-    {% for item in params.items %}
+    
     {% if item.conditional %}
       {% set id = item.id if item.id else idPrefix + "-" + loop.index %}
       {% set conditionalId = "conditional-" + id %}
@@ -77,7 +76,7 @@
     {% endfor %}
   </div>
 
-  
+
 {% endset -%}
 
 <div class="govuk-form-group {%- if params.errorMessage %} govuk-form-group--error{% endif %}">
