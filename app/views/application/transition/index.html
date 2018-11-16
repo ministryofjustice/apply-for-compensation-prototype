@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Blank page
+{{ transitionHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          You are being redirected to our other application site
+          {{ transitionHeading }}
         </h1>
         <p class="govuk-body-l">You can continue your application using our existing service.</p>
 

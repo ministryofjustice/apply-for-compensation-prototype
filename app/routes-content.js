@@ -38,6 +38,7 @@
 	    errorPastMessage: "Your date of birth must be in the past",
 	    howMuchCompensationHint: 'You can also tell us if you are still waiting to find out.',
 	    howMuchCompensationQuestion: 'How much compensation did you get?',
+			impactHeading: 'Impact of the crime on you',
 	    incidentDateHeading: "When did the crime happen?",
 	    incidentDateHint: 'For example, 31 3 2018. You can enter an approximate date ',
 	    incidentLocationHeading: "Where did the crime happen?",
@@ -82,6 +83,7 @@
 			sexualAbuseError: 'Select yes if you were a victim of sexual assault or abuse',
 	    singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
 	    townOrCityLabel: 'Town or city',
+			transitionHeading: 'You are being redirected to our other application site',
 	    warningText: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
 	    whatIsRelationshipQuestion: "If you have contact with the offender, describe it below",
 	    whoCompensationQuestion: 'Who else have you applied to for compensation?',
@@ -91,6 +93,8 @@
 			reportedDateErrorPast: 'The date the crime was reported to the police must be in the past',
 			reportedDateIncompleteError: 'Enter the date the crime was reported to the police and include a day, month and year',
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
+			yourChoicesHeading: 'Select the option that applies to you',
+			notEligibleHeading: 'You can not get compensation',
 	};
 	// // END__######################################################################################################
 	// }
