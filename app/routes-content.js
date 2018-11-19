@@ -75,7 +75,7 @@
 	    policeForceQuestion: 'Was the crime reported to Police Scotland Greater Glasgow?',
       policeForceManualQuestion: 'What force was the crime reported to?',
 	    previousApplicationsQuestion: 'Have you applied for compensation from us for this crime before?',
-	    reportingDelayQuestion: "Why was the crime not reported sooner?",
+	    reportingDelayQuestion: "Select a reason for the delay in reporting the crime to the police",
 			sameFamilyQuestion: 'Were you and the offender living together as family at the time?',
 			sameFamilyError: 'Select yes if you and the offender were living together as family when the crime happened',
 	    selectAddressLable: 'Select an address',
@@ -95,8 +95,8 @@
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
-			medicalReasonHint:'Give a brief description of the medical reasons',
-			otherReasonHint: 'Give a brief description of the other reasons',
+			capacityReasonHint: 'Give a brief explanation of this reason',
+			otherDelayReasonHint: 'Give a brief explanation of this reason',
 	};
 	// // END__######################################################################################################
 	// }
