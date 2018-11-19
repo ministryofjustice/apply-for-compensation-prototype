@@ -16,35 +16,26 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <main role="main" class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
-        <form class="form" method="post">
 
-          <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--xl" for="name">
-                {{ otherCompensationQuestion }}
-              </label>
-            </h1>
-            <span id="waste-hint" class="govuk-hint">
-              {{ otherCompensationHint }}
-            </span>
-          </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
+    <form class="form" method="post">
 
-          {% from "input/macro.njk" import govukInput %}
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            {{ otherCompensationQuestion }}
+          </label>
+        </h1>
+        <span id="waste-hint" class="govuk-hint">
+          {{ otherCompensationHint }}
+        </span>
+      </div>
 
-          {{ govukInput({
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
               label: {
                 "text": 'Source of compensation'
               },
@@ -54,9 +45,9 @@
               value: data['first-comp-source']
             }) }}
 
-          {% from "input/macro.njk" import govukInput %}
+      {% from "input/macro.njk" import govukInput %}
 
-          {{ govukInput({
+      {{ govukInput({
             label: {
             "text": 'Amount in pounds'
             },
@@ -66,11 +57,11 @@
             value: data['first-comp-amount']
             }) }}
 
-          {% from "checkboxes/macro.njk" import govukCheckboxes %}
-          {% from "input/macro.njk" import govukInput %}
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "input/macro.njk" import govukInput %}
 
-          {% set noneHtml %}
-          {{ govukInput({
+      {% set noneHtml %}
+      {{ govukInput({
               id: "noOtherComp",
               name: "noOtherComp",
               type: "None",
@@ -79,9 +70,9 @@
                 text: "Briefly explain why"
               }
             }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {{ govukCheckboxes({
+      {{ govukCheckboxes({
               idPrefix: "otherCompensation",
               name: "otherCompensation",
 
@@ -96,13 +87,13 @@
               ]
             }) }}
 
-          {% from "button/macro.njk" import govukButton %}
-          {{ govukButton({
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
         "text": "Continue"
       }) }}
-        </form>
-      </div>
-    </div>
+    </form>
+  </div>
+</div>
 </div>
 </main>
 </div>
