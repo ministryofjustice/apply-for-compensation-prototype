@@ -10,17 +10,76 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+          {% from 'radios/macro.njk' import govukRadios %}
+          {% from "input/macro.njk" import govukInput %}
 
-          {{ govukTextarea({
-            "id": "applicationDelay",
-            "name": "applicationDelay",
-            'value': data ['applicationDelay'],
+
+          {% set medicalHtml %}
+          {{ govukInput({
+            id: "medical-reasons",
+            name: "medical-reasons",
+            value: data['medical-reasons'],
+            classes: "govuk-!-width-two-thirds",
             label: {
-              text: whyDelayQuestion,
-              "isPageHeading": true,
-              "classes": 'govuk-label--xl'
+              text: medicalReasonHint
             }
+          }) }}
+          {% endset -%}
+
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "other-reasons",
+            name: "other-reason",
+            value: data['other-reason'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: otherReasonHint
+            }
+          }) }}
+          {% endset -%}
+
+          {{ govukRadios({
+            idPrefix: "applicationDelay",
+            name: "applicationDelay",
+            currentValue: data['applicationDelay'],
+            fieldset: {
+              legend: {
+                text: whyDelayQuestion,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: "Select one option."
+            },
+            items: [
+            {
+              value: "The police told me to wait",
+              text: "The police told me to wait"
+            },
+            {
+              value: "I was advised to wait for a court case to finish",
+              text: "I was advised to wait for a court case to finish"
+            },
+            {
+              value: "I was under 18 years old when it happened",
+              text: "I was under 18 years old when it happened"
+            },
+            {
+              value: "I was unable to apply for medical reasons",
+              text: "I was unable to apply for medical reasons",
+              conditional: {
+                html: medicalHtml
+              }
+            },
+            {
+              value: "I was unable to apply for other reasons",
+              text: "I was unable to apply for other reasons",
+              conditional: {
+                html: otherHtml
+              }
+            }
+            ]
           }) }}
 
           {% from "button/macro.njk" import govukButton %}
@@ -31,10 +90,7 @@
           </form>
         </div>
       </div>
-      <div class="design-notes-box">
-        <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">9/8/18 - new screen MVP-124 - JK</p>
-      </div>
+
     </main>
   </div>
 
