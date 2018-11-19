@@ -4,16 +4,8 @@ module.exports = function (router, content) {
   // Variable: otherCompensation
 
   router.post('/application/compensation', function (req, res) {
-    // Get the answer from the query string
-      var otherCompensation = req.session.data['otherCompensation']
-      if (otherCompensation === 'No') {
-      // Redirect to the relevant page
-      res.redirect('/application/compensation-why-not')
-      } else {
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/compensation-who')
-      }
-
+  
+    res.redirect('/application/check-your-answers-page')
   })
 
   // Pass the question in to the page

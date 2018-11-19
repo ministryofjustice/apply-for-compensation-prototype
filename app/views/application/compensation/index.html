@@ -17,33 +17,67 @@
         <div class="govuk-grid-column-two-thirds">
           <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
           <form class="form" method="post">
-            {% from 'radios/macro.njk' import govukRadios %}
 
-            {{ govukRadios({
-              "classes": "govuk-radios--inline",
-              "idPrefix": "otherCompensation",
-              "name": "otherCompensation",
-              'currentValue': data['otherCompensation'],
-              value: data['otherCompensation'],
-              "fieldset": {
-              "legend": {
-              "text": otherCompensationQuestion,
-              "isPageHeading": true,
-              "classes": "govuk-fieldset__legend--xl"
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--xl" for="name">
+                    {{ otherCompensationQuestion }}
+                </label>
+              </h1>
+              <span id="waste-hint" class="govuk-hint">
+                {{ otherCompensationHint }}
+              </span>
+            </div>
+
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+              label: {
+                "text": 'Source of compensation'
+              },
+              id: "first-comp-source",
+              name: "first-comp-source",
+              value: data['first-comp-source']
+            }) }}
+
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            "label": {
+            "text": 'Amount in pounds'
+            },
+            "classes": "govuk-!-width-one-quarter",
+            "id": "first-comp-amount",
+            "name": "first-comp-amount",
+            "value": data['first-comp-amount']
+            }) }}
+
+            {% from "checkboxes/macro.njk" import govukCheckboxes %}
+            {% from "input/macro.njk" import govukInput %}
+
+            {% set noneHtml %}
+            {{ govukInput({
+              id: "noOtherComp",
+              name: "noOtherComp",
+              type: "None",
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Briefly explain why"
               }
-              },
-              "hint": {
-                "text": otherCompensationHint
+            }) }}
+            {% endset -%}
 
-              },
-              "items": [
+            {{ govukCheckboxes({
+              idPrefix: "otherCompensation",
+              name: "otherCompensation",
+
+              items: [
                 {
-                  "value": "Yes",
-                  "text": "Yes"
-                },
-                {
-                  "value": "No",
-                  "text": "No"
+                  value: "None",
+                  text: "I have not applied for compensation from anywhere else",
+                  conditional: {
+                    html: noneHtml
+                  }
                 }
               ]
             }) }}
