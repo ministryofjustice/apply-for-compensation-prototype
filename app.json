@@ -1,20 +1,26 @@
 {
-    "name": "apply-for-compensation-proto",
-    "scripts": {},
-    "env": {
-      "USE_AUTH": {
-        "required": true
-      }
+  "name": "apply-for-compensation-proto",
+  "scripts": {
+  },
+  "env": {
+    "PASSWORD": {
+      "required": true
     },
-    "formation": {
-      "web": {
-        "quantity": 1
-      }
-    },
-    "addons": [],
-    "buildpacks": [
-      {
-        "url": "heroku/nodejs"
-      }
-    ]
-  }
+    "USERNAME": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
