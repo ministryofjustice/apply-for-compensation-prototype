@@ -65,7 +65,6 @@
         for: id
       }) | indent(6) | trim }}
     </div>
-    
     {% if item.conditional %}
       {% set id = item.id if item.id else idPrefix + "-" + loop.index %}
       {% set conditionalId = "conditional-" + id %}
