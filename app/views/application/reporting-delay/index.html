@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block pageTitle %}
+{{ reportingDelayQuestion }} - {{ serviceName }} - GOV.UK
 Reporting delay
 {% endblock %}
 
@@ -18,31 +18,83 @@ Reporting delay
 {% block content %}
 
 <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form class="form" method="post">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+      {% from 'radios/macro.njk' import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
 
-          {{ govukTextarea({
-            "id": "reportingDelay",
-            "name": "reportingDelay",
-            value: data['reportingDelay'],
+
+      {% set capacityHtml %}
+      {{ govukInput({
+            id: "capacity-reasons",
+            name: "capacity-reasons",
+            value: data['capacity-reasons'],
+            classes: "govuk-!-width-two-thirds",
             label: {
-              text: reportingDelayQuestion,
-              "isPageHeading": true,
-              "classes": 'govuk-label--xl'
+              text: capacityReasonHint
             }
           }) }}
+      {% endset -%}
 
-          {% from "button/macro.njk" import govukButton %}
-          {{ govukButton({
-            "text": "Continue"
+      {% set otherDelayHtml %}
+      {{ govukInput({
+            id: "other-delay-reasons",
+            name: "other-delay-reason",
+            value: data['other-delay-reason'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: otherDelayReasonHint
+            }
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            idPrefix: "reportingDelay",
+            name: "reportingDelay",
+            currentValue: data['reportingDelay'],
+            fieldset: {
+              legend: {
+                text: reportingDelayQuestion,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: "Select one option."
+            },
+            items: [
+            {
+              value: "I was under 18 years old when it happened",
+              text: "I was under 18 years old when it happened"
+            },
+            {
+              value: "I had no capacity to report the crime",
+              text: "I had no capacity to report the crime",
+              conditional: {
+                html: capacityHtml
+              }
+            },
+            {
+              value: "There are other reasons for the delay",
+              text: "There are other reasons for the delay",
+              conditional: {
+                html: otherDelayHtml
+              }
+            }
+            ]
           }) }}
 
-        </form>
-      </div>
-    </div>
-  </main>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+</main>
 </div>
 
 {% endblock %}

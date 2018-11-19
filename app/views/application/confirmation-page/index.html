@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
+
 {% block pageTitle %}
-Confirmation page example
+Application submitted - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,6 +15,7 @@ Confirmation page example
 }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
 {% endblock %}
 
 {% block content %}

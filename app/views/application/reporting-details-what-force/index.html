@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Reporting details - What force?
+{{ policeForceQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,13 +18,13 @@ Reporting details - What force?
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form class="/form-handler" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="/form-handler" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'radios/macro.njk' import govukRadios %}
 
-          {{ govukRadios({
+      {{ govukRadios({
             "classes": "govuk-radios--inline",
             "idPrefix": "policeForceQuestion",
             "name": "policeForceQuestion",
@@ -48,15 +48,15 @@ Reporting details - What force?
             ]
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
             }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
   </div>
+</div>
+</div>
 </div>
 
 {% endblock %}

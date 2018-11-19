@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Address
+{{ addressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,18 +28,18 @@ Address
         <h2 class="govuk-heading-l">{{ addressPostcodeLabel }}</h2>
         <p>
           <span style="font-size: 24px; margin-right:1em"><strong>
-            {% if data['postcode'] %}
-            {{ data['postcode'] }}
-            {% else %}
-            SW1A 1AA
-            {% endif %}
-          </strong></span>
+              {% if data['postcode'] %}
+              {{ data['postcode'] }}
+              {% else %}
+              SW1A 1AA
+              {% endif %}
+            </strong></span>
           <a href="address">Change</a></p>
 
-        </div>
-        {% from "select/macro.njk" import govukSelect %}
+      </div>
+      {% from "select/macro.njk" import govukSelect %}
 
-        {{ govukSelect({
+      {{ govukSelect({
           id: "address-lookup-result",
           name: "address-lookup-result",
           label: {
@@ -77,13 +77,13 @@ Address
           }
           ]
         }) }}
-        {{ govukButton({
+      {{ govukButton({
           "text": "Continue"
         }) }}
-        <p><a href="address-manually">I can not find my address in the list</a></p>
-      </form>
-    </div>
+      <p><a href="address-manually">I can not find my address in the list</a></p>
+    </form>
   </div>
+</div>
 </main>
 </div>
 

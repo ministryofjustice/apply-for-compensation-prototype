@@ -1,39 +1,39 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  offender name
-  {% endblock %}
+{{ offenderNameQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
-  {% block beforeContent %}
-  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
     tag: {
       text: "beta"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  {% endblock %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
-            <form action="/form-handler" method="post">
-              <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--xl" for="offender-name">
-                      {{ offenderNameQuestion }}
-                  </label>
-                </h1>
+      <form action="/form-handler" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="offender-name">
+              {{ offenderNameQuestion }}
+            </label>
+          </h1>
 
-              </div>
+        </div>
 
-              {% from "input/macro.njk" import govukInput %}
+        {% from "input/macro.njk" import govukInput %}
 
-              {{ govukInput({
+        {{ govukInput({
                 label: {
                   "text": nameFirstNameField
                 },
@@ -42,9 +42,9 @@
                 value:  data['first-name-offender']
               }) }}
 
-              {% from "input/macro.njk" import govukInput %}
+        {% from "input/macro.njk" import govukInput %}
 
-              {{ govukInput({
+        {{ govukInput({
                 label: {
                   "text": nameLastNameField
                 },
@@ -54,13 +54,13 @@
               }) }}
 
 
-              {% from "input/macro.njk" import govukInput %}
+        {% from "input/macro.njk" import govukInput %}
 
 
-              <input class="govuk-button" type="submit" value="Continue">
-          </form>
-        </div>
-      </div>
-    </main>
+        <input class="govuk-button" type="submit" value="Continue">
+      </form>
   </div>
+</div>
+</main>
+</div>
 {% endblock %}

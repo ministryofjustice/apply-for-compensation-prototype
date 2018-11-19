@@ -1,48 +1,108 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Application delay
-  {% endblock %}
+{{ whyDelayQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
-  {% block beforeContent %}
-  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
     tag: {
       text: "beta"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  {% endblock %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
 
-  <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <form class="form" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+      {% from 'radios/macro.njk' import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
 
-          {{ govukTextarea({
-            "id": "applicationDelay",
-            "name": "applicationDelay",
-            'value': data ['applicationDelay'],
+
+      {% set medicalHtml %}
+      {{ govukInput({
+            id: "medical-reasons",
+            name: "medical-reasons",
+            value: data['medical-reasons'],
+            classes: "govuk-!-width-two-thirds",
             label: {
-              text: whyDelayQuestion,
-              "isPageHeading": true,
-              "classes": 'govuk-label--xl'
+              text: medicalReasonHint
             }
           }) }}
+      {% endset -%}
 
-          {% from "button/macro.njk" import govukButton %}
-          {{ govukButton({
+      {% set otherHtml %}
+      {{ govukInput({
+            id: "other-reasons",
+            name: "other-reason",
+            value: data['other-reason'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: otherReasonHint
+            }
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            idPrefix: "applicationDelay",
+            name: "applicationDelay",
+            currentValue: data['applicationDelay'],
+            fieldset: {
+              legend: {
+                text: whyDelayQuestion,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: "Select one option."
+            },
+            items: [
+            {
+              value: "The police told me to wait",
+              text: "The police told me to wait"
+            },
+            {
+              value: "I was advised to wait for a court case to finish",
+              text: "I was advised to wait for a court case to finish"
+            },
+            {
+              value: "I was under 18 years old when it happened",
+              text: "I was under 18 years old when it happened"
+            },
+            {
+              value: "I was unable to apply for medical reasons",
+              text: "I was unable to apply for medical reasons",
+              conditional: {
+                html: medicalHtml
+              }
+            },
+            {
+              value: "I was unable to apply for other reasons",
+              text: "I was unable to apply for other reasons",
+              conditional: {
+                html: otherHtml
+              }
+            }
+            ]
+          }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
           "text": "Continue"
           }) }}
 
-          </form>
-        </div>
-      </div>
-    </main>
+    </form>
   </div>
+</div>
+
+</main>
+</div>
 
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Crime location
+{{ incidentLocationHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,15 +18,15 @@ Crime location
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form class="form" method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
-          {% from "input/macro.njk" import govukInput %}
+      {% from 'radios/macro.njk' import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
 
-          {% set textEngland %}
-          {{ govukInput({
+      {% set textEngland %}
+      {{ govukInput({
             id: "england",
             name: "england",
             value: data['textEngland'],
@@ -35,10 +35,10 @@ Crime location
               text: "England"
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {% set textScotland %}
-          {{ govukInput({
+      {% set textScotland %}
+      {{ govukInput({
             id: "scotland",
             name: "scotland",
             value: data['textScotland'],
@@ -47,10 +47,10 @@ Crime location
               text: "Scotland"
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {% set textWales %}
-          {{ govukInput({
+      {% set textWales %}
+      {{ govukInput({
             id: "wales",
             name: "wales",
             value: data['textWales'],
@@ -59,10 +59,10 @@ Crime location
               text: "Wales"
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {% set textSomewhereElse %}
-          {{ govukInput({
+      {% set textSomewhereElse %}
+      {{ govukInput({
             id: "somewhere-else",
             name: "somewhere-else",
             value: data['somewhere-else'],
@@ -71,9 +71,9 @@ Crime location
               text: incidentLocationOther
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {{ govukRadios({
+      {{ govukRadios({
             idPrefix: "incident-location",
             name: "incident-location",
             currentValue: data['incident-location'],
@@ -116,15 +116,15 @@ Crime location
             ]
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
           }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

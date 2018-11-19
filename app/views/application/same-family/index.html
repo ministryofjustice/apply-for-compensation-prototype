@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Question page
+{{ sameFamilyQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,14 +18,14 @@ Question page
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" method="post">
+    <form class="form" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'radios/macro.njk' import govukRadios %}
 
-          {{ govukRadios({
+      {{ govukRadios({
             "classes": "govuk-radios--inline",
             "idPrefix": "sameFamily",
             "name": "sameFamily",
@@ -49,15 +49,15 @@ Question page
             ]
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
           }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

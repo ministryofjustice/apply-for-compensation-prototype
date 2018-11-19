@@ -1,42 +1,44 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  Address
-  {% endblock %}
+{% block page_title %}
+{{ addressQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
-  {% block beforeContent %}
-  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
+{% block content %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
     tag: {
       text: "beta"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  {% endblock %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
 
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" method="post">
+    <form class="form" method="post">
 
-        {% from "input/macro.njk" import govukInput %}
-        {% from "fieldset/macro.njk" import govukFieldset %}
-        {% from "details/macro.njk" import govukDetails %}
+      {% from "input/macro.njk" import govukInput %}
+      {% from "fieldset/macro.njk" import govukFieldset %}
+      {% from "details/macro.njk" import govukDetails %}
 
-        {% call govukFieldset({
-          legend: {
-            text: addressQuestion,
-            classes: "govuk-fieldset__legend--xl",
-            isPageHeading: true
-          }
-        }) %}
-        {% endcall %}
+      {% call govukFieldset({
+      legend: {
+      text: addressQuestion,
+      classes: "govuk-fieldset__legend--xl",
+      isPageHeading: true
+      }
+      }) %}
+      {% endcall %}
 
-        {{ govukInput({
+      {{ govukInput({
           label: {
             text: addressPostcodeLabel
           },
@@ -46,29 +48,29 @@
           value: data['postcode']
         }) }}
 
-        {{ govukButton({
+      {{ govukButton({
           "text": "Find a UK address"
           }) }}
 
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              I do not have a postcode to enter
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p>
-              If you have a UK address but do not know your postcode, <a href="address-manually">enter the rest manually</a>.
-            </p>
-            <p>
-              If you do not live in the UK, <a href="address-non-UK">enter your address manually</a>.
-            </p>
-          </div>
-        </details>
-        </form>
-      </div>
-    </div>
-  </main>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have a postcode to enter
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>
+            If you have a UK address but do not know your postcode, <a href="address-manually">enter the rest manually</a>.
+          </p>
+          <p>
+            If you do not live in the UK, <a href="address-non-UK">enter your address manually</a>.
+          </p>
+        </div>
+      </details>
+    </form>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

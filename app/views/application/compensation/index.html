@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% block pageTitle %}
-Compensation from other sources
+{% block page_title %}
+{{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,49 +16,93 @@ Compensation from other sources
 {% endblock %}
 
 {% block content %}
+<div class="govuk-width-container">
+  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <main role="main" class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
+        <form class="form" method="post">
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
-    <form class="form" method="post">
-      {% from 'radios/macro.njk' import govukRadios %}
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="name">
+                {{ otherCompensationQuestion }}
+              </label>
+            </h1>
+            <span id="waste-hint" class="govuk-hint">
+              {{ otherCompensationHint }}
+            </span>
+          </div>
 
-      {{ govukRadios({
-        "classes": "govuk-radios--inline",
-        "idPrefix": "otherCompensation",
-        "name": "otherCompensation",
-        'currentValue': data['otherCompensation'],
-        value: data['otherCompensation'],
-        "fieldset": {
-          "legend": {
-            "text": otherCompensationQuestion,
-            "isPageHeading": true,
-            "classes": "govuk-fieldset__legend--xl"
-          }
-        },
-        "hint": {
-          "text": otherCompensationHint
+          {% from "input/macro.njk" import govukInput %}
 
-        },
-        "items": [
-        {
-          "value": "Yes",
-          "text": "Yes"
-        },
-        {
-          "value": "No",
-          "text": "No"
-        }
-        ]
-      }) }}
+          {{ govukInput({
+              label: {
+                "text": 'Source of compensation'
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "first-comp-source",
+              name: "first-comp-source",
+              value: data['first-comp-source']
+            }) }}
 
-      {% from "button/macro.njk" import govukButton %}
-      {{ govukButton({
+          {% from "input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+            "text": 'Amount in pounds'
+            },
+            classes: "govuk-!-width-one-quarter",
+            id: "first-comp-amount",
+            name: "first-comp-amount",
+            value: data['first-comp-amount']
+            }) }}
+
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "input/macro.njk" import govukInput %}
+
+          {% set noneHtml %}
+          {{ govukInput({
+              id: "noOtherComp",
+              name: "noOtherComp",
+              type: "None",
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Briefly explain why"
+              }
+            }) }}
+          {% endset -%}
+
+          {{ govukCheckboxes({
+              idPrefix: "otherCompensation",
+              name: "otherCompensation",
+
+              items: [
+                {
+                  value: "None",
+                  text: "I have not applied for compensation from anywhere else",
+                  conditional: {
+                    html: noneHtml
+                  }
+                }
+              ]
+            }) }}
+
+          {% from "button/macro.njk" import govukButton %}
+          {{ govukButton({
         "text": "Continue"
       }) }}
-    </form>
-  </div>
-</div>
+        </form>
+      </div>
+    </div>
 </div>
 </main>
 </div>

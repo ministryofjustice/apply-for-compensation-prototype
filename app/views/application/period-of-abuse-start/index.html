@@ -1,29 +1,29 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Incicent date
- {% endblock %}
+{{ periodOfAbuseStartQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
- {% block beforeContent %}
- {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
- {{ govukPhaseBanner({
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
    tag: {
      text: "beta"
    },
    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
  }) }}
 
- <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
- {% endblock %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
 
- {% block content %}
+{% block content %}
 
-     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" method="post">
-          {% from "date-input/macro.njk" import govukDateInput %}
-          {{ govukDateInput({
+    <form class="form" method="post">
+      {% from "date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
           id: 'period-of-abuse-start',
           name: 'period-of-abuse-start',
           fieldset: {
@@ -51,17 +51,17 @@
           })
           }}
 
-          {% from "button/macro.njk" import govukButton %}
+      {% from "button/macro.njk" import govukButton %}
 
-          {{ govukButton({
+      {{ govukButton({
           "text": "Continue"
           }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

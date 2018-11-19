@@ -1,31 +1,31 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
-  {% endblock %}
+{{ incidentReportedQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
-  {% block beforeContent %}
-  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
     tag: {
       text: "beta"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  {% endblock %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
 
-  <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" method="post">
+    <form class="form" method="post">
 
-            {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'radios/macro.njk' import govukRadios %}
 
-            {{ govukRadios({
+      {{ govukRadios({
               idPrefix: "crimeReported",
               name: "crimeReported",
               currentValue : data['crimeReported'],
@@ -49,17 +49,17 @@
               ]
             }) }}
 
-            {% from "button/macro.njk" import govukButton %}
+      {% from "button/macro.njk" import govukButton %}
 
-            {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
             }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

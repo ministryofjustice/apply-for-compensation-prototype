@@ -1,31 +1,33 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  Address
-  {% endblock %}
+{% block page_title %}
+{{ addressQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
 
-  {% block beforeContent %}
-  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
-  {{ govukPhaseBanner({
+{% block content %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
     tag: {
       text: "beta"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  {% endblock %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
 
-  <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" method="post">
+    <form class="form" method="post">
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+      {% from "textarea/macro.njk" import govukTextarea %}
 
-          {{ govukTextarea({
+      {{ govukTextarea({
             'name': "address-non-UK",
             'id': "address-non-UK",
             'value': data ['address-non-UK'],
@@ -36,14 +38,14 @@
             }
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
             }) }}
 
-        </form>
-      </div>
-    </div>
-  </main>
+    </form>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}
