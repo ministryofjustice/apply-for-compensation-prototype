@@ -1,13 +1,23 @@
 {% extends "layout.html" %}
-{% block page_title %}
+{% block pageTitle %}
   Additional information
-{% endblock %}
-{% block content %}
-  <div class="govuk-width-container">
-    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
-    <main role="main" class="govuk-main-wrapper">
-      <div class="govuk-grid-row">
+  {% endblock %}
+
+  {% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
@@ -36,11 +46,6 @@
 
           </form>
         </div>
-      </div>
-      <div class="design-notes-box">
-        <h3 class="design-notes">Design notes</h3>
-        <p class="design-notes">adapted from the actual private beta live - not sure about the hint text and the optional might need to be black, 
-          also not sure how to link this to the categories we have on the check your answer page so created an new heading for this one - SK</p>
       </div>
     </main>
   </div>

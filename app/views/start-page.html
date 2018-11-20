@@ -1,123 +1,111 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block proposition_header %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
 
-{% block header_class %}
-  <!-- blank to remove the proposition header -->
-{% endblock %}
+<main role="main" class="govuk-main-wrapper">
 
-{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+      <p class="govuk-body-l">Use this service to apply for compensation if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you were the victim of a sexual crime or abuse</li>
+        <li>you suffered mental injuries because of a violent crime</li>
+        <li>you suffered physical injuries because of a violent crime</li>
+        <li>you saw a violent crime happen to a loved one, or were there immediately afterwards</li>
+        <li>a close relative died because of a violent crime</li>
+        <li>you paid for the funeral of someone who died because of a violent crime</li>
+      </ul>
 
+      <p class="govuk-body">If the crime has not been reported to the police we can not pay compensation.</p>
+      <p class="govuk-body">The crime must have happened in England, Wales, Scotland or <a href="">another relevant place.</a></p>
+      <p class="govuk-body"><a href="https://www.justice-ni.gov.uk/topics/justice-and-law/compensation-services" target="_blank">Northern Ireland</a> has a different service.</p>
 
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
-      </li>
-    </ol>
-  </div>
+      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="application/declaration" role="button">Start now</a>
 
-  <main role="main" class="govuk-main-wrapper">
+      <h1 class="govuk-heading-l">Before you start
+      </h1>
+      <p class="govuk-body">To complete the application we will ask you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <!-- <li>an email address we can use to contact you</li> -->
+        <li>when the crime happened</li>
+        <li>for the police crime reference number</li>
+        <li>where the crime happened</li>
+      </uL>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">Compensation is paid by the government, not the offender. We may be able to pay compensation even if the offender is not identified or convicted.</p>
 
-        <h1 class="govuk-heading-xl">
-          {{ serviceName }}
-        </h1>
-          <p class="govuk-body-l">Use this service to apply for compensation if:</p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li>you were the victim of a sexual crime or abuse</li>
-                <li>you suffered mental injuries because of a violent crime</li>
-                <li>you suffered physical injuries because of a violent crime</li>
-                <li>you saw a violent crime happen to a loved one, or were there immediately afterwards</li>
-                <li>a close relative died because of a violent crime</li>
-                <li>you paid for the funeral of someone who died because of a violent crime</li>
-            </ul>
+      <h2 class="govuk-heading-l">
+        Eligibility
+      </h2>
+      <p class="govuk-body">Usually you must apply within 2 years of when the crime happened. We may be able to make an exception if you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>were under 18 at the time</li>
+        <li>can show that you could not apply earlier</li>
+      </ul>
 
-          <p class="govuk-body">If the crime has not been reported to the police we can not pay compensation.</p>
-          <p class="govuk-body">The crime must have happened in England, Wales, Scotland or  <a href="">another relevant place.</a></p>
-          <p class="govuk-body"><a href="https://www.justice-ni.gov.uk/topics/justice-and-law/compensation-services" target="_blank">Northern Ireland</a> has a different service.</p>
+      <h2 class="govuk-heading-l">
+        Other ways to apply
+      </h2>
+      <p class="govuk-body">You can contact us for help with your application by calling 0300 003 3601 and selecting option 8.</p>
 
-        <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="application/declaration" role="button">Start now</a>
+      <p class="govuk-body">Phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
 
-        <h1 class="govuk-heading-l">Before you start
-        </h1>
-          <p class="govuk-body">To complete the application we will ask you:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <!-- <li>an email address we can use to contact you</li> -->
-              <li>when the crime happened</li>
-              <li>for the police crime reference number</li>
-              <li>where the crime happened</li>
-            </uL>
-
-          <p class="govuk-body">Compensation is paid by the government, not the offender. We may be able to pay compensation even if the offender is not identified or convicted.</p>
-
-        <h2 class="govuk-heading-l">
-          Eligibility
-        </h2>
-          <p class="govuk-body">Usually you must apply within 2 years of when the crime happened.  We may be able to make an exception if you:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>were under 18 at the time</li>
-              <li>can show that you could not apply earlier</li>
-            </ul>
-
-        <h2 class="govuk-heading-l">
-          Other ways to apply
-        </h2>
-          <p class="govuk-body">You can contact us for help with your application by calling 0300 003 3601 and selecting option 8.</p>
-
-          <p class="govuk-body">Phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
-
-        <h2 class="govuk-heading-l">Help and support
-        </h2>
-          <p class="govuk-body">You can find organisations that offer free support and advice through the <a href="https://www.victimsinformationservice.org.uk/" target="_blank">Victims Information Service</a>.</p>
-          <p class="govuk-body">You do not need a legal representative to make an application.</p>
+      <h2 class="govuk-heading-l">Help and support
+      </h2>
+      <p class="govuk-body">You can find organisations that offer free support and advice through the <a href="https://www.victimsinformationservice.org.uk/" target="_blank">Victims Information Service</a>.</p>
+      <p class="govuk-body">You do not need a legal representative to make an application.</p>
 
 
-      </div>
-
-      <div class="govuk-grid-column-one-third">
-
-        <aside class="app-related-items" role="complementary">
-          <h2 class="govuk-heading-m" id="subsection-title">
-            Related content
-          </h2>
-          <nav role="navigation" aria-labelledby="subsection-title">
-            <ul class="govuk-list govuk-body-s">
-              <li>
-                <a target="_blank" href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide">
-                  A guide to the Criminal Injuries Compensation Scheme
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-
-      </div>
     </div>
-  </main>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide">
+                A guide to the Criminal Injuries Compensation Scheme
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+</main>
 </div>
 
 {% endblock %}

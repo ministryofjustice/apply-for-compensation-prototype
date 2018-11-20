@@ -1,32 +1,32 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <form class="form" method="post">
 
-  <main role="main" class="govuk-main-wrapper">
+      {% from 'radios/macro.njk' import govukRadios %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <form class="form" method="post">
-
-          {% from 'radios/macro.njk' import govukRadios %}
-
-          {{ govukRadios({
+      {{ govukRadios({
             "classes": "govuk-radios--inline",
             "idPrefix": "britishCitizen",
             "name": "britishCitizen",
@@ -50,15 +50,15 @@
             ]
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
             }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

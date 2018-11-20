@@ -2,64 +2,64 @@
   Police report
 </h2>
 
-<dl class="govuk-check-your-answers govuk-check-your-answers--long">
+<dl class="app-check-your-answers app-check-your-answers--long">
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
     {{ incidentReportedQuestion }}
   </dt>
-  <dd class="govuk-check-your-answers__answer">
+  <dd class="app-check-your-answers__answer">
     {{ data['crimeReported'] }}
   </dd>
-  <dd class="govuk-check-your-answers__change">
+  <dd class="app-check-your-answers__change">
     <a href="incident-reported">
-      Change<span class="visually-hidden"> {{ incidentReportedQuestion }}</span>
+      Change<span class="govuk-visually-hidden"> {{ incidentReportedQuestion }}</span>
     </a>
   </dd>
 </div>
 
 {% if data['crimeReported'] === 'Yes' %}
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
     {{ crimeReportedDateQuestion }}
   </dt>
-  <dd class="govuk-check-your-answers__answer">
+  <dd class="app-check-your-answers__answer">
     {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
   </dd>
-  <dd class="govuk-check-your-answers__change">
+  <dd class="app-check-your-answers__change">
     <a href="crime-reported-date">
-      Change<span class="visually-hidden"> date crime was reported</span>
+      Change<span class="govuk-visually-hidden"> date crime was reported</span>
     </a>
   </dd>
 </div>
 {% endif %}
 
 {% if data['crimeReported'] === 'Yes' %}
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
     {{ policeForceQuestion }}
   </dt>
-  <dd class="govuk-check-your-answers__answer">
+  <dd class="app-check-your-answers__answer">
     {{ data['police-force'] }}
   </dd>
-  <dd class="govuk-check-your-answers__change">
+  <dd class="app-check-your-answers__change">
     <a href="reporting-details-what-force">
-      Change<span class="visually-hidden"> {{ policeForceQuestion }}</span>
+      Change<span class="govuk-visually-hidden"> {{ policeForceQuestion }}</span>
     </a>
   </dd>
 </div>
 
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
     {{ crimeReferenceNumberQuestionCA }}
   </dt>
-  <dd class="govuk-check-your-answers__answer">
+  <dd class="app-check-your-answers__answer">
     {{ data['crimeReferenceNumber'] }}
   </dd>
-  <dd class="govuk-check-your-answers__change">
+  <dd class="app-check-your-answers__change">
     <a href="crime-reference">
-      Change<span class="visually-hidden"> {{ crimeReferenceNumberQuestionCA }}</span>
+      Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestionCA }}</span>
     </a>
   </dd>
 </div>

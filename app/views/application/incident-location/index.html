@@ -1,34 +1,68 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 {{ incidentLocationHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      {% from 'radios/macro.njk' import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
 
-  <main role="main" class="govuk-main-wrapper">
+      {% set textEngland %}
+      {{ govukInput({
+            id: "england",
+            name: "england",
+            value: data['textEngland'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "England"
+            }
+          }) }}
+      {% endset -%}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form class="form" method="post">
+      {% set textScotland %}
+      {{ govukInput({
+            id: "scotland",
+            name: "scotland",
+            value: data['textScotland'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Scotland"
+            }
+          }) }}
+      {% endset -%}
 
-          {% from 'radios/macro.njk' import govukRadios %}
-          {% from "input/macro.njk" import govukInput %}
+      {% set textWales %}
+      {{ govukInput({
+            id: "wales",
+            name: "wales",
+            value: data['textWales'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Wales"
+            }
+          }) }}
+      {% endset -%}
 
-
-          {% set textHtml %}
-          {{ govukInput({
+      {% set textSomewhereElse %}
+      {{ govukInput({
             id: "somewhere-else",
             name: "somewhere-else",
             value: data['somewhere-else'],
@@ -37,9 +71,9 @@
               text: incidentLocationOther
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {{ govukRadios({
+      {{ govukRadios({
             idPrefix: "incident-location",
             name: "incident-location",
             currentValue: data['incident-location'],
@@ -53,35 +87,44 @@
             items: [
             {
               value: "England",
-              text: "England"
+              text: "England",
+              conditional: {
+                html: textEngland
+              }
             },
             {
               value: "Scotland",
-              text: "Scotland"
+              text: "Scotland",
+              conditional: {
+                html: textScotland
+              }
             },
             {
               value: "Wales",
-              text: "Wales"
+              text: "Wales",
+              conditional: {
+                html: textWales
+              }
             },
             {
               value: "Somewhere else",
               text: "Somewhere else",
               conditional: {
-                html: textHtml
+                html: textSomewhereElse
               }
             }
             ]
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
           }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

@@ -5,112 +5,111 @@
 </h2>
 
 <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
-<!--   * `govuk-check-your-answers--short` for short questions -->
-<!--   * `govuk-check-your-answers__questions-long` for long questions -->
+<!--   * `app-check-your-answers--short` for short questions -->
+<!--   * `app-check-your-answers__questions-long` for long questions -->
 <!--   * none for single group of q&a -->
-<dl class="govuk-check-your-answers govuk-check-your-answers--long">
+<dl class="app-check-your-answers app-check-your-answers--long">
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Name
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="name">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    Name
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="name">
-      Change<span class="visually-hidden"> name</span>
-    </a>
-  </dd>
-</div>
+  {% if data['haveOtherName'] === 'Yes' %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Other names
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['nameOther'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="name">
+        Change<span class="govuk-visually-hidden"> other name</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
 
-{% if data['haveOtherName'] === 'Yes' %}
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    Other names
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['nameOther'] }}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="name">
-      Change<span class="visually-hidden"> other name</span>
-    </a>
-  </dd>
-</div>
-{% endif %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Date of birth
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="date-of-birth">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    Date of birth
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="date-of-birth">
-      Change<span class="visually-hidden"> date of birth</span>
-    </a>
-  </dd>
-</div>
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Email address
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['emailAddress'] }}<br />
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="email-address">
+        Change<span class="govuk-visually-hidden"> email address</span>
+      </a>
+    </dd>
+  </div>
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    Email address
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['emailAddress'] }}<br />
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="email-address">
-      Change<span class="visually-hidden"> email address</span>
-    </a>
-  </dd>
-</div>
-
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    Address
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {% if data['address-lookup-result'] %}
-      {{  data['address-lookup-result'] }}{{ data['postcode'] }}
-    {% elseif data['address-non-UK'] %}
-      {{  data['address-non-UK'] }}
-    {% else %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Address
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {% if data['address-lookup-result'] %}
+      {{ data['address-lookup-result'] }}{{ data['postcode'] }}
+      {% elseif data['address-non-UK'] %}
+      {{ data['address-non-UK'] }}
+      {% else %}
       {{ data['address-line-1'] }}<br />
-    {% if data['address-line-2'] %}
+      {% if data['address-line-2'] %}
       {{ data['address-line-2'] }}<br />
-    {% endif %}
+      {% endif %}
       {{ data['address-town'] }}<br />
-    {% if data['address-county'] %}
+      {% if data['address-county'] %}
       {{ data['address-county'] }}<br />
-    {% endif %}
-    {% if data['address-postcode'] %}
+      {% endif %}
+      {% if data['address-postcode'] %}
       {{ data['address-postcode'] }}<br />
-    {% endif %}
-    {% endif %}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="address">
-      Change<span class="visually-hidden"> address</span>
-    </a>
-  </dd>
-</div>
+      {% endif %}
+      {% endif %}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="address">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
 
-<div class="govuk-check-your-answers__contents">
-  <dt class="govuk-check-your-answers__question">
-    Telephone number
-  </dt>
-  <dd class="govuk-check-your-answers__answer">
-    {{ data['phoneNumber'] }}
-  </dd>
-  <dd class="govuk-check-your-answers__change">
-    <a href="phone-number">
-      Change<span class="visually-hidden"> phone number</span>
-    </a>
-  </dd>
-</div>
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Telephone number
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['phoneNumber'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="phone-number">
+        Change<span class="govuk-visually-hidden"> phone number</span>
+      </a>
+    </dd>
+  </div>
 
 </dl>
 <!-- ** /Your details ************************************************************************************************************************ -->

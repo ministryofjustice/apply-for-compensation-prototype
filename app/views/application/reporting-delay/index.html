@@ -1,21 +1,33 @@
 {% extends "layout.html" %}
-{% block page_title %}
+{% block pageTitle %}
 {{ reportingDelayQuestion }} - {{ serviceName }} - GOV.UK
+Reporting delay
 {% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
 {% block content %}
-<div class="govuk-width-container">
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <main role="main" class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form class="form" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
-          {% from "input/macro.njk" import govukInput %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'radios/macro.njk' import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
 
 
-          {% set capacityHtml %}
-          {{ govukInput({
+      {% set capacityHtml %}
+      {{ govukInput({
             id: "capacity-reasons",
             name: "capacity-reasons",
             value: data['capacity-reasons'],
@@ -24,10 +36,10 @@
               text: capacityReasonHint
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {% set otherDelayHtml %}
-          {{ govukInput({
+      {% set otherDelayHtml %}
+      {{ govukInput({
             id: "other-delay-reasons",
             name: "other-delay-reason",
             value: data['other-delay-reason'],
@@ -36,9 +48,9 @@
               text: otherDelayReasonHint
             }
           }) }}
-          {% endset -%}
+      {% endset -%}
 
-          {{ govukRadios({
+      {{ govukRadios({
             idPrefix: "reportingDelay",
             name: "reportingDelay",
             currentValue: data['reportingDelay'],
@@ -74,16 +86,16 @@
             ]
           }) }}
 
-          {% from "button/macro.njk" import govukButton %}
-          {{ govukButton({
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
           "text": "Continue"
           }) }}
 
-          </form>
-        </div>
-      </div>
-
-    </main>
+    </form>
   </div>
+</div>
+
+</main>
+</div>
 
 {% endblock %}

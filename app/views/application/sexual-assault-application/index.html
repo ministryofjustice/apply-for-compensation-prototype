@@ -1,36 +1,35 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 {{ sexualAbuseQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-
-  <main role="main" class="govuk-main-wrapper">
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
           Have you applied for compensation from any other sources?
         </h1> -->
 
-        <form class="form" method="post">
+    <form class="form" method="post">
 
-          {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'radios/macro.njk' import govukRadios %}
 
-          {{ govukRadios({
+      {{ govukRadios({
             "classes": "govuk-radios--inline",
             "idPrefix": "sexualAssault",
             "name": "sexualAssault",
@@ -54,15 +53,15 @@
             ]
           }) }}
 
-          {{ govukButton({
+      {{ govukButton({
             "text": "Continue"
             }) }}
 
-        </form>
+    </form>
 
-      </div>
-    </div>
-  </main>
+  </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

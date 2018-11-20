@@ -1,31 +1,31 @@
 {% extends "layout.html" %}
 
-{% block page_title %}
+{% block pageTitle %}
 {{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block content %}
+ {% block beforeContent %}
+ {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+ {{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
 
-<div class="govuk-width-container">
-  {% from "phase-banner/macro.njk" import govukPhaseBanner %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-  }) }}
+ <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+ {% endblock %}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <main role="main" class="govuk-main-wrapper">
+ {% block content %}
 
-    <div class="govuk-grid-row">
+     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
         <form class="form"  method="post">
           {% from "date-input/macro.njk" import govukDateInput %}
           {{ govukDateInput({
             id: 'incidentReported',
-            name: 'incidentReported',
+            namePrefix: 'incidentReported',
           fieldset: {
           legend: {
           text: crimeReportedDateQuestion,
@@ -35,24 +35,8 @@
           },
           hint: {
           text: 'For example, 31 3 2018. You can enter an approximate date '
-          },
-          items:[
-          {
-          name: 'day',
-          value:  data['incidentReported-day']
-          },
-          {
-          name: 'month',
-          value:  data['incidentReported-month']
-          },
-          {
-          name: 'year',
-          value:  data['incidentReported-year']
-          }
-          ]
-          })
-          }}
-
+            }
+          }) }}
           {% from "button/macro.njk" import govukButton %}
 
           {{ govukButton({
@@ -62,10 +46,6 @@
 
       </div>
     </div>
-    <div class="design-notes-box">
-      <h3 class="design-notes">Design notes</h3>
-      <p class="design-notes">9/8/18 - new screen MVP-125. JK</p>
-      </div>
   </main>
 </div>
 
