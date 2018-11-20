@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (knowOffender === 'No')  {
       // Redirect to the relevant page
-      res.redirect('/application/name')
+      res.redirect('/application/compensation')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/offender-name')

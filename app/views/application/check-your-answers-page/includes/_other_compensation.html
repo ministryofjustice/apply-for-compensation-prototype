@@ -23,23 +23,23 @@
 {% if data['otherCompensation'] === 'Yes' %}
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    {{ whoCompensationQuestion }}
+    {{ compYesWhoHint }}
   </dt>
   <dd class="app-check-your-answers__answer">
-    {{ data['who-claim-from'] }}
+    {{ data['comp-yes-who'] }}
   </dd>
   <dd class="app-check-your-answers__change">
     <a href="compensation-who">
-      Change<span class="govuk-visually-hidden">{{ whoCompensationQuestion }}</span>
+      Change<span class="govuk-visually-hidden">{{ compYesWhoHint }}</span>
     </a>
   </dd>
 </div>
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    {{ howMuchCompensationQuestion }}
+    {{ compYesAmountHint }}
   </dt>
   <dd class="app-check-your-answers__answer">
-    {{ data['how-much-compensation'] }}
+    {{ data['comp-yes-amount'] }}
   </dd>
   <dd class="app-check-your-answers__change">
     <a href="compensation-amount">
@@ -49,13 +49,29 @@
 </div>
 {% endif %}
 
+{% if data['otherCompensation'] === 'Yes, but I am still waiting for a decision' %}
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ compWaitingHint }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['comp-waiting'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="compensation-who">
+      Change<span class="govuk-visually-hidden">{{ compWaitingHint }}</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
 {% if data['otherCompensation'] === 'No' %}
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    {{ compensationWhyNotQuestion }}
+    {{ compNoHint }}
   </dt>
   <dd class="app-check-your-answers__answer">
-    {{ data['why-not-claim'] }}
+    {{ data['comp-no'] }}
   </dd>
   <dd class="app-check-your-answers__change">
     <a href="compensation-why-not">
