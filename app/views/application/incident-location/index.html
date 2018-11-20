@@ -29,10 +29,10 @@
       {{ govukInput({
             id: "england",
             name: "england",
-            value: data['textEngland'],
+            value: data['townOrlocation'],
             classes: "govuk-!-width-two-thirds",
             label: {
-              text: "England"
+              text: incidentLocationReveal
             }
           }) }}
       {% endset -%}
@@ -41,10 +41,10 @@
       {{ govukInput({
             id: "scotland",
             name: "scotland",
-            value: data['textScotland'],
+            value: data['townOrlocation'],
             classes: "govuk-!-width-two-thirds",
             label: {
-              text: "Scotland"
+              text: incidentLocationReveal
             }
           }) }}
       {% endset -%}
@@ -53,10 +53,10 @@
       {{ govukInput({
             id: "wales",
             name: "wales",
-            value: data['textWales'],
+            value: data['townOrlocation'],
             classes: "govuk-!-width-two-thirds",
             label: {
-              text: "Wales"
+              text: incidentLocationReveal
             }
           }) }}
       {% endset -%}
@@ -68,7 +68,7 @@
             value: data['somewhere-else'],
             classes: "govuk-!-width-two-thirds",
             label: {
-              text: incidentLocationOther
+              text: incidentLocationRevealOther
             }
           }) }}
       {% endset -%}
