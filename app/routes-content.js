@@ -26,7 +26,7 @@
 	    declarationBody: 'By continuing you confirm that the information you will give is true as far as you know.',
 	    declarationHeading: 'Declaration',
 	    doYouKnowOffenderQuestion: "Do you know the name of the offender?",
-	    doYouKnowOffenderHint: "We will not contact them.",
+	    offenderNameHint: "We will not contact the offender.",
 	    emailAddressError: "Enter your email address, for example john.smith@email.com",
 	    emailAddressErrorSubHeader: "Enter your email address?",
 	    emailAddressHint: "We'll use this to contact you about your application for example, to request more information and tell you about our decision",
