@@ -2,7 +2,86 @@
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/node_modules/govuk-frontend/all.js"></script>
 <script src="/public/javascripts/application.js"></script>
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script type="text/javascript">
+  /*global accessibleAutocomplete*/
+  var englishPolice = [
+    'Avon and Somerset Constabulary',
+    'Bedfordshire Police',
+    'Cambridgeshire Constabulary',
+    'Cheshire Constabulary',
+    'City of London Police',
+    'Cleveland Police',
+    'Cumbria Constabulary',
+    'Derbyshire Constabulary',
+    'Devon & Cornwall Police',
+    'Dorset Police',
+    'Durham Constabulary',
+    'Essex Police',
+    'Gloucestershire Constabulary',
+    'Greater Manchester Police',
+    'Hampshire Constabulary',
+    'Hertfordshire Constabulary',
+    'Humberside Police',
+    'Kent Police',
+    'Lancashire Constabulary',
+    'Leicestershire Police',
+    'Lincolnshire Police',
+    'Merseyside Police',
+    'Metropolitan Police Service',
+    'Norfolk Constabulary',
+    'North Yorkshire Police',
+    'Northamptonshire Police',
+    'Northumbria Police',
+    'Nottinghamshire Police',
+    'South Yorkshire Police',
+    'Staffordshire Police',
+    'Suffolk Constabulary',
+    'Surrey Police',
+    'Sussex Police',
+    'Thames Valley Police',
+    'Warwickshire Police',
+    'West Mercia Police',
+    'West Midlands Police',
+    'West Yorkshire Police',
+    'Wiltshire Police',
+  ]
+  var element = document.querySelector('#englishPolice');
+  accessibleAutocomplete({
+    element: element,
+    id: 'autocomplete-class',
+    source: englishPolice
+  });
+</script>
+
+<script type="text/javascript">
+  /*global accessibleAutocomplete*/
+  var scottishPolice = [
+    'Police Scotland',
+
+  ]
+  var element = document.querySelector('#scottishPolice');
+  accessibleAutocomplete({
+    element: element,
+    id: 'autocomplete-class',
+    source: scottishPolice
+  });
+</script>
+
+<script type="text/javascript">
+  /*global accessibleAutocomplete*/
+  var welshPolice = [
+    'Wales',
+
+  ]
+  var element = document.querySelector('#welshPolice');
+  accessibleAutocomplete({
+    element: element,
+    id: 'autocomplete-class',
+    source: welshPolice
+  });
+</script>
 
 {% if useAutoStoreData %}
-  <script src="/public/javascripts/auto-store-data.js"></script>
+<script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
