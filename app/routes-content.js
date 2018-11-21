@@ -55,6 +55,7 @@
 	    nameOtherError: "Select yes if you have been known by any other names",
 	    nameOtherQuestion: 'Have you ever been known by any other names?',
 	    nameOtherWhatQuestion: "What other names have you used?",
+			otherNameWhatError: "Enter the other names you have used",
 	    nameQuestion: 'Enter your name',
 	    nameTitleField: 'Title',
 	    nameFirstNameField: 'First name',
