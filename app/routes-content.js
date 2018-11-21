@@ -63,8 +63,12 @@
 	    offenderNameQuestionCA: 'Offenders name',
 	    ongoingRelationshipQuestion: "Have you have any contact with this person since the incident?",
 	    ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
-	    otherCompensationHint: 'Other compensation can include, for example, insurance claims, civil damages and compensation issued by a court.',
-	    otherCompensationQuestion: 'What other compensation have you applied for or received for this crime?',
+	    otherCompensationHint: 'Other sources of compensation include, for example, insurance claims, civil damages and compensation issued by a court.',
+	    otherCompensationQuestion: 'Have you applied anywhere else for compensation for this crime?',
+			compYesWhoHint:'Who did you apply to?',
+			compYesAmountHint:'How much did you receive?',
+			compWaitingHint: 'Who did you apply to?',
+			compNoHint: 'Briefly explain why not.',
 	    over18Question: 'Are you 18 or over?',
 			over18errorGuidance: 'Select yes if you are over 18',
 	    periodOfAbuseEndQuestion: 'When did it stop?',
@@ -96,8 +100,6 @@
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
-			capacityReasonHint: 'Give a brief explanation of this reason',
-			otherDelayReasonHint: 'Give a brief explanation of this reason',
 	};
 	// // END__######################################################################################################
 	// }

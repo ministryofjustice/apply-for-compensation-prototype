@@ -22,70 +22,93 @@
     <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
     <form class="form" method="post">
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--xl" for="name">
-            {{ otherCompensationQuestion }}
-          </label>
-        </h1>
-        <span id="waste-hint" class="govuk-hint">
-          {{ otherCompensationHint }}
-        </span>
-      </div>
+            {% from 'radios/macro.njk' import govukRadios %}
+            {% from "input/macro.njk" import govukInput %}
 
-      {% from "input/macro.njk" import govukInput %}
 
-      {{ govukInput({
-              label: {
-                "text": 'Source of compensation'
-              },
-              classes: "govuk-!-width-two-thirds",
-              id: "first-comp-source",
-              name: "first-comp-source",
-              value: data['first-comp-source']
-            }) }}
-
-      {% from "input/macro.njk" import govukInput %}
-
-      {{ govukInput({
-            label: {
-            "text": 'Amount in pounds'
-            },
-            classes: "govuk-!-width-one-quarter",
-            id: "first-comp-amount",
-            name: "first-comp-amount",
-            value: data['first-comp-amount']
-            }) }}
-
-      {% from "checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "input/macro.njk" import govukInput %}
-
-      {% set noneHtml %}
-      {{ govukInput({
-              id: "noOtherComp",
-              name: "noOtherComp",
-              type: "None",
-              classes: "govuk-!-width-two-thirds",
-              label: {
-                text: "Briefly explain why"
-              }
-            }) }}
-      {% endset -%}
-
-      {{ govukCheckboxes({
-              idPrefix: "otherCompensation",
-              name: "otherCompensation",
-
-              items: [
-                {
-                  value: "None",
-                  text: "I have not applied for compensation from anywhere else",
-                  conditional: {
-                    html: noneHtml
+            {% set compYesHtml %}
+            {{ govukInput({
+                  id: "comp-yes-who",
+                  name: "comp-yes-who",
+                  value: data['comp-yes-who'],
+                  classes: "govuk-!-width-two-thirds",
+                  label: {
+                    text: compYesWhoHint
                   }
-                }
-              ]
-            }) }}
+                }) }}
+            {{ govukInput({
+                  id: "comp-yes-amount",
+                  name: "comp-yes-amount",
+                  value: data['comp-yes-amount'],
+                  classes: "govuk-!-width-one-quarter",
+                  label: {
+                    text: compYesAmountHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {% set compWaitingHtml %}
+            {{ govukInput({
+                  id: "comp-waiting",
+                  name: "comp-waiting",
+                  value: data['comp-waiting'],
+                  classes: "govuk-!-width-two-thirds",
+                  label: {
+                    text: compWaitingHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {% set compNoHtml %}
+            {{ govukInput({
+                  id: "comp-no",
+                  name: "comp-no",
+                  value: data['comp-no'],
+                  classes: "govuk-!-width-two-thirds",
+                  label: {
+                    text: compNoHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+                  idPrefix: "otherCompensation",
+                  name: "otherCompensation",
+                  currentValue: data['otherCompensation'],
+                  fieldset: {
+                    legend: {
+                      text: otherCompensationQuestion,
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  hint: {
+                    text: otherCompensationHint
+                  },
+                  items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    conditional: {
+                      html: compYesHtml
+                    }
+                  },
+                  {
+                    value: "Yes, but I am still waiting for a decision",
+                    text: "Yes, but I am still waiting for a decision",
+                    conditional: {
+                      html: compWaitingHtml
+                    }
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    conditional: {
+                      html: compNoHtml
+                    }
+                  }
+                  ]
+                }) }}
 
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
