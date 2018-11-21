@@ -111,6 +111,91 @@
   });
 </script>
 
+<script type="text/javascript">
+  /*global accessibleAutocomplete*/
+  var allPolice = [
+    'British Transport Police (C Division)',
+    'Dyfed-Powys Police',
+    'Gwent Police',
+    'North Wales Police',
+    'South Wales Police (Barry / Y Barri)',
+    'South Wales Police (Bridgend / Pen-y-bont ar Ogwr)',
+    'South Wales Police (Cardiff Bay / Bae Caerdydd)',
+    'South Wales Police (Cardiff Central / Canol Caerdydd)',
+    'South Wales Police (Merthyr Tydfil / Merthyr Tudful)',
+    'South Wales Police (Neath / Castell-Nedd)',
+    'South Wales Police (Pontypridd)',
+    'South Wales Police (Swansea / Abertawe)',
+    'British Transport Police (D Division)',
+    'Civil Nuclear Constabulary (Dounreay)',
+    'Civil Nuclear Constabulary (Hunterston)',
+    'Civil Nuclear Constabulary (Torness)',
+    'Police Service of Scotland (Argyll and West Dunbartonshire)',
+    'Police Service of Scotland (Ayrshire)',
+    'Police Service of Scotland (Dumfries and Galloway)',
+    'Police Service of Scotland (Edinburgh)',
+    'Police Service of Scotland (Fife)',
+    'Police Service of Scotland (Forth Valley)',
+    'Police Service of Scotland (Greater Glasgow)',
+    'Police Service of Scotland (Highland and Islands)',
+    'Police Service of Scotland (Lanarkshire)',
+    'Police Service of Scotland (North East)',
+    'Police Service of Scotland (Renfrewshire and Inverclyde)',
+    'Police Service of Scotland (Tayside)',
+    'Police Service of Scotland (The Lothians and Scottish Borders)',
+    'Police UK Avon and Somerset Constabulary',
+    'Police UK Bedfordshire Police',
+    'Police UK British Transport Police',
+    'Police UK Cambridgeshire Constabulary',
+    'Police UK Cheshire Constabulary',
+    'Police UK City of London Police',
+    'Police UK Civil Nuclear Constabulary',
+    'Police UK Cleveland Police',
+    'Police UK Devon and Cornwall Police',
+    'Police UK Dorset Police',
+    'Police UK Durham Constabulary',
+    'Police UK Dyfed - Powys Police',
+    'Police UK Essex Police',
+    'Police UK Gloucestershire Constabulary',
+    'Police UK Gwent Police',
+    'Police UK Hampshire Constabulary',
+    'Police UK Hertfordshire Constabulary',
+    'Police UK Humberside Police',
+    'Police UK Kent Police',
+    'Police UK Leicestershire Police',
+    'Police UK Lincolnshire Police',
+    'Police UK Metropolitan Police Service',
+    'Police UK Ministry of Defence Police',
+    'Police UK Norfolk Constabulary',
+    'Police UK North Wales Police',
+    'Police UK North Yorkshire Police',
+    'Police UK Northamptonshire Police',
+    'Police UK Nottinghamshire Police',
+    'Police UK Police Service of Scotland',
+    'Police UK South Wales Police',
+    'Police UK South Yorkshire Police',
+    'Police UK Staffordshire Police',
+    'Police UK Suffolk Constabulary',
+    'Police UK Surrey Police',
+    'Police UK Sussex Police',
+    'Police UK Thames Valley Police',
+    'Police UK Warwickshire Police',
+    'Police UK West Mercia Police',
+    'Police UK West Midlands Police',
+    'Police UK West Yorkshire Police',
+    'Police UK Wiltshire Police',
+
+
+
+  ]
+  var element = document.querySelector('#allPolice');
+  accessibleAutocomplete({
+    element: element,
+    id: 'autocomplete-class',
+    source: allPolice
+  });
+</script>
+
 {% if useAutoStoreData %}
 <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
