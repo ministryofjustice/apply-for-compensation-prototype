@@ -22,31 +22,29 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="/form-handler" method="post">
 
-      {% from 'radios/macro.njk' import govukRadios %}
+      <h1 class="govuk-heading-xl">What police force is dealing with the crime?</h1>
 
-      {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "policeForceQuestion",
-            "name": "policeForceQuestion",
-            currentValue: data['policeForceQuestion'],
-            "fieldset": {
-              "legend": {
-                "text": policeForceQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            "items": [
-              {
-                "value": "yes",
-                "text": "Yes"
-              },
-              {
-                "value": "no",
-                "text": "No"
-              }
-            ]
-          }) }}
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-visually-hidden" for="name">
+          What police force is dealing with the crime?
+        </label>
+        <!-- This gets the autocomplete an puts it in the div with an id="autocomplete". The files used for this are:
+        - app/assets/javascripts/accessible-autocomplete.min.js
+        - app/assets/sass/components/_accessible-autocomplete.scss
+        More details on this can be found here: https://github.com/alphagov/accessible-autocomplete -->
+        {% if data['incident-location'] === 'England' %}
+        <div id="englishPolice"></div>
+        {% endif %}
+        {% if data['incident-location'] === 'Scotland' %}
+        <div id="scottishPolice"></div>
+        {% endif %}
+        {% if data['incident-location'] === 'Wales' %}
+        <div id="welshPolice"></div>
+        {% endif %}
+        {% if data['incident-location'] === 'Somewhere else' %}
+        <div id="allPolice"></div>
+        {% endif %}
+      </div>
 
       {{ govukButton({
             "text": "Continue"

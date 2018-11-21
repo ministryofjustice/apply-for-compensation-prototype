@@ -64,7 +64,7 @@
   </div>
   {% endif %}
 
-  {% if data['reportingDelay']  %}
+  {% if data['reportingDelay'] %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ reportingDelayQuestion }}
@@ -80,7 +80,7 @@
   </div>
   {% endif %}
 
-  {% if data['applicationDelay']  %}
+  {% if data['applicationDelay'] %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ whyDelayQuestion }}
@@ -108,7 +108,7 @@
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="incident-location">
-        Change<span class="govuk-visually-hidden"> {{ incidentLocationOther }}</span>
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
       </a>
     </dd>
   </div>
@@ -118,7 +118,7 @@
       {{ incidentLocationHeading }}
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['incident-location'] }}
+      {{ data['england'] }}{{ data['scotland'] }}{{ data['wales'] }}{{ data['somewhere-else'] }}, {{ data['incident-location'] }}
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="incident-location">
