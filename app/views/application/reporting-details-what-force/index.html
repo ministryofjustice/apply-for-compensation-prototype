@@ -41,6 +41,9 @@
         {% if data['incident-location'] === 'Wales' %}
         <div id="welshPolice"></div>
         {% endif %}
+        {% if data['incident-location'] === 'Somewhere else' %}
+        <div id="allPolice"></div>
+        {% endif %}
       </div>
 
       {{ govukButton({
