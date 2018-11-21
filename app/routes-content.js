@@ -38,7 +38,7 @@
 	    errorPastMessage: "Your date of birth must be in the past",
 	    howMuchCompensationHint: 'You can also tell us if you are still waiting to find out.',
 	    howMuchCompensationQuestion: 'How much compensation did you get?',
-			impactHeading: 'Impact of the crime on you',
+			impactHeading: 'Before you continue',
 	    incidentDateHeading: "When did the crime happen?",
 	    incidentDateHint: 'For example, 31 3 2018. You can enter an approximate date ',
 	    incidentLocationHeading: "Where did the crime happen?",
