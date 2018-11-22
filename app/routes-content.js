@@ -101,6 +101,10 @@
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
+			capacityReasonHint: 'Briefly explain why not',
+			otherDelayReasonHint: 'Briefly explain what the other reasons are',
+			medicalReasonHint:'Briefly describe the medical reasons',
+			otherReasonHint: 'Briefly describe the other reasons',
 	};
 	// // END__######################################################################################################
 	// }
