@@ -31,17 +31,20 @@ Application submitted - {{ serviceName }} - GOV.UK
         Your reference number<br><strong>CICA2123GW</strong>
       </div>
       <br>
-      <div class="govuk-body-l">
+      <div class="govuk-panel__body-l">
         We have sent a confirmation email to <strong>{{ data['emailAddress'] }}</strong>
       </div>
     </div>
+    <p>
+  </p>
+    <p class="govuk-body-l">Thank you for submitting your application.</p>
 
     <h2 class="govuk-heading-m">What happens next</h2>
 
 
-    <p>We will check if you can get compensation, and then:</p>
+    <p>We will:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>ask the police for evidence, if it is needed</li>
+      <li>ask the police for evidence</li>
       <li>use the police evidence to make a decision</li>
       <li>send our decision to {{ data['emailAddress'] }}</li>
     </ul>
