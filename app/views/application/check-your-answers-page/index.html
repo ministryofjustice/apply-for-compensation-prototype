@@ -36,13 +36,31 @@ Check your answers - {{ serviceName }} - GOV.UK
 
     <h2 class="govuk-heading-l">Consent and submit your application</h2>
 
-    <p class="govuk-body">I understand that to process my application, my information will be shared with the police and other relevant organisations, as described in the <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a>.</p>
+    <p class="govuk-body">I understand that to process my application, my personal information will be shared with the police and other relevant organisations, as described in the <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">privacy notice</a>.</p>
 
+    {% from "checkboxes/macro.njk" import govukCheckboxes %}
+    {{ govukCheckboxes({
+          idPrefix: "consentConfirmation",
+          name: "consentConfirmation",
+          currentValue: data['consentConfirmation'],
+          fieldset: {
+            legend: {
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "I consent",
+              text: "I consent"
+            }
+          ]
+        }) }}
 
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton(
-            { "text": "Consent and submit" })
+            { "text": "Submit application" })
           }}
     </form>
   </div>
