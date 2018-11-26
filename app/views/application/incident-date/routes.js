@@ -49,5 +49,17 @@ module.exports = function (router, content) {
   router.get('/application/incident-date/', function (req, res) {
     res.render('application/incident-date/index', content)
   })
+
+  router.get('/application/incident-date/error-past', function (req, res) {
+    res.render('application/incident-date/error-past', content)
+  })
+
+  router.get('/application/incident-date/error-before-reported', function (req, res) {
+    res.render('application/incident-date/error-before-reported', content)
+  })
+
+  router.get('/application/incident-date/error-incomplete', function (req, res) {
+    res.render('application/incident-date/error-incomplete', content)
+  })
   // END__######################################################################################################
 }

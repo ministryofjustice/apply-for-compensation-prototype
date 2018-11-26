@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: errorBeforeReported,
+                  href: "#incident-date"
+                }
+              ]
+            }) }}
+
+            {% from "date-input/macro.njk" import govukDateInput %}
+            {{ govukDateInput({
+                id: 'incident-date',
+                name: 'incident-date',
+                namePrefix: 'incident-date',
+                fieldset: {
+                legend: {
+                text: incidentDateHeading,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+                }
+                },
+                hint: {
+                text: incidentDateHint
+                },
+                errorMessage: {
+                  text: errorBeforeReported
+                }
+                }) }}
+
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}
