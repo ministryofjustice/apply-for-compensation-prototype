@@ -14,7 +14,7 @@
 	    addressPostcodeOptionalLabel: 'Postcode (optional)',
 	    addressQuestion: 'Enter your address',
 	    britishCitizenQuestion: 'Are you a British citizen or EU national?',
-			britishCitizenError: 'Select yes if you are a British Citizen or EU national',
+			britishCitizenError: 'Select yes if you are a British citizen or EU national',
 	    compensationWhyNotQuestion: "Why did you not apply for compensation from another source?",
 	    countyLabel: 'County (optional)',
 	    crimeReferenceNumberHint: 'This is the reference number the police gave the crime when it was reported.',
