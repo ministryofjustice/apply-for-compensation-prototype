@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Application received - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">
+    We have received your application for criminal injuries compensation
+    </h2>
+
+    <p class="govuk-body">Dear Test User</p>
+    <p class="govuk-body">Your case reference number is OCJ/MVP/2018.</p>
+    <p class="govuk-body">We will email our decision to you by 28 February 2019.</p>
+
+    <p class="govuk-body">We will only contact you if:
+      <ul>
+        <li class="govuk-body">there is a delay getting information from the police</li>
+        <li class="govuk-body">we need you to clarify something on your application form</li>
+      </ul>
+    </p>
+
+
+          <div class="govuk-details__text">
+            <a class="govuk-body">You must tell us immediately if any of the information you gave us changes.</a>
+          </div>
+          <div class="govuk-details__text">
+            <a class="govuk-body">You can contact our Customer Service Centre on 0300 003 3601. Select option 8 when the call is answered.</a>
+          </div>
+
+    <form class="form" method="post">
+
+    </form>
+  </div>
+
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
