@@ -54,8 +54,8 @@ module.exports = function (router, content) {
     res.render('application/period-of-abuse-end/error-before-reported', content)
   })
 
-  router.get('/application/period-of-abuse-end/error-before-started', function (req, res) {
-    res.render('application/period-of-abuse-end/error-before-started', content)
+  router.get('/application/period-of-abuse-end/error-after-started', function (req, res) {
+    res.render('application/period-of-abuse-end/error-after-started', content)
   })
 
   router.get('/application/period-of-abuse-end/error-incomplete', function (req, res) {

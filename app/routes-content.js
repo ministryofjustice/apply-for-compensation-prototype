@@ -45,7 +45,7 @@
 			errorAbuseEndPast: 'The date the crime stopped must be in the past',
 			errorAbuseEndIncomplete: 'Enter the date the crime stopped and include a month and year',
 			errorAbuseEndBeforeReported: 'The date the crime stopped must be on or before the date the crime was reported to the police',
-			errorAbuseEndBeforeStarted: 'The date the crime stopped must be before the date the crime started',
+			errorAbuseEndAfterStarted: 'The date the crime stopped must be after the date the crime started',
 	    howMuchCompensationHint: 'You can also tell us if you are still waiting to find out.',
 	    howMuchCompensationQuestion: 'How much compensation did you get?',
 			impactHeading: 'Before you continue',
