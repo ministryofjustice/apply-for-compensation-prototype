@@ -34,7 +34,7 @@
               titleText: "There is a problem",
               errorList: [
                 {
-                  text: "Select yes if you are a British Citizen",
+                  text: britishCitizenError,
                   href: "#haveOtherName"
                 }
               ]
@@ -49,13 +49,13 @@
             currentValue: data['britishCitizen'],
             "fieldset": {
               "legend": {
-                "text": 'Are you a British citizen?',
+                "text": britishCitizenQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
             errorMessage: {
-            text: "Select yes if you are a British Citizen"
+            text: britishCitizenError
           },
             "items": [
               {

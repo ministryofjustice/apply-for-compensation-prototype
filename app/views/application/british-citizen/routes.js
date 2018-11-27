@@ -24,5 +24,9 @@ router.get('/application/british-citizen/', function (req, res) {
   res.render('application/british-citizen/index', content)
 })
 
+router.get('/application/british-citizen/british-citizen-error', function (req, res) {
+  res.render('application/british-citizen/british-citizen-error', content)
+})
+
 // END__######################################################################################################
 }
