@@ -45,5 +45,21 @@ module.exports = function (router, content) {
   router.get('/application/period-of-abuse-end/', function (req, res) {
     res.render('application/period-of-abuse-end/index', content)
   })
+
+  router.get('/application/period-of-abuse-end/error-past', function (req, res) {
+    res.render('application/period-of-abuse-end/error-past', content)
+  })
+
+  router.get('/application/period-of-abuse-end/error-before-reported', function (req, res) {
+    res.render('application/period-of-abuse-end/error-before-reported', content)
+  })
+
+  router.get('/application/period-of-abuse-end/error-after-started', function (req, res) {
+    res.render('application/period-of-abuse-end/error-after-started', content)
+  })
+
+  router.get('/application/period-of-abuse-end/error-incomplete', function (req, res) {
+    res.render('application/period-of-abuse-end/error-incomplete', content)
+  })
   // END__######################################################################################################
 }
