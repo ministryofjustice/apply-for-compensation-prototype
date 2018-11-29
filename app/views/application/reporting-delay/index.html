@@ -22,35 +22,47 @@ Reporting delay
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from 'radios/macro.njk' import govukRadios %}
+
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
       {% from "input/macro.njk" import govukInput %}
 
+      {% set under18DelayHtml %}
+      {{ govukInput({
+        id: "under18-delay-reasons",
+        name: "under18-delay-reason",
+        value: data['under18-delay-reason'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: under18DelayReasonHint
+        }
+      }) }}
+      {% endset -%}
 
       {% set capacityHtml %}
       {{ govukInput({
-            id: "capacity-reasons",
-            name: "capacity-reasons",
-            value: data['capacity-reasons'],
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: capacityReasonHint
-            }
-          }) }}
+        id: "capacity-reasons",
+        name: "capacity-reasons",
+        value: data['capacity-reasons'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: capacityReasonHint
+        }
+      }) }}
       {% endset -%}
 
       {% set otherDelayHtml %}
       {{ govukInput({
-            id: "other-delay-reasons",
-            name: "other-delay-reason",
-            value: data['other-delay-reason'],
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: otherDelayReasonHint
-            }
-          }) }}
+        id: "other-delay-reasons",
+        name: "other-delay-reason",
+        value: data['other-delay-reason'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: otherDelayReasonHint
+        }
+      }) }}
       {% endset -%}
 
-      {{ govukRadios({
+      {{ govukCheckboxes({
             idPrefix: "reportingDelay",
             name: "reportingDelay",
             currentValue: data['reportingDelay'],
@@ -62,16 +74,19 @@ Reporting delay
               }
             },
             hint: {
-              text: "Select one option."
+              text: "Select all options that apply to you."
             },
             items: [
             {
-              value: "I was under 18 years old when it happened",
-              text: "I was under 18 years old when it happened"
+              value: "I was under 18 years old at the time",
+              text: "I was under 18 years old at the time",
+              conditional: {
+                html: under18DelayHtml
+              }
             },
             {
-              value: "I had no capacity to report the crime",
-              text: "I had no capacity to report the crime",
+              value: "I was not able to report the crime",
+              text: "I was not able to report the crime",
               conditional: {
                 html: capacityHtml
               }
