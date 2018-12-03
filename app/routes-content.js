@@ -104,7 +104,7 @@
 	    whoCompensationQuestion: 'Who else have you applied to for compensation?',
 	    whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
 			whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
-	    whyDelayQuestion: 'Choose the options that best explain the delay in applying for compensation',
+	    whyDelayQuestion: 'Choose the options that best explain why you did not apply right after the crime',
 			reportedDateErrorPast: 'The date the crime was reported to the police must be in the past',
 			reportedDateIncompleteError: 'Enter the date the crime was reported to the police and include a day, month and year',
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
