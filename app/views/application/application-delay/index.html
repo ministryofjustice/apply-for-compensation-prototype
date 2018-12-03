@@ -24,6 +24,29 @@
       {% from 'radios/macro.njk' import govukRadios %}
       {% from "input/macro.njk" import govukInput %}
 
+      {% set under18DelayHtml %}
+      {{ govukInput({
+        id: "under18-delay-reasons",
+        name: "under18-delay-reason",
+        value: data['under18-delay-reason'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: under18DelayReasonHint
+        }
+      }) }}
+      {% endset -%}
+
+      {% set waitHtml %}
+      {{ govukInput({
+            id: "wait-reasons",
+            name: "wait-reasons",
+            value: data['wait-reasons'],
+            classes: "govuk-!-width-full",
+            label: {
+              text: waitReasonHint
+            }
+          }) }}
+      {% endset -%}
 
       {% set medicalHtml %}
       {{ govukInput({
@@ -49,7 +72,7 @@
           }) }}
       {% endset -%}
 
-      {{ govukRadios({
+      {{ govukCheckboxes({
             idPrefix: "applicationDelay",
             name: "applicationDelay",
             currentValue: data['applicationDelay'],
@@ -61,31 +84,33 @@
               }
             },
             hint: {
-              text: "Select one option."
+              text: "Select all options that apply to you."
             },
             items: [
             {
-              value: "The police told me to wait",
-              text: "The police told me to wait"
+              value: "I was under 18e",
+              text: "I was under 18",
+              conditional: {
+                html: under18DelayHtml
+              }
             },
             {
-              value: "I was advised to wait for a court case to finish",
-              text: "I was advised to wait for a court case to finish"
+              value: "I was advised to wait",
+              text: "I was advised to wait",
+              conditional: {
+                html: waitHtml
+              }
             },
             {
-              value: "I was under 18 years old when it happened",
-              text: "I was under 18 years old when it happened"
-            },
-            {
-              value: "I was unable to apply for medical reasons",
-              text: "I was unable to apply for medical reasons",
+              value: "Medical reasons",
+              text: "Medical reasons",
               conditional: {
                 html: medicalHtml
               }
             },
             {
-              value: "I was unable to apply for other reasons",
-              text: "I was unable to apply for other reasons",
+              value: "Other reasons",
+              text: "Other reasons",
               conditional: {
                 html: otherHtml
               }
