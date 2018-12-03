@@ -112,7 +112,7 @@
 			notEligibleHeading: 'You can not get compensation',
 			under18DelayReasonHint: 'Briefly explain why this caused a delay',
 			capacityReasonHint: 'Briefly explain why not, for example, if you were physically or mentally incapable',
-			otherDelayReasonHint: 'Briefly explain what the other reasons are',
+			otherDelayReasonHint: 'Briefly explain what the other reasons were',
 			medicalReasonHint:'Briefly describe the medical reasons',
 			otherReasonHint: 'Briefly describe the other reasons',
 	};

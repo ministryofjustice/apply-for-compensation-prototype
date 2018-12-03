@@ -43,7 +43,7 @@ Reporting delay
         id: "capacity-reasons",
         name: "capacity-reasons",
         value: data['capacity-reasons'],
-        classes: "govuk-!-width-two-thirds",
+        classes: "govuk-!-width-full",
         label: {
           text: capacityReasonHint
         }
@@ -78,22 +78,22 @@ Reporting delay
             },
             items: [
             {
-              value: "I was under 18 years old at the time",
-              text: "I was under 18 years old at the time",
+              value: "I was under 18",
+              text: "I was under 18",
               conditional: {
                 html: under18DelayHtml
               }
             },
             {
-              value: "I was not able to report the crime",
-              text: "I was not able to report the crime",
+              value: "Unable to report the crime",
+              text: "Unable to report the crime",
               conditional: {
                 html: capacityHtml
               }
             },
             {
-              value: "There are other reasons for the delay",
-              text: "There are other reasons for the delay",
+              value: "Other reasons",
+              text: "Other reasons",
               conditional: {
                 html: otherDelayHtml
               }
