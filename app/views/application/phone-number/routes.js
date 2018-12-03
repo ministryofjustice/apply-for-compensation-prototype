@@ -13,5 +13,9 @@ module.exports = function (router, content) {
   router.get('/application/phone-number/', function (req, res) {
     res.render('application/phone-number/index', content)
   })
+
+  router.get('/application/phone-number/error', function (req, res) {
+    res.render('application/phone-number/error', content)
+  })
   // END__######################################################################################################
 }
