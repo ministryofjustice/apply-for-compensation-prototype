@@ -32,13 +32,12 @@ Application submitted - {{ serviceName }} - GOV.UK
       </div>
     </div>
     <p>
-  </p>
+    </p>
     <p class="govuk-body-l">Thank you for submitting your application.</p>
 
     <p class="govuk-body-l">We have sent a confirmation email to <strong>{{ data['emailAddress'] }}</strong></p>
 
     <h2 class="govuk-heading-m">What happens next</h2>
-
 
     <p>We will:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -48,6 +47,17 @@ Application submitted - {{ serviceName }} - GOV.UK
     </ul>
 
     <p class="govuk-body">We will usually make a decision within 4 months.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must tell us immediately if any of the information you gave us changes.
+      </strong>
+    </div>
+
+    <p class="govuk-body">You can contact our Customer Service Centre on 0300 003 3601. Select option 8 when the call is answered.</p>
+
     <p><a href="/application/confirmation-page-if-automatic-nil">What did you think of this service?</a> (takes 30 seconds)</p>
 
   </div>
