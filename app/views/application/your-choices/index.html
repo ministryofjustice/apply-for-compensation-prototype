@@ -28,35 +28,29 @@
     <p class="govuk-body-l">We decide what enquiries to make depending on how the crime affected you.</p>
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-
-
-        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
-            <label class="govuk-label govuk-radios__label govuk-label--s" for="how-contacted-conditional-1">
-                I was assaulted or abused
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-            <div class="govuk-form-group">
-              <p class="govuk-body">We will usually make a decision within 4 months.</p>
+      <fieldset class="govuk-fieldset">
+        <h2 class="govuk-heading-m">
+          Sexual assault or abuse
+        </h2>
               <p class="govuk-body">Any compensation we pay acknowledges the emotional distress the crime caused you.</p>
               <p class="govuk-body">We normally make a decision based only on your application form and the information we get from the police.</p>
               <p class="govuk-body">We will not normally need to see your medical records.</p>
-            </div>
+              <p class="govuk-body">We will usually make a decision within 4 months.</p>
 
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-            <label class="govuk-label govuk-radios__label govuk-label--s" for="how-contacted-conditional-2">
-                I was assaulted or abused and have other injuries or financial losses
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-            <div class="govuk-form-group">
-              <p class="govuk-body">We will usually make a decision within 12 months. This is because we may need to examine your medical records, get medical reports and assess any losses.</p>
-              <p class="govuk-body">If you do not already have a diagnosis, we may also ask a psychiatrist or clinical psychologist to confirm if you have a disabling mental injury.</p>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" name="how-contacted" type="radio" value="email">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="how-contacted-conditional-1">
+                    I was assaulted or abused
+                </label>
+              </div>
+    </fieldset>
+    <br>
+    <br>
+
+  <fieldset class="govuk-fieldset">
+    <h2 class="govuk-heading-m">
+      Sexual assault or abuse and other injuries or losses
+    </h2>
               <p class="govuk-body">Any compensation we pay will also take account of:</p>
               <ul class="govuk-list govuk-list--bullet">
                 <li>lost earnings because you were unable to work</li>
@@ -64,6 +58,8 @@
                 <li>pregnancy, sexually transmitted disease or loss of foetus</li>
                 <li>disabling mental injuries that are additional to the emotional distress you already suffered</li>
               </ul>
+              <p class="govuk-body">We will usually make a decision within 12 months. This is because we may need to examine your medical records, get medical reports and assess any losses.</p>
+              <p class="govuk-body">If you do not already have a diagnosis, we may also ask a psychiatrist or clinical psychologist to confirm if you have a disabling mental injury.</p>
 
               <details class="govuk-details">
                 <summary class="govuk-details__summary">
@@ -78,36 +74,39 @@
                   Disabling mental injuries must be confirmed by a psychiatrist or clinical psychologist.
                 </div>
               </details>
-
+                <div class="govuk-radios__item">
+                <input class="govuk-radios__input" name="how-contacted" type="radio" value="phone" >
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="how-contacted-conditional-2">
+                    I was assaulted or abused and have other injuries or financial losses
+                </label>
+              </div>
             </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
+</fieldset>
 
     <form class="form" method="post">
 
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            If you need help or support
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          You can contact us for help with your application on 0300 003 3601. Select option 8.
-        </div>
-        <div class="govuk-details__text">
-          Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.
-        </div>
-        <div class="govuk-details__text">
-          You can also <a class="govuk-body" href="https://www.victimsinformationservice.org.uk/" target="_blank">contact the Victims' Information Service</a>.
-        </div>
-      </details>
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    If you need help or support
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  You can contact us for help with your application form on 0300 003 3601. Select option 8.
+                </div>
+                <div class="govuk-details__text">
+                  Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.
+                </div>
+                <div class="govuk-details__text">
+                  For practical or emotional support you can <a class="govuk-body" href="https://www.victimsinformationservice.org.uk/" target="_blank">contact the Victims' Information Service</a>.
+                </div>
+              </details>
 
       {{ govukButton({
             "text": "Continue"
           }) }}
-    </form>
+
+  </form>
   </div>
 </div>
 
