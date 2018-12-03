@@ -80,7 +80,7 @@
 			compYesWhoHint:'Who did you apply to?',
 			compYesAmountHint:'How much did you receive?',
 			compWaitingHint: 'Who did you apply to?',
-			compNoHint: 'Briefly explain why not.',
+			compNoHint: 'Explain why not.',
 	    over18Question: 'Are you 18 or over?',
 			over18errorGuidance: 'Select yes if you are over 18',
 	    periodOfAbuseEndQuestion: 'When did it stop?',
@@ -110,12 +110,12 @@
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
-			capacityReasonHint: 'Briefly explain why not',
-			otherDelayReasonHint: 'Briefly explain what the other reasons are',
-			medicalReasonHint:'Briefly describe the medical reasons',
-			otherReasonHint: 'Briefly describe the other reasons',
-			under18DelayReasonHint: 'Briefly explain why this caused a delay',
-			waitReasonHint: 'Briefly explain who advised you to wait, and why they gave you this advice',
+			capacityReasonHint: 'Explain why not',
+			otherDelayReasonHint: 'Explain what the other reasons are',
+			medicalReasonHint:'Describe the medical reasons',
+			otherReasonHint: 'Describe the other reasons',
+			under18DelayReasonHint: 'Explain why this caused a delay',
+			waitReasonHint: 'Explain who advised you to wait, and why they gave you this advice',
 	};
 	// // END__######################################################################################################
 	// }
