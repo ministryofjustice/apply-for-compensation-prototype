@@ -4,8 +4,6 @@
 {{ addressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block content %}
-
 {% block beforeContent %}
 {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
@@ -28,19 +26,19 @@
       {% from "textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
-            'name': "address-non-UK",
-            'id': "address-non-UK",
-            'value': data ['address-non-UK'],
-            label: {
-              text: addressQuestion,
-              classes: "govuk-fieldset__legend--xl govuk-label--xl",
-              isPageHeading: true
-            }
-          }) }}
+        'name': "address-non-UK",
+        'id': "address-non-UK",
+        'value': data ['address-non-UK'],
+        label: {
+          text: addressQuestion,
+          classes: "govuk-fieldset__legend--xl govuk-label--xl",
+          isPageHeading: true
+        }
+      }) }}
 
       {{ govukButton({
-            "text": "Continue"
-            }) }}
+        "text": "Continue"
+      }) }}
 
     </form>
   </div>
