@@ -15,8 +15,8 @@ $(document).ready(function () {
 
     function insertOffenderName () {
       $("#offenderName:last").after(
-        '<h2 class="govuk-heading-m">Offender 2</h2>' +
         '<div id="offenderName">' +
+        '<h2 class="govuk-heading-m">Offender 2</h2>' +
           '<div class="govuk-form-group">' +
             '<label class="govuk-label" for="name">' +
               'First name' +
@@ -35,9 +35,16 @@ $(document).ready(function () {
     }
 
     // remove a prisons
-    $(document).on('click', '#removeOffender', function () {
-      $(this).parents('#offenderName').remove();
-      // sortParentFields();
-    });
+    // $("#removeOffender").click(function(e){
+    //   e.preventDefault();
+    //   $('#offenderNamegw').remove();
+    //   // sortParentFields();
+    // });
+
+    $("#removeOffender").click(function(){
+    $("#offenderName").remove(
+
+    );
+});
 
 })
