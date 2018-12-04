@@ -22,7 +22,17 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form" method="post">
+      {% from "error-summary/macro.njk" import govukErrorSummary %}
 
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: "Enter your postcode",
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
       {% from "input/macro.njk" import govukInput %}
       {% from "fieldset/macro.njk" import govukFieldset %}
       {% from "details/macro.njk" import govukDetails %}
@@ -43,14 +53,15 @@
           classes: "govuk-input--width-10",
           id: "postcode",
           name: "postcode",
-          value: data['postcode']
+          value: data['postcode'],
+          errorMessage: {
+            text: "Enter your postcode"
+          }
         }) }}
 
-      {{ govukButton({
-          "text": "Find address"
-          }) }}
-
-
+        {{ govukButton({
+            "text": "Find address"
+            }) }}
 
           <div class="govuk-body">
             <p>

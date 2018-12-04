@@ -88,6 +88,7 @@
 	    periodOfAbuseStartQuestion: 'When did it start?',
 	    phoneNumberHint: "We'll use this to contact you about your application for example, to request more information",
 	    phoneNumberQuestion: "Enter your telephone number",
+			phoneNumberError: 'Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192',
 	    policeForceHint: "Enter the police force name, for example, Humberside police.",
 	    policeForceQuestion: 'Was the crime reported to Police Scotland Greater Glasgow?',
       policeForceManualQuestion: 'What force was the crime reported to?',
@@ -110,10 +111,11 @@
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
-			capacityReasonHint: 'Briefly explain why not',
-			otherDelayReasonHint: 'Briefly explain what the other reasons are',
-			medicalReasonHint:'Briefly describe the medical reasons',
-			otherReasonHint: 'Briefly describe the other reasons',
+			capacityReasonHint: 'Explain why not',
+			otherDelayReasonHint: 'Explain what the other reasons are',
+			medicalReasonHint:'Describe the medical reasons',
+			otherReasonHint: 'Describe the other reasons',
+			under18DelayReasonHint: 'Explain why this caused a delay',
 	};
 	// // END__######################################################################################################
 	// }
