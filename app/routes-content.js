@@ -80,7 +80,7 @@
 			compYesWhoHint:'Who did you apply to?',
 			compYesAmountHint:'How much did you receive?',
 			compWaitingHint: 'Who did you apply to?',
-			compNoHint: 'Explain why not.',
+			compNoHint: 'Briefly explain why not.',
 	    over18Question: 'Are you 18 or over?',
 			over18errorGuidance: 'Select yes if you are over 18',
 	    periodOfAbuseEndQuestion: 'When did it stop?',
@@ -93,7 +93,7 @@
 	    policeForceQuestion: 'Was the crime reported to Police Scotland Greater Glasgow?',
       policeForceManualQuestion: 'What force was the crime reported to?',
 	    previousApplicationsQuestion: 'Have you applied for compensation from us for this crime before?',
-	    reportingDelayQuestion: "Select the reasons why the crime was not reported right away",
+	    reportingDelayQuestion: "Select a reason for the delay in reporting the crime to the police",
 			selectAddressLable: 'Select an address',
 	    sexualAbuseQuestion: 'Were you a victim of sexual assault or abuse?',
 			sexualAbuseError: 'Select yes if you were a victim of sexual assault or abuse',
@@ -116,8 +116,6 @@
 			medicalReasonHint:'Describe the medical reasons',
 			otherReasonHint: 'Describe the other reasons',
 			under18DelayReasonHint: 'Explain why this caused a delay',
-			waitReasonHint: 'Explain who advised you to wait, and why they gave you this advice',
-
 	};
 	// // END__######################################################################################################
 	// }
