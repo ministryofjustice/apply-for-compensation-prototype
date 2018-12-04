@@ -31,8 +31,7 @@ $(document).ready(function () {
     });
 
     // remove a prisons
-    $(document).on('click', '#removeOffender', function (e) {
-      e.preventDefault();
+    $(document).on('click', '#removeOffender', function () {
       $(this).parents('#offenderName').remove();
       // sortParentFields();
     });
