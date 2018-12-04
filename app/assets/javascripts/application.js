@@ -10,7 +10,11 @@ $(document).ready(function () {
 
   // This adds another of the compoent defined after the id of the same thing
     $("#addAnother").click(function(){
-      $("#offenderName").after(
+      insertOffenderName();
+    });
+
+    function insertOffenderName () {
+      $("#offenderName:last").after(
         '<h2 class="govuk-heading-m">Offender 2</h2>' +
         '<div id="offenderName">' +
           '<div class="govuk-form-group">' +
@@ -28,7 +32,7 @@ $(document).ready(function () {
         '</div>' +
         '<p><a href="#" id="#removeOffender">Remove offender</a></p>'
       );
-    });
+    }
 
     // remove a prisons
     $(document).on('click', '#removeOffender', function () {
