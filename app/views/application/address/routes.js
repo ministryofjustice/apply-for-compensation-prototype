@@ -19,5 +19,13 @@ module.exports = function (router, content) {
     }
     res.redirect('/application/phone-number')
   })
+
+  router.get('/application/address/error-invalid-postcode', function (req, res) {
+    res.render('application/address/error-invalid-postcode', content)
+  })
+
+  router.get('/application/address/error-blank-postcode', function (req, res) {
+    res.render('application/address/error-blank-postcode', content)
+  })
   // END__######################################################################################################
 }
