@@ -116,6 +116,7 @@
 			medicalReasonHint:'Describe the medical reasons',
 			otherReasonHint: 'Describe the other reasons',
 			under18DelayReasonHint: 'Explain why this caused a delay',
+			waitReasonHint: 'Explain who advised you to wait, and why they gave you that advice',
 	};
 	// // END__######################################################################################################
 	// }
