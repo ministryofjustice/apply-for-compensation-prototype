@@ -2,7 +2,7 @@ http://localhost:3000/application/OCJ-service-option.html
 http://localhost:3000/application/additional-info.html
 http://localhost:3000/application/address/index.html
 http://localhost:3000/application/address-manually/index.html
-http://localhost:3000/application/address-non-UK/index.html
+http://localhost:3000/application/address-non-uk/index.html
 http://localhost:3000/application/after-1979/index.html
 http://localhost:3000/application/application-delay/index.html
 http://localhost:3000/application/bridge/index.html

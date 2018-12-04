@@ -45,7 +45,7 @@ require('./views/application/date-of-birth/routes')(router, viewContent);
 require('./views/application/email-address/routes')(router, viewContent);
 require('./views/application/address/routes')(router, viewContent);
 require('./views/application/address-manually/routes')(router, viewContent);
-require('./views/application/address-non-UK/routes')(router, viewContent);
+require('./views/application/address-non-uk/routes')(router, viewContent);
 require('./views/application/phone-number/routes')(router, viewContent);
 require('./views/application/compensation/routes')(router, viewContent);
 // require('./views/application/compensation-why-not/routes')(router, viewContent);
