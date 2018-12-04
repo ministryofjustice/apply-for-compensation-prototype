@@ -88,6 +88,7 @@
 	    periodOfAbuseStartQuestion: 'When did it start?',
 	    phoneNumberHint: "We'll use this to contact you about your application for example, to request more information",
 	    phoneNumberQuestion: "Enter your telephone number",
+			phoneNumberError: 'Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192',
 	    policeForceHint: "Enter the police force name, for example, Humberside police.",
 	    policeForceQuestion: 'Was the crime reported to Police Scotland Greater Glasgow?',
       policeForceManualQuestion: 'What force was the crime reported to?',
