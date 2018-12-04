@@ -111,11 +111,13 @@
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
-			under18DelayReasonHint: 'Explain why this caused a delay',
-			capacityReasonHint: 'Explain why not, for example, if you were physically or mentally incapable',
-			otherDelayReasonHint: 'Explain what the other reasons were',
+			capacityReasonHint: 'Explain why not',
+			otherDelayReasonHint: 'Explain what the other reasons are',
 			medicalReasonHint:'Describe the medical reasons',
 			otherReasonHint: 'Describe the other reasons',
+			under18DelayReasonHint: 'Explain why this caused a delay',
+			waitReasonHint: 'Explain who advised you to wait, and why they gave you this advice',
+
 	};
 	// // END__######################################################################################################
 	// }
