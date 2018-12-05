@@ -28,7 +28,7 @@
         <label class="govuk-label govuk-visually-hidden" for="name">
           What police force is dealing with the crime?
         </label>
-        <!-- This gets the autocomplete an puts it in the div with an id="autocomplete". The files used for this are:
+        <!-- This gets the autocomplete an puts it in the div with an id="autocomplete". The  files used for this are:
         - app/assets/javascripts/accessible-autocomplete.min.js
         - app/assets/sass/components/_accessible-autocomplete.scss
         More details on this can be found here: https://github.com/alphagov/accessible-autocomplete -->
@@ -36,10 +36,108 @@
         <div id="englishPolice"></div>
         {% endif %}
         {% if data['incident-location'] === 'Scotland' %}
-        <div id="scottishPolice"></div>
+        {% from 'radios/macro.njk' import govukRadios %}
+
+        {{ govukRadios({
+              "classes": "govuk-radios",
+              "idPrefix": "policeScotland",
+              "name": "policeScotland",
+              currentValue: data['policeScotland'],
+              "fieldset": {
+              },
+              "items": [
+              {
+                "value": "Argyll and West Dunbartonshire",
+                "text": "Argyll and West Dunbartonshire"
+              },
+              {
+                "value": "Ayrshire",
+                "text": "Ayrshire"
+              },
+              {
+                "value": "Dumfries and Galloway",
+                "text": "Dumfries and Galloway"
+              },
+              {
+                "value": "Edinburgh",
+                "text": "Edinburgh"
+              },
+              {
+                "value": "Fife",
+                "text": "Fife"
+              },
+              {
+                "value": "Forth Valley",
+                "text": "Forth Valley"
+              },
+              {
+                "value": "Greater Glasgow",
+                "text": "Greater Glasgow"
+              },
+              {
+                "value": "Highland and Islands",
+                "text": "Highland and Islands"
+              },
+              {
+                "value": "Lanarkshire",
+                "text": "Lanarkshire"
+              },
+              {
+                "value": "Lothians and Scottish Borders",
+                "text": "Lothians and Scottish Borders"
+              },
+              {
+                "value": "North East",
+                "text": "North East"
+              },
+              {
+                "value": "Renfrewshire and Inverclyde",
+                "text": "Renfrewshire and Inverclyde"
+              },
+              {
+                "value": "Tayside",
+                "text": "Tayside"
+              },
+              {
+                "value": "British Transport Police",
+                "text": "British Transport Police"
+              }
+              ]
+            }) }}
         {% endif %}
         {% if data['incident-location'] === 'Wales' %}
-        <div id="welshPolice"></div>
+        {% from 'radios/macro.njk' import govukRadios %}
+
+        {{ govukRadios({
+              "classes": "govuk-radios",
+              "idPrefix": "policeWales",
+              "name": "policeWales",
+              currentValue: data['policeWales'],
+              "fieldset": {
+              },
+              "items": [
+              {
+                "value": "Dyfed-Powys",
+                "text": "Dyfed-Powys"
+              },
+              {
+                "value": "Gwent",
+                "text": "Gwent"
+              },
+              {
+                "value": "North Wales",
+                "text": "North Wales"
+              },
+              {
+                "value": "South Wales",
+                "text": "South Wales"
+              },
+              {
+                "value": "British Transport Police",
+                "text": "British Transport Police"
+              }
+              ]
+            }) }}
         {% endif %}
         {% if data['incident-location'] === 'Somewhere else' %}
         <div id="allPolice"></div>
