@@ -59,7 +59,9 @@ require('./views/application/find-uk-address/routes')(router, viewContent);
 require('./views/application/reporting-delay/routes')(router, viewContent);
 require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
 require('./views/application/transition/routes')(router, viewContent);
-
+require('./views/application/England-Regions/routes')(router, viewContent);
+require('./views/application/inner-london-areas/routes')(router, viewContent);
+require('./views/application/inner-west-and-central/routes')(router, viewContent);
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line

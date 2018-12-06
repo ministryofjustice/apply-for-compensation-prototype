@@ -116,6 +116,9 @@
 			medicalReasonHint:'Describe the medical reasons',
 			otherReasonHint: 'Describe the other reasons',
 			under18DelayReasonHint: 'Explain why this caused a delay',
+			englandRegionQuestion: 'What region of England did the crime happen in?',
+			innerLondonQuestion: 'What area of inner London did the crime happen in?',
+			londonBoroughQuestion: 'Which borough did the crime happen in?',
 	};
 	// // END__######################################################################################################
 	// }
