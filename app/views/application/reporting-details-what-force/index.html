@@ -32,7 +32,10 @@
         - app/assets/javascripts/accessible-autocomplete.min.js
         - app/assets/sass/components/_accessible-autocomplete.scss
         More details on this can be found here: https://github.com/alphagov/accessible-autocomplete -->
-        {% if data['incidentlocation'] === 'Scotland' %}
+
+        {% if data['incidentlocation'] === 'England' %}
+        <div id="englishPolice"></div>
+        {% endif %}  {% if data['incidentlocation'] === 'Scotland' %}
         {% from 'radios/macro.njk' import govukRadios %}
 
         {{ govukRadios({
