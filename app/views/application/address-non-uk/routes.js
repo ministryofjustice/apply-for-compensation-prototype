@@ -15,5 +15,9 @@ module.exports = function (router, content) {
   router.get('/application/address-non-uk/', function (req, res) {
     res.render('application/address-non-uk/index', content)
   })
+
+  router.get('/application/address-non-uk/error', function (req, res) {
+    res.render('application/address-non-uk/error', content)
+  })
   // END__######################################################################################################
 }
