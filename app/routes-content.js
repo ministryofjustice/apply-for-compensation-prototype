@@ -116,7 +116,8 @@
 			medicalReasonHint:'Describe the medical reasons',
 			otherReasonHint: 'Describe the other reasons',
 			under18DelayReasonHint: 'Explain why this caused a delay',
-			addressError: 'Enter your address',
+			manualAddressErrorBuildingStreetBlank: 'Enter the building and street where you live',
+			manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
 	};
 	// // END__######################################################################################################
 	// }
