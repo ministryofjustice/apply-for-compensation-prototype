@@ -33,30 +33,16 @@
           </span>
         </div>
 
-        <h2 class="govuk-heading-m">Offender</h2>
-
         <div id="offenderName">
-        {{ govukInput({
-          label: {
-            "text": nameFirstNameField
-          },
-          id: "first-name-offender",
-          name: "first-name-offender",
-          value:  data['first-name-offender']
-        }) }}
-
-        {{ govukInput({
-          label: {
-            "text": nameLastNameField
-          },
-          id: "last-name-offender",
-          name: "last-name-offender",
-          value: data['last-name-offender']
-        }) }}
+          {{ govukInput({
+            label: {
+              "text": offenderNameQuestionCA
+            },
+            id: "first-name-offender",
+            name: "first-name-offender",
+            value:  data['first-name-offender']
+          }) }}
         </div>
-
-        <p><a href="#" class="govuk-link" id="addAnother">Add another offender</a></p>
-
 
         <input class="govuk-button" type="submit" value="Continue">
       </form>
