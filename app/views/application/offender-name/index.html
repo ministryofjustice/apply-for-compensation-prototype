@@ -6,11 +6,11 @@
 {% block beforeContent %}
 {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }}
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
@@ -29,40 +29,25 @@
             </label>
           </h1>
           <span id="waste-hint" class="govuk-hint">
-               {{ offenderNameHint }}
-             </span>
+            {{ offenderNameHint }}
+          </span>
         </div>
 
-        {% from "input/macro.njk" import govukInput %}
-
-        {{ govukInput({
-                label: {
-                  "text": nameFirstNameField
-                },
-                id: "first-name-offender",
-                name: "first-name-offender",
-                value:  data['first-name-offender']
-              }) }}
-
-        {% from "input/macro.njk" import govukInput %}
-
-        {{ govukInput({
-                label: {
-                  "text": nameLastNameField
-                },
-                id: "last-name-offender",
-                name: "last-name-offender",
-                value: data['last-name-offender']
-              }) }}
-
-
-        {% from "input/macro.njk" import govukInput %}
-
+        <div id="offenderName">
+          {{ govukInput({
+            label: {
+              "text": offenderNameQuestionCA
+            },
+            id: "first-name-offender",
+            name: "first-name-offender",
+            value:  data['first-name-offender']
+          }) }}
+        </div>
 
         <input class="govuk-button" type="submit" value="Continue">
       </form>
+    </div>
   </div>
-</div>
 </main>
 </div>
 {% endblock %}

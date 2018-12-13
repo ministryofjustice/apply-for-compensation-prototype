@@ -22,11 +22,11 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="/form-handler" method="post">
 
-      <h1 class="govuk-heading-xl">What police force is dealing with the crime?</h1>
+      <h1 class="govuk-heading-xl">{{policeForceQuestion}}</h1>
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-visually-hidden" for="name">
-          What police force is dealing with the crime?
+          {{policeForceQuestion}}
         </label>
         <!-- This gets the autocomplete an puts it in the div with an id="autocomplete". The  files used for this are:
         - app/assets/javascripts/accessible-autocomplete.min.js
