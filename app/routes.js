@@ -43,9 +43,9 @@ require('./views/application/name-have-other/routes')(router, viewContent);
 require('./views/application/name-other/routes')(router, viewContent);
 require('./views/application/date-of-birth/routes')(router, viewContent);
 require('./views/application/email-address/routes')(router, viewContent);
-require('./views/application/address/routes')(router, viewContent);
+// require('./views/application/address/routes')(router, viewContent);
 require('./views/application/address-manually/routes')(router, viewContent);
-require('./views/application/address-non-uk/routes')(router, viewContent);
+// require('./views/application/address-non-uk/routes')(router, viewContent);
 require('./views/application/phone-number/routes')(router, viewContent);
 require('./views/application/compensation/routes')(router, viewContent);
 // require('./views/application/compensation-why-not/routes')(router, viewContent);
@@ -55,11 +55,10 @@ require('./views/application/check-your-answers-page/routes')(router, viewConten
 // @todo these files need to go in the right place in the list above
 require('./views/application/previous-applications/routes')(router, viewContent);
 require('./views/application/application-delay/routes')(router, viewContent);
-require('./views/application/find-uk-address/routes')(router, viewContent);
+// require('./views/application/find-uk-address/routes')(router, viewContent);
 require('./views/application/reporting-delay/routes')(router, viewContent);
 require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
 require('./views/application/transition/routes')(router, viewContent);
-
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line

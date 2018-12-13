@@ -10,9 +10,9 @@ module.exports = function (router, content) {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
     }
-    res.redirect('/application/address')
+    res.redirect('/application/address-manually')
   })
-  
+
   // Pass the question in to the page
   router.get('/application/email-address/', function (req, res) {
     res.render('application/email-address/index', content)

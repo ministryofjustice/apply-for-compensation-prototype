@@ -72,7 +72,7 @@
 	    nameFirstNameField: 'First name',
 	    nameLastNameField: 'Last name',
 	    offenderNameQuestion: 'Enter their name',
-	    offenderNameQuestionCA: 'Offenders name',
+	    offenderNameQuestionCA: 'Offender\'s  name',
 	    ongoingRelationshipQuestion: "Have you have any contact with this person since the incident?",
 	    ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
 	    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages or were paid compensation by a court.',
@@ -90,7 +90,7 @@
 	    phoneNumberQuestion: "Enter your telephone number",
 			phoneNumberError: 'Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192',
 	    policeForceHint: "Enter the police force name, for example, Humberside police.",
-	    policeForceQuestion: 'Was the crime reported to Police Scotland Greater Glasgow?',
+	    policeForceQuestion: 'What police force is dealing with the crime?',
       policeForceManualQuestion: 'What force was the crime reported to?',
 	    previousApplicationsQuestion: 'Have you applied for compensation from us for this crime before?',
 	    reportingDelayQuestion: "Select a reason for the delay in reporting the crime to the police",
@@ -117,6 +117,9 @@
 			otherReasonHint: 'Describe the other reasons',
 			under18DelayReasonHint: 'Explain why this caused a delay',
 			waitReasonHint: 'Explain who advised you to wait, and why they gave you that advice',
+			manualAddressErrorBuildingStreetBlank: 'Enter the building and street where you live',
+			manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
+			manualAddressErrorPostcode: 'Enter a postcode, like AA1 1AA',
 	};
 	// // END__######################################################################################################
 	// }

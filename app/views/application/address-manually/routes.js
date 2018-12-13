@@ -15,5 +15,17 @@ module.exports = function (router, content) {
   router.get('/application/address-manually/', function (req, res) {
     res.render('application/address-manually/index', content)
   })
+
+  router.get('/application/address-manually/error-building-street-blank', function (req, res) {
+    res.render('application/address-manually/error-building-street-blank', content)
+  })
+
+  router.get('/application/address-manually/error-town-city-blank', function (req, res) {
+    res.render('application/address-manually/error-town-city-blank', content)
+  })
+
+  router.get('/application/address-manually/error-postcode', function (req, res) {
+    res.render('application/address-manually/error-postcode', content)
+  })
   // END__######################################################################################################
 }
