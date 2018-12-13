@@ -63,7 +63,7 @@
 
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    
+
     Your choice of how we assess your application
   </dt>
   <dd class="app-check-your-answers__answer">
@@ -75,6 +75,36 @@
     </a>
   </dd>
 </div>
+
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ previousApplicationsQuestion }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['previous-applications'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="previous-applications">
+      Change<span class="govuk-visually-hidden">{{ previousApplicationsQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+{% if data['previous-applications'] === 'Yes' %}
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ previousReferenceHint }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['previous-reference'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="previous-applications">
+      Change<span class="govuk-visually-hidden"> {{ previousReferenceHint }}</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
 
 </dl>
 <!-- ** /Your eligibility ************************************************************************************************************************ -->
