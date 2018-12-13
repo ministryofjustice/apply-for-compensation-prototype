@@ -116,6 +116,7 @@
 			medicalReasonHint:'Describe the medical reasons',
 			otherReasonHint: 'Describe the other reasons',
 			under18DelayReasonHint: 'Explain why this caused a delay',
+			waitReasonHint: 'Explain who advised you to wait, and why they gave you that advice',
 			manualAddressErrorBuildingStreetBlank: 'Enter the building and street where you live',
 			manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
 			manualAddressErrorPostcode: 'Enter a postcode, like AA1 1AA',

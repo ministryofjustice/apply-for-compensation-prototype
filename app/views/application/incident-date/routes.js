@@ -17,17 +17,17 @@ module.exports = function (router, content) {
     var duration = moment.duration(currentDate.diff(incidentDate)); // / calculate the difference between the two (that's in milliseconds or something)
     var delayInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
-    if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
-      var reportingDateDay = req.session.data['incidentReported-day']
-      var reportingDateMonth = req.session.data['incidentReported-month']
-      var reportingDateYear = req.session.data['incidentReported-year']
-      var reportingDate = dateHelper.getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
-      incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
-      if ( dateHelper.isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
-        return res.redirect('/application/reporting-delay')
-      }
-    }
-    req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
+    // if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
+    //   var reportingDateDay = req.session.data['incidentReported-day']
+    //   var reportingDateMonth = req.session.data['incidentReported-month']
+    //   var reportingDateYear = req.session.data['incidentReported-year']
+    //   var reportingDate = dateHelper.getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
+    //   incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
+    //   if ( dateHelper.isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
+    //     return res.redirect('/application/reporting-delay')
+    //   }
+    // }
+    // req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
 
     if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) { // mocking linked cases by checking against a set trigger date = 01/01/2017
       // Redirect to the relevant page
