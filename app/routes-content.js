@@ -72,7 +72,7 @@
 	    nameFirstNameField: 'First name',
 	    nameLastNameField: 'Last name',
 	    offenderNameQuestion: 'Enter their name',
-	    offenderNameQuestionCA: 'Offenders  name',
+	    offenderNameQuestionCA: 'Offender\'s  name',
 	    ongoingRelationshipQuestion: "Have you have any contact with this person since the incident?",
 	    ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
 	    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages or were paid compensation by a court.',
