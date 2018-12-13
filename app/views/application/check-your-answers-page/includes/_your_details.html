@@ -72,11 +72,6 @@
       Address
     </dt>
     <dd class="app-check-your-answers__answer">
-      {% if data['address-lookup-result'] %}
-      {{ data['address-lookup-result'] }}{{ data['postcode'] }}
-      {% elseif data['address-non-UK'] %}
-      {{ data['address-non-UK'] }}
-      {% else %}
       {{ data['address-line-1'] }}<br />
       {% if data['address-line-2'] %}
       {{ data['address-line-2'] }}<br />
@@ -87,7 +82,6 @@
       {% endif %}
       {% if data['address-postcode'] %}
       {{ data['address-postcode'] }}<br />
-      {% endif %}
       {% endif %}
     </dd>
     <dd class="app-check-your-answers__change">
