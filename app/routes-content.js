@@ -92,7 +92,7 @@
 	    policeForceHint: "Enter the police force name, for example, Humberside police.",
 	    policeForceQuestion: 'What police force is dealing with the crime?',
       policeForceManualQuestion: 'What force was the crime reported to?',
-	    previousApplicationsQuestion: 'Have you applied to us before for the same injuries?',
+	    previousApplicationsQuestion: 'Have you applied to us before?',
 			previousReferenceHint: 'Enter your previous reference number if you know it (optional)',
 	    reportingDelayQuestion: "Select a reason for the delay in reporting the crime to the police",
 			selectAddressLable: 'Select an address',
