@@ -21,56 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from 'radios/macro.njk' import govukRadios %}
       {% from "input/macro.njk" import govukInput %}
-
-      {% set under18DelayHtml %}
-      {{ govukInput({
-        id: "under18-delay-reasons",
-        name: "under18-delay-reason",
-        value: data['under18-delay-reason'],
-        classes: "govuk-!-width-full",
-        label: {
-          text: under18DelayReasonHint
-        }
-      }) }}
-      {% endset -%}
-
-      {% set waitHtml %}
-      {{ govukInput({
-            id: "wait-reasons",
-            name: "wait-reasons",
-            value: data['wait-reasons'],
-            classes: "govuk-!-width-full",
-            label: {
-              text: waitReasonHint
-            }
-          }) }}
-      {% endset -%}
-
-      {% set medicalHtml %}
-      {{ govukInput({
-            id: "medical-reasons",
-            name: "medical-reasons",
-            value: data['medical-reasons'],
-            classes: "govuk-!-width-full",
-            label: {
-              text: medicalReasonHint
-            }
-          }) }}
-      {% endset -%}
-
-      {% set otherHtml %}
-      {{ govukInput({
-            id: "other-reasons",
-            name: "other-reason",
-            value: data['other-reason'],
-            classes: "govuk-!-width-full",
-            label: {
-              text: otherReasonHint
-            }
-          }) }}
-      {% endset -%}
 
       {{ govukCheckboxes({
             idPrefix: "applicationDelay",
@@ -89,34 +40,34 @@
             items: [
             {
               value: "I was under 18e",
-              text: "I was under 18",
-              conditional: {
-                html: under18DelayHtml
-              }
+              text: "I was under 18"
             },
             {
               value: "I was advised to wait",
-              text: "I was advised to wait",
-              conditional: {
-                html: waitHtml
-              }
+              text: "I was advised to wait"
             },
             {
               value: "Medical reasons",
-              text: "Medical reasons",
-              conditional: {
-                html: medicalHtml
-              }
+              text: "Medical reasons"
             },
             {
               value: "Other reasons",
-              text: "Other reasons",
-              conditional: {
-                html: otherHtml
-              }
+              text: "Other reasons"
             }
             ]
           }) }}
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+                  name: "delay-application",
+                  id: "delay-application",
+                  currentValue: data['delay-application'],
+                  label: {
+                    text: "Explain why the reasons you selected caused a delay",
+                    classes: "govuk-label--s"
+                  }
+                }) }}
 
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
