@@ -112,13 +112,14 @@
       </a>
     </dd>
   </div>
+
   {% elseif data['incident-location']%}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ incidentLocationHeading }}
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['england'] }}{{ data['scotland'] }}{{ data['wales'] }}{{ data['somewhere-else'] }}, {{ data['incident-location'] }}
+     {{ data['incident-location'] }}
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="incident-location">
@@ -127,6 +128,21 @@
     </dd>
   </div>
   {% endif %}
+
+
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{ incidentTownQuestion }}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['incidentTown'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="incident-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentTownQuestion }}</span>
+      </a>
+    </dd>
+  </div>
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">

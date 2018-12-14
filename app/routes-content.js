@@ -57,6 +57,7 @@
 			incidentLocationRevealOther: "Enter the location",
 	    incidentReportedQuestion: 'Was the crime reported to the police?',
 			incidentReportedError: "Select yes if the crime was reported to the police",
+			incidentTownQuestion: 'What is the nearest town or city to the crime\'s location?',
 	    itemOneValue: 'Once',
 	    itemTwoValue: 'Over a period of time',
       locationTownQuestion: 'Enter more details about where the crime happened',
