@@ -54,6 +54,7 @@ require('./views/application/compensation/routes')(router, viewContent);
 require('./views/application/check-your-answers-page/routes')(router, viewContent);
 // @todo these files need to go in the right place in the list above
 require('./views/application/previous-applications/routes')(router, viewContent);
+// require('./views/application/previous-not-eligible/routes')(router, viewContent);
 require('./views/application/application-delay/routes')(router, viewContent);
 // require('./views/application/find-uk-address/routes')(router, viewContent);
 require('./views/application/reporting-delay/routes')(router, viewContent);
