@@ -21,7 +21,22 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
+
       {% from "radios/macro.njk" import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
+
+
+      {% set referenceHtml %}
+      {{ govukInput({
+            id: "previous-reference",
+            name: "previous-reference",
+            value: data['previous-reference'],
+            classes: "govuk-!-width-full",
+            label: {
+              text: previousReferenceHint
+            }
+          }) }}
+      {% endset -%}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
@@ -38,7 +53,10 @@
             "items": [
             {
             "value": "Yes",
-            "text": "Yes"
+            "text": "Yes",
+            conditional: {
+                html: referenceHtml
+              }
             },
             {
             "value": "No",
