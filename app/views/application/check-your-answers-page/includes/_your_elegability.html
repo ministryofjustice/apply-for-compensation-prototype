@@ -63,15 +63,14 @@
 
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-
-    Your choice of how we assess your application
+    {{ yourChoicesHeading }}
   </dt>
   <dd class="app-check-your-answers__answer">
     {{ data['yourChoice'] }}
   </dd>
   <dd class="app-check-your-answers__change">
     <a href="your-choices">
-      Change<span class="govuk-visually-hidden">{{ sameFamilyQuestion }} </span>
+      Change<span class="govuk-visually-hidden">{{ yourChoicesHeading }} </span>
     </a>
   </dd>
 </div>

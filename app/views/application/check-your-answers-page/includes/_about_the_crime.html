@@ -163,15 +163,16 @@
     <dt class="app-check-your-answers__question">
       {{ whatIsRelationshipQuestion }}
     </dt>
-    {% if data['relationship-text']%}
     <dd class="app-check-your-answers__answer">
-      {{ data['relationship-text'] }}
+      {% if data['relationship-text']%}
+        {{ data['relationship-text'] }}
+      {% elseif data['noContactWithOffender']%}
+          {{ data['noContactWithOffender'] }}
+      {% endif %}
     </dd>
-    {% elseif data['noContactWithOffender']%}
-    <dd class="app-check-your-answers__answer">
-      {{ data['noContactWithOffender'] }}
-    </dd>
-    {% endif %}
+
+
+
     <dd class="app-check-your-answers__change">
       <a href="what-is-relationship">
         Change<span class="govuk-visually-hidden"> {{ whatIsRelationshipQuestion }}</span>
