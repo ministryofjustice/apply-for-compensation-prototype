@@ -111,6 +111,7 @@
 			reportedDateIncompleteError: 'Enter the date the crime was reported to the police and include a day, month and year',
 			reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
 			yourChoicesHeading: 'Select the option that applies to you',
+			yourChoicesError: 'Select the option that applies to you',
 			notEligibleHeading: 'You can not get compensation',
 			capacityReasonHint: 'Explain why not',
 			otherDelayReasonHint: 'Explain what the other reasons are',
