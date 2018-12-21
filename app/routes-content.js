@@ -98,6 +98,7 @@ module.exports = {
     transitionHeading: 'You are being redirected to our other application site',
     warningText: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
     whatIsRelationshipQuestion: "If you have contact with the offender, describe it below",
+    offenderContactHint: "We will not pay compensation if the offender may benefit from it",
     whoCompensationQuestion: 'Who else have you applied to for compensation?',
     whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
     whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
