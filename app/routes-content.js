@@ -81,7 +81,7 @@ module.exports = {
     periodOfAbuseEndQuestion: 'When did it stop?',
     periodOfAbuseHint: 'For example, 03 2018. You can enter an approximate date',
     periodOfAbuseStartQuestion: 'When did it start?',
-    phoneNumberHint: "We'll use this to contact you about your application for example, to request more information",
+    phoneNumberHint: "We may use this to contact you if we need to clarify something on your application form",
     phoneNumberQuestion: "Enter your telephone number",
     phoneNumberError: 'Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192',
     policeForceHint: "Enter the police force name, for example, Humberside police.",
