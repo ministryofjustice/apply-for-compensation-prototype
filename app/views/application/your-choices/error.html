@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ yourChoicesHeading }} - {{ serviceName }} - GOV.UK
+Error: {{ yourChoicesHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,16 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ yourChoicesHeading }}
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: yourChoicesError,
+                  href: "#"
+                }
+              ]
+            }) }}
+            {{ yourChoicesHeading }}
     </h1>
 
 
@@ -56,7 +65,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-        <p>A disabling mental injury has a substantial adverse effect on your ability to carry out normal day-to-day activities. For example, reduced performance at school or work, or effects on your social or sexual relationships.</p>
+        <p>A disabling mental injury has a substantial adverse effect on your ability to carry out day-to-day activities. For example, reduced performance at school or work, or effects on your social or sexual relationships.</p>
         </div>
       </details>
 
@@ -89,7 +98,11 @@
                 "isPageHeading": false,
                 "classes": 'govuk-fieldset__legend--m'
               }
-            },
+            }
+            ,
+            errorMessage: {
+            text: yourChoicesError
+          },
             "items": [
             {
               value: "Sexual assault or abuse",
