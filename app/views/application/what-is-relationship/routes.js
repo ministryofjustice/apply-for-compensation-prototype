@@ -15,5 +15,9 @@ module.exports = function (router, content) {
     res.render('application/what-is-relationship/index', content)
   })
 
+  // Pass the question in to the page
+  router.get('/application/what-is-relationship/error', function (req, res) {
+    res.render('application/what-is-relationship/error', content)
+  })
   // END__######################################################################################################
 }
