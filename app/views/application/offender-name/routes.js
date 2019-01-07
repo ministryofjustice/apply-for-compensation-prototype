@@ -10,5 +10,10 @@ module.exports = function (router, content) {
   router.get('/application/offender-name/', function (req, res) {
     res.render('application/offender-name/index', content)
   })
+
+  // Pass the question in to the error page
+  router.get('/application/offender-name/error', function (req, res) {
+    res.render('application/offender-name/error', content)
+  })
   // END__######################################################################################################
 }
