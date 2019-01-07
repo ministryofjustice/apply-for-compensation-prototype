@@ -26,42 +26,6 @@ Reporting delay
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
       {% from "input/macro.njk" import govukInput %}
 
-      {% set under18DelayHtml %}
-      {{ govukInput({
-        id: "under18-delay-reasons",
-        name: "under18-delay-reason",
-        value: data['under18-delay-reason'],
-        classes: "govuk-!-width-full",
-        label: {
-          text: under18DelayReasonHint
-        }
-      }) }}
-      {% endset -%}
-
-      {% set capacityHtml %}
-      {{ govukInput({
-        id: "capacity-reasons",
-        name: "capacity-reasons",
-        value: data['capacity-reasons'],
-        classes: "govuk-!-width-full",
-        label: {
-          text: capacityReasonHint
-        }
-      }) }}
-      {% endset -%}
-
-      {% set otherDelayHtml %}
-      {{ govukInput({
-        id: "other-delay-reasons",
-        name: "other-delay-reason",
-        value: data['other-delay-reason'],
-        classes: "govuk-!-width-full",
-        label: {
-          text: otherDelayReasonHint
-        }
-      }) }}
-      {% endset -%}
-
       {{ govukCheckboxes({
             idPrefix: "reportingDelay",
             name: "reportingDelay",
@@ -79,27 +43,30 @@ Reporting delay
             items: [
             {
               value: "I was under 18",
-              text: "I was under 18",
-              conditional: {
-                html: under18DelayHtml
-              }
+              text: "I was under 18"
             },
             {
               value: "Unable to report the crime",
-              text: "Unable to report the crime",
-              conditional: {
-                html: capacityHtml
-              }
+              text: "Unable to report the crime"
             },
             {
               value: "Other reasons",
-              text: "Other reasons",
-              conditional: {
-                html: otherDelayHtml
-              }
+              text: "Other reasons"
             }
             ]
           }) }}
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+                  name: "delay-reporting",
+                  id: "delay-reporting",
+                  currentValue: data['delay-reporting'],
+                  label: {
+                    text: delayReportExplanation,
+                    classes: "govuk-label--l"
+                  }
+                }) }}
 
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
