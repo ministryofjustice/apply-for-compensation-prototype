@@ -22,6 +22,7 @@ module.exports = {
     declarationBody: 'By continuing you confirm that the information you will give is true as far as you know.',
     declarationHeading: 'Declaration',
     doYouKnowOffenderQuestion: "Do you know the name of the offender?",
+    knowOffenderError: "Select yes if you know the offender's name",
     offenderNameHint: "We will not contact the offender.",
     emailAddressError: "Enter your email address, for example john.smith@email.com",
     emailAddressErrorSubHeader: "Enter your email address?",
