@@ -23,6 +23,7 @@ module.exports = {
     declarationHeading: 'Declaration',
     doYouKnowOffenderQuestion: "Do you know the name of the offender?",
     offenderNameHint: "We will not contact the offender.",
+    offenderNameError: "Enter the offender's name",
     emailAddressError: "Enter your email address, for example john.smith@email.com",
     emailAddressErrorSubHeader: "Enter your email address?",
     emailAddressHint: "We'll use this to contact you about your application for example, to request more information and tell you about our decision",
