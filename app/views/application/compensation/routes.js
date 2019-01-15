@@ -19,5 +19,10 @@ module.exports = function (router, content) {
  router.get('/application/compensation/error-no-radio', function (req, res) {
    res.render('application/compensation/error-no-radio', content)
  })
+
+ // Pass the Error state in to the page when yes is selected but user enters no text in who did you apply to field
+ router.get('/application/compensation/error-yes-no-source', function (req, res) {
+   res.render('application/compensation/error-yes-no-source', content)
+ })
   // END__######################################################################################################
 }

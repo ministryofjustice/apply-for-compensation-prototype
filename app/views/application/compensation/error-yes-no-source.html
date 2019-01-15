@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
+    <form class="form" method="post">
+      {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: compensationErrorYesNosource,
+                  href: "#comp-yes-who"
+                }
+              ]
+            }) }}
+
+            {% from 'radios/macro.njk' import govukRadios %}
+            {% from "input/macro.njk" import govukInput %}
+
+
+            {% set compYesHtml %}
+            {{ govukInput({
+                  id: "comp-yes-who",
+                  name: "comp-yes-who",
+                  value: data['comp-yes-who'],
+                  classes: "govuk-!-width-two-thirds",
+                  errorMessage: {
+                  text: compensationErrorYesNosource
+                },
+                  label: {
+                    text: compYesWhoHint
+                  }
+                }) }}
+            {{ govukInput({
+                  id: "comp-yes-amount",
+                  name: "comp-yes-amount",
+                  value: data['comp-yes-amount'],
+                  classes: "govuk-!-width-one-quarter",
+                  label: {
+                    text: compYesAmountHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {% set compWaitingHtml %}
+            {{ govukInput({
+                  id: "comp-waiting",
+                  name: "comp-waiting",
+                  value: data['comp-waiting'],
+                  classes: "govuk-!-width-two-thirds",
+                  label: {
+                    text: compWaitingHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {% set compNoHtml %}
+            {{ govukInput({
+                  id: "comp-no",
+                  name: "comp-no",
+                  value: data['comp-no'],
+                  classes: "govuk-!-width-two-thirds",
+                  label: {
+                    text: compNoHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+                  idPrefix: "otherCompensation",
+                  name: "otherCompensation",
+                  currentValue: data['otherCompensation'],
+                  fieldset: {
+                    legend: {
+                      text: otherCompensationQuestion,
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  hint: {
+                    text: otherCompensationHint
+                  },
+                  items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    conditional: {
+                      html: compYesHtml
+                    }
+                  },
+                  {
+                    value: "Yes, but I am still waiting for a decision",
+                    text: "Yes, but I am still waiting for a decision",
+                    conditional: {
+                      html: compWaitingHtml
+                    }
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    conditional: {
+                      html: compNoHtml
+                    }
+                  }
+                  ]
+                }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+</div>
+</main>
+</div>
+{% endblock %}
