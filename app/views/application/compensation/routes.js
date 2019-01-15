@@ -29,5 +29,10 @@ module.exports = function (router, content) {
  router.get('/application/compensation/error-yes-no-amount', function (req, res) {
    res.render('application/compensation/error-yes-no-amount', content)
  })
+
+ // Pass the Error state in to the page when yes but still waiting is selected but user enters no text in source field
+ router.get('/application/compensation/error-waiting-no-source', function (req, res) {
+   res.render('application/compensation/error-waiting-no-source', content)
+ })
   // END__######################################################################################################
 }

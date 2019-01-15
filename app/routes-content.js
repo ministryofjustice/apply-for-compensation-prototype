@@ -14,6 +14,7 @@ module.exports = {
     compensationErrorNoradio: 'Select yes if you have applied for or received another form of compensation',
     compensationErrorYesNosource: 'Enter who you applied to',
     compensationErrorYesNoamount: 'Enter how much you received',
+    compensationErrorWaitingNosource: 'Enter who you applied to',
     countyLabel: 'County (optional)',
     crimeReferenceNumberHint: 'This is the reference number the police gave the crime when it was reported.',
     crimeReferenceNumberQuestion: 'What\'s the crime reference number?',
