@@ -27,8 +27,8 @@ Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
               titleText: "There is a problem",
               errorList: [
                 {
-                  text: compensationErrorWaitingNosource,
-                  href: "#comp-waiting"
+                  text: compensationErrorNoWhynot,
+                  href: "#comp-no"
                 }
               ]
             }) }}
@@ -64,9 +64,6 @@ Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
                   name: "comp-waiting",
                   value: data['comp-waiting'],
                   classes: "govuk-!-width-two-thirds",
-                  errorMessage: {
-                  text: compensationErrorWaitingNosource
-                },
                   label: {
                     text: compWaitingHint
                   }
@@ -79,6 +76,9 @@ Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
                   name: "comp-no",
                   value: data['comp-no'],
                   classes: "govuk-!-width-two-thirds",
+                  errorMessage: {
+                  text: compensationErrorNoWhynot
+                },
                   label: {
                     text: compNoHint
                   }

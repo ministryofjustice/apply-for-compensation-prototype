@@ -34,5 +34,10 @@ module.exports = function (router, content) {
  router.get('/application/compensation/error-waiting-no-source', function (req, res) {
    res.render('application/compensation/error-waiting-no-source', content)
  })
+
+ // Pass the Error state in to the page when No is selected but user enters no text in explanation field
+ router.get('/application/compensation/error-no-why-not', function (req, res) {
+   res.render('application/compensation/error-no-why-not', content)
+ })
   // END__######################################################################################################
 }
