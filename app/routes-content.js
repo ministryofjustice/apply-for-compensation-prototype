@@ -11,6 +11,7 @@ module.exports = {
     britishCitizenQuestion: 'Are you a British citizen or EU national?',
     britishCitizenError: 'Select yes if you are a British citizen or EU national',
     compensationWhyNotQuestion: "Why did you not apply for compensation from another source?",
+    compensationErrorNoradio: 'Select yes if you have applied for or received another form of compensation',
     countyLabel: 'County (optional)',
     crimeReferenceNumberHint: 'This is the reference number the police gave the crime when it was reported.',
     crimeReferenceNumberQuestion: 'What\'s the crime reference number?',

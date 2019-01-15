@@ -14,5 +14,10 @@ module.exports = function (router, content) {
  router.get('/application/compensation/', function (req, res) {
    res.render('application/compensation/index', content)
  })
+
+ // Pass the Error state in to the page when no radios are selected
+ router.get('/application/compensation/error-no-radio', function (req, res) {
+   res.render('application/compensation/error-no-radio', content)
+ })
   // END__######################################################################################################
 }
