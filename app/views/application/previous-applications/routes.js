@@ -16,5 +16,10 @@ module.exports = function (router, content) {
   router.get('/application/previous-applications/', function (req, res) {
     res.render('application/previous-applications/index', content)
   })
+
+  // Pass the error content in to the page
+  router.get('/application/previous-applications/error', function (req, res) {
+    res.render('application/previous-applications/error', content)
+  })
   // END__######################################################################################################
 }
