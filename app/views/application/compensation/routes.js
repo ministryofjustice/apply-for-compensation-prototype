@@ -24,5 +24,10 @@ module.exports = function (router, content) {
  router.get('/application/compensation/error-yes-no-source', function (req, res) {
    res.render('application/compensation/error-yes-no-source', content)
  })
+
+ // Pass the Error state in to the page when yes is selected but user enters no text in the amount field
+ router.get('/application/compensation/error-yes-no-amount', function (req, res) {
+   res.render('application/compensation/error-yes-no-amount', content)
+ })
   // END__######################################################################################################
 }
