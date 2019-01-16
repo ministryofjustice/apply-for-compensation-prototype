@@ -45,6 +45,46 @@ Decision letter - {{ serviceName }} - GOV.UK
 
       <p class="govuk-body-l">We have not made any deductions or reductions to this offer.</p>
 
+      <h3 class="govuk-heading-l">Accept or reject the offer</h3>
+
+      <p class="govuk-body-m">Read the declaration and then decide if you wish to accept or reject our offer.</p>
+
+      <h3 class="govuk-heading-m">Declaration<h3>
+      <p class="govuk-body-m">I have read and understand the decision.</p>
+      <p class="govuk-body-m">I accept this award from the Criminal Injuries Compensation Authority (CICA) in full and final settlement of my application for compensation.</p>
+      <p class="govuk-body-m">I promise to advise and repay CICA from any damages, settlement or other compensation which may be received in respect of the injuries to which this application relates.</p>
+      <p class="govuk-body-m">I understand that if I don’t advise and repay in full any such payment CICA will take court action to recover this.</p>
+
+      {% from 'radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "declaration",
+            "name": "declaration",
+            currentValue: data['declaration'],
+            "fieldset": {
+              "legend": {
+                "text": "Do you accept the compensation offer?",
+                "isPageHeading": false,
+                "classes": 'govuk-fieldset__legend--m'
+              }
+            },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes"
+              },
+              {
+                "value": "No",
+                "text": "No"
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Submit"
+            }) }}
+
       {% endset -%}
 
       {% set detailedDecisionHtml %}
@@ -95,7 +135,45 @@ Decision letter - {{ serviceName }} - GOV.UK
 
       <p class="govuk-body-l">We have not made any deductions or reductions to this offer.</p>
 
+      <h3 class="govuk-heading-l">Accept or reject the offer</h3>
 
+      <p class="govuk-body-m">Read the declaration and then decide if you wish to accept or reject our offer.</p>
+
+      <h3 class="govuk-heading-m">Declaration<h3>
+      <p class="govuk-body-m">I have read and understand the decision.</p>
+      <p class="govuk-body-m">I accept this award from the Criminal Injuries Compensation Authority (CICA) in full and final settlement of my application for compensation.</p>
+      <p class="govuk-body-m">I promise to advise and repay CICA from any damages, settlement or other compensation which may be received in respect of the injuries to which this application relates.</p>
+      <p class="govuk-body-m">I understand that if I don’t advise and repay in full any such payment CICA will take court action to recover this.</p>
+
+      {% from 'radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "declaration",
+            "name": "declaration",
+            currentValue: data['declaration'],
+            "fieldset": {
+              "legend": {
+                "text": "Do you accept the compensation offer?",
+                "isPageHeading": false,
+                "classes": 'govuk-fieldset__legend--m'
+              }
+            },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes"
+              },
+              {
+                "value": "No",
+                "text": "No"
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Submit"
+            }) }}
 
 
 
@@ -136,7 +214,6 @@ Decision letter - {{ serviceName }} - GOV.UK
 
     <div class="govuk-grid-column-one-third">
 
-
         <h2 class="govuk-heading-m" id="subsection-title">
           Contact us
         </h2>
@@ -145,7 +222,6 @@ Decision letter - {{ serviceName }} - GOV.UK
 
           <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
         </nav>
-
 
     </div>
   </div>
