@@ -6,14 +6,21 @@ Decision letter - {{ serviceName }} - GOV.UK
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-    We have decided to offer you £4040 compensation
-    </h1>
+      <h1 class="govuk-heading-xl">
+      We have decided to offer you £4040 compensation
+      </h1>
 
-    {% from "tabs/macro.njk" import govukTabs %}
+      {% from "warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+            text: "You must accept or reject this offer by 31 March 2019. We may cancel or reduce the offer if you do not reply in time",
+            iconFallbackText: "Warning"
+          }) }}
+
+      {% from "tabs/macro.njk" import govukTabs %}
 
 
       {% set decisionSummaryHtml %}
@@ -142,7 +149,7 @@ Decision letter - {{ serviceName }} - GOV.UK
       <p class="govuk-body-m">I accept this offer in full and final settlement of my application for compensation.</p>
       <p class="govuk-body-m">I promise to repay any money I receive in damages, settlement or other compensation for the injuries described in this application.</p>
       <p class="govuk-body-m">I understand that I may face court action to recover such payments if I do not disclose or repay them.</p>
-      
+
       {% from 'radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
@@ -177,8 +184,12 @@ Decision letter - {{ serviceName }} - GOV.UK
 
       {% endset -%}
 
-      {% set nextStepsHtml %}
-      <h2 class="govuk-heading-l">Next steps</h2>
+      {% set reviewHtml %}
+      <h2 class="govuk-heading-l">Request a review</h2>
+
+      <p class="govuk-body-l">If you disagree with our decision you can ask us to review it.</p>
+      <p class="govuk-body">Review process as follows.</p>
+
 
       {% endset -%}
 
@@ -199,10 +210,10 @@ Decision letter - {{ serviceName }} - GOV.UK
             }
           },
           {
-            label: "Next steps",
-            id: "next-steps",
+            label: "Request a review",
+            id: "request-review",
             panel: {
-              html: nextStepsHtml
+              html: reviewHtml
             }
           }
         ]
