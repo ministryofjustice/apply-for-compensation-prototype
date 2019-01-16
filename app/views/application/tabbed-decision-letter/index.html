@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Decision letter - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+    We have decided to offer you £4040 compensation
+    </h1>
+
+    <p class="govuk-body">Dear Test User</p>
+    <p class="govuk-body">Case reference CICA2123GW.</p>
+    {% from "tabs/macro.njk" import govukTabs %}
+
+
+      {% set decisionSummaryHtml %}
+      <h2 class="govuk-heading-l">How we made our decision</h2>
+
+      <p class="govuk-body-l">We assessed your application by comparing your injuries to a list of injuries that we call the tariff.</p>
+      <p class="govuk-body">The tariff can be found at Annex E of the 2012 Criminal Injuries Compensation Scheme.</p>
+
+      <h2 class="govuk-heading-l">Our assessment</h2>
+
+      <h3 class="govuk-heading-m">Your injuries</h3>
+
+      <p class="govuk-body-l">We are satisfied that you have a sprained knee that will continue to be a significant disability.</p>
+
+      <p class="govuk-body-l">We are satisfied that you will require a knee replacement in the future.</p>
+
+      <p class="govuk-body-l">We are not satisfied that you suffered a disabling mental injury.</p>
+
+      <p class="govuk-body-l">We are not satisfied that your other injuries are eligible.</p>
+
+
+      <h3 class="govuk-heading-m">Loss of earnings and special expenses</h3>
+
+      <p class="govuk-body-l">We are not satisfied that you should get compensation for loss of earnings or special expenses.</p>
+
+      <h3 class="govuk-heading-m">Deductions and reductions</h3>
+
+      <p class="govuk-body-l">We have not made any deductions or reductions to this offer.</p>
+
+      {% endset -%}
+
+      {% set detailedDecisionHtml %}
+      <h2 class="govuk-heading-l">How we made our decision</h2>
+
+      <p class="govuk-body-l">The offer of £4040 compensation is broken down as follows:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>£3500 for moderate damage to a leg tendon</li>
+      <li>£540 for the removal of one knee</li>
+      </ul>
+
+      <p class="govuk-body-l">We assessed your application by comparing your injuries to a list of injuries that we call the tariff.</p>
+      <p class="govuk-body">The tariff can be found at Annex E of the 2012 Criminal Injuries Compensation Scheme.</p>
+
+      <p class="govuk-body">We assess the amount of compensation for a single injury by comparing the evidence we have about your injuries to the relevant description in the tariff of injuries in the Scheme.</p>
+      <p class="govuk-body">If you lost earnings, or the ability to earn, leaving you with no or very limited capacity for paid work for at least 28 full weeks, as a direct result of the injury, we may compensate you for your financial loss from the twenty ninth week.</p>
+      <p class="govuk-body">We may also compensate you for special expenses you incurred because of the injury, provided you lost earnings or the ability to earn, or were similarly incapacitated, for at least 28 weeks.</p>
+      <p class="govuk-body">The Scheme says we have to deduct the full value of any social security benefits paid or payable as a result of the injury from the final award. We may also have to deduct any other payment such as insurance awards, damages, or other compensation you have been awarded in a criminal or civil court.</p>
+      <p class="govuk-body">Social security benefits and insurance payments are not deducted from the amount of compensation paid for your injuries.  They are only deducted from any additional compensation paid, such as loss of earnings or special expenses.</p>
+      <p class="govuk-body">Any interim awards you have received during the course of your claim will be deducted before the final award is paid.</p>
+      <p class="govuk-body">If we have reduced your award, our letter will explain why.  You may apply for a review if you disagree with the reduction made.</p>
+
+
+
+      <h2 class="govuk-heading-l">Our assessment</h2>
+
+      <h3 class="govuk-heading-m">Your injuries</h3>
+
+      <p class="govuk-body-l">We are satisfied that you have a sprained knee that will continue to be a significant disability.</p>
+      <p class="govuk-body">The medical evidence confirms a sprain to the knee and that a substantial recovery will not be made. This falls into the category of moderate damage to ligament, one leg, continuing significant disability.</p>
+
+      <p class="govuk-body-l">We are satisfied that you will require a knee replacement in the future.</p>
+      <p class="govuk-body">I note you will require a knee replacement in future so I have also awarded for removal of one knee. The evidence also confirms history of knee problems, however, I note you were able to carry out your full duties at work and were physically fully active prior to the incident. I have therefore made a full award.</p>
+
+      <p class="govuk-body-l">We are not satisfied that you suffered a disabling mental injury.</p>
+      <p class="govuk-body">To qualify for an award for a mental injury it must be shown that the mental injury is disabling in that it has had a substantial adverse effect on a person's ability to carry out normal day-to-day activities and must be confirmed by the diagnosis of a psychiatrist or clinical psychologist. There is no evidence to show that your psychological symptoms meet this criteria.</p>
+
+      <p class="govuk-body-l">We are not satisfied that your other injuries are eligible.</p>
+      <p class="govuk-body">Your other injuries - dislocation of thumb, grazes, bruising, cuts - are not included in the tariff of injuries.</p>
+
+      <h3 class="govuk-heading-m">Loss of earnings and special expenses</h3>
+
+      <p class="govuk-body-l">We are not satisfied that you should get compensation for loss of earnings or special expenses.</p>
+      <p class="govuk-body">I have not included any award in respect of loss of earnings or special expenses as, on the evidence held, the conditions under paragraphs 43 and 50 have not been satisfied. An award for loss of earnings can be made where an applicant has no or limited capacity for paid work as a direct result of their injury. I note you have been medically retired from your job, however, the evidence does not show that you have no or very limited capacity for paid work in a different role.</p>
+
+      <h3 class="govuk-heading-m">Deductions and reductions</h3>
+
+      <p class="govuk-body-l">We have not made any deductions or reductions to this offer.</p>
+
+
+
+
+
+      {% endset -%}
+
+      {% set nextStepsHtml %}
+      <h2 class="govuk-heading-l">Next steps</h2>
+
+      {% endset -%}
+
+      {{ govukTabs({
+        items: [
+          {
+            label: "Decision summary",
+            id: "decision-summary",
+            panel: {
+              html: decisionSummaryHtml
+            }
+          },
+          {
+            label: "Detailed decision",
+            id: "detailed-decision",
+            panel: {
+              html: detailedDecisionHtml
+            }
+          },
+          {
+            label: "Next steps",
+            id: "next-steps",
+            panel: {
+              html: nextStepsHtml
+            }
+          }
+        ]
+      }) }}
+    <p class="govuk-body">You can contact our Customer Service Centre on 0300 003 3601. Select option 8 when the call is answered.</p>
+    </div>
+
+    <form class="form" method="post">
+
+    </form>
+  </div>
+
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
