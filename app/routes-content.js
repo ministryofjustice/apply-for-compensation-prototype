@@ -112,6 +112,8 @@ module.exports = {
     whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
     whyDelayQuestion: 'Select reasons for the delay in making your application',
     delayApplyExplanation: 'Briefly explain these reasons',
+    whyDelayErrorCheckboxes: 'Select if you were under 18, advised to wait, medical reasons or other reasons',
+    whyDelayErrorExplain: 'Explain the reasons for the delay in making your application',
     reportedDateErrorPast: 'The date the crime was reported to the police must be in the past',
     reportedDateIncompleteError: 'Enter the date the crime was reported to the police and include a day, month and year',
     reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
