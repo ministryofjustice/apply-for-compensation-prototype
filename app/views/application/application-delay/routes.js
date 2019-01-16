@@ -15,5 +15,15 @@ module.exports = function (router, content) {
   router.get('/application/application-delay/', function (req, res) {
     res.render('application/application-delay/index', content)
   })
+
+  // Pass the error state in to the page when no checkboxes are selected
+  router.get('/application/application-delay/error-checkboxes', function (req, res) {
+    res.render('application/application-delay/error-checkboxes', content)
+  })
+
+  // Pass the error state in to the page when no text is entered in explanation field
+  router.get('/application/application-delay/error-explain', function (req, res) {
+    res.render('application/application-delay/error-explain', content)
+  })
   // END__######################################################################################################
 }
