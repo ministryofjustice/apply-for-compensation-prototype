@@ -91,6 +91,7 @@ module.exports = {
     policeForceManualQuestion: 'What force was the crime reported to?',
     previousApplicationsQuestion: 'Have you applied to us before?',
     previousReferenceHint: 'Enter your previous reference number if you know it (optional)',
+    previousApplicationError: 'Select yes if you have applied to us before',
     reportingDelayQuestion: "Select reasons for the delay in reporting the crime to the police",
     delayReportExplanation: 'Briefly explain these reasons',
     selectAddressLable: 'Select an address',
