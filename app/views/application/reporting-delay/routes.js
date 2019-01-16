@@ -5,8 +5,8 @@ module.exports = function (router, content) {
   // File: reporting-delay
   //
   router.post('/application/reporting-delay', function (req, res) {
-    
-    
+
+
 
     // If the variable is any other value (or is missing) render the page requesteds
     res.redirect('/application/do-you-know-offender')
@@ -22,6 +22,16 @@ module.exports = function (router, content) {
   // Pass the question in to the page
   router.get('/application/reporting-delay/', function (req, res) {
     res.render('application/reporting-delay/index', content)
+  })
+
+  // Pass the error state in to the page when no checkboxes are selected
+  router.get('/application/reporting-delay/error-checkboxes', function (req, res) {
+    res.render('application/reporting-delay/error-checkboxes', content)
+  })
+
+  // Pass the error state in to the page when text field is left empty
+  router.get('/application/reporting-delay/error-explain', function (req, res) {
+    res.render('application/reporting-delay/error-explain', content)
   })
   // END__######################################################################################################
 }

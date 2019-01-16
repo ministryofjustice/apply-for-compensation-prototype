@@ -93,6 +93,8 @@ module.exports = {
     previousReferenceHint: 'Enter your previous reference number if you know it (optional)',
     previousApplicationError: 'Select yes if you have applied to us before',
     reportingDelayQuestion: "Select reasons for the delay in reporting the crime to the police",
+    reportingDelayErrorCheckboxes: 'Select if you were under 18, unable to report the crime or other reasons',
+    reportingDelayErrorExplain: 'Explain the reasons for the delay in reporting the crime to the police',
     delayReportExplanation: 'Briefly explain these reasons',
     selectAddressLable: 'Select an address',
     sexualAbuseQuestion: 'Were you a victim of sexual assault or abuse?',
