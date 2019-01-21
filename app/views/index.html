@@ -11,15 +11,16 @@
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'We are currently in the Beta phase.'
   }) }}
 
-  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
   {% endblock %}
 
   {% block content %}
 
   <div class="govuk-grid-row">
+
       <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         Apply for compensation for a criminal injury
@@ -28,182 +29,435 @@
     </div>
       <div class="govuk-grid-column-two-thirds">
 
-        <p class="govuk-body-l">
-          This prototype details iterations of the application process users will go through to apply for compensation if they have suffered an injury through being a victim of violent crime.
+
+        <p>
+          The prototypes below show the current and previous iterations of the applications users will complete to apply
+          for compensation if they have been a victim of violent crime.
         </p>
 
-        <h2 class="govuk-heading-l">
-          Minimum Viable Product (MVP)
-          <p class="govuk-lede">Our MVP will cover users who have non-complex sexual assault applications.</p>
-          <!-- <span class="govuk-caption-m">Sprint 14 & 15</span> -->
-        </h2>
+        <br>
 
-        <h3 class="govuk-heading-l"><a href="/start-page">Current version</a></h3>
+        <div class="govuk-tabs" data-module="tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
 
-
-        <h3 class="govuk-heading-l"><a href="https://cica-app-r13.herokuapp.com/start-page">Release 13</a><span class="govuk-caption-m">MVP Sprint 7</span></h3>
-        <p>Changes in this release:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>moved the declaration to the beginning of the application</li>
-          <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
-          <li>Build police force lookup</li>
-          <li>redesign start page in light of UR</li>
-          <li>redesign OCJ page</li>
-        </ul>
-
-
-        <h3 class="govuk-heading-l"><a href="https://cica-app-r12.herokuapp.com/start-page">Release 12</a><span class="govuk-caption-m">MVP Sprint 6</span></h3>
-        <p>Changes in this release:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>refactored a lot of the code in the prototype to make it more managable in the future</li>
-          <li>transition page for moving users out to OAS</li>
-          <li>designed both a one page and a 5 page triage for OCJ</li>
-          <li>gathered police data to design new way of finding the correct force for the user</li>
-          <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
-          <li>removed some hint text on the 'offender name' page that tells them that we use this to identify cases by the same opffender</li>
-        </ul>
-
-        <h3 class="govuk-heading-l"><a href="https://cica-app-r11.herokuapp.com/start-page">Release 11</a><span class="govuk-caption-m">MVP Sprint 5</span></h3>
-        <p>After user research on the 11/12 September 2018 and discussons with the MOJ content community we changed the word survivor to victim just before the end fo the sprint.</p>
-
-        <h3 class="govuk-heading-l"><a href="https://cica-app-r10.herokuapp.com/start-page">Release 10</a></h3>
-        <p>User research 11/12 September 2018</p>
-
-        <h3 class="govuk-heading-l"><a href="https://cica-app-r9.herokuapp.com/start-page">Release 9</a><span class="govuk-caption-m">MVP Sprint 4</span></h3>
-        <p>Not many changes to the prototype in this sprint as we were focussing on looking at Google Analytics to inform the design.</p>
-        <p>Changes that were made were:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>content changes to the rep question</li>
-          <li>moved the declaration to the beginning of the application</li>
-          <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
-        </ul>
-
-        <h3 class="govuk-heading-l"><a href="https://cica-app-r8.herokuapp.com/start-page">Release 8</a><span class="govuk-caption-m">MVP Sprint 3</span></h3>
-        <p>Following user research we are iterating the design of the MVP service.</p>
-
-        <p class="govuk-body govuk-!-margin-bottom-9"><strong class="govuk-tag warning-tag">NEW FLOW</strong></p>
-        <p>We are not using the stepped guide anymore and the sequence of the screens have been changed</p>
-
-        <p><strong>Address look-up</strong> screen added, based on the <a href="https://design-system.service.gov.uk/patterns/addresses/">video displayed here</a>. Three possible situations:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>the user has a UK address and once they submit their postcode they get list of possible addresses for it and select one (this is mocked)</li>
-          <li>the user has a UK address but doesn't know the postcode, they can enter it manually</li>
-          <li>the user doesn't have a UK address and is taken to a screen when they can enter the address in a single text. <span style="color: #b10e1e"><strong>Warning:</strong> this might cause some IT issues as this format is not supported at the moment</span></li>
-        </ul>
-
-        <p><strong>Delay applying</strong> (over 2 years) is included now. You will be asked for a reason why you delayed applying if it's a:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>single incident and the incident happened more than two years on the day of application</li>
-          <li>period of abuse and using the last day of the month of the end of the period of abuse, then it's more than 2 years from the day of application </li>
-        </ul>
-        <em><p class="govuk-caption-m">For example: </p>
-          <ul class="govuk-list govuk-list--bullet govuk-caption-m">
-            <li>the incident (single incident) was on the 1/01/2016 - if the applicant is applying on the 1/01/2018 it's fine, but if applying on 2/01/2018 or later, then after entering the incident date in the flow, they would see the screen "Why did you delay making your claim?"</li>
-            <li>the end of the period of abuse was on January 2016 - if the applicant is applying in January 2018 including on the 31/01/18 it's fine but if applying from the 1st of February then after entering the incident date in the flow, they would see the screen "Why did you delay making your claim?"</li>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#past-day">
+                Current
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week">
+                Notifications
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-month">
+                Previous versions
+              </a>
+            </li>
           </ul>
-        </em>
 
-        <p><strong>Delay reporting</strong> (more than 48h) is included now. You will be asked for a reason why you delayed reporting using the:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>day of the incident if it's a single incident</li>
-          <li>last day of the month of the end of the period of abuse otherwise</li>
-        </ul>
+          <section class="govuk-tabs__panel" id="past-day">
+            <span class="govuk-caption-l">Release 17, sprint 11</span>
+    <h2 class="govuk-heading-l">Non-complex sexual assault applications</h2>
+    <p>This is the <strong>final MVP prototype</strong> in our the beta phase, currently being developed to
+      move into private beta.</p>
 
-        <em><p class="govuk-caption-m">For example: </p>
-          <ul class="govuk-list govuk-list--bullet govuk-caption-m">
-            <li>the incident (single incident) was on the 1/01/2018 - if the applicant reported it on the 3/01/2018 it's fine, but if it was reported on 4/01/2018 or later, then after entering the date they reported the incident on in the flow, they would see the screen "Why was there a delay in reporting the crime to police?"</li>
-            <li>the end of the period of abuse was on January 2018 - if the applicant reported it on 02/02/2018 (so still within 48h after the end of the month = 31/01/2018) it's fine but if it was reported on the 3rd of February then after entering the date they reported the incident on in the flow, they would see the screen "Why was there a delay in reporting the crime to police?"</li>
+      <p>It only covers applications for users who have been victims of sexual violence.</p>
+      <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What's changed?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>The following are improvements from the last release following UR:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>moved the declaration to the beginning of the application</li>
+      <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
+      <li>police force lookup</li>
+      <li>re-design start page</li>
+      <li>re-design OCJ page</li>
+    </ul>
+  <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-11" target="_blank">View all the notes for this release</a>
+</div>
+</details>
+      <a href="/start-page" role="button" draggable="false" class="govuk-button govuk-button--start">
+  Start prototype
+</a>
+    <hr><br>
+
+    <h2 class="govuk-heading-m">Concepts</h2>
+    <p>The prototypes below detail ideas for improvement for discussion only.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/">Which police service?</a></li>
+      <li><a href="/">Instant exit</a></li>
+      <li><a href="/">Choices</a></li>
+    </ul>
+          </section>
+          <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+            <h2 class="govuk-heading-l">Notifications</h2>
+            <p>The prototypes below show the notifications we give to users throughout their application process.</p>
+            <a href="/">Decision letters</a>
+          </section>
+          <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+            <h2 class="govuk-heading-l">Previous prototypes</h2>
+            <p>These releases are previous iterations following UR.</p>
+
+
+            <h3 class="govuk-heading-m">Release 16
+              <span class="govuk-caption-m">Sprint 10, December 2018</span></h3>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Changes in this release
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Before you continue page content updates</li>
+                <li>OCJ selection screen, to include detail reveals for DMI and signposting Help & support at out call centre or Victims’ Information Service website</li>
+                <li>Was the crime reported screen, adding a detail reveal to help users who don’t know if the crime was reported, signposting them to our call centre or the police 101 website</li>
+                <li>Reporting delay screen to present users with the most common reasons and capturing explanations for certain types of delay</li>
+                <li>Application delay screen to present users with the most common reasons and capturing explanations for certain types of delay. Pattern based on current OAS drop down menu</li>
+                <li>What police force was the crime reported to, presenting an autocomplete field where the police force data presented is driven by the country selected on the previous location screen</li>
+                <li>Do you know the name of the offender and Enter the offenders name screens, moving the hint text to the latter</li>
+                <li>If you have contact with the offender, presenting a text box for explaining the relationship and a checkbox for users who have no contact</li>
+                <li>Have you applied anywhere else for compensation for this crime, presenting a choice of the most common sources of other comp, based on the scheme/guidance and capturing in conditionally revealing fields the names of the sources, amounts of money received or reasons for not applying for other compensation. This single page replaces content that was previously spread across 4 separate screens</li>
+                <li>Check your answers page, addressing user concerns with the Consent and submit content and providing a link to the CICA privacy notice</li>
+                <li>British citizen screen content updated to include EU nationals as per EMB review meeting feedback</li>
+                  </ul>
+                <p>Moved the following screens position in the flow:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                <li>Declaration to front of service</li>
+                <li>Other compensation screen to between offender and personal details sections</li>
+              <li>Same family question removed from service will no longer be required by the scheme in 2019</li>
+            </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-10">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m">Release 15
+              <span class="govuk-caption-m">Sprint 9, December 2018</span></h3>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Changes in this release
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+              <li>redesign OCJ/Select an option screen in response to EMB feedback</li>
+                <li>redesign offender contact screen in response to UR insights</li>
+                  <li>redesign do you know offenders name question in response to UR insights</li>
+            </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-9">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m">Release 14
+              <span class="govuk-caption-m">Sprint 8, December 2018</span></h3>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Changes in this release
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+              <li>redesign same roof question</li>
+                <li>redesign before you continue screen</li>
+                <li>redesign ineligible screen for non-reporting</li>
+                  <li>redesign warning content as per EMB review meeting feedback</li>
+            </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-8">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r13.herokuapp.com/start-page">Release 13</a>
+            <span class="govuk-caption-m">Sprint 7, December 2018</span></h3>
+            <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this release
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+              <li>moved the declaration to the beginning of the application</li>
+              <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
+              <li>Build police force lookup</li>
+              <li>redesign start page in light of UR</li>
+              <li>redesign OCJ page</li>
+            </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-7">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r12.herokuapp.com/start-page">Release 12</a>
+            <span class="govuk-caption-m">Sprint 6, December 2018</span></h3>
+            <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this release
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>refactored a lot of the code in the prototype to make it more managable in the future</li>
+            <li>transition page for moving users out to OAS</li>
+            <li>designed both a one page and a 5 page triage for OCJ</li>
+            <li>gathered police data to design new way of finding the correct force for the user</li>
+            <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
+            <li>removed some hint text on the 'offender name' page that tells them that we use this to identify cases by the same opffender</li>
           </ul>
-        </em>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-6">Read full release notes</a>
+            </div>
+            </details>
 
-        <h3 id="release-7" class="govuk-heading-m"><a href="https://cica-app-r7.herokuapp.com/stepped-guide">Release 0.7</a><span class="govuk-caption-m">last updated 24/07/2018</span></h3>
-        <p>This version is for <strong>usability testing on 26/07/2018</strong> in Glasgow.</p>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>questions lifted but refined from the previous OAS journey</li>
-          <li>some examples of how we may handle <a href="/application/confirmation-page-if-automatic-nil">dynamic decisions</a></li>
-          <li>an idea for an <a href="/application/previous-not-eligible">application checker</a> if users apply twice by mistake</li>
-          <li>feedback from PLADS given on the 23 and the 24/07 and feedback from CSC</li>
-        </ul>
+            <br>
 
-        <h3 id="release-6" class="govuk-heading-m"><a href="https://cica-app-r6.herokuapp.com/stepped-guide">Release 0.6</a><span class="govuk-caption-m">last updated 11/06/2018</span></h3>
-        <p>This version is for <strong>usability testing on 12/06/2018</strong> in Glasgow.</p>
-        <p>The focus of this journey is to see how simple we can make the application process by getting all but the simplest users out of the journey as early as possible.</p>
-        <p>Users that do not fall in to the simple group will be nudged in other directions. We have yet to define those other directions.</p>
-        <p>This journey focuses on users who:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>are direct applicants</li>
-          <li>are over 18</li>
-          <li>are British citizens</li>
-          <li>do not have any criminal convictions</li>
-          <li>have applied for compensation from other sources</li>
-          <li>do not have ongoing medical treatment</li>
-          <li>have suffered personal injury</li>
-        </ul>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>refinded content for most pages</li>
-          <li>removed question about obtaining a medical report</li>
-          <li>changes the stepped guide to bring it in line with the start page</li>
-        </ul>
+            <h3 class="govuk-heading-m"><a href="https://cica-app-11.herokuapp.com/start-page">Release 11</a>
+            <span class="govuk-caption-m">Sprint 5, December 2018</span></h3>
+            <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this release
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Changed the word 'survivor' to 'victim' just before the end of the sprint.</p>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r10.herokuapp.com/start-page">Release 10</a></h3>
+            <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this release
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>User research 11/12 September 2018</p>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/UR-11-12-Sept-2018">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r9.herokuapp.com/start-page">Release 9</a>
+                <span class="govuk-caption-m">Sprint 4, September 2018</span></h3>
+            <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this release
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Not many changes to the prototype in this sprint as we were focussing on looking at Google Analytics to inform the design.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>content changes to the rep question</li>
+            <li>moved the declaration to the beginning of the application</li>
+            <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
+          </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/release-9">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r8.herokuapp.com/start-page">Release 8</a></h3>
+            <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Changes in this release
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>not using the stepped guide anymore
+            <li>the sequence of the screens</li>
+            <li>address look-up</li>
+            <li>delay applying screens added</li>
+            <li>delay reporting screens added</li>
+              </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/release-8">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r7.herokuapp.com/stepped-guide">Release 7</a></h3>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Changes in this release
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>questions lifted but refined from the previous OAS journey</li>
+                <li>some examples of how we may handle <a href="/application/confirmation-page-if-automatic-nil">dynamic decisions</a></li>
+                <li>an idea for an <a href="/application/previous-not-eligible">application checker</a> if users apply twice by mistake</li>
+                <li>feedback from PLADS given on the 23 and the 24/07 and feedback from CSC</li>
+              </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/release-7">Read full release notes</a>
+            </div>
+            </details>
+
+            <br>
+
+            <h3 class="govuk-heading-m"><a href="https://cica-app-r6.herokuapp.com/stepped-guide">Release 6</a></h3>
+            <details class="govuk-details">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">Changes in this release</span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>refinded content for most pages</li>
+                <li>removed question about obtaining a medical report</li>
+                <li>changes the stepped guide to bring it in line with the start page</li>
+              </ul>
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/release-6">Read full release notes</a>
+                        </div>
+                        </details>
+
+                        <br>
 
 
-        <h3 id="release-5" class="govuk-heading-m"><a href="https://cica-app-r5.herokuapp.com/start-page">Release 0.5</a><span class="govuk-caption-m">08/06/2018</span></h3>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>added breadcrumbs to the start page</li>
-          <li>changed content around legally resident to focus on British citizens for now</li>
-          <li>removed "I don't know" radio button on criminal convictions question</li>
-          <li>refined the content about getting a medical report</li>
-          <li>removed the £50 medical question</li>
-          <li>updated content on the confirmation page</li>
-          <li>fixed bug where conditional content for radio buttons would appear between radio buttons</li>
-        </ul>
+                        <h3 class="govuk-heading-m"><a href="https://cica-app-r5.herokuapp.com/start-page">Release 5</a></h3>
+                        <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Changes in this release
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>added breadcrumbs to the start page</li>
+                            <li>changed content around legally resident to focus on British citizens for now</li>
+                            <li>removed "I don't know" radio button on criminal convictions question</li>
+                            <li>refined the content about getting a medical report</li>
+                            <li>removed the £50 medical question</li>
+                            <li>updated content on the confirmation page</li>
+                            <li>fixed bug where conditional content for radio buttons would appear between radio buttons</li>
+                          </ul>
+                        <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/MVP-release-05">Read full release notes</a>
+                        </div>
+                        </details>
 
-        <h3 id="release-4"  class="govuk-heading-m"><a href="https://cica-app-r4.herokuapp.com/start-page">Release 0.4</a><span class="govuk-caption-m">07/06/2018</span></h3>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>added the stepped guide and content</li>
-          <li>made the back links work on all pages</li>
-        </ul>
+                        <br>
 
-        <h3 id="release-3"  class="govuk-heading-m"><a href="https://cica-app-r3.herokuapp.com/start-page">Release 0.3</a><span class="govuk-caption-m">04/06/2018</span></h3>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>a new page for collecting email address</li>
-          <li>started pulling data through to the check your answeres page</li>
-          <li>added placeholder content to the check your answeres page</li>
-        </ul>
 
-        <h3 id="release-2"  class="govuk-heading-m"><a href="https://cica-app-r2.herokuapp.com/start-page">Release 0.2</a><span class="govuk-caption-m">04/06/2018</span></h3>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>a new page for collecting address</li>
-          <li>a new page for collecting the date that people stopped work</li>
-          <li>new pages for obtaining and paying for medical treatment</li>
-          <li>a new page for ongoing medical treatment</li>
-          <li>refined content on the "who is making the application" page</li>
-          <li>modified content around asking is users were living legally in the UK</li>
-          <li>new pages for asking more questions about compensation</li>
-          <li>a new page for the negative path if users have convictions in another country</li>
-          <li>a new page to collect the police force</li>
-          <li>a new page to ask about previous applications</li>
-          <li>a new page to collect the date that the crime was reported</li>
-        </ul>
-        <p>Some of the pages details above were removed from the prototype to focus on a smaller journey.</p>
+                        <h3 class="govuk-heading-m"><a href="https://cica-app-r4.herokuapp.com/start-page">Release 4</a></h3>
+                        <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Changes in this release
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>added the stepped guide and content</li>
+                            <li>made the back links work on all pages</li>
+                          </ul>
+                        <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/MVP-release-0.4">Read full release notes</a>
+                        </div>
+                        </details>
 
-        <h3 id="release-1"  class="govuk-heading-m"><a href="https://cica-app-r1.herokuapp.com/start-page">Release 0.1</a><span class="govuk-caption-m">25/05/2018</span></h3>
-        <p>This release contains:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>placeholder content for all pages</li>
-          <li>back links do not work</li>
-          <li>a very simple declaration</li>
-          <li>some bugs with revealing content</li>
-        </ul>
-        <a href="release-1-screens">Screens</a>
+                        <br>
+
+                        <h3 class="govuk-heading-m"><a href="https://cica-app-r3.herokuapp.com/start-page">Release 3</a></h3>
+                        <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Changes in this release
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>a new page for collecting email address</li>
+                            <li>started pulling data through to the check your answeres page</li>
+                            <li>added placeholder content to the check your answeres page</li>
+                          </ul>
+                        <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/MVP-release-0.3">Read full release notes</a>
+                        </div>
+                        </details>
+
+                        <br>
+
+                        <h3 class="govuk-heading-m"><a href="https://cica-app-r2.herokuapp.com/start-page">Release 2</a></h3>
+                        <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Changes in this release
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>a new page for collecting address</li>
+                            <li>a new page for collecting the date that people stopped work</li>
+                            <li>new pages for obtaining and paying for medical treatment</li>
+                            <li>a new page for ongoing medical treatment</li>
+                            <li>refined content on the "who is making the application" page</li>
+                            <li>modified content around asking is users were living legally in the UK</li>
+                            <li>new pages for asking more questions about compensation</li>
+                            <li>a new page for the negative path if users have convictions in another country</li>
+                            <li>a new page to collect the police force</li>
+                            <li>a new page to ask about previous applications</li>
+                            <li>a new page to collect the date that the crime was reported</li>
+                          </ul>
+                          <p>Some of the pages details above were removed from the prototype to focus on a smaller journey.</p>
+                        <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/MVP-release-0.2">Read full release notes</a>
+                        </div>
+                        </details>
+
+                        <br>
+
+                        <h3 class="govuk-heading-m"><a href="https://cica-app-r1.herokuapp.com/start-page">1st release</a></h3>
+                        <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        Changes in this release
+                        </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>placeholder content for all pages</li>
+                            <li>back links do not work</li>
+                            <li>a very simple declaration</li>
+                            <li>some bugs with revealing content</li>
+                          </ul>
+                          <p><a href="release-1-screens">Screens</a></p>
+                          <p><a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/MVP-release-0.1">Read full release notes</a></p>
+                        </div>
+                        </details>
+
+
+
+          </section>
+
+        </div>
+
+
+
+
 
       </div>
-      <div class="govuk-grid-column-one-third">
+      <!--<div class="govuk-grid-column-one-third">
 
         <aside class="app-related-items" role="complementary">
           <h2 class="govuk-heading-m" id="subsection-title">
@@ -248,7 +502,7 @@
               </li>
             </ul>
           </nav>
-        </aside>
+        </aside>-->
 
       </div>
     </div>

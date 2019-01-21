@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentLocationHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'radios/macro.njk' import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
+
+      {% set textEngland %}
+      {{ govukInput({
+            id: "england",
+            name: "england",
+            value: data['townOrlocation'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: incidentLocationReveal
+            }
+          }) }}
+      {% endset -%}
+
+      {% set textScotland %}
+      {{ govukInput({
+            id: "scotland",
+            name: "scotland",
+            value: data['townOrlocation'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: incidentLocationReveal
+            }
+          }) }}
+      {% endset -%}
+
+      {% set textWales %}
+      {{ govukInput({
+            id: "wales",
+            name: "wales",
+            value: data['townOrlocation'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: incidentLocationReveal
+            }
+          }) }}
+      {% endset -%}
+
+      {% set textSomewhereElse %}
+      {{ govukInput({
+            id: "somewhere-else",
+            name: "somewhere-else",
+            value: data['somewhere-else'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: incidentLocationRevealOther
+            }
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            idPrefix: "incidentlocation",
+            name: "incidentlocation",
+            currentValue: data['incidentlocation'],
+            fieldset: {
+              legend: {
+                text: incidentLocationHeading,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+            {
+              value: "England",
+              text: "England",
+              conditional: {
+                html: textEngland
+              }
+            },
+            {
+              value: "Scotland",
+              text: "Scotland",
+              conditional: {
+                html: textScotland
+              }
+            },
+            {
+              value: "Wales",
+              text: "Wales",
+              conditional: {
+                html: textWales
+              }
+            },
+            {
+              value: "Somewhere else",
+              text: "Somewhere else",
+              conditional: {
+                html: textSomewhereElse
+              }
+            }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
