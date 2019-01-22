@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentLocationHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Where in England did the crime happen?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-1" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-1-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-1">
+          North west
+        </label>
+        <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes Liverpool, Manchester, Blackpool, Preston, Greater Manchester, Warrington, Chester, Salford, Stockport, Southport, Bolton, Wigan, Barrow-in-Furness, Lancaster, Crewe.
+        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          North East, Yorkshire and Humber
+        </label>
+        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes city, city, city, city.        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          West Midlands
+        </label>
+        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes city, city, city, city.        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          East Midlands
+        </label>
+        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes city, city, city, city.        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          East Anglia
+        </label>
+        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes city, city, city, city.        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          South West
+        </label>
+        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes city, city, city, city.        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          London and South East
+        </label>
+        <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Includes city, city, city, city.        </span>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+          <a type="submit" class="govuk-button" href="/concepts/police-service/location">
+  Continue
+</a>
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
