@@ -3,11 +3,20 @@ module.exports = function (router, content) {
   // File: compensation
   // Variable: otherCompensation
 
-  router.post('/application/compensation', function (req, res) {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/name')
+ router.post('/application/compensation', function (req, res) {
+   // Get the answer from the query string
+   var otherCompensation = req.session.data['otherCompensation']
+
+   if (otherCompensation === 'No') {
+     // Redirect to the relevant page
+     res.redirect('/application/name')
+   } else {
+     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+       return res.redirect('/application/check-your-answers-page')
+     }
+     // If the variable is any other value (or is missing) render the page requested
+     res.redirect('/application/other-compensation')
+   }
  })
 
  // Pass the question in to the page
@@ -18,21 +27,6 @@ module.exports = function (router, content) {
  // Pass the Error state in to the page when no radios are selected
  router.get('/application/compensation/error-no-radio', function (req, res) {
    res.render('application/compensation/error-no-radio', content)
- })
-
- // Pass the Error state in to the page when yes is selected but user enters no text in who did you apply to field
- router.get('/application/compensation/error-yes-no-source', function (req, res) {
-   res.render('application/compensation/error-yes-no-source', content)
- })
-
- // Pass the Error state in to the page when yes is selected but user enters no text in the amount field
- router.get('/application/compensation/error-yes-no-amount', function (req, res) {
-   res.render('application/compensation/error-yes-no-amount', content)
- })
-
- // Pass the Error state in to the page when yes but still waiting is selected but user enters no text in source field
- router.get('/application/compensation/error-waiting-no-source', function (req, res) {
-   res.render('application/compensation/error-waiting-no-source', content)
  })
 
  // Pass the Error state in to the page when No is selected but user enters no text in explanation field

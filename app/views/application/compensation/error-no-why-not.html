@@ -36,40 +36,6 @@ Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
 
-
-            {% set compYesHtml %}
-            {{ govukInput({
-                  id: "comp-yes-who",
-                  name: "comp-yes-who",
-                  value: data['comp-yes-who'],
-                  classes: "govuk-!-width-two-thirds",
-                  label: {
-                    text: compYesWhoHint
-                  }
-                }) }}
-            {{ govukInput({
-                  id: "comp-yes-amount",
-                  name: "comp-yes-amount",
-                  value: data['comp-yes-amount'],
-                  classes: "govuk-!-width-one-quarter",
-                  label: {
-                    text: compYesAmountHint
-                  }
-                }) }}
-            {% endset -%}
-
-            {% set compWaitingHtml %}
-            {{ govukInput({
-                  id: "comp-waiting",
-                  name: "comp-waiting",
-                  value: data['comp-waiting'],
-                  classes: "govuk-!-width-two-thirds",
-                  label: {
-                    text: compWaitingHint
-                  }
-                }) }}
-            {% endset -%}
-
             {% set compNoHtml %}
             {{ govukInput({
                   id: "comp-no",
@@ -102,17 +68,7 @@ Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
                   items: [
                   {
                     value: "Yes",
-                    text: "Yes",
-                    conditional: {
-                      html: compYesHtml
-                    }
-                  },
-                  {
-                    value: "Yes, but I am still waiting for a decision",
-                    text: "Yes, but I am still waiting for a decision",
-                    conditional: {
-                      html: compWaitingHtml
-                    }
+                    text: "Yes"
                   },
                   {
                     value: "No",
