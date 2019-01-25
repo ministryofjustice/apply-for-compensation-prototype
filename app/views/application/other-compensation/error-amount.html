@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
+Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,6 +29,19 @@
               </h1>
             </div>
 
+
+            {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+            {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: compensationErrorAmount,
+                        href: "#comp-yes-amount"
+                      }
+                    ]
+                  }) }}
+
             {% from "input/macro.njk" import govukInput %}
 
             {{ govukInput({
@@ -48,7 +61,10 @@
                     },
                     id: "comp-yes-amount",
                     name: "comp-yes-amount",
-                    value: data['comp-yes-amount']
+                    value: data['comp-yes-amount'],
+                    errorMessage: {
+                    text: compensationErrorAmount
+                    }
                   }) }}
             {% from "input/macro.njk" import govukInput %}
 
