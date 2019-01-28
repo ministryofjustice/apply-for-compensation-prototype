@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ englandForceQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-xl">{{englandForceQuestion}}</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+    Select police force
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="1">Avon And Somerset Constabulary  </option>
+    <option value="2">Bedfordshire Police  </option>
+    <option value="3">British Transport Police  </option>
+    <option value="1">Cambridgeshire Constabulary  </option>
+    <option value="1">Cheshire Constabulary  </option>
+    <option value="1">City Of London Police  </option>
+    <option value="1">Cleveland Police  </option>
+    <option value="1">Cumbria Constabulary  </option>
+    <option value="1">Derbyshire Constabulary  </option>
+    <option value="1">Devon & Cornwall Constabulary  </option>
+    <option value="1">Dorset Police  </option>
+    <option value="1">Durham Constabulary  </option>
+    <option value="1">Essex Police   </option>
+    <option value="1">Gloucestershire Constabulary  </option>
+    <option value="1">Grampian Police  </option>
+    <option value="1">Greater Manchester Police   </option>
+    <option value="1">Hampshire Constabulary  </option>
+    <option value="1">Hertfordshire Constabulary </option>
+    <option value="1">Humberside Police  </option>
+    <option value="1">Kent County Constabulary  </option>
+    <option value="1">Lancashire Constabulary  </option>
+    <option value="1">Leicestershire Constabulary </option>
+    <option value="1">Lincolnshire Police  </option>
+    <option value="1">Merseyside Police  </option>
+    <option value="1">Metropolitan Barking  </option>
+    <option value="1">Metropolitan Barnet  </option>
+    <option value="1">Metropolitan Bexley </option>
+    <option value="1">Metropolitan Brent  </option>
+    <option value="1">Metropolitan Bromley  </option>
+    <option value="1">Metropolitan Camden  </option>
+    <option value="1">Metropolitan Croydon </option>
+    <option value="1">Metropolitan Ealing  </option>
+    <option value="1">Metropolitan Enfield </option>
+    <option value="1">Metropolitan Greenwich </option>
+    <option value="1">Metropolitan Hackney  </option>
+    <option value="1">Metropolitan Hammersmith  </option>
+    <option value="1">Metropolitan Haringey  </option>
+    <option value="1">Metropolitan Harrow  </option>
+    <option value="1">Metropolitan Havering  </option>
+    <option value="1">Metropolitan Hillingdon</option>
+    <option value="1">Metropolitan Hounslow </option>
+    <option value="1">Metropolitan Islington </option>
+    <option value="1">Metropolitan Kensington </option>
+    <option value="1">Metropolitan Kingston  </option>
+    <option value="1">Metropolitan Lambeth</option>
+    <option value="1">Metropolitan Lewisham </option>
+    <option value="1">Metropolitan Merton  </option>
+    <option value="1">Metropolitan Newham  </option>
+    <option value="1">Metropolitan Redbridge </option>
+    <option value="1">Metropolitan Richmond </option>
+    <option value="1">Metropolitan Southwark  </option>
+    <option value="1">Metropolitan Sutton  </option>
+    <option value="1">Metropolitan Tower Hamlets </option>
+    <option value="1">Metropolitan Waltham Forest  </option>
+    <option value="1">Metropolitan Wandsworth  </option>
+    <option value="1">Metropolitan Westminster  </option>
+    <option value="1">Norfolk Constabulary  </option>
+    <option value="1">North Wales Police  </option>
+    <option value="1">North Yorkshire Police  </option>
+    <option value="1">Northamptonshire Police  </option>
+    <option value="1">Northern Constabulary  </option>
+    <option value="1">Northumbria Police  </option>
+    <option value="1">Nottinghamshire Police </option>
+    <option value="1">South Yorkshire Police  </option>
+    <option value="1">Staffordshire Police  </option>
+    <option value="1">Suffolk Constabulary  </option>
+    <option value="1">Surrey Constabulary  </option>
+    <option value="1">Sussex Police  </option>
+    <option value="1">Tayside Police  </option>
+    <option value="1">Thames Valley Police  </option>
+    <option value="1">Warwickshire Constabulary</option>
+    <option value="1">West Mercia Constabulary  </option>
+    <option value="1">West Midlands Police</option>
+    <option value="1">West Yorkshire Police</option>
+    <option value="1">Wiltshire Constabulary</option>
+  </select>
+</div>
+
+    {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

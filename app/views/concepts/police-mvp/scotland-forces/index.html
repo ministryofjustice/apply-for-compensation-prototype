@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ policeForceQuestion }} - {{ serviceName }} - GOV.UK
+{{ scotlandForceQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,11 +22,11 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="/form-handler" method="post">
 
-      <h1 class="govuk-heading-xl">{{policeForceQuestion}}</h1>
+      <h1 class="govuk-heading-xl">{{scotlandForceQuestion}}</h1>
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-visually-hidden" for="name">
-          {{policeForceQuestion}}
+          {{scotlandForceQuestion}}
         </label>
         <!-- This gets the autocomplete an puts it in the div with an id="autocomplete". The  files used for this are:
         - app/assets/javascripts/accessible-autocomplete.min.js
@@ -102,8 +102,10 @@
               ]
             }) }}
 
-      <br>
-      <br>
+            <br>
+            <br>
+
+    {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
             "text": "Continue"

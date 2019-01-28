@@ -48,11 +48,13 @@
         text: "Wales"
       },
       {
-        value: "somewhere-else",
+        value: "else",
         text: "Somewhere else"
       }
     ]
   }) }}
+
+      {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
             "text": "Continue"

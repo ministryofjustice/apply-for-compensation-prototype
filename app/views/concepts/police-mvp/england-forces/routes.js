@@ -4,20 +4,20 @@ module.exports = function (router, content) {
 // File: british-citizen
 // Variable: britishCitizen
 
-router.post('/concepts/police-mvp/reporting-details-what-force', function (req, res) {
+router.post('/concepts/police-mvp/england-forces', function (req, res) {
  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
    return res.redirect('/application/check-your-answers-page')
  }
- res.redirect('/concepts/police-mvp/single-or-multiple-incidents')
+ res.redirect('/')
 })
 
 // Pass the question in to the page
-router.get('/concepts/police-mvp/reporting-details-what-force/', function (req, res) {
-  res.render('concepts/police-mvp/reporting-details-what-force/index', content)
+router.get('/concepts/police-mvp/england-forces/', function (req, res) {
+  res.render('concepts/police-mvp/england-forces/index', content)
 })
 
-router.get('/concepts/police-mvp/reporting-details-what-force/error', function (req, res) {
-  res.render('concepts/police-mvp/reporting-details-what-force/error', content)
+router.get('/concepts/police-mvp/england-forces/error', function (req, res) {
+  res.render('concepts/police-mvp/england-forces/error', content)
 })
 // END__######################################################################################################
 }

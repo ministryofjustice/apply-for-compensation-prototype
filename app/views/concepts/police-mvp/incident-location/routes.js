@@ -4,10 +4,26 @@ module.exports = function (router, content) {
   //
   router.post('/concepts/police-mvp/incident-location', function (req, res) {
 
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/concepts/police-mvp/check-your-answers-page')
+    // Get the answer from the query string
+
+    var yourChoice = req.session.data['where-do-you-live']
+
+    if (yourChoice === 'england') {
+      // Redirect to the relevant page
+      res.redirect('/concepts/police-mvp/england-location')
     }
-    res.redirect('/concepts/police-mvp/england-location')
+      if (yourChoice === 'scotland') {
+        // Redirect to the relevant page
+        res.redirect('/concepts/police-mvp/scotland-location')
+      }
+        if (yourChoice === 'wales') {
+          // Redirect to the relevant page
+          res.redirect('/concepts/police-mvp/wales-location')
+        }
+          if (yourChoice === 'else') {
+            // Redirect to the relevant page
+            res.redirect('/concepts/police-mvp/else-location')
+}
   })
 
   // Pass the question in to the page

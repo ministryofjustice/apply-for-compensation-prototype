@@ -125,7 +125,13 @@ module.exports = {
 
     //Police-MVP COncept//
       EnglandLocationQuestion: 'Where in England did the crime happen?',
-      EnglandLocationHint: 'Hint text here if needed?',
+      scotlandLocationQuestion: 'Where in Scotland did the crime happen?',
+      walesLocationQuestion: 'Where in Wales did the crime happen?',
+      walesForceQuestion: 'Which Welsh police force is dealing with the crime?',
+      elseLocationQuestion: 'Where did the crime happen?',
+      scotlandForceQuestion: 'What police Scotland force is dealing with the crime?',
+      englandForceQuestion: 'Which English police force is dealing with the crime?',
+      elseForceQuestion: 'What police force is dealing with the crime?',
 };
 // // END__######################################################################################################
 // }
