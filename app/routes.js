@@ -59,7 +59,16 @@ require('./views/application/application-delay/routes')(router, viewContent);
 // require('./views/application/find-uk-address/routes')(router, viewContent);
 require('./views/application/reporting-delay/routes')(router, viewContent);
 require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
+
 require('./views/application/transition/routes')(router, viewContent);
+
+// Police-MVP Concept //
+require('./views/concepts/police-mvp/incident-location/routes')(router, viewContent);
+require('./views/concepts/police-mvp/reporting-details-what-force/routes')(router, viewContent);
+require('./views/concepts/police-mvp/do-you-know-offender/routes')(router, viewContent);
+require('./views/concepts/police-mvp/england-location/routes')(router, viewContent);
+
+
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line
