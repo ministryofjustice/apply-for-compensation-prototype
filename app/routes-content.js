@@ -76,7 +76,7 @@ module.exports = {
     offenderNameQuestionCA: 'Offender\'s  name',
     ongoingRelationshipQuestion: "Have you have any contact with this person since the incident?",
     ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
-    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages or a court decided you should get compensation.',
+    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
     otherCompensationQuestion: 'Have you applied for or received any other form of compensation?',
     compYesWhoHint:'Who is the source of the compensation, for example, the name of the person, company or court?',
     compYesAmountHint:'How much compensation did you get, or expect to get?',
