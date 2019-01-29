@@ -20,7 +20,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-<h1 class="govuk-heading-xl">{{scotlandLocationQuestion}}</h1>
+<legend class="govuk-heading-xl">{{scotlandLocationQuestion}}</legend>
       {% from "input/macro.njk" import govukInput %}
       <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
       {{ govukInput({
