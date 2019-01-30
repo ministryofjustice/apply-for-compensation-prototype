@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
+Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,6 +21,17 @@
   <div class="govuk-grid-column-two-thirds">
     <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
     <form class="form" method="post">
+      {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: compensationErrorNoWhynot,
+                  href: "#comp-no"
+                }
+              ]
+            }) }}
 
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
@@ -31,6 +42,9 @@
                   name: "comp-no",
                   value: data['comp-no'],
                   classes: "govuk-!-width-two-thirds",
+                  errorMessage: {
+                  text: compensationErrorNoWhynot
+                },
                   label: {
                     text: compNoHint
                   }
