@@ -30,16 +30,21 @@ module.exports = function (router, content) {
     res.render('application/date-of-birth/index', content)
   })
 
-  router.get('/application/date-of-birth/error-past', function (req, res) {
-    res.render('application/date-of-birth/error-past', content)
+  router.get('/application/date-of-birth/error-before-incident', function (req, res) {
+    res.render('application/date-of-birth/error-before-incident', content)
   })
 
   router.get('/application/date-of-birth/error-blank', function (req, res) {
     res.render('application/date-of-birth/error-blank', content)
   })
 
-  router.get('/application/date-of-birth/error-before-incident', function (req, res) {
-    res.render('application/date-of-birth/error-before-incident', content)
+  router.get('/application/date-of-birth/error-incomplete', function (req, res) {
+    res.render('application/date-of-birth/error-incomplete', content)
   })
+
+  router.get('/application/date-of-birth/error-past', function (req, res) {
+    res.render('application/date-of-birth/error-past', content)
+  })
+
 // END__######################################################################################################
 }
