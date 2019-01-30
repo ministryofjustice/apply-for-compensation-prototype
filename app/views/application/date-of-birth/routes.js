@@ -46,5 +46,16 @@ module.exports = function (router, content) {
     res.render('application/date-of-birth/error-past', content)
   })
 
+  router.get('/application/date-of-birth/error-before-reported', function (req, res) {
+    res.render('application/date-of-birth/error-before-reported', content)
+  })
+
+  router.get('/application/date-of-birth/error-before-start', function (req, res) {
+    res.render('application/date-of-birth/error-before-start', content)
+  })
+
+  router.get('/application/date-of-birth/error-before-stop', function (req, res) {
+    res.render('application/date-of-birth/error-before-stop', content)
+  })
 // END__######################################################################################################
 }
