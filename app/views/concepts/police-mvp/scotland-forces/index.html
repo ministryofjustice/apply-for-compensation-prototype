@@ -22,16 +22,12 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="/form-handler" method="post">
 
-      <legend class="govuk-heading-xl">{{scotlandForceQuestion}}</legend>
-
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-visually-hidden" for="name">
-          {{scotlandForceQuestion}}
-        </label>
-        <!-- This gets the autocomplete an puts it in the div with an id="autocomplete". The  files used for this are:
-        - app/assets/javascripts/accessible-autocomplete.min.js
-        - app/assets/sass/components/_accessible-autocomplete.scss
-        More details on this can be found here: https://github.com/alphagov/accessible-autocomplete -->
+          <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="example">
+              {{scotlandForceQuestion}}
+              </label>
+            </h1>
 
         {% from 'radios/macro.njk' import govukRadios %}
 

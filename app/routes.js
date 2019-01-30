@@ -70,7 +70,7 @@ require('./views/concepts/police-mvp/england-forces/routes')(router, viewContent
 require('./views/concepts/police-mvp/scotland-location/routes')(router, viewContent);
 require('./views/concepts/police-mvp/wales-location/routes')(router, viewContent);
 require('./views/concepts/police-mvp/welsh-forces/routes')(router, viewContent);
-require('./views/concepts/police-mvp/else-location/routes')(router, viewContent);
+require('./views/concepts/police-mvp/somewhere-else/routes')(router, viewContent);
 
 
 require('./routes-filelist')(router);

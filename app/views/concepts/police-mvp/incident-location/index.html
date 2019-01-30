@@ -22,17 +22,19 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
+      <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--xl" for="example">
+                  {{incidentLocationHeading}}
+                </label>
+              </h1>
+
       {% from "radios/macro.njk" import govukRadios %}
 
   {{ govukRadios({
     idPrefix: "where-do-you-live",
     name: "where-do-you-live",
     fieldset: {
-      legend: {
-        text: "Where did the crime happen?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--xl"
-      }
     },
     items: [
       {
@@ -48,12 +50,14 @@
         text: "Wales"
       },
       {
-        value: "else",
+        value: "somewhere-else",
         text: "Somewhere else"
       }
     ]
   }) }}
 
+
+</div>
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({

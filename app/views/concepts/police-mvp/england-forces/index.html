@@ -22,13 +22,19 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">{{englandForceQuestion}}</h1>
-
       <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-    Select police force
-  </label>
+        <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="example">
+            {{englandForceQuestion}}
+            </label>
+
+          </h1>
+          <span id="example-hint" class="govuk-hint">
+            Select the police force (do we need this hint?)
+          </span>
+
   <select class="govuk-select" id="sort" name="sort">
+    <option value="1"></option>
     <option value="1">Avon And Somerset Constabulary  </option>
     <option value="2">Bedfordshire Police  </option>
     <option value="3">British Transport Police  </option>

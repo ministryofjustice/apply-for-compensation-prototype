@@ -30,9 +30,21 @@
             },
             "classes": 'govuk-input--width-20',
             "id": "EnglandLocation",
-            "name": "EnglandLocation",
-            value: data['EnglandLocation']
+            "name": "EnglandLocation"
             }) }}
+
+        {{ govukInput({
+
+                  label: {
+                  text: "Name or names of the locations where the crime happened"
+                  },
+                  hint: {
+                  text: "Tell us if the crime happened in, or in the vicinity of particular landmarks, public or private areas or other establishments."
+                  },
+                  "classes": 'govuk-input--width-20',
+                  "id": "EnglandLocation",
+                  "name": "EnglandLocation"
+                  }) }}
 
       {% from "button/macro.njk" import govukButton %}
 

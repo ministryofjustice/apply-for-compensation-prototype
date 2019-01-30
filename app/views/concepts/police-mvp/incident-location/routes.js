@@ -20,10 +20,12 @@ module.exports = function (router, content) {
           // Redirect to the relevant page
           res.redirect('/concepts/police-mvp/wales-location')
         }
-          if (yourChoice === 'else') {
-            // Redirect to the relevant page
-            res.redirect('/concepts/police-mvp/else-location')
-}
+
+        if (yourChoice === 'somewhere-else') {
+          // Redirect to the relevant page
+          res.redirect('/concepts/police-mvp/somewhere-else')
+        }
+
   })
 
   // Pass the question in to the page
