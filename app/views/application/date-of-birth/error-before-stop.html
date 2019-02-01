@@ -26,7 +26,7 @@ Error: {{ dateOfBirthQuestion }} - {{ serviceName }} - GOV.UK
               titleText: "There is a problem",
               errorList: [
                 {
-                  text: errorIncompleteMessage,
+                  text: errorDobBeforeStop,
                   href: "#dob-day"
                 }
               ]
@@ -38,7 +38,7 @@ Error: {{ dateOfBirthQuestion }} - {{ serviceName }} - GOV.UK
             name: 'dob',
             fieldset: {
             legend: {
-            text: "Enter your date of birth",
+            text: dateOfBirthQuestion,
             isPageHeading: true,
             classes: 'govuk-fieldset__legend--xl'
             }
@@ -47,7 +47,7 @@ Error: {{ dateOfBirthQuestion }} - {{ serviceName }} - GOV.UK
             text: 'For example, 31 3 1980'
             },
             errorMessage: {
-              text: errorIncompleteMessage
+              text: errorDobBeforeStop
             },
             items:[
             {
