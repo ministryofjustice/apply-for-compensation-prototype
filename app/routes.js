@@ -63,10 +63,10 @@ require('./views/application/confirmation-page-if-automatic-nil/routes')(router,
 require('./views/application/transition/routes')(router, viewContent);
 
 // Police MVP //
-require('./views/application/scotland-forces/routes')(router, viewContent);
 require('./views/application/england-location/routes')(router, viewContent);
 require('./views/application/england-forces/routes')(router, viewContent);
 require('./views/application/scotland-location/routes')(router, viewContent);
+require('./views/application/scotland-forces/routes')(router, viewContent);
 require('./views/application/wales-location/routes')(router, viewContent);
 require('./views/application/wales-forces/routes')(router, viewContent);
 require('./views/application/somewhere-else/routes')(router, viewContent);

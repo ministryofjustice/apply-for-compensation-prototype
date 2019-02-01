@@ -91,7 +91,7 @@ module.exports = {
     phoneNumberQuestion: "Enter your telephone number",
     phoneNumberError: 'Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192',
     policeForceHint: "Enter the police force name, for example, Humberside police.",
-    policeForceQuestion: 'What police force is dealing with the crime?',
+    policeForceQuestion: 'What police force is investigating the crime?',
     policeForceManualQuestion: 'What force was the crime reported to?',
     previousApplicationsQuestion: 'Have you applied to us before?',
     previousReferenceHint: 'Enter your previous reference number if you know it (optional)',
