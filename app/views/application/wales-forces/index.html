@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ walesForceQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="/form-handler" method="post">
+
+      <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="example">
+              {{walesForceQuestion}}
+              </label>
+            </h1>
+
+            {% from 'radios/macro.njk' import govukRadios %}
+
+            {{ govukRadios({
+                  "classes": "govuk-radios",
+                  "idPrefix": "policeWales",
+                  "name": "policeWales",
+                  currentValue: data['policeWales'],
+                  "fieldset": {
+                  },
+                  "items": [
+                  {
+                    "value": "British Transport Police",
+                    "text": "British Transport Police"
+                  },
+                  {
+                    "value": "Dyfed-Powys",
+                    "text": "Dyfed-Powys"
+                  },
+                  {
+                    "value": "Gwent",
+                    "text": "Gwent"
+                  },
+                  {
+                    "value": "North Wales",
+                    "text": "North Wales"
+                  },
+                  {
+                    "value": "South Wales",
+                    "text": "South Wales"
+                  }
+                  ]
+                }) }}
+
+            <br>
+            <br>
+
+    {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -127,14 +127,16 @@ module.exports = {
     manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
     manualAddressErrorPostcode: 'Enter a postcode, like AA1 1AA',
 
-    //Police-MVP Concept//
-      EnglandLocationQuestion: 'Where in England did the crime happen?',
-      englandForceQuestion: 'Which English police force is dealing with the crime?',
-      scotlandLocationQuestion: 'Where in Scotland did the crime happen?',
-      scotlandForceQuestion: 'Which police Scotland force is dealing with the crime?',
-      walesLocationQuestion: 'Where in Wales did the crime happen?',
-      walesForceQuestion: 'Which Welsh police force is dealing with the crime?',
-      somewhereElseHeading: 'You need to contact us',
+    //Police-MVP//
+    englandLocationQuestion: 'Where in England did it happen?',
+    englandForceQuestion: 'Which English police force is investigating the crime?',
+    scotlandLocationQuestion: 'Where in Scotland did it happen?',
+    scotlandForceQuestion: 'Which Police Scotland division is investigating the crime?',
+    walesLocationQuestion: 'Where in Wales did it happen?',
+    walesForceQuestion: 'Which Welsh police force is investigating the crime?',
+    somewhereElseHeading: 'You need to contact us',
+    locationLabel: "Location",
+    locationHint: "For example, the name of a street, business, building or nearby local landmark. You can enter more than one"
 };
 // // END__######################################################################################################
 // }
