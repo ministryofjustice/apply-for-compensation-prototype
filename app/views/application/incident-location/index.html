@@ -23,55 +23,6 @@
     <form class="form" method="post">
 
       {% from 'radios/macro.njk' import govukRadios %}
-      {% from "input/macro.njk" import govukInput %}
-
-      {% set textEngland %}
-      {{ govukInput({
-            id: "england",
-            name: "england",
-            value: data['townOrlocation'],
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: incidentLocationReveal
-            }
-          }) }}
-      {% endset -%}
-
-      {% set textScotland %}
-      {{ govukInput({
-            id: "scotland",
-            name: "scotland",
-            value: data['townOrlocation'],
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: incidentLocationReveal
-            }
-          }) }}
-      {% endset -%}
-
-      {% set textWales %}
-      {{ govukInput({
-            id: "wales",
-            name: "wales",
-            value: data['townOrlocation'],
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: incidentLocationReveal
-            }
-          }) }}
-      {% endset -%}
-
-      {% set textSomewhereElse %}
-      {{ govukInput({
-            id: "somewhere-else",
-            name: "somewhere-else",
-            value: data['somewhere-else'],
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: incidentLocationRevealOther
-            }
-          }) }}
-      {% endset -%}
 
       {{ govukRadios({
             idPrefix: "incidentlocation",
@@ -87,31 +38,19 @@
             items: [
             {
               value: "England",
-              text: "England",
-              conditional: {
-                html: textEngland
-              }
+              text: "England"
             },
             {
               value: "Scotland",
-              text: "Scotland",
-              conditional: {
-                html: textScotland
-              }
+              text: "Scotland"
             },
             {
               value: "Wales",
-              text: "Wales",
-              conditional: {
-                html: textWales
-              }
+              text: "Wales"
             },
             {
               value: "Somewhere else",
-              text: "Somewhere else",
-              conditional: {
-                html: textSomewhereElse
-              }
+              text: "Somewhere else"
             }
             ]
           }) }}
