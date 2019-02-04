@@ -1,4 +1,3 @@
-const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 const dateHelper = require('../../../helpers/date');
 module.exports = function (router, content) {
 // START__####################################################################################################
@@ -37,11 +36,12 @@ router.post('/application/england-forces', function (req, res) {
       var reportingDateYear = req.session.data['incidentReported-year']
       var reportingDate = dateHelper.getDatefrom3inputs(reportingDateDay,reportingDateMonth, reportingDateYear) //create a date that is the report date from the 3 elements we received from the user
       incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) // we need the incident date to compare for delay reporting over 48h
+
       if ( dateHelper.isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
         return res.redirect('/application/reporting-delay')
       }
 
-
+    } else {
     // If the variable is any other value (or is missing) render the page requesteds
     res.redirect('/application/do-you-know-offender')
   }
