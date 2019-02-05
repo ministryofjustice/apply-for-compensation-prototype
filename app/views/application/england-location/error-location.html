@@ -20,16 +20,19 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: detailedLocationError,
+                  href: "#EnglandLocation"
+                }
+              ]
+            }) }}
+            
 <h1 class="govuk-heading-xl">{{englandLocationQuestion}}</h1>
-{{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-          {
-            text: detailedLocationError,
-            href: "#EnglandLocation"
-          }
-        ]
-      }) }}
+
 
       {% from "input/macro.njk" import govukInput %}
       <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
