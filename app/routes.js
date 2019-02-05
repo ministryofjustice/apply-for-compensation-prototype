@@ -71,16 +71,6 @@ require('./views/application/wales-location/routes')(router, viewContent);
 require('./views/application/wales-forces/routes')(router, viewContent);
 require('./views/application/somewhere-else/routes')(router, viewContent);
 
-// Police MVP Concept //
-require('./views/concepts/police-mvp/incident-location/routes')(router, viewContent);
-require('./views/concepts/police-mvp/scotland-forces/routes')(router, viewContent);
-require('./views/concepts/police-mvp/england-location/routes')(router, viewContent);
-require('./views/concepts/police-mvp/england-forces/routes')(router, viewContent);
-require('./views/concepts/police-mvp/scotland-location/routes')(router, viewContent);
-require('./views/concepts/police-mvp/wales-location/routes')(router, viewContent);
-require('./views/concepts/police-mvp/welsh-forces/routes')(router, viewContent);
-require('./views/concepts/police-mvp/somewhere-else/routes')(router, viewContent);
-
 // Police Force Concept for possible testing //
 require('./views/concepts/police-force/incident-location/routes')(router, viewContent);
 require('./views/concepts/police-force/scotland-forces/routes')(router, viewContent);
