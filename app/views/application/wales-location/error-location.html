@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
+Error: {{ walesLocationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,13 +20,13 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-<h1 class="govuk-heading-xl">{{englandLocationQuestion}}</h1>
+<h1 class="govuk-heading-xl">{{walesLocationQuestion}}</h1>
 {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [
           {
             text: detailedLocationError,
-            href: "#EnglandLocation"
+            href: "#WalesLocation"
           }
         ]
       }) }}
@@ -39,8 +39,8 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
             text: townOrCityLabel
             },
             "classes": 'govuk-input--width-30',
-            "id": "EnglandTown",
-            "name": "EnglandTown"
+            "id": "WalesTown",
+            "name": "WalesTown"
             }) }}
 
         {{ govukInput({
@@ -55,8 +55,8 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
                   text: detailedLocationError
                 },
                   "classes": 'govuk-input--width-30',
-                  "id": "EnglandLocation",
-                  "name": "EnglandLocation"
+                  "id": "WalesLocation",
+                  "name": "WalesLocation"
                   }) }}
 
       {% from "button/macro.njk" import govukButton %}
