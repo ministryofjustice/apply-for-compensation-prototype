@@ -140,10 +140,9 @@ module.exports = {
     somewhereElseHeading: 'You need to contact us',
     locationLabel: "Location",
     locationHint: "For example, the name of a street, business, building or nearby local landmark. You can enter more than one",
-
-    //Police Forces Concept //
-    PoliceForce: 'Police force'
-
+    englandForcesError:"Select a police force from the list",
+    scotlandForcesError:"Select a Police Scotland division",
+    walesForcesError:"Select a police force",
 };
 // // END__######################################################################################################
 // }
