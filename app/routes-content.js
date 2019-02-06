@@ -130,7 +130,7 @@ module.exports = {
     manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
     manualAddressErrorPostcode: 'Enter a postcode, like AA1 1AA',
 
-    //Police-MVP//
+    //Police Forces //
     englandLocationQuestion: 'Where in England did it happen?',
     englandForceQuestion: 'Which English police force is investigating the crime?',
     scotlandLocationQuestion: 'Where in Scotland did it happen?',
