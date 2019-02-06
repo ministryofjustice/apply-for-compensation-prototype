@@ -14,5 +14,12 @@ module.exports = function (router, content) {
     res.render('application/scotland-location/index', content)
   })
 
+  router.get('/application/scotland-location/error-town', function (req, res) {
+    res.render('application/scotland-location/error-town', content)
+  })
+
+  router.get('/application/scotland-location/error-location', function (req, res) {
+    res.render('application/scotland-location/error-location', content)
+  })
   // END__######################################################################################################
 }
