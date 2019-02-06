@@ -52,5 +52,8 @@ router.get('/application/wales-forces', function (req, res) {
   res.render('application/wales-forces/index', content)
 })
 
+router.get('/application/wales-forces/error', function (req, res) {
+  res.render('application/wales-forces/error', content)
+})
 // END__######################################################################################################
 }
