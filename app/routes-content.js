@@ -146,6 +146,14 @@ module.exports = {
     englandForcesError:"Select a police force from the list",
     scotlandForcesError:"Select a Police Scotland division",
     walesForcesError:"Select a police force",
+
+    // Compensation concept //
+    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
+    otherCompensation: 'Have you applied for or received any other form of compensation?',
+    compWhoHint:'Who did you apply to?',
+    compDecisionQuestion:'Has a decision been made?',
+    compDecisionYes:'How much did you get, or expect to get?',
+    compDecisionNo:'When will you be notified of a decision? (optional)',
 };
 // // END__######################################################################################################
 // }

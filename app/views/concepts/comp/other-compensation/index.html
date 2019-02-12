@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--xl" for="name">
+                  {{ whatCompensationQuestion }}
+                </label>
+              </h1>
+            </div>
+
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+                    label: {
+                      "text": compYesWhoHint
+                    },
+                    id: "comp-yes-who",
+                    name: "comp-yes-who",
+                    value: data['comp-yes-who']
+                  }) }}
+
+
+          {% from "radios/macro.njk" import govukRadios %}
+          {% from "input/macro.njk" import govukInput %}
+          {% from "date-input/macro.njk" import govukDateInput %}
+
+          {% set yesHtml %}
+          {{ govukInput({
+            id: "contact-by-email",
+            name: "contact-by-email",
+            type: "Yes",
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: compDecisionYes
+            },
+          hint: {
+            text: "For example, £500"
+          }
+          }) }}
+          {% endset -%}
+
+          {% set noHtml %}
+          {{ govukDateInput({
+            id: "contact-by-email",
+            name: "contact-by-email",
+            type: "No",
+            fieldset: {
+              legend: {
+                text: compDecisionNo
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
+            },
+            items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      autocomplete: "bday-day"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      autocomplete: "bday-month"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-2",
+      autocomplete: "bday-year"
+    }
+  ]
+          }) }}
+          {% endset -%}
+
+
+
+          {{ govukRadios({
+            idPrefix: "how-contacted-conditional",
+            name: "how-contacted",
+            fieldset: {
+              legend: {
+                text: compDecisionQuestion,
+                isPageHeading: true
+              }
+            },
+
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                conditional: {
+                  html: yesHtml
+                }
+              },
+              {
+                value: "No",
+                text: "No",
+                conditional: {
+                  html: noHtml
+                }
+
+              }
+            ]
+          }) }}
+
+
+
+            {{ govukButton({
+                      "text": "Continue"
+                      }) }}
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

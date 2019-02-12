@@ -81,6 +81,11 @@ require('./views/concepts/police-force/wales-location/routes')(router, viewConte
 require('./views/concepts/police-force/welsh-forces/routes')(router, viewContent);
 require('./views/concepts/police-force/somewhere-else/routes')(router, viewContent);
 
+// Compensation Concept //
+require('./views/concepts/comp/compensation/routes')(router, viewContent);
+require('./views/concepts/comp/other-compensation/routes')(router, viewContent);
+
+
 
 require('./routes-filelist')(router);
 
