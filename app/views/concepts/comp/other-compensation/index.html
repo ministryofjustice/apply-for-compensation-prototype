@@ -43,7 +43,7 @@
 
           {% from "radios/macro.njk" import govukRadios %}
           {% from "input/macro.njk" import govukInput %}
-          {% from "date-input/macro.njk" import govukDateInput %}
+          <!-- {% from "date-input/macro.njk" import govukDateInput %} -->
 
           {% set yesHtml %}
           {{ govukInput({
@@ -60,7 +60,7 @@
           }) }}
           {% endset -%}
 
-          {% set noHtml %}
+          <!-- {% set noHtml %}
           {{ govukDateInput({
             id: "contact-by-email",
             name: "contact-by-email",
@@ -91,7 +91,7 @@
     }
   ]
           }) }}
-          {% endset -%}
+          {% endset -%} -->
 
 
 
@@ -115,12 +115,11 @@
               },
               {
                 value: "No",
-                text: "No",
-                conditional: {
-                  html: noHtml
-                }
-
+                text: "No"
               }
+              
+
+
             ]
           }) }}
 
