@@ -154,10 +154,10 @@ module.exports = {
 
     compDecisionQuestion:'Have they made a decision?',
     compDecisionYes:'How much compensation did you get, or expect to get?',
-    // compDecisionNo:'When will you be notified of a decision? (optional)',
+    compDecisionNo:'When will you be notified of a decision?',
 
-   
-   
+
+
 
     // Timeout Screen //
     timedoutHeading:'You\'ve timed out',

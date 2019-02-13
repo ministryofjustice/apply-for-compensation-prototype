@@ -43,7 +43,7 @@
 
           {% from "radios/macro.njk" import govukRadios %}
           {% from "input/macro.njk" import govukInput %}
-          <!-- {% from "date-input/macro.njk" import govukDateInput %} -->
+         {% from "date-input/macro.njk" import govukDateInput %}
 
           {% set yesHtml %}
           {{ govukInput({
@@ -60,38 +60,20 @@
           }) }}
           {% endset -%}
 
-          <!-- {% set noHtml %}
-          {{ govukDateInput({
+          {% set noHtml %}
+          {{ govukInput({
             id: "contact-by-email",
             name: "contact-by-email",
             type: "No",
-            fieldset: {
-              legend: {
-                text: compDecisionNo
-              }
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: compDecisionNo
             },
-            hint: {
-              text: "For example, 31 3 1980"
-            },
-            items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      autocomplete: "bday-day"
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      autocomplete: "bday-month"
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-2",
-      autocomplete: "bday-year"
-    }
-  ]
+          hint: {
+            text: "For example, December 2019. Leave blank if you don't know"
+          }
           }) }}
-          {% endset -%} -->
+          {% endset -%}
 
 
 
@@ -115,9 +97,13 @@
               },
               {
                 value: "No",
-                text: "No"
+                text: "No",
+                conditional: {
+                  html:noHtml
+
+                }
               }
-              
+
 
 
             ]
