@@ -86,6 +86,8 @@ require('./views/concepts/comp/compensation/routes')(router, viewContent);
 require('./views/concepts/comp/other-compensation/routes')(router, viewContent);
 
 
+// Timeout Screens //
+require('./views/concepts/timeout/timed-out/routes')(router, viewContent);
 
 require('./routes-filelist')(router);
 

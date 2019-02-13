@@ -154,6 +154,11 @@ module.exports = {
     compDecisionQuestion:'Has a decision been made?',
     compDecisionYes:'How much did you get, or expect to get?',
     compDecisionNo:'When will you be notified of a decision? (optional)',
+
+    // Timeout Screen //
+    timedoutHeading:'You\'ve timed out',
+
+
 };
 // // END__######################################################################################################
 // }
