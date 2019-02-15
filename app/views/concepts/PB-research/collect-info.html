@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ nameQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            Join our research
+          </label>
+        </h1>
+        <p class="govuk-body-l">Thank you for volunteering to help us improve our service.</p>
+        <p class="govuk-body">Enter your name and contact details below.  We will keep these private and only use them send you an invitation to our research.</p>
+      </div>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="name">
+            Your name
+          </label>
+        </h2>
+      </div>
+
+      {% from "input/macro.njk" import govukInput %}
+      {% from "textarea/macro.njk" import govukTextarea %}
+      {{ govukInput({
+              label: {
+                "text": "First name"
+              },
+              id: "first-name",
+              name: "first-name",
+              value: data['first-name']
+            }) }}
+
+      {{ govukInput({
+              label: {
+                "text": "Last name"
+              },
+              id: "last-name",
+              name: "last-name",
+              value: data['last-name']
+            }) }}
+
+            {% from "radios/macro.njk" import govukRadios %}
+            {% from "input/macro.njk" import govukInput %}
+
+            {% set emailHtml %}
+            {{ govukInput({
+              id: "contact-by-email",
+              name: "contact-by-email",
+              type: "email",
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Email address"
+              }
+            }) }}
+            {% endset -%}
+
+            {% set phoneHtml %}
+            {{ govukInput({
+              id: "contact-by-phone",
+              name: "contact-by-phone",
+              type: "tel",
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Phone number"
+              }
+            }) }}
+            {% endset -%}
+
+            {% set textHtml %}
+            {{ govukInput({
+              id: "contact-by-text",
+              name: "contact-by-text",
+              type: "tel",
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Mobile phone number"
+              }
+            }) }}
+            {% endset -%}
+
+            {% set postHtml %}
+            {{ govukTextarea({
+              id: "contact-by-post",
+              name: "contact-by-post",
+              type: "tel",
+              classes: "govuk-label--xl",
+              label: {
+                text: "Postal address"
+              }
+            }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              idPrefix: "how-contacted-conditional",
+              name: "how-contacted",
+              fieldset: {
+                legend: {
+                  text: "What is your preferred method of contact?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "Select one option."
+              },
+              items: [
+                {
+                  value: "email",
+                  text: "Email",
+                  conditional: {
+                    html: emailHtml
+                  }
+                },
+                {
+                  value: "phone",
+                  text: "Phone",
+                  conditional: {
+                    html: phoneHtml
+                  }
+                },
+                {
+                  value: "text",
+                  text: "Text message",
+                  conditional: {
+                    html: textHtml
+                  }
+                },
+                {
+                  value: "post",
+                  text: "Post",
+                  conditional: {
+                    html: postHtml
+                  }
+                }
+              ]
+            }) }}
+
+      {{ govukButton({
+                "text": "Continue"
+                }) }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}
