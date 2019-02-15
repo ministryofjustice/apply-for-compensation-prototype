@@ -160,7 +160,7 @@ module.exports = {
 
 
     // Timeout Screen //
-    timedoutHeading:'You\'ve timed out',
+    timedoutHeading:'You have timed out',
 
 
 

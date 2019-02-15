@@ -21,17 +21,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ timedoutHeading }}
+      You have timed out
     </h1>
-    <p class="govuk-body">We've reset your application to keep your information secure. We did this because you did not do anything for 30 minutes.</p>
+    <p class="govuk-body">We have reset your application to keep your information secure. We did this because you did not do anything for 30 minutes.</p>
 
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
-              html: 'Start application again'
+              html: 'Start again'
           }) }}
 
-          <p class="govuk-body">If you don't want to start again, you can <a href="https://www.gov.uk/">return to gov.uk</a>.</p>
+          <p class="govuk-body">If you do not want to start again, you can <a href="https://www.gov.uk/">return to gov.uk</a>.</p>
     </form>
   </div>
 </div>
