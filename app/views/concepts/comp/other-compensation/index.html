@@ -33,7 +33,7 @@
 
             {{ govukInput({
                     label: {
-                      "text": compYesWhoHint
+                      "text": compWhoHint
                     },
                     id: "comp-yes-who",
                     name: "comp-yes-who",
@@ -53,10 +53,7 @@
             classes: "govuk-!-width-one-third",
             label: {
               text: compDecisionYes
-            },
-          hint: {
-            text: "For example, £500"
-          }
+            }
           }) }}
           {% endset -%}
 
@@ -65,12 +62,12 @@
             id: "contact-by-email",
             name: "contact-by-email",
             type: "No",
-            classes: "govuk-!-width-one-third",
+            classes: "govuk-!-width-full",
             label: {
               text: compDecisionNo
             },
           hint: {
-            text: "For example, December 2019. Leave blank if you don't know"
+            text: "Enter an approximate date, for example, December 2019. If you do not know you can say so."
           }
           }) }}
           {% endset -%}

@@ -84,7 +84,7 @@ module.exports = {
     compYesWhoHint:'Who did you apply to?',
     compYesAmountHint:'How much compensation did you get, or expect to get?',
     // compWaitingHint: 'Who did you apply to?',
-    compNoHint: 'Briefly explain why not',
+    compNoHint: 'Briefly explain why not.',
     over18Question: 'Are you 18 or over?',
     over18errorGuidance: 'Select yes if you are over 18',
     periodOfAbuseEndQuestion: 'When did it stop?',
@@ -150,11 +150,11 @@ module.exports = {
     // Compensation concept //
     otherCompensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
     otherCompensation: 'Have you applied for or received any other form of compensation?',
-    compWhoHint:'Who did you apply to?',
+    compWhoHint:'Who have you applied to or received compensation from?',
 
     compDecisionQuestion:'Have they made a decision?',
-    compDecisionYes:'How much compensation did you get, or expect to get?',
-    compDecisionNo:'When will you be notified of a decision?',
+    compDecisionYes:'How much was the award?',
+    compDecisionNo:'When will you find out?',
 
 
 
