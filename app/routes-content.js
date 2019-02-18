@@ -151,12 +151,17 @@ module.exports = {
     otherCompensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
     otherCompensation: 'Have you applied for or received any other form of compensation?',
     compWhoHint:'Who did you apply to?',
-    compDecisionQuestion:'Has a decision been made?',
-    compDecisionYes:'How much did you get, or expect to get?',
-    compDecisionNo:'When will you be notified of a decision? (optional)',
+
+    compDecisionQuestion:'Have they made a decision?',
+    compDecisionYes:'How much compensation did you get, or expect to get?',
+    compDecisionNo:'When will you be notified of a decision?',
+
+
+
 
     // Timeout Screen //
-    timedoutHeading:'You\'ve timed out',
+    timedoutHeading:'You have timed out',
+
 
 
 };
