@@ -19,7 +19,6 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <!-- NOTE: the word elsewhere should be a link as it is in the start page -->
     <form class="form" method="post">
 
             {% from 'radios/macro.njk' import govukRadios %}
@@ -43,13 +42,13 @@
                   currentValue: data['otherCompensation'],
                   fieldset: {
                     legend: {
-                      text: otherCompensationQuestion,
+                      text: compensationQuestion,
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
                   },
                   hint: {
-                    text: otherCompensationHint
+                    text: compensationHint
                   },
                   items: [
                   {
