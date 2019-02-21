@@ -10,7 +10,13 @@ module.exports = {
     addressQuestion: 'Enter your address',
     britishCitizenQuestion: 'Are you a British citizen or EU national?',
     britishCitizenError: 'Select yes if you are a British citizen or EU national',
-    // compensationWhyNotQuestion: "Why did you not apply for compensation from another source?",
+    compensationQuestion: 'Have you applied for or received any other form of compensation?',
+    compensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
+    compWho:'Who have you applied to or received compensation from?',
+    compDecQuestion:'Have they made a decision?',
+    compDecYes:'How much was the award?',
+    compDecNo:'When will you find out?',
+    compNoHint: 'Briefly explain why not.',
     compensationErrorNoradio: 'Select yes if you have applied for or received another form of compensation',
     compensationErrorSource: 'Enter who you applied to',
     compensationErrorAmount: 'Enter the amount of compensation you got, or expect to get',
@@ -79,12 +85,6 @@ module.exports = {
     offenderNameQuestionCA: 'Offender\'s  name',
     ongoingRelationshipQuestion: "Have you have any contact with this person since the incident?",
     ongoingRelationshipHint: "We will not pay compensation if the offender could benefit from it.",
-    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
-    otherCompensationQuestion: 'Have you applied for or received any other form of compensation?',
-    compYesWhoHint:'Who did you apply to?',
-    compYesAmountHint:'How much compensation did you get, or expect to get?',
-    // compWaitingHint: 'Who did you apply to?',
-    compNoHint: 'Briefly explain why not.',
     over18Question: 'Are you 18 or over?',
     over18errorGuidance: 'Select yes if you are over 18',
     periodOfAbuseEndQuestion: 'When did it stop?',
@@ -146,18 +146,6 @@ module.exports = {
     englandForcesError:"Select a police force from the list",
     scotlandForcesError:"Select a Police Scotland division",
     walesForcesError:"Select a police force",
-
-    // Compensation concept //
-    otherCompensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
-    otherCompensation: 'Have you applied for or received any other form of compensation?',
-    compWhoHint:'Who have you applied to or received compensation from?',
-
-    compDecisionQuestion:'Have they made a decision?',
-    compDecisionYes:'How much was the award?',
-    compDecisionNo:'When will you find out?',
-
-
-
 
     // Timeout Screen //
     timedoutHeading:'You have timed out',
