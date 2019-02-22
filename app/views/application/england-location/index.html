@@ -24,17 +24,16 @@
       {% from "input/macro.njk" import govukInput %}
       <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
       {{ govukInput({
-
             label: {
             text: townOrCityLabel
             },
             "classes": 'govuk-input--width-30',
             "id": "EnglandTown",
-            "name": "EnglandTown"
+            "name": "EnglandTown",
+            "value": data['EnglandTown']
             }) }}
 
         {{ govukInput({
-
                   label: {
                   text: locationLabel
                   },
@@ -43,7 +42,8 @@
                   },
                   "classes": 'govuk-input--width-30',
                   "id": "EnglandLocation",
-                  "name": "EnglandLocation"
+                  "name": "EnglandLocation",
+                  "value": data['EnglandLocation']
                   }) }}
 
       {% from "button/macro.njk" import govukButton %}

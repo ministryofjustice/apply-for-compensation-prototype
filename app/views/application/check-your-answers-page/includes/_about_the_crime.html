@@ -128,35 +128,111 @@
   </div>
   {% endif %}
 
-  {% if data['incident-location'] === 'Somewhere else' %}
+  <!-- Location Questions -->
+
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ incidentLocationHeading }}
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['somewhere-else'] }}
+      {{ data['incidentlocation'] }}
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="incident-location">
+        Change<span class="govuk-visually-hidden"> where the crime happened</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['incidentlocation'] === 'England' %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{ englandLocationQuestion }}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['EnglandTown'] }}, {{ data['EnglandLocation'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="england-location">
         Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
       </a>
     </dd>
   </div>
-  {% elseif data['incident-location']%}
+
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
-      {{ incidentLocationHeading }}
+      {{ englandForceQuestion }}
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['england'] }}{{ data['scotland'] }}{{ data['wales'] }}{{ data['somewhere-else'] }}, {{ data['incident-location'] }}
+      {{ data['sort'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="incident-location">
-        Change<span class="govuk-visually-hidden"> {{ incidentLocationHeading }}</span>
+      <a href="england-forces">
+        Change<span class="govuk-visually-hidden">the police force</span>
       </a>
     </dd>
   </div>
   {% endif %}
+
+  {% if data['incidentlocation'] === 'Scotland' %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{ scotlandLocationQuestion }}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['ScotlandTown'] }}, {{ data['ScotlandLocation'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="scotland-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{ scotlandForceQuestion }}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['policeScotland'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="scotland-forces">
+        Change<span class="govuk-visually-hidden">the police force</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['incidentlocation'] === 'Wales' %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{ walesLocationQuestion }}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['WalesTown'] }}, {{ data['WalesLocation'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="scotland-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
+      </a>
+    </dd>
+  </div>
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{ walesForceQuestion }}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['policeWales'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="wales-forces">
+        Change<span class="govuk-visually-hidden">the police force</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">

@@ -62,9 +62,6 @@ module.exports = {
     impactHeading: 'Before you continue',
     incidentDateHeading: "When did the crime happen?",
     incidentDateHint: 'For example, 31 3 2018. You can enter an approximate date ',
-    incidentLocationHeading: "Where did the crime happen?",
-    incidentLocationReveal: "Enter the town or location",
-    incidentLocationRevealOther: "Enter the location",
     incidentReportedQuestion: 'Was the crime reported to the police?',
     incidentReportedError: "Select yes if the crime was reported to the police",
     itemOneValue: 'Once',
@@ -130,7 +127,10 @@ module.exports = {
     manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
     manualAddressErrorPostcode: 'Enter a postcode, like AA1 1AA',
 
-    //Police Forces //
+    //Location and Police Force Questions //
+    incidentLocationHeading: "Where did the crime happen?",
+    incidentLocationReveal: "Enter the town or location",
+    incidentLocationRevealOther: "Enter the location",
     englandLocationQuestion: 'Where in England did it happen?',
     englandForceQuestion: 'Which English police force is investigating the crime?',
     scotlandLocationQuestion: 'Where in Scotland did it happen?',
