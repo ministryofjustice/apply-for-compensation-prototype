@@ -158,7 +158,9 @@
       </a>
     </dd>
   </div>
+    {% endif %}
 
+  {% if data['incidentlocation'] === 'England' %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ englandForceQuestion }}
@@ -188,8 +190,10 @@
       </a>
     </dd>
   </div>
+    {% endif %}
 
-  <div class="app-check-your-answers__contents">
+    {% if data['incidentlocation'] === 'Scotland' %}
+    <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ scotlandForceQuestion }}
     </dt>
@@ -213,11 +217,14 @@
       {{ data['WalesTown'] }}, {{ data['WalesLocation'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="scotland-location">
+      <a href="wales-location">
         Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
       </a>
     </dd>
   </div>
+    {% endif %}
+
+    {% if data['incidentlocation'] === 'Wales' %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ walesForceQuestion }}
