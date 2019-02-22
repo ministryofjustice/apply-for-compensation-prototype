@@ -6,7 +6,6 @@ module.exports = function (router, content) {
 
 router.post('/application/england-forces', function (req, res) {
   // Get the answer from the query string
-  var policeForceQuestion = req.session.data['policeForceQuestion'];
   var incidentDateDay = req.session.data['incident-date-day']
   var incidentDateMonth = req.session.data['incident-date-month']
   var incidentDateYear = req.session.data['incident-date-year']
