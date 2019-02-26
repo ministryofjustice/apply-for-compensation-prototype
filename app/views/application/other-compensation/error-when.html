@@ -27,7 +27,7 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
                     titleText: "There is a problem",
                     errorList: [
                       {
-                        text: compYesError,
+                        text: compNoError,
                         href: "#"
                       }
                     ]
@@ -64,9 +64,6 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
               name: "how-much",
               type: "Yes",
               value : data['how-much'],
-              errorMessage: {
-              text: compYesError
-            },
               classes: "govuk-!-width-one-third",
               label: {
                 text: compDecYes
@@ -80,6 +77,9 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
               name: "when",
               type: "No",
               value: data['when'],
+              errorMessage: {
+              text: compNoError
+            },
               classes: "govuk-!-width-full",
               label: {
                 text: compDecNo
