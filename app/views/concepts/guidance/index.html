@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+AD Guidance - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "Guidance"
+    },
+    html: 'This is for the internal CSC team to give assisted digital guidance to applicants.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third" style="Background:#f8f8f8; padding-top:10px;">
+
+{% include "./includes/navigation.html" %}
+
+  <!-- Back to top button -->
+    <div style="positon: sticky; top:30px; margin-bottom:30px; display:block" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state" href="#top">
+    <svg style="display: inline-block;margin-top:-5px; margin-right:10px; vertical-align:middle" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+</div>
+
+<!-- Main container -->
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">CSC guidance for Private Beta OCJ service</h1>
+<h2 class="govuk-heading-m">Background</h2>
+<p class="govuk-body">This guidance is to help CSC advisors handle any customer calls that the new application service may generate. Details of all calls will be captured during Private Beta and we’ll update the guidance as issues are identified, as we improve and refine the design, and with each new iteration until the service meets the needs of all our users.</p>
+<h2 class="govuk-heading-m">Private Beta</h2>
+<p class="govuk-body">This phase allows us to test the first iteration of the service with real users. The test group will be small and controlled so that we can closely monitor the performance of the service and gather their feedback. This will help us understand how it’s working and what improvements, if any, we can make.</p>
+<p class="govuk-body">We will invite users into Private Beta in one of 2 ways:
+<ul class="govuk-list govuk-list--bullet">
+  <li>Our 3rd party support providers (for example Victim Support, Rape Crisis etc) will provide them with the link to our new service</li>
+  <li>CSC advisors will identify suitable users during calls and provide them with the link or complete the application on their behalf.</li>
+</ul></p>
+<h2 class="govuk-heading-m">First iteration</h2>
+<p class="govuk-body">The first iteration will serve users who have an email address and who meet the following criteria:
+  <ul class="govuk-list govuk-list--bullet">
+    <li>victims of sexual assault or abuse</li>
+<li>those who select to have their application decided on police evidence only (OCJ)</li>
+<li>18 or over</li>
+<li>British citizen or EU national</li>
+<li>do not have a rep</li>
+</ul>
+<p class="govuk-body">By testing the service, gathering feedback and data, and iterating the design based on this evidence it will give us the confidence to extend it to a wider audience.</p>
+<h2 class="govuk-heading-m">Triage and consent</h2>
+<p class="govuk-body">(Already have link – phoning for help?)</p>
+
+<h2 class="govuk-heading-m">Screen guidance</h2>
+<p class="govuk-body">This guidance contains screen shots of the application service, in the order they are shown to the user, so you can navigate through from start to finish. There are also links to each screen shot at the start. These are listed in alphabetical order and when you click on them you will be taken directly to the relevant screen. This will be of use when a user calls for help when completing the application themselves. </p>
+<p class="govuk-body">We have also identified key ‘pain points’, points where the user may struggle, and have added some guidance text to help you when they call. Most screens are self-explanatory and already contain helpful hints for the user.
+</p>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
