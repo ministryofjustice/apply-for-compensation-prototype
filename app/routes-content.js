@@ -122,6 +122,7 @@ module.exports = {
     reportedDateIncompleteError: 'Enter the date the crime was reported to the police and include a day, month and year',
     reportedDateErrorBlank: 'Enter the date the crime was reported to the police',
     yourChoicesHeading: 'Select the option that applies to you',
+    yourChoicesError: 'Select either Option 1 or Option 2',
     notEligibleHeading: 'You can not get compensation',
     manualAddressErrorBuildingStreetBlank: 'Enter the building and street where you live',
     manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
