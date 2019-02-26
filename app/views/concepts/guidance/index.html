@@ -60,6 +60,13 @@ AD Guidance - {{ serviceName }} - GOV.UK
 <p class="govuk-body">This guidance contains screen shots of the application service, in the order they are shown to the user, so you can navigate through from start to finish. There are also links to each screen shot at the start. These are listed in alphabetical order and when you click on them you will be taken directly to the relevant screen. This will be of use when a user calls for help when completing the application themselves. </p>
 <p class="govuk-body">We have also identified key ‘pain points’, points where the user may struggle, and have added some guidance text to help you when they call. Most screens are self-explanatory and already contain helpful hints for the user.
 </p>
+{% from "button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Start from beginning",
+  href: "/",
+  classes: "govuk-button--start"
+}) }}
   </div>
 </div>
 
