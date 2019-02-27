@@ -64,55 +64,23 @@
   </div>
   {% endif %}
 
-  {% if data['reportingDelay'] %}
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      {{ reportingDelayQuestion }}
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      {{data['reportingDelay']}}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <a href="reporting-delay">
-        Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
-      </a>
-    </dd>
-  </div>
-  {% endif %}
-
-  {% if data['delay-reporting'] %}
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      {{ delayReportExplanation }}
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      {{ data['delay-reporting'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <a href="application-delay">
-        Change<span class="govuk-visually-hidden"> {{ delayReportExplanation }}</span>
-      </a>
-    </dd>
-  </div>
-  {% endif %}
+<!-- App delay questions -->
 
   {% if data['applicationDelay'] %}
   <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+    <dt class="app-check-your-answers__question" style="border:none">
       {{ whyDelayQuestion }}
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="app-check-your-answers__answer" style="border:none">
       {{ data['applicationDelay'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="app-check-your-answers__change" style="border:none">
       <a href="application-delay">
         Change<span class="govuk-visually-hidden"> {{ whyDelayQuestion }}</span>
       </a>
     </dd>
   </div>
-  {% endif %}
 
-  {% if data['delay-application'] %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
       {{ delayApplyExplanation }}
@@ -121,9 +89,6 @@
       {{ data['delay-application'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="application-delay">
-        Change<span class="govuk-visually-hidden"> {{ delayApplyExplanation }}</span>
-      </a>
     </dd>
   </div>
   {% endif %}
@@ -150,7 +115,7 @@
       {{ englandLocationQuestion }}
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['EnglandTown'] }}, {{ data['EnglandLocation'] }}
+      {{ data['EnglandTown'] }}<br /> {{ data['EnglandLocation'] }}
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="england-location">
@@ -267,7 +232,7 @@
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
-      {{ whatIsRelationshipQuestion }}
+      Contact with the offender
     </dt>
     <dd class="app-check-your-answers__answer">
       {% if data['relationship-text']%}
@@ -276,9 +241,6 @@
           {{ data['noContactWithOffender'] }}
       {% endif %}
     </dd>
-
-
-
     <dd class="app-check-your-answers__change">
       <a href="what-is-relationship">
         Change<span class="govuk-visually-hidden"> {{ whatIsRelationshipQuestion }}</span>

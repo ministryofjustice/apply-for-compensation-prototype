@@ -23,6 +23,20 @@
     </dd>
   </div>
 
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Have you ever been known by any other name?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['haveOtherName'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="name-have-other">
+        Change<span class="govuk-visually-hidden">have you ever been known by any other names</span>
+      </a>
+    </dd>
+  </div>
+
   {% if data['haveOtherName'] === 'Yes' %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
@@ -32,7 +46,7 @@
       {{ data['nameOther'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="name">
+      <a href="name-other">
         Change<span class="govuk-visually-hidden"> other name</span>
       </a>
     </dd>
@@ -85,7 +99,7 @@
       {% endif %}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="address">
+      <a href="address-manually">
         Change<span class="govuk-visually-hidden"> address</span>
       </a>
     </dd>

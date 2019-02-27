@@ -52,7 +52,7 @@
 
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    {{ crimeReferenceNumberQuestionCA }}
+    Crime reference number
   </dt>
   <dd class="app-check-your-answers__answer">
     {{ data['crimeReferenceNumber'] }}
@@ -61,6 +61,35 @@
     <a href="crime-reference">
       Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestionCA }}</span>
     </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['reportingDelay'] %}
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question" style="border:none">
+    {{ reportingDelayQuestion }}
+  </dt>
+  <dd class="app-check-your-answers__answer" style="border:none">
+    {{data['reportingDelay']}}
+  </dd>
+  <dd class="app-check-your-answers__change" style="border:none">
+    <a href="reporting-delay">
+      Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['delay-reporting'] %}
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ delayReportExplanation }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['delay-reporting'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
   </dd>
 </div>
 {% endif %}
