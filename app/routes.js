@@ -84,6 +84,9 @@ require('./views/concepts/police-force/somewhere-else/routes')(router, viewConte
 // Timeout Screens //
 require('./views/concepts/timeout/timed-out/routes')(router, viewContent);
 
+// Guidance Concept //
+require('./views/concepts/guidance/routes')(router, viewContent);
+
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line

@@ -123,7 +123,7 @@
       </a>
     </dd>
   </div>
-  {% endif %}
+    {% endif %}
 
   {% if data['incidentlocation'] === 'Scotland' %}
   <div class="app-check-your-answers__contents">
@@ -139,7 +139,7 @@
       </a>
     </dd>
   </div>
-  {% endif %}
+    {% endif %}
 
   {% if data['incidentlocation'] === 'Wales' %}
   <div class="app-check-your-answers__contents">
@@ -150,13 +150,12 @@
       {{ data['WalesTown'] }}, {{ data['WalesLocation'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="scotland-location">
+      <a href="wales-location">
         Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
       </a>
     </dd>
   </div>
-  {% endif %}
-
+    {% endif %}
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
