@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var yourChoice = req.session.data['yourChoice']
 
-    if (yourChoice === 'Sexual assault or abuse') {
+    if (yourChoice === 'Option 1: Sexual assault or abuse') {
       // Redirect to the relevant page
       res.redirect('/application/incident-reported')
     } else {
@@ -15,7 +15,7 @@ module.exports = function (router, content) {
       res.redirect('/application/transition')
     }
   })
-  
+
   // Pass the question in to the page
   router.get('/application/your-choices/', function (req, res) {
     res.render('application/your-choices/index', content)

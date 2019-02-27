@@ -25,7 +25,7 @@
 
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
-      Have you ever been known by any other name?
+      {{nameOtherQuestion}}
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['haveOtherName'] }}
@@ -181,7 +181,7 @@
 
 <div class="app-check-your-answers__contents">
   <dt class="app-check-your-answers__question">
-    {{ yourChoicesHeading }}
+    Option you've selected
   </dt>
   <dd class="app-check-your-answers__answer">
     {{ data['yourChoice'] }}
