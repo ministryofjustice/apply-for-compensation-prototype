@@ -69,7 +69,7 @@
   {% if data['applicationDelay'] %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question" style="border:none">
-      {{ whyDelayQuestion }}
+      Reasons for the delay in reporting the crime to the police
     </dt>
     <dd class="app-check-your-answers__answer" style="border:none">
       {{ data['applicationDelay'] }}
@@ -123,20 +123,6 @@
       </a>
     </dd>
   </div>
-
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      {{ englandForceQuestion }}
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      {{ data['sort'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <a href="england-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
-      </a>
-    </dd>
-  </div>
   {% endif %}
 
   {% if data['incidentlocation'] === 'Scotland' %}
@@ -153,20 +139,6 @@
       </a>
     </dd>
   </div>
-
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      {{ scotlandForceQuestion }}
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      {{ data['policeScotland'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <a href="scotland-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
-      </a>
-    </dd>
-  </div>
   {% endif %}
 
   {% if data['incidentlocation'] === 'Wales' %}
@@ -180,19 +152,6 @@
     <dd class="app-check-your-answers__change">
       <a href="scotland-location">
         Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
-      </a>
-    </dd>
-  </div>
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
-      {{ walesForceQuestion }}
-    </dt>
-    <dd class="app-check-your-answers__answer">
-      {{ data['policeWales'] }}
-    </dd>
-    <dd class="app-check-your-answers__change">
-      <a href="wales-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
       </a>
     </dd>
   </div>
