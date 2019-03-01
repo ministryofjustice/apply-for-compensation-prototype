@@ -61,7 +61,7 @@ require('./views/application/reporting-delay/routes')(router, viewContent);
 require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
 
 require('./views/application/transition/routes')(router, viewContent);
-require('./views/application/transition-OCJ-option-2/routes')(router, viewContent);
+require('./views/application/transition-OCJ/routes')(router, viewContent);
 
 // Police MVP //
 require('./views/application/england-location/routes')(router, viewContent);

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+AD Guidance - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "Guidance"
+    },
+    html: 'This is for the internal CSC team to give assisted digital guidance to applicants.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third" style="Background:#f8f8f8; padding-top:10px;">
+
+{% include "./includes/navigation.html" %}
+
+<!-- Back to top button -->
+<div style="positon: sticky; top:30px; margin-bottom:30px; display:block" data-module="app-back-to-top">
+<a class="govuk-link govuk-link--no-visited-state" href="#top">
+<svg style="display: inline-block;margin-top:-5px; margin-right:10px; vertical-align:middle" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+  <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+</svg>Back to top
+</a>
+</div>
+
+</div>
+
+
+<!-- Main container -->
+  <div class="govuk-grid-column-two-thirds">
+
+<img src="/public/images/screenshots/transition-ocj.png" alt="You're being redirected to our exisitng servicescreenshot."width="625" style="margin-bottom:30px; border:1px solid grey">
+
+      <p class="govuk-body">Guidance text </p>
+      </div>
+      </div>
+
+    </main>
+
+</div>
+
+{% endblock %}

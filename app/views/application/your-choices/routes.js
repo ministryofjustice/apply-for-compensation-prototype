@@ -12,7 +12,8 @@ module.exports = function (router, content) {
       res.redirect('/application/incident-reported')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/transition-OCJ-option-2')
+
+      res.redirect('/application/transition-ocj')
     }
   })
 
