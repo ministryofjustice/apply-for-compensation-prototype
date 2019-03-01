@@ -12,10 +12,10 @@ module.exports = function (router, content) {
       res.redirect('/application/incident-reported')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/transition')
+      res.redirect('/application/transition-ocj')
     }
   })
-  
+
   // Pass the question in to the page
   router.get('/application/your-choices/', function (req, res) {
     res.render('application/your-choices/index', content)

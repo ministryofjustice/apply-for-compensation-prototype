@@ -106,6 +106,7 @@ module.exports = {
     singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',
     townOrCityLabel: 'Town or city',
     transitionHeading: 'You are being redirected to our other application site',
+    transitionOCJHeading: 'You cannot use this service right now',
     warningText: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
     whatIsRelationshipQuestion: "If you have contact with the offender, describe it below",
     whatIsRelationshipError: "Enter details of any contact you have with the offender",

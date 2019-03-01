@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+AD Guidance - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "Guidance"
+    },
+    html: 'This is for the internal CSC team to give assisted digital guidance to applicants.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third" style="Background:#f8f8f8; padding-top:10px;">
+
+{% include "./includes/navigation.html" %}
+
+  <!-- Back to top button -->
+    <div style="positon: sticky; top:30px; margin-bottom:30px; display:block" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state" href="#top">
+    <svg style="display: inline-block;margin-top:-5px; margin-right:10px; vertical-align:middle" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+</div>
+
+<!-- Main container -->
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l"><span class="govuk-caption-xl">Non-complex sexual assault applications</span>
+Screen guidance</h1>
+<p class="govuk-body">This guidance contains screenshots of the application service in the order they appear to the user as well as an A to Z list of each screen on the left. </p>
+<p class="govuk-body">We've identified key ‘pain points’ where we think that, based on research, the user may struggle.  Each screen show this guidance text to help you when the applicant calls. </p>
+<p class="govuk-body">Most screens are self-explanatory and already contain helpful hints for the user. You should read all of the content on the screen to the user, whether or not you are completing it on their behalf. </p>
+{% from "button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "View screens from start",
+  href: "./start-page",
+  classes: "govuk-button--start"
+}) }}
+
+<h3 class="govuk-heading-m">Telephone applications</h3>
+<p class="govuk-body">You'll complete telephone applications using the same link to the service as a user.</p>
+<p class="govuk-body">We'll not be able to differentiate between an online application and a telephone one, which means that a copy of the application summary will not be sent automatically to the user.</p>
+<p class="govuk-body">If the user requests it, you'll need to access the case in Tempus after submitting the application and send a copy with a covering letter (TA10).</p>
+
+<h3 class="govuk-heading-m">Feedback</h3>
+<p class="govuk-body">We've set up a spreadsheet to:
+  <ul class="govuk-list govuk-list--bullet">
+    <li>record details of all calls during Private Beta</li>
+    <li>identify and fix any issues you encounter with the application form</li>
+  </ul>
+  <a href="/" class="gov-link">Access feedback spreasheet</a>
+  </p>
+
+
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
