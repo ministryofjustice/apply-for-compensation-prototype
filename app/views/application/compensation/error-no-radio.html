@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
+Error - {{ compensationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -56,13 +56,13 @@ Error - {{ otherCompensationQuestion }} - {{ serviceName }} - GOV.UK
                   currentValue: data['otherCompensation'],
                   fieldset: {
                     legend: {
-                      text: otherCompensationQuestion,
+                      text: compensationQuestion,
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
                   },
                   hint: {
-                    text: otherCompensationHint
+                    text: compensationHint
                   },
                   errorMessage: {
                   text: compensationErrorNoradio

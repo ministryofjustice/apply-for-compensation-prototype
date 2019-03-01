@@ -1,5 +1,5 @@
-<!-- ** Your details ************************************************************************************************************************ -->
-<!-- only add a heading for a list if there is more than one list -->
+<!-- ** Your details including eligibility ************************************************************************************************************************ -->
+
 <h2 class="govuk-heading-l">
   Your details
 </h2>
@@ -23,6 +23,20 @@
     </dd>
   </div>
 
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      {{nameOtherQuestion}}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['haveOtherName'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="name-have-other">
+        Change<span class="govuk-visually-hidden">have you ever been known by any other names</span>
+      </a>
+    </dd>
+  </div>
+
   {% if data['haveOtherName'] === 'Yes' %}
   <div class="app-check-your-answers__contents">
     <dt class="app-check-your-answers__question">
@@ -32,7 +46,7 @@
       {{ data['nameOther'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="name">
+      <a href="name-other">
         Change<span class="govuk-visually-hidden"> other name</span>
       </a>
     </dd>
@@ -85,7 +99,7 @@
       {% endif %}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="address">
+      <a href="address-manually">
         Change<span class="govuk-visually-hidden"> address</span>
       </a>
     </dd>
@@ -104,6 +118,81 @@
       </a>
     </dd>
   </div>
+<!-- ** /Your details ************************************************************************************************************************ -->
+
+<!-- ** Your eligibility ************************************************************************************************************************ -->
+
+
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ britishCitizenQuestion }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['britishCitizen'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="british-citizen">
+      Change<span class="govuk-visually-hidden">British citizen </span>
+    </a>
+  </dd>
+</div>
+
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ over18Question }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['over18'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="over-18">
+      Change<span class="govuk-visually-hidden">{{ over18Question }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ whoIsMakingTheApplicationQuestion }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['direct-applicant'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="who-is-making-the-application">
+      Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    {{ sexualAbuseQuestion }}
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['sexualAssault'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="sexual-assault-application">
+      Change<span class="govuk-visually-hidden">{{ sexualAbuseQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="app-check-your-answers__contents">
+  <dt class="app-check-your-answers__question">
+    Option you've selected
+  </dt>
+  <dd class="app-check-your-answers__answer">
+    {{ data['yourChoice'] }}
+  </dd>
+  <dd class="app-check-your-answers__change">
+    <a href="your-choices">
+      Change<span class="govuk-visually-hidden">{{ yourChoicesHeading }} </span>
+    </a>
+  </dd>
+</div>
+
 
 </dl>
-<!-- ** /Your details ************************************************************************************************************************ -->
+<!-- ** /Your eligibility ************************************************************************************************************************ -->

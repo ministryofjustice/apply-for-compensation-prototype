@@ -15,14 +15,24 @@ module.exports = function (router, content) {
    res.render('application/other-compensation/index', content)
  })
 
- // Pass the Error state in to the page when yes is selected but user enters no text in the amount field
+ // Pass the Error state in to the page when user enters no text in the amount field
  router.get('/application/other-compensation/error-amount', function (req, res) {
    res.render('application/other-compensation/error-amount', content)
  })
 
- // Pass the Error state in to the page when yes but still waiting is selected but user enters no text in source field
- router.get('/application/other-compensation/error-source', function (req, res) {
-   res.render('application/other-compensation/error-source', content)
+ // Pass the Error state in to the page when user enters no text in source field
+ router.get('/application/other-compensation/error-who', function (req, res) {
+   res.render('application/other-compensation/error-who', content)
+ })
+
+ // Pass the Error state in to the page when user does not select a radio button
+ router.get('/application/other-compensation/error-radios', function (req, res) {
+   res.render('application/other-compensation/error-radios', content)
+ })
+
+ // Pass the Error state in to the page when user does not enter a date after selecting no
+ router.get('/application/other-compensation/error-when', function (req, res) {
+   res.render('application/other-compensation/error-when', content)
  })
   // END__######################################################################################################
 }
