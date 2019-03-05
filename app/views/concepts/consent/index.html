@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<!--<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>-->
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <!--  <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>-->
+
+      <h1 class="govuk-heading-xl">Help us test our new application service</h1>
+
+      <p class="govuk-body-l">This is a new service to apply for criminal injuries compensation.  We need people to test it to ensure it is working before we can make it available to everyone.</p>
+      <p class="govuk-body">You can help us by making your application using our new service. Your participation is entirely voluntary and you do not need to take part. Your decision will not affect your claim in anyway, and we will continue to process your claim in the same timescales.</p>
+
+
+      <h2 class="govuk-heading-l">Your details</h2>
+
+      <p class="govuk-body">We will keep your personal details private and use them to contact you to make sure the application works.</p>
+      <p class="govuk-body">In addition, you may be contacted by phone or email for research purposes to help us to understand your experience of using the new service so we can learn what is working and not working so well. If you are contacted for this, you can choose to note take part in the research.</p>
+
+      <h2 class="govuk-heading-l">Help and support</h2>
+
+      <p class="govuk-body">If you need help call us on 0300 003 3601, and select option 8.</p>
+      <p class="govuk-body">Phone lines are open Monday to Friday 8.30am to 5pm, except Wednesday when they open at 10am.</p>
+
+      <h2 class="govuk-heading-l">Consenting for take part </h2>
+
+      <p class="govuk-body">If you wish to take part select “Apply now”.  If not you can still make your application through <a href="https://www.cica.gov.uk/OAS/Account/create" target="_blank">our current online application service</a>.</p>
+
+
+      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="application/start-page" role="button">Apply now</a>
+
+
+    </div>
+
+<!--    <div class="govuk-grid-column-one-third">
+  <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide">
+                A guide to the Criminal Injuries Compensation Scheme
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>--->
+  </div>
+</main>
+</div>
+
+{% endblock %}
