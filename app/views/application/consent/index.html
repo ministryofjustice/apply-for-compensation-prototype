@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Help us test a new criminal injuries compensation service</h1>
+
+      <p class="govuk-body-l">We need to test our new service to help improve it. Taking part is voluntary and will not affect your claim.</p>
+
+      <h2 class="govuk-heading-l">Your feedback</h2>
+
+      <p class="govuk-body">We will use your telephone number or email to get feedback from you.  Your experience of the new service will help us find out what works and what does not work.</p>
+      <p class="govuk-body">We will keep your information private, and you do not have to give feedback if you do not want to.</p>
+
+      <h2 class="govuk-heading-l">Help and support</h2>
+
+      <p class="govuk-body">If you have any questions, or need help, you can call us on 0300 003 3601 and select option 8.</p>
+      <p class="govuk-body">Phone lines are open Monday to Friday 8.30am to 5pm, except Wednesday when they open at 10am.</p>
+
+      <h2 class="govuk-heading-l">Your consent</h2>
+
+      <p class="govuk-body">By selecting the 'Agree and apply' you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>agree to test our new service</li>
+        <li>consent to us contacting you for feedback</li>
+      </ul>
+
+      <a class="govuk-button govuk-button--start" style="margin-bottom:40px" href="/start-page" role="button">Agree and apply</a>
+
+
+      <h2 class="govuk-heading-l">If you do not want to test the new service</h2>
+      <p class="govuk-body">You can apply for compensation using our <a href="https://www.cica.gov.uk/OAS/Account/create" target="_blank">current online service</a>.</p>
+
+
+    </div>
+
+
+  </div>
+</main>
+</div>
+
+{% endblock %}

@@ -13,7 +13,7 @@ module.exports = function (router, content) {
     } else {
       // If the variable is any other value (or is missing) render the page requested
 
-      res.redirect('/application/transition-ocj')
+      res.redirect('/application/transition')
     }
   })
 
