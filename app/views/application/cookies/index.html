@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Cookies</h1>
+
+      <h2 class="govuk-heading-l">How our service uses cookies</h2>
+
+      <p class="govuk-body">When you apply for compensation online, we store a small file, known as a cookie, on your PC or digital device.</p>
+      <p class="govuk-body">The cookie remembers the information you enter by storing it on your computer.  We do not store the information.</p>
+
+      <p class="govuk-body">The cookie is deleted when you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>submit your application</li>
+        <li>do not add any information for 15 minutes</li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Other ways we use cookies</h2>
+
+      <p class="govuk-body">We also use cookies to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>help your PC or digital device connect with us quicker</li>
+        <li>store information, if you create a user account</li>
+        <li>measure how you use our service, so we can update and improve it</li>
+        <li>make sure we do not keep showing you the same notifications</li>
+        <li>protect your security, by stopping sites that pretend to be GOV.UK services from gathering your information</li>
+      </ul>
+
+
+      <p class="govuk-body">You can <a href='https://www.gov.uk/help/cookies' target="_blank">read more about how cookies are used</a>.</p>
+      <p class="govuk-body"><a href='https://ico.org.uk/your-data-matters/online/cookies/' target="_blank">Learn how to manage cookies</a>.</p>
+
+
+      <h2 class="govuk-heading-l">Cookies specific to our service</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Name</th>
+            <th class="govuk-table__header" scope="col">Purpose</th>
+            <th class="govuk-table__header" scope="col">Expires</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">cookiePanel</th>
+            <td class="govuk-table__cell">Lets us know if you have dismissed the cookie banner</td>
+            <td class="govuk-table__cell">Never</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">sessionCookie</th>
+            <td class="govuk-table__cell">Confirms your identity and allows continued use of the service without disruption</td>
+            <td class="govuk-table__cell">After 15 minutes of inactivity</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-l">Other suppliers</h2>
+
+      <p class="govuk-body">GB group supply our address lookup service. <a href='https://www.gbgplc.com/cookie-policy/' target="_blank">Read GB Group's cookie policy</a>.</p>
+
+
+    </div>
+
+
+  </div>
+</main>
+</div>
+
+{% endblock %}
