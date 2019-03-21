@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Abolition of the ‘same roof’ rule</h1>
+
+      <p class="govuk-body">On XX May 2019 the government abolished the ‘same-roof’ rule, which had been part of the Criminal Injuries Compensation Scheme since 1 August 1964.</p>
+      <p class="govuk-body">Under this rule victims could not receive compensation if their abuser was someone they were living with at the time of the abuse. The rule was changed on 1 October 1979 to apply only to adults who continued to live with their abuser.</p>
+
+      <h2 class="govuk-heading-l">What the change means</h2>
+
+      <p class="govuk-body">All victims abused by someone they lived with between 1 August 1964 and 1 October 1979 can now apply for compensation.</p>
+      <p class="govuk-body">This includes victims who, because of the ‘same roof’ rule:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>were previously refused compensation</li>
+        <li>did not apply for compensation</li>
+      </ul>
+
+      <p class="govuk-body">All applicants will still need to meet the remaining <a href="https://www.gov.uk/claim-compensation-criminal-injury/eligibility">eligibility criteria<a/>.</p>
+
+        <div class="govuk-details__text">
+        <p>If you have an ongoing application, you do not need to make an enquiry.</p>
+        <p>If you are not affected by the 'same roof' rule you should <a href="">use our existing online application service</a>.</p>
+        </div>
+<br>
+      <h2 class="govuk-heading-l">The enquiry process</h2>
+
+      <p class="govuk-body">You must start an enquiry to give us enough information about you to assess if the ‘same roof’ rule affected you. There are three ways you can start an enquiry:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">complete the online enquiry form</a></li>
+        <li><a href="https://apply-for-compensation-proto.herokuapp.com/application/contact-us">call us</a></li>
+        <li><a href="">email us</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-l">After we receive your enquiry</h2>
+
+        <p class="govuk-body">When we collect your information from the enquiry we will:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>check our records for previous applications</li>
+          <li>check if the previous applications have enough information to make a new decision</li>
+          <li>ask you to provide more information if it is a new application, or your previous applications do not contain enough information</li>
+          <li>call you back, or keep you on the phone, to complete the application process</li>
+          <li>give you a named contact who will deal with you directly throughout the entire process</li>
+        </ul>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Other information we may need
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          <p>When we call you back you may need to have the following information ready:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the date and location of the crime</li>
+              <li>the name of the police station where the crime was reported</li>
+              <li>your crime reference number</li>
+              <li>your GP’s name and address</li>
+              <li>your dentist’s name and address (if you had dental treatment because of your injuries)</li>
+              <li>details of any previous applications you have made to CICA</li>
+              <li>details of any unspent criminal convictions</li>
+              <li>proof of identity for you or anyone you are responsible for, such as a birth or marriage certificate, power of attorney or deed poll</li>
+            </ul>
+          </div>
+        </details>
+
+      <h2 class="govuk-heading-l">Legal representatives</h2>
+
+      <p class="govuk-body">Our online enquiry service does not currently support legal representatives. You must apply by telephone.</p>
+
+
+    </div>
+
+<!--    <div class="govuk-grid-column-one-third">
+  <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide">
+                A guide to the Criminal Injuries Compensation Scheme
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>--->
+  </div>
+</main>
+</div>
+
+{% endblock %}
