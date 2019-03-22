@@ -154,6 +154,9 @@ module.exports = {
     // Timeout Screen //
     timedoutHeading:'You have timed out',
 
+    // SRR Prototype //
+    preferredDays:'Which days would be best for us to call you?',
+    preferredTimes:'Which times of the day are best for us to call you?'
 
 
 };

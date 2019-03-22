@@ -87,6 +87,18 @@ require('./views/concepts/timeout/timed-out/routes')(router, viewContent);
 // Guidance Concept //
 require('./views/concepts/guidance/routes')(router, viewContent);
 
+//SRR Prototype //
+require('./views/srr/previous-applications/routes')(router, viewContent);
+require('./views/srr/name/routes')(router, viewContent);
+require('./views/srr/phone-number/routes')(router, viewContent);
+require('./views/srr/name-have-other/routes')(router, viewContent);
+require('./views/srr/other-names/routes')(router, viewContent);
+require('./views/srr/address/routes')(router, viewContent);
+require('./views/srr/date-of-birth/routes')(router, viewContent);
+require('./views/srr/preferred-days/routes')(router, viewContent);
+require('./views/srr/preferred-times/routes')(router, viewContent);
+require('./views/srr/check-your-answers-page/routes')(router, viewContent);
+
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line

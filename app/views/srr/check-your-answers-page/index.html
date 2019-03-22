@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        {{ previousApplicationsQuestion }}
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        {{ data['previous-applications'] }}
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="previous-applications">
+          Change<span class="govuk-visually-hidden">{{ previousApplicationsQuestion }}</span>
+        </a>
+      </dd>
+      </div>
+
+      {% if data['previous-applications'] === 'Yes' %}
+      <div class="app-check-your-answers__contents">
+                    <dt class="app-check-your-answers__question">
+                      Previous reference numbers
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                      {{ data['previous-reference'] }}
+                    </dd>
+                    <dd class="app-check-your-answers__change">
+                      <a href="previous-applications">
+                        Change<span class="govuk-visually-hidden">reference numbers</span>
+                      </a>
+                    </dd>
+                  </div>
+                    {% endif %}
+
+<div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Name
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="name">
+          Change<span class="govuk-visually-hidden">your name</span>
+        </a>
+      </dd>
+    </div>
+
+<div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            {{ nameOtherQuestion }}
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['haveOtherName'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="name-have-other">
+              Change<span class="govuk-visually-hidden">if you have another name</span>
+            </a>
+          </dd>
+        </div>
+
+{% if data['nameOtherQuestion'] === 'Yes' %}
+<div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Other names
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['nameOther'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="other-names">
+                  Change<span class="govuk-visually-hidden">your other names</span>
+                </a>
+              </dd>
+            </div>
+              {% endif %}
+
+<div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Date of birth
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="date-of-birth">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Address
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['address-line-1'] }}<br />
+                {% if data['address-line-2'] %}
+                {{ data['address-line-2'] }}<br />
+                {% endif %}
+                {{ data['address-town'] }}<br />
+                {% if data['address-county'] %}
+                {{ data['address-county'] }}<br />
+                {% endif %}
+                {% if data['address-postcode'] %}
+                {{ data['address-postcode'] }}<br />
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+<div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Telephone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['phoneNumber'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="phone-number">
+                  Change<span class="govuk-visually-hidden"> phone number</span>
+                </a>
+              </dd>
+            </div>
+
+  <div class="app-check-your-answers__contents">
+                          <dt class="app-check-your-answers__question">
+                            Preferred callback days
+                          </dt>
+                          <dd class="app-check-your-answers__answer">
+                            {% if data['Monday'] %}
+                            {{ data['Monday'] }}<br />
+                            {% endif %}
+                            {% if data['Tuesday'] %}
+                            {{ data['Tuesday'] }}<br />
+                            {% endif %}
+                            {% if data['Wednesday'] %}
+                            {{ data['Wednesdays'] }}<br />
+                            {% endif %}
+                          </dd>
+                          <dd class="app-check-your-answers__change">
+                            <a href="preferred-days">
+                              Change<span class="govuk-visually-hidden">preferred call days</span>
+                            </a>
+                          </dd>
+                        </div>
+
+<div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                      Preferred callback times
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                      </dd>
+                    <dd class="app-check-your-answers__change">
+                    <a href="preferred-times">
+                    Change<span class="govuk-visually-hidden">preferred call times</span>
+                    </a>
+                    </dd>
+                    </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-l">Agree and submit your enquiry</h2>
+    <p class="govuk-body">By submitting this enquiry, you confirm that the information you have given is accurate.<p>
+    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
+
+
+    <form class="form" method="post">
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton(
+            { "text": "Agree and submit" })
+          }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
