@@ -24,8 +24,9 @@
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
   {{ govukCheckboxes({
-    idPrefix: "waste",
-    name: "waste",
+    idPrefix: "preferred-times",
+    name: "preferred-times",
+    value: data['preferred-times'],
     fieldset: {
       legend: {
         text: "Which times of the day are best for us to call you?",

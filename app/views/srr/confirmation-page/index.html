@@ -2,7 +2,7 @@
 
 
 {% block pageTitle %}
-Application submitted - {{ serviceName }} - GOV.UK
+Enquiry submitted - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,42 +25,47 @@ Application submitted - {{ serviceName }} - GOV.UK
 
     <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
       <h2 class="govuk-panel__title">
-        Application submitted
+        We will be in touch
       </h2>
-      <div class="govuk-panel__body">
-        Your reference number is<br><strong>CICA2123GW</strong>
-        <p class="govuk-body-l" style="color:white"><br>We have sent a confirmation email to<br><strong>{{ data['emailAddress'] }}</strong></p>
-      </div>
+
     </div>
     <p>
     </p>
-    <p class="govuk-body">Thank you for submitting your application.</p>
+    <p class="govuk-body">Thank you for submitting your enquiry.</p>
 
     <h2 class="govuk-heading-m">What happens next</h2>
+    <p class=govuk-body>We will aim to call you back on [telephone number] at your preferred time within X days.</p>
+      <p class=govuk-body>The call should take around X minutes to complete.</p>
 
-    <p>We will:</p>
+    <h2 class="govuk-heading-m">Prepare for our call</h2>
+    <p class=govuk-body>In preparation for our call it may be useful for you to have information about the following ready:</p>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li>ask the police for evidence</li>
-      <li>use the police evidence to make a decision</li>
-      <li>send our decision letter by post</li>
+      <li>the date and location of the crime</li>
+      <li>the name of the police station where the crime was reported</li>
+      <li>your crime reference number</li>
+      <li>your GP’s name and address</li>
+      <li>your dentist’s name and address (if you had dental treatment because of your injuries)</li>
+      <li>details of any previous applications you’ve made to CICA</li>
+      <li>details of your injuries</li>
+      <li>details of any unspent criminal convictions</li>
+      <li>details of the person who abused you</li>
+      <li>proof of identity for you or anyone you’re responsible for, such as a birth or marriage certificate, power of attorney or deed poll</li>
     </ul>
 
-    <p class="govuk-body">We will usually make a decision within 4 months.</p>
+    <h2 class="govuk-heading-m">If you need help or support</h2>
+    <p class="govuk-body">You can contact us about your enquiry on 0300 003 3601. Select option 8.</p>
+      <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
 
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Warning</span>
-        You must inform us immediately if any of the information you have given us changes, especially your address, telephone number or email address.
-      </strong>
-    </div>
+<p class="govuk-body">For practical or emotional support visit the Victim and Witness infomation websites:
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://www.victimandwitnessinformation.org.uk/"  target="_blank">England and Wales</a></li>
+      <li><a href="https://www.mygov.scot/victim-witness-support/"  target="_blank">Scotland</a></li>
+      </ul>
+        </p>
 
-    <p class="govuk-body">You can contact our Customer Service Centre on 0300 003 3601. Select option 8 when the call is answered.</p>
-<h2 class="govuk-heading-m">Help us improve this service</h2>
-<p class="govuk-body">You can complete a short survey to help us improve this service.</p>
-<p class="govuk-body">It does not ask for any details about your case, and has no effect on your application.</p>
-    <p><a href="/">Tell us what you think of our service</a> (takes 10 minutes)</p>
-  </div>
+
+        </div>
 </div>
 </main>
 

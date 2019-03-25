@@ -84,7 +84,7 @@ Check your answers - {{ serviceName }} - GOV.UK
           </dd>
         </div>
 
-{% if data['nameOtherQuestion'] === 'Yes' %}
+{% if data['haveOtherName'] === 'Yes' %}
 <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
                 Other names
@@ -114,7 +114,7 @@ Check your answers - {{ serviceName }} - GOV.UK
               </dd>
             </div>
 
-            <div class="app-check-your-answers__contents">
+<div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
                 Address
               </dt>
@@ -157,15 +157,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                             Preferred callback days
                           </dt>
                           <dd class="app-check-your-answers__answer">
-                            {% if data['Monday'] %}
-                            {{ data['Monday'] }}<br />
-                            {% endif %}
-                            {% if data['Tuesday'] %}
-                            {{ data['Tuesday'] }}<br />
-                            {% endif %}
-                            {% if data['Wednesday'] %}
-                            {{ data['Wednesdays'] }}<br />
-                            {% endif %}
+                          {{data['preferred-days']}}
                           </dd>
                           <dd class="app-check-your-answers__change">
                             <a href="preferred-days">
@@ -179,6 +171,7 @@ Check your answers - {{ serviceName }} - GOV.UK
                       Preferred callback times
                       </dt>
                       <dd class="app-check-your-answers__answer">
+                        {{data['preferred-times']}}
                       </dd>
                     <dd class="app-check-your-answers__change">
                     <a href="preferred-times">

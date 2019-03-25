@@ -24,8 +24,8 @@
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
   {{ govukCheckboxes({
-    idPrefix: "waste",
-    name: "waste",
+    idPrefix: "preferred-days",
+    name: "preferred-days",
     value: data['preferred-days'],
     fieldset: {
       legend: {
@@ -39,23 +39,24 @@
     },
     items: [
       {
-        value: data['Monday'],
-        text: "Monday"
+          value: "Monday",
+          text: "Monday"
+
       },
       {
-        value: data['Tuesday'],
+        value: "Tuesday",
         text: "Tuesday"
       },
       {
-        value: data['Wednesday'],
+        value: "Wednesday",
         text: "Wednesday"
       },
       {
-        value: data['Thursday'],
+        value: "Thursday",
         text: "Thursday"
       },
       {
-        value: data['Friday'],
+        value: "Friday",
         text: "Friday"
       }
     ]

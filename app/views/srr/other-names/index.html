@@ -26,14 +26,12 @@
       {{ govukInput({
               id: "nameOther",
               name: "nameOther",
+              value: data['nameOther'],
               label: {
                 text: nameOtherWhatQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-label--xl'
-              },
-              id: "nameOther",
-              name: "nameOther",
-              value: data['nameOther']
+              }
             }) }}
 
       {% from "button/macro.njk" import govukButton %}
