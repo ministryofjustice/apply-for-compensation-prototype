@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+AD Guidance - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "Guidance - version 1.0"
+    },
+    html: 'This is for the internal CSC team to give assisted digital guidance to applicants.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third" style="Background:#f8f8f8; padding-top:10px;">
+
+{% include "./includes/navigation.html" %}
+
+  <!-- Back to top button -->
+    <div style="positon: sticky; top:30px; margin-bottom:30px; display:block" data-module="app-back-to-top">
+  <a class="govuk-link govuk-link--no-visited-state" href="#top">
+    <svg style="display: inline-block;margin-top:-5px; margin-right:10px; vertical-align:middle" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</div>
+</div>
+
+<!-- Main container -->
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l"><span class="govuk-caption-xl">Digital continuity</span>
+Strategy</h1>
+
+<p class="govuk-body">Our new online application for victims of sexual assault or abuse (non-complex) has entered
+Private Beta. A small number of users have agreed to participate in testing the application in
+a live environment.</p>
+
+<h2 class="govuk-heading-m">Responsibilities</h2>
+<p class="govuk-body">Below are the responsibilities for each department involved in the new online application
+service:</p>
+
+<h3 class="govuk-heading-s">IT</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Monitoring the new online application service for down time</li>
+  <li>Communicating any down time to the CSC Owner</li>
+  <li>Communicating any down time to Business Transformation</li>
+  <li>Investigating and cataloguing any issues with service delivery</li>
+  <li>Liaise with any 3 rd party providers to resolve any issues</li>
+  <li>Uploading and removing maintenance page</li>
+  <li>Communicating with CSC Owner when service has resumed</li>
+  <li>Communicating with Business Transformation when service has resumed</li>
+</ul>
+
+<h3 class="govuk-heading-s">Customer Service Centre</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>AD Superusers/AD Lead to answer telephone calls from Private BETA users</li>
+  <li>Attempt to resolve any issues over the phone, for example check the URL to make
+sure it is correct</li>
+  <li>Raise any down time issues with Service Desk, completing issues log</li>
+  <li>Send communication to Business Transformation team, copying in the CSC Owner
+when system is down</li>
+  <li>Use scripts to cascade consistent message to users</li>
+  <li>Change IVR to inform users of down time, if necessary</li>
+</ul>
+
+<h3 class="govuk-heading-s">Business Transformation</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Cascade down time message to those stakeholders who are providing support with
+Private Beta</li>
+  <li>Signpost stakeholders to existing Justice Portal</li>
+  <li>Communicate with stakeholders when PB service has resumed</li>
+</ul>
+
+<h2 class="govuk-heading-m">Process</h2>
+<p class="govuk-body">A high-level version of the process has been mapped out below for each of the departments
+involved in CICA Online BETA testing:</p>
+
+<h3 class="govuk-heading-s">IT</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>New Online Application for victims of Sexual assault or abuse goes down – this can
+be identified by system monitoring or by a phone call from an external user into the
+Customer Service Centre</li>
+  <li>E-mail CSC Owner, Business Transformation and copy in Head of Operations to
+advise that the New Online Application Service for victims of Sexual assault or abuse
+is down and follow up with face to face verbal update</li>
+  <li>Upload maintenance page</li>
+  <li>Investigate cause for downtime</li>
+  <li>Update CSC Owner/Business Transformation of likely down time duration – be as
+clear as possible around the number of hours/days it could take</li>
+  <li>Identify a solution – if necessary working with 3 rd party provider</li>
+  <li>Test and apply solution</li>
+  <li>Remove maintenance page</li>
+  <li>Notify CSC Owner/Business Transformation that system is working and provide
+reasons for the down time</li>
+</ul>
+
+<h3 class="govuk-heading-s">Customer Service Centre</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>User advises there is an issue with the new Online Application Service for victims of
+Sexual assault or abuse</li>
+  <li>AD team attempt to resolve the issue over the phone. The advisor needs to identify if
+it is the new Online Application Service for victims of Sexual assault or abuse that is
+down or if it is user access issues, for example the wrong URL</li>
+  <li>If it cannot be resolved over the phone; the issue, user’s contact details and brief
+description of the issue, should be recorded on the Private Beta issues log</li>
+  <li>Inform Service Desk that the new Online Application Service for victims of Sexual
+assault or abuse is down. This can be done by the Assisted Digital Lead verbally and
+followed up with an IT ticket</li>
+  <li>Inform Business Transformation and the CSC Owner that it is down</li>
+  <li>CSC Owner to consider amending IVR to reflect down time issue. This is dependent
+on the length of time IT believe the system will be down, a quick fix (a couple of
+hours) will likely not need an IVR change</li>
+  <li>Use scripts to manage the user’s expectations regarding down time</li>
+</ul>
+
+<h3 class="govuk-heading-s">Business Transformation</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Receive communication from IT/CSC AD team</li>
+  <li>Send communication to all stakeholders who are supporting Private beta that service
+is down</li>
+  <li>Provide estimated timescale for down time</li>
+  <li>Offer alternative process – existing Justice Portal</li>
+  <li>Notify stakeholders when system is working again</li>
+</ul>
+
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
