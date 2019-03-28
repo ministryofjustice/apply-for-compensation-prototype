@@ -182,17 +182,18 @@ Check your answers - {{ serviceName }} - GOV.UK
 
     </dl>
 
-    <h2 class="govuk-heading-l">Agree and submit your enquiry</h2>
+    <h2 class="govuk-heading-l">Submit your enquiry</h2>
     <p class="govuk-body">By submitting this enquiry, you confirm that the information you have given is accurate.<p>
-    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
-
 
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton(
-            { "text": "Agree and submit" })
+            { "text": "Submit" })
           }}
     </form>
+    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
+
+
   </div>
 </div>
 </main>
