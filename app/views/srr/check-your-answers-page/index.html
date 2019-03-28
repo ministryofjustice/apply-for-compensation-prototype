@@ -188,11 +188,20 @@ Check your answers - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton(
-            { "text": "Submit" })
+            { "text": "Submit your enquiry" })
           }}
-    </form>
-    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
 
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How we handle your data
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p>  To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.
+      </p>
+      </div>
+    </details>
 
   </div>
 </div>
