@@ -182,13 +182,13 @@ Check your answers - {{ serviceName }} - GOV.UK
 
     </dl>
 
-    <h2 class="govuk-heading-l">Submit your enquiry</h2>
-    <p class="govuk-body">By submitting this enquiry, you confirm that the information you have given is accurate.<p>
+    <h2 class="govuk-heading-l">Submit the call-back request</h2>
+    <p class="govuk-body">By submitting this request, you confirm that the information you have given is accurate.<p>
 
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton(
-            { "text": "Submit enquiry" })
+            { "text": "Submit request" })
           }}
 
     <details class="govuk-details">
@@ -198,7 +198,7 @@ Check your answers - {{ serviceName }} - GOV.UK
         </span>
       </summary>
       <div class="govuk-details__text">
-      <p>  To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.
+      <p>  To find out how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.
       </p>
       </div>
     </details>
