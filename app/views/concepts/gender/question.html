@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ impactHeading }} - {{ serviceName }} - GOV.UK
+What is your gender? (optional) - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,28 +20,37 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Before you continue
-    </h1>
 
-    <p class="govuk-body">On the next page we will ask you to select an option based on how the crime affected you.</p>
+    {% from "radios/macro.njk" import govukRadios %}
 
-    <p class="govuk-body">We appreciate that this may be difficult for you.</p>
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "gender",
+  name: "gender",
+  fieldset: {
+    legend: {
+      text: "What is your gender? (optional)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "Male",
+      text: "Male"
+    },
+    {
+      value: "Female",
+      text: "Female"
+    }
+  ]
+}) }}
 
-    <h2 class="govuk-heading-m">
-      If you need help or support
-    </h2>
+{% from "button/macro.njk" import govukButton %}
 
-    <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
-    <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
-    <p class="govuk-body">For practical or emotional support visit the Victim and Witness infomation websites:
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="https://www.victimandwitnessinformation.org.uk/"  target="_blank">England and Wales</a></li>
-      <li><a href="https://www.mygov.scot/victim-witness-support/"  target="_blank">Scotland</a></li>
-      </ul>
-        </p>
-
-<a class="govuk-button govuk-!-mt-r2 govuk-!-mb-r8" href="/concepts/support/your-choices" role="button">Continue</a>
+{{ govukButton({
+  text: "Continue"
+}) }}
 
   </div>
 </div>
