@@ -24,12 +24,11 @@ What is your gender? (optional) - {{ serviceName }} - GOV.UK
     {% from "radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  classes: "govuk-radios--inline",
   idPrefix: "gender",
   name: "gender",
   fieldset: {
     legend: {
-      text: "What is your gender? (optional)",
+      text: "What is your gender?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -42,6 +41,10 @@ What is your gender? (optional) - {{ serviceName }} - GOV.UK
     {
       value: "Female",
       text: "Female"
+    },
+    {
+      value: "Prefer not to say",
+      text: "Prefer not to say"
     }
   ]
 }) }}
