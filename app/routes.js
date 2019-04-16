@@ -103,6 +103,19 @@ require('./views/srr/check-your-answers-page/routes')(router, viewContent);
 require('./views/concepts/police-force-V2/routes')(router, viewContent);
 require('./views/concepts/police-force-V2/force-search/routes')(router, viewContent);
 
+//Police Force Concept V3 Prototype //
+require('./views/concepts/police-force-V3/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/country/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/scotland-forces/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/england-forces/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/wales-forces/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/somewhere-else/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/crime-reference/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/incident-date/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/location/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/do-you-know-offender/routes')(router, viewContent);
+
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line
