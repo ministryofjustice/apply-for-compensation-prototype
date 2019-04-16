@@ -111,6 +111,10 @@ require('./views/concepts/police-force-V3/england-forces/routes')(router, viewCo
 require('./views/concepts/police-force-V3/wales-forces/routes')(router, viewContent);
 require('./views/concepts/police-force-V3/somewhere-else/routes')(router, viewContent);
 require('./views/concepts/police-force-V3/crime-reference/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/incident-date/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/location/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/concepts/police-force-V3/do-you-know-offender/routes')(router, viewContent);
 
 require('./routes-filelist')(router);
 

@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   //
   router.post('/concepts/police-force-v3/crime-reference', function (req, res) {
 
-   res.redirect('/')
+   res.redirect('/concepts/police-force-v3/single-or-multiple-incidents')
   })
 
   // Pass the question in to the page
