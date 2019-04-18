@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{gender}} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+    {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "Select Male, Female or Prefer not to say",
+                href: "#haveOtherName"
+              }
+            ]
+          }) }}
+
+    {% from "radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "gender",
+  name: "gender",
+  fieldset: {
+    legend: {
+      text: gender,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  errorMessage: {
+  text: "Select Male, Female or Prefer not to say"
+},
+  items: [
+    {
+      value: "Male",
+      text: "Male"
+    },
+    {
+      value: "Female",
+      text: "Female"
+    },
+    {
+      value: "Prefer not to say",
+      text: "Prefer not to say"
+    }
+  ]
+}) }}
+
+{% from "button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

@@ -41,6 +41,7 @@ require('./views/application/what-is-relationship/routes')(router, viewContent);
 require('./views/application/name/routes')(router, viewContent);
 require('./views/application/name-have-other/routes')(router, viewContent);
 require('./views/application/name-other/routes')(router, viewContent);
+require('./views/application/gender/routes')(router, viewContent);
 require('./views/application/date-of-birth/routes')(router, viewContent);
 require('./views/application/email-address/routes')(router, viewContent);
 // require('./views/application/address/routes')(router, viewContent);
