@@ -154,7 +154,7 @@ Check your answers - {{ serviceName }} - GOV.UK
 
   <div class="app-check-your-answers__contents">
                           <dt class="app-check-your-answers__question">
-                            Preferred callback days
+                            Preferred call-back days
                           </dt>
                           <dd class="app-check-your-answers__answer">
                           {{data['preferred-days']}}
@@ -168,7 +168,7 @@ Check your answers - {{ serviceName }} - GOV.UK
 
 <div class="app-check-your-answers__contents">
                       <dt class="app-check-your-answers__question">
-                      Preferred callback times
+                      Preferred call-back times
                       </dt>
                       <dd class="app-check-your-answers__answer">
                         {{data['preferred-times']}}
@@ -182,17 +182,27 @@ Check your answers - {{ serviceName }} - GOV.UK
 
     </dl>
 
-    <h2 class="govuk-heading-l">Agree and submit your enquiry</h2>
-    <p class="govuk-body">By submitting this enquiry, you confirm that the information you have given is accurate.<p>
-    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
-
+    <h2 class="govuk-heading-l">Submit the call-back request</h2>
+    <p class="govuk-body">By submitting this request, you confirm that the information you have given is accurate.<p>
 
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton(
-            { "text": "Agree and submit" })
+            { "text": "Submit request" })
           }}
-    </form>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How we handle your data
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p>  To find out how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.
+      </p>
+      </div>
+    </details>
+
   </div>
 </div>
 </main>
