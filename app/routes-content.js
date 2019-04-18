@@ -62,6 +62,7 @@ module.exports = {
     errorAbuseEndAfterStarted: 'The date the crime stopped must be after the date the crime started',
     // howMuchCompensationHint: 'You can also tell us if you are still waiting to find out.',
     // howMuchCompensationQuestion: 'How much compensation did you get?',
+    gender:'What is your gender?',
     impactHeading: 'Before you continue',
     incidentDateHeading: "When did the crime happen?",
     incidentDateHint: 'For example, 31 3 2018. You can enter an approximate date.',
