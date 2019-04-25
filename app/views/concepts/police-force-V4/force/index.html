@@ -1,0 +1,409 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Investigating Police Force - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+ {% block beforeContent %}
+ {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+ {{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+ <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+ {% endblock %}
+
+ {% block content %}
+
+     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form"  method="post">
+
+          <h1 class="govuk-heading-xl" style="margin-bottom:10px">Which police force is investigating the crime?</h1>
+
+          {% from "select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "police-force",
+  name: "police-force",
+  hint: {
+    text:"Hint text here"
+  },
+  items: [
+  {
+    value: "blank",
+    text: "",
+    disabled: true,
+    selected: true
+  },
+  {
+      value: "Avon And Somerset Constabulary",
+      text: "Avon And Somerset Constabulary"
+    },
+    {
+      value: "Bedfordshire Police",
+      text: "Bedfordshire Police"
+    },
+    {
+      value: "British Transport Police",
+      text: "British Transport Police"
+    },
+    {
+      value: "Cambridgeshire Constabulary",
+      text: "Cambridgeshire Constabulary"
+    },
+    {
+      value: "Central Scotland Police",
+      text: "Central Scotland Police"
+    },
+    {
+      value: "Cheshire Constabulary",
+      text: "Cheshire Constabulary"
+    },
+    {
+      value: "City Of London Police",
+      text: "City Of London Police"
+    },
+    {
+      value: "Cumbria Constabulary",
+      text: "Cumbria Constabulary"
+    },
+    {
+      value: "Derbyshire Constabulary",
+      text: "Derbyshire Constabulary"
+    },
+    {
+      value: "Devon &amp; Cornwall Constabulary",
+      text: "Devon &amp; Cornwall Constabulary"
+    },
+    {
+      value: "Durham Constabulary",
+      text: "Durham Constabulary"
+    },
+    {
+      value: "Dyfed Powys Police",
+      text: "Dyfed Powys Police"
+    },
+    {
+      value: "Essex Police",
+      text: "Essex Police"
+    },
+    {
+      value: "Fife ConstabularyFife Constabulary",
+      text: "Fife Constabulary"
+    },
+    {
+      value: "Gloucestershire Constabulary",
+      text: "Gloucestershire Constabulary"
+    },
+    {
+      value: "Grampian Police",
+      text: "Grampian Police"
+    },
+    {
+      value: "Greater Manchester Police",
+      text: "Greater Manchester Police"
+    },
+    {
+      value: "Gwent Constabulary",
+      text: "Gwent Constabulary"
+    },
+    {
+      value: "Hampshire Constabulary",
+      text: "Hampshire Constabulary"
+    },
+    {
+      value: "Hertfordshire Constabulary",
+      text: "Hertfordshire Constabulary"
+    },
+    {
+      value: "Humberside Police",
+      text: "Humberside Police"
+    },
+    {
+      value: "Kent County Constabulary",
+      text: "Kent County Constabulary"
+    },
+    {
+      value: "Lancashire Constabulary",
+      text: "Lancashire Constabulary"
+    },
+    {
+      value: "Leicestershire Constabulary",
+      text: "Leicestershire Constabulary"
+    },
+    {
+      value: "Lincolnshire Police",
+      text: "Lincolnshire Police"
+    },
+    {
+      value: "Merseyside Police",
+      text: "Merseyside Police"
+    },
+    {
+      value: "Metropolitan Barking ",
+      text: "Metropolitan Barking "
+    },
+    {
+      value: "Metropolitan Barnet",
+      text: "Metropolitan Barnet"
+    },
+    {
+      value: "Metropolitan Bexley ",
+      text: "Metropolitan Bexley "
+    },
+    {
+      value: "Metropolitan Brent",
+      text: "Metropolitan Brent"
+    },
+    {
+      value: "Metropolitan Bromley",
+      text: "Metropolitan Bromley"
+    },
+    {
+      value: "Metropolitan Camden",
+      text: "Metropolitan Camden"
+    },
+    {
+      value: "Metropolitan Croydon",
+      text: "Metropolitan Croydon"
+    },
+    {
+      value: "Metropolitan Ealing",
+      text: "Metropolitan Ealing"
+    },
+    {
+      value: "Metropolitan Enfield",
+      text: "Metropolitan Enfield"
+    },
+    {
+      value: "Metropolitan Greenwich",
+      text: "Metropolitan Greenwich"
+    },
+    {
+      value: "Metropolitan Hackney",
+      text: "Metropolitan Hackney"
+    },
+    {
+      value: "Metropolitan Hammersmith",
+      text: "Metropolitan Hammersmith"
+    },
+    {
+      value: "Metropolitan Haringey",
+      text: "Metropolitan Haringey"
+    },
+    {
+      value: "Metropolitan Harrow",
+      text: "Metropolitan Harrow"
+    },
+    {
+      value: "Metropolitan Havering",
+      text: "Metropolitan Havering"
+    },
+    {
+      value: "Metropolitan Hillingdon",
+      text: "Metropolitan Hillingdon"
+    },
+    {
+      value: "Metropolitan Hounslow",
+      text: "Metropolitan Hounslow"
+    },
+    {
+      value: "Metropolitan Islington ",
+      text: "Metropolitan Islington "
+    },
+    {
+      value: "Metropolitan Kensington",
+      text: "Metropolitan Kensington"
+    },
+    {
+      value: "Metropolitan Kingston",
+      text: "Metropolitan Kingston"
+    },
+    {
+      value: "Metropolitan Lambeth",
+      text: "Metropolitan Lambeth"
+    },
+    {
+      value: "Metropolitan Lewisham",
+      text: "Metropolitan Lewisham"
+    },
+    {
+      value: "Metropolitan Merton",
+      text: "Metropolitan Merton"
+    },
+    {
+      value: "Metropolitan Newham",
+      text: "Metropolitan Newham"
+    },
+    {
+      value: "Metropolitan Redbridge",
+      text: "Metropolitan Redbridge"
+    },
+    {
+      value: "Metropolitan Richmond ",
+      text: "Metropolitan Richmond "
+    },
+    {
+      value: "Metropolitan Southwark ",
+      text: "Metropolitan Southwark "
+    },
+    {
+      value: "Metropolitan Sutton",
+      text: "Metropolitan Sutton"
+    },
+    {
+      value: "Metropolitan Tower Hamlets",
+      text: "Metropolitan Tower Hamlets"
+    },
+    {
+      value: "Metropolitan Waltham Forest",
+      text: "Metropolitan Waltham Forest"
+    },
+    {
+      value: "Metropolitan Wandsworth",
+      text: "Metropolitan Wandsworth"
+    },
+    {
+      value: "Metropolitan Westminster",
+      text: "Metropolitan Westminster"
+    },
+    {
+      value: "Norfolk Constabulary",
+      text: "Norfolk Constabulary"
+    },
+    {
+      value: "North Wales Police",
+      text: "North Wales Police"
+    },
+    {
+      value: "North Yorkshire Police",
+      text: "North Yorkshire Police"
+    },
+    {
+      value: "Northamptonshire Police",
+      text: "Northamptonshire Police"
+    },
+    {
+      value: "Northern Constabulary",
+      text: "Northern Constabulary"
+    },
+    {
+      value: "Northumbria Police",
+      text: "Northumbria Police"
+    },
+    {
+      value: "Northern Constabulary",
+      text: "Northern Constabulary"
+    },
+    {
+      value: "Northumbria Police",
+      text: "Northumbria Police"
+    },
+    {
+      value: "Nottinghamshire Police",
+      text: "Nottinghamshire Police"
+    },
+    {
+      value: "Scotland Argyll/Dunbartonshire  ",
+      text: "Scotland Argyll/Dunbartonshire  "
+    },
+    {
+      value: "Scotland Ayrshire  ",
+      text: "Scotland Ayrshire  "
+    },
+    {
+      value: "Scotland Edinburgh City",
+      text: "Scotland Edinburgh City"
+    },
+    {
+      value: "Scotland Greater Glasgow ",
+      text: "Scotland Greater Glasgow "
+    },
+    {
+      value: "Scotland Lanarkshire  ",
+      text: "Scotland Lanarkshire  "
+    },
+    {
+      value: "Scotland Lothian & Borders",
+      text: "Scotland Lothian & Borders"
+    },
+    {
+      value: "Scotland Renfrewshire & Inverclyde",
+      text: "Scotland Renfrewshire & Inverclyde"
+    },
+    {
+      value: "South Wales Police ",
+      text: "South Wales Police "
+    },
+    {
+      value: "South Yorkshire Police  ",
+      text: "South Yorkshire Police  "
+    },
+    {
+      value: "Staffordshire Police  ",
+      text: "Staffordshire Police  "
+    },
+    {
+      value: "Suffolk Constabulary",
+      text: "Suffolk Constabulary"
+    },
+    {
+      value: "Surrey Constabular",
+      text: "Surrey Constabular"
+    },
+    {
+      value: "Sussex PoliceSussex Police",
+      text: "Sussex Police"
+    },
+    {
+      value: "Tayside Police",
+      text: "Tayside Police"
+    },
+    {
+      value: "Thames Valley Police ",
+      text: "Thames Valley Police "
+    },
+    {
+      value: "Warwickshire Constabulary ",
+      text: "Warwickshire Constabulary "
+    },
+    {
+      value: "West Mercia Constabulary ",
+      text: "West Mercia Constabulary "
+    },
+    {
+      value: "West Midlands Police",
+      text: "West Midlands Police"
+    },
+    {
+      value: "West Yorkshire Police",
+      text: "West Yorkshire Police"
+    },
+    {
+      value: "Wiltshire Constabulary",
+      text: "Wiltshire Constabulary"
+    }
+
+  ]
+}) }}
+
+
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+          "text": "Continue"
+          }) }}
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
