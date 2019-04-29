@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Reporting details
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+
+    <div class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form class="/form-handler"  method="post">
+              {% from "input/macro.njk" import govukInput %}
+        {% from "fieldset/macro.njk" import govukFieldset %}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What are the details of the police officer who recorded the crime?",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+          }
+        }) %}
+
+          {{ govukInput({
+            label: {
+              html: 'Name'
+            },
+            classes: 'govuk-!-width-two-thirds',
+            "id": "police-officer-name",
+            "name": "police-officer-name"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: 'ID number (collar number)'
+            },
+            classes: 'govuk-!-width-two-thirds',
+            "id": "police-officer-id",
+            "name": "police-officer-id"
+          }) }}
+
+
+        {% endcall %}
+        {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+        "text": "Continue"
+        }) }}
+            </form>
+
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">think this looks better - JK</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
