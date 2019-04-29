@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Your name
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+
+            <form action="/form-handler" method="post">
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--xl" for="name">
+                      What's your name?
+                  </label>
+                </h1>
+              </div>
+
+              {% from "input/macro.njk" import govukInput %}
+
+              {{ govukInput({
+              "label": {
+              "text": "Title"
+              },
+              "classes": "govuk-input--width-10",
+              "id": "title",
+              "name": "title"
+              }) }}
+
+              {% from "input/macro.njk" import govukInput %}
+
+              {{ govukInput({
+                label: {
+                  text: "First name"
+                },
+                id: "first-name",
+                name: "first-name"
+              }) }}
+
+              {% from "input/macro.njk" import govukInput %}
+
+              {{ govukInput({
+                label: {
+                  text: "Last name"
+                },
+                id: "last-name",
+                name: "last-name"
+              }) }}
+              {% from "input/macro.njk" import govukInput %}
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                      Have you used any other names before?
+                  </span>
+                </summary>
+                <div class="govuk-form-group govuk-details__text">
+                      <label class="govuk-label" for="other-names">
+                          Tell us what  other names you've used (optional)
+                      </label>
+                    <input class="govuk-input govuk-input--width-30" id="other-names" name="other-names" type="text">
+                  </div>
+              </details>
+              <input class="govuk-button" type="submit" value="Continue">
+          </form>
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">Small alteration to "other name" toggle - JK</p>
+      </div>
+    </main>
+  </div>
+{% endblock %}

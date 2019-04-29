@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% from 'radios/macro.njk' import govukRadios %}
+            {% from "input/macro.njk" import govukInput %}
+            {% from "date-input/macro.njk" import govukDateInput %}
+
+            {% set dateHtml %}
+                {{ govukDateInput({
+                    id: 'incidentReported',
+                    name: 'incidentReported',
+                    fieldset: {
+                        legend: {
+                            text: 'When was the crime reported to police?',
+                            classes: 'govuk-fieldset__legend--m'
+                        }
+                    },
+                    hint: {
+                        text: 'For example, 31 3 1980. You can enter an approximate date'
+                    },
+                    items:[
+                        {
+                            name: 'day'
+                        },
+                        {
+                            name: 'month'
+                        },
+                        {
+                            name: 'year'
+                        }
+                    ]
+                }) }}
+            {% endset -%}
+
+
+            {{ govukRadios({
+              idPrefix: "incidentReported",
+              name: "incidentReported",
+              classes: "govuk-radios--inline",
+              fieldset: {
+                legend: {
+                  text: "Was the crime reported to the police?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  conditional: {
+                    html: dateHtml
+                  }
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+
+            {% from "button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

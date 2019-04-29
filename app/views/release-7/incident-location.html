@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Crime location
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
+        <form class="form" method="post">
+
+          {% from 'radios/macro.njk' import govukRadios %}
+  {% from "input/macro.njk" import govukInput %}
+
+
+  {% set textHtml %}
+  {{ govukInput({
+    id: "somewhere-else",
+    name: "somewhere-else",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Tell us where the crime happened"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "incident-location",
+    name: "incident-location",
+    fieldset: {
+      legend: {
+        text: "Where did the crime happen?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+    items: [
+      {
+        value: "England",
+        text: "England"
+      },
+      {
+        value: "Scotland",
+        text: "Scotland"
+      },
+      {
+        value: "Wales",
+        text: "Wales"
+      },
+      {
+        value: "Somewhere else",
+        text: "Somewhere else",
+        conditional: {
+          html: textHtml
+        }
+      }
+    ]
+  }) }}
+
+          <input class="govuk-button" type="submit" value="Continue">
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

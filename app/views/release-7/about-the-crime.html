@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  About the crime
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">NEW</strong></div>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">About the crime</h1>
+            <p>
+                In the next few screens we’ll ask you for some information about the crime.
+            </p>
+            <a href="single-or-multiple-incidents" role="button" class="govuk-button">Continue</a>
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">Is this screen necessary? - JK </p>
+        <p class="design-notes">Plads, Julie and I think we don't need it = removed - Stéphanie </p>
+      </div>
+    </main>
+  </div>
+{% endblock %}

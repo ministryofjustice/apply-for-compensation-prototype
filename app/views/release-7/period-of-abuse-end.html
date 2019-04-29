@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+ Incicent date
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form"  method="post">
+          {% from "date-input/macro.njk" import govukDateInput %}
+          {{ govukDateInput({
+          id: 'period-of-abuse-end',
+          name: 'period-of-abuse-end',
+          fieldset: {
+          legend: {
+          text: "When did it stop?",
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--xl'
+          }
+          },
+          hint: {
+          text: 'For example, 31 3 2018. You can enter an approximate date '
+          },
+          items:[
+          {
+          name: 'day'
+          },
+          {
+          name: 'month'
+          },
+          {
+          name: 'year'
+          }
+          ]
+          })
+          }}
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+          "text": "Continue"
+          }) }}
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Start page example
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+      </li>
+    </ol>
+  </div>
+
+  <main role="main" class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+          Apply for compensation for a criminal injury
+        </h1>
+
+        <p>Use this service to apply for compensation if you have been affected by a violent crime or sexual assault and:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <!-- <li>you can not get compensation <a href="https://www.victimsinformationservice.org.uk/getting-compensation/">elsewhere</a></li> -->
+          <li>it has been two years or less since you reported the crime to the police</li>
+          <li>the crime happened in the UK</li>
+          <li>you are over 18 years old</li>
+          <li>you are a British Citizen</li>
+          <li>you have no unspent criminal convictions</li>
+        </ul>
+
+        <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="release-7/who-is-making-the-application" role="button">Start now</a>
+
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p>To complete your application you will need to know:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your crime reference number</li>
+          <li>the date the crime happened</li>
+        </uL>
+
+        <p>You do not need to use a legal representative to help you with your application unless you want to. If you do use a representative, they may charge you a percentage of any money you get.</p>
+
+        <p>If you are a legal representative applying for compensation on behalf of a client you should use <a href="#">[ service name ]</a>. </p>
+
+        <!-- <p>You can not use this service if you’re in the UK illegally.</p> -->
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <!-- <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Subsection
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-body-s">
+              <li>
+                <a href="#">
+                  Related link
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Related link
+                </a>
+              </li>
+              <li>
+                <a href="#" class="govuk-!-w-bold">
+                  More <span class="visuallyhidden">in Subsection</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside> -->
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
