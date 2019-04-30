@@ -5,7 +5,7 @@ module.exports = function (router, content) {
   router.post('/application/name-have-other', function (req, res) {
     var haveOtherName = req.session.data['haveOtherName'];
     if (haveOtherName === 'No')  {
-      return res.redirect('/application/date-of-birth')
+      return res.redirect('/application/gender')
     }
     res.redirect('/application/name-other')
   })
