@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Previous applications
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">You can only make a single application for each crime</h1>
+
+          <p class="govuk-body">You can track the progress of your application using our <a href="#">application tracker</a>.</p>
+
+          <p class="govuk-body">To use the tracker you will need your:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>reference number</li>
+            <li>email address</li>
+          </ul>
+          <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I don't know my reference number
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <p class="govuk-body">When you submitted your application we showed your reference number and emailed it to you.</p>
+            <p class="govuk-body">If you have lost it you can call us on 0141 234 5678 lines are open 9-5 Monday to Friday.</p>
+            <p class="govuk-body">Info about call charges</p>
+
+          </div>
+        </details>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

@@ -13,9 +13,7 @@ router.get('/', function (req, res) {
     res.render('index')
 })
 
-// Try to keep these inclued in the same order as the journey.
-// This makes it easy to find things.
-//   Indent routes that relate to questions that are dependant on the previous one
+// CURRENT RELEASE - RELEASE 8 MVP PROJECT //
 require('./views/application/british-citizen/routes')(router, viewContent);
 require('./views/application/over-18/routes')(router, viewContent);
 require('./views/application/who-is-making-the-application/routes')(router, viewContent);
@@ -130,6 +128,305 @@ require('./views/concepts/police-force-V4/incident-date/routes')(router, viewCon
 require('./views/concepts/police-force-V4/incident-location/routes')(router, viewContent);
 require('./views/concepts/police-force-V4/single-or-multiple-incidents/routes')(router, viewContent);
 require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, viewContent);
+
+// END OF MVP #################################################################################
+
+
+// RELEASE 7 - 17.12.2018 /////////////////////////////////////////////////////////////////////
+
+
+// Route index page
+router.get('/', function (req, res) {
+  res.render('index')
+})
+
+router.get('/stepped-guide', function (req, res) {
+	var step = req.query.step;
+	return res.render('release-7/stepped-guide', { step: step});
+})
+
+router.post('/release-7/who-is-making-the-application', function (req, res) {
+  // Get the answer from the query string
+  var rep = req.session.data['rep']
+
+  if (rep === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/prototype')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/declaration')
+  }
+})
+
+
+router.post('/release-7/declaration', function (req, res) {
+  var declaration = req.session.data['declaration']
+
+    res.redirect('/release-7/what-are-you-applying-for')
+})
+
+
+router.post('/release-7/what-are-you-applying-for', function (req, res) {
+  // Get the answer from the query string
+  var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
+  if (applicationType === 'physical-injury') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/prototype')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/OCJ-service-option')
+  }
+})
+
+
+router.post('/release-7/OCJ-service-option', function (req, res) {
+  // Get the answer from the query string
+  var serviceOption = req.session.data['service-option']
+
+  if (serviceOption === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/prototype')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/compensation')
+  }
+})
+
+
+router.post('/release-7/compensation', function (req, res) {
+    res.redirect('/release-7/british-citizen')
+})
+
+router.post('/release-7/did-not-apply-for-compensation', function (req, res) {
+    res.redirect('/release-7/british-citizen')
+})
+
+
+router.post('/release-7/british-citizen', function (req, res) {
+  // Get the answer from the query string
+  var britishCitizen = req.session.data['britishCitizen']
+
+  if (britishCitizen === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/residence-1')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/criminal-convictions')
+  }
+})
+
+router.post('/release-7/residence-1', function (req, res) {
+  // Get the answer from the query string
+  var ordinarilyResident = req.session.data['ordinarily-resident']
+
+  if (ordinarilyResident === 'no') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/prototype')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/criminal-convictions')
+  }
+})
+
+router.post('/release-7/criminal-convictions', function (req, res) {
+  var criminalConvictions = req.session.data['criminalConvictions']
+
+  if (criminalConvictions === 'yes') {
+    res.redirect('/release-7/tell-criminal-convictions')
+  } else {
+    res.redirect('/release-7/name')
+  }
+})
+
+router.post('/release-7/tell-criminal-convictions', function (req, res) {
+  res.redirect('/release-7/name')
+})
+
+router.post('/release-7/name', function (req, res) {
+  res.redirect('/release-7/date-of-birth')
+})
+
+router.post('/release-7/date-of-birth', function (req, res) {
+  res.redirect('/release-7/email-address')
+})
+
+router.post('/release-7/email-address', function (req, res) {
+  if (!req.session.data['emailAddress']) {
+    req.session.data['emailAddress'] = 'name@domain.com'
+  }
+  res.redirect('/release-7/address')
+})
+
+router.post('/release-7/address', function (req, res) {
+  res.redirect('/release-7/phone-number')
+})
+
+router.post('/release-7/phone-number', function (req, res) {
+  res.redirect('/release-7/single-or-multiple-incidents')
+})
+
+router.post('/release-7/single-or-multiple-incidents', function (req, res) {
+  // Get the answer from the query string
+  var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
+
+  if (singleOrMultipleIncidents === 'It happened over a period of time') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/period-of-abuse-start')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/incident-date')
+  }
+})
+
+router.post('/release-7/period-of-abuse-start', function (req, res) {
+  res.redirect('/release-7/period-of-abuse-end')
+})
+
+router.post('/release-7/period-of-abuse-end', function (req, res) {
+  res.redirect('/release-7/incident-location')
+})
+
+router.post('/release-7/incident-date', function (req, res) {
+  // Get the answer from the query string
+  var incidentDateDay = req.session.data['incident-date-day']
+  var incidentDateMonth = req.session.data['incident-date-month']
+  var incidentDateYear = req.session.data['incident-date-year']
+
+  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
+    // Redirect to the relevant page
+    res.redirect('/release-7/previous-applications')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/incident-location')
+  }
+})
+
+router.post('/release-7/previous-applications', function (req, res) {
+  // Get the answer from the query string
+  var previousApplications = req.session.data['previous-applications']
+
+  if (previousApplications === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/release-7/previous-not-eligible')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/incident-location')
+  }
+})
+
+router.post('/release-7/incident-location', function (req, res) {
+  res.redirect('/release-7/incident-reported')
+})
+
+
+ router.post('/release-7/incident-reported', function (req, res) {
+   // Get the answer from the query string
+   var incidentReported = req.session.data['incidentReported']
+
+   if (incidentReported === 'no') {
+     // Redirect to the relevant page
+     res.redirect('/release-7/do-you-know-offender')
+   } else {
+     // If the variable is any other value (or is missing) render the page requested
+     res.redirect('/release-7/reporting-details-what-force')
+   }
+ })
+
+router.post('/release-7/reporting-details-what-force', function (req, res) {
+  res.redirect('/release-7/reporting-details-police-officer')
+})
+
+router.post('/release-7/reporting-details-police-officer', function (req, res) {
+  res.redirect('/release-7/crime-reference')
+})
+
+router.post('/release-7/crime-reference', function (req, res) {
+  res.redirect('/release-7/do-you-know-offender')
+})
+
+router.post('/release-7/do-you-know-offender', function (req, res) {
+  // Get the answer from the query string
+  var knowOffender = req.session.data['know-offender']
+
+  if (knowOffender === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/release-7/check-your-answers-page')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/offender-name')
+  }
+})
+
+router.post('/release-7/offender-name', function (req, res) {
+
+    res.redirect('/release-7/living-with-offender-before')
+})
+
+router.post('/release-7/living-with-offender-before', function (req, res) {
+  // Get the answer from the query string
+  var withOffenderBefore = req.session.data['living-with-offender-before']
+
+  if (withOffenderBefore === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/release-7/ongoing-relationship')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/living-with-offender-now')
+  }
+})
+
+router.post('/release-7/living-with-offender-now', function (req, res) {
+  // Get the answer from the query string
+  var withOffenderNow = req.session.data['living-with-offender-now']
+
+  if (withOffenderNow === 'no')  {
+    // Redirect to the relevant page
+    res.redirect('/release-7/ongoing-relationship')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/prototype')
+  }
+})
+
+router.post('/release-7/ongoing-relationship', function (req, res) {
+  // Get the answer from the query string
+  var ongoingRelationship = req.session.data['ongoing-relationship']
+
+  if (ongoingRelationship === 'yes')  {
+    // Redirect to the relevant page
+    res.redirect('/release-7/what-is-relationship')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/check-your-answers-page')
+  }
+})
+
+router.post('/release-7/what-is-relationship', function (req, res) {
+  res.redirect('/release-7/check-your-answers-page')
+})
+
+router.post('/release-7/confirmation-page-if-automatic-nil', function (req, res) {
+  // Get the answer from the query string
+  var applyForReview = req.session.data['apply-for-review']
+
+  if (applyForReview  === 'yes') {
+    // Redirect to the relevant page
+    res.redirect('/release-7/confirmation-of-review')
+  } else {
+    // If the variable is any other value (or is missing) render the page requested
+    res.redirect('/release-7/prototype')
+  }
+})
+
+// END OF RELEASE 7 #################################################################################
+
+// RELEASE 6 -  //
+
+
+
+
+// DO NOT DELETE THE FOLLOWING
+
 
 require('./routes-filelist')(router);
 

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Question page
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form"  method="post">
+
+            <!-- <h1 class="govuk-heading-l">
+            What is your full name?
+            </h1> -->
+
+            {% from "input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            "label": {
+            "text": "What's your email address?",
+            "isPageHeading": true,
+            "classes": 'govuk-label--xl'
+          },
+          hint: {
+            text: "We'll use this to contact you about your application for example, to request more information"
+          },
+            "classes": 'govuk-input--width-20',
+            "id": "emailAddress",
+            "name": "emailAddress"
+            }) }}
+
+            {% from "button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+          </form>
+        </div>
+      </div>
+      <div class="design-notes-box">
+        <h3 class="design-notes">Design notes</h3>
+        <p class="design-notes">Added a short piece of guidance - JK</p>
+      </div>
+    </main>
+  </div>
+{% endblock %}

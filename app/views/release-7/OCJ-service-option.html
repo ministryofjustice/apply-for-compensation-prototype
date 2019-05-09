@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Service option
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <div><strong class="govuk-tag warning-tag">CHANGED</strong></div>
+
+    <div class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                    Victims of sexual assault: your options
+                </h1>
+            </legend>
+            <p>We pay compensation for crimes of sexual violence in recognition of the distress and mental trauma suffered. We make payments under a tariff system dependant on the nature of the assault.</p>
+            <p>If you choose this option we'll:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>assess your eligibility </li>
+                <li>ask the police to send us the crime report</li>
+                <li>not need your medical records</li>
+            </ul>
+
+            <p>Do not choose this option if you want to claim for:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>physical injuries</li>
+                <li>disabling mental injuries</li>
+                <li><a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#loss-of-earnings-payments" target="_blank">loss of earnings</a> or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses" target="_blank">special expenses</a></li>
+            </ul>
+
+            <p>These applications are more complex and take longer to decide as we usually need additional information to make a decision.</p>
+
+            <form class="/form-handler" method="post">
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="service-option">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h2 class="govuk-fieldset__heading">
+                                Do you want us to make a decision using only the police report?
+                            </h2>
+                        </legend>
+
+                        <div class="govuk-radios govuk-radios--inline">
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="police-only" name="service-option" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="police-only">
+                                    Yes
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="medical-evidence" name="service-option" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="medical-evidence">
+                                    No, I want you to consider additional information before you make a decision
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <input class="govuk-button" type="submit" value="Continue">
+            </form>
+            <div class="design-notes-box">
+              <h3 class="design-notes">Design notes</h3>
+              <p class="design-notes">Content on this page needs to be re-written it doesn't make sense in the context of the journey. - GW</p>
+              <p class="design-notes">Consider the following:</p>
+              <ul class="govuk-list govuk-list--bullet design-notes">
+                  <li>abbreviations like CICA should never be used unless they are widly used and you can prove that users understand them</li>
+                  <li>don't say 'We want to make your application for compensation as easy as possible' just make it easy. If it's easy you shouldn't have to say it's easy.</li>
+                  <li>why do we need to tell users that we will check their eligibility, don't they expect this of an application service?</li>
+                  <li>why do we need to tell users how long it will take at this point it would be better at the beginning or end of the application </li>
+                  <li>at this point it's a bit late to tell users if they cant use the application service</li>
+                  <li>We need to understand what users need from this content not what we want to tell users</li>
+              </ul>
+
+              <p class="design-notes">As with the previous page I feel this needs to be at the start of the user journey - JK</p>
+                <p class="design-notes">content is as PLADS created it and has never been tested - JK</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
