@@ -115,6 +115,19 @@ require('./views/concepts/police-force-V3/location/routes')(router, viewContent)
 require('./views/concepts/police-force-V3/single-or-multiple-incidents/routes')(router, viewContent);
 require('./views/concepts/police-force-V3/do-you-know-offender/routes')(router, viewContent);
 
+//Police Force Concept V4 AS IS Prototype //
+require('./views/concepts/police-force-V4/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/force/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/country/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/scotland-location/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/england-location/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/wales-location/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/somewhere-else/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/crime-reference/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/incident-date/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/incident-location/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, viewContent);
 
 // END OF MVP #################################################################################
 
@@ -413,6 +426,7 @@ router.post('/release-7/confirmation-page-if-automatic-nil', function (req, res)
 
 
 // DO NOT DELETE THE FOLLOWING
+
 
 require('./routes-filelist')(router);
 
