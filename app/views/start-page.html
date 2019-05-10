@@ -47,6 +47,12 @@
       </uL>
       <p class="govuk-body">You can <a href="https://www.police.uk/contact/101/"  target="_blank">contact the police for any missing information</a>.</p>
 
+
+      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="application/declaration" role="button">Start now</a>
+      
+      {% from "tabs/macro.njk" import govukTabs %}
+
+      {% set eligibilityHtml %}
       <h2 class="govuk-heading-l">
         Eligibility
       </h2>
@@ -60,8 +66,9 @@
         <li>can show that you could not have applied earlier</li>
       </ul>
 
-      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="application/declaration" role="button">Start now</a>
+      {% endset -%}
 
+      {% set otherApplyHtml %}
       <h2 class="govuk-heading-l">
         Other ways to apply
       </h2>
@@ -77,7 +84,9 @@
       Wednesday, 10am to 5pm<br>
       <a href="https://www.gov.uk/call-charges">Find out about call charges.</a>
       </p>
+      {% endset -%}
 
+      {% set helpSupportHtml %}
       <h2 class="govuk-heading-l">Help and support
       </h2>
       <p class="govuk-body">You can get practical or emotional support:</p>
@@ -86,6 +95,34 @@
          <li>in Scotland <a href="https://www.mygov.scot/victim-witness-support/">visit the mygov.scot website</a></li>
         </ul>
       </div>
+
+      {% endset -%}
+
+      {{ govukTabs({
+        items: [
+          {
+            label: "Eligibility",
+            id: "eligibility",
+            panel: {
+              html: eligibilityHtml
+            }
+          },
+          {
+            label: "Other ways to apply",
+            id: "other-apply",
+            panel: {
+              html: otherApplyHtml
+            }
+          },
+          {
+            label: "Help and support",
+            id: "help-support",
+            panel: {
+              html: helpSupportHtml
+            }
+          }
+        ]
+      }) }}
 
     <div class="govuk-grid-column-one-third">
 
