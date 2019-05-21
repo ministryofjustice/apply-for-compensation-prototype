@@ -29,16 +29,8 @@
               </h1>
             </div>
 
-            {% from "input/macro.njk" import govukInput %}
 
-            {{ govukInput({
-                    label: {
-                      "text": compWho
-                    },
-                    id: "comp-who",
-                    name: "comp-who",
-                    value: data['comp-who']
-                  }) }}
+
 
             {% from "input/macro.njk" import govukInput %}
 
@@ -65,7 +57,7 @@
               name: "when",
               type: "No",
               value: data['when'],
-              classes: "govuk-!-width-full",
+              classes: "govuk-!-width-two-thirds",
               label: {
                 text: compDecNo
               },
@@ -82,7 +74,6 @@
               value : data['decision-answer'],
               fieldset: {
                 legend: {
-                  text: compDecQuestion,
                   isPageHeading: true
                 }
               },
