@@ -24,6 +24,25 @@
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
 
+
+
+            {% set appliedBefore %}
+            {{ govukInput({
+                  label: {
+                    "text": compWho
+                  },
+                  id: "comp-who",
+                  name: "comp-who",
+                  classes: "govuk-!-width-two-thirds",
+                  value: data['comp-who']
+                    }) }}
+            {% endset -%}
+
+
+
+
+
+
             {% set compNoHtml %}
             {{ govukInput({
                   id: "comp-no",
@@ -53,7 +72,10 @@
                   items: [
                   {
                     value: "Yes",
-                    text: "Yes"
+                    text: "Yes",
+                    conditional: {
+                      html: appliedBefore
+                    }
                   },
                   {
                     value: "No",
