@@ -13,7 +13,7 @@ module.exports = {
     compensationQuestion: 'Have you applied for or received any other form of compensation?',
     compensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
     compWho:'Who have you applied to or received compensation from?',
-
+    compDecQuestion:'Have they made a decision?',
     compDecYes:'How much was the award?',
     compDecNo:'When will you find out?',
     compNoHint: 'Briefly explain why not',
@@ -115,7 +115,7 @@ module.exports = {
     whatIsRelationshipError: "Enter details of any contact you have with the assailant",
     whatIsRelationshipCheckboxError: "Select the checkbox if you have no contact with the assailant",
     offenderContactHint: "We will not pay compensation if the assailant may benefit from it.",
-    whatCompensationQuestion: 'Have they made a decision?',
+    whatCompensationQuestion: 'Other compensation',
     whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
     whoIsMakingTheApplicationError: 'Select Myself if you are the person applying for compensation',
     whyDelayQuestion: 'Select reasons for the delay in making your application',

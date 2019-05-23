@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
+Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,6 +20,19 @@
 <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
+
+
+            {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+            {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: compDecisionError,
+                        href: "#"
+                      }
+                    ]
+                  }) }}
 
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
@@ -86,7 +99,9 @@
                   isPageHeading: true
                 }
               },
-
+              errorMessage: {
+              text: compDecisionError
+              },
               items: [
                 {
                   value: "Yes",
