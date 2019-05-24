@@ -24,6 +24,25 @@
             {% from 'radios/macro.njk' import govukRadios %}
             {% from "input/macro.njk" import govukInput %}
 
+
+
+            {% set appliedBefore %}
+            {{ govukInput({
+                  label: {
+                    "text": "Who have you applied to or received compensation from?"
+                  },
+                  id: "comp-who",
+                  name: "comp-who",
+                  classes: "govuk-!-width-two-thirds",
+                  value: data['comp-who']
+                    }) }}
+            {% endset -%}
+
+
+
+
+
+
             {% set compNoHtml %}
             {{ govukInput({
                   id: "comp-no",
@@ -31,7 +50,7 @@
                   value: data['comp-no'],
                   classes: "govuk-!-width-two-thirds",
                   label: {
-                    text: compNoHint
+                    text: "Briefly explain why not"
                   }
                 }) }}
             {% endset -%}
@@ -42,18 +61,21 @@
                   currentValue: data['otherCompensation'],
                   fieldset: {
                     legend: {
-                      text: compensationQuestion,
+                      text: "Have you applied for or received any other form of compensation?",
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
                   },
                   hint: {
-                    text: compensationHint
+                    text: "For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation."
                   },
                   items: [
                   {
                     value: "Yes",
-                    text: "Yes"
+                    text: "Yes",
+                    conditional: {
+                      html: appliedBefore
+                    }
                   },
                   {
                     value: "No",
@@ -67,8 +89,9 @@
 
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
-        "text": "Continue"
-      }) }}
+        "text": "Continue",
+          href: "../other-compensation/index"
+      }) }
     </form>
   </div>
 </div>

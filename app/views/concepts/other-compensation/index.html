@@ -24,21 +24,25 @@
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--xl" for="name">
-                  {{ whatCompensationQuestion }}
+                  Have they made a decision?
                 </label>
               </h1>
             </div>
 
             {% from "input/macro.njk" import govukInput %}
 
+{#
             {{ govukInput({
                     label: {
-                      "text": compWho
+                      "text": "Who have you applied to or received compensation from?"
                     },
                     id: "comp-who",
                     name: "comp-who",
                     value: data['comp-who']
                   }) }}
+
+#}
+
 
             {% from "input/macro.njk" import govukInput %}
 
@@ -54,7 +58,7 @@
               value : data['how-much'],
               classes: "govuk-!-width-one-third",
               label: {
-                text: compDecYes
+                text: "How much was the award?"
               }
             }) }}
             {% endset -%}
@@ -65,9 +69,9 @@
               name: "when",
               type: "No",
               value: data['when'],
-              classes: "govuk-!-width-full",
+              classes: "govuk-!-width-two-thirds",
               label: {
-                text: compDecNo
+                text: "When will you find out?"
               },
             hint: {
               text: "Enter an approximate date, for example, December 2019. If you do not know you can say so."
@@ -80,12 +84,10 @@
               idPrefix: "decision-answer",
               name: "decision-answer",
               value : data['decision-answer'],
-              fieldset: {
-                legend: {
-                  text: compDecQuestion,
-                  isPageHeading: true
-                }
-              },
+
+            
+
+
 
               items: [
                 {
