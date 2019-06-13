@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your gender? (optional) - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "diversity",
+  name: "diversity",
+  fieldset: {
+    legend: {
+      text: "Do you want to answer some more personal questions? (optional)",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "You can help make our service fairer and more equal for everyone. Your answers in this section will be anonymous and will not be used to assess your application."
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Our responsibility under the Equality Act 2010
+      </span>
+  </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">The Equality Act requires us to make sure our policies and services advance equality of opportunity, foster good relations between different groups, and eliminate unlawful discrimination, harrassment and victimisation.</p>
+        <p class="govuk-body">There are nine protected characteristics under the Equality Act</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>age</li>
+          <li>disability</li>
+          <li>gender reassignment</li>
+          <li>marriage and civil partnership</li>
+          <li>pregnancy and maternity</li>
+          <li>race</li>
+          <li>religion or belief</li>
+          <li>sex</li>
+          <li>sexual orientation</li>
+        </ul>
+    </div>
+</details>
+
+
+{% from "button/macro.njk" import govukButton %}
+
+<a href="/concepts/gender/error.html" role="button" class="govuk-button" href="/concepts/gender/error.html">
+Continue
+</a>
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
