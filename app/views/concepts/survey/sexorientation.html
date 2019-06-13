@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+
+    {% from "radios/macro.njk" import govukRadios %}
+
+    {% set other %}
+      {{ govukInput({
+        id: "sexorientationother",
+        name: "sexorientationother",
+        type: "other",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Please specifiy"
+        },
+        attributes: {
+          spellcheck: "false"
+        }
+      }) }}
+      {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "sexorientation",
+      name: "sexorientation",
+      fieldset: {
+        legend: {
+          text: "What best describes your sexual orientation",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+      {
+        value: "Bisexual",
+        text: "Bisexual",
+        label: {
+          classes: 'govuk-label--s'
+        },
+        hint: {
+          text: 'attracted to both men and women'
+        }
+      },
+      {
+        value: "Gay or Lesbian",
+        text: "Gay or Lesbian",
+        label: {
+          classes: 'govuk-label--s'
+        },
+        hint: {
+          text: 'attracted to someone of the same sex'
+        }
+      },
+        {
+          value: "Hetrosexual",
+          text: "Hetrosexual / Straight",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          hint: {
+            text: 'attracted to someone of the opposite sex'
+          }
+        },
+
+
+        {
+          value: "Other",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          text: "Other",
+          conditional: {
+            html: other
+      }
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "prefer-not-to-say",
+          text: "Prefer not to say",
+          label: {
+            classes: 'govuk-label'
+          }
+        }
+      ]
+    }) }}
+
+    {% from "button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      "text": "Continue",
+      href: "disabled"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

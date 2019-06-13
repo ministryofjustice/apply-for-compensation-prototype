@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+
+      {{ govukRadios({
+        idPrefix: "gender",
+        name: "gender",
+        fieldset: {
+          legend: {
+            text: "Do you consider yourself to have a disability?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+
+        items: [
+        {
+          value: "No",
+          text: "No"
+        },
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+
+          {
+      divider: "or"
+    },
+          {
+            value: "Prefer not to say",
+            text: "Prefer not to say"
+          }
+        ]
+      }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "religion"
+      }) }}
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
