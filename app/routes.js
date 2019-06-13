@@ -13,6 +13,11 @@ router.get('/', function (req, res) {
     res.render('index')
 })
 
+
+
+
+
+
 // CURRENT RELEASE - RELEASE 8 MVP PROJECT //
 require('./views/application/british-citizen/routes')(router, viewContent);
 require('./views/application/over-18/routes')(router, viewContent);
@@ -131,8 +136,11 @@ require('./views/concepts/police-force-V4/incident-location/routes')(router, vie
 require('./views/concepts/police-force-V4/single-or-multiple-incidents/routes')(router, viewContent);
 require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, viewContent);
 
+
 // END OF MVP #################################################################################
 
+//Extra questions & equal oportunities //
+require('./views/concepts/survey/routes')(router, viewContent);
 
 // RELEASE 7 - 17.12.2018 /////////////////////////////////////////////////////////////////////
 

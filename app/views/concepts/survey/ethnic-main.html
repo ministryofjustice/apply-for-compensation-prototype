@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+
+    {% from "radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "ethnic-group",
+      name: "ethnicgroup",
+      fieldset: {
+        legend: {
+          text: "What is your ethnic group?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "Asian or Asian British",
+          text: "Asian or Asian British",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          hint: {
+            text: 'Includes any Asian background, for example, Bangladeshi, Chinese, Indian, Pakistani.'
+          }
+        },
+        {
+          value: "Black, African, Black British or Carribean",
+          text: "Black, African, Black British or Carribean",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          hint: {
+            text: 'Includes any Black background'
+          }
+        },
+         {
+          value: "Mixed or multiple ethnic groups",
+          text: "Mixed or multiple ethnic groups",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          hint: {
+            text: 'Includes any Mixed background'
+          }
+        },
+        {
+          value: "White",
+          text: "White",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          hint: {
+            text: 'Includes any White background'
+          }
+        },
+        {
+          value: "Another ethnic group",
+          text: "Another ethnic group",
+          label: {
+            classes: 'govuk-label--s'
+          },
+          hint: {
+            text: 'Includes any other ethnic group, for example, Arab'
+          }
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "prefer-not-to-say",
+          text: "Prefer not to say",
+          label: {
+            classes: 'govuk-label'
+          }
+        }
+      ]
+    }) }}
+
+    {% from "button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      "text": "Continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

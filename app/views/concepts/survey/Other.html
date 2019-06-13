@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+
+        {% from "radios/macro.njk" import govukRadios %}
+      {% from "input/macro.njk" import govukInput %}
+
+      {% set otherOtherHtml %}
+        {{ govukInput({
+          id: "ethnicity-mixed-other",
+          name: "ethnicity-mixed-other",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Your ethnic background (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: "Which one best describes your background?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            text: "Arab"
+          },
+          {
+            text: "Another ethnic background",
+            conditional: {
+              html: otherOtherHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "xxxx"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

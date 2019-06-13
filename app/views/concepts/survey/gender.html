@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+    {% set other %}
+      {{ govukInput({
+        id: "genderother",
+        name: "genderspecifiy",
+        type: "other",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Please specifiy"
+        },
+        attributes: {
+          spellcheck: "false"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "gender",
+        name: "gender",
+        fieldset: {
+          legend: {
+            text: "  What is your gender?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+
+        items: [
+        {
+          value: "Female",
+          text: "Female"
+        },
+          {
+            value: "Male",
+            text: "Male"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            conditional: {
+              html: other
+            }
+          },
+          {
+      divider: "or"
+    },
+          {
+            value: "Prefer not to say",
+            text: "Prefer not to say"
+          }
+        ]
+      }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "sexorientation"
+      }) }}
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

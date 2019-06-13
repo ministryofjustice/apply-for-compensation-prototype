@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+
+    {% from "radios/macro.njk" import govukRadios %}
+
+    {% set other %}
+      {{ govukInput({
+        id: "religionother",
+        name: "religionother",
+        type: "other",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Please specifiy"
+        },
+        attributes: {
+          spellcheck: "false"
+        }
+      }) }}
+      {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "religion",
+      name: "religion",
+      fieldset: {
+        legend: {
+          text: "What best describes your religion?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+      {
+        value: "Buddhist",
+        text: "Buddhist"
+      },
+      {
+        value: "Christian",
+        text: "Christian"
+      },
+      {
+       value: "Hindu",
+       text: "Hindu"
+      },
+      {
+        value: "Jewish",
+        text: "Jewish"
+      },
+      {
+        value: "Muslim",
+        text: "Muslim"
+      },
+
+      {
+        value: "Sikh",
+        text: "Sikh"
+      },
+        {
+          value: "Other",
+          text: "Other",
+          conditional: {
+            html: other
+          }
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "prefer-not-to-say",
+          text: "Prefer not to say",
+          label: {
+            classes: 'govuk-label'
+          }
+        }
+      ]
+    }) }}
+
+    {% from "button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      "text": "Continue",
+      href: "ethnic-main"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
