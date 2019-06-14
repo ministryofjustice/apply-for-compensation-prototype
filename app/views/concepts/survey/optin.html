@@ -24,14 +24,37 @@
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--xl" for="name">
-                  Would you like to complete a couple of extra questions
+                  Do you want to answer more questions about yourself? (optional)
                 </label>
               </h1>
             </div>
 
-            <p>
-              This will help us identifiy the range of people applying and help others in the future.
-            </p>
+            <span id="diversity-question-hint" class="govuk-hint">
+              You can help make our service fairer and more equal for everyone. Your answers in this section will be anonymous and will not be used to assess your application.
+              </span>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Our responsibility under the Equality Act 2010
+                  </span>
+              </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">The Equality Act requires us to make sure our policies and services advance equality of opportunity, foster good relations between different groups, and eliminate unlawful discrimination, harrassment and victimisation.</p>
+                    <p class="govuk-body">There are nine protected characteristics under the Equality Act</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>age</li>
+                      <li>disability</li>
+                      <li>gender reassignment</li>
+                      <li>marriage and civil partnership</li>
+                      <li>pregnancy and maternity</li>
+                      <li>race</li>
+                      <li>religion or belief</li>
+                      <li>sex</li>
+                      <li>sexual orientation</li>
+                    </ul>
+                </div>
+            </details>
 
             {% from "radios/macro.njk" import govukRadios %}
 
