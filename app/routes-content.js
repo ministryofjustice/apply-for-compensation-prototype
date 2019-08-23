@@ -31,7 +31,7 @@ module.exports = {
     crimeReferenceNumberQuestionCA: 'Crime reference number?',
     crimeReferenceError: 'Enter the crime reference number',
     crimeReportedDateHint: 'For example, 31 3 2018. You can enter an approximate date',
-    crimeReportedDateQuestion: 'When was the crime reported to police?',
+    crimeReportedDateQuestion: 'When was the crime reported to the police?',
     dateOfBirthQuestion: "Enter your date of birth",
     declarationHeading: 'Declaration',
     doYouKnowOffenderQuestion: "Do you know the name of the assailant?",
