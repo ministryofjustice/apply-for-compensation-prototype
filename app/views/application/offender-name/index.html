@@ -28,15 +28,15 @@
               {{ offenderNameQuestion }}
             </label>
           </h1>
-          <span id="waste-hint" class="govuk-hint">
-            {{ offenderNameHint }}
-          </span>
         </div>
 
         <div id="offenderName">
           {{ govukInput({
             label: {
               "text": offenderNameQuestionCA
+            },
+            hint: {
+              "text": offenderNameHint
             },
             id: "first-name-offender",
             name: "first-name-offender",
