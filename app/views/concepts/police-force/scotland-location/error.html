@@ -4,7 +4,7 @@ Error: {{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -37,8 +37,8 @@ Error: {{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
         </h1>
       </div>
 
-      {% from "input/macro.njk" import govukInput %}
-      {% from "error-message/macro.njk" import govukErrorMessage %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
 
       {{ govukInput({
             "label": {

@@ -3,18 +3,18 @@
   Other compensation
 </h2>
 
-<dl class="app-check-your-answers app-check-your-answers--long">
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
   <!-- Previously applied question --->
 
-    <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       {{ previousApplicationsQuestion }}
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['previous-applications'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="previous-applications">
         Change<span class="govuk-visually-hidden">{{ previousApplicationsQuestion }} </span>
       </a>
@@ -22,14 +22,14 @@
   </div>
 
   {% if data['previous-applications'] === 'Yes' %}
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       {{ previousReferenceHint }}
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['previous-reference'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="previous-applications">
         Change<span class="govuk-visually-hidden"> {{ previousReferenceHint }}</span>
       </a>
@@ -39,14 +39,14 @@
 
   <!-- Compensation question --->
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ compensationQuestion }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['otherCompensation'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="compensation">
       Change<span class="govuk-visually-hidden"> compensation</span>
     </a>
@@ -54,28 +54,28 @@
 </div>
 
 {% if data['otherCompensation'] === 'Yes' %}
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ compWho }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['comp-who'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
       Change<span class="govuk-visually-hidden">who you applied to or recieved compensation from</span>
     </a>
   </dd>
 </div>
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ compDecQuestion }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['decision-answer'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
       Change<span class="govuk-visually-hidden">decision</span>
     </a>
@@ -84,14 +84,14 @@
 {% endif %}
 
 {% if data['otherCompensation'] === 'No' %}
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ compNoHint }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['comp-no'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="compensation-why-not">
       Change<span class="govuk-visually-hidden"> reason you didn't apply for compensation</span>
     </a>
@@ -100,14 +100,14 @@
 {% endif %}
 
 {% if data['decision-answer'] === 'Yes' %}
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ compDecYes }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['how-much'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
       Change<span class="govuk-visually-hidden">the amount of award</span>
     </a>
@@ -116,14 +116,14 @@
 {% endif %}
 
 {% if data['decision-answer'] === 'No' %}
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ compDecNo }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['when'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
       Change<span class="govuk-visually-hidden">wnen you'll expect to hear</span>
     </a>

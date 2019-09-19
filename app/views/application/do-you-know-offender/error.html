@@ -5,7 +5,7 @@ Error: {{ doYouKnowOffenderQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -23,7 +23,7 @@ Error: {{ doYouKnowOffenderQuestion }} - {{ serviceName }} - GOV.UK
 
     <form class="form" method="post">
 
-      {% from "error-summary/macro.njk" import govukErrorSummary %}
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
       {{ govukErrorSummary({
               titleText: "There is a problem",
@@ -35,7 +35,7 @@ Error: {{ doYouKnowOffenderQuestion }} - {{ serviceName }} - GOV.UK
               ]
             }) }}
 
-      {% from "radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
               classes: "govuk-radios--inline",
@@ -63,7 +63,7 @@ Error: {{ doYouKnowOffenderQuestion }} - {{ serviceName }} - GOV.UK
                 }
               ]
             }) }}
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
             "text": "Continue"
             }) }}

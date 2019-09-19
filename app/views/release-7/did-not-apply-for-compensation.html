@@ -12,7 +12,7 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
             
-          {% from "textarea/macro.njk" import govukTextarea %}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
           {{ govukTextarea({
             "id": "why-not-apply-compensation-other",
             "name": "why-not-apply-compensation-other",
@@ -23,7 +23,7 @@
             }
           }) }}
 
-          {% from "button/macro.njk" import govukButton %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
           {{ govukButton({
           "text": "Continue"
           }) }}

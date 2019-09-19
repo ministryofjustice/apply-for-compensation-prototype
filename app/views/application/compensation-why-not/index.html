@@ -4,7 +4,7 @@ Compensation from other sources
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
@@ -25,7 +25,7 @@ Compensation from other sources
       What is your full name?
     </h1> -->
 
-    {% from "textarea/macro.njk" import govukTextarea %}
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
     {{ govukTextarea({
       "label": {
@@ -39,7 +39,7 @@ Compensation from other sources
       'value' : data['why-not-claim']
     }) }}
 
-    {% from "button/macro.njk" import govukButton %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       "text": "Continue"

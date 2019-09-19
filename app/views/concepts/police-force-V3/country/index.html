@@ -5,7 +5,7 @@ In which country is the investigating police force? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
@@ -22,7 +22,7 @@ In which country is the investigating police force? - {{ serviceName }} - GOV.UK
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             idPrefix: "country",

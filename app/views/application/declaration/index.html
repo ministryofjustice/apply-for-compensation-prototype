@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
@@ -23,7 +23,7 @@
       {{ declarationHeading }}
     </h1>
     <p class="govuk-body">By continuing, you confirm that the information you will give is true as far as you know.</p>
-    {% from "warning-text/macro.njk" import govukWarningText %}
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
     {{ govukWarningText({
           text: warningText,
@@ -32,7 +32,7 @@
 
     <form class="form" method="post">
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
             "text": "Continue"
           }) }}

@@ -6,7 +6,7 @@ Enquiry submitted - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"

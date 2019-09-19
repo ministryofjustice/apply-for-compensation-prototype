@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -21,7 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
             idPrefix: "applicationDelay",
@@ -57,7 +57,7 @@
             ]
           }) }}
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
             {{ govukTextarea({
                   name: "delay-application",
@@ -69,7 +69,7 @@
                   }
                 }) }}
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
           "text": "Continue"
           }) }}

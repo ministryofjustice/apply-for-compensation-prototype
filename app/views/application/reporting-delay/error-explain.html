@@ -5,7 +5,7 @@ Reporting delay
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
@@ -21,7 +21,7 @@ Reporting delay
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-      {% from "error-summary/macro.njk" import govukErrorSummary %}
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
       {{ govukErrorSummary({
               titleText: "There is a problem",
@@ -33,8 +33,8 @@ Reporting delay
               ]
             }) }}
 
-      {% from "checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
             idPrefix: "reportingDelay",
@@ -66,7 +66,7 @@ Reporting delay
             ]
           }) }}
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
             {{ govukTextarea({
                   name: "delay-reporting",
@@ -81,7 +81,7 @@ Reporting delay
                 classes: "govuk-label--l"
                 }) }}
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
           "text": "Continue"
           }) }}

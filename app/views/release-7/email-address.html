@@ -14,7 +14,7 @@
             What is your full name?
             </h1> -->
 
-            {% from "input/macro.njk" import govukInput %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
 
             {{ govukInput({
             "label": {
@@ -30,7 +30,7 @@
             "name": "emailAddress"
             }) }}
 
-            {% from "button/macro.njk" import govukButton %}
+            {% from "govuk/components/button/macro.njk" import govukButton %}
 
             {{ govukButton({
             "text": "Continue"

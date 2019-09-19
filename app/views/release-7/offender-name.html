@@ -20,7 +20,7 @@
                 </h1>
               </div>
 
-              {% from "input/macro.njk" import govukInput %}
+              {% from "govuk/components/input/macro.njk" import govukInput %}
 
               {{ govukInput({
                 label: {
@@ -30,7 +30,7 @@
                 name: "first-name-offender"
               }) }}
 
-              {% from "input/macro.njk" import govukInput %}
+              {% from "govuk/components/input/macro.njk" import govukInput %}
 
               {{ govukInput({
                 label: {
@@ -41,7 +41,7 @@
               }) }}
 
 
-              {% from "input/macro.njk" import govukInput %}
+              {% from "govuk/components/input/macro.njk" import govukInput %}
 
 
               <input class="govuk-button" type="submit" value="Continue">

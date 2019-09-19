@@ -12,7 +12,7 @@
           <form class="form" method="post">
 
 
-          {% from "textarea/macro.njk" import govukTextarea %}
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
           {{ govukTextarea({
             "id": "convictions",
@@ -27,7 +27,7 @@
           }
           }) }}
 
-          {% from "button/macro.njk" import govukButton %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
           "text": "Continue"

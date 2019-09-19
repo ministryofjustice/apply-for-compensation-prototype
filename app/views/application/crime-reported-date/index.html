@@ -5,7 +5,7 @@
 {% endblock %}
 
  {% block beforeContent %}
- {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+ {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
  {{ govukPhaseBanner({
    tag: {
      text: "beta"
@@ -22,7 +22,7 @@
       <div class="govuk-grid-column-two-thirds">
 
         <form class="form"  method="post">
-          {% from "date-input/macro.njk" import govukDateInput %}
+          {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
           {{ govukDateInput({
             id: 'incidentReported',
             namePrefix: 'incidentReported',
@@ -37,7 +37,7 @@
           text: 'For example, 31 3 2018. You can enter an approximate date. '
             }
           }) }}
-          {% from "button/macro.njk" import govukButton %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
           "text": "Continue"

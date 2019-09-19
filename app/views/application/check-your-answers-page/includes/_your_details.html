@@ -6,31 +6,31 @@
 
 <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
 <!--   * `app-check-your-answers--short` for short questions -->
-<!--   * `app-check-your-answers__questions-long` for long questions -->
+<!--   * `govuk-summary-list__keys-long` for long questions -->
 <!--   * none for single group of q&a -->
-<dl class="app-check-your-answers app-check-your-answers--long">
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
       Name
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="name">
         Change<span class="govuk-visually-hidden"> name</span>
       </a>
     </dd>
   </div>
 
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       {{nameOtherQuestion}}
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['haveOtherName'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="name-have-other">
         Change<span class="govuk-visually-hidden">have you ever been known by any other names</span>
       </a>
@@ -38,14 +38,14 @@
   </div>
 
   {% if data['haveOtherName'] === 'Yes' %}
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Other names
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['nameOther'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="name-other">
         Change<span class="govuk-visually-hidden"> other name</span>
       </a>
@@ -53,53 +53,53 @@
   </div>
   {% endif %}
 <!-- REMOVED GENDER QUESTION
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Gender
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['gender'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="gender">
         Change<span class="govuk-visually-hidden">your gender</span>
       </a>
     </dd>
   </div>
 -->
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Date of birth
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="date-of-birth">
         Change<span class="govuk-visually-hidden"> date of birth</span>
       </a>
     </dd>
   </div>
 
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Email address
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['emailAddress'] }}<br />
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="email-address">
         Change<span class="govuk-visually-hidden"> email address</span>
       </a>
     </dd>
   </div>
 
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Address
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['address-line-1'] }}<br />
       {% if data['address-line-2'] %}
       {{ data['address-line-2'] }}<br />
@@ -112,21 +112,21 @@
       {{ data['address-postcode'] }}<br />
       {% endif %}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="address-manually">
         Change<span class="govuk-visually-hidden"> address</span>
       </a>
     </dd>
   </div>
 
-  <div class="app-check-your-answers__contents">
-    <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       Telephone number
     </dt>
-    <dd class="app-check-your-answers__answer">
+    <dd class="govuk-summary-list__value">
       {{ data['phoneNumber'] }}
     </dd>
-    <dd class="app-check-your-answers__change">
+    <dd class="govuk-summary-list__actions">
       <a href="phone-number">
         Change<span class="govuk-visually-hidden"> phone number</span>
       </a>
@@ -137,70 +137,70 @@
 <!-- ** Your eligibility ************************************************************************************************************************ -->
 
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ britishCitizenQuestion }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['britishCitizen'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="british-citizen">
       Change<span class="govuk-visually-hidden">British citizen </span>
     </a>
   </dd>
 </div>
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ over18Question }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['over18'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="over-18">
       Change<span class="govuk-visually-hidden">{{ over18Question }} </span>
     </a>
   </dd>
 </div>
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ whoIsMakingTheApplicationQuestion }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['direct-applicant'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="who-is-making-the-application">
       Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
     </a>
   </dd>
 </div>
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     {{ sexualAbuseQuestion }}
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['sexualAssault'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="sexual-assault-application">
       Change<span class="govuk-visually-hidden">{{ sexualAbuseQuestion }} </span>
     </a>
   </dd>
 </div>
 
-<div class="app-check-your-answers__contents">
-  <dt class="app-check-your-answers__question">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
     Option you've selected
   </dt>
-  <dd class="app-check-your-answers__answer">
+  <dd class="govuk-summary-list__value">
     {{ data['yourChoice'] }}
   </dd>
-  <dd class="app-check-your-answers__change">
+  <dd class="govuk-summary-list__actions">
     <a href="your-choices">
       Change<span class="govuk-visually-hidden">{{ yourChoicesHeading }} </span>
     </a>

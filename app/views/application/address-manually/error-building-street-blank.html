@@ -5,7 +5,7 @@ Error: {{ addressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -39,8 +39,8 @@ Error: {{ addressQuestion }} - {{ serviceName }} - GOV.UK
         </h1>
       </div>
 
-      {% from "input/macro.njk" import govukInput %}
-      {% from "fieldset/macro.njk" import govukFieldset %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
       {% call govukFieldset({
       legend: {

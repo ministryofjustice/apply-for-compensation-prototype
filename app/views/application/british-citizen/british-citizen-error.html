@@ -7,7 +7,7 @@ Error: {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
 
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -28,7 +28,7 @@ Error: {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
         </h1> -->
 
     <form class="form" method="post">
-      {% from "error-summary/macro.njk" import govukErrorSummary %}
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
       {{ govukErrorSummary({
               titleText: "There is a problem",
@@ -40,7 +40,7 @@ Error: {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
               ]
             }) }}
 
-      {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",

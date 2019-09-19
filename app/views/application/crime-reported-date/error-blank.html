@@ -4,7 +4,7 @@ Error: {{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-width-container">
-    {% from "phase-banner/macro.njk" import govukPhaseBanner %}
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
     {{ govukPhaseBanner({
       tag: {
         text: "beta"
@@ -16,7 +16,7 @@ Error: {{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
-            {% from "error-summary/macro.njk" import govukErrorSummary %}
+            {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
             {{ govukErrorSummary({
               titleText: "There is a problem",
@@ -28,7 +28,7 @@ Error: {{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
               ]
             }) }}
 
-            {% from "date-input/macro.njk" import govukDateInput %}
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
               id: 'incidentReported',
               name: 'incidentReported',
@@ -62,7 +62,7 @@ Error: {{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
             })
             }}
 
-            {% from "button/macro.njk" import govukButton %}
+            {% from "govuk/components/button/macro.njk" import govukButton %}
 
             {{ govukButton({
             "text": "Continue"

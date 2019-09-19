@@ -4,7 +4,7 @@ Error: {{ periodOfAbuseEndQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -20,7 +20,7 @@ Error: {{ periodOfAbuseEndQuestion }} - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-      {% from "error-summary/macro.njk" import govukErrorSummary %}
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
       {{ govukErrorSummary({
               titleText: "There is a problem",
@@ -77,7 +77,7 @@ Error: {{ periodOfAbuseEndQuestion }} - {{ serviceName }} - GOV.UK
                       </div>
                 </details>
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
             "text": "Continue"

@@ -28,16 +28,16 @@
         <!--   * `govuk-check-your-answers--short` for short questions -->
         <!--   * `govuk-check-your-answers__questions-long` for long questions -->
         <!--   * none for single group of q&a -->
-        <dl class="app-check-your-answers app-check-your-answers--long">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Name
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="name">
                 Change<span class="visually-hidden"> name</span>
               </a>
@@ -45,14 +45,14 @@
           </div>
 
           {% if data['other-names'] %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Other names
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['other-names'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="name">
                   Change<span class="visually-hidden"> other name</span>
                 </a>
@@ -60,60 +60,60 @@
             </div>
           {% endif %}
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Date of birth
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="date-of-birth">
                 Change<span class="visually-hidden"> date of birth</span>
               </a>
             </dd>
           </div>
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Email address
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['emailAddress'] }}<br />
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="email-address">
                 Change<span class="visually-hidden"> email address</span>
               </a>
             </dd>
           </div>
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Address
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['address-line-1'] }}<br />
               {{ data['address-line-2'] }}<br />
               {{ data['address-town'] }}<br />
               {{ data['address-county'] }}<br />
               {{ data['address-postcode'] }}<br />
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="address">
                 Change<span class="visually-hidden"> address</span>
               </a>
             </dd>
           </div>
 
-          <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Telephone number
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['phoneNumber'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="phone-number">
                   Change<span class="visually-hidden"> phone number</span>
                 </a>
@@ -125,16 +125,16 @@
           Your Eligibility
         </h2>
 
-        <dl class="app-check-your-answers app-check-your-answers--long">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
                 Have you applied for compensation from any other sources?
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['otherCompensation'] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="compensation">
                 Change<span class="visually-hidden"> compensation</span>
               </a>
@@ -142,27 +142,27 @@
           </div>
 
           {% if data['otherCompensation'] === 'yes' %}
-          <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Who did you claim compensation from?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['whoPaid'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="compensation">
                   Change<span class="visually-hidden"> who paid?</span>
                 </a>
               </dd>
             </div>
-            <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   How much compensation did you get, if applicable?
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['howMuch'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="compensation">
                     Change<span class="visually-hidden"> compensation</span>
                   </a>
@@ -170,14 +170,14 @@
               </div>
           {% endif %}
 
-          <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Are you a British citizen?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['britishCitizen'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="british-citizen">
                   Change<span class="visually-hidden">British citizen </span>
                 </a>
@@ -185,14 +185,14 @@
             </div>
 
             {% if data['britishCitizen'] === 'no' %}
-            <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                     Are you ordinarily resident in the UK?
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['ordinarily-resident'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="residence-1">
                     Change<span class="visually-hidden"> ordinarily resident </span>
                   </a>
@@ -200,14 +200,14 @@
               </div>
             {% endif %}
 
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                   Have you ever been convicted of a crime?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['criminalConvictions'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="criminal-convictions">
                   Change<span class="visually-hidden"> criminal convictions</span>
                 </a>
@@ -215,14 +215,14 @@
             </div>
 
             {% if data['criminalConvictions'] === 'yes' %}
-            <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                     Tell us about your convictions
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['convictions'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="tell-criminal-convictions">
                     Change<span class="visually-hidden"> tell us your convictions</span>
                   </a>
@@ -235,44 +235,44 @@
           About the crime
         </h2>
 
-        <dl class="app-check-your-answers app-check-your-answers--long">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-            <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Was the crime reported to the police?
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['incidentReported'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="incident-reported">
                     Change<span class="visually-hidden"> incident reported</span>
                   </a>
                 </dd>
               </div>
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                     When was the crime reported to police?
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="incident-reported">
                     Change<span class="visually-hidden"> date incident was reported</span>
                   </a>
                 </dd>
               </div>
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Where did the crime happen?
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['incident-location'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="incident-location">
                     Change<span class="visually-hidden"> incident location</span>
                   </a>
@@ -280,14 +280,14 @@
               </div>
 
               {% if data['incident-location'] === 'Somewhere else' %}
-              <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                     Tell us where the crime happened
                   </dt>
-                  <dd class="app-check-your-answers__answer">
+                  <dd class="govuk-summary-list__value">
                     {{ data['somewhere-else'] }}
                   </dd>
-                  <dd class="app-check-your-answers__change">
+                  <dd class="govuk-summary-list__actions">
                     <a href="incident-location">
                       Change<span class="visually-hidden"> other place crime happened</span>
                     </a>
@@ -296,14 +296,14 @@
                 {% endif%}
 
 
-          <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Did the crime happen once or over a period of time?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['single-or-multiple-incidents'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="single-or-multiple-incidents">
                   Change<span class="visually-hidden"> single or multiple incident</span>
                 </a>
@@ -311,14 +311,14 @@
             </div>
 
             {% if data['single-or-multiple-incidents'] === 'It happened once' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 When did the crime happen?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                   {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="incident-date">
                   Change<span class="visually-hidden"> incident date</span>
                 </a>
@@ -327,27 +327,27 @@
             {% endif %}
 
             {% if data['single-or-multiple-incidents'] === 'It happened over a period of time' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                  When did it start?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['period-of-abuse-start-day'] }}/{{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="period-of-abuse-start">
                   Change<span class="visually-hidden"> start of the incidents</span>
                 </a>
               </dd>
             </div>
-            <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                     When did it end?
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['period-of-abuse-end-day'] }}/{{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="period-of-abuse-end">
                     Change<span class="visually-hidden"> end of the incidents</span>
                   </a>
@@ -356,55 +356,55 @@
             {% endif %}
 
             {% if data['incidentReported'] === 'yes' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                   What police force was the crime reported to?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['police-force'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="reporting-details-what-force">
                   Change<span class="visually-hidden"> what police force</span>
                 </a>
               </dd>
             </div>
 
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                   police officer's name
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['police-officer-name'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="reporting-details-police-officer">
                   Change<span class="visually-hidden"> police officer name</span>
                 </a>
               </dd>
             </div>
-            <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                     police officer's ID number
                 </dt>
-                <dd class="app-check-your-answers__answer">
+                <dd class="govuk-summary-list__value">
                   {{ data['police-officer-id'] }}
                 </dd>
-                <dd class="app-check-your-answers__change">
+                <dd class="govuk-summary-list__actions">
                   <a href="reporting-details-police-officer">
                     Change<span class="visually-hidden"> police officer ID</span>
                   </a>
                 </dd>
               </div>
 
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 What's the crime reference number?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['crimeReferenceNumber'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="crime-reference">
                   Change<span class="visually-hidden"> crime reference</span>
                 </a>
@@ -418,16 +418,16 @@
           About the offender
         </h2>
 
-        <dl class="app-check-your-answers app-check-your-answers--long">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Do you know the person who attacked you?
             </dt>
-            <dd class="app-check-your-answers__answer">
+            <dd class="govuk-summary-list__value">
               {{ data['know-offender'] }}
             </dd>
-            <dd class="app-check-your-answers__change">
+            <dd class="govuk-summary-list__actions">
               <a href="do-you-know-offender">
                 Change<span class="visually-hidden"> know the offender</span>
               </a>
@@ -435,42 +435,42 @@
           </div>
 
           {% if data['know-offender'] === 'yes' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 What's the name of the person who attacked you?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['first-name-offender'] }}&nbsp;{{ data['last-name-offender'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="offender-name">
                   Change<span class="visually-hidden"> living with the offender at the time</span>
                 </a>
               </dd>
             </div>
 
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Were you and the person who attacked you living together as family at the time?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['living-with-offender-before'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="living-with-offender-before">
                   Change<span class="visually-hidden"> living with the offender at the time</span>
                 </a>
               </dd>
             </div>
             {% if data['living-with-offender-before'] === 'yes' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Do you and the person who attacked you live together now?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['living-with-offender-now'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="living-with-offender-now">
                   Change<span class="visually-hidden"> living with the offender now</span>
                 </a>
@@ -479,14 +479,14 @@
             {% endif %}
 
             {% if data['living-with-offender-before'] === 'no' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Do you still have contact with them?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['ongoing-relationship'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="ongoing-relationship">
                   Change<span class="visually-hidden"> ongoing relationship with the offender</span>
                 </a>
@@ -495,14 +495,14 @@
             {% endif %}
 
             {% if data['ongoing-relationship'] === 'yes' %}
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                   What contact do you have with them?
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="govuk-summary-list__value">
                 {{ data['relationship-text'] }}
               </dd>
-              <dd class="app-check-your-answers__change">
+              <dd class="govuk-summary-list__actions">
                 <a href="what-is-relationship">
                   Change<span class="visually-hidden"> type of relationship with the offender</span>
                 </a>

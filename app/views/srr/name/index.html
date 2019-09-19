@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -29,7 +29,7 @@
         </h1>
       </div>
 
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
             "label": {
@@ -41,7 +41,7 @@
             "value": data['title']
             }) }}
 
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
               label: {
@@ -52,7 +52,7 @@
               value: data['first-name']
             }) }}
 
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
               label: {
@@ -62,7 +62,7 @@
               name: "last-name",
               value: data['last-name']
             }) }}
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukButton({
                 "text": "Continue"

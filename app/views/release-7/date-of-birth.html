@@ -10,7 +10,7 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
-            {% from "date-input/macro.njk" import govukDateInput %}
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
             {{ govukDateInput({
             id: 'dob',
             name: 'dob',
@@ -38,7 +38,7 @@
             })
             }}
 
-            {% from "button/macro.njk" import govukButton %}
+            {% from "govuk/components/button/macro.njk" import govukButton %}
 
             {{ govukButton({
             "text": "Continue"

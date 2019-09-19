@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
@@ -37,7 +37,7 @@
           <a href="address">Change</a></p>
 
       </div>
-      {% from "select/macro.njk" import govukSelect %}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
 
       {{ govukSelect({
           id: "address-lookup-result",

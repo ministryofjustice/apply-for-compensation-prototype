@@ -4,7 +4,7 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
@@ -20,7 +20,7 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
-            {% from "error-summary/macro.njk" import govukErrorSummary %}
+            {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
             {{ govukErrorSummary({
                     titleText: "There is a problem",
@@ -40,7 +40,7 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
               </h1>
             </div>
 
-            {% from "input/macro.njk" import govukInput %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
 
             {{ govukInput({
                     label: {
@@ -54,11 +54,11 @@ Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
                   }
                   }) }}
 
-            {% from "input/macro.njk" import govukInput %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
 
-            {% from "radios/macro.njk" import govukRadios %}
-            {% from "input/macro.njk" import govukInput %}
-           {% from "date-input/macro.njk" import govukDateInput %}
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+           {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
             {% set yesHtml %}
             {{ govukInput({

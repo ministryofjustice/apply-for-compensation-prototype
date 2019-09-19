@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
    tag: {
      text: "beta"
@@ -22,7 +22,7 @@
   <div class="govuk-grid-column-two-thirds">
       <form class="form" method="post">
 
-    {% from "radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {% set other %}
       {{ govukInput({
@@ -105,7 +105,7 @@
       ]
     }) }}
 
-    {% from "button/macro.njk" import govukButton %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       "text": "Continue",

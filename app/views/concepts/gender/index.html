@@ -4,7 +4,7 @@ What other names have you used? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -21,7 +21,7 @@ What other names have you used? - {{ serviceName }} - GOV.UK
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
               classes: "govuk-input--width-20",

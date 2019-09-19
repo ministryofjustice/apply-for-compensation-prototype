@@ -16,8 +16,8 @@
         <div class="govuk-grid-column-two-thirds">
 
             <form class="/form-handler"  method="post">
-              {% from "input/macro.njk" import govukInput %}
-        {% from "fieldset/macro.njk" import govukFieldset %}
+              {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
         {% call govukFieldset({
           legend: {
@@ -47,7 +47,7 @@
 
 
         {% endcall %}
-        {% from "button/macro.njk" import govukButton %}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
 
         {{ govukButton({
         "text": "Continue"

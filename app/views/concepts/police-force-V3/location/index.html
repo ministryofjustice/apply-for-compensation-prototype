@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -21,7 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 <h1 class="govuk-heading-xl">Where did the crime happen?</h1>
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
       <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
       {{ govukInput({
 
@@ -46,7 +46,7 @@
                   "name": "WalesLocation"
                   }) }}
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
             "text": "Continue"

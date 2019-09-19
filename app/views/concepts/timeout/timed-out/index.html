@@ -5,7 +5,7 @@ You have timed out - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -26,7 +26,7 @@ You have timed out - {{ serviceName }} - GOV.UK
     <p class="govuk-body">We have reset your application to keep your information secure. We did this because you did not do anything for 30 minutes.</p>
 
     <form class="form" method="post">
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
               html: 'Start again'
           }) }}

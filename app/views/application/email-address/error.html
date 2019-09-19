@@ -4,7 +4,7 @@ Error: {{ emailAddressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "beta"
@@ -25,7 +25,7 @@ Error: {{ emailAddressQuestion }} - {{ serviceName }} - GOV.UK
             What is your full name?
             </h1> -->
 
-      {% from "input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukErrorSummary({
               titleText: "There is a problem",
@@ -54,7 +54,7 @@ Error: {{ emailAddressQuestion }} - {{ serviceName }} - GOV.UK
             "value": data['emailAddress']
             }) }}
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
             "text": "Continue"

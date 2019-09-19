@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
             "classes": "govuk-radios",
             "idPrefix": "direct-applicant",
@@ -41,7 +41,7 @@
             ]
             }) }}
 
-      {% from "button/macro.njk" import govukButton %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
             "text": "Continue"
             }) }}

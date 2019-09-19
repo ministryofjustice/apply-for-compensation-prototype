@@ -13,14 +13,14 @@ Decision letter - {{ serviceName }} - GOV.UK
       We have decided to offer you £4040 compensation
       </h1>
 
-      {% from "warning-text/macro.njk" import govukWarningText %}
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
             text: "You must accept or reject this offer by 31 March 2019. We may cancel or reduce the offer if you do not reply in time",
             iconFallbackText: "Warning"
           }) }}
 
-      {% from "tabs/macro.njk" import govukTabs %}
+      {% from "govuk/components/tabs/macro.njk" import govukTabs %}
 
       {% set decisionSummaryHtml %}
       <h2 class="govuk-heading-l">How we made our decision</h2>
@@ -58,7 +58,7 @@ Decision letter - {{ serviceName }} - GOV.UK
       <p class="govuk-body-m">I promise to repay any money I receive in damages, settlement or other compensation for the injuries described in this application.</p>
       <p class="govuk-body-m">I understand that I may face court action to recover such payments if I do not disclose or repay them.</p>
 
-      {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
@@ -146,7 +146,7 @@ Decision letter - {{ serviceName }} - GOV.UK
       <p class="govuk-body-m">I promise to repay any money I receive in damages, settlement or other compensation for the injuries described in this application.</p>
       <p class="govuk-body-m">I understand that I may face court action to recover such payments if I do not disclose or repay them.</p>
 
-      {% from 'radios/macro.njk' import govukRadios %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
