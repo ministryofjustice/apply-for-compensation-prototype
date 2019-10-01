@@ -9,3 +9,7 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
+app/views/concepts/change-date/date-of-birth/routes.js
+app/views/concepts/change-date/date-of-birth/index.html
+app/views/concepts/change-date/date-of-birth/routes.js
+app/views/concepts/change-date/date-of-birth/index.html
