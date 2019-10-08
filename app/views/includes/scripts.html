@@ -6,3 +6,17 @@
 {% if useAutoStoreData %}
 <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
+
+<script src="/public/javascripts/application.js"></script>
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+<script type="text/javascript">
+  var selectEl = document.querySelector('#police-forces')
+  accessibleAutocomplete.enhanceSelectElement({
+    autoselect: true,
+    confirmOnBlur: true,
+    defaultValue: "",
+    minLength: 2,
+    selectElement: selectEl
+  })
+</script>
