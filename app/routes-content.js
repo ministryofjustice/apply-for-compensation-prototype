@@ -11,7 +11,7 @@ module.exports = {
     britishCitizenQuestion: 'Are you a British citizen or EU national?',
     britishCitizenError: 'Select yes if you are a British citizen or EU national',
     compensationQuestion: 'Have you applied for or received any other form of compensation?',
-    compensationHint: 'For example, if you claimed insurance, sought civil damages, or a court decided you should get compensation.',
+    compensationHint: 'For example, if you sought civil damages or a court decided you should get compensation.',
     compWho:'Who have you applied to or received compensation from?',
     compDecQuestion:'Have they made a decision?',
     compDecYes:'How much was the award?',
