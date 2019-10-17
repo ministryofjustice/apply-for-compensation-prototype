@@ -40,7 +40,7 @@ module.exports = {
     offenderNameError: "Enter the offender's name",
     emailAddressError: "Enter your email address, for example john.smith@email.com",
     emailAddressErrorSubHeader: "Enter your email address?",
-    emailAddressHint: "We'll use this to contact you about your application for example, to request more information.",
+    emailAddressHint: "We'll use this to contact you about your application, for example, to request more information.",
     emailAddressQuestion: "Enter your email address",
     errorBeforeIncident: "Your date of birth must be before the crime happened",
     errorIncompleteMessage: "Enter your date of birth and include a day, month and year",
