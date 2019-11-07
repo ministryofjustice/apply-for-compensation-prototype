@@ -137,6 +137,26 @@ require('./views/concepts/police-force-V4/single-or-multiple-incidents/routes')(
 require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, viewContent);
 
 
+//Minors //
+require('./views/concepts/minors/british-citizen/routes')(router, viewContent);
+require('./views/concepts/minors/care-order/routes')(router, viewContent);
+require('./views/concepts/minors/care-order-details/routes')(router, viewContent);
+require('./views/concepts/minors/date-of-birth/routes')(router, viewContent);
+require('./views/concepts/minors/impact-on-you/routes')(router, viewContent);
+require('./views/concepts/minors/incident-reported/routes')(router, viewContent);
+require('./views/concepts/minors/reporting-crime-not-reported/routes')(router, viewContent);
+require('./views/concepts/minors/sexual-assault-application/routes')(router, viewContent);
+require('./views/concepts/minors/transition/routes')(router, viewContent);
+require('./views/concepts/minors/victim-name/routes')(router, viewContent);
+require('./views/concepts/minors/victim-name-have-other/routes')(router, viewContent);
+require('./views/concepts/minors/victim-name-other/routes')(router, viewContent);
+require('./views/concepts/minors/who-are-you/routes')(router, viewContent);
+require('./views/concepts/minors/who-is-making-the-application/routes')(router, viewContent);
+require('./views/concepts/minors/your-choices/routes')(router, viewContent);
+require('./views/concepts/minors/your-name/routes')(router, viewContent);
+require('./views/concepts/minors/authority-to-apply/routes')(router, viewContent);
+
+
 // END OF MVP #################################################################################
 
 //Extra questions & equal oportunities //

@@ -157,8 +157,24 @@ module.exports = {
 
     // SRR Prototype //
     preferredDays:'Which days would be best for us to call you?',
-    preferredTimes:'Which times of the day are best for us to call you?'
+    preferredTimes:'Which times of the day are best for us to call you?',
 
+    // Minor journey //
+    minorSexualAssaultQuestion:'Is this claim about sexual assault or abuse?',
+    minorIncidentReportedQuestion:'Was the crime reported to the police?',
+    minorWhoIsMakingTheApplicationQuestion:'Who are you applying for?',
+    minorVictimRelationshipQuestion:'Are you a parent or guardian applying for a child?',
+    minorDateOfBirthQuestion:'What is their date of birth?',
+    minorBritishCitizenQuestion:'Are they a British or EU National?',
+    minorImpactHeading:'Before you continue',
+    minorChoicesHeading:'Select the option that applies to you',
+    minorVictimNameQuestion:'What is the victims name?',
+    minorVictimNameOtherQuestion:'Have they been known by any other names?',
+    minorVictimNameOtherWhatQuestion:'What other names have you used?',
+    minorCareOrderQuestion:'Is there a supervision or care order?',
+    minorCareOrderDetailsQuestion:'Provide details of the care order',
+    minorYourNameQuestion:'What is your name?',
+    minorAuthorityToApplyHeading:'Authority to apply',
 
 };
 // // END__######################################################################################################
