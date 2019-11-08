@@ -160,7 +160,7 @@ module.exports = {
     preferredTimes:'Which times of the day are best for us to call you?',
 
     // Minor journey //
-    minorSexualAssaultQuestion:'Is this claim about sexual assault or abuse?',
+    minorSexualAssaultQuestion:'Were you a victim of sexual assault or abuse?',
     minorIncidentReportedQuestion:'Was the crime reported to the police?',
     minorWhoIsMakingTheApplicationQuestion:'Who are you applying for?',
     minorVictimRelationshipQuestion:'Are you a parent or guardian applying for a child?',
