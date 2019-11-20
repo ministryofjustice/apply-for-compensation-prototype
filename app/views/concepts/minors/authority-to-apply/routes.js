@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: name-other
   //
   router.post('/concepts/minors/authority-to-apply', function (req, res) {
-    res.redirect('/concepts/minors/care-order')
+    res.redirect('/concepts/minors/crime-reported-date')
   })
 
   // Pass the question in to the page

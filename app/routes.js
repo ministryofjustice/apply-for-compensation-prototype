@@ -155,6 +155,12 @@ require('./views/concepts/minors/who-is-making-the-application/routes')(router, 
 require('./views/concepts/minors/your-choices/routes')(router, viewContent);
 require('./views/concepts/minors/your-name/routes')(router, viewContent);
 require('./views/concepts/minors/authority-to-apply/routes')(router, viewContent);
+require('./views/concepts/minors/crime-reference/routes')(router, viewContent);
+require('./views/concepts/minors/crime-reported-date/routes')(router, viewContent);
+require('./views/concepts/minors/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/concepts/minors/incident-date/routes')(router, viewContent);
+require('./views/concepts/minors/period-of-abuse-start/routes')(router, viewContent);
+require('./views/concepts/minors/period-of-abuse-end/routes')(router, viewContent);
 
 
 // END OF MVP #################################################################################

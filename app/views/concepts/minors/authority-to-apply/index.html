@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ nameOtherWhatQuestion }} - {{ serviceName }} - GOV.UK
+{{ minorAuthorityToApplyHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,6 +27,12 @@
       </h1>
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
 
     </form>
   </div>

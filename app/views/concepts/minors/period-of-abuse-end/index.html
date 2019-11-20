@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorIncidentReportedQuestion }} - {{ serviceName }} - GOV.UK
+{{ periodOfAbuseEndQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }}
+   tag: {
+     text: "beta"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
@@ -22,39 +22,42 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form" method="post">
-
-      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
-
-      {{ govukRadios({
-              idPrefix: "minorCrimeReported",
-              name: "minorCrimeReported",
-              currentValue : data['minorCrimeReported'],
-              classes: "govuk-radios--inline",
-              fieldset: {
-                legend: {
-                  text: minorIncidentReportedQuestion,
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl"
-                }
-              },
-              items: [
-                {
-                  value: "Yes",
-                  text: "Yes"
-                },
-                {
-                  value: "No",
-                  text: "No"
-                }
-              ]
-            }) }}
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+          id: 'period-of-abuse-end',
+          name: 'period-of-abuse-end',
+          namePrefix: 'period-of-abuse-end',
+          fieldset: {
+          legend: {
+          text: periodOfAbuseEndQuestion,
+          isPageHeading: true,
+          classes: 'govuk-fieldset__legend--xl'
+          }
+          },
+          hint: {
+          text: periodOfAbuseHint
+          },
+          items:[
+          {
+          classes: "govuk-input--width-2",
+          name: 'month',
+          value: data['period-of-abuse-end-month']
+          },
+          {
+          classes: "govuk-input--width-4",
+          name: 'year',
+          value: data['period-of-abuse-end-year']
+          }
+          ]
+          })
+          }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       <details class="govuk-details">
         <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              I do not know if the crime was reported to the police
+              I do not know when the crime stopped
             </span>
         </summary>
             <div class="govuk-details__text">
@@ -64,13 +67,9 @@
             </div>
       </details>
 
-
       {{ govukButton({
-            "text": "Continue"
-            }) }}
-
-    </form>
-
+          "text": "Continue"
+          }) }}
   </div>
 </div>
 </main>
