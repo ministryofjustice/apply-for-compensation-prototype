@@ -104,6 +104,17 @@ require('./views/srr/preferred-times/routes')(router, viewContent);
 require('./views/srr/check-your-answers-page/routes')(router, viewContent);
 
 
+//Police Force Mockups Oct 2019 //
+
+require('./views/concepts/forces-mockups/v1/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/england-location/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/do-you-know-offender/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/incident-location/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/police-force/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/scotland-location/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/somewhere-else/routes')(router, viewContent);
+require('./views/concepts/forces-mockups/v1/wales-location/routes')(router, viewContent);
+
 
 //Police Force Concept V2 Prototype //
 require('./views/concepts/police-force-V2/routes')(router, viewContent);
