@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ minorVictimNameOtherWhatQuestion }} - {{ serviceName }} - GOV.UK
+{{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,28 +22,31 @@
     <form class="form" method="post">
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
-
+      <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
       {{ govukInput({
-              label: {
-                text: minorVictimNameOtherWhatQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-label--xl'
-              },
-              id: "victimNameOther",
-              name: "victimNameOther",
-              value: data['victimNameOther']
+            "label": {
+            "text": crimeReferenceNumberQuestion,
+            "isPageHeading": true,
+            "classes": 'govuk-label--xl'
+            },
+            hint: {
+            text: crimeReferenceNumberHint
+            },
+            "classes": 'govuk-input--width-20',
+            "id": "crimeReferenceNumber",
+            "name": "crimeReferenceNumber",
+            value: data['crimeReferenceNumber']
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-          "text": "Continue"
-          }) }}
+            "text": "Continue"
+            }) }}
 
     </form>
   </div>
 </div>
 </main>
 </div>
-
 {% endblock %}
