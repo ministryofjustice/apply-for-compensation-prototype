@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+Error pages - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,17 +23,8 @@
       <h1 class="govuk-heading-xl">
         Error pages
       </h1>
-
-      <section>
-
-        <p class="govuk-body"><a href="/concepts/error-pages/404-not-found">Page not found (404)</a></p>
-        <p class="govuk-body"><a href="/concepts/error-pages/500-problem">There is a problem with the service (500)</a></p>
-        <p class="govuk-body"><a href="/concepts/error-pages/503-service-unavailable">Service unavailable (503)</a></p>
-
-
-      </section>
-
-    </div>
-</div>
-
+      <p class="govuk-body"><a href="/concepts/error-pages/404-not-found">Page not found (404)</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/500-problem">There is a problem with the service (500)</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/503-service-unavailable">Service unavailable (503)</a></p>
+<p class="govuk-body"><a href="/concepts/error-pages/timeout">Timeout</a></p>
 {% endblock %}
