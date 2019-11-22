@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your application has timed out - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'We are currently in the Beta phase.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Your application has timed out
+      </h1>
+      <p class="govuk-body">This happened because you did not do anything for 30 minutes.</p>
+<p class="govuk-body">Your information has not been saved.</p>
+      <form class="form" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+                html: 'Start again'
+            }) }}
+
+      </form>
+    </div>
+</div>
+
+{% endblock %}
