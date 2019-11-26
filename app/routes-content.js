@@ -163,7 +163,7 @@ module.exports = {
     minorSexualAssaultQuestion:'Is your claim about sexual assault or abuse?',
     minorIncidentReportedQuestion:'Was the crime reported to the police?',
     minorWhoIsMakingTheApplicationQuestion:'Who are you applying for?',
-    minorVictimRelationshipQuestion:'Are you a parent or guardian applying for your  child?',
+    minorVictimRelationshipQuestion:'Are you a parent applying for your child?',
     minorDateOfBirthQuestion:'What is your child\'s date of birth?',
     minorBritishCitizenQuestion:'Is your child a British or EU National?',
     minorImpactHeading:'Before you continue',
@@ -180,8 +180,12 @@ module.exports = {
     minorTransitionOver18Heading: 'Placeholder title',
     minorAlsoChildAddressQuestion: 'Is this also the child\'s address?',
     minorChildAddressQuestion: 'Enter child\'s address',
-
-
+    minorwhatIsRelationshipQuestion: "If your child has contact with the offender, describe it below",
+    minorpreviousApplicationsQuestion: 'Is this the first claim for this incident?',
+    minorpreviousReferenceHint: 'Enter the previous reference number if you know it (optional)',
+    minorcompensationQuestion: 'Has your child applied for or got any other form of compensation?',
+    minorcompensationHint: 'For example, if they sought civil damages or a court decided they should get compensation.',
+    minorcompWho:'Who has your child applied to or received compensation from?',
 };
 // // END__######################################################################################################
 // }
