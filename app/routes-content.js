@@ -175,6 +175,9 @@ module.exports = {
     minorCareOrderDetailsQuestion:'Provide details of the care order',
     minorYourNameQuestion:'What is your name?',
     minorAuthorityToApplyHeading:'Authority to apply',
+    minorVictimAddressQuestion:'What is the child\'s address?',
+    minorParentAddressQuestion:'What is your address?',
+
 
 };
 // // END__######################################################################################################
