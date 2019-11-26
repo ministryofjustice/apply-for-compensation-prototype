@@ -189,6 +189,9 @@ require('./views/concepts/minors/phone-number/routes')(router, viewContent);
 require('./views/concepts/minors/check-your-answers-page/routes')(router, viewContent);
 require('./views/concepts/minors/address-manually/routes')(router, viewContent);
 require('./views/concepts/minors/confirmation-page/routes')(router, viewContent);
+require('./views/concepts/minors/transition-over-18/routes')(router, viewContent);
+require('./views/concepts/minors/child-address/routes')(router, viewContent);
+require('./views/concepts/minors/child-address-manually/routes')(router, viewContent);
 
 
 

@@ -16,13 +16,13 @@ module.exports = function (router, content) {
     var minorAgeInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
     if(minorAgeInYears > 18) { // it's a minor
-      res.redirect('/concepts/minors/transition')
+      res.redirect('/concepts/minors/transition-over-18')
       // @todo we need to build a page that explains to users that they can only use this service if they are over 18
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/minors/check-your-answers-page')
     }
-    res.redirect('/concepts/minors/british-citizen')
+    res.redirect('/concepts/minors/impact-on-you')
   })
 
   // Pass the question in to the page

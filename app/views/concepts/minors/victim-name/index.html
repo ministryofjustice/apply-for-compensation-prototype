@@ -33,19 +33,19 @@
 
       {{ govukInput({
             "label": {
-            "text": nameTitleField
+            "text": victimNameTitleField
             },
             "classes": "govuk-input--width-10",
-            "id": "Title",
-            "name": "victimTitle",
-            "value": data['victimTitle']
+            "id": "victim-title",
+            "name": "victim-title",
+            "value": data['victim-title']
             }) }}
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
               label: {
-                "text": nameFirstNameField
+                "text": victimNameFirstNameField
               },
               id: "victim-first-name",
               name: "victim-first-name",
@@ -56,7 +56,7 @@
 
       {{ govukInput({
               label: {
-                "text": nameLastNameField
+                "text": victimNameLastNameField
               },
               id: "victim-last-name",
               name: "victim-last-name",

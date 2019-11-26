@@ -177,6 +177,9 @@ module.exports = {
     minorAuthorityToApplyHeading:'Authority to apply',
     minorVictimAddressQuestion:'What is the child\'s address?',
     minorParentAddressQuestion:'What is your address?',
+    minorTransitionOver18Heading: 'Placeholder title',
+    minorAlsoChildAddressQuestion: 'Is this also the child\'s address?',
+    minorChildAddressQuestion: 'Enter child\'s address',
 
 
 };

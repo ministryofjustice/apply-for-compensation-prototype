@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+Error: {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
+
 
 
 {% block beforeContent %}
@@ -22,22 +23,40 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
     <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: britishCitizenError,
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "minorBritishCitizen",
-            "name": "minorBritishCitizen",
-            currentValue: data['minorBritishCitizen'],
+            "idPrefix": "britishCitizen",
+            "name": "britishCitizen",
+            currentValue: data['britishCitizen'],
             "fieldset": {
               "legend": {
-                "text": minorBritishCitizenQuestion,
+                "text": britishCitizenQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
+            errorMessage: {
+            text: britishCitizenError
+          },
             "items": [
               {
                 "value": "Yes",

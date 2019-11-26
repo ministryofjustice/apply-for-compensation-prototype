@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorParentAddressQuestion }} - {{ serviceName }} - GOV.UK
+Error: {{ addressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,12 +23,28 @@
 
     <form class="form" method="post">
 
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: manualAddressErrorTownCityBlank,
+                        href: "#address-town"
+                      }
+                    ]
+                  }) }}
+          </label>
+        </h1>
+      </div>
+
       {% from "govuk/components/input/macro.njk" import govukInput %}
       {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
       {% call govukFieldset({
       legend: {
-      text: minorParentAddressQuestion,
+      text: addressQuestion,
       classes: "govuk-fieldset__legend--xl",
       isPageHeading: true
       }
@@ -59,7 +75,10 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "address-town",
-            value: data['address-town']
+            value: data['address-town'],
+            errorMessage: {
+            text: manualAddressErrorTownCityBlank
+            }
           }) }}
 
       {{ govukInput({
@@ -83,7 +102,6 @@
           }) }}
 
       {% endcall %}
-
       {{ govukButton({
           "text": "Continue"
           }) }}

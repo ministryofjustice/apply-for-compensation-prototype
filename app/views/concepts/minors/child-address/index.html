@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{{ minorAlsoChildAddressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -28,12 +28,12 @@
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "minorBritishCitizen",
-            "name": "minorBritishCitizen",
-            currentValue: data['minorBritishCitizen'],
+            "idPrefix": "minorAlsoChildAddress",
+            "name": "minorAlsoChildAddress",
+            currentValue: data['minorAlsoChildAddress'],
             "fieldset": {
               "legend": {
-                "text": minorBritishCitizenQuestion,
+                "text": minorAlsoChildAddressQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }

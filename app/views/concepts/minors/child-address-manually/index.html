@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorParentAddressQuestion }} - {{ serviceName }} - GOV.UK
+{{ minorChildAddressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,7 +28,7 @@
 
       {% call govukFieldset({
       legend: {
-      text: minorParentAddressQuestion,
+      text: minorChildAddressQuestion,
       classes: "govuk-fieldset__legend--xl",
       isPageHeading: true
       }
@@ -83,6 +83,7 @@
           }) }}
 
       {% endcall %}
+
 
       {{ govukButton({
           "text": "Continue"

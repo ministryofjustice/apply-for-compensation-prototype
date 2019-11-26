@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (minorRelationship === 'yes') {
       // Redirect to the relevant page
-      res.redirect('/concepts/minors/date-of-birth')
+      res.redirect('/concepts/minors/british-citizen')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/concepts/minors/transition')
