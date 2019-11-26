@@ -1,8 +1,7 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Your application has timed out - {{ serviceName }} - GOV.UK
+Sorry, there is a problem with the service - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,27 +10,22 @@ Your application has timed out - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'We are currently in the Beta phase.'
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Your application has timed out
-      </h1>
-      <p class="govuk-body">This happened because you did not do anything for 15 minutes.</p>
-<p class="govuk-body">Your information has not been saved.</p>
-      <form class="form" method="post">
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-        {{ govukButton({
-                html: 'Start again'
-            }) }}
-
-      </form>
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Sorry, there is a problem with the service</h1>
+            <p class="govuk-body">Try again later.</p>
+<p class="govuk-body">You may be able to continue with your application if you go back to the previous page.</p>
+      <p class="govuk-body">
+        You can apply by telephone.
+      </p>
       <h2 class="govuk-heading-l">Contact</h2>
               <p class="govuk-body">
                 Email: <br>
@@ -74,6 +68,5 @@ Your application has timed out - {{ serviceName }} - GOV.UK
               </table>
 
               <p class="govuk-body"><a href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges</a></p>
-
 
 {% endblock %}
