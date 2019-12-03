@@ -180,7 +180,7 @@ module.exports = {
     minorAuthorityToApplyHeading:'Authority to apply',
     minorVictimAddressQuestion:'What is the child\'s address?',
     minorParentAddressQuestion:'What is your address?',
-    minorTransitionOver18Heading: 'Placeholder title',
+    minorTransitionOver18Heading: 'You cannot use this service to apply for someone over 18',
     minorAlsoChildAddressQuestion: 'Is this also the child\'s address?',
     minorChildAddressQuestion: 'Enter child\'s address',
     minorWhatIsRelationshipQuestion: "If your child has contact with the offender, describe it below",
