@@ -25,9 +25,13 @@
             "fieldset": {
             "legend": {
             "text": minorVictimRelationshipQuestion,
+
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }
+            },
+            hint: {
+            text: 'They must be under 18.'
             },
             "items": [
             {
@@ -40,6 +44,8 @@
             }
             ]
             }) }}
+
+
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
