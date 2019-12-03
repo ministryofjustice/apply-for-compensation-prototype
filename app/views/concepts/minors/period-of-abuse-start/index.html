@@ -24,9 +24,9 @@
     <form class="form" method="post">
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
       {{ govukDateInput({
-          id: 'period-of-abuse-start',
-          name: 'period-of-abuse-start',
-          namePrefix: 'period-of-abuse-start',
+          id: 'minor-period-of-abuse-start',
+          name: 'minor-period-of-abuse-start',
+          namePrefix: 'minor-period-of-abuse-start',
           fieldset: {
           legend: {
           text: periodOfAbuseStartQuestion,
@@ -41,12 +41,12 @@
           {
           classes: "govuk-input--width-2",
           name: 'month',
-          value: data['period-of-abuse-start-month']
+          value: data['minor-period-of-abuse-start-month']
           },
           {
           classes: "govuk-input--width-4",
           name: 'year',
-          value: data['period-of-abuse-start-year']
+          value: data['minor-period-of-abuse-start-year']
           }
           ]
           })

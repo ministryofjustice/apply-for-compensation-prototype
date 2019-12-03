@@ -9,25 +9,25 @@
 
     <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{ previousApplicationsQuestion }}
+      {{ minorPreviousApplicationsQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['previous-applications'] }}
+      {{ data['minor-previous-applications'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="previous-applications">
-        Change<span class="govuk-visually-hidden">{{ previousApplicationsQuestion }} </span>
+        Change<span class="govuk-visually-hidden">{{ minorPreviousApplicationsQuestion }} </span>
       </a>
     </dd>
   </div>
 
-  {% if data['previous-applications'] === 'Yes' %}
+  {% if data['minor-previous-applications'] === 'No' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       {{ previousReferenceHint }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['previous-reference'] }}
+      {{ data['minor-previous-reference'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="previous-applications">
@@ -44,7 +44,7 @@
     {{ compensationQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['otherCompensation'] }}
+    {{ data['minor-other-compensation'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="compensation">
@@ -53,13 +53,13 @@
   </dd>
 </div>
 
-{% if data['otherCompensation'] === 'Yes' %}
+{% if data['minor-other-compensation'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compWho }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['comp-who'] }}
+    {{ data['minor-comp-who'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
@@ -73,7 +73,7 @@
     {{ compDecQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['decision-answer'] }}
+    {{ data['minor-comp-decision-answer'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
@@ -83,13 +83,13 @@
 </div>
 {% endif %}
 
-{% if data['otherCompensation'] === 'No' %}
+{% if data['minor-other-compensation'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compNoHint }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['comp-no'] }}
+    {{ data['minor-comp-no'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="compensation-why-not">
@@ -99,13 +99,13 @@
 </div>
 {% endif %}
 
-{% if data['decision-answer'] === 'Yes' %}
+{% if data['minor-comp-decision-answer'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compDecYes }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['how-much'] }}
+    {{ data['minor-comp-how-much'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
@@ -115,13 +115,13 @@
 </div>
 {% endif %}
 
-{% if data['decision-answer'] === 'No' %}
+{% if data['minor-comp-decision-answer'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compDecNo }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['when'] }}
+    {{ data['minor-comp-when'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">

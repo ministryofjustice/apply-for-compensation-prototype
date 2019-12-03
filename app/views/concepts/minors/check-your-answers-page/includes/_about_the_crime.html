@@ -10,7 +10,7 @@
       {{ singleOrMultipleIncidentsQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['single-or-multiple-incidents'] }}
+      {{ data['minor-single-or-multiple-incidents'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="single-or-multiple-incidents">
@@ -25,7 +25,7 @@
       {{ incidentDateHeading }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['incident-date-day'] }}/{{ data['incident-date-month'] }}/{{ data['incident-date-year'] }}
+      {{ data['minor-incident-date-day'] }}/{{ data['minor-incident-date-month'] }}/{{ data['minor-incident-date-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="incident-date">
@@ -35,13 +35,13 @@
   </div>
   {% endif %}
 
-  {% if data['single-or-multiple-incidents'] === 'Over a period of time' %}
+  {% if data['minor-single-or-multiple-incidents'] === 'Over a period of time' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       {{ periodOfAbuseStartQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
+      {{ data['minor-period-of-abuse-start-month'] }}/{{ data['minor-period-of-abuse-start-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="period-of-abuse-start">
@@ -54,7 +54,7 @@
       {{ periodOfAbuseEndQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
+      {{ data['minor-period-of-abuse-end-month'] }}/{{ data['minor-period-of-abuse-end-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="period-of-abuse-end">
@@ -115,7 +115,7 @@
       {{ englandLocationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['EnglandTown'] }}<br /> {{ data['EnglandLocation'] }}
+      {{ data['EnglandLocation'] }}, {{ data['EnglandTown'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="england-location">
@@ -131,7 +131,7 @@
       {{ scotlandLocationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ScotlandTown'] }}, {{ data['ScotlandLocation'] }}
+      {{ data['ScotlandLocation'] }}, {{ data['ScotlandTown'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="scotland-location">
@@ -147,7 +147,7 @@
       {{ walesLocationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['WalesTown'] }}, {{ data['WalesLocation'] }}
+      {{ data['WalesLocation'] }}, {{ data['WalesTown'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="wales-location">
@@ -193,10 +193,11 @@
       Contact with the offender
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if data['relationship-text']%}
-        {{ data['relationship-text'] }}
-      {% elseif data['noContactWithOffender']%}
-          {{ data['noContactWithOffender'] }}
+      {% if data['minorNoContactWithOffender']%}
+          They have no contact with the offender</br>
+      {% endif %}
+      {% if data['minor-relationship-text']%}
+        {{ data['minor-relationship-text'] }}
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">

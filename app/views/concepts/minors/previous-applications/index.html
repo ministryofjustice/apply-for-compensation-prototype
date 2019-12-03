@@ -28,24 +28,24 @@
 
       {% set referenceHtml %}
       {{ govukInput({
-            id: "previous-reference",
-            name: "previous-reference",
-            value: data['previous-reference'],
+            id: "minor-previous-reference",
+            name: "minor-previous-reference",
+            value: data['minor-previous-reference'],
             classes: "govuk-!-width-full",
             label: {
-              text: minorpreviousReferenceHint
+              text: minorPreviousReferenceHint
             }
           }) }}
       {% endset -%}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "previous-applications",
-            "name": "previous-applications",
-            value: data['previous-applications'],
+            "idPrefix": "minor-previous-applications",
+            "name": "minor-previous-applications",
+            value: data['minor-previous-applications'],
             "fieldset": {
               "legend": {
-              "text": minorpreviousApplicationsQuestion,
+              "text": minorPreviousApplicationsQuestion,
               "isPageHeading": true,
               "classes": 'govuk-fieldset__legend--xl'
               }
@@ -53,14 +53,14 @@
             "items": [
             {
             "value": "Yes",
-            "text": "Yes",
-            conditional: {
-                html: referenceHtml
-              }
+            "text": "Yes"
             },
             {
             "value": "No",
-            "text": "No"
+            "text": "No",
+            conditional: {
+                html: referenceHtml
+              }
             }
             ]
             }) }}

@@ -26,11 +26,11 @@
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
-            name: "relationship-text",
-            id: "relationship-text",
-            currentValue: data['relationship-text'],
+            name: "minor-relationship-text",
+            id: "minor-relationship-text",
+            currentValue: data['minor-relationship-text'],
             label: {
-              text: minorwhatIsRelationshipQuestion,
+              text: minorWhatIsRelationshipQuestion,
               isPageHeading: true,
               classes: "govuk-label--xl"
             },
@@ -41,9 +41,9 @@
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {{ govukCheckboxes({
-            idPrefix: "noContactWithOffender",
-            name: "noContactWithOffender",
-            currentValue: data['noContactWithOffender'],
+            idPrefix: "minorNoContactWithOffender",
+            name: "minorNoContactWithOffender",
+            currentValue: data['minorNoContactWithOffender'],
             fieldset: {
               legend: {
                 isPageHeading: false,

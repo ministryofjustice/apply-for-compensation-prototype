@@ -192,6 +192,7 @@ require('./views/concepts/minors/confirmation-page/routes')(router, viewContent)
 require('./views/concepts/minors/transition-over-18/routes')(router, viewContent);
 require('./views/concepts/minors/child-address/routes')(router, viewContent);
 require('./views/concepts/minors/child-address-manually/routes')(router, viewContent);
+require('./views/concepts/minors/application-delay/routes')(router, viewContent);
 
 
 

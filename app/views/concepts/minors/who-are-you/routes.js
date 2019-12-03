@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var minorRelationship = req.session.data['minorRelationship']
 
-    if (minorRelationship === 'yes') {
+    if (minorRelationship === 'Yes') {
       // Redirect to the relevant page
       res.redirect('/concepts/minors/british-citizen')
     } else {

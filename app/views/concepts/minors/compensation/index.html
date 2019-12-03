@@ -26,9 +26,9 @@
 
             {% set compNoHtml %}
             {{ govukInput({
-                  id: "comp-no",
-                  name: "comp-no",
-                  value: data['comp-no'],
+                  id: "minor-comp-no",
+                  name: "minor-comp-no",
+                  value: data['minor-comp-no'],
                   classes: "govuk-!-width-two-thirds",
                   label: {
                     text: compNoHint
@@ -37,18 +37,18 @@
             {% endset -%}
 
             {{ govukRadios({
-                  idPrefix: "otherCompensation",
-                  name: "otherCompensation",
-                  currentValue: data['otherCompensation'],
+                  idPrefix: "minor-other-compensation",
+                  name: "minor-other-compensation",
+                  currentValue: data['minor-other-compensation'],
                   fieldset: {
                     legend: {
-                      text: minorcompensationQuestion,
+                      text: minorCompensationQuestion,
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--xl"
                     }
                   },
                   hint: {
-                    text: minorcompensationHint
+                    text: minorCompensationHint
                   },
                   items: [
                   {
