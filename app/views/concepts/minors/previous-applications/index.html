@@ -53,11 +53,13 @@
             "items": [
             {
             "value": "Yes",
-            "text": "Yes"
+            "text": "Yes",
+            checked: checked("minor-previous-applications", "Yes")
             },
             {
             "value": "No",
             "text": "No",
+            checked: checked("minor-previous-applications", "No"),
             conditional: {
                 html: referenceHtml
               }

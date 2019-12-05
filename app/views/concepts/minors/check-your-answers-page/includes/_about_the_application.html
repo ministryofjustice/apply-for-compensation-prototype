@@ -62,4 +62,37 @@
     </dd>
   </div>
 
+  {% if data['delay-application'] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border:none">
+      {{ minorWhyDelayQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value" style="border:none">
+
+      {% if data['minorApplicationDelay'] === 'I was under 18' %}
+        I was under 18
+      {% endif %}
+
+      {% if data['minorApplicationDelay'] === 'I was advised to wait' %}
+        I was advised to wait
+      {% endif %}
+
+      {% if data['minorApplicationDelay'] === 'Medical reasons' %}
+        I was under 18
+      {% endif %}
+
+      {% if data['minorApplicationDelay'] === 'Other reasons' %}
+        I was under 18
+      {% endif %}
+
+      {{ data['delay-application'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions" style="border:none">
+      <a href="reporting-delay">
+        Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
 </dl>

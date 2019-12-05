@@ -30,7 +30,8 @@
             },
             "classes": 'govuk-input--width-30',
             "id": "WalesTown",
-            "name": "WalesTown"
+            "name": "WalesTown",
+            "value": data['WalesTown']
             }) }}
 
         {{ govukInput({
@@ -43,7 +44,8 @@
                   },
                   "classes": 'govuk-input--width-30',
                   "id": "WalesLocation",
-                  "name": "WalesLocation"
+                  "name": "WalesLocation",
+                  "value": data['WalesLocation']
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}

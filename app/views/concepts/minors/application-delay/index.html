@@ -40,19 +40,23 @@
             items: [
             {
               value: "I was under 18",
-              text: "I was under 18"
+              text: "I was under 18",
+              checked: checked("minorApplicationDelay", "I was under 18")
             },
             {
               value: "I was advised to wait",
-              text: "I was advised to wait"
+              text: "I was advised to wait",
+              checked: checked("minorApplicationDelay", "I was advised to wait")
             },
             {
               value: "Medical reasons",
-              text: "Medical reasons"
+              text: "Medical reasons",
+              checked: checked("minorApplicationDelay", "Medical reasons")
             },
             {
               value: "Other reasons",
-              text: "Other reasons"
+              text: "Other reasons",
+              checked: checked("minorApplicationDelay", "Other reasons")
             }
             ]
           }) }}
@@ -63,6 +67,7 @@
                   name: "delay-application",
                   id: "delay-application",
                   currentValue: data['delay-application'],
+                  value: data['delay-application'],
                   label: {
                     text: delayApplyExplanation,
                     classes: "govuk-label--l"

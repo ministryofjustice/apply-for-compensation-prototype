@@ -30,7 +30,8 @@
             },
             "classes": 'govuk-input--width-30',
             "id": "ScotlandTown",
-            "name": "ScotlandTown"
+            "name": "ScotlandTown",
+            "value": data['ScotlandTown']
             }) }}
 
         {{ govukInput({
@@ -43,7 +44,8 @@
                   },
                   "classes": 'govuk-input--width-30',
                   "id": "ScotlandLocation",
-                  "name": "ScotlandLocation"
+                  "name": "ScotlandLocation",
+                  "value": data['ScotlandLocation']
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
