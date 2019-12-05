@@ -5,7 +5,7 @@ module.exports = function (router, content) {
 
 router.post('/concepts/minors/care-order', function (req, res) {
   // Get the answer from the query string
-  var careOrder = req.session.data['careOrder']
+  var careOrder = req.session.data['care-order']
 
   if (careOrder === 'No') {
     // Redirect to the relevant page

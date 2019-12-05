@@ -8,9 +8,9 @@ module.exports = function (router, content) {
 
   router.post('/concepts/minors/incident-date', function (req, res) {
     // first I'm getting the data, this will be used to check if the date is 01/01/2017 which is the trigger to mock linked cases / previous applications
-    var incidentDateDay = req.session.data['incident-date-day']
-    var incidentDateMonth = req.session.data['incident-date-month']
-    var incidentDateYear = req.session.data['incident-date-year']
+    var incidentDateDay = req.session.data['minor-incident-date-day']
+    var incidentDateMonth = req.session.data['minor-incident-date-month']
+    var incidentDateYear = req.session.data['minor-incident-date-year']
     var  incidentDate = dateHelper.getDatefrom3inputs(incidentDateDay, incidentDateMonth, incidentDateYear) //that's the incident date based on the 3 elements we received from the user
     // get today's date   and compare it to the date of incident
     var currentDate = moment().startOf('day'); // this line of code make sure that the day (today) is only counted at midnight, we are not counting against a certain time of the day

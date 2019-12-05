@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // Variable: victimHaveOtherName
   router.post('/concepts/minors/victim-name-have-other', function (req, res) {
     var victimHaveOtherName = req.session.data['victimHaveOtherName'];
-    if (victimHaveOtherName === 'no')  {
+    if (victimHaveOtherName === 'No')  {
       return res.redirect('/concepts/minors/care-order')
     }
     res.redirect('/concepts/minors/victim-name-other')
