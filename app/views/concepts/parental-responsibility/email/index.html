@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Application submitted - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
+      <h2 class="govuk-panel__title">
+        Application submitted
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number is<br><strong>CICA2123GW</strong>
+        <p class="govuk-body-l" style="color:white"><br>We've sent a confirmation email to<br><strong>name@example.com</strong></p>
+      </div>
+    </div>
+    <p>
+    </p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must send a copy of your child's full birth certificate before your application can be processed.
+      </strong>
+    </div>
+  <h2 class="govuk-heading-m">What you must do next</h2>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Scan or take a photo of the birth certificate.</li>
+      <li>Scan or take a photo of proof that your name(s) have changed, if they have. For example, a marriage certificate, deed poll, or Gender Recognition Certificate.</li>
+      <li>Send the files to info@cica.gov.uk with <strong>CICA2123GW</strong> in the subject line.</li>
+
+    </ol>
+  <h2 class="govuk-heading-m">If you do not have the full birth certificate</h2>
+  <p class="govuk-body"><a href=https://www.gov.uk/order-copy-birth-death-marriage-certificate>Order a copy of a full birth certificate</a>. We cannot accept short (abbreviated) birth certificates.
+<p class="govuk-body">You can send an adoption order if you adopted your child.</p>
+
+<h2 class="govuk-heading-l">Contact</h2>
+        <p class="govuk-body">
+          Email: <br>
+          <strong><a href="mailto:info@cica.gov.uk?Subject=Private%20beta">info@cica.gov.uk</a></strong>
+        </p>
+        <p class="govuk-body">
+          Telephone: <br>
+          <strong>0300 003 3601</strong> option 8
+        </p>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption">Opening times</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Day</th>
+              <th scope="col" class="govuk-table__header">Opening times</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Monday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Tuesday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Wednesday</th>
+              <td class="govuk-table__cell">10am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Thursday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Friday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="govuk-body"><a href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges</a></p>
+
+
+<h2 class="govuk-heading-m">Help us improve this service</h2>
+<p class="govuk-body">You can complete a short survey to help us improve this service.</p>
+<p class="govuk-body">It does not ask for any details about your case, and has no effect on your application.</p>
+    <p><a href="/">Tell us what you think of our service</a> (takes 10 minutes)</p>
+  </div>
+</div>
+</main>
+
+</div>
+
+{% endblock %}
