@@ -191,6 +191,12 @@ module.exports = {
     minorCompWho:'Who has your child applied to or received compensation from?',
     minorWhyDelayQuestion:'Select reasons for the delay in making your application?',
 
+    minorProofEligibilityUploadNowQuestion:'Do you want to upload your documents now?',
+    minorProofEligibilityNamesQuestion:'Does this document show your current names?',
+
+
+
+
     // Mental injuries questions //
     mentalHealthQuestion:'Has the crime affected your mental health so that you cannot do things you would normally do?',
     mentalHealthQuestionHint:'For example, going to work, seeing friends or being in a relationship.',
