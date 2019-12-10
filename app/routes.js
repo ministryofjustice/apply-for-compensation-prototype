@@ -148,7 +148,7 @@ require('./views/concepts/police-force-V4/single-or-multiple-incidents/routes')(
 require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, viewContent);
 
 
-//Minors //
+//MINORS JOURNEY //
 require('./views/concepts/minors/british-citizen/routes')(router, viewContent);
 require('./views/concepts/minors/care-order/routes')(router, viewContent);
 require('./views/concepts/minors/care-order-details/routes')(router, viewContent);
@@ -195,8 +195,14 @@ require('./views/concepts/minors/child-address-manually/routes')(router, viewCon
 require('./views/concepts/minors/application-delay/routes')(router, viewContent);
 
 
+// MENTAL INJURIES //
 
-// END OF MVP #################################################################################
+require('./views/concepts/mental-injuries/v1/mental-health/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/duration/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/diagnosis/routes')(router, viewContent);
+
+
+
 
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);

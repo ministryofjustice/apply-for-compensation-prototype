@@ -190,6 +190,16 @@ module.exports = {
     minorCompensationHint: 'For example, if they sought civil damages or a court decided they should get compensation.',
     minorCompWho:'Who has your child applied to or received compensation from?',
     minorWhyDelayQuestion:'Select reasons for the delay in making your application?',
+
+    // Mental injuries questions //
+    mentalHealthQuestion:'Has the crime affected your mental health so that you cannot do things you would normally do?',
+    mentalHealthQuestionHint:'For example, going to work, seeing friends or being in a relationship.',
+    mentalHealthDurationQuestion:'Has your mental health been affected like this for over 6 weeks?',
+    mentalHealthDiagnosisQuestion:'Has a clinical psychologist or psychiatrist given you a diagnosis you as a result of the crime?',
+    mentalHealthDiagnosisQuestionHint:'We’ll ask a clinical psychologist to look at your medical records or ask you to go for a medical check if you do not already have a diagnosis.',
+
+
+
 };
 // // END__######################################################################################################
 // }
