@@ -194,6 +194,15 @@ require('./views/concepts/minors/child-address/routes')(router, viewContent);
 require('./views/concepts/minors/child-address-manually/routes')(router, viewContent);
 require('./views/concepts/minors/application-delay/routes')(router, viewContent);
 
+require('./views/concepts/minors/eligibility-to-apply/option-1/upload-choice/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
+
+require('./views/concepts/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-2/proof-other-names/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
+
 
 // MENTAL INJURIES //
 
