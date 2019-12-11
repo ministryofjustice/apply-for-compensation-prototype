@@ -174,8 +174,9 @@ module.exports = {
     minorVictimNameQuestion:'What is your child\'s name?',
     minorVictimNameOtherQuestion:'Has your child been known by any other names?',
     minorVictimNameOtherWhatQuestion:'What other names has your child had?',
-    minorCareOrderQuestion:'Does your child have a supervision or care order?',
-    minorCareOrderDetailsQuestion:'Provide details of the care order',
+    minorCareOrderQuestion:'Has a local authority made an order over your child?',
+    minorCareOrderHint:'This includes a care order, supervision order, or residence order.',
+    minorCareOrderDetailsQuestion:'Which local authority has made an order?',
     minorYourNameQuestion:'What is your name?',
     minorAuthorityToApplyHeading:'Authority to apply',
     minorVictimAddressQuestion:'What is the child\'s address?',
@@ -184,7 +185,7 @@ module.exports = {
     minorAlsoChildAddressQuestion: 'Is this also the child\'s address?',
     minorChildAddressQuestion: 'Enter child\'s address',
     minorWhatIsRelationshipQuestion: "If your child has contact with the offender, describe it below",
-    minorPreviousApplicationsQuestion: 'Is this the first claim for this incident?',
+    minorPreviousApplicationsQuestion: 'Has anyone applied to us before for your child?',
     minorPreviousReferenceHint: 'Enter the previous reference number if you know it (optional)',
     minorCompensationQuestion: 'Has your child applied for or got any other form of compensation?',
     minorCompensationHint: 'For example, if they sought civil damages or a court decided they should get compensation.',
@@ -192,11 +193,11 @@ module.exports = {
     minorWhyDelayQuestion:'Select reasons for the delay in making your application?',
 
     // Mental injuries questions //
-    mentalHealthQuestion:'Has the crime affected your mental health so that you cannot do things you would normally do?',
-    mentalHealthQuestionHint:'For example, going to work, seeing friends or being in a relationship.',
+    mentalHealthQuestion:'Has the crime made your mental health a lot worse?',
+    mentalHealthQuestionHint:'For example, if it has stopped you going to work, seeing friends, or being in a relationship.',
     mentalHealthDurationQuestion:'Has your mental health been affected like this for over 6 weeks?',
-    mentalHealthDiagnosisQuestion:'Has a clinical psychologist or psychiatrist given you a diagnosis you as a result of the crime?',
-    mentalHealthDiagnosisQuestionHint:'We’ll ask a clinical psychologist to look at your medical records or ask you to go for a medical check if you do not already have a diagnosis.',
+    mentalHealthDiagnosisQuestion:'Have you been diagnosed with a mental health condition since the crime?',
+    mentalHealthDiagnosisQuestionHint:'We may ask a clinical psychologist to look at your medical records if you’ve not been diagnosed yet. ',
 
 
 
