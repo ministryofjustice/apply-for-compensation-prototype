@@ -183,17 +183,18 @@ module.exports = {
     minorParentAddressQuestion:'What is your address?',
     minorTransitionOver18Heading: 'You cannot use this service to apply for someone over 18',
     minorAlsoChildAddressQuestion: 'Is this also the child\'s address?',
-    minorChildAddressQuestion: 'Enter child\'s address',
+    minorChildAddressQuestion: 'What is your child\'s address?',
     minorWhatIsRelationshipQuestion: "If your child has contact with the offender, describe it below",
     minorPreviousApplicationsQuestion: 'Has anyone applied to us before for your child?',
     minorPreviousReferenceHint: 'Enter the previous reference number if you know it (optional)',
-    minorCompensationQuestion: 'Has your child applied for or got any other form of compensation?',
-    minorCompensationHint: 'For example, if they sought civil damages or a court decided they should get compensation.',
-    minorCompWho:'Who has your child applied to or received compensation from?',
+    minorCompensationQuestion: 'Has another organisation decided if your child should get compensation?',
+    minorCompensationHint: 'For example, civil damages or a court deciding your child should get compensation.',
+    minorCompWho:'Who has decided if your child should get compensation?',
     minorWhyDelayQuestion:'Select reasons for the delay in making your application?',
 
     minorProofEligibilityUploadNowQuestion:'Do you want to upload your documents now?',
     minorProofEligibilityNamesQuestion:'Does this document show your current names?',
+    minorwhatCompensationQuestion: 'Other compensation',
 
 
 
