@@ -200,7 +200,7 @@ module.exports = {
 
 
     // Mental injuries questions //
-    mentalHealthQuestion:'Has the crime made your mental health a lot worse?',
+    mentalHealthQuestion:'Has the crime affected your mental health a lot?',
     mentalHealthQuestionHint:'For example, if it has stopped you going to work, seeing friends, or being in a relationship.',
     mentalHealthDurationQuestion:'Has your mental health been affected like this for over 6 weeks?',
     mentalHealthDiagnosisQuestion:'Have you been diagnosed with a mental health condition since the crime?',
