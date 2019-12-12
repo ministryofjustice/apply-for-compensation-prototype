@@ -4,13 +4,13 @@ module.exports = function (router, content) {
 // Variable: britishCitizen
 
 
-router.post('/concepts/minors/eligibility-to-apply/option-2/proof-other-names', function (req, res) {
+router.post('/concepts/minors/eligibility-to-apply/option-1/upload-choice', function (req, res) {
   // Get the answer from the query string
-  var minorUploadNowOther = req.session.data['minorUploadNowOther']
+  var minorUploadChoice = req.session.data['minorUploadChoice']
 
-  if (minorUploadNowOther === 'Yes') {
+  if (minorUploadChoice === 'Yes') {
     // Redirect to the relevant page
-    res.redirect('/concepts/minors/eligibility-to-apply/option-2/upload-other-names')
+    res.redirect('/concepts/minors/eligibility-to-apply/option-1/upload')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/minors/check-your-answers-page')
@@ -22,12 +22,12 @@ router.post('/concepts/minors/eligibility-to-apply/option-2/proof-other-names', 
 
 
 // Pass the question in to the page
-router.get('/concepts/minors/eligibility-to-apply/option-2/proof-other-names', function (req, res) {
-  res.render('concepts/minors/eligibility-to-apply/option-2/proof-other-names/index', content)
+router.get('/concepts/minors/eligibility-to-apply/option-1/upload-choice', function (req, res) {
+  res.render('concepts/minors/eligibility-to-apply/option-1/upload-choice/index', content)
 })
 
-router.get('/concepts/minors/eligibility-to-apply/option-2/proof-other-names/proof-other-names-error', function (req, res) {
-  res.render('concepts/minors/eligibility-to-apply/option-2/proof-other-names/proof-other-names-error', content)
+router.get('/concepts/minors/v1/confirm-names/confirm-names-error', function (req, res) {
+  res.render('concepts/minors/v1/confirm-names/confirm-names-error', content)
 })
 
 // END__######################################################################################################

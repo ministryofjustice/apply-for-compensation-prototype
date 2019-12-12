@@ -16,7 +16,7 @@ router.post('/concepts/minors/eligibility-to-apply/option-2/confirm-names', func
       return res.redirect('/concepts/minors/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/minors/eligibility-to-apply/option-2/proof-other-names')
+    res.redirect('/concepts/minors/eligibility-to-apply/option-2/upload-other-names')
   }
 })
 
