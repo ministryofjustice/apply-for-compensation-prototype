@@ -23,6 +23,7 @@ Which police force is investigating the crime? - {{ serviceName }} - GOV.UK
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+    <form class="form" method="post">
       <h1 class="govuk-label-wrapper">
         <label class="govuk-label govuk-label--xl" for="police-forces">
           Which police force is investigating the crime?
@@ -35,8 +36,8 @@ Which police force is investigating the crime? - {{ serviceName }} - GOV.UK
 
             {{ govukSelect({
               id: "minor-investigating-force",
-              name: "minor-investigating-force",
               value: "minor-investigating-force",
+              name: "minor-investigating-force",
               items: [
                 {
                   value: "",
@@ -410,10 +411,11 @@ Which police force is investigating the crime? - {{ serviceName }} - GOV.UK
                 </div>
           </details>
 
-        <a href="/concepts/minors/crime-reference/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-          Continue
-        </a>
+          {{ govukButton({
+                "text": "Continue"
+          }) }}
 
+          </form>
 
     </div>
 </div>

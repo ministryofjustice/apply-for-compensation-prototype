@@ -193,6 +193,7 @@ require('./views/concepts/minors/transition-over-18/routes')(router, viewContent
 require('./views/concepts/minors/child-address/routes')(router, viewContent);
 require('./views/concepts/minors/child-address-manually/routes')(router, viewContent);
 require('./views/concepts/minors/application-delay/routes')(router, viewContent);
+require('./views/concepts/minors/police-force/routes')(router, viewContent);
 
 require('./views/concepts/minors/eligibility-to-apply/option-1/upload-choice/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
