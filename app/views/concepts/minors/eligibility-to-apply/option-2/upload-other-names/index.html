@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+Upload documents showing your name has changed - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -24,9 +24,9 @@
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">Upload proof of any name changes</h1>
+      <h1 class="govuk-heading-xl">Upload documents showing your name(s) have changed</h1>
 
-      <p>We use this to check you have the right to apply for your child. You can upload a scan or a photo.</p>
+      <p>This can include a marriage certificate, decree absolute (divorce certificate), deed poll, or Gender Recognition Certificate.</p>
 
       {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 

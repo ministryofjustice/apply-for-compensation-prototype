@@ -10,7 +10,7 @@ router.post('/concepts/minors/eligibility-to-apply/option-2/upload', function (r
   if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/minors/check-your-answers-page')
     } else {
-    res.redirect('/concepts/minors/eligibility-to-apply/option-2/upload-other-names')
+    res.redirect('/concepts/minors/eligibility-to-apply/option-2/confirm-names')
   }
 })
 

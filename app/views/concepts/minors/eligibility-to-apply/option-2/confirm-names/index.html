@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{{minorProofEligibilityNamesQuestion}} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -30,7 +30,7 @@
         <h1 class="govuk-fieldset__heading">{{minorProofEligibilityNamesQuestion}}</h1>
       </legend>
 
-      <p>If the names on the birth certificate you are uploading are different to <strong>Joanna Jones</strong> and <strong>Jackie Jones</strong>, you will have to also provide proof of your change of name(s).</p>
+      <p>If the names on the certificate are not <strong>Joanna Jones</strong> and <strong>Jackie Jones</strong>, you'll have to upload proof that they have changed.</p>
 
       <!--
       <p>If the names on the birth certificate are different to {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }} and {{ data['victim-title'] }}&nbsp;{{ data['victim-first-name'] }}&nbsp;{{ data['victim-last-name'] }}, you will have to provide proof of your change of name(s).</p>
@@ -46,12 +46,12 @@
             items: [
               {
                 "value": "Yes",
-                "text": "Yes, the document shows our current names",
+                "text": "Yes",
                 checked: checked("minorConfirmNames", "Yes")
               },
               {
                 "value": "No, my name has changed",
-                "text": "No, the document shows previous names",
+                "text": "No",
                 checked: checked("minorConfirmNames", "No")
               }
             ]

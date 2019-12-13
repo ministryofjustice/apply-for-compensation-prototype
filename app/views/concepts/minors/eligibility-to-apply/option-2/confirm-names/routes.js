@@ -8,7 +8,7 @@ router.post('/concepts/minors/eligibility-to-apply/option-2/confirm-names', func
   // Get the answer from the query string
   var minorConfirmNames = req.session.data['minorConfirmNames']
 
-  if (minorConfirmNames === 'Yes') {
+  if (minorConfirmNames === 'No') {
     // Redirect to the relevant page
     res.redirect('/concepts/minors/single-or-multiple-incidents')
   } else {
