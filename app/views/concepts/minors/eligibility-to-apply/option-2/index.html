@@ -34,39 +34,9 @@
 
       <p>If you cannot get one of these documents you can <a href="">apply using another service</a>.</p>
 
-      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
-
-      {{ govukRadios({
-            "classes": "govuk-radios",
-            "idPrefix": "minorUploadNow",
-            "name": "minorUploadNow",
-            currentValue: data['minorUploadNow'],
-            "fieldset": {
-              "legend": {
-                "text": minorProofEligibilityUploadNowQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--m'
-              }
-            },
-            "items": [
-              {
-                "value": "Yes",
-                "text": "Yes",
-                checked: checked("minorUploadNow", "Yes")
-              },
-              {
-                "value": "No",
-                "text": "No, I will email or post the documents in later",
-                checked: checked("minorUploadNow", "No")
-              }
-            ]
-          }) }}
-
       {{ govukButton({
-            "text": "Continue"
-            }) }}
-
-
+      "text": "Continue"
+      }) }}
 
     </form>
 

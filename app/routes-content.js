@@ -193,11 +193,8 @@ module.exports = {
     minorWhyDelayQuestion:'Select reasons for the delay in making your application?',
 
     minorProofEligibilityUploadNowQuestion:'Do you want to upload your documents now?',
-    minorProofEligibilityNamesQuestion:'Does this document show your current names?',
+    minorProofEligibilityNamesQuestion:'Does this document show the names you put in this application?',
     minorwhatCompensationQuestion: 'Other compensation',
-
-
-
 
     // Mental injuries questions //
     mentalHealthQuestion:'Has the crime affected your mental health a lot?',

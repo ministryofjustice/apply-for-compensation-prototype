@@ -200,8 +200,8 @@ require('./views/concepts/minors/eligibility-to-apply/option-1/upload/routes')(r
 
 require('./views/concepts/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-2/upload-choice/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-2/proof-other-names/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
 
 
