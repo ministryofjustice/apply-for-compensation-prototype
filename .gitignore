@@ -1,5 +1,7 @@
 # ignore tracking usage data config - we want a different one for each user
 usage-data-config.json
+# ignore extension SCSS because it's dynamically generated
+lib/extensions/_extensions.scss
 .env
 .sass-cache
 .DS_Store
@@ -9,7 +11,3 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
-app/views/concepts/change-date/date-of-birth/routes.js
-app/views/concepts/change-date/date-of-birth/index.html
-app/views/concepts/change-date/date-of-birth/routes.js
-app/views/concepts/change-date/date-of-birth/index.html
