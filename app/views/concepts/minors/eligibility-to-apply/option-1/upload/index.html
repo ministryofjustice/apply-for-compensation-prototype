@@ -24,9 +24,9 @@
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">Upload your proof of parental responsibility</h1>
+        <h1 class="govuk-heading-xl">Upload your child’s full birth certificate</h1>
 
-      <p>If the names on your document does not match <strong>Joanna Appletree</strong> and <strong>Jessica Appletree</strong> you will have to upload proof of your change of names. </p>
+      <p>If the names on the birth certificate do not match <strong>Joanna Appletree</strong> and <strong>Jessica Appletree</strong> you will have to upload proof that your names have changed.</p>
 
       {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
@@ -42,6 +42,17 @@
       {{ govukButton({
             "text": "Continue"
             }) }}
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If you do not have a full birth certificate
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+              <p><a href=https://www.gov.uk/order-copy-birth-death-marriage-certificate>Order a copy of a full birth certificate</a>.</p>
+              <p>You cannot upload a short (abbreviated) birth certificate.</p>
+
+            <p>You can upload an adoption order if you adopted your child.</p>
 
     </form>
 
