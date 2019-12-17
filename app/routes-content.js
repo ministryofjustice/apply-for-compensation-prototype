@@ -36,7 +36,7 @@ module.exports = {
     declarationHeading: 'Declaration',
     doYouKnowOffenderQuestion: "Do you know the name of the offender?",
     knowOffenderError: "Select yes if you know the offender's name",
-    offenderNameHint: "We will not contact the offender.",
+    offenderNameHint: "We will never contact the offender.",
     offenderNameError: "Enter the offender's name",
     emailAddressError: "Enter your email address, for example john.smith@email.com",
     emailAddressErrorSubHeader: "Enter your email address?",
@@ -190,11 +190,15 @@ module.exports = {
     minorCompensationQuestion: 'Has another organisation decided if your child should get compensation?',
     minorCompensationHint: 'For example, civil damages or a court deciding your child should get compensation.',
     minorCompWho:'Who has decided if your child should get compensation?',
-    minorWhyDelayQuestion:'Select reasons for the delay in making your application?',
+    minorWhyDelayQuestion:'Select reasons for the delay in making your application',
 
     minorProofEligibilityUploadNowQuestion:'Do you want to upload your documents now?',
     minorProofEligibilityNamesQuestion:'Have the names on the certificate changed?',
     minorwhatCompensationQuestion: 'Other compensation',
+    minorDoYouKnowOffenderQuestion: "Do you know the offenders\' names?",
+    minorOffenderNameQuestion: 'Enter the offenders\' names',
+    minorOffenderNameHint: "We will never contact the offenders.",
+    minorCompDecYes:'How much compensation did your child get?',
 
     // Mental injuries questions //
     mentalHealthQuestion:'Has the crime affected your mental health a lot?',

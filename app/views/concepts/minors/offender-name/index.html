@@ -25,7 +25,7 @@
         <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--xl" for="offender-name">
-              {{ offenderNameQuestion }}
+              {{ minorOffenderNameQuestion }}
             </label>
           </h1>
         </div>
@@ -33,11 +33,9 @@
         <div id="offenderName">
           {{ govukInput({
             label: {
-              "text": offenderNameQuestionCA
+              "text": minorOffenderNameHint
             },
-            hint: {
-              "text": offenderNameHint
-            },
+
             id: "first-name-offender",
             name: "first-name-offender",
             value:  data['first-name-offender']
