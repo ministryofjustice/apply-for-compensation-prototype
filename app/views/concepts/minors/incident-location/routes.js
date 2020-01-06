@@ -16,19 +16,18 @@ module.exports = function (router, content) {
         // Redirect to the relevant page
         res.redirect('/concepts/minors/england-location')
       }
-        if (yourChoice === 'Scotland') {
-          // Redirect to the relevant page
-          res.redirect('/concepts/minors/scotland-location')
-        }
-          if (yourChoice === 'Wales') {
-            // Redirect to the relevant page
-            res.redirect('/concepts/minors/wales-location')
-          }
-
-          if (yourChoice === 'Somewhere else') {
-            // Redirect to the relevant page
-            res.redirect('/concepts/minors/somewhere-else')
-          }
+      if (yourChoice === 'Scotland') {
+        // Redirect to the relevant page
+        res.redirect('/concepts/minors/scotland-location')
+      }
+      if (yourChoice === 'Wales') {
+        // Redirect to the relevant page
+        res.redirect('/concepts/minors/wales-location')
+      }
+      if (yourChoice === 'Somewhere else') {
+        // Redirect to the relevant page
+        res.redirect('/concepts/minors/somewhere-else')
+      }
 
       })
   // Pass the question in to the page

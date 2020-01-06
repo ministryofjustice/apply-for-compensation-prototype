@@ -212,6 +212,15 @@ require('./views/concepts/mental-injuries/v1/duration/routes')(router, viewConte
 require('./views/concepts/mental-injuries/v1/diagnosis/routes')(router, viewContent);
 
 
+// SMS + CONFIRMATION CHOICE //
+
+require('./views/concepts/confirmation-choice/address-manually/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/have-email-address/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/email-address/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/phone-number/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/mobile-number/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/check-your-answers-page/routes')(router, viewContent);
+
 
 
 //Extra questions & equal oportunities //

@@ -207,6 +207,11 @@ module.exports = {
     mentalHealthDiagnosisQuestion:'Have you been diagnosed with a mental health condition since the crime?',
     mentalHealthDiagnosisQuestionHint:'We may ask a clinical psychologist to look at your medical records if you’ve not been diagnosed yet. ',
 
+    // SMS confirmation questions //
+    smsMobileQuestion:'What is your mobile number?',
+    smsMobileNumberHint: "We may use this to contact you if we need to clarify something on your application form.",
+    smsDoYouHaveEmailQuestion: "Do you have an email address?",
+    smsDoYouHaveEmailQuestionHint: "We may use this to contact you if we need to clarify something on your application form.",
 
 
 };
