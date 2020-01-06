@@ -174,9 +174,9 @@ module.exports = {
     minorVictimNameQuestion:'What is your child\'s name?',
     minorVictimNameOtherQuestion:'Has your child been known by any other names?',
     minorVictimNameOtherWhatQuestion:'What other names has your child had?',
-    minorCareOrderQuestion:'Has a local authority made an order over your child?',
-    minorCareOrderHint:'This includes a care order, supervision order, or residence order.',
-    minorCareOrderDetailsQuestion:'Which local authority has made an order?',
+    minorCareOrderQuestion:'Does your child have a care order or supervision order?',
+    minorCareOrderHint:'This includes an interim care order.',
+    minorCareOrderDetailsQuestion:'Which local authority has a care order or supervision order?',
     minorYourNameQuestion:'What is your name?',
     minorAuthorityToApplyHeading:'Authority to apply',
     minorVictimAddressQuestion:'What is the child\'s address?',
@@ -198,7 +198,7 @@ module.exports = {
     minorDoYouKnowOffenderQuestion: "Do you know the offenders\' names?",
     minorOffenderNameQuestion: 'Enter the offenders\' names',
     minorOffenderNameHint: "We will never contact the offenders.",
-    minorCompDecYes:'How much compensation did your child get?',
+    minorCompDecYes:'How much did they say your child should get?',
 
     // Mental injuries questions //
     mentalHealthQuestion:'Has the crime affected your mental health a lot?',
