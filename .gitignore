@@ -11,3 +11,4 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
+lib/extensions/_extensions.scss
