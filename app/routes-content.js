@@ -228,9 +228,9 @@ module.exports = {
 
     // SMS confirmation questions //
     smsMobileQuestion:'What is your mobile number?',
-    smsMobileNumberHint: "We may use this to contact you if we need to clarify something on your application form.",
+    smsMobileNumberHint: "We'll send you a text message when we've received your application.",
     smsDoYouHaveEmailQuestion: "Do you have an email address?",
-    smsDoYouHaveEmailQuestionHint: "We may use this to contact you if we need to clarify something on your application form.",
+      smsDoYouHaveEmailQuestionHint: "We'll use this to tell you we've received your application.",
 
 
 };
