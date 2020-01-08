@@ -210,6 +210,12 @@ require('./views/concepts/minors/eligibility-to-apply/option-2/upload-other-name
 require('./views/concepts/mental-injuries/v1/mental-health/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v1/duration/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v1/diagnosis/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/clinical-psychologist/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/getting-treatment/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/diagnosis-process/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/waiting-list/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/gp-details/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/diagnosed-by/routes')(router, viewContent);
 
 
 // SMS + CONFIRMATION CHOICE //
