@@ -209,7 +209,7 @@ module.exports = {
 
     // SMS confirmation questions //
     smsMobileQuestion:'What is your mobile number?',
-    smsMobileNumberHint: "We'll send a text message when we've received your application.",
+    smsMobileNumberHint: "We'll send you a text message when we've received your application.",
     smsDoYouHaveEmailQuestion: "Do you have an email address?",
       smsDoYouHaveEmailQuestionHint: "We'll use this to tell you we've received your application.",
 
