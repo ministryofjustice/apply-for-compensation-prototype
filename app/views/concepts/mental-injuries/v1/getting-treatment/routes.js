@@ -15,7 +15,7 @@ router.post('/concepts/mental-injuries/v1/getting-treatment', function (req, res
       return res.redirect('/concepts/mental-injuries/v1/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/mental-injuries/v1/getting-treatment')
+    res.redirect('/concepts/mental-injuries/v1/gp-details')
   }
 })
 
