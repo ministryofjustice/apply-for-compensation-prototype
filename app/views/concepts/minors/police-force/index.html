@@ -35,9 +35,9 @@ Which police force is investigating the crime? - {{ serviceName }} - GOV.UK
             {% from "govuk/components/select/macro.njk" import govukSelect %}
 
             {{ govukSelect({
-              id: "minor-investigating-force",
-              value: "minor-investigating-force",
-              name: "minor-investigating-force",
+              id: "investigating-force",
+              value: "investigating-force",
+              name: "investigating-force",
               items: [
                 {
                   value: "",
