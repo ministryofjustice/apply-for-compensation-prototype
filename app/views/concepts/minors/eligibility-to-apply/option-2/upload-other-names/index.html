@@ -19,36 +19,61 @@ Upload documents showing your name has changed - {{ serviceName }} - GOV.UK
 
 {% block content %}
 
+{%- from "govuk/components/file-upload/macro.njk" import govukFileUpload -%}
+{%- from "govuk/components/button/macro.njk" import govukButton -%}
+{%- from "govuk/components/error-summary/macro.njk" import govukErrorSummary -%}
+{%- from "moj/components/multi-file-upload/macro.njk" import mojMultiFileUpload -%}
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post">
+{% if errorSummary.items.length %}
+  {{ govukErrorSummary({
+    titleText: 'There is a problem',
+    errorList: errorSummary.items
+  }) }}
+{% endif %}
 
-      <h1 class="govuk-heading-xl">Upload documents showing your names have changed</h1>
+<h1 class="govuk-heading-xl">Upload files</h1>
 
-      <p>This should come from the time your name or your child's name changed (like a deed poll, marriage certificate, or civil partnership certificate).</p>
+<form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
+  {% set uploadHtml %}
+    {{ govukFileUpload({
+      id: "documents",
+      name: "documents",
+      classes: 'moj-multi-file-upload__input',
+      label: {
+        text: "Upload documents showing your names have changed",
+        classes: 'govuk-label--m'
+      },
+      hint: {
+        text:"This should come from the time your name or your child's name changed (like a deed poll, marriage certificate, or civil partnership certificate)."
+      },
+      attributes: { multiple: '' },
+      errorMessage: errorMessage
+    }) }}
 
-      {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+    {{govukButton({
+      text: 'Upload file',
+      classes: 'govuk-button--secondary moj-multi-file-upload__button'
+    })}}
+  {% endset %}
 
+  {{ mojMultiFileUpload({
+    uploadedFiles: {
+      heading: { text: 'Files added' },
+      items: uploadedFiles
+    },
+    uploadHtml: uploadHtml
+  }) }}
 
-      {{ govukFileUpload({
-        id: "file-upload-1",
-        name: "file-upload-1",
-        label: {
-          text: "Choose file"
-        }
-      }) }}
-
-      {{ govukButton({
-            "text": "Continue"
-            }) }}
-
-    </form>
-
-  </div>
+  {{govukButton({
+    text: 'Continue'
+  })}}
+</form>
 </div>
-</main>
 </div>
+
 
 {% endblock %}
 

@@ -7,6 +7,9 @@ $govuk-assets-path: '/govuk/assets/';
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
 
+// MOJ Design System Modules
+@import "node_modules/@ministryofjustice/frontend/moj/all";
+
 // Patterns that aren't in Frontend
 @import "patterns/check-your-answers";
 @import "patterns/step-by-step-navigation";
@@ -16,6 +19,7 @@ $govuk-assets-path: '/govuk/assets/';
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 @import "components/accessible-autocomplete";
+
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
