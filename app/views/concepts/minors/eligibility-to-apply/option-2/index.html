@@ -24,16 +24,19 @@ We need proof of your eligibility to apply - {{ serviceName }} - GOV.UK
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">We need proof of your eligibility to apply</h1>
+      <h1 class="govuk-heading-xl">You need to send proof that you’re the child’s parent</h1>
 
-      <p>You should upload a full copy of their birth certificate or the adoption order if you adopted your child.</p>
+      <p class="govuk-body">You must send us proof that you have the right to apply on your child’s behalf.</p>
 
-      <p>We use this to check you have the right to apply for your child. You can upload a scan or a photo.</p>
+      <p class="govuk-body">You can:</p>
 
-      <p>If you can't upload them, you can email or post them in within 28 days of submitting the application.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>upload their full birth certificate or adoption certificate now</li>
+        <li>send proof by email or post in the next 28 days</li>
+      </ul>
 
-      <p>If you cannot get one of these documents you can <a href="">apply using another service</a>.</p>
-
+      <p class="govuk-body">If your name or your child’s name has changed, you’ll have to show proof of the change too.</p>
+      
       {{ govukButton({
       "text": "Continue"
       }) }}
