@@ -34,7 +34,7 @@ Upload documents showing your name has changed - {{ serviceName }} - GOV.UK
   }) }}
 {% endif %}
 
-<h1 class="govuk-heading-xl">Upload files</h1>
+<h1 class="govuk-heading-xl">Upload proof that your name(s) have changed</h1>
 
 <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
   {% set uploadHtml %}
@@ -43,11 +43,11 @@ Upload documents showing your name has changed - {{ serviceName }} - GOV.UK
       name: "documents",
       classes: 'moj-multi-file-upload__input',
       label: {
-        text: "Upload documents showing your names have changed",
+        text: "Upload a file",
         classes: 'govuk-label--m'
       },
       hint: {
-        text:"This should come from the time your name or your child's name changed (like a deed poll, marriage certificate, or civil partnership certificate)."
+        text:"This can be a deed poll, marriage certificate, civil partnership certificate, or Gender Recognition Certificate. You can upload more than one document."
       },
       attributes: { multiple: '' },
       errorMessage: errorMessage
@@ -62,7 +62,7 @@ Upload documents showing your name has changed - {{ serviceName }} - GOV.UK
   {{ mojMultiFileUpload({
     uploadedFiles: {
       heading: { text: 'Files added' },
-      items: uploadedFiles
+      items: []
     },
     uploadHtml: uploadHtml
   }) }}
@@ -77,5 +77,16 @@ Upload documents showing your name has changed - {{ serviceName }} - GOV.UK
 
 {% endblock %}
 
+{% block pageScripts %}
+<script>
+  if(typeof MOJFrontend.MultiFileUpload !== 'undefined') {
+    new MOJFrontend.MultiFileUpload({
+      container: $('.moj-multi-file-upload'),
+      uploadUrl: '/ajax-upload',
+      deleteUrl: '/ajax-delete'
+    });
+  }
+</script>
+{% endblock %}
 
 <!-- NOTE: do people understand the context of this question? -->

@@ -237,8 +237,6 @@ module.exports = {
     smsEmailQuestion: 'Enter your email address',
     smsTelephoneQuestion: 'Enter your telephone number',
 
-
-
 };
 // // END__######################################################################################################
 // }

@@ -1,6 +1,8 @@
 <!-- Javascript -->
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/node_modules/govuk-frontend/govuk/all.js"></script>
+<script src="/node_modules/moj-frontend/moj/all.js"></script>
+
 <script src="/public/javascripts/application.js"></script>
 
 {% if useAutoStoreData %}
@@ -11,11 +13,13 @@
 
 <script type="text/javascript">
   var selectEl = document.querySelector('#investigating-force')
-  accessibleAutocomplete.enhanceSelectElement({
-    autoselect: true,
-    confirmOnBlur: true,
-    defaultValue: "",
-    minLength: 2,
-    selectElement: selectEl
-  })
+  if(selectEl) {
+    accessibleAutocomplete.enhanceSelectElement({
+      autoselect: true,
+      confirmOnBlur: true,
+      defaultValue: "",
+      minLength: 2,
+      selectElement: selectEl
+    })
+  }
 </script>
