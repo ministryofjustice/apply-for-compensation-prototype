@@ -220,12 +220,25 @@ require('./views/concepts/mental-injuries/v1/diagnosed-by/routes')(router, viewC
 
 // SMS + CONFIRMATION CHOICE //
 
-require('./views/concepts/confirmation-choice/address-manually/routes')(router, viewContent);
-require('./views/concepts/confirmation-choice/have-email-address/routes')(router, viewContent);
-require('./views/concepts/confirmation-choice/email-address/routes')(router, viewContent);
-require('./views/concepts/confirmation-choice/phone-number/routes')(router, viewContent);
-require('./views/concepts/confirmation-choice/mobile-number/routes')(router, viewContent);
-require('./views/concepts/confirmation-choice/check-your-answers-page/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v1/address-manually/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v1/have-email-address/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v1/email-address/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v1/phone-number/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v1/mobile-number/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v1/check-your-answers-page/routes')(router, viewContent);
+
+require('./views/concepts/confirmation-choice/v2/declaration/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/british-citizen/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/over-18/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/who-is-making-the-application/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/sexual-assault-application/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/rest-of-application/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/confirmation/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/address-manually/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/email-address/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/phone-number/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/transition/routes')(router, viewContent);
+
 
 
 
