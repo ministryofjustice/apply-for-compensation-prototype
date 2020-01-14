@@ -53,20 +53,6 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Email address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['emailAddress'] }}<br />
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="email-address">
-        Change<span class="govuk-visually-hidden"> email address</span>
-      </a>
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
       Address
     </dt>
     <dd class="govuk-summary-list__value">
@@ -89,6 +75,26 @@
     </dd>
   </div>
 
+  {% if data['emailAddress'] %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Email address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['emailAddress'] }}<br />
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="email-address">
+        Change<span class="govuk-visually-hidden"> email address</span>
+      </a>
+    </dd>
+  </div>
+
+{% endif %}
+
+{% if data['phoneNumber'] %}
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Telephone number
@@ -102,6 +108,24 @@
       </a>
     </dd>
   </div>
+
+{% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Send confirmation receipt
+    </dt>
+    <dd class="govuk-summary-list__value">
+      by {{ data['confirmationPreference'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="confirmation-options">
+        Change<span class="govuk-visually-hidden"> confirmation receipt</span>
+      </a>
+    </dd>
+  </div>
+
+
 <!-- ** /Your details ************************************************************************************************************************ -->
 
 <!-- ** Your eligibility ************************************************************************************************************************ -->

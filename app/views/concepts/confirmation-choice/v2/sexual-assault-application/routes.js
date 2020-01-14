@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       res.redirect('/concepts/confirmation-choice/v2/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/concepts/confirmation-choice/v2/confirmation')
+      res.redirect('/concepts/confirmation-choice/v2/confirmation-options')
     }
   })
 

@@ -233,7 +233,7 @@ require('./views/concepts/confirmation-choice/v2/over-18/routes')(router, viewCo
 require('./views/concepts/confirmation-choice/v2/who-is-making-the-application/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/sexual-assault-application/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/rest-of-application/routes')(router, viewContent);
-require('./views/concepts/confirmation-choice/v2/confirmation/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/confirmation-options/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/address-manually/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/email-address/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/phone-number/routes')(router, viewContent);

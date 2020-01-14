@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: confirmation
   // varialbe: confirmation
   // if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
-  router.post('/concepts/confirmation-choice/v2/confirmation', function (req, res) {
+  router.post('/concepts/confirmation-choice/v2/confirmation-options', function (req, res) {
 
     var confirmationPreference = req.session.data['confirmationPreference']
 
@@ -20,12 +20,12 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/concepts/confirmation-choice/v2/confirmation/', function (req, res) {
-    res.render('concepts/confirmation-choice/v2/confirmation/index', content)
+  router.get('/concepts/confirmation-choice/v2/confirmation-options/', function (req, res) {
+    res.render('concepts/confirmation-choice/v2/confirmation-options/index', content)
   })
   // Pass the question in to the page
-  router.get('/concepts/confirmation-choice/v2/confirmation/error', function (req, res) {
-    res.render('concepts/confirmation-choice/v2/confirmation/error', content)
+  router.get('/concepts/confirmation-choice/v2/confirmation-options/error', function (req, res) {
+    res.render('concepts/confirmation-choice/v2/confirmation-options/error', content)
   })
   // END__######################################################################################################
 }
