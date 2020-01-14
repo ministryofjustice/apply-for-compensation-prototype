@@ -238,6 +238,7 @@ require('./views/concepts/confirmation-choice/v2/address-manually/routes')(route
 require('./views/concepts/confirmation-choice/v2/email-address/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/phone-number/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/transition/routes')(router, viewContent);
+require('./views/concepts/confirmation-choice/v2/check-your-answers-page/routes')(router, viewContent);
 
 
 

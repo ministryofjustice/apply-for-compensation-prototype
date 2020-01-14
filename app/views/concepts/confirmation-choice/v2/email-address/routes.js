@@ -4,13 +4,11 @@ module.exports = function (router, content) {
   // varialbe: email-address
   // if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
   router.post('/concepts/confirmation-choice/v2/email-address', function (req, res) {
-    if (!req.session.data['emailAddress']) {
-      req.session.data['emailAddress'] = 'name@domain.com'
-    }
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+
+  if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/confirmation-choice/v2/check-your-answers-page')
     }
-    res.redirect('/concepts/confirmation-choice/v2/phone-number')
+    res.redirect('/concepts/confirmation-choice/v2/check-your-answers-page')
   })
 
   // Pass the question in to the page
