@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{{ mentalHealthTreatmentQuestionv2 }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -28,29 +28,26 @@
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "mentalHealthWaitingList",
-            "name": "mentalHealthWaitingList",
-            currentValue: data['mentalHealthWaitingList'],
+            "idPrefix": "gettingTreatment",
+            "name": "gettingTreatment",
+            currentValue: data['gettingTreatment'],
             "fieldset": {
               "legend": {
-                "text": mentalHealthWaitingListQuestion,
+                "text": mentalHealthTreatmentQuestionv2,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
-            },
-            hint: {
-              text: mentalHealthWaitingListQuestionHint
             },
             "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("mentalHealthWaitingList", "Yes")
+                checked: checked("gettingTreatment", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("mentalHealthWaitingList", "No")
+                checked: checked("gettingTreatment", "No")
               }
             ]
           }) }}

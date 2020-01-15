@@ -212,10 +212,19 @@ require('./views/concepts/mental-injuries/v1/duration/routes')(router, viewConte
 require('./views/concepts/mental-injuries/v1/diagnosis/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v1/clinical-psychologist/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v1/getting-treatment/routes')(router, viewContent);
-require('./views/concepts/mental-injuries/v1/diagnosis-process/routes')(router, viewContent);
-require('./views/concepts/mental-injuries/v1/waiting-list/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/treatment-details/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v1/gp-details/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v1/waiting-for-diagnosis/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v1/diagnosed-by/routes')(router, viewContent);
+
+require('./views/concepts/mental-injuries/v2/mental-health/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v2/duration/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v2/no-mental-injury/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v2/getting-treatment/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v2/diagnosis/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v2/clinical-psychologist/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v2/gp-details/routes')(router, viewContent);
+
 
 
 // SMS + CONFIRMATION CHOICE //

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{{ mentalHealthDiagnosedByQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -24,37 +24,60 @@
 
     <form class="form" method="post">
 
-      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "diagnosedBy",
-            "name": "diagnosedBy",
-            currentValue: data['mentalHealthDiagnosis'],
-            "fieldset": {
-              "legend": {
-                "text": mentalHealthDiagnosedByQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            "items": [
-              {
-                "value": "Yes",
-                "text": "Yes",
-                checked: checked("diagnosedBy", "Yes")
-              },
-              {
-                "value": "No",
-                "text": "No",
-                checked: checked("diagnosedBy", "No")
-              }
-            ]
-          }) }}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "diagnosedByOther",
+        name: "diagnosedByOther",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Other"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "diagnosedBy",
+        name: "diagnosedBy",
+        fieldset: {
+          legend: {
+            text: mentalHealthDiagnosedByQuestion,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select all options that are relevant to you."
+        },
+        items: [
+          {
+            value: "diagnosedByGP",
+            text: "Your GP",
+            checked: checked("diagnosedBy", "diagnosedByGP")
+          },
+          {
+            value: "diagnosedByClinicalPsychologist",
+            text: "A clinical psychologist",
+            checked: checked("diagnosedBy", "diagnosedByClinicalPsychologist")
+          },
+          {
+            value: "diagnosedByOther",
+            text: "Other",
+            checked: checked("diagnosedBy", "diagnosedByOther"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
 
       {{ govukButton({
-            "text": "Continue"
-            }) }}
+        "text": "Continue"
+      }) }}
 
     </form>
 

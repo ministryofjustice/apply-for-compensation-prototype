@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ mentalHealthGPDetails }} - {{ serviceName }} - GOV.UK
+Error: {{ addressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,12 +23,28 @@
 
     <form class="form" method="post">
 
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: manualAddressErrorPostcode,
+                        href: "#address-postcode"
+                      }
+                    ]
+                  }) }}
+          </label>
+        </h1>
+      </div>
+
       {% from "govuk/components/input/macro.njk" import govukInput %}
       {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
       {% call govukFieldset({
       legend: {
-      text: mentalHealthGPDetails,
+      text: addressQuestion,
       classes: "govuk-fieldset__legend--xl",
       isPageHeading: true
       }
@@ -36,65 +52,56 @@
 
       {{ govukInput({
             label: {
-              html: miGPNameLabel
+              html: addressLine1Label
             },
-            id: "gp-name",
-            name: "gp-name",
-            value: data['gp-name']
+            id: "address-line-1",
+            name: "address-line-1",
+            value: data['address-line-1']
           }) }}
 
       {{ govukInput({
             label: {
-              text: miGPPracticeDetailsLabel
+              html: addressLine2Label
             },
-            classes: "govuk-!-width-two-thirds",
-            id: "practice-name",
-            name: "practice-name",
-            value: data['practice-name']
-          }) }}
-
-
-      {{ govukInput({
-            label: {
-              html: miGPAddressLine1Label
-            },
-            id: "gp-address-line-1",
-            name: "gp-address-line-1",
-            value: data['gp-address-line-1']
+            id: "address-line-2",
+            name: "address-line-2",
+            value: data['address-line-2']
           }) }}
 
       {{ govukInput({
             label: {
-              text: miGPTownOrCityLabel
+              text: townOrCityLabel
             },
             classes: "govuk-!-width-two-thirds",
-            id: "gp-address-town",
-            name: "gp-address-town",
-            value: data['gp-address-town']
+            id: "address-town",
+            name: "address-town",
+            value: data['address-town']
           }) }}
 
       {{ govukInput({
             label: {
-              text: miGPCountyLabel
+              text: countyLabel
             },
             classes: "govuk-!-width-two-thirds",
-            id: "gp-address-county",
-            name: "gp-address-county",
-            value: data['gp-address-county']
+            id: "address-county",
+            name: "address-county",
+            value: data['address-county']
           }) }}
 
       {{ govukInput({
             label: {
-              text: miGPAddressPostcodeOptionalLabel
+              text: addressPostcodeOptionalLabel
             },
             classes: "govuk-input--width-10",
-            id: "gp-address-postcode",
-            name: "gp-address-postcode",
-            value: data['gp-address-postcode']
+            id: "address-postcode",
+            name: "address-postcode",
+            value: data['address-postcode'],
+            errorMessage: {
+            text: manualAddressErrorPostcode
+            }
           }) }}
 
       {% endcall %}
-
       {{ govukButton({
           "text": "Continue"
           }) }}
