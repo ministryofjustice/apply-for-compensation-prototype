@@ -6,10 +6,10 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var confirmationPreference = req.session.data['confirmationPreference']
 
-    if (confirmationPreference === 'email') {
+    if (confirmationPreference === 'Email') {
       // Redirect to the relevant page
       res.redirect('/concepts/confirmation-choice/v2/phone-number')
-    } else if (confirmationPreference === 'text') {
+    } else if (confirmationPreference === 'Text') {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/concepts/confirmation-choice/v2/email-address')
     }
