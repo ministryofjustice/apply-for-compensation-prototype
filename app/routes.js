@@ -226,6 +226,21 @@ require('./views/concepts/mental-injuries/v2/clinical-psychologist/routes')(rout
 require('./views/concepts/mental-injuries/v2/gp-details/routes')(router, viewContent);
 
 
+require('./views/concepts/mental-injuries/v3/registered-with-gp/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/visited-gp/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/gp-details/routes')(router, viewContent);
+
+require('./views/concepts/mental-injuries/v3/dmi/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/mental-health/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/no-mental-injury/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/mental-health-more-info/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/duration/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/getting-treatment/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/treatment-types/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v3/practitioners/routes')(router, viewContent);
+
+
+
 
 // SMS + CONFIRMATION CHOICE //
 
@@ -248,7 +263,6 @@ require('./views/concepts/confirmation-choice/v2/email-address/routes')(router, 
 require('./views/concepts/confirmation-choice/v2/phone-number/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/transition/routes')(router, viewContent);
 require('./views/concepts/confirmation-choice/v2/check-your-answers-page/routes')(router, viewContent);
-
 
 
 
