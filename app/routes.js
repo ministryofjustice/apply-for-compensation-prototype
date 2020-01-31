@@ -211,6 +211,7 @@ require('./views/concepts/minors/eligibility-to-apply/option-3/upload-choice/rou
 require('./views/concepts/minors/eligibility-to-apply/option-3/confirm-names/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-3/upload-name-change/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-3/upload-another/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-3/upload-another-document/routes')(router, viewContent);
 
 
 
