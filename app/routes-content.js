@@ -201,6 +201,11 @@ module.exports = {
     minorOffenderNameHint: "We will never contact the offenders.",
     minorCompDecYes:'How much did they say your child should get?',
 
+    minorUploadFurtherProofQuestion: 'Upload proof that your name(s) have changed',
+    minorUploadFurtherProofQuestionHint: 'This can be a deed poll, marriage certificate, civil partnership certificate, or Gender Recognition Certificate.',
+    minorUploadFurtherProofMultipleDocsQuestionHint: 'This can be a deed poll, marriage certificate, civil partnership certificate, or Gender Recognition Certificate. You can upload more than one document.',
+
+
     // Mental injuries questions //
     mentalHealthQuestion:'Has the crime seriously affected your mental health?',
     mentalHealthQuestionHint:'This means it has stopped you doing things you would normally do, like going to work, seeing friends, or being in a relationship.',

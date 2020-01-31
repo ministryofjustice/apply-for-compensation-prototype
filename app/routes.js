@@ -199,10 +199,19 @@ require('./views/concepts/minors/eligibility-to-apply/option-1/upload-choice/rou
 require('./views/concepts/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
 
 require('./views/concepts/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-2/upload-choice/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
 require('./views/concepts/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
+
+
+require('./views/concepts/minors/eligibility-to-apply/option-3/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-3/upload/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-3/upload-choice/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-3/confirm-names/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-3/upload-name-change/routes')(router, viewContent);
+require('./views/concepts/minors/eligibility-to-apply/option-3/upload-another/routes')(router, viewContent);
+
 
 
 // MENTAL INJURIES //
