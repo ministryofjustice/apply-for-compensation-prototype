@@ -249,6 +249,18 @@ require('./views/concepts/mental-injuries/v3/getting-treatment/routes')(router, 
 require('./views/concepts/mental-injuries/v3/treatment-types/routes')(router, viewContent);
 require('./views/concepts/mental-injuries/v3/practitioners/routes')(router, viewContent);
 
+require('./views/concepts/mental-injuries/v4/registered-with-gp/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/visited-gp/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/gp-details/routes')(router, viewContent);
+
+require('./views/concepts/mental-injuries/v4/dmi/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/mental-health/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/no-mental-injury/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/mental-health-more-info/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/duration/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/treatment-types/routes')(router, viewContent);
+require('./views/concepts/mental-injuries/v4/getting-treatment/routes')(router, viewContent);
+
 
 
 

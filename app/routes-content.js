@@ -223,6 +223,7 @@ module.exports = {
     mentalHealthGPDetails:'Enter your GP details',
     mentalHealthGPDetailsHint:'Waiting list hint',
     mentalHealthTreatmentQuestionv2:'Are you being treated for your mental health?',
+    mentalHealthTreatmentQuestionv4:'Are you still receiving treatmemt?',
     mentalHealthDiagnosedByQuestion:'Who diagnosed you with this condition?',
     mentalHealthPractitionerQuestion:'Which mental health specialists have you seen?',
     mentalHealthPractitionerDetails:'What is your GP’s address?',
