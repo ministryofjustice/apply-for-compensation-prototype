@@ -208,7 +208,7 @@ module.exports = {
 
     // Mental injuries questions //
     mentalHealthQuestion:'Do you have a disabling mental injury?',
-    mentalHealthQuestionHint:'This makes it much harder or impossible to do normal day-to-day things. For example, not being able to do your job, go out with friends, or be in a relationship.',
+    mentalHealthQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like go to work, see friends, or keep a sexual relationship.',
     mentalHealthDurationQuestion:'Has your mental injury lasted more than 6 weeks?',
     mentalHealthDiagnosisQuestion:'Have you been diagnosed with a mental health condition as a result of the crime?',
     mentalHealthDiagnosisQuestionHint:'We may ask a clinical psychologist to look at your medical records if you’ve not been diagnosed yet. ',
@@ -223,7 +223,7 @@ module.exports = {
     mentalHealthGPDetails:'Enter your GP details',
     mentalHealthGPDetailsHint:'Waiting list hint',
     mentalHealthTreatmentQuestionv2:'Are you being treated for your mental health?',
-    mentalHealthTreatmentQuestionv4:'Are you still receiving treatmemt?',
+    mentalHealthTreatmentQuestionv4:'Are you still receiving treatment?',
     mentalHealthDiagnosedByQuestion:'Who diagnosed you with this condition?',
     mentalHealthPractitionerQuestion:'Which mental health specialists have you seen?',
     mentalHealthPractitionerDetails:'What is your GP’s address?',
