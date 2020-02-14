@@ -9,13 +9,13 @@ router.post('/application/british-citizen', function (req, res) {
 
   if (britishCitizen === 'No') {
     // Redirect to the relevant page
-    res.redirect('/application/transition')
+    res.redirect('/application/british-citizen/transition')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/over-18')
+    res.redirect('/application/sexual-assault-application')
   }
 })
 
@@ -26,6 +26,10 @@ router.get('/application/british-citizen/', function (req, res) {
 
 router.get('/application/british-citizen/british-citizen-error', function (req, res) {
   res.render('application/british-citizen/british-citizen-error', content)
+})
+
+router.get('/application/british-citizen/transition', function (req, res) {
+  res.render('application/british-citizen/transition', content)
 })
 
 // END__######################################################################################################
