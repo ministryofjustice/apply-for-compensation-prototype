@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (sexualAssault === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/transition')
+      res.redirect('/application/sexual-assault-application/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/impact-on-you')
@@ -23,6 +23,10 @@ module.exports = function (router, content) {
   // Error state
   router.get('/application/sexual-assault-application/error', function (req, res) {
     res.render('application/sexual-assault-application/error', content)
+  })
+  // Transition state
+  router.get('/application/sexual-assault-application/transition', function (req, res) {
+    res.render('application/sexual-assault-application/transition', content)
   })
   // END__######################################################################################################
 }
