@@ -212,8 +212,8 @@ module.exports = {
 
     // Mental injuries questions //
     mentalHealthQuestion:'Do you have a disabling mental injury?',
-    mentalHealthQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a sexual relationship.',
-    mentalHealthDurationQuestion:'Has your mental injury lasted more than 6 weeks?',
+    mentalHealthQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
+    mentalHealthDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
     mentalHealthDiagnosisQuestion:'Have you been diagnosed with a mental health condition as a result of the crime?',
     mentalHealthDiagnosisQuestionHint:'We may ask a clinical psychologist to look at your medical records if you’ve not been diagnosed yet. ',
     mentalHealthClinicalPsychologistQuestion:'Have you been diagnosed by a clincal psychologist?',
@@ -227,16 +227,16 @@ module.exports = {
     mentalHealthGPDetails:'What is your GP\'s address?',
     mentalHealthGPDetailsHint:'Waiting list hint',
     mentalHealthTreatmentQuestionv2:'Are you being treated for your mental health?',
-    mentalHealthTreatmentQuestionv4:'Are you still receiving treatment?',
+    mentalHealthTreatmentQuestionv4:'Have you finished your mental health treatment?',
     mentalHealthDiagnosedByQuestion:'Who diagnosed you with this condition?',
     mentalHealthPractitionerQuestion:'Which mental health specialists have you seen?',
     mentalHealthPractitionerDetails:'What is your GP’s address?',
     mentalHealthRegisteredGPQuestion:'Are you registered with a GP practice?',
     mentalHealthVisitedGPQuestion:'Have you seen a GP about your injuries?',
-    mentalHealthMoreInfoQuestion:'Briefly say how this has affected you',
-    mentalHealthMoreInfoHint:'You can leave this blank, but it helps us understand how the crime has affected you.',
-    mentalHealthTreatmentTypesQuestion:'Select any treatment you\'ve had',
-    mentalHealthTreatmentTypesHint:'You can continue without selecting a treatment if you\'ve not had any.',
+    mentalHealthMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
+    mentalHealthMoreInfoHint:'This helps us understand more about the impact on your life. You do not have to say anything if you do not want to.',
+    mentalHealthTreatmentTypesQuestion:'Select any treatments you\'ve had',
+    mentalHealthTreatmentTypesHint:'Include any treatment you\'re waiting to get. You can continue without selecting a treatment if you\'ve not had any.',
     mentalHealthVisitedGPQuestionHint: 'This includes your mental health.',
 
 
