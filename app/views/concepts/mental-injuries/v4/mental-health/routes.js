@@ -9,7 +9,7 @@ router.post('/concepts/mental-injuries/v4/mental-health', function (req, res) {
 
   if (mentalHealth === 'Yes') {
     // Redirect to the relevant page
-    res.redirect('/concepts/mental-injuries/v4/mental-health-more-info')
+    res.redirect('/concepts/mental-injuries/v4/duration')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/mental-injuries/v4/check-your-answers-page')
