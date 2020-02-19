@@ -234,7 +234,7 @@ module.exports = {
     mentalHealthRegisteredGPQuestion:'Are you registered with a GP practice?',
     mentalHealthVisitedGPQuestion:'Have you seen a GP about your injuries?',
     mentalHealthMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
-    mentalHealthMoreInfoHint:'This helps us understand more about the impact on your life. You can leave this blank if you want to.',
+    mentalHealthMoreInfoHint:'This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later.',
     mentalHealthTreatmentTypesQuestion:'Select any treatments you\'ve had',
     mentalHealthTreatmentTypesHint:'Include any treatment you\'re waiting to get. You can continue without selecting a treatment if you\'ve not had any.',
     mentalHealthVisitedGPQuestionHint: 'This includes your mental health.',
