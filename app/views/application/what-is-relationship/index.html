@@ -29,6 +29,7 @@
             name: "relationship-text",
             id: "relationship-text",
             currentValue: data['relationship-text'],
+            value: data['relationship-text'],
             label: {
               text: whatIsRelationshipQuestion,
               isPageHeading: true,
@@ -52,8 +53,9 @@
             },
             items: [
               {
-                value: "I have no contact with the offender",
-                text: "I have no contact with the offender"
+                value: "noContact",
+                text: "I have no contact with the offender",
+                checked: checked("noContactWithOffender", "noContact")
               }
             ]
           }) }}
@@ -66,8 +68,6 @@
 
     </form>
   </div>
-</div>
-</main>
 </div>
 
 {% endblock %}

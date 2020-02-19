@@ -53,11 +53,13 @@
                   items: [
                   {
                     value: "Yes",
-                    text: "Yes"
+                    text: "Yes",
+                    checked: checked("otherCompensation", "No")
                   },
                   {
                     value: "No",
                     text: "No",
+                    checked: checked("otherCompensation", "No"),
                     conditional: {
                       html: compNoHtml
                     }

@@ -21,7 +21,7 @@
     </dd>
   </div>
 
-  {% if data['previous-applications'] === 'Yes' %}
+  {% if data['previous-applications'] === 'No' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       {{ previousReferenceHint }}
@@ -44,7 +44,7 @@
     {{ compensationQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['otherCompensation'] }}
+    {{ data['other-compensation'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="compensation">
@@ -53,7 +53,7 @@
   </dd>
 </div>
 
-{% if data['otherCompensation'] === 'Yes' %}
+{% if data['other-compensation'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compWho }}
@@ -73,7 +73,7 @@
     {{ compDecQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['decision-answer'] }}
+    {{ data['comp-decision-answer'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
@@ -83,7 +83,7 @@
 </div>
 {% endif %}
 
-{% if data['otherCompensation'] === 'No' %}
+{% if data['other-compensation'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compNoHint }}
@@ -92,20 +92,20 @@
     {{ data['comp-no'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="compensation-why-not">
+    <a href="compensation">
       Change<span class="govuk-visually-hidden"> reason you didn't apply for compensation</span>
     </a>
   </dd>
 </div>
 {% endif %}
 
-{% if data['decision-answer'] === 'Yes' %}
+{% if data['comp-decision-answer'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compDecYes }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['how-much'] }}
+    {{ data['comp-how-much'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">
@@ -115,13 +115,13 @@
 </div>
 {% endif %}
 
-{% if data['decision-answer'] === 'No' %}
+{% if data['comp-decision-answer'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compDecNo }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['when'] }}
+    {{ data['comp-when'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="other-compensation">

@@ -24,7 +24,9 @@ Check your answers - {{ serviceName }} - GOV.UK
       Check your answers
     </h1>
 
-        {% include "./includes/_your_details.html" %}
+        {% include "./includes/_about_the_application.html" %}
+
+        {% include "./includes/_victim_details.html" %}
 
         {% include "./includes/_about_the_crime.html" %}
 
@@ -32,15 +34,12 @@ Check your answers - {{ serviceName }} - GOV.UK
 
         {% include "./includes/_other_compensation.html" %}
 
-    <h2 class="govuk-heading-l">Agree and submit your application</h2>
-    <p class="govuk-body">By submitting this application you agree that we can share the details in it with the police. This helps us get the police information that we need to make a decision.<p>
-    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
-
+        {% include "./includes/_contact_details.html" %}
 
     <form class="form" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton(
-            { "text": "Agree and submit" })
+            { "text": "Continue" })
           }}
     </form>
   </div>

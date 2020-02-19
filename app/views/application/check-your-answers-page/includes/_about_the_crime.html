@@ -66,13 +66,13 @@
 
 <!-- App delay questions -->
 
-  {% if data['applicationDelay'] %}
+  {% if data['reportingDelay'] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border:none">
-      Reasons for the delay in making your application
+      Reasons for the delay in reporting the crime
     </dt>
     <dd class="govuk-summary-list__value" style="border:none">
-      {{ data['applicationDelay'] }}
+      {{ data['reportingDelay'] }}
     </dd>
     <dd class="govuk-summary-list__actions" style="border:none">
       <a href="application-delay">
@@ -80,7 +80,9 @@
       </a>
     </dd>
   </div>
+  {% endif %}
 
+  {% if data['delayApplyExplanation'] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       {{ delayApplyExplanation }}
@@ -115,7 +117,7 @@
       {{ englandLocationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['EnglandTown'] }}<br /> {{ data['EnglandLocation'] }}
+      {{ data['EnglandLocation'] }}, {{ data['EnglandTown'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="england-location">
@@ -131,7 +133,7 @@
       {{ scotlandLocationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['ScotlandTown'] }}, {{ data['ScotlandLocation'] }}
+      {{ data['ScotlandLocation'] }}, {{ data['ScotlandTown'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="scotland-location">
@@ -147,7 +149,7 @@
       {{ walesLocationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['WalesTown'] }}, {{ data['WalesLocation'] }}
+      {{ data['WalesLocation'] }}, {{ data['WalesTown'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="wales-location">
@@ -193,10 +195,11 @@
       Contact with the offender
     </dt>
     <dd class="govuk-summary-list__value">
+      {% if data['noContactWithOffender']%}
+          They have no contact with the offender</br>
+      {% endif %}
       {% if data['relationship-text']%}
         {{ data['relationship-text'] }}
-      {% elseif data['noContactWithOffender']%}
-          {{ data['noContactWithOffender'] }}
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">

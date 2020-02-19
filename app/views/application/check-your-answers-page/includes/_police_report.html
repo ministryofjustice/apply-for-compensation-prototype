@@ -32,22 +32,6 @@
     </a>
   </dd>
 </div>
-{% endif %}
-
-<!-- lang=""{% if data['crimeReported'] === 'Yes' %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    {{ policeForceQuestion }}
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data['police-force'] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="reporting-details-what-force">
-      Change<span class="govuk-visually-hidden"> {{ policeForceQuestion }}</span>
-    </a>
-  </dd>
-</div> -->
 
 
 <div class="govuk-summary-list__row">
@@ -59,59 +43,26 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="crime-reference">
-      Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestionCA }}</span>
+      Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestion }}</span>
     </a>
   </dd>
 </div>
 {% endif %}
 
-  {% if data['incidentlocation'] === 'England' %}
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      {{ englandForceQuestion }}
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['sort'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="england-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
-      </a>
-    </dd>
-  </div>
-  {% endif %}
 
-  {% if data['incidentlocation'] === 'Scotland' %}
-    <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      {{ scotlandForceQuestion }}
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['policeScotland'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="scotland-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
-      </a>
-    </dd>
-  </div>
-    {% endif %}
-
-    {% if data['incidentlocation'] === 'Wales' %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        {{ walesForceQuestion }}
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['policeWales'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a href="wales-forces">
-          Change<span class="govuk-visually-hidden">the police force</span>
-        </a>
-      </dd>
-    </div>
-      {% endif %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ policeForceQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['investigating-force'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="police-force">
+      Change<span class="govuk-visually-hidden">the police force</span>
+    </a>
+  </dd>
+</div>
 
 
   <!-- Reporting delay -->
