@@ -5,7 +5,7 @@ module.exports = function (router, content) {
 
  router.post('/application/compensation', function (req, res) {
    // Get the answer from the query string
-   var otherCompensation = req.session.data['otherCompensation']
+   var otherCompensation = req.session.data['other-compensation']
 
    if (otherCompensation === 'No') {
      // Redirect to the relevant page

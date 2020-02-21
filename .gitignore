@@ -11,8 +11,3 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
-app/views/application/check-your-answers-page/includes/_about_the_application.html
-app/views/application/check-your-answers-page/includes/_other_compensation.html
-app/views/application/compensation/index.html
-app/views/application/other-compensation/index.html
-app/views/application/police-force/index.html

@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       res.redirect('/application/sexual-assault-application/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/impact-on-you')
+      res.redirect('/application/confirmation-options')
     }
   })
 
