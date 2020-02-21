@@ -48,10 +48,10 @@
 
             {% set yesHtml %}
             {{ govukInput({
-              id: "how-much",
-              name: "how-much",
+              id: "comp-how-much",
+              name: "comp-how-much",
               type: "Yes",
-              value : data['how-much'],
+              value : data['comp-comp-how-much'],
               classes: "govuk-!-width-one-third",
               label: {
                 text: compDecYes
@@ -77,9 +77,9 @@
 
 
             {{ govukRadios({
-              idPrefix: "decision-answer",
-              name: "decision-answer",
-              value : data['decision-answer'],
+              idPrefix: "comp-decision-answer",
+              name: "comp-decision-answer",
+              value : data['comp-decision-answer'],
               fieldset: {
                 legend: {
                   text: compDecQuestion,

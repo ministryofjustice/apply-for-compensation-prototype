@@ -37,9 +37,9 @@
             {% endset -%}
 
             {{ govukRadios({
-                  idPrefix: "otherCompensation",
-                  name: "otherCompensation",
-                  currentValue: data['otherCompensation'],
+                  idPrefix: "other-compensation",
+                  name: "other-compensation",
+                  currentValue: data['other-compensation'],
                   fieldset: {
                     legend: {
                       text: compensationQuestion,
@@ -54,12 +54,12 @@
                   {
                     value: "Yes",
                     text: "Yes",
-                    checked: checked("otherCompensation", "No")
+                    checked: checked("other-compensation", "No")
                   },
                   {
                     value: "No",
                     text: "No",
-                    checked: checked("otherCompensation", "No"),
+                    checked: checked("other-compensation", "No"),
                     conditional: {
                       html: compNoHtml
                     }

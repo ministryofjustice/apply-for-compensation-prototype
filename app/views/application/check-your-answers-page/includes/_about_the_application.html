@@ -7,20 +7,6 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{ sexualAbuseQuestion }}
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['sexualAssault'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="sexual-assault-application">
-        Change<span class="govuk-visually-hidden">{{ sexualAssault }} </span>
-      </a>
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
       {{ whoIsMakingTheApplicationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
@@ -29,6 +15,34 @@
     <dd class="govuk-summary-list__actions">
       <a href="who-is-making-the-application">
         Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ over18Question }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['over18'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="who-is-making-the-application">
+        Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ sexualAbuseQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['sexualAssault'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="sexual-assault-application">
+        Change<span class="govuk-visually-hidden">{{ sexualAssault }} </span>
       </a>
     </dd>
   </div>

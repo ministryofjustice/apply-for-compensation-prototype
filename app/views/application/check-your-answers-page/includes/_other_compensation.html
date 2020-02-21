@@ -7,7 +7,7 @@
 
   <!-- Previously applied question --->
 
-    <div class="govuk-summary-list__row">
+  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       {{ previousApplicationsQuestion }}
     </dt>
@@ -21,7 +21,7 @@
     </dd>
   </div>
 
-  {% if data['previous-applications'] === 'No' %}
+  {% if data['previous-applications'] === 'Yes' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       {{ previousReferenceHint }}
@@ -44,7 +44,7 @@
     {{ compensationQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['other-compensation'] }}
+    {{ data['otherCompensation'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="compensation">
@@ -53,7 +53,7 @@
   </dd>
 </div>
 
-{% if data['other-compensation'] === 'Yes' %}
+{% if data['otherCompensation'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compWho }}
@@ -83,7 +83,7 @@
 </div>
 {% endif %}
 
-{% if data['other-compensation'] === 'No' %}
+{% if data['otherCompensation'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     {{ compNoHint }}
