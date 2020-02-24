@@ -157,6 +157,11 @@ module.exports = {
     walesForcesError:"Select a police force",
     whichPoliceForceQuestion:"Which police force is investigating the crime?",
 
+    // Context Screens //
+    contextContactWithOffenderHeading:'Context heading for contact with offender screen',
+    contextPrevCompHeading:'Context heading for other compensation screen',
+    contextYourDetailsHeading:'Context heading for your details screen',
+
     // Timeout Screen //
     timedoutHeading:'You have timed out',
 

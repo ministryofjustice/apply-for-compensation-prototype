@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (crimeReported === 'No')  {
       // Redirect to the relevant page
-      res.redirect('/application/do-you-know-offender')
+      res.redirect('/application/context-contact-with-offender')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/crime-reported-date')

@@ -69,6 +69,11 @@ require('./views/application/confirmation-page-if-automatic-nil/routes')(router,
 
 require('./views/application/transition/routes')(router, viewContent);
 
+// Context pages //
+require('./views/application/context-contact-with-offender/routes')(router, viewContent);
+require('./views/application/context-prev-compensation/routes')(router, viewContent);
+require('./views/application/context-your-details/routes')(router, viewContent);
+
 // Police MVP //
 require('./views/application/england-location/routes')(router, viewContent);
 require('./views/application/england-forces/routes')(router, viewContent);
