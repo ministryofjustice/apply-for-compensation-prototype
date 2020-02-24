@@ -190,15 +190,30 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Contact with the offender
+      {{ contactWithOffenderQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
-      {% if data['noContactWithOffender']%}
-          They have no contact with the offender
+      {% if data['contact-offender'] === 'No' %}
+          No
       {% endif %}
-      {% if data['relationship-text']%}
+      {% if data['contact-offender'] === 'Yes' %}
+          Yes
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="what-is-relationship">
+        Change<span class="govuk-visually-hidden"> {{ contactWithOffenderQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['contact-offender'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Describe your contact with the offender
+    </dt>
+    <dd class="govuk-summary-list__value">
         {{ data['relationship-text'] }}
-      {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="what-is-relationship">
@@ -206,6 +221,8 @@
       </a>
     </dd>
   </div>
+  {% endif %}
+
   {% endif %}
 
 

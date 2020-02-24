@@ -14,7 +14,7 @@ module.exports = function (router, content) {
       return res.redirect('/application/check-your-answers-page')
     } else if (confirmationPreference === 'neither') {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/transition')
+      res.redirect('/application/confirmation-options/transition')
     }
     res.redirect('/application/impact-on-you')
   })
@@ -23,9 +23,11 @@ module.exports = function (router, content) {
   router.get('/application/confirmation-options/', function (req, res) {
     res.render('application/confirmation-options/index', content)
   })
+
+
   // Pass the question in to the page
-  router.get('/application/confirmation-options/error', function (req, res) {
-    res.render('application/confirmation-options/error', content)
+  router.get('/application/confirmation-options/transition', function (req, res) {
+    res.render('application/confirmation-options/transition', content)
   })
   // END__######################################################################################################
 }

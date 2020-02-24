@@ -41,8 +41,9 @@ require('./views/application/period-of-abuse-start/routes')(router, viewContent)
 require('./views/application/period-of-abuse-end/routes')(router, viewContent);
 require('./views/application/incident-date/routes')(router, viewContent);
 require('./views/application/incident-location/routes')(router, viewContent);
-require('./views/application/do-you-know-offender/routes')(router, viewContent);
+require('./views/application/do-you-know-offender-name/routes')(router, viewContent);
 require('./views/application/offender-name/routes')(router, viewContent);
+require('./views/application/contact-with-offender/routes')(router, viewContent);
 require('./views/application/what-is-relationship/routes')(router, viewContent);
 require('./views/application/name/routes')(router, viewContent);
 require('./views/application/name-have-other/routes')(router, viewContent);

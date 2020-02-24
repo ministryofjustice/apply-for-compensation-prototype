@@ -47,11 +47,11 @@ router.post('/application/england-forces', function (req, res) {
     if ( dateHelper.isReportedOver48h(incidentDate, reportingDate)){ // changing the incident date is now triggering the reporting delay screen
       return res.redirect('/application/reporting-delay')
     } else {
-      res.redirect('/application/do-you-know-offender')
+      res.redirect('/application/do-you-know-offender-name')
     }
   } else {
     // If the variable is any other value (or is missing) render the page requesteds
-    res.redirect('/application/do-you-know-offender')
+    res.redirect('/application/do-you-know-offender-name')
   }
 })
 

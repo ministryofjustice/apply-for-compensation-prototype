@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/application/context-contact-with-offender', function (req, res) {
-    res.redirect('/application/do-you-know-offender')
+    res.redirect('/application/do-you-know-offender-name')
   })
 
   // Pass the question in to the page

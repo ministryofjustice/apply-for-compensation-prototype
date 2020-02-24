@@ -40,26 +40,6 @@
             }
           }) }}
 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {{ govukCheckboxes({
-            idPrefix: "noContactWithOffender",
-            name: "noContactWithOffender",
-            currentValue: data['noContactWithOffender'],
-            fieldset: {
-              legend: {
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            items: [
-              {
-                value: "noContact",
-                text: "I have no contact with the offender",
-                checked: checked("noContactWithOffender", "noContact")
-              }
-            ]
-          }) }}
-
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
