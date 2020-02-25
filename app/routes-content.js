@@ -10,7 +10,7 @@ module.exports = {
     addressQuestion: 'Enter your address',
     britishCitizenQuestion: 'Are you a British citizen or EU national?',
     britishCitizenError: 'Select yes if you are a British citizen or EU national',
-    britishCitizenTransitionHeading: 'You will need to use another service',
+    britishCitizenTransitionHeading: 'You must use another service if you’re not a British citizen or EU national',
     compensationQuestion: 'Have you applied for or received any other form of compensation?',
     compensationHint: 'For example, if you sought civil damages or a court decided you should get compensation.',
     compWho:'Who have you applied to or received compensation from?',
@@ -64,7 +64,7 @@ module.exports = {
     // howMuchCompensationHint: 'You can also tell us if you are still waiting to find out.',
     // howMuchCompensationQuestion: 'How much compensation did you get?',
     gender:'What is your gender?',
-    impactHeading: 'Before you continue',
+    impactHeading: 'About the crime',
     incidentDateHeading: "When did the crime happen?",
     incidentDateHint: 'For example, 31 3 2018. You can enter an approximate date.',
     incidentReportedQuestion: 'Was the crime reported to the police?',
@@ -160,9 +160,9 @@ module.exports = {
     whichPoliceForceQuestion:"Which police force is investigating the crime?",
 
     // Context Screens //
-    contextContactWithOffenderHeading:'Context heading for contact with offender screen',
+    contextContactWithOffenderHeading:'Contact with the offender',
     contextPrevCompHeading:'Context heading for other compensation screen',
-    contextYourDetailsHeading:'Context heading for your details screen',
+    contextYourDetailsHeading:'Your details',
 
     // Timeout Screen //
     timedoutHeading:'You have timed out',
