@@ -11,6 +11,16 @@ module.exports = {
     britishCitizenQuestion: 'Are you a British citizen or EU national?',
     britishCitizenError: 'Select yes if you are a British citizen or EU national',
     britishCitizenTransitionHeading: 'You will need to use another service',
+    //new questions - 24/02/2020
+    otherCompensationQuestion:'Have you applied for or received any other form of compensation',
+    otherCompensationQuestionHint: 'For example, if you sought civil damages or a court decided you should get compensation.',
+    otherCompensationWhyNotQuestion:'Briefly explain why not',
+    otherCompensationAmountQuestion:'How much was the award?',
+    otherCompensationProviderQuestion:'Who have you applied to or received compensation from?',
+    otherCompensationProviderQuestionHint:'For example, if you sought civil damages or a court decided you should get compensation.',
+    otherCompensationDecisionQuestion:'Have they made a decision?',
+    otherCompensationDecisionWhenQuestion:'When will you find out?',
+    // end new questions
     compensationQuestion: 'Have you applied for or received any other form of compensation?',
     compensationHint: 'For example, if you sought civil damages or a court decided you should get compensation.',
     compWho:'Who have you applied to or received compensation from?',

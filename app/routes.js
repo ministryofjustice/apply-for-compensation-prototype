@@ -55,10 +55,14 @@ require('./views/application/email-address/routes')(router, viewContent);
 require('./views/application/address-manually/routes')(router, viewContent);
 // require('./views/application/address-non-uk/routes')(router, viewContent);
 require('./views/application/phone-number/routes')(router, viewContent);
-require('./views/application/compensation/routes')(router, viewContent);
-// require('./views/application/compensation-why-not/routes')(router, viewContent);
+
 require('./views/application/other-compensation/routes')(router, viewContent);
-// require('./views/application/compensation-amount/routes')(router, viewContent);
+require('./views/application/other-compensation-amount/routes')(router, viewContent);
+require('./views/application/other-compensation-decision/routes')(router, viewContent);
+require('./views/application/other-compensation-provider/routes')(router, viewContent);
+require('./views/application/other-compensation-when/routes')(router, viewContent);
+require('./views/application/other-compensation-why-not/routes')(router, viewContent);
+
 require('./views/application/check-your-answers-page/routes')(router, viewContent);
 // @todo these files need to go in the right place in the list above
 require('./views/application/previous-applications/routes')(router, viewContent);

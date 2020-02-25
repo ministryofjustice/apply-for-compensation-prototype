@@ -37,59 +37,31 @@
   </div>
   {% endif %}
 
-  <!-- Compensation question --->
+  <!-- Other compensation question --->
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    {{ compensationQuestion }}
+    {{ otherCompensationQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['other-compensation'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="compensation">
+    <a href="other-compensation">
       Change<span class="govuk-visually-hidden"> compensation</span>
     </a>
   </dd>
 </div>
 
-{% if data['otherCompensation'] === 'Yes' %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    {{ compWho }}
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data['comp-who'] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="other-compensation">
-      Change<span class="govuk-visually-hidden">who you applied to or recieved compensation from</span>
-    </a>
-  </dd>
-</div>
+<!-- Other compensation question - NO - Why not? --->
 
+{% if data['other-compensation'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    {{ compDecQuestion }}
+    {{ otherCompensationWhyNotQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
-    {{ data['comp-decision-answer'] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="other-compensation">
-      Change<span class="govuk-visually-hidden">decision</span>
-    </a>
-  </dd>
-</div>
-{% endif %}
-
-{% if data['otherCompensation'] === 'No' %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    {{ compNoHint }}
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data['comp-no'] }}
+    {{ data['comp-no-reason'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="compensation">
@@ -99,36 +71,78 @@
 </div>
 {% endif %}
 
+{% if data['other-compensation'] === 'Yes' %}
+
+<!-- Who have you applied for other compensation from? --->
+
+{% if data['other-compensation'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ otherCompensationProviderQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-who'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="other-compensation-provider">
+      Change<span class="govuk-visually-hidden">who you applied to or recieved compensation from</span>
+    </a>
+  </dd>
+</div>
+
+<!-- Have they made a decision? --->
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ otherCompensationDecisionQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-decision-answer'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="other-compensation-decision">
+      Change<span class="govuk-visually-hidden">decision</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+<!-- How much? --->
+
 {% if data['comp-decision-answer'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    {{ compDecYes }}
+    {{ otherCompensationAmountQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['comp-how-much'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="other-compensation">
+    <a href="other-compensation-amount">
       Change<span class="govuk-visually-hidden">the amount of award</span>
     </a>
   </dd>
 </div>
 {% endif %}
 
+<!-- When will they make a decision? --->
+
 {% if data['comp-decision-answer'] === 'No' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
-    {{ compDecNo }}
+    {{ otherCompensationDecisionWhenQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['comp-when'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="other-compensation">
-      Change<span class="govuk-visually-hidden">wnen you'll expect to hear</span>
+    <a href="other-compensation-when">
+      Change<span class="govuk-visually-hidden">when you'll expect to hear</span>
     </a>
   </dd>
 </div>
+{% endif %}
+
 {% endif %}
 
 </dl>
