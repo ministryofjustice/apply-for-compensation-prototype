@@ -126,6 +126,7 @@ module.exports = {
     warningText: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
     contactWithOffenderQuestion:"Do you have contact with the offender?",
     contactWithOffenderQuestionHint:"",
+    contactWithOffenderError: "Select yes if you have contact with the offender",
     whatIsRelationshipQuestion: "Describe your contact with the offender",
     whatIsRelationshipError: "Enter details of any contact you have with the offender",
     whatIsRelationshipCheckboxError: "Select the checkbox if you have no contact with the offender",
@@ -146,7 +147,7 @@ module.exports = {
     notEligibleHeading: 'You cannot get compensation',
     manualAddressErrorBuildingStreetBlank: 'Enter the building and street where you live',
     manualAddressErrorTownCityBlank: 'Enter the town or city where you live',
-    manualAddressErrorPostcode: 'Enter a postcode, like AA1 1AA',
+    manualAddressErrorPostcode: 'Enter a real postcode',
 
     //Location and Police Force Questions //
     incidentLocationHeading: "Where did the crime happen?",
