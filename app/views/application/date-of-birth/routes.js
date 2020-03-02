@@ -16,7 +16,7 @@ module.exports = function (router, content) {
     var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
     if(ageInYears < 18) { // it's a minor
-      res.redirect('/application/transition')
+      res.redirect('/application/date-of-birth/transition')
       // @todo we need to build a page that explains to users that they can only use this service if they are over 18
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
@@ -29,6 +29,12 @@ module.exports = function (router, content) {
   router.get('/application/date-of-birth/', function (req, res) {
     res.render('application/date-of-birth/index', content)
   })
+
+  // Pass the question in to the page
+  router.get('/application/date-of-birth/transition', function (req, res) {
+    res.render('application/date-of-birth/transition', content)
+  })
+
 
   router.get('/application/date-of-birth/error-before-incident', function (req, res) {
     res.render('application/date-of-birth/error-before-incident', content)
