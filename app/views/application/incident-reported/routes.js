@@ -8,7 +8,7 @@ module.exports = function (router, content) {
     if (crimeReported === 'No') {
        return res.redirect('/application/reporting-crime-not-reported')
     } else {
-      res.redirect('/application/single-or-multiple-incidents')
+      res.redirect('/application/context-about-your-injuries')
     }
   })
 
