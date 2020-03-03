@@ -172,8 +172,31 @@ module.exports = {
 
     // Context Screens //
     contextContactWithOffenderHeading:'About the offender',
+    contextAboutYourInjuriesHeading:'About your injuries',
     contextPrevCompHeading:'Other compensation',
     contextYourDetailsHeading:'Your details',
+    contextDMIHeading: 'Before you continue',
+    contextMedicalDetailsHeading: 'Your medical details',
+
+    // Removed Options and adding in DMI + Option 2 filter screens //
+    yourClaimQuestion:'Are you claiming for any of the following?',
+    yourClaimQuestionHint:'hint goes here',
+    dmiQuestion:'Do you have a disabling mental injury?',
+    dmiQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
+    dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
+    dmiTreatmentTypesQuestion:'Select any treatments you\'ve had',
+    dmiTreatmentTypesHint:'Include any treatment you\'re waiting to get. You can continue without selecting a treatment if you\'ve not had any.',
+    dmiTreatmentQuestion:'Have you finished your mental health treatment?',
+    dmiMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
+    dmiMoreInfoHint:'This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later.',
+
+    //Medical details //
+
+    registeredGPQuestion: 'Are you registered with a GP practice?',
+    visitedGPQuestion:'Have you seen a GP about your injuries?',
+    visitedGPQuestionHint: 'This includes your mental health.',
+    yourGPDetails:'What is your GP\'s address?',
+
 
     // Timeout Screen //
     timedoutHeading:'You have timed out',
@@ -228,7 +251,7 @@ module.exports = {
     minorUploadFurtherProofMultipleDocsQuestionHint: 'This can be a deed poll, marriage certificate, civil partnership certificate, or Gender Recognition Certificate. You can upload more than one document.',
 
 
-    // Mental injuries questions //
+    // CONCEPTS Mental injuries questions //
     mentalHealthQuestion:'Do you have a disabling mental injury?',
     mentalHealthQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
     mentalHealthDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
@@ -250,12 +273,15 @@ module.exports = {
     mentalHealthPractitionerQuestion:'Which mental health specialists have you seen?',
     mentalHealthPractitionerDetails:'What is your GP’s address?',
     mentalHealthRegisteredGPQuestion:'Are you registered with a GP practice?',
-    mentalHealthVisitedGPQuestion:'Have you seen a GP about your injuries?',
     mentalHealthMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
     mentalHealthMoreInfoHint:'This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later.',
     mentalHealthTreatmentTypesQuestion:'Select any treatments you\'ve had',
     mentalHealthTreatmentTypesHint:'Include any treatment you\'re waiting to get. You can continue without selecting a treatment if you\'ve not had any.',
+    mentalHealthVisitedGPQuestion:'Have you seen a GP about your injuries?',
     mentalHealthVisitedGPQuestionHint: 'This includes your mental health.',
+
+    physicalInjuriesQuestion: 'Are you claiming for any physical injuries?',
+    otherExpensesQuestion:'Are you claiming for any other expenses?',
 
 
     miGPNameLabel:'GP name',

@@ -16,7 +16,7 @@ module.exports = function (router, content) {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/confirmation-options/transition')
     }
-    res.redirect('/application/impact-on-you')
+    res.redirect('/application/incident-reported')
   })
 
   // Pass the question in to the page

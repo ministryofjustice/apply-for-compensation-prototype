@@ -78,6 +78,25 @@ require('./views/application/transition/routes')(router, viewContent);
 require('./views/application/context-contact-with-offender/routes')(router, viewContent);
 require('./views/application/context-prev-compensation/routes')(router, viewContent);
 require('./views/application/context-your-details/routes')(router, viewContent);
+require('./views/application/context-medical-details/routes')(router, viewContent);
+require('./views/application/context-about-your-injuries/routes')(router, viewContent);
+require('./views/application/context-about-dmi/routes')(router, viewContent);
+
+// Removing the options screen - adding mental and physical injuries //
+require('./views/application/your-claim/routes')(router, viewContent);
+require('./views/application/physical-injuries/routes')(router, viewContent);
+require('./views/application/other-expenses/routes')(router, viewContent);
+require('./views/application/dmi/routes')(router, viewContent);
+require('./views/application/no-mental-injury/routes')(router, viewContent);
+require('./views/application/dmi-duration/routes')(router, viewContent);
+require('./views/application/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/dmi-getting-treatment/routes')(router, viewContent);
+require('./views/application/dmi-more-info/routes')(router, viewContent);
+
+require('./views/application/gp-visited/routes')(router, viewContent);
+require('./views/application/gp-registered/routes')(router, viewContent);
+require('./views/application/gp-details/routes')(router, viewContent);
+
 
 // Police MVP //
 require('./views/application/england-location/routes')(router, viewContent);
