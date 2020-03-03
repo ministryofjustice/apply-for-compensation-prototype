@@ -28,9 +28,9 @@
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "mentalHealthDuration",
-            "name": "mentalHealthDuration",
-            currentValue: data['mentalHealthDuration'],
+            "idPrefix": "dmiDuration",
+            "name": "dmiDuration",
+            currentValue: data['dmiDuration'],
             "fieldset": {
               "legend": {
                 "text": dmiDurationQuestion,
@@ -42,12 +42,12 @@
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("mentalHealthDuration", "Yes")
+                checked: checked("dmiDuration", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("mentalHealthDuration", "No")
+                checked: checked("dmiDuration", "No")
               }
             ]
           }) }}

@@ -90,7 +90,7 @@ require('./views/application/dmi/routes')(router, viewContent);
 require('./views/application/no-mental-injury/routes')(router, viewContent);
 require('./views/application/dmi-duration/routes')(router, viewContent);
 require('./views/application/dmi-treatment-types/routes')(router, viewContent);
-require('./views/application/dmi-getting-treatment/routes')(router, viewContent);
+require('./views/application/dmi-finished-treatment/routes')(router, viewContent);
 require('./views/application/dmi-more-info/routes')(router, viewContent);
 
 require('./views/application/gp-visited/routes')(router, viewContent);

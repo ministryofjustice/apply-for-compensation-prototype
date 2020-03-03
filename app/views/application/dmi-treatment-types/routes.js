@@ -10,7 +10,7 @@ router.post('/application/dmi-treatment-types', function (req, res) {
       return res.redirect('/concepts/mental-injuries/v1/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/dmi-getting-treatment')
+    res.redirect('/application/dmi-finished-treatment')
 
 })
 

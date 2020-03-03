@@ -5,9 +5,9 @@ module.exports = function (router, content) {
 
 router.post('/application/dmi-duration', function (req, res) {
   // Get the answer from the query string
-  var mentalHealthTime = req.session.data['mentalHealthDuration']
+  var dmiDuration = req.session.data['dmiDuration']
 
-  if (mentalHealthTime === 'Yes') {
+  if (dmiDuration === 'Yes') {
     // Redirect to the relevant page
     res.redirect('/application/dmi-treatment-types')
   } else {

@@ -3,7 +3,7 @@ module.exports = function (router, content) {
 // File: Mental Health
 // Variable: mentalHealth
 
-router.post('/application/dmi-getting-treatment', function (req, res) {
+router.post('/application/dmi-finished-treatment', function (req, res) {
   // Get the answer from the query string
 
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
@@ -15,8 +15,8 @@ router.post('/application/dmi-getting-treatment', function (req, res) {
 })
 
 // Pass the question in to the page
-router.get('/application/dmi-getting-treatment/', function (req, res) {
-  res.render('application/dmi-getting-treatment/index', content)
+router.get('/application/dmi-finished-treatment/', function (req, res) {
+  res.render('application/dmi-finished-treatment/index', content)
 })
 
 

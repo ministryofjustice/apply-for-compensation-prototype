@@ -186,7 +186,7 @@ module.exports = {
     dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
     dmiTreatmentTypesQuestion:'Select any treatments you\'ve had',
     dmiTreatmentTypesHint:'Include any treatment you\'re waiting to get. You can continue without selecting a treatment if you\'ve not had any.',
-    dmiTreatmentQuestion:'Have you finished your mental health treatment?',
+    dmiFinsihedTreatmentQuestion:'Have you finished your mental health treatment?',
     dmiMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
     dmiMoreInfoHint:'This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later.',
 
