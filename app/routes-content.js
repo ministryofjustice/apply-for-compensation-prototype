@@ -130,7 +130,7 @@ module.exports = {
     whatIsRelationshipQuestion: "Describe your contact with the offender",
     whatIsRelationshipError: "Enter details of any contact you have with the offender",
     whatIsRelationshipCheckboxError: "Select the checkbox if you have no contact with the offender",
-    offenderContactHint: "We will not pay compensation if the offender may benefit from it.",
+    offenderContactHint: "We cannot pay compensation if the offender may benefit from it.",
     whatCompensationQuestion: 'Other compensation',
     whoIsMakingTheApplicationQuestion: 'Who are you applying for?',
     whoIsMakingTheApplicationError: 'Select myself if you are the person applying for compensation',
