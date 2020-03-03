@@ -1,0 +1,87 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  Your injuries
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ dmiQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dmiDoYouHave'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi">
+        Change<span class="govuk-visually-hidden">{{ dmiQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['dmiDoYouHave'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ dmiDurationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dmiDuration'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi-duration">
+        Change<span class="govuk-visually-hidden">{{ dmiDurationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['dmiDuration'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ dmiTreatmentTypesQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['treatmentTypes'] }}
+      {% if data['otherTreatment'] %}<br />
+        {{ data['otherTreatment'] }}
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi-treatment-types">
+        Change<span class="govuk-visually-hidden">{{ dmiTreatmentTypesQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ dmiFinsihedTreatmentQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['finishedTreatment'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi-finished-treatment">
+        Change<span class="govuk-visually-hidden">{{ dmiFinsihedTreatmentQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ dmiMoreInfoQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dmi-more-detail'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi-more-info">
+        Change<span class="govuk-visually-hidden">{{ dmiMoreInfoQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+  {% endif %}
+</dl>

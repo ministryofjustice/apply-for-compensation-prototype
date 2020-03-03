@@ -27,8 +27,9 @@
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
+        name: "dmi-more-detail",
+        id: "dmi-more-detail",
+        value: data['dmi-more-detail'],
         label: {
           "text": dmiMoreInfoQuestion,
           "isPageHeading": true,

@@ -43,8 +43,8 @@
       {% endset -%}
 
       {{ govukCheckboxes({
-        idPrefix: "waste",
-        name: "waste",
+        idPrefix: "treatmentTypes",
+        name: "treatmentTypes",
         fieldset: {
           legend: {
             text: dmiTreatmentTypesQuestion,
@@ -58,27 +58,33 @@
         items: [
           {
             value: "cbt",
-            text: "CBT (cognitive behavioural therapy)"
+            text: "CBT (cognitive behavioural therapy)",
+            checked: checked("treatmentTypes", "cbt")
           },
           {
             value: "emdr",
-            text: "EMDR (eye movement desensitisation and reprocessing)"
+            text: "EMDR (eye movement desensitisation and reprocessing)",
+            checked: checked("treatmentTypes", "emdr")
           },
           {
             value: "antidepressants",
-            text: "Antidepressants"
+            text: "Antidepressants",
+            checked: checked("treatmentTypes", "antidepressants")
           },
           {
             value: "counselling",
-            text: "Counselling"
+            text: "Counselling",
+            checked: checked("treatmentTypes", "counselling")
           },
           {
             value: "psychotherapy",
-            text: "Psychotherapy"
+            text: "Psychotherapy",
+            checked: checked("treatmentTypes", "psychotherapy")
           },
           {
             value: "other",
             text: "Other",
+            checked: checked("treatmentTypes", "other"),
             conditional: {
               html: otherTreatmentHtml
             }
