@@ -172,15 +172,15 @@ module.exports = {
 
     // Context Screens //
     contextContactWithOffenderHeading:'About the offender',
-    contextAboutYourInjuriesHeading:'About your injuries',
+    contextAboutYourInjuriesHeading:'Injuries and other losses',
     contextPrevCompHeading:'Other compensation',
     contextYourDetailsHeading:'Your details',
-    contextDMIHeading: 'Before you continue',
-    contextMedicalDetailsHeading: 'Your medical details',
+    contextDMIHeading: 'Your mental health',
+    contextMedicalDetailsHeading: 'Your GP',
 
     // Removed Options and adding in DMI + Option 2 filter screens //
-    yourClaimQuestion:'Are you claiming for any of the following?',
-    yourClaimQuestionHint:'hint goes here',
+    yourClaimQuestion:'Select anything caused by the crime',
+    yourClaimQuestionHint:'',
     dmiQuestion:'Do you have a disabling mental injury?',
     dmiQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
     dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
