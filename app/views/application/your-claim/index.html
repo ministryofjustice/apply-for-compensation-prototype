@@ -26,8 +26,9 @@
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "nationality",
-        name: "nationality",
+        idPrefix: "yourClaimOption2s",
+        name: "yourClaimOption2s",
+        value: data['yourClaimOption2s'],
         fieldset: {
           legend: {
             text: yourClaimQuestion,
@@ -42,6 +43,7 @@
         {
           value: "physical-injuries",
           text: "Injuries",
+          checked: checked("yourClaimOption2s", "physical-injuries"),
           hint: {
             text: ""
           }
@@ -49,6 +51,7 @@
         {
             value: "lost-earnings",
             text: "Loss of earnings",
+            checked: checked("yourClaimOption2s", "lost-earnings"),
             hint: {
               text: "If you were off work for more than 28 weeks"
             }
@@ -56,13 +59,15 @@
           {
             value: "extra-costs",
             text: "Extra costs",
+            checked: checked("yourClaimOption2s", "extra-costs"),
             hint: {
               text: "Like special equipment or changes to your house"
             }
           },
           {
             value: "sexual-injuries",
-            text: "Sexually transmitted infection, pregnancy, or loss of a baby"
+            text: "Sexually transmitted infection, pregnancy, or loss of a baby",
+            checked: checked("yourClaimOption2s", "sexual-injuries")
           }
 
         ]

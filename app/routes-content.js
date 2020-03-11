@@ -171,6 +171,7 @@ module.exports = {
     whichPoliceForceQuestion:"Which police force is investigating the crime?",
 
     // Context Screens //
+    contextIncidentDetailsHeading:'About the crime',
     contextContactWithOffenderHeading:'About the offender',
     contextAboutYourInjuriesHeading:'Injuries and other losses',
     contextPrevCompHeading:'Other compensation',
@@ -181,6 +182,7 @@ module.exports = {
     // Removed Options and adding in DMI + Option 2 filter screens //
     yourClaimQuestion:'Select anything caused by the crime',
     yourClaimQuestionHint:'',
+    yourClaimTransitionHeading:'You must use another service if your claim is for physical injuries, loss of earnings etc',
     dmiQuestion:'Do you have a disabling mental injury?',
     dmiQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
     dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',

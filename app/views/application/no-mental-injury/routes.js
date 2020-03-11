@@ -9,7 +9,7 @@ router.post('/application/no-mental-injury', function (req, res) {
       return res.redirect('/application/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/single-or-multiple-incidents')
+    res.redirect('/application/context-incident-details')
 })
 
 // Pass the question in to the page
