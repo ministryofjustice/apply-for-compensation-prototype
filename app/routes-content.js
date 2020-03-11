@@ -182,7 +182,7 @@ module.exports = {
     // Removed Options and adding in DMI + Option 2 filter screens //
     yourClaimQuestion:'Select anything you\'re claiming for',
     yourClaimQuestionHint:'',
-    yourClaimTransitionHeading:'You must use another service if your claim is for physical injuries, loss of earnings etc',
+    yourClaimTransitionHeading:'You must use another service if you\'re claiming for injuries or costs',
     dmiQuestion:'Do you have a disabling mental injury?',
     dmiQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
     dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
