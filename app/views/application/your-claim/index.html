@@ -23,55 +23,36 @@
 
     <form class="form" method="post">
 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-      {{ govukCheckboxes({
-        idPrefix: "yourClaimOption2s",
-        name: "yourClaimOption2s",
-        value: data['yourClaimOption2s'],
-        fieldset: {
-          legend: {
-            text: yourClaimQuestion,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        hint: {
-          text: yourClaimQuestionHint
-        },
-        items: [
-        {
-          value: "physical-injuries",
-          text: "Injuries",
-          checked: checked("yourClaimOption2s", "physical-injuries"),
-          hint: {
-            text: ""
-          }
-        },
-        {
-            value: "lost-earnings",
-            text: "Loss of earnings",
-            checked: checked("yourClaimOption2s", "lost-earnings"),
-            hint: {
-              text: "If you were off work for more than 28 weeks"
-            }
-          },
-          {
-            value: "extra-costs",
-            text: "Extra costs",
-            checked: checked("yourClaimOption2s", "extra-costs"),
-            hint: {
-              text: "Like special equipment or changes to your house"
-            }
-          },
-          {
-            value: "sexual-injuries",
-            text: "Sexually transmitted infection, pregnancy, or loss of a baby",
-            checked: checked("yourClaimOption2s", "sexual-injuries")
-          }
+      <h1 class="govuk-heading-xl">{{ yourClaimQuestion }}</h1>
 
-        ]
-      }) }}
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Injuries</li>
+        <li>Loss of earnings if you were off work for more than 28 weeks</li>
+        <li>Extra costs like special equipment or changes to your house</li>
+        <li>Sexually transmitted infection, pregnancy, or loss of a baby</li>
+      </ul>
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios",
+            "idPrefix": "yourClaimOption2s",
+            "name": "yourClaimOption2s",
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("yourClaimOption2s", "Yes")
+              },
+              {
+                "value": "No",
+                "text": "No",
+                checked: checked("yourClaimOption2s", "No")
+              }
+            ]
+          }) }}
 
       {{ govukButton({
             "text": "Continue"

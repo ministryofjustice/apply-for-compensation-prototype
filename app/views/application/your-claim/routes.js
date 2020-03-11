@@ -9,7 +9,7 @@ module.exports = function (router, content) {
       var option2 = req.session.data['yourClaimOption2s']
 
     // Check whether the variable matches a condition
-      if (option2 == undefined) {
+      if (option2  === 'No') {
         // Send user to next page
         res.redirect('/application/context-about-dmi')
       }
