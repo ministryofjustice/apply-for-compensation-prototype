@@ -172,20 +172,20 @@ module.exports = {
 
     // Context Screens //
     contextContactWithOffenderHeading:'About the offender',
-    contextAboutYourInjuriesHeading:'Injuries and other losses',
+    contextAboutYourInjuriesHeading:'Injuries or costs',
     contextPrevCompHeading:'Other compensation',
     contextYourDetailsHeading:'Your details',
     contextDMIHeading: 'Your mental health',
     contextMedicalDetailsHeading: 'Your GP',
 
     // Removed Options and adding in DMI + Option 2 filter screens //
-    yourClaimQuestion:'Select anything caused by the crime',
+    yourClaimQuestion:'Select anything you\'re claiming for',
     yourClaimQuestionHint:'',
     dmiQuestion:'Do you have a disabling mental injury?',
     dmiQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
     dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
     dmiTreatmentTypesQuestion:'Select any treatments you\'ve had',
-    dmiTreatmentTypesHint:'Include any treatment you\'re waiting to get. You can continue without selecting a treatment if you\'ve not had any.',
+    dmiTreatmentTypesHint:'Include any treatment you\'re waiting to get.',
     dmiFinsihedTreatmentQuestion:'Have you finished your mental health treatment?',
     dmiMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
     dmiMoreInfoHint:'This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later.',
