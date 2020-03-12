@@ -180,7 +180,7 @@ module.exports = {
     contextMedicalDetailsHeading: 'Your GP',
 
     // Removed Options and adding in DMI + Option 2 filter screens //
-    yourClaimQuestion:'Are you claiming for any of the following?',
+    yourClaimQuestion:'Are you claiming for any of these things?',
     yourClaimQuestionHint:'',
     yourClaimTransitionHeading:'You must use another service if you\'re claiming for injuries or costs',
     dmiQuestion:'Do you have a disabling mental injury?',
