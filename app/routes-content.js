@@ -40,6 +40,8 @@ module.exports = {
     crimeReferenceNumberHint: 'This is the reference number the police gave the crime when it was reported.',
     crimeReferenceNumberQuestion: 'What\'s the crime reference number?',
     crimeReferenceNumberQuestionCA: 'Crime reference number?',
+    crimeReferenceWarningSummary: 'Help with your crime reference number',
+    crimeReferenceWarningText: 'If you don\'t have your crime reference number, you can call 101. Alternatively, if you know the police station the crime was reported to you can contact them direct.',
     crimeReferenceError: 'Enter the crime reference number',
     crimeReportedDateHint: 'For example, 28 2 2020. You can enter an approximate date',
     crimeReportedDateQuestion: 'When was the crime reported to the police?',
