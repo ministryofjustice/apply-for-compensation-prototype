@@ -9,6 +9,14 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
 
+$(document).ready(function(){
+  /// Fake hiding the cookie banner
+  $(".cookie-banner__button-accept button").click(function(){
+    $(".app-cookie-banner").hide();
+  });
+
+})
+
 
 $(document).ready(function(){
     $("a.govuk-button").click(function(){
