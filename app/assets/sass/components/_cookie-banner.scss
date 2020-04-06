@@ -17,13 +17,10 @@
   @include govuk-width-container;
 }
 
-
-@include media($max-width: 500px){
-  width: 100%;
-}
-
 .cookie-banner__button .govuk-button {
-  width: 90%;
+  @include govuk-media-query($from: tablet) {
+    width: 90%;
+  }
 }
 
 @include govuk-media-query($media-type: print) {
