@@ -191,7 +191,7 @@ module.exports = {
     dmiTreatmentTypesQuestion:'Select any treatments you\'ve had',
     dmiTreatmentTypesHint:'Include any treatment you\'re waiting to get.',
     dmiFinsihedTreatmentQuestion:'Have you finished your mental health treatment?',
-    dmiMoreInfoQuestion:'Briefly say how the crime has affected your mental health',
+    dmiMoreInfoQuestion:'Briefly say how the crime has affected your daily life',
     dmiMoreInfoHint:'This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later.',
 
     //Medical details //
