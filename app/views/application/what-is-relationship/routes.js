@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     if(req.session.checking_answers) {
       return res.redirect('/application/check-your-answers-page')
     }
-    res.redirect('/application/context-prev-compensation')
+    res.redirect('/application/context-about-dmi')
   })
 
   // Pass the question in to the page

@@ -23,8 +23,15 @@
     <h1 class="govuk-heading-xl">
       {{ whoIsMakingTheApplicationTransitionHeading }}
     </h1>
-    <p class="govuk-body">You can still <a href="https://www.cica.gov.uk/OAS/Account/create">make a claim online</a>.</p>
 
+    <p class="govuk-body">You can still make a claim online.</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue"
+    })}}
+    
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">

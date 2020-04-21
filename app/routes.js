@@ -86,9 +86,11 @@ require('./views/application/context-about-dmi/routes')(router, viewContent);
 // Removing the options screen - adding mental and physical injuries //
 require('./views/application/your-claim/routes')(router, viewContent);
 require('./views/application/physical-injuries/routes')(router, viewContent);
+require('./views/application/special-payments/routes')(router, viewContent);
+require('./views/application/special-expenses/routes')(router, viewContent);
+require('./views/application/lost-earnings/routes')(router, viewContent);
 require('./views/application/other-expenses/routes')(router, viewContent);
 require('./views/application/dmi/routes')(router, viewContent);
-require('./views/application/no-mental-injury/routes')(router, viewContent);
 require('./views/application/dmi-duration/routes')(router, viewContent);
 require('./views/application/dmi-treatment-types/routes')(router, viewContent);
 require('./views/application/dmi-finished-treatment/routes')(router, viewContent);

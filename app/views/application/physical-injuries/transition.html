@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ transitionOCJHeading }} - {{ serviceName }} - GOV.UK
+{{ physicalInjuriesTransitionHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,9 +21,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ transitionHeading }}
+      {{ physicalInjuriesTransitionHeading }}
     </h1>
-
     <p class="govuk-body">You can still make a claim online.</p>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -31,7 +30,7 @@
     {{ govukButton({
       text: "Continue"
     })}}
-    
+
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -51,10 +50,6 @@
 
     </form>
   </div>
-</div>
-
-</main>
-
 </div>
 
 {% endblock %}

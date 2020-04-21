@@ -15,7 +15,7 @@ router.post('/application/dmi', function (req, res) {
       return res.redirect('/application/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/no-mental-injury')
+    res.redirect('/application/context-prev-compensation')
   }
 })
 

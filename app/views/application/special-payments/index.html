@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ physicalInjuriesQuestion }} - {{ serviceName }} - GOV.UK
+{{ specialPaymentsQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,29 +27,29 @@
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "physicalInjuries",
-            "name": "physicalInjuries",
-            currentValue: data['physicalInjuries'],
+            "idPrefix": "specialPayments",
+            "name": "specialPayments",
+            currentValue: data['specialPayments'],
             "fieldset": {
               "legend": {
-                "text": physicalInjuriesQuestion,
+                "text": specialPaymentsQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: physicalInjuriesQuestionHint
+              text: specialPaymentsQuestionHint
             },
             "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("physicalInjuries", "Yes")
+                checked: checked("specialPayments", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("physicalInjuries", "No")
+                checked: checked("specialPayments", "No")
               }
             ]
           }) }}

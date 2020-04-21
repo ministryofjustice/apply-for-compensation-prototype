@@ -285,6 +285,21 @@ module.exports = {
     mentalHealthVisitedGPQuestionHint: 'This includes your mental health.',
 
     physicalInjuriesQuestion: 'Are you claiming for any physical injuries?',
+    physicalInjuriesQuestionHint: 'Are you claiming for any physical injuries?',
+    physicalInjuriesTransitionHeading: 'You must use another service if you are claiming for physical injuries.',
+
+    specialPaymentsQuestion: 'Are you claiming for any other payments?',
+    specialPaymentsQuestionHint: 'Hint text for special payments',
+    specialPaymentsTransitionHeading: 'You must use another service if you are claiming for special payments.',
+
+    specialExpensesQuestion: 'Are you claiming for any special expenses?',
+    specialExpensesQuestionHint: 'Special expenses hint text',
+    specialExpensesTransitionHeading: 'You must use another service if you are claiming for special expenses.',
+
+    lostEarningsQuestion:'Are you claiming for any lost earnings?',
+    lostEarningsQuestionHint:'Lost earnings expenses hint text',
+    lostEarningsTransitionHeading:'You must use another service if you are claiming for lost earnings.',
+
     otherExpensesQuestion:'Are you claiming for any other expenses?',
 
 

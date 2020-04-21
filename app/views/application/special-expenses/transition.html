@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ transitionOCJHeading }} - {{ serviceName }} - GOV.UK
+{{ specialExpensesTransitionHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ transitionHeading }}
+      {{ specialExpensesTransitionHeading }}
     </h1>
 
     <p class="govuk-body">You can still make a claim online.</p>
@@ -31,7 +31,7 @@
     {{ govukButton({
       text: "Continue"
     })}}
-    
+
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">

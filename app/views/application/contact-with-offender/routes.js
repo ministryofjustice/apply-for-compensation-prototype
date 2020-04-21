@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (contactOffender === 'No')  {
       // Redirect to the relevant page
-      res.redirect('/application/context-prev-compensation')
+      res.redirect('/application/context-about-dmi')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/what-is-relationship')
