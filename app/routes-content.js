@@ -288,9 +288,9 @@ module.exports = {
     physicalInjuriesQuestionHint: '',
     physicalInjuriesTransitionHeading: 'You must use another website to claim for physical injuries',
 
-    specialPaymentsQuestion: 'Are you claiming for pregnancy, sexually transmitted infection, or loss of a baby?',
+    specialPaymentsQuestion: 'Are you claiming for sexually transmitted infection, pregnancy, or loss of a pregnacy?',
     specialPaymentsQuestionHint: '',
-    specialPaymentsTransitionHeading: 'You must use another website to claim for pregnancy, sexually transmitted infection, or loss of a baby',
+    specialPaymentsTransitionHeading: 'You must use another website to claim for sexually transmitted infection, pregnancy, or loss of a pregnacy',
 
     specialExpensesQuestion: 'Are you claiming for expenses as a result of your injuries?',
     specialExpensesQuestionHint: 'This can include the cost of special equipment, changes to your home, and care costs.',
