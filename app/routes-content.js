@@ -285,20 +285,20 @@ module.exports = {
     mentalHealthVisitedGPQuestionHint: 'This includes your mental health.',
 
     physicalInjuriesQuestion: 'Are you claiming for any physical injuries?',
-    physicalInjuriesQuestionHint: 'Are you claiming for any physical injuries?',
-    physicalInjuriesTransitionHeading: 'You must use another service if you are claiming for physical injuries.',
+    physicalInjuriesQuestionHint: '',
+    physicalInjuriesTransitionHeading: 'You must use another website to claim for physical injuries',
 
-    specialPaymentsQuestion: 'Are you claiming for any other payments?',
-    specialPaymentsQuestionHint: 'Hint text for special payments',
-    specialPaymentsTransitionHeading: 'You must use another service if you are claiming for special payments.',
+    specialPaymentsQuestion: 'Are you claiming for sexually transmitted infection, pregnancy, or loss of a pregnacy?',
+    specialPaymentsQuestionHint: '',
+    specialPaymentsTransitionHeading: 'You must use another website to claim for sexually transmitted infection, pregnancy, or loss of a pregnacy',
 
-    specialExpensesQuestion: 'Are you claiming for any special expenses?',
-    specialExpensesQuestionHint: 'Special expenses hint text',
-    specialExpensesTransitionHeading: 'You must use another service if you are claiming for special expenses.',
+    specialExpensesQuestion: 'Are you claiming for expenses as a result of your injuries?',
+    specialExpensesQuestionHint: 'This can include the cost of special equipment, changes to your home, and care costs.',
+    specialExpensesTransitionHeading: 'You must use another website to claim for expenses',
 
-    lostEarningsQuestion:'Are you claiming for any lost earnings?',
-    lostEarningsQuestionHint:'Lost earnings expenses hint text',
-    lostEarningsTransitionHeading:'You must use another service if you are claiming for lost earnings.',
+    lostEarningsQuestion:'Are you claiming for loss of earnings?',
+    lostEarningsQuestionHint:'You must have been unable to work for more than 28 weeks.',
+    lostEarningsTransitionHeading:'You must use another website to claim for loss of earnings',
 
     otherExpensesQuestion:'Are you claiming for any other expenses?',
 
