@@ -288,12 +288,12 @@ module.exports = {
     physicalInjuriesQuestionHint: '',
     physicalInjuriesTransitionHeading: 'Continue your claim',
 
-    specialPaymentsQuestion: 'Are you claiming for sexually transmitted infection, pregnancy, or loss of a pregnancy?',
+    specialPaymentsQuestion: 'Are you claiming for a sexually transmitted infection (STI), pregnancy, or loss of a pregnancy?',
     specialPaymentsQuestionHint: '',
     specialPaymentsTransitionHeading: 'Continue your claim',
 
     specialExpensesQuestion: 'Are you claiming for expenses as a result of your injuries?',
-    specialExpensesQuestionHint: 'This can include the cost of special equipment, changes to your home, and care costs.',
+    specialExpensesQuestionHint: 'This can include the cost of equipment, changes to your home, and care costs.',
     specialExpensesTransitionHeading: 'Continue your claim',
 
     lostEarningsQuestion:'Are you claiming for loss of earnings?',
