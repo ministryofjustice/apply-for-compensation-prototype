@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (specialExpenses === 'Yes') {
       // Redirect to the relevant page
-      res.redirect('/application/special-expenses/transition')
+      res.redirect('/application/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/context-your-details')

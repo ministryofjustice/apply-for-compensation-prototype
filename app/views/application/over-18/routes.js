@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (over18 === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/over-18/transition')
+      res.redirect('/application/transition')
     } else {
       if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
         return res.redirect('/application/check-your-answers-page')

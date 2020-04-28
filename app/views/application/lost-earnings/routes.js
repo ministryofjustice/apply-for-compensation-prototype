@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (lostEarnings === 'Yes') {
       // Redirect to the relevant page
-      res.redirect('/application/lost-earnings/transition')
+      res.redirect('/application/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/special-expenses')

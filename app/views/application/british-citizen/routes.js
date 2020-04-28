@@ -9,7 +9,7 @@ router.post('/application/british-citizen', function (req, res) {
 
   if (britishCitizen === 'No') {
     // Redirect to the relevant page
-    res.redirect('/application/british-citizen/transition')
+    res.redirect('/application/transition')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
