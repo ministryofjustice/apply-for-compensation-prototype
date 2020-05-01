@@ -23,12 +23,13 @@
     <h1 class="govuk-heading-xl">
       {{ physicalInjuriesTransitionHeading }}
     </h1>
-<p class="govuk-body">You'll be taken to another website to continue your claim.</p>
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+    <p class="govuk-body">You'll be taken to another website to continue your claim.</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
 
-    {{ govukButton({
-      text: "Continue"
-    })}}
+        {{ govukButton({
+          text: "Continue",
+          href: "https://www.cica.gov.uk/oas/Account/Create"
+        })}}
 
 
 
