@@ -72,8 +72,6 @@ require('./views/application/application-delay/routes')(router, viewContent);
 require('./views/application/reporting-delay/routes')(router, viewContent);
 require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
 
-require('./views/application/transition/routes')(router, viewContent);
-
 // Context pages //
 require('./views/application/context-incident-details/routes')(router, viewContent);
 require('./views/application/context-contact-with-offender/routes')(router, viewContent);
