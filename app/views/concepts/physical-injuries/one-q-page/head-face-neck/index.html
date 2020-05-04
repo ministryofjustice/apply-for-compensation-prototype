@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ headNeckFaceInjuryQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "headNeckFaceInjury",
+        name: "headNeckFaceInjury",
+        fieldset: {
+          legend: {
+            text: "Do you have any of these injuries to your head, face or neck?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: headNeckFaceInjuryQuestionHint
+        },
+        items: [
+          {
+            value: "brain-injury",
+            text: "Brain injury",
+            checked: checked("headNeckFaceInjury", "brain-injury")
+          },
+          {
+            value: "burns",
+            text: "Burns",
+            checked: checked("headNeckFaceInjury", "burns")
+          },
+          {
+            value: "scarring",
+            text: "Scarring",
+            checked: checked("headNeckFaceInjury", "scarring")
+          },
+          {
+            value: "cuts-grazes",
+            text: "Grazings, lacerations, cuts (no scars)",
+            checked: checked("headNeckFaceInjury", "cuts-grazes")
+          },
+          {
+            value: "bruising",
+            text: "Widespread bruising",
+            checked: checked("headNeckFaceInjury", "bruising")
+          },
+          {
+            value: "soft-tissue",
+            text: "Soft tissue injuries",
+            checked: checked("headNeckFaceInjury", "soft-tissue")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption"><h2 class="govuk-heading-m">Previous answers</h2></caption>
+        <tdead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <td scope="col" class="govuk-table__header">Question</td>
+            <td scope="col" class="govuk-table__header">Answer</td>
+            <td scope="col" class="govuk-table__header">Change answer</td>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Paralysis, loss of pregnancy or HIV</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Which parts of your body were injured?</td>
+            <td class="govuk-table__cell">Head, face and neck</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Do you have any of these minor injuries?</td>
+            <td class="govuk-table__cell">Grazings, lacerations, cuts (no scars). Widespread bruising</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Do you have any of these minor injuries to your head, face or neck?</td>
+            <td class="govuk-table__cell">Eye or sight</td>
+            <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
