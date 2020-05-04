@@ -302,7 +302,6 @@ module.exports = {
 
     otherExpensesQuestion:'Are you claiming for any other expenses?',
 
-
     miGPNameLabel:'GP name',
     miGPPracticeDetailsLabel:'Practice name',
     miGPAddressLine1Label:'Building and street',
@@ -322,6 +321,16 @@ module.exports = {
     smsAddressQuestion: 'Enter your address',
     smsEmailQuestion: 'Enter your email address',
     smsTelephoneQuestion: 'Enter your telephone number',
+
+
+    // CONCEPTS Physical injuries questions //
+    contextPIHeading: 'Heading for context screen',
+    piIneligibleQuestion: 'Do you have ineligible injuries?',
+    piIneligibleQuestionHint: 'Hint for ineligible injuries?',
+    piDetailsQuestion: 'What physical injuries?',
+    piDetailsHint: 'Physical injuries hint text',
+
+
 
 };
 // // END__######################################################################################################

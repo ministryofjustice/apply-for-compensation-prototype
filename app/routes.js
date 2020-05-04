@@ -320,6 +320,12 @@ require('./views/concepts/confirmation-choice/v2/transition/routes')(router, vie
 require('./views/concepts/confirmation-choice/v2/check-your-answers-page/routes')(router, viewContent);
 
 
+// CONCEPTS Physical injuries questions //
+require('./views/concepts/physical-injuries/free-text/context-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/free-text/ineligible-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/free-text/physical-injuries-details/routes')(router, viewContent);
+
+
 
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);

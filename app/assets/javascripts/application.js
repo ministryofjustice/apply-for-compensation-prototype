@@ -25,6 +25,17 @@ $(document).ready(function(){
 
 })
 
+$(document).ready(function(){
+
+  $('.miller-columns li a').on('click', function () {
+      $(this).parent().toggleClass('expanded').siblings().removeClass('expanded');
+      // alert ('testing');
+      return false;
+  });
+
+  $(".miller-columns li:has(ul)").addClass("has-children");
+
+})
 
 $(document).ready(function(){
     $("a.govuk-button").click(function(){
