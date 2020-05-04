@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ torsoIneligibleQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "torsoIneligible",
+        name: "torsoIneligible",
+        fieldset: {
+          legend: {
+            text: torsoIneligibleQuestion,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: torsoIneligibleQuestionHint
+        },
+        items: [
+          {
+            value: "injury1",
+            text: "Black eye",
+            checked: checked("torsoIneligible", "injury1")
+          },
+          {
+            value: "injury2",
+            text: "Bloody nose",
+            checked: checked("torsoIneligible", "injury2")
+          },
+          {
+            value: "injury3",
+            text: "Broken ear bone",
+            checked: checked("torsoIneligible", "injury3")
+          },
+          {
+            value: "injury4",
+            text: "Broken hyoid (throat bone)",
+            checked: checked("torsoIneligible", "injury4")
+          },
+          {
+            value: "injury5",
+            text: "Broken nose",
+            checked: checked("torsoIneligible", "injury5")
+          },
+          {
+            value: "injury6",
+            text: "Bruises",
+            checked: checked("torsoIneligible", "injury6")
+          },
+          {
+            value: "injury7",
+            text: "Cuts",
+            checked: checked("torsoIneligible", "injury7")
+          },
+          {
+            value: "injury8",
+            text: "Hair pulled out",
+            checked: checked("torsoIneligible", "injury8")
+          },
+          {
+            value: "injury9",
+            text: "Loose teeth",
+            checked: checked("torsoIneligible", "injury9")
+          },
+          {
+            value: "injury10",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("torsoIneligible", "injury10")
+          },
+          {
+            value: "injury11",
+            text: "One perforated eardrum",
+            checked: checked("torsoIneligible", "injury11")
+          },
+          {
+            value: "injury12",
+            text: "Scratched eye",
+            checked: checked("torsoIneligible", "injury12")
+          },
+          {
+            value: "injury13",
+            text: "Temporary blurred vision",
+            checked: checked("torsoIneligible", "injury13")
+          },
+          {
+            value: "injury14",
+            text: "Other",
+            checked: checked("torsoIneligible", "injury14")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

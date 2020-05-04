@@ -32,7 +32,7 @@
         name: "injuredParts",
         fieldset: {
           legend: {
-            text: injuredPartsQuestion,
+            text: "Do you have any of these injuries to your head, face or neck?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -43,7 +43,7 @@
         items: [
           {
             value: "head",
-            text: "Head, face, or neck",
+            text: "Head, face or neck",
             checked: checked("injuredParts", "head")
           },
           {
@@ -52,14 +52,14 @@
             checked: checked("injuredParts", "torso")
           },
           {
-            value: "arms",
-            text: "Arms",
-            checked: checked("injuredParts", "arms")
+            value: "upper-limbs",
+            text: "Upper limbs",
+            checked: checked("injuredParts", "upper-limbs")
           },
           {
-            value: "legs",
-            text: "Legs",
-            checked: checked("injuredParts", "legs")
+            value: "lower-limbs",
+            text: "Lower limbs",
+            checked: checked("injuredParts", "lowe-limbs")
           }
         ]
       }) }}
