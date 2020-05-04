@@ -329,8 +329,8 @@ module.exports = {
     headFaceNeckIneligibleQuestion: 'Select any injuries to your head, face, or neck',
     piIneligibleHeadFaceNeckQuestion: 'Do you have any of these injuries?',
     piIneligibleHeadFaceNeckQuestionHint: 'Hint for ineligible injuries?',
-    piDetailsQuestion: 'What physical injuries?',
-    piDetailsHint: 'Physical injuries hint text',
+    piDetailsQuestion: 'What other physical injuries do you have?',
+    piDetailsHint: '',
 
 
 
