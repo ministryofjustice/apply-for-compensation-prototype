@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ headFaceNeckIneligibleQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "headFaceNeckIneligible",
+        name: "headFaceNeckIneligible",
+        fieldset: {
+          legend: {
+            text: headFaceNeckIneligibleQuestion,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: headFaceNeckIneligibleQuestionHint
+        },
+        items: [
+          {
+            value: "injury1",
+            text: "Injury 1",
+            checked: checked("headFaceNeckIneligible", "injury1")
+          },
+          {
+            value: "injury2",
+            text: "Injury 2",
+            checked: checked("headFaceNeckIneligible", "injury2")
+          },
+          {
+            value: "injury3",
+            text: "Injury 3",
+            checked: checked("headFaceNeckIneligible", "injury3")
+          },
+          {
+            value: "injury4",
+            text: "Injury 4",
+            checked: checked("headFaceNeckIneligible", "injury4")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

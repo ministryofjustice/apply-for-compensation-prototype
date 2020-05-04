@@ -325,8 +325,10 @@ module.exports = {
 
     // CONCEPTS Physical injuries questions //
     contextPIHeading: 'Heading for context screen',
-    piIneligibleQuestion: 'Do you have ineligible injuries?',
-    piIneligibleQuestionHint: 'Hint for ineligible injuries?',
+    injuredPartsQuestion: 'Which parts of your body have been injured?',
+    headFaceNeckIneligibleQuestion: 'Do you have any of these injuries to your head face or neck?',
+    piIneligibleHeadFaceNeckQuestion: 'Do you have any of these injuries?',
+    piIneligibleHeadFaceNeckQuestionHint: 'Hint for ineligible injuries?',
     piDetailsQuestion: 'What physical injuries?',
     piDetailsHint: 'Physical injuries hint text',
 

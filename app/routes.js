@@ -322,6 +322,8 @@ require('./views/concepts/confirmation-choice/v2/check-your-answers-page/routes'
 
 // CONCEPTS Physical injuries questions //
 require('./views/concepts/physical-injuries/free-text/context-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/free-text/injured-parts/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/free-text/ineligible-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/ineligible-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/physical-injuries-details/routes')(router, viewContent);
 
