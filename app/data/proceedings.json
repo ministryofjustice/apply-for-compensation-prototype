@@ -1,0 +1,79 @@
+[
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 1,
+        "proceedingtype": "Extend, variation or discharge - Part IV",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 2,
+        "proceedingtype": "Forced marriage protection order",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 3,
+        "proceedingtype": "Harassment - injunction",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 4,
+        "proceedingtype": "Inherent jurisdiction high court injunction",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 5,
+        "proceedingtype": "Non-molestation order",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 6,
+        "proceedingtype": "Occupation order",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    },
+    {
+        "categoryoflawid": 1,
+        "categoryoflaw": "Family law",
+        "mattertypeid": 1,
+        "mattertype": "Domestic Abuse",
+        "proceedingtypeid": 7,
+        "proceedingtype": "Variation or discharge under section 5 protection from harassment act 1997",
+        "statute": "Part IV - Family Law Act 1996",
+        "scopelimitation": "Injunction FLA - to final hearing ",
+        "scopewording": "As to proceedings under Part IV Family Law Act 1996 limited to all steps up to and including obtaining and serving a final order and in the event of breach leading to the exercise of a power of arrest to representation on the consideration of the breach by the court (but excluding applying for a warrant of arrest. If not attached, and representation in contempt proceedings.)"
+    }
+]

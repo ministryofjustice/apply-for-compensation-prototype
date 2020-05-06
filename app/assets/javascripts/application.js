@@ -88,7 +88,5 @@ $(document).ready(function(){
         if(radioValue == "crime-police-dont-know"){
           window.location.href = "/forces-mockups/v1/england/forces/all";
         }
-
-
     });
 });
