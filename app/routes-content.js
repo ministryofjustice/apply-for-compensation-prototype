@@ -199,7 +199,7 @@ module.exports = {
     registeredGPQuestion: 'Are you registered with a GP practice?',
     visitedGPQuestion:'Have you seen a GP about your injuries?',
     visitedGPQuestionHint: 'This includes your mental health.',
-    yourGPDetails:'What is your GP\'s address?',
+    yourGPDetails:'What is the GP\'s address?',
 
 
     // Timeout Screen //
