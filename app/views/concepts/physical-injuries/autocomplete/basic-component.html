@@ -5,6 +5,77 @@
 Physical injuries - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block pageScripts %}
+<script>
+
+  var selectEl = document.querySelector('#injury-selector')
+  if(selectEl) {
+    accessibleAutocomplete.enhanceSelectElement({
+      autoselect: true,
+      confirmOnBlur: true,
+      defaultValue: "",
+      minLength: 2,
+      selectElement: selectEl
+    })
+  }
+
+  // hide the code for myInjuries list
+  $("#injuriesListWrapper").hide();
+
+  // Set number of injuries to 0
+  var myInjuries = 0;
+
+  // Add an injury to the list from the autocomplete
+  $('#addToList').click( function() {
+
+    // Show the myInjuries list
+    $("#injuriesListWrapper").show();
+
+    // get the injury selected
+    var newInjury = $("input#injury-selector").val();
+
+    // create the new table row to be inserted
+    var markup = "<tr class='govuk-table__row'><th class='govuk-table__cell govuk-body'>" + newInjury + "</th><td class='govuk-table__cell govuk-body govuk-table__cell--numeric'><a href='#' class='removeInjury'>Remove <span class='govuk-visually-hidden'>" + newInjury + "</span></a></td></tr>";
+
+    // add the new table row
+    $("table#myInjuriesList tbody").append(markup);
+
+    // increment the number of injuries by 1
+    myInjuries ++
+    if (myInjuries >= 2) {
+      $(".injuriesTotal").text(myInjuries + ' injuries');
+    }
+
+    // clear the input
+    $('input#injury-selector').val('');
+
+  })
+
+  // Remove an injury from the list
+  $(document).on('click', '.removeInjury', function() {
+    // remove the table row
+    $(this).closest('tr').remove();
+
+    // remove 1 from the injuries total
+    myInjuries --
+
+    // Update the number of unjuries
+    if (myInjuries >= 2) {
+      $(".injuriesTotal").text(myInjuries + ' injuries');
+
+    } else if (myInjuries === 1) {
+      $(".injuriesTotal").text(myInjuries + ' injury');
+
+    } else if (myInjuries === 0) {
+      // hide the code for myInjuries list
+      $("#injuriesListWrapper").hide();
+    }
+
+  });
+
+</script>
+{% endblock %}
+
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
@@ -25,14 +96,38 @@ Physical injuries - {{ serviceName }} - GOV.UK
     <div class="govuk-grid-column-two-thirds">
 
     <form class="form" method="post">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--xl" for="police-forces">
+      <h1 class="govuk-heading-xl">
           What injuries do you have as a result of the crime?
-        </label>
       </h1>
 
-        <div class="autocomplete-wrapper">
-          <select name="last-location" id="investigating-force">
+      <div id="injuriesListWrapper">
+        <h2 class="govuk-heading-m">You have selected <span class="injuriesTotal">1 injury</span></h2>
+
+        <table id="myInjuriesList" class="govuk-table govuk-!-margin-bottom-9">
+        <tbody class="govuk-table__body">
+          <!--
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Example</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              <a href="search">Remove <span class="govuk-visually-hidden">blank</span></a>
+            </td>
+            </tr>
+            -->
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <label class="govuk-heading-m" for="search">
+        Search for injuries
+          <span class="govuk-hint">
+            For example...
+          </span>
+      </label>
+
+        <div class="autocomplete-wrapper govuk-!-width-two-thirds govuk-!-margin-right-5" style="float:left;">
+          <select name="injury-selector" id="injury-selector">
             <option value=""></option>
             <option value="Burns on head, neck, or face">Burns on head, neck, or face</option>
             <option value="Scars on head">Scars on head</option>
@@ -174,17 +269,10 @@ Physical injuries - {{ serviceName }} - GOV.UK
           </select>
         </div>
 
-        <br>
-        <details class="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Help with police forces
-                </span>
-            </summary>
-                <div class="govuk-details__text">
-                  <p class="govuk-body">See a list of all <a href="/concepts/minors/police-force/list-of-forces.html" target="_blank">police forces in England, Scotland and Wales</a> (opens in a new tab)</p>
-                </div>
-          </details>
+        <a id="addToList" style="float:left;" class="govuk-button govuk-button--secondary govuk-button--secondary govuk-!-width-one-quarter" data-module="govuk-button">
+          Select
+        </a>
+
 
           {{ govukButton({
                 "text": "Continue"
