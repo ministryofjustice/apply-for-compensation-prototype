@@ -7,15 +7,12 @@ const express = require('express')
 const router = express.Router()
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 const viewContent = require('./routes-content');
+const utils = require('./utils')
 
 // Route index page
 router.get('/', function (req, res) {
     res.render('index')
 })
-
-
-
-
 
 
 // CURRENT RELEASE - RELEASE 8 MVP PROJECT //
