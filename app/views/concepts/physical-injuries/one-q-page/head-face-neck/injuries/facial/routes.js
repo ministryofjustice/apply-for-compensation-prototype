@@ -17,7 +17,7 @@ module.exports = function (router, content) {
     } else if (headNeckFaceDetail.includes('Teeth injury')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page/end-physical-injuries/')
+      res.redirect('/concepts/physical-injuries/one-q-page/end/')
     }
 
   })

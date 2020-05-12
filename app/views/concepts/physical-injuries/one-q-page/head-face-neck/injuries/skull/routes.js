@@ -6,12 +6,12 @@ module.exports = function (router, content) {
     let headNeckFaceDetail = req.session.data['headNeckFaceDetail'] || []
 
     // If they pick apple or banana then show them the success page
-    if (headNeckFaceDetail.includes('Tongue injury')) {
+    if (headNeckFaceDetail.includes('Tongue')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/tongue')
-    } else if (headNeckFaceDetail.includes('Teeth injury')) {
+    } else if (headNeckFaceDetail.includes('Teeth')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page/end-physical-injuries/')
+      res.redirect('/concepts/physical-injuries/one-q-page/end/')
     }
 
   })
