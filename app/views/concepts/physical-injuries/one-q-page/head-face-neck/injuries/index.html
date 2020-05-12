@@ -27,7 +27,7 @@
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
+        idPrefix: "headNeckFaceDetail",
         name: "headNeckFaceDetail",
         fieldset: {
           legend: {
@@ -41,9 +41,9 @@
         },
         items: [
           {
-            value: "Brain or head injury",
-            text: "Brain or head injury",
-            checked: checked("headNeckFaceDetail", "Brain or head injury")
+            value: "Brain injury",
+            text: "Brain injury",
+            checked: checked("headNeckFaceDetail", "Brain injury")
           },
           {
             value: "Ear or hearing injury",
@@ -51,39 +51,39 @@
             checked: checked("headNeckFaceDetail", "Ear or hearing injury")
           },
           {
-            value: "Eye or slight injury",
-            text: "Eye or slight injury",
+            value: "Eye or sight injury",
+            text: "Eye or sight injury",
             checked: checked("headNeckFaceDetail", "Eye or slight injury")
           },
           {
             value: "Facial injury",
             text: "Facial injury",
-            checked: checked("headNeckFaceSurfaceInjury", "Facial injury")
+            checked: checked("headNeckFaceDetail", "Facial injury")
           },
           {
             value: "Neck injury",
             text: "Neck injury",
-            checked: checked("headNeckFaceSurfaceInjury", "Neck injury")
+            checked: checked("headNeckFaceDetail", "Neck injury")
           },
           {
             value: "Nose injury",
             text: "Nose injury",
-            checked: checked("headNeckFaceSurfaceInjury", "Nose injury")
+            checked: checked("headNeckFaceDetail", "Nose injury")
           },
           {
             value: "Skull injury",
             text: "Skull injury",
-            checked: checked("headNeckFaceSurfaceInjury", "Skull injury")
+            checked: checked("headNeckFaceDetail", "Skull injury")
           },
           {
             value: "Injury to teeth or mouth",
             text: "Injury to teeth or mouth",
-            checked: checked("headNeckFaceSurfaceInjury", "Injury to teeth or mouth")
+            checked: checked("headNeckFaceDetail", "Injury to teeth or mouth")
           },
           {
             value: "None",
             text: "None",
-            checked: checked("headNeckFaceSurfaceInjury", "soft-tissue")
+            checked: checked("headNeckFaceDetail", "soft-tissue")
           }
         ]
       }) }}

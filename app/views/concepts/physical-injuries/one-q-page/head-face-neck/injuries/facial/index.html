@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form injuries" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "facialInuries",
+        name: "facialInuries",
+        fieldset: {
+          legend: {
+            text: "Do you have any of these face injuries?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Clicking Jaw",
+            text: "Clicking Jaw",
+            checked: checked("facialInuries", "Clicking Jaw")
+          },
+          {
+            value: "Dislocated jaw",
+            text: "Dislocated jaw",
+            checked: checked("facialInuries", "Dislocated jaw")
+          },
+          {
+            value: "Fractured Ethmoid (no operation required)",
+            text: "Fractured Ethmoid (no operation required)",
+            checked: checked("facialInuries", "Fractured Ethmoid (no operation required)")
+          },
+          {
+            value: "Fractured Ethmoid (operation required)",
+            text: "Fractured Ethmoid (operation required)",
+            checked: checked("facialInuries", "Fractured Ethmoid (operation required)")
+          },
+          {
+            value: "Fractured Zygoma",
+            text: "Fractured Zygoma",
+            checked: checked("facialInuries", "Fractured Zygoma")
+          },
+          {
+            value: "Fractured jaw Bone(s)",
+            text: "Fractured jaw Bone(s)",
+            checked: checked("facialInuries", "Fractured jaw Bone(s)")
+          },
+          {
+            value: "Multiple fractures to face",
+            text: "Multiple fractures to face",
+            checked: checked("facialInuries", "Multiple fractures to face")
+          },
+          {
+            value: "Numbness / Loss of feeling",
+            text: "Numbness / Loss of feeling",
+            checked: checked("facialInuries", "Numbness / Loss of feeling")
+          },
+          {
+            value: "None",
+            text: "None",
+            checked: checked("facialInuries", "None")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form injuries" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "neckInuries",
+        name: "neckInuries",
+        fieldset: {
+          legend: {
+            text: "Do you have any of these neck injuries?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Fractured Hyoid",
+            text: "Fractured Hyoid",
+            checked: checked("neckInuries", "Fractured Hyoid")
+          },
+          {
+            value: "Whiplash injury",
+            text: "Whiplash injury",
+            checked: checked("neckInuries", "Whiplash injury")
+          },
+          {
+            value: "None",
+            text: "None",
+            checked: checked("neckInuries", "None")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

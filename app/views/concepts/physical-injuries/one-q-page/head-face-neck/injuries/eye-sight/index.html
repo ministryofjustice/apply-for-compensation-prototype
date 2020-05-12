@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form injuries" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "eyeInuries",
+        name: "eyeInuries",
+        fieldset: {
+          legend: {
+            text: "Do you have any of these eye or sight injuries?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "Orbital fracture ",
+            text: "Orbital fracture ",
+            checked: checked("eyeInuries", "Orbital fracture ")
+          },
+          {
+            value: "Blurred or double vision (non-permanent) ",
+            text: "Blurred or double vision (non-permanent) ",
+            checked: checked("eyeInuries", "Blurred or double vision (non-permanent) ")
+          },
+          {
+            value: "Blurred or double vision (permanent) ",
+            text: "Blurred or double vision (permanent) ",
+            checked: checked("eyeInuries", "Blurred or double vision (permanent) ")
+          },
+          {
+            value: "Cataract(s) ",
+            text: "Cataract(s) ",
+            checked: checked("eyeInuries", "Cataract(s)")
+          },
+          {
+            value: "Corneal abrasions ",
+            text: "Corneal abrasions ",
+            checked: checked("eyeInuries", "Corneal abrasions ")
+          },
+          {
+            value: "Loss of visual field (permanent) ",
+            text: "Loss of visual field (permanent) ",
+            checked: checked("eyeInuries", "Loss of visual field (permanent) ")
+          },
+          {
+            value: "Dislocation of lens(es) ",
+            text: "Dislocation of lens(es) ",
+            checked: checked("eyeInuries", "Dislocation of lens(es) ")
+          },
+          {
+            value: "Glaucoma ",
+            text: "Glaucoma ",
+            checked: checked("eyeInuries", "Glaucoma ")
+          },
+          {
+            value: "Hyphaema requiring operation (one eye) ",
+            text: "Hyphaema requiring operation (one eye) ",
+            checked: checked("eyeInuries", "Hyphaema requiring operation (one eye) ")
+          },
+          {
+            value: "Hyphaema requiring operation (Both eyes) ",
+            text: "Hyphaema requiring operation (Both eyes) ",
+            checked: checked("eyeInuries", "Hyphaema requiring operation (Both eyes) ")
+          },
+          {
+            value: "Loss of eye(s) ",
+            text: "Loss of eye(s) ",
+            checked: checked("eyeInuries", "Loss of eye(s) ")
+          },
+          {
+            value: "Loss of sight in eye(s) ",
+            text: "Loss of sight in eye(s) ",
+            checked: checked("eyeInuries", "Loss of sight in eye(s) ")
+          },
+          {
+            value: "Partial loss of vision ",
+            text: "Partial loss of vision ",
+            checked: checked("eyeInuries", "Partial loss of vision ")
+          },
+          {
+            value: "Residual central floater affecting vision ",
+            text: "Residual central floater affecting vision ",
+            checked: checked("eyeInuries", "Residual central floater affecting vision ")
+          },
+          {
+            value: "Damaged or detached retina ",
+            text: "Damaged or detached retina ",
+            checked: checked("eyeInuries", "Damaged or detached retina ")
+          },
+          {
+            value: "Retina - damage not involving detachment (Both eyes)  ",
+            text: "Retina - damage not involving detachment (Both eyes)  ",
+            checked: checked("eyeInuries", "Retina - damage not involving detachment (Both eyes)  ")
+          },
+          {
+            value: "Retina - Detached (Both eyes) ",
+            text: "Retina - Detached (Both eyes) ",
+            checked: checked("eyeInuries", "Retina - Detached (Both eyes) ")
+          },
+          {
+            value: "Significant penetrating injury ",
+            text: "Significant penetrating injury ",
+            checked: checked("eyeInuries", "Significant penetrating injury ")
+          },
+          {
+            value: "Traumatic angle recession",
+            text: "Traumatic angle recession",
+            checked: checked("eyeInuries", "Traumatic angle recession")
+          },
+          {
+            value: "None",
+            text: "None",
+            checked: checked("eyeInuries", "None")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
