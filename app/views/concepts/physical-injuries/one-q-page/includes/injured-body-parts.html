@@ -1,0 +1,12 @@
+{% if data['injuredBodyParts'] === data[''] %}
+
+{% else %}
+
+<tr class="govuk-table__row">
+  <td scope="row" class="govuk-table__cell govuk-!-width-one-half">Injured body parts</td>
+  <td class="govuk-table__cell">
+      {{ data['injuredBodyParts'] }}
+  </td>
+  <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+</tr>
+{% endif %}

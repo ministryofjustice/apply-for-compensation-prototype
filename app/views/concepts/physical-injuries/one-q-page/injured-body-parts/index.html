@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ injuredPartsQuestion }} - {{ serviceName }} - GOV.UK
+{{ nonSpecificBodyPartQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
-
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
@@ -22,44 +21,50 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post">
+    <form class="form injuries" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuredParts",
-        name: "injuredParts",
+        idPrefix: "injuryCheckboxes",
+        name: "injuredBodyParts",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your head, face or neck?",
+            text: "Which body parts have you injured?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: injuredPartsQuestionHint
+          text: headNeckFaceInjuryQuestionHint
         },
         items: [
           {
-            value: "head",
+            value: "Head, face or neck",
             text: "Head, face or neck",
-            checked: checked("injuredParts", "head")
+            checked: checked("injuredBodyParts", "head-face-neck")
           },
           {
-            value: "torso",
+            value: "Arms",
+            text: "Arms",
+            checked: checked("injuredBodyParts", "arms")
+          },
+          {
+            value: "Torso",
             text: "Torso",
-            checked: checked("injuredParts", "torso")
+            checked: checked("injuredBodyParts", "torso")
           },
           {
-            value: "upper-limbs",
-            text: "Upper limbs",
-            checked: checked("injuredParts", "upper-limbs")
+            value: "Legs",
+            text: "Legs",
+            checked: checked("injuredBodyParts", "legs")
           },
           {
-            value: "lower-limbs",
-            text: "Lower limbs",
-            checked: checked("injuredParts", "lowe-limbs")
+            class: "none",
+            value: "None",
+            text: "None",
+            checked: checked("injuredBodyParts", "legs")
           }
         ]
       }) }}
@@ -68,6 +73,8 @@
       }) }}
 
     </form>
+
+    {% include "../includes/answers-template.html" %}
 
   </div>
 </div>

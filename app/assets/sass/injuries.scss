@@ -1,0 +1,11 @@
+form.injuries {
+  .govuk-checkboxes__item:last-child{
+    margin-top: 40px;
+    &:before {
+      content: "or";
+      position: absolute;
+      top: -32px;
+      left: 9px;
+   }
+  }
+}

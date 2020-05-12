@@ -324,6 +324,13 @@ require('./views/concepts/physical-injuries/free-text/ineligible-injuries/routes
 require('./views/concepts/physical-injuries/free-text/injured-parts/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/physical-injuries-details/routes')(router, viewContent);
 
+require('./views/concepts/physical-injuries/one-q-page/context-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/non-specific/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/injured-body-parts/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/routes')(router, viewContent);
+
+
+
 
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);

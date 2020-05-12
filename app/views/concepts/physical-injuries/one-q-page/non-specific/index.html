@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ headNeckFaceInjuryQuestion }} - {{ serviceName }} - GOV.UK
+{{ nonSpecificBodyPartQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
+
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
@@ -28,11 +29,10 @@
 
       {{ govukCheckboxes({
         idPrefix: "injuryCheckboxes",
-        class: "jen",
-        name: "headNeckFaceInjury",
+        name: "nonSpecificBodyParts",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your head, face or neck?",
+            text: "Select any injuries you have",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -42,47 +42,35 @@
         },
         items: [
           {
-            value: "Brain injury",
-            text: "Brain injury",
-            checked: checked("headNeckFaceInjury", "brain-injury")
+            value: "Paralysis",
+            text: "Paralysis",
+            checked: checked("nonSpecificBodyParts", "paralysis")
           },
           {
-            value: "Burns",
-            text: "Burns",
-            checked: checked("headNeckFaceInjury", "burns")
+            value: "Pregnancy",
+            text: "Pregnancy",
+            checked: checked("nonSpecificBodyParts", "pregnancy")
           },
           {
-            value: "Scarring",
-            text: "Scarring",
-            checked: checked("headNeckFaceInjury", "scarring")
+            value: "Loss of a pregnancy",
+            text: "Loss of a pregnancy",
+            checked: checked("nonSpecificBodyParts", "loss-pregnancy")
           },
           {
-            value: "Grazings, lacerations, cuts (no scars)",
-            text: "Grazings, lacerations, cuts (no scars)",
-            checked: checked("headNeckFaceInjury", "cuts-grazes")
-          },
-          {
-            value: "Widespread bruising",
-            text: "Widespread bruising",
-            checked: checked("headNeckFaceInjury", "bruising")
-          },
-          {
-            value: "Soft tissue injuries",
-            text: "Soft tissue injuries",
-            checked: checked("headNeckFaceInjury", "soft-tissue")
+            value: "Infection with HIV or hepatitis",
+            text: "Infection with HIV or hepatitis",
+            checked: checked("nonSpecificBodyParts", "infection")
           },
           {
             value: "None",
             text: "None",
-            checked: checked("headNeckFaceInjury", "soft-tissue")
+            checked: checked("nonSpecificBodyParts", "none")
           }
         ]
       }) }}
       {{ govukButton({
         "text": "Continue"
       }) }}
-
-      {% include "../includes/answers-template.html" %}
 
     </form>
 
