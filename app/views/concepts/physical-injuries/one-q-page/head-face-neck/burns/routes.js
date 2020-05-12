@@ -1,13 +1,11 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
 
-  router.post('/concepts/physical-injuries/one-q-page/head-face-neck', function (req, res) {
+  router.post('/concepts/physical-injuries/one-q-page/head-face-neck/burns', function (req, res) {
     let headNeckFaceSurface = req.session.data['headNeckFaceSurface'] || []
 
     // If they pick apple or banana then show them the success page
-    if (headNeckFaceSurface.includes('Burns')) {
-      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/burns')
-    } else if (headNeckFaceSurface.includes('Scarring')) {
+    if (headNeckFaceSurface.includes('Scarring')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/scarring')
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries')
@@ -15,8 +13,8 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/concepts/physical-injuries/one-q-page/head-face-neck/', function (req, res) {
-    res.render('concepts/physical-injuries/one-q-page/head-face-neck/index', content)
+  router.get('/concepts/physical-injuries/one-q-page/head-face-neck/burns/', function (req, res) {
+    res.render('concepts/physical-injuries/one-q-page/head-face-neck/burns/index', content)
   })
   // END__######################################################################################################
 }

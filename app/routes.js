@@ -328,6 +328,9 @@ require('./views/concepts/physical-injuries/one-q-page/context-physical-injuries
 require('./views/concepts/physical-injuries/one-q-page/non-specific/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/injured-body-parts/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/burns/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/scarring/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/routes')(router, viewContent);
 
 
 

@@ -28,7 +28,7 @@
 
       {{ govukCheckboxes({
         idPrefix: "injuryCheckboxes",
-        name: "injuredBodyParts",
+        name: "injuredParts",
         fieldset: {
           legend: {
             text: "Which body parts have you injured?",
@@ -43,28 +43,28 @@
           {
             value: "Head, face or neck",
             text: "Head, face or neck",
-            checked: checked("injuredBodyParts", "head-face-neck")
+            checked: checked("injuredParts", "head-face-neck")
           },
           {
             value: "Arms",
             text: "Arms",
-            checked: checked("injuredBodyParts", "arms")
+            checked: checked("injuredParts", "arms")
           },
           {
             value: "Torso",
             text: "Torso",
-            checked: checked("injuredBodyParts", "torso")
+            checked: checked("injuredParts", "torso")
           },
           {
             value: "Legs",
             text: "Legs",
-            checked: checked("injuredBodyParts", "legs")
+            checked: checked("injuredParts", "legs")
           },
           {
             class: "none",
             value: "None",
             text: "None",
-            checked: checked("injuredBodyParts", "legs")
+            checked: checked("injuredParts", "legs")
           }
         ]
       }) }}

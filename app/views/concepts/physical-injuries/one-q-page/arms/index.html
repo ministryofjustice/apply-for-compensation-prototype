@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ headNeckFaceInjuryQuestion }} - {{ serviceName }} - GOV.UK
+{{ armsSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,47 +28,47 @@
 
       {{ govukCheckboxes({
         idPrefix: "injuryCheckboxes",
-        name: "headNeckFaceSurface",
+        name: "armsSurfaceInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your head, face or neck?",
+            text: "Do you have any of these injuries to your arms?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: headNeckFaceInjuryQuestionHint
+          text: armsSurfaceInjuriesQuestionHint
         },
         items: [
           {
             value: "Burns",
             text: "Burns",
-            checked: checked("headNeckFaceSurface", "burns")
+            checked: checked("armsSurfaceInjuries", "burns")
           },
           {
             value: "Scarring",
             text: "Scarring",
-            checked: checked("headNeckFaceSurface", "scarring")
+            checked: checked("armsSurfaceInjuries", "scarring")
           },
           {
             value: "Grazings, lacerations, cuts (no scars)",
             text: "Grazings, lacerations, cuts (no scars)",
-            checked: checked("headNeckFaceSurface", "cuts-grazes")
+            checked: checked("armsSurfaceInjuries", "cuts-grazes")
           },
           {
             value: "Widespread bruising",
             text: "Widespread bruising",
-            checked: checked("headNeckFaceSurface", "bruising")
+            checked: checked("armsSurfaceInjuries", "bruising")
           },
           {
             value: "Soft tissue injuries",
             text: "Soft tissue injuries",
-            checked: checked("headNeckFaceSurface", "soft-tissue")
+            checked: checked("armsSurfaceInjuries", "soft-tissue")
           },
           {
             value: "None",
             text: "None",
-            checked: checked("headNeckFaceSurface", "soft-tissue")
+            checked: checked("armsSurfaceInjuries", "soft-tissue")
           }
         ]
       }) }}

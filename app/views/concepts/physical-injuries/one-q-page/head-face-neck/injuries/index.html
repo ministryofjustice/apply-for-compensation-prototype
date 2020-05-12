@@ -28,7 +28,7 @@
 
       {{ govukCheckboxes({
         idPrefix: "injuryCheckboxes",
-        name: "headNeckFaceSurface",
+        name: "headNeckFaceDetail",
         fieldset: {
           legend: {
             text: "Do you have any of these injuries to your head, face or neck?",
@@ -41,34 +41,49 @@
         },
         items: [
           {
-            value: "Burns",
-            text: "Burns",
-            checked: checked("headNeckFaceSurface", "burns")
+            value: "Brain or head injury",
+            text: "Brain or head injury",
+            checked: checked("headNeckFaceDetail", "Brain or head injury")
           },
           {
-            value: "Scarring",
-            text: "Scarring",
-            checked: checked("headNeckFaceSurface", "scarring")
+            value: "Ear or hearing injury",
+            text: "Ear or hearing injury",
+            checked: checked("headNeckFaceDetail", "Ear or hearing injury")
           },
           {
-            value: "Grazings, lacerations, cuts (no scars)",
-            text: "Grazings, lacerations, cuts (no scars)",
-            checked: checked("headNeckFaceSurface", "cuts-grazes")
+            value: "Eye or slight injury",
+            text: "Eye or slight injury",
+            checked: checked("headNeckFaceDetail", "Eye or slight injury")
           },
           {
-            value: "Widespread bruising",
-            text: "Widespread bruising",
-            checked: checked("headNeckFaceSurface", "bruising")
+            value: "Facial injury",
+            text: "Facial injury",
+            checked: checked("headNeckFaceSurfaceInjury", "Facial injury")
           },
           {
-            value: "Soft tissue injuries",
-            text: "Soft tissue injuries",
-            checked: checked("headNeckFaceSurface", "soft-tissue")
+            value: "Neck injury",
+            text: "Neck injury",
+            checked: checked("headNeckFaceSurfaceInjury", "Neck injury")
+          },
+          {
+            value: "Nose injury",
+            text: "Nose injury",
+            checked: checked("headNeckFaceSurfaceInjury", "Nose injury")
+          },
+          {
+            value: "Skull injury",
+            text: "Skull injury",
+            checked: checked("headNeckFaceSurfaceInjury", "Skull injury")
+          },
+          {
+            value: "Injury to teeth or mouth",
+            text: "Injury to teeth or mouth",
+            checked: checked("headNeckFaceSurfaceInjury", "Injury to teeth or mouth")
           },
           {
             value: "None",
             text: "None",
-            checked: checked("headNeckFaceSurface", "soft-tissue")
+            checked: checked("headNeckFaceSurfaceInjury", "soft-tissue")
           }
         ]
       }) }}
@@ -76,7 +91,7 @@
         "text": "Continue"
       }) }}
 
-      {% include "../includes/answers-template.html" %}
+      {% include "../../includes/answers-template.html" %}
 
     </form>
 
