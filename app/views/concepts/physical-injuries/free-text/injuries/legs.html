@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ legInjuriesQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form injuries" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "legInjuries",
+        name: "legInjuries",
+        fieldset: {
+          legend: {
+            text: legInjuriesQuestion,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: legInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: "injury1",
+            text: "Amputated toe",
+            checked: checked("legInjuries", "injury1")
+          },
+          {
+            value: "injury2",
+            text: "Keyhole surgery",
+            checked: checked("legInjuries", "injury2")
+          },
+          {
+            value: "other",
+            text: "My injuries are not on this list",
+            checked: checked("legInjuries", "other")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

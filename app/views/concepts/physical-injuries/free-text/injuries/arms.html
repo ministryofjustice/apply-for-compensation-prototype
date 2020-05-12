@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ upperLimbsIneligibleQuestion }} - {{ serviceName }} - GOV.UK
+{{ armInjuriesQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -22,64 +22,64 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post">
+    <form class="form injuries" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "upperLimbsIneligible",
-        name: "upperLimbsIneligible",
+        idPrefix: "armInjuries",
+        name: "armInjuries",
         fieldset: {
           legend: {
-            text: upperLimbsIneligibleQuestion,
+            text: armInjuriesQuestion,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: upperLimbsIneligibleQuestionHint
+          text: armInjuriesQuestionHint
         },
         items: [
           {
             value: "injury1",
             text: "Broken finger",
-            checked: checked("upperLimbsIneligible", "injury1")
+            checked: checked("armInjuries", "injury1")
           },
           {
             value: "injury2",
             text: "Bruises",
-            checked: checked("upperLimbsIneligible", "injury2")
+            checked: checked("armInjuries", "injury2")
           },
           {
             value: "injury3",
             text: "Cuts",
-            checked: checked("upperLimbsIneligible", "injury3")
+            checked: checked("armInjuries", "injury3")
           },
           {
             value: "injury4",
             text: "Dislocated finger",
-            checked: checked("upperLimbsIneligible", "injury4")
+            checked: checked("armInjuries", "injury4")
           },
           {
             value: "injury5",
             text: "Keyhole surgery",
-            checked: checked("upperLimbsIneligible", "injury5")
+            checked: checked("armInjuries", "injury5")
           },
           {
             value: "injury6",
             text: "Loss of fingernail",
-            checked: checked("upperLimbsIneligible", "injury6")
+            checked: checked("armInjuries", "injury6")
           },
           {
             value: "injury7",
             text: "Muscle, ligament, or tendon injury",
-            checked: checked("upperLimbsIneligible", "injury7")
+            checked: checked("armInjuries", "injury7")
           },
           {
-            value: "injury8",
-            text: "Other",
-            checked: checked("upperLimbsIneligible", "injury8")
+            value: "other",
+            text: "My injuries are not on this list",
+            checked: checked("armInjuries", "other")
           }
         ]
       }) }}

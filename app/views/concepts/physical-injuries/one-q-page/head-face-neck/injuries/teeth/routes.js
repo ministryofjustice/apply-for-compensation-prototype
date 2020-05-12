@@ -3,6 +3,8 @@ module.exports = function (router, content) {
 
   router.post('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth', function (req, res) {
 
+      res.redirect('/concepts/physical-injuries/one-q-page/end-physical-injuries/')
+
   })
 
   // Pass the question in to the page

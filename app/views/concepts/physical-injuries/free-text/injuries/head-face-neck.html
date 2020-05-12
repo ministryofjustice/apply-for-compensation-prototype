@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ headFaceNeckIneligibleQuestion }} - {{ serviceName }} - GOV.UK
+{{ headFaceNeckInjuriesQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -22,94 +22,94 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post">
+    <form class="form injuries" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "headFaceNeckIneligible",
-        name: "headFaceNeckIneligible",
+        idPrefix: "headFaceNeckInjuries",
+        name: "headFaceNeckInjuries",
         fieldset: {
           legend: {
-            text: headFaceNeckIneligibleQuestion,
+            text: headFaceNeckInjuriesQuestion,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: headFaceNeckIneligibleQuestionHint
+          text: headFaceNeckInjuriesQuestionHint
         },
         items: [
           {
             value: "injury1",
             text: "Black eye",
-            checked: checked("headFaceNeckIneligible", "injury1")
+            checked: checked("headFaceNeckInjuries", "injury1")
           },
           {
             value: "injury2",
             text: "Bloody nose",
-            checked: checked("headFaceNeckIneligible", "injury2")
+            checked: checked("headFaceNeckInjuries", "injury2")
           },
           {
             value: "injury3",
             text: "Broken ear bone",
-            checked: checked("headFaceNeckIneligible", "injury3")
+            checked: checked("headFaceNeckInjuries", "injury3")
           },
           {
             value: "injury4",
             text: "Broken hyoid (throat bone)",
-            checked: checked("headFaceNeckIneligible", "injury4")
+            checked: checked("headFaceNeckInjuries", "injury4")
           },
           {
             value: "injury5",
             text: "Broken nose",
-            checked: checked("headFaceNeckIneligible", "injury5")
+            checked: checked("headFaceNeckInjuries", "injury5")
           },
           {
             value: "injury6",
             text: "Bruises",
-            checked: checked("headFaceNeckIneligible", "injury6")
+            checked: checked("headFaceNeckInjuries", "injury6")
           },
           {
             value: "injury7",
             text: "Cuts",
-            checked: checked("headFaceNeckIneligible", "injury7")
+            checked: checked("headFaceNeckInjuries", "injury7")
           },
           {
             value: "injury8",
             text: "Hair pulled out",
-            checked: checked("headFaceNeckIneligible", "injury8")
+            checked: checked("headFaceNeckInjuries", "injury8")
           },
           {
             value: "injury9",
             text: "Loose teeth",
-            checked: checked("headFaceNeckIneligible", "injury9")
+            checked: checked("headFaceNeckInjuries", "injury9")
           },
           {
             value: "injury10",
             text: "Muscle, ligament, or tendon injury",
-            checked: checked("headFaceNeckIneligible", "injury10")
+            checked: checked("headFaceNeckInjuries", "injury10")
           },
           {
             value: "injury11",
             text: "One perforated eardrum",
-            checked: checked("headFaceNeckIneligible", "injury11")
+            checked: checked("headFaceNeckInjuries", "injury11")
           },
           {
             value: "injury12",
             text: "Scratched eye",
-            checked: checked("headFaceNeckIneligible", "injury12")
+            checked: checked("headFaceNeckInjuries", "injury12")
           },
           {
             value: "injury13",
             text: "Temporary blurred vision",
-            checked: checked("headFaceNeckIneligible", "injury13")
+            checked: checked("headFaceNeckInjuries", "injury13")
           },
           {
-            value: "injury14",
-            text: "Other",
-            checked: checked("headFaceNeckIneligible", "injury14")
+            value: "other",
+            text: "My injuries are not on this list",
+            checked: checked("headFaceNeckInjuries", "other")
           }
         ]
       }) }}

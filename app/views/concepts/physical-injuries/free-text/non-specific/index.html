@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ torsoIneligibleQuestion }} - {{ serviceName }} - GOV.UK
+{{ nonSpecificBodyPartQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -28,48 +28,33 @@
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "torsoIneligible",
-        name: "torsoIneligible",
+        idPrefix: "injuryCheckboxes",
+        name: "nonSpecificBodyParts",
         fieldset: {
           legend: {
-            text: torsoIneligibleQuestion,
+            text: "Select any injuries you have",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: torsoIneligibleQuestionHint
+          text: headNeckFaceInjuryQuestionHint
         },
         items: [
-        {
-          value: "injury1",
-          text: "Broken rib",
-          checked: checked("torsoIneligible", "injury1")
-        },
-        {
-          value: "injury2",
-          text: "Bruises",
-          checked: checked("torsoIneligible", "injury2")
-        },
-        {
-          value: "injury3",
-          text: "Cuts",
-          checked: checked("torsoIneligible", "injury3")
-        },
-        {
-          value: "injury4",
-          text: "Muscle, ligament, or tendon injury",
-          checked: checked("torsoIneligible", "injury4")
-        },
           {
-            value: "injury5",
-            text: "Separated shoulder",
-            checked: checked("torsoIneligible", "injury5")
+            value: "Paralysis",
+            text: "Paralysis",
+            checked: checked("nonSpecificBodyParts", "paralysis")
           },
           {
-            value: "injury6",
-            text: "Other",
-            checked: checked("torsoIneligible", "injury6")
+            value: "Loss of a pregnancy",
+            text: "Loss of a pregnancy",
+            checked: checked("nonSpecificBodyParts", "loss-pregnancy")
+          },
+          {
+            value: "Infection with HIV or hepatitis",
+            text: "Infection with HIV or hepatitis",
+            checked: checked("nonSpecificBodyParts", "infection")
           }
         ]
       }) }}

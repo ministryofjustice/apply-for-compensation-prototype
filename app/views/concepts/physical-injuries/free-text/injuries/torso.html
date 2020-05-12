@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ lowerLimbsIneligibleQuestion }} - {{ serviceName }} - GOV.UK
+{{ torsoInjuriesQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -22,39 +22,54 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post">
+    <form class="form injuries" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "lowerLimbsIneligible",
-        name: "lowerLimbsIneligible",
+        idPrefix: "torsoInjuries",
+        name: "torsoInjuries",
         fieldset: {
           legend: {
-            text: lowerLimbsIneligibleQuestion,
+            text: torsoInjuriesQuestion,
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: lowerLimbsIneligibleQuestionHint
+          text: torsoInjuriesQuestionHint
         },
         items: [
+        {
+          value: "injury1",
+          text: "Broken rib",
+          checked: checked("torsoInjuries", "injury1")
+        },
+        {
+          value: "injury2",
+          text: "Bruises",
+          checked: checked("torsoInjuries", "injury2")
+        },
+        {
+          value: "injury3",
+          text: "Cuts",
+          checked: checked("torsoInjuries", "injury3")
+        },
+        {
+          value: "injury4",
+          text: "Muscle, ligament, or tendon injury",
+          checked: checked("torsoInjuries", "injury4")
+        },
           {
-            value: "injury1",
-            text: "Amputated toe",
-            checked: checked("lowerLimbsIneligible", "injury1")
+            value: "injury5",
+            text: "Separated shoulder",
+            checked: checked("torsoInjuries", "injury5")
           },
           {
-            value: "injury2",
-            text: "Keyhole surgery",
-            checked: checked("lowerLimbsIneligible", "injury2")
-          },
-          {
-            value: "injury3",
-            text: "Other",
-            checked: checked("lowerLimbsIneligible", "injury3")
+            value: "other",
+            text: "My injuries are not on this list",
+            checked: checked("torsoInjuries", "other")
           }
         ]
       }) }}
