@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -42,44 +42,39 @@
         },
         items: [
           {
-            value: "injury1",
+            value: "Broken finger",
             text: "Broken finger",
-            checked: checked("armInjuries", "injury1")
+            checked: checked("armInjuries", "Broken finger")
           },
           {
-            value: "injury2",
+            value: "Bruises",
             text: "Bruises",
-            checked: checked("armInjuries", "injury2")
+            checked: checked("armInjuries", "Bruises")
           },
           {
-            value: "injury3",
+            value: "Cuts",
             text: "Cuts",
-            checked: checked("armInjuries", "injury3")
+            checked: checked("armInjuries", "Cuts")
           },
           {
-            value: "injury4",
+            value: "Dislocated finger",
             text: "Dislocated finger",
-            checked: checked("armInjuries", "injury4")
+            checked: checked("armInjuries", "Dislocated finger")
           },
           {
-            value: "injury5",
+            value: "Keyhole surgery",
             text: "Keyhole surgery",
-            checked: checked("armInjuries", "injury5")
+            checked: checked("armInjuries", "Keyhole surgery")
           },
           {
-            value: "injury6",
+            value: "Loss of fingernail",
             text: "Loss of fingernail",
-            checked: checked("armInjuries", "injury6")
+            checked: checked("armInjuries", "Loss of fingernail")
           },
           {
-            value: "injury7",
+            value: "Muscle, ligament, or tendon injury",
             text: "Muscle, ligament, or tendon injury",
-            checked: checked("armInjuries", "injury7")
-          },
-          {
-            value: "other",
-            text: "My injuries are not on this list",
-            checked: checked("armInjuries", "other")
+            checked: checked("armInjuries", "Muscle, ligament, or tendon injury")
           }
         ]
       }) }}

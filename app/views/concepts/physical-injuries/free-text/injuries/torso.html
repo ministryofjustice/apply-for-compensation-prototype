@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -42,35 +42,30 @@
         },
         items: [
         {
-          value: "injury1",
+          value: "Broken rib",
           text: "Broken rib",
-          checked: checked("torsoInjuries", "injury1")
+          checked: checked("torsoInjuries", "Broken rib")
         },
         {
-          value: "injury2",
+          value: "Bruises",
           text: "Bruises",
-          checked: checked("torsoInjuries", "injury2")
+          checked: checked("torsoInjuries", "Bruises")
         },
         {
-          value: "injury3",
+          value: "Cuts",
           text: "Cuts",
-          checked: checked("torsoInjuries", "injury3")
+          checked: checked("torsoInjuries", "Cuts")
         },
         {
-          value: "injury4",
+          value: "Muscle, ligament, or tendon injury",
           text: "Muscle, ligament, or tendon injury",
-          checked: checked("torsoInjuries", "injury4")
+          checked: checked("torsoInjuries", "Muscle, ligament, or tendon injury")
         },
-          {
-            value: "injury5",
-            text: "Separated shoulder",
-            checked: checked("torsoInjuries", "injury5")
-          },
-          {
-            value: "other",
-            text: "My injuries are not on this list",
-            checked: checked("torsoInjuries", "other")
-          }
+        {
+          value: "Separated shoulder",
+          text: "Separated shoulder",
+          checked: checked("torsoInjuries", "Separated shoulder")
+        }
         ]
       }) }}
       {{ govukButton({

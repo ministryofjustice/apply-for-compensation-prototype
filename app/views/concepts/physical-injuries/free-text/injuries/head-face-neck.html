@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -42,74 +42,69 @@
         },
         items: [
           {
-            value: "injury1",
+            value: "Black eye",
             text: "Black eye",
-            checked: checked("headFaceNeckInjuries", "injury1")
+            checked: checked("headFaceNeckInjuries", "Black eye")
           },
           {
-            value: "injury2",
+            value: "Bloody nose",
             text: "Bloody nose",
-            checked: checked("headFaceNeckInjuries", "injury2")
+            checked: checked("headFaceNeckInjuries", "Bloody nose")
           },
           {
-            value: "injury3",
+            value: "Broken ear bone",
             text: "Broken ear bone",
-            checked: checked("headFaceNeckInjuries", "injury3")
+            checked: checked("headFaceNeckInjuries", "Broken ear bone")
           },
           {
-            value: "injury4",
+            value: "Broken hyoid (throat bone)",
             text: "Broken hyoid (throat bone)",
-            checked: checked("headFaceNeckInjuries", "injury4")
+            checked: checked("headFaceNeckInjuries", "Broken hyoid (throat bone)")
           },
           {
-            value: "injury5",
+            value: "Broken nose",
             text: "Broken nose",
-            checked: checked("headFaceNeckInjuries", "injury5")
+            checked: checked("headFaceNeckInjuries", "Broken nose")
           },
           {
-            value: "injury6",
+            value: "Bruises",
             text: "Bruises",
-            checked: checked("headFaceNeckInjuries", "injury6")
+            checked: checked("headFaceNeckInjuries", "Bruises")
           },
           {
-            value: "injury7",
+            value: "Cuts",
             text: "Cuts",
-            checked: checked("headFaceNeckInjuries", "injury7")
+            checked: checked("headFaceNeckInjuries", "Cuts")
           },
           {
-            value: "injury8",
+            value: "Hair pulled out",
             text: "Hair pulled out",
-            checked: checked("headFaceNeckInjuries", "injury8")
+            checked: checked("headFaceNeckInjuries", "Hair pulled out")
           },
           {
-            value: "injury9",
+            value: "Loose teeth",
             text: "Loose teeth",
-            checked: checked("headFaceNeckInjuries", "injury9")
+            checked: checked("headFaceNeckInjuries", "Loose teeth")
           },
           {
-            value: "injury10",
+            value: "Muscle, ligament, or tendon injury",
             text: "Muscle, ligament, or tendon injury",
-            checked: checked("headFaceNeckInjuries", "injury10")
+            checked: checked("headFaceNeckInjuries", "Muscle, ligament, or tendon injury")
           },
           {
-            value: "injury11",
+            value: "One perforated eardrum",
             text: "One perforated eardrum",
-            checked: checked("headFaceNeckInjuries", "injury11")
+            checked: checked("headFaceNeckInjuries", "One perforated eardrum")
           },
           {
-            value: "injury12",
+            value: "Scratched eye",
             text: "Scratched eye",
-            checked: checked("headFaceNeckInjuries", "injury12")
+            checked: checked("headFaceNeckInjuries", "Scratched eye")
           },
           {
-            value: "injury13",
+            value: "Temporary blurred vision",
             text: "Temporary blurred vision",
-            checked: checked("headFaceNeckInjuries", "injury13")
-          },
-          {
-            value: "other",
-            text: "My injuries are not on this list",
-            checked: checked("headFaceNeckInjuries", "other")
+            checked: checked("headFaceNeckInjuries", "Temporary blurred vision")
           }
         ]
       }) }}

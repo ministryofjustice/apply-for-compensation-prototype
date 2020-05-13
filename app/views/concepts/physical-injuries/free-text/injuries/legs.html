@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -42,19 +42,14 @@
         },
         items: [
           {
-            value: "injury1",
+            value: "Amputated toe",
             text: "Amputated toe",
-            checked: checked("legInjuries", "injury1")
+            checked: checked("legInjuries", "Amputated toe")
           },
           {
-            value: "injury2",
+            value: "Keyhole surgery",
             text: "Keyhole surgery",
-            checked: checked("legInjuries", "injury2")
-          },
-          {
-            value: "other",
-            text: "My injuries are not on this list",
-            checked: checked("legInjuries", "other")
+            checked: checked("legInjuries", "Keyhole surgery")
           }
         ]
       }) }}

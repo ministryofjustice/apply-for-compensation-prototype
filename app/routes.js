@@ -324,6 +324,7 @@ require('./views/concepts/physical-injuries/autocomplete/context-physical-injuri
 require('./views/concepts/physical-injuries/free-text/context-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/body-part/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/have-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/free-text/have-other-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/non-specific/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/injured-parts/routes')(router, viewContent);
