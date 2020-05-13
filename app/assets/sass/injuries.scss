@@ -9,3 +9,10 @@ form.injuries {
    }
   }
 }
+
+table.your-injuries {
+  td,th {
+    text-transform: lowercase;
+    &:first-letter {text-transform: uppercase;}
+  }
+}
