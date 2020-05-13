@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/concepts/physical-injuries/free-text/physical-injuries-details', function (req, res) {
-    res.redirect('/concepts/physical-injuries/free-text/physical-injuries-details')
+    res.redirect('/concepts/physical-injuries/free-text/end')
   })
 
   // Pass the question in to the page
