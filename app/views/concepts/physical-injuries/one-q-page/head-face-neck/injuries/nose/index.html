@@ -21,17 +21,17 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "noseInuries",
-        name: "noseInuries",
+        idPrefix: "noseInjuries",
+        name: "noseInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these nose injuries?",
+            text: "Select any injuries you have to your nose",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,24 +41,19 @@ Physical injuries - {{ serviceName }} - GOV.UK
         },
         items: [
           {
-            value: "Broken nose",
+            value: " Broken nose",
             text: "Broken nose",
-            checked: checked("noseInuries", "Broken nose")
+            checked: checked("noseInjuries", " Broken nose")
           },
           {
-            value: "Loss of smell or taste",
+            value: " Loss of smell or taste",
             text: "Loss of smell or taste",
-            checked: checked("noseInuries", "Loss of smell or taste")
+            checked: checked("noseInjuries", " Loss of smell or taste")
           },
           {
-            value: "Loss of nose",
+            value: " Loss of nose",
             text: "Loss of nose",
-            checked: checked("noseInuries", "Loss of nose")
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: checked("noseInuries", "None")
+            checked: checked("noseInjuries", " Loss of nose")
           }
         ]
       }) }}

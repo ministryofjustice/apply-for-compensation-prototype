@@ -21,31 +21,44 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "skullInuries",
-        name: "skullInuries",
+        idPrefix: "brainInjuries",
+        name: "brainInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these skull injuries?",
+            text: "Select any injuries you have to your head or brain",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        hint: {
+          text: ""
+        },
         items: [
           {
-            value: "Fractured skull",
-            text: "Fractured skull",
-            checked: checked("skullInuries", "Fractured skull")
-          }
+            value: " Brain damage",
+            text: "Brain damage",
+            checked: checked("brainInjuries", " Brain damage")
+          },
           {
-            value: "None",
-            text: "None",
-            checked: checked("skullInuries", "None")
+            value: " Epilepsy",
+            text: "Epilepsy",
+            checked: checked("brainInjuries", " Epilepsy")
+          },
+          {
+            value: " Fractured skull",
+            text: "Fractured skull",
+            checked: checked("brainInjuries", " Fractured skull")
+          },
+          {
+            value: " Nerve damage",
+            text: "Nerve damage",
+            checked: checked("brainInjuries", " Nerve damage")
           }
         ]
       }) }}

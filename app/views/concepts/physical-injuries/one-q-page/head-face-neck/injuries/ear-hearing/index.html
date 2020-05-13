@@ -21,17 +21,17 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "earHearingInuries",
-        name: "earHearingInuries",
+        idPrefix: "earHearingInjuries",
+        name: "earHearingInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these brain injuries?",
+            text: "Select any injuries you have to your ears or hearing",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,44 +41,39 @@ Physical injuries - {{ serviceName }} - GOV.UK
         },
         items: [
           {
-            value: "Broken ear bone",
+            value: " Broken ear bone",
             text: "Broken ear bone",
-            checked: checked("earHearingInuries", "Broken ear bone")
+            checked: checked("earHearingInjuries", " Broken ear bone")
           },
           {
-            value: "Deafness",
+            value: " Deafness",
             text: "Deafness",
-            checked: checked("earHearingInuries", "Deafness")
+            checked: checked("earHearingInjuries", " Deafness")
           },
           {
-            value: "Loss of ear",
+            value: " Loss of ear",
             text: "Loss of ear",
-            checked: checked("earHearingInuries", "Loss of ear")
+            checked: checked("earHearingInjuries", " Loss of ear")
           },
           {
-            value: "One perforated eardrum",
+            value: " One perforated eardrum",
             text: "One perforated eardrum",
-            checked: checked("earHearingInuries", "One perforated eardrum")
+            checked: checked("earHearingInjuries", " One perforated eardrum")
           },
           {
-            value: "Two perforated eardrums ",
+            value: " Two perforated eardrums ",
             text: "Two perforated eardrums ",
-            checked: checked("earHearingInuries", "Two perforated eardrums ")
+            checked: checked("earHearingInjuries", " Two perforated eardrums ")
           },
           {
-            value: "Ringing in ears",
+            value: " Ringing in ears",
             text: "Ringing in ears",
-            checked: checked("earHearingInuries", "Ringing in ears")
+            checked: checked("earHearingInjuries", " Ringing in ears")
           },
           {
-            value: "Dizziness",
+            value: " Dizziness",
             text: "Dizziness",
-            checked: checked("earHearingInuries", "Dizziness")
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: checked("earHearingInuries", "None")
+            checked: checked("earHearingInjuries", " Dizziness")
           }
         ]
       }) }}

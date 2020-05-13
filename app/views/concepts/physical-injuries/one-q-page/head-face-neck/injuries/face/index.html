@@ -21,17 +21,17 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "facialInuries",
-        name: "facialInuries",
+        idPrefix: "facialInjuries",
+        name: "facialInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these face injuries?",
+            text: "Select any injuries you have to your face",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,44 +41,39 @@ Physical injuries - {{ serviceName }} - GOV.UK
         },
         items: [
           {
-            value: "Clicking jaw",
+            value: " Clicking jaw",
             text: "Clicking jaw",
-            checked: checked("facialInuries", "Clicking jaw")
+            checked: checked("facialInjuries", " Clicking jaw")
           },
           {
-            value: "Dislocated jaw",
+            value: " Dislocated jaw",
             text: "Dislocated jaw",
-            checked: checked("facialInuries", "Dislocated jaw")
+            checked: checked("facialInjuries", " Dislocated jaw")
           },
           {
-            value: "Broken nose",
+            value: " Broken nose",
             text: "Broken nose",
-            checked: checked("facialInuries", "Broken nose")
+            checked: checked("facialInjuries", " Broken nose")
           },
           {
-            value: "Broken cheekbone",
+            value: " Broken cheekbone",
             text: "Broken cheekbone",
-            checked: checked("facialInuries", "Broken cheekbone")
+            checked: checked("facialInjuries", " Broken cheekbone")
           },
           {
-            value: "Broken jaw",
+            value: " Broken jaw",
             text: "Broken jaw",
-            checked: checked("facialInuries", "Broken jaw")
+            checked: checked("facialInjuries", " Broken jaw")
           },
           {
-            value: "Face fractures",
+            value: " Face fractures",
             text: "Face fractures",
-            checked: checked("facialInuries", "Face fractures")
+            checked: checked("facialInjuries", " Face fractures")
           },
           {
-            value: "Face numbness",
+            value: " Face numbness",
             text: "Face numbness",
-            checked: checked("facialInuries", "Face numbness")
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: checked("facialInuries", "None")
+            checked: checked("facialInjuries", " Face numbness")
           }
         ]
       }) }}

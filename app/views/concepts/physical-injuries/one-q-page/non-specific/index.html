@@ -22,7 +22,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -42,9 +42,9 @@
         },
         items: [
           {
-            value: "Paralysis",
-            text: "Paralysis",
-            checked: checked("nonSpecificBodyParts", "paralysis")
+            value: "Infection with HIV or hepatitis",
+            text: "Infection with HIV or hepatitis",
+            checked: checked("nonSpecificBodyParts", "infection")
           },
           {
             value: "Loss of a pregnancy",
@@ -52,14 +52,9 @@
             checked: checked("nonSpecificBodyParts", "loss-pregnancy")
           },
           {
-            value: "Infection with HIV or hepatitis",
-            text: "Infection with HIV or hepatitis",
-            checked: checked("nonSpecificBodyParts", "infection")
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: checked("nonSpecificBodyParts", "none")
+            value: "Paralysis",
+            text: "Paralysis",
+            checked: checked("nonSpecificBodyParts", "paralysis")
           }
         ]
       }) }}

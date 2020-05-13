@@ -21,17 +21,17 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "tongueInuries",
-        name: "tongueInuries",
+        idPrefix: "tongueInjuries",
+        name: "tongueInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these teeth-tongue injuries?",
+            text: "Select any injuries you have to your tongue",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,24 +41,19 @@ Physical injuries - {{ serviceName }} - GOV.UK
         },
         items: [
           {
-            value: "Impaired speech",
+            value: " Impaired speech",
             text: "Impaired speech",
-            checked: checked("tongueInuries", "Impaired speech")
+            checked: checked("tongueInjuries", " Impaired speech")
           },
           {
-            value: "Permanent loss of speech",
+            value: " Permanent loss of speech",
             text: "Permanent loss of speech",
-            checked: checked("tongueInuries", "Permanent loss of speech")
+            checked: checked("tongueInjuries", " Permanent loss of speech")
           },
           {
-            value: "Loss of tongue",
+            value: " Loss of tongue",
             text: "Loss of tongue",
-            checked: checked("tongueInuries", "Loss of tongue")
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: checked("tongueInuries", "None")
+            checked: checked("tongueInjuries", " Loss of tongue")
           }
         ]
       }) }}

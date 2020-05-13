@@ -1,11 +1,14 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
 
-  router.post('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/nose', function (req, res) {
+  router.post('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/face', function (req, res) {
 
     let headNeckFaceArea = req.session.data['headNeckFaceArea'] || []
 
-    if (headNeckFaceArea.includes('Teeth')) {
+    // If they pick apple or banana then show them the success page
+    if (headNeckFaceArea.includes('Nose')) {
+      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/nose')
+    } else if (headNeckFaceArea.includes('Teeth')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth')
     } else if (headNeckFaceArea.includes('Tongue')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/tongue')
@@ -17,8 +20,8 @@ module.exports = function (router, content) {
 
 
   // Pass the question in to the page
-  router.get('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/nose/', function (req, res) {
-    res.render('concepts/physical-injuries/one-q-page/head-face-neck/injuries/nose/index', content)
+  router.get('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/face/', function (req, res) {
+    res.render('concepts/physical-injuries/one-q-page/head-face-neck/injuries/face/index', content)
   })
   // END__######################################################################################################
 }

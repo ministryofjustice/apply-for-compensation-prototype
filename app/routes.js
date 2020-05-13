@@ -331,22 +331,24 @@ require('./views/concepts/physical-injuries/free-text/injured-parts/routes')(rou
 require('./views/concepts/physical-injuries/free-text/physical-injuries-details/routes')(router, viewContent);
 
 require('./views/concepts/physical-injuries/one-q-page/context-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/have-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/non-specific/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/injured-body-parts/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/head-surface/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/neck-surface/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/face-surface/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page/head-face-neck/burns/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page/head-face-neck/scarring/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/brain/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/head-brain/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/ear-hearing/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/eye-sight/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/facial/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/face/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/neck/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/nose/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/ear-hearing/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/skull/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/head-face-neck/injuries/tongue/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page/your-injuries/routes')(router, viewContent);
 
 
 

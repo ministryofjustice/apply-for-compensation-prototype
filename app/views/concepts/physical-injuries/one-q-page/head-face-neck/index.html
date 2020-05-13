@@ -21,17 +21,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
-        name: "headNeckFaceSurface",
+        idPrefix: "headNeckFaceArea",
+        name: "headNeckFaceArea",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your head, face or neck?",
+            text: "Select the parts of your head, face or neck that have been injured",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,34 +41,44 @@
         },
         items: [
           {
-            value: "Burns",
-            text: "Burns",
-            checked: checked("headNeckFaceSurface", "burns")
+            value: "Head or brain",
+            text: "Head or brain",
+            checked: checked("headNeckFaceArea", "Head or brain")
           },
           {
-            value: "Scarring",
-            text: "Scarring",
-            checked: checked("headNeckFaceSurface", "scarring")
+            value: "Neck",
+            text: "Neck",
+            checked: checked("headNeckFaceArea", "Neck")
           },
           {
-            value: "Cuts or grazes",
-            text: "Cuts or grazes",
-            checked: checked("headNeckFaceSurface", "Cuts or grazes")
+            value: "Ear or hearing",
+            text: "Ear or hearing",
+            checked: checked("headNeckFaceArea", "Ear or hearing")
           },
           {
-            value: "Bruises",
-            text: "Bruises",
-            checked: checked("headNeckFaceSurface", "Bruises")
+            value: "Eye or eyesight",
+            text: "Eye or eyesight",
+            checked: checked("headNeckFaceArea", "Eye or eyesight")
           },
           {
-            value: "Muscle, ligament, or tendon injury",
-            text: "Muscle, ligament, or tendon injury",
-            checked: checked("headNeckFaceSurface", "Muscle, ligament, or tendon injury")
+            value: "Face",
+            text: "Face",
+            checked: checked("headNeckFaceArea", "Face")
           },
           {
-            value: "None",
-            text: "None",
-            checked: checked("headNeckFaceSurface", "soft-tissue")
+            value: "Nose",
+            text: "Nose",
+            checked: checked("headNeckFaceArea", "Nose")
+          },
+          {
+            value: "Teeth",
+            text: "Teeth",
+            checked: checked("headNeckFaceArea", "Teeth")
+          },
+          {
+            value: "Tongue",
+            text: "Tongue",
+            checked: checked("headNeckFaceArea", "Tongue")
           }
         ]
       }) }}

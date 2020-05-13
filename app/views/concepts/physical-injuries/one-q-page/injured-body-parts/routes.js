@@ -5,14 +5,14 @@ module.exports = function (router, content) {
     let injuredParts = req.session.data['injuredParts'] || []
 
     // If they pick apple or banana then show them the success page
-    if (injuredParts.includes('Head, face or neck')) {
-      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck')
-    } else if (injuredParts.includes('Arms')) {
+     if (injuredParts.includes('Arms')) {
       res.redirect('/concepts/physical-injuries/one-q-page/arms')
-    } else if (injuredParts.includes('Torso')) {
-      res.redirect('/concepts/physical-injuries/one-q-page/torso')
+    } else if (injuredParts.includes('Head, face or neck')) {
+      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck')
     } else if (injuredParts.includes('Legs')) {
       res.redirect('/concepts/physical-injuries/one-q-page/legs')
+    } else if (injuredParts.includes('Torso')) {
+      res.redirect('/concepts/physical-injuries/one-q-page/torso')
     }
   })
 

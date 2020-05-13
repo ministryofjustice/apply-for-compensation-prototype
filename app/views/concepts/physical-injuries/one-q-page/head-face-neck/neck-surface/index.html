@@ -27,33 +27,43 @@
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
-        name: "headNeckFaceScarring",
+        idPrefix: "neckSurfaceInjuries",
+        name: "neckSurfaceInjuries",
         fieldset: {
           legend: {
-            text: "Where do you have scarring?",
+            text: "Do you have any of these injuries to your neck?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: headNeckFaceScarringQuestionHint
+          text: neckSurfaceInjuriesQuestionHint
         },
         items: [
           {
-            value: "Head",
-            text: "Head",
-            checked: checked("headNeckFaceScarring", "Head")
+            value: " Burn",
+            text: "Burn",
+            checked: checked("faceSurfaceInjuries", " Burn")
           },
           {
-            value: "Face",
-            text: "Face",
-            checked: checked("headNeckFaceScarring", "Face")
+            value: " Scar",
+            text: "Scar",
+            checked: checked("faceSurfaceInjuries", " Scar")
           },
           {
-            value: "Neck",
-            text: "Neck",
-            checked: checked("headNeckFaceScarring", "Neck")
+            value: " Cuts or grazes",
+            text: "Cuts or grazes",
+            checked: checked("faceSurfaceInjuries", " Cuts or grazes")
+          },
+          {
+            value: " Bruises",
+            text: "Bruises",
+            checked: checked("faceSurfaceInjuries", " Bruises")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("faceSurfaceInjuries", " Muscle, ligament, or tendon injury")
           }
         ]
       }) }}

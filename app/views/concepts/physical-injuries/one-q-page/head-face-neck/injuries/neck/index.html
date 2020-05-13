@@ -21,17 +21,17 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "neckInuries",
-        name: "neckInuries",
+        idPrefix: "neckInjuries",
+        name: "neckInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these neck injuries?",
+            text: "Select any injuries you have to your neck",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,19 +41,14 @@ Physical injuries - {{ serviceName }} - GOV.UK
         },
         items: [
           {
-            value: "Broken hyoid (throat bone)",
+            value: " Broken hyoid (throat bone)",
             text: "Broken hyoid (throat bone)",
-            checked: checked("neckInuries", "Broken hyoid (throat bone)")
+            checked: checked("neckInjuries", " Broken hyoid (throat bone)")
           },
           {
-            value: "Whiplash",
+            value: " Whiplash",
             text: "Whiplash",
-            checked: checked("neckInuries", "Whiplash")
-          },
-          {
-            value: "None",
-            text: "None",
-            checked: checked("neckInuries", "None")
+            checked: checked("neckInjuries", " Whiplash")
           }
         ]
       }) }}

@@ -3,9 +3,16 @@ module.exports = function (router, content) {
 
   router.post('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth', function (req, res) {
 
-      res.redirect('/concepts/physical-injuries/one-q-page/end/')
+    let headNeckFaceArea = req.session.data['headNeckFaceArea'] || []
+
+    if (headNeckFaceArea.includes('Tongue')) {
+      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/tongue')
+    } else {
+      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/face-surface/')
+    }
 
   })
+
 
   // Pass the question in to the page
   router.get('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth/', function (req, res) {

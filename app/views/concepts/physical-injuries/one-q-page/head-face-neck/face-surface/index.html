@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries - {{ serviceName }} - GOV.UK
+{{ faceSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,44 +21,49 @@ Physical injuries - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "brainInuries",
-        name: "brainInuries",
+        idPrefix: "faceSurfaceInjuries",
+        name: "faceSurfaceInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these brain injuries?",
+            text: "Do you have any of these injuries to your face?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: ""
+          text: faceSurfaceInjuriesQuestionHint
         },
         items: [
           {
-            value: "Brain damage",
-            text: "Brain damage",
-            checked: checked("brainInuries", "Brain damage")
+            value: " Burn",
+            text: "Burn",
+            checked: checked("faceSurfaceInjuries", " Burn")
           },
           {
-            value: "Epilepsy",
-            text: "Epilepsy",
-            checked: checked("brainInuries", "Epilepsy")
+            value: " Scar",
+            text: "Scar",
+            checked: checked("faceSurfaceInjuries", " Scar")
           },
           {
-            value: "Nerve damage",
-            text: "Nerve damage",
-            checked: checked("brainInuries", "Nerve damage")
+            value: " Cuts or grazes",
+            text: "Cuts or grazes",
+            checked: checked("faceSurfaceInjuries", " Cuts or grazes")
           },
           {
-            value: "None",
-            text: "None",
-            checked: checked("brainInuries", "None")
+            value: " Bruises",
+            text: "Bruises",
+            checked: checked("faceSurfaceInjuries", " Bruises")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("faceSurfaceInjuries", " Muscle, ligament, or tendon injury")
           }
         ]
       }) }}
@@ -66,7 +71,7 @@ Physical injuries - {{ serviceName }} - GOV.UK
         "text": "Continue"
       }) }}
 
-      {% include "../../../includes/answers-template.html" %}
+      {% include "../../includes/answers-template.html" %}
 
     </form>
 

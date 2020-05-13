@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ headNeckFaceBurnsQuestion }} - {{ serviceName }} - GOV.UK
+{{ headSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,33 +27,43 @@
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
-        name: "headNeckFaceSurfaceBurns",
+        idPrefix: "headSurfaceInjuries",
+        name: "headSurfaceInjuries",
         fieldset: {
           legend: {
-            text: "Where do you have burns?",
+            text: "Select any injuries you have to your head",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: headNeckFaceBurnsQuestionHint
+          text: headSurfaceInjuriesQuestionHint
         },
         items: [
           {
-            value: "Head",
-            text: "Head",
-            checked: checked("headNeckFaceBurns", "Head")
+            value: " Burn",
+            text: "Burn",
+            checked: checked("headSurfaceInjuries", " Burn")
           },
           {
-            value: "Face",
-            text: "Face",
-            checked: checked("headNeckFaceBurns", "Face")
+            value: " Scar",
+            text: "Scar",
+            checked: checked("headSurfaceInjuries", " Scar")
           },
           {
-            value: "Neck",
-            text: "Neck",
-            checked: checked("headNeckFaceBurns", "Neck")
+            value: " Cuts or grazes",
+            text: "Cuts or grazes",
+            checked: checked("headSurfaceInjuries", " Cuts or grazes")
+          },
+          {
+            value: " Bruises",
+            text: "Bruises",
+            checked: checked("headSurfaceInjuries", " Bruises")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("headSurfaceInjuries", " Muscle, ligament, or tendon injury")
           }
         ]
       }) }}
