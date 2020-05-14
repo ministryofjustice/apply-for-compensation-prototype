@@ -330,6 +330,7 @@ require('./views/concepts/physical-injuries/free-text/non-specific/routes')(rout
 require('./views/concepts/physical-injuries/free-text/injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/injured-parts/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/free-text/physical-injuries-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/free-text/your-injuries/routes')(router, viewContent);
 
 require('./views/concepts/physical-injuries/one-q-page/context-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page/have-physical-injuries/routes')(router, viewContent);
