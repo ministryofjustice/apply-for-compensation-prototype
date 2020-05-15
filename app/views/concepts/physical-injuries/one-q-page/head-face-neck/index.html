@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "layout.html"%}
 
 {% block pageTitle %}
-{{ headNeckFaceInjuryQuestion }} - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,10 +10,10 @@
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
-<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+<a class="govuk-back-link"href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -21,17 +21,17 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post">
+    <form class="form"method="post">
 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
 
       {{ govukCheckboxes({
         idPrefix: "headNeckFaceArea",
         name: "headNeckFaceArea",
         fieldset: {
           legend: {
-            text: "What was injured?",
+            text: "What parts of your head, face or neck were injured?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -86,7 +86,7 @@
         "text": "Continue"
       }) }}
 
-      {% include "../includes/answers-template.html" %}
+      {% include "../includes/answers-template.html"%}
 
     </form>
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -46,7 +46,7 @@
                 {% endif %}
 
                 {% if data['torsoInjuries'] %}
-                  <li>{{ data['torsoInjuries'] }}</li> 
+                  <li>{{ data['torsoInjuries'] }}</li>
                 {% endif %}
 
                 {% if data['armInjuries'] %}

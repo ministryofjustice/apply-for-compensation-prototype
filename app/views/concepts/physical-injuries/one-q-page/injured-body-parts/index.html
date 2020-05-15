@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ nonSpecificBodyPartQuestion }} - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,7 +27,7 @@
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
+        idPrefix: "injuredParts",
         name: "injuredParts",
         fieldset: {
           legend: {
@@ -43,22 +43,22 @@
           {
             value: "Arms",
             text: "Arms",
-            checked: checked("injuredParts", "arms")
+            checked: checked("injuredParts", "Arms")
           },
           {
             value: "Head, face or neck",
             text: "Head, face or neck",
-            checked: checked("injuredParts", "head-face-neck")
+            checked: checked("injuredParts", "Head, face or neck")
           },
           {
             value: "Legs",
             text: "Legs",
-            checked: checked("injuredParts", "legs")
+            checked: checked("injuredParts", "Legs")
           },
           {
             value: "Torso",
             text: "Torso",
-            checked: checked("injuredParts", "torso")
+            checked: checked("injuredParts", "Torso")
           }
         ]
       }) }}

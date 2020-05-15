@@ -22,7 +22,7 @@ module.exports = function (router, content) {
     } else if (headNeckFaceArea.includes('Tongue')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/tongue')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries')
+      res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/head-surface')
     }
   })
 

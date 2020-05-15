@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ faceSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,7 +31,7 @@
         name: "faceSurfaceInjuries",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your face?",
+            text: "Select any injuries to your face",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -41,29 +41,29 @@
         },
         items: [
           {
-            value: " Burn",
-            text: "Burn",
-            checked: checked("faceSurfaceInjuries", " Burn")
+            value: " Burns to face",
+            text: "Burns to face",
+            checked: checked("faceSurfaceInjuries", " Burns to face")
           },
           {
-            value: " Scar",
-            text: "Scar",
-            checked: checked("faceSurfaceInjuries", " Scar")
+            value: " Scarring to face",
+            text: "Scarring to face",
+            checked: checked("faceSurfaceInjuries", " Scarring to face")
           },
           {
-            value: " Cuts or grazes",
-            text: "Cuts or grazes",
-            checked: checked("faceSurfaceInjuries", " Cuts or grazes")
+            value: " Cuts or grazes to face",
+            text: "Cuts or grazes to face",
+            checked: checked("faceSurfaceInjuries", " Cuts or grazes to face")
           },
           {
-            value: " Bruises",
-            text: "Bruises",
-            checked: checked("faceSurfaceInjuries", " Bruises")
+            value: " Bruises to face",
+            text: "Bruises to face",
+            checked: checked("faceSurfaceInjuries", " Bruises to face")
           },
           {
-            value: " Muscle, ligament, or tendon injury",
-            text: "Muscle, ligament, or tendon injury",
-            checked: checked("faceSurfaceInjuries", " Muscle, ligament, or tendon injury")
+            value: " Muscle, ligament, or tendon injury to face",
+            text: "Muscle, ligament, or tendon injury to face",
+            checked: checked("faceSurfaceInjuries", " Muscle, ligament, or tendon injury to face")
           }
         ]
       }) }}

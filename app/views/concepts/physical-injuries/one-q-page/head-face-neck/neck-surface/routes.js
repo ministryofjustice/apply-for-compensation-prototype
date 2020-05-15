@@ -2,6 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/concepts/physical-injuries/one-q-page/head-face-neck/neck-surface/', function (req, res) {
+    let injuredParts = req.session.data['injuredParts'] || []
 
     let headNeckFaceArea = req.session.data['headNeckFaceArea'] || []
 
@@ -18,6 +19,10 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/teeth')
     } else if (headNeckFaceArea.includes('Tongue')) {
       res.redirect('/concepts/physical-injuries/one-q-page/head-face-neck/injuries/tongue')
+    } else if (injuredParts.includes('Legs')) {
+       res.redirect('/concepts/physical-injuries/one-q-page/legs')
+    } else if (injuredParts.includes('Torso')) {
+       res.redirect('/concepts/physical-injuries/one-q-page/torso')
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page/your-injuries')
     }

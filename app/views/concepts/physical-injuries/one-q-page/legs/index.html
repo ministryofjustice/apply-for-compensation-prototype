@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ legsSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,54 +21,54 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
-        name: "legsSurfaceInjuries",
+        idPrefix: "legInjuredParts",
+        name: "legInjuredParts",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your legs?",
+            text: "What parts of your legs were injured?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: legsSurfaceInjuriesQuestionHint
+          text: legInjuredPartsQuestionHint
         },
         items: [
           {
-            value: "Burns",
-            text: "Burns",
-            checked: checked("legsSurfaceInjuries", "burns")
+            value: "Ankle",
+            text: "Ankle",
+            checked: checked("legInjuredParts", "Ankle")
           },
           {
-            value: "Scarring",
-            text: "Scarring",
-            checked: checked("legsSurfaceInjuries", "scarring")
+            value: "Foot",
+            text: "Foot",
+            checked: checked("legInjuredParts", "Foot")
           },
           {
-            value: "Grazings, lacerations, cuts (no scars)",
-            text: "Grazings, lacerations, cuts (no scars)",
-            checked: checked("legsSurfaceInjuries", "cuts-grazes")
+            value: "Hip",
+            text: "Hip",
+            checked: checked("legInjuredParts", "Hip")
           },
           {
-            value: "Widespread bruising",
-            text: "Widespread bruising",
-            checked: checked("legsSurfaceInjuries", "bruising")
+            value: "Knee",
+            text: "Knee",
+            checked: checked("legInjuredParts", "Knee")
           },
           {
-            value: "Soft tissue injuries",
-            text: "Soft tissue injuries",
-            checked: checked("legsSurfaceInjuries", "soft-tissue")
+            value: "Leg",
+            text: "Leg",
+            checked: checked("legInjuredParts", "Leg")
           },
           {
-            value: "None",
-            text: "None",
-            checked: checked("legsSurfaceInjuries", "soft-tissue")
+            value: "Toes",
+            text: "Toes",
+            checked: checked("legInjuredParts", "Toes")
           }
         ]
       }) }}

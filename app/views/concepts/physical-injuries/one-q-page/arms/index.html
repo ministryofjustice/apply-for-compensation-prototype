@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ armsSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
+{{ armsInjuredPartsQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,54 +21,54 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
-        name: "armsSurfaceInjuries",
+        idPrefix: "armsInjuredParts",
+        name: "armsInjuredParts",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your arms?",
+            text: "What parts of your arm were injured?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: armsSurfaceInjuriesQuestionHint
+          text: armsInjuredPartsQuestionHint
         },
         items: [
           {
-            value: "Burns",
-            text: "Burns",
-            checked: checked("armsSurfaceInjuries", "burns")
+            value: "Arm",
+            text: "Arm",
+            checked: checked("armsInjuredParts", "Arm")
           },
           {
-            value: "Scarring",
-            text: "Scarring",
-            checked: checked("armsSurfaceInjuries", "scarring")
+            value: "Elbow",
+            text: "Elbow",
+            checked: checked("armsInjuredParts", "Elbow")
           },
           {
-            value: "Grazings, lacerations, cuts (no scars)",
-            text: "Grazings, lacerations, cuts (no scars)",
-            checked: checked("armsSurfaceInjuries", "cuts-grazes")
+            value: "Finger and thumb",
+            text: "Finger and thumb",
+            checked: checked("armsInjuredParts", "Finger and thumb")
           },
           {
-            value: "Widespread bruising",
-            text: "Widespread bruising",
-            checked: checked("armsSurfaceInjuries", "bruising")
+            value: "Hand",
+            text: "Hand",
+            checked: checked("armsInjuredParts", "Hand")
           },
           {
-            value: "Soft tissue injuries",
-            text: "Soft tissue injuries",
-            checked: checked("armsSurfaceInjuries", "soft-tissue")
+            value: "Shoulder",
+            text: "Shoulder",
+            checked: checked("armsInjuredParts", "Shoulder")
           },
           {
-            value: "None",
-            text: "None",
-            checked: checked("armsSurfaceInjuries", "soft-tissue")
+            value: "Wrist",
+            text: "Wrist",
+            checked: checked("armsInjuredParts", "Wrist")
           }
         ]
       }) }}

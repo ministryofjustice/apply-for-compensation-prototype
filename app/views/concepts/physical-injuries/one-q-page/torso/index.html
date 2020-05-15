@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ torsoSurfaceInjuriesQuestion }} - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form injuries" method="post">
+    <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -29,47 +29,67 @@
       {{ govukCheckboxes({
         idPrefix: "injuryCheckboxes",
         class: "jen",
-        name: "torsoSurfaceInjuries",
+        name: "torsoInjuredParts",
         fieldset: {
           legend: {
-            text: "Do you have any of these injuries to your torso?",
+            text: "What parts of your torso were injured?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: torsoSurfaceInjuriesQuestionHint
+          text: torsoInjuredPartsQuestionHint
         },
         items: [
           {
-            value: "Burns",
-            text: "Burns",
-            checked: checked("torsoSurfaceInjuries", "burns")
+            value: "Abdomen",
+            text: "Abdomen",
+            checked: checked("torsoInjuredParts", "Abdomen")
           },
           {
-            value: "Scarring",
-            text: "Scarring",
-            checked: checked("torsoSurfaceInjuries", "scarring")
+            value: "Back",
+            text: "Back",
+            checked: checked("torsoInjuredParts", "Back")
           },
           {
-            value: "Grazings, lacerations, cuts (no scars)",
-            text: "Grazings, lacerations, cuts (no scars)",
-            checked: checked("torsoSurfaceInjuries", "cuts-grazes")
+            value: "Breast bone",
+            text: "Breast bone",
+            checked: checked("torsoInjuredParts", "Breast bone")
           },
           {
-            value: "Widespread bruising",
-            text: "Widespread bruising",
-            checked: checked("torsoSurfaceInjuries", "bruising")
+            value: "Chest",
+            text: "Chest",
+            checked: checked("torsoInjuredParts", "Chest")
           },
           {
-            value: "Soft tissue injuries",
-            text: "Soft tissue injuries",
-            checked: checked("torsoSurfaceInjuries", "soft-tissue")
+            value: "Collar bone",
+            text: "Collar bone",
+            checked: checked("torsoInjuredParts", "Collar bone")
           },
           {
-            value: "None",
-            text: "None",
-            checked: checked("torsoSurfaceInjuries", "soft-tissue")
+            value: "Tail bone",
+            text: "Tail bone",
+            checked: checked("torsoInjuredParts", "Tail bone")
+          },
+          {
+            value: "Genitals",
+            text: "Genitals",
+            checked: checked("torsoInjuredParts", "Genitals")
+          },
+          {
+            value: "Internal organs",
+            text: "Internal organs",
+            checked: checked("torsoInjuredParts", "Internal organs")
+          },
+          {
+            value: "Ribs",
+            text: "Ribs",
+            checked: checked("torsoInjuredParts", "Ribs")
+          },
+          {
+            value: "Shoulder",
+            text: "Shoulder",
+            checked: checked("torsoInjuredParts", "Shoulder")
           }
         ]
       }) }}
