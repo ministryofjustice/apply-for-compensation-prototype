@@ -16,7 +16,7 @@ module.exports = function (router, content) {
     } else if (legInjuredParts.includes('Toes')) {
       res.redirect('/concepts/physical-injuries/one-q-page/legs/injuries/toes')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page/legs/injures/surface')
+      res.redirect('/concepts/physical-injuries/one-q-page/legs/injuries/surface')
     }
   })
 
