@@ -7,23 +7,23 @@
 {% block pageScripts %}
 <script src="/public/javascripts/jquery.hideseek.min.js"></script>
 <script>
-$('#search').hideseek({
-    highlight: true,
-    min_chars: 3,
-    nodata: "No results found.",
-    hidden_mode: true
-});
+    $('#search').hideseek({
+        highlight: true,
+        min_chars: 3,
+        nodata: "No results found.",
+        hidden_mode: true
+    });
 </script>
 {% endblock %}
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
-  })
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+})
 }}
 
 <a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
@@ -33,17 +33,37 @@ $('#search').hideseek({
 
 
 {% block content %}
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Injuries WIP</h1>
     </div>
 </div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+            <h2 class="govuk-heading-m">You have selected 1 proceeding</h2>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__cell govuk-body" scope="row">
+                    <h3 class="govuk-body proceeding-item">Non-molestation order</h3>
+                    <li class="govuk-caption-m proceeding__list-item">Family</li>
+                    <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li>
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="advanced">
+                    Remove <span class="govuk-visually-hidden">blank</span>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="govuk-!-padding-bottom-4"></div>
 <div id="search-field" class="govuk-form-group">
     <label class="govuk-heading-m" for="search">
-        Search for legal proceedings
+        Search for injuries
         <span class="govuk-hint">
-   For example by category of law, matter type or legal proceeding
+   For example....
    </span>
     </label>
     <div class="govuk-grid-row">
@@ -66,7 +86,7 @@ $('#search').hideseek({
                     </ul>
                 </div>
                 <div class="govuk-grid-column-one-third" style="text-align:right; padding-top: 25px;">
-                    <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="advanced_2">
+                    <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="#">
                         Select
                     </a>
                 </div>
@@ -78,6 +98,4 @@ $('#search').hideseek({
 <a class="govuk-button" href="#" role="button">
     Continue
 </a>
-
-
 {% endblock %}

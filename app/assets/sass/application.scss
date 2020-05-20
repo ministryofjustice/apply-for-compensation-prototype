@@ -24,4 +24,42 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-img.responsive {max-width: 100%; height: auto; background: white;}
+// Search list styles
+
+div.proceeding-list {
+  padding: 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+div.proceeding-list:hover {
+  background-color: #e7f4fb;
+}
+
+div.no-results {
+  margin-left: 0px;
+  font-family: "nta", Arial;
+  font-size: 19px;
+  padding-bottom: 20px;
+}
+
+.change-link {
+  color: #005ea5;
+  text-decoration: underline;
+}
+
+ul.proceeding-list {
+  padding: 0px;
+  margin-top: 22px;
+}
+
+li.proceeding__list-item {
+  display: inline-block;
+}
+
+.proceeding-item {
+  margin-bottom: 5px;
+}
+
+div.clear-search {
+  padding-top: 8px;
+}

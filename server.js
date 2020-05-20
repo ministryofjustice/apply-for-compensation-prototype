@@ -10,6 +10,7 @@ const nunjucks = require('nunjucks')
 const sessionInCookie = require('client-sessions')
 const sessionInMemory = require('express-session')
 const cookieParser = require('cookie-parser')
+const proceedingsData = require('./app/data/proceedings');
 
 // Run before other code to make sure variables from .env are available
 dotenv.config()
@@ -99,7 +100,9 @@ if (env === 'development') {
 
 nunjucksConfig.express = app
 
-var nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig)
+var nunjucksAppEnv = nunjucks
+    .configure(appViews, nunjucksConfig)
+    .addGlobal('proceedings', proceedingsData);
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
@@ -338,7 +341,12 @@ app.use(function (err, req, res, next) {
   console.error(err.message)
   res.status(err.status || 500)
   res.send(err.message)
-})
+});
+
+app.use(
+    '/public/javascripts/jquery.hideseek.min.js',
+    express.static(path.join(__dirname, '/node_modules/hideseek/jquery.hideseek.min.js'))
+);
 
 console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
