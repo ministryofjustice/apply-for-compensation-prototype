@@ -1,4 +1,4 @@
-const proceedings = require('./data/proceedings.json')
+const proceedings = require('./data/injuries.json')
 
 module.exports = {
 
