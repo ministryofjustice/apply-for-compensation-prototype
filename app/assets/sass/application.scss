@@ -24,4 +24,9 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-// Search list sty
+.sentence-case {
+  text-transform: lowercase;
+  &:first-letter {
+  text-transform: uppercase;
+  }
+}
