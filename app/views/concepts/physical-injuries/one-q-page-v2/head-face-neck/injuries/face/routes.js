@@ -25,12 +25,12 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/legs/')
       // Go to body part section
-    } else if (injuredParts.includes('Torso, back or abdomen')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/torso/')
+    } else if (injuredParts.includes('Torso')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
       // Go to new body part section
     } else if (injuredParts.includes('Legs')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/legs/')
-    } else if (injuredParts.includes('Torso, back or abdomen')) {
+    } else if (injuredParts.includes('Torso')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
     } else {
       // Go to end

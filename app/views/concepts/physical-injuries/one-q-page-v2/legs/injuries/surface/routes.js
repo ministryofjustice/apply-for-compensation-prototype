@@ -22,7 +22,7 @@ module.exports = function (router, content) {
     } else if (legInjuredParts.includes('Toes')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/legs/injuries/toes')
       // Go to body part section
-    } else if (injuredParts.includes('Torso, back or abdomen')) {
+    } else if (injuredParts.includes('Torso')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/other-injuries-details')

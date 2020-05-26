@@ -16,7 +16,7 @@ module.exports = function (router, content) {
     res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/')
   } else if (injuredParts.includes('Legs')) {
     res.redirect('/concepts/physical-injuries/one-q-page-v2/legs/')
-  } else if (injuredParts.includes('Torso, back or abdomen')) {
+  } else if (injuredParts.includes('Torso')) {
     res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
   } else {
     // Go to end
