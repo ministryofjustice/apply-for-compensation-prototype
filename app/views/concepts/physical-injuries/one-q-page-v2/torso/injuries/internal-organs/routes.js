@@ -11,7 +11,7 @@ module.exports = function (router, content) {
     } else if (torsoInjuredParts.includes('Tail bone')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/injuries/tail-bone')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v2/your-injuries')
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/other-injuries-details')
     }  })
   // Pass the question in to the page
   router.get('/concepts/physical-injuries/one-q-page-v2/torso/injuries/internal-organs/', function (req, res) {

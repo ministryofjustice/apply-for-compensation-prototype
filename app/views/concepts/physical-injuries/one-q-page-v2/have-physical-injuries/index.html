@@ -25,6 +25,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
@@ -58,8 +59,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     </form>
 
   </div>
-</div>
-</main>
 </div>
 
 {% endblock %}

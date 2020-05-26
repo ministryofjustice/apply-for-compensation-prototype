@@ -388,7 +388,6 @@ require('./views/concepts/physical-injuries/one-q-page/your-injuries/routes')(ro
 
 require('./views/concepts/physical-injuries/one-q-page-v2/context-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v2/have-physical-injuries/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v2/non-specific/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v2/injured-body-parts/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/head-surface/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/neck-surface/routes')(router, viewContent);
@@ -436,7 +435,7 @@ require('./views/concepts/physical-injuries/one-q-page-v2/legs/injuries/toes/rou
 require('./views/concepts/physical-injuries/one-q-page-v2/legs/injuries/surface/routes')(router, viewContent);
 
 require('./views/concepts/physical-injuries/one-q-page-v2/your-injuries/routes')(router, viewContent);
-
+require('./views/concepts/physical-injuries/one-q-page-v2/other-injuries-details/routes')(router, viewContent);
 
 
 //Extra questions & equal oportunities //

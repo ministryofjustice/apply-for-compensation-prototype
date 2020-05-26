@@ -4,6 +4,15 @@
 Physical injuries - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block pageScripts %}
+<script>
+  var headPageCount = localStorage.getItem('headPages');
+  var newHeadPageCount = (headPageCount*1 + 1);
+  $(".pageNumber").text(newHeadPageCount);
+  localStorage.setItem('headPages', newHeadPageCount);
+</script>
+{% endblock %}
+
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
@@ -23,19 +32,20 @@ Physical injuries - {{ serviceName }} - GOV.UK
 
     <form class="form" method="post">
 
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">
+             <span class="pageNumber"></span> / {{ data['headNeckFaceInjuredPart'] | length + 3}} questions about your head, face or neck</span>
+          <h1 class="govuk-fieldset__heading">
+            Select any injuries to your head or brain
+          </h1>
+      </legend>
+
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
         idPrefix: "brainInjuries",
         name: "brainInjuries",
-        fieldset: {
-          legend: {
-            text: "Select any injuries you have to your head or brain",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
         hint: {
           text: ""
         },

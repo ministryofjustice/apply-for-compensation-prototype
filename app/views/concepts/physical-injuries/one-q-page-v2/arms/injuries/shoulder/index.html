@@ -5,16 +5,12 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block pageScripts %}
-
 <script>
-
   var armPageCount = localStorage.getItem('armPages');
   var newArmPageCount = (armPageCount*1 + 1);
   $(".pageNumber").text(newArmPageCount);
   localStorage.setItem('armPages', newArmPageCount);
-
 </script>
-
 {% endblock %}
 
 {% block beforeContent %}

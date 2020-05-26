@@ -3,7 +3,7 @@ module.exports = function (router, content) {
 
   router.post('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/tongue', function (req, res) {
 
-    let headNeckFaceArea = req.session.data['headNeckFaceArea'] || []
+    let headNeckFaceInjuredPart = req.session.data['headNeckFaceInjuredPart'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
     // Go to new body part section
@@ -13,7 +13,7 @@ module.exports = function (router, content) {
     res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
   } else {
     // Go to end
-    res.redirect('/concepts/physical-injuries/one-q-page-v2/your-injuries')
+    res.redirect('/concepts/physical-injuries/one-q-page-v2/other-injuries-details')
   }
 })
 

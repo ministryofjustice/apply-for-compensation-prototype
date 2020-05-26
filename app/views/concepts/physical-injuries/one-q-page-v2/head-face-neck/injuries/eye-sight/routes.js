@@ -3,17 +3,17 @@ module.exports = function (router, content) {
 
   router.post('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/eye-sight', function (req, res) {
 
-    let headNeckFaceArea = req.session.data['headNeckFaceArea'] || []
+    let headNeckFaceInjuredPart = req.session.data['headNeckFaceInjuredPart'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
     // Go to detail
-    if (headNeckFaceArea.includes('Nose')) {
+    if (headNeckFaceInjuredPart.includes('Nose')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/nose/')
       // Go to detail
-    } else if (headNeckFaceArea.includes('Teeth')) {
+    } else if (headNeckFaceInjuredPart.includes('Teeth')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/teeth/')
       // Go to body part section
-    } else if (headNeckFaceArea.includes('Tongue')) {
+    } else if (headNeckFaceInjuredPart.includes('Tongue')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/tongue/')
       // Go to body part section
     } else if (injuredParts.includes('Legs or feet')) {
@@ -25,7 +25,7 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
     } else {
       // Go to end
-      res.redirect('/concepts/physical-injuries/one-q-page-v2/your-injuries')
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/other-injuries-details')
     }
   })
 

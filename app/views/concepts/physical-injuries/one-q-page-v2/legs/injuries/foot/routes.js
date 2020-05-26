@@ -17,7 +17,7 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Torso, back or abdomen')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/torso/')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v2/your-injuries')
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/other-injuries-details')
     }
   })
 

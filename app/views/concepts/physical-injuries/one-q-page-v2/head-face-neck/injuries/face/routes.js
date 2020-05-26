@@ -3,21 +3,30 @@ module.exports = function (router, content) {
 
   router.post('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/face', function (req, res) {
 
-    let headNeckFaceArea = req.session.data['headNeckFaceArea'] || []
+    let headNeckFaceInjuredPart = req.session.data['headNeckFaceInjuredPart'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
-    // Go to detail
-    if (headNeckFaceArea.includes('Ear or hearing')) {
+    // If head or brain then go to the surface injuries
+    if (headNeckFaceInjuredPart.includes('Ear or hearing')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/ear-hearing/')
       // Go to detail
-    } else if (headNeckFaceArea.includes('Eye or eyesight')) {
+    } else if (headNeckFaceInjuredPart.includes('Eye or eyesight')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/eye-sight/')
       // Go to detail
-    } else if (headNeckFaceArea.includes('Nose')) {
+    } else if (headNeckFaceInjuredPart.includes('Nose')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/nose/')
       // Go to detail
-    } else if (headNeckFaceArea.includes('Teeth')) {
+    } else if (headNeckFaceInjuredPart.includes('Teeth')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/teeth/')
+      // Go to body part section
+    } else if (headNeckFaceInjuredPart.includes('Tongue')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/tongue/')
+      // Go to body part section
+    } else if (injuredParts.includes('Legs or feet')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/legs/')
+      // Go to body part section
+    } else if (injuredParts.includes('Torso, back or abdomen')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/head-face-neck/torso/')
       // Go to new body part section
     } else if (injuredParts.includes('Legs')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/legs/')
@@ -25,10 +34,9 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v2/torso/')
     } else {
       // Go to end
-      res.redirect('/concepts/physical-injuries/one-q-page-v2/your-injuries')
+      res.redirect('/concepts/physical-injuries/one-q-page-v2/other-injuries-details')
     }
   })
-
 
   // Pass the question in to the page
   router.get('/concepts/physical-injuries/one-q-page-v2/head-face-neck/injuries/face/', function (req, res) {

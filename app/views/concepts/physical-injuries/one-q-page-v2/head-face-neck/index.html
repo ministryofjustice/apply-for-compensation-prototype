@@ -4,6 +4,13 @@
 Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+{% block pageScripts %}
+<script>
+localStorage.setItem('headPages', 0);
+var headPageCount = localStorage.getItem('headPages');
+</script>
+{% endblock %}
+
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
@@ -27,8 +34,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk"import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "headNeckFaceArea",
-        name: "headNeckFaceArea",
+        idPrefix: "headNeckFaceInjuredPart",
+        name: "headNeckFaceInjuredPart",
         fieldset: {
           legend: {
             text: "What parts of your head, face or neck were injured?",
@@ -41,44 +48,43 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         },
         items: [
           {
-            value: "Head or brain",
-            text: "Head or brain",
-            checked: checked("headNeckFaceArea", "Head or brain")
-          },
-          {
-            value: "Neck",
-            text: "Neck",
-            checked: checked("headNeckFaceArea", "Neck")
-          },
-          {
             value: "Ear or hearing",
             text: "Ear or hearing",
-            checked: checked("headNeckFaceArea", "Ear or hearing")
+            checked: checked("headNeckFaceInjuredPart", "Ear or hearing")
           },
           {
             value: "Eye or eyesight",
             text: "Eye or eyesight",
-            checked: checked("headNeckFaceArea", "Eye or eyesight")
+            checked: checked("headNeckFaceInjuredPart", "Eye or eyesight")
           },
           {
             value: "Face",
             text: "Face",
-            checked: checked("headNeckFaceArea", "Face")
+            checked: checked("headNeckFaceInjuredPart", "Face")
           },
           {
+            value: "Head or brain",
+            text: "Head or brain",
+            checked: checked("headNeckFaceInjuredPart", "Head or brain")
+          },
+          {
+            value: "Neck",
+            text: "Neck",
+            checked: checked("headNeckFaceInjuredPart", "Neck")
+          },          {
             value: "Nose",
             text: "Nose",
-            checked: checked("headNeckFaceArea", "Nose")
+            checked: checked("headNeckFaceInjuredPart", "Nose")
           },
           {
             value: "Teeth",
             text: "Teeth",
-            checked: checked("headNeckFaceArea", "Teeth")
+            checked: checked("headNeckFaceInjuredPart", "Teeth")
           },
           {
             value: "Tongue",
             text: "Tongue",
-            checked: checked("headNeckFaceArea", "Tongue")
+            checked: checked("headNeckFaceInjuredPart", "Tongue")
           }
         ]
       }) }}
