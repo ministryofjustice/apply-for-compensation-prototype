@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/concepts/physical-injuries/autocomplete/have-physical-injuries', function (req, res) {
-    res.redirect('/concepts/physical-injuries/autocomplete/basic-component.html')
+    res.redirect('/concepts/physical-injuries/autocomplete/advanced.html')
   })
 
   // Pass the question in to the page
