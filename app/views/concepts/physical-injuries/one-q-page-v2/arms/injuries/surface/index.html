@@ -45,7 +45,7 @@ $(".pageNumber").text(armPageCount);
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "injuryCheckboxes",
+        idPrefix: "armSurfaceInjuries",
         name: "armsSurfaceInjuries",
         fieldset: {
         },
@@ -56,27 +56,27 @@ $(".pageNumber").text(armPageCount);
           {
             value: " Burns to arms",
             text: "Burns to arms",
-            checked: checked("armsInjuries", " Burns to arms")
+            checked: checked("armSurfaceInjuries", " Burns to arms")
           },
           {
             value: " Scarring to arms",
             text: "Scarring to arms",
-            checked: checked("armsInjuries", " Scarring to arms")
+            checked: checked("armSurfaceInjuries", " Scarring to arms")
           },
           {
             value: " Cuts to arm",
             text: "Cuts to arm",
-            checked: checked("armsInjuries", " Cuts to arm")
+            checked: checked("armSurfaceInjuries", " Cuts to arm")
           },
           {
             value: " Bruises to arm",
             text: "Bruises to arm",
-            checked: checked("armsInjuries", " Bruises to arm")
+            checked: checked("armSurfaceInjuries", " Bruises to arm")
           },
           {
             value: " Muscle, ligament, or tendon injury to arm",
             text: "Muscle, ligament, or tendon injury to arm",
-            checked: checked("armsInjuries", " Muscle, ligament, or tendon injury to arm")
+            checked: checked("armSurfaceInjuries", " Muscle, ligament, or tendon injury to arm")
           }
         ]
       }) }}

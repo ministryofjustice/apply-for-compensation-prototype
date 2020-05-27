@@ -1,5 +1,5 @@
 
-{% if data['nonSpecificBodyParts'] or data['armsInjuries'] or data['elbowInjuries'] or data['fingerThumbInjuries'] or data['handInjuries'] or data['shoulderInjuries'] or data['wristInjuries'] or data['armsSurfaceInjuries'] or data['brainInjuries'] or data['headSurfaceInjuries'] or data['neckInjuries'] or data['neckSurfaceInjuries'] or data['earHearingInjuries'] or data['eyeInjuries'] or data['facialInjuries'] or data['noseInjuries'] or data['teethInjuries'] or data['tongueInjuries'] or data['faceSurfaceInjuries'] or data['ankleInjuries'] or data['footInjuries'] or data['hipInjuries'] or data['kneeInjuries'] or data['legInjuries'] or data['toesInjuries'] or data['legsSurfaceInjuries'] or data['abdomenInjuries'] or data['backInjuries'] or data['breastBoneInjuries'] or data['chestInjuries'] or data['collarBoneInjuries'] or data['internalOrgansInjuries'] or data['genitilsInjuries'] or data['ribInjuries'] or data['shoulderBladeInjuries'] or data['tailBoneInjuries'] or data['torsoSurfaceInjuries']%}
+{% if data['nonSpecificBodyParts'] or data['armsInjuries'] or data['elbowInjuries'] or data['fingerThumbInjuries'] or data['handInjuries'] or data['shoulderInjuries'] or data['wristInjuries'] or data['armSurfaceInjuries'] or data['brainInjuries'] or data['headSurfaceInjuries'] or data['neckInjuries'] or data['neckSurfaceInjuries'] or data['earHearingInjuries'] or data['eyeInjuries'] or data['facialInjuries'] or data['noseInjuries'] or data['teethInjuries'] or data['tongueInjuries'] or data['faceSurfaceInjuries'] or data['ankleInjuries'] or data['footInjuries'] or data['hipInjuries'] or data['kneeInjuries'] or data['legInjuries'] or data['toesInjuries'] or data['legsSurfaceInjuries'] or data['abdomenInjuries'] or data['backInjuries'] or data['breastBoneInjuries'] or data['chestInjuries'] or data['collarBoneInjuries'] or data['internalOrgansInjuries'] or data['genitilsInjuries'] or data['ribInjuries'] or data['shoulderBladeInjuries'] or data['tailBoneInjuries'] or data['torsoSurfaceInjuries']%}
 
 <table class="govuk-table govuk-!-margin-top-5 your-injuries">
   <caption class="govuk-heading-m" style="text-align: left;">
@@ -35,8 +35,8 @@
       <tr><th class="govuk-table__cell govuk-body">{{ data['wristInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
     {% endif %}
 
-    {% if data['armsSurfaceInjuries'] %}
-      <tr><th class="govuk-table__cell govuk-body">{{ data['armsSurfaceInjuries'] }} to your arms</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% if data['armSurfaceInjuries'] %}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['armSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
     {% endif %}
 
     {% if data['brainInjuries'] %}
@@ -44,7 +44,7 @@
     {% endif %}
 
     {% if data['headSurfaceInjuries'] %}
-      <tr><th class="govuk-table__cell govuk-body">{{ data['headSurfaceInjuries'] }} to the head</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+      <tr><th class="govuk-table__cell govuk-body headSurfaceInjuries">{{ data['headSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
     {% endif %}
 
     {% if data['neckInjuries'] %}
@@ -52,7 +52,7 @@
     {% endif %}
 
     {% if data['neckSurfaceInjuries'] %}
-      <tr><th class="govuk-table__cell govuk-body">{{ data['neckSurfaceInjuries'] }} to the neck</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+      <tr><th class="govuk-table__cell govuk-body">{{ data['neckSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
     {% endif %}
 
     {% if data['earHearingInjuries'] %}
@@ -80,7 +80,7 @@
     {% endif %}
 
     {% if data['faceSurfaceInjuries'] %}
-      <tr><th class="govuk-table__cell govuk-body">{{ data['faceSurfaceInjuries'] }} to the face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+      <tr><th class="govuk-table__cell govuk-body">{{ data['faceSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
     {% endif %}
 
     {% if data['ankleInjuries'] %}
@@ -108,7 +108,7 @@
     {% endif %}
 
     {% if data['legsSurfaceInjuries'] %}
-      <tr><th class="govuk-table__cell govuk-body">{{ data['legsSurfaceInjuries'] }} to the legs</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+      <tr><th class="govuk-table__cell govuk-body">{{ data['legsSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
     {% endif %}
 
     {% if data['abdomenInjuries'] %}
