@@ -438,6 +438,24 @@ require('./views/concepts/physical-injuries/one-q-page-v2/your-injuries/routes')
 require('./views/concepts/physical-injuries/one-q-page-v2/other-injuries-details/routes')(router, viewContent);
 
 
+require('./views/concepts/physical-injuries/most-common-first/context-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/have-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/check-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/your-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/broken-bones/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/broken-bones/head-face-neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/broken-bones/arms/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/broken-bones/torso/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/broken-bones/legs/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/bruising/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/cuts-grazes/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/most-common-first/most-common/scarring/routes')(router, viewContent);
+
+
+
+
+
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);
 

@@ -36,10 +36,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         </caption>
       <tbody class="govuk-table__body">
 
-        {% if data['nonSpecificBodyParts'] %}
-          <tr><th class="govuk-table__cell govuk-body">{{ data['nonSpecificBodyParts'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
-        {% endif %}
-
         {% if data['armsInjuries'] %}
           <tr><th class="govuk-table__cell govuk-body">{{ data['armsInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
         {% endif %}
