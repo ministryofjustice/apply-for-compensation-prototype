@@ -8,51 +8,85 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column">
       <h1 class="govuk-heading-xl">
         Physical injuries concepts
       </h1>
-      <section class="">
-
       <p class="govuk-body-l">Prototypes exploring physical injuries concepts</p>
-      <hr>
 
-      <h3 class="govuk-heading-m">Basic autocomplete</h3>
-      <p><a href="/concepts/physical-injuries/basic-autocomplete/context-physical-injuries" class="govuk-link">View prototype</a></p>
-      <hr>
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#in-use">
+              Latest
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#older">
+              Older versions
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="in-use">
+          <h3 class="govuk-heading-m">One question per page idea</h3>
+          <p>v3 prototype. WIP</p>
+          <p><a href="/concepts/physical-injuries/one-q-page-v3/context-physical-injuries" class="govuk-link">View v3 prototype</a></p>
+          <hr>
+          <!--
+          <h3 class="govuk-heading-m">Ideas</h3>
 
-      <h3 class="govuk-heading-m">Advanced autocomplete</h3>
-      <p><a href="/concepts/physical-injuries/advanced-autocomplete/context-physical-injuries" class="govuk-link">View prototype</a></p>
-      <hr>
+          <hr>
+-->
+`
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="older">
+          <h3 class="govuk-heading-m">Injuries progress</h3>
+          <p class="govuk-body">Exploring ideas for showing the applicant there are more questions coming on each body part section.</p>
+          <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/concepts/physical-injuries/ideas/progress-context.html" class="govuk-link">A progress context page</a></li>
+          <li><a href="/concepts/physical-injuries/ideas/heading-progress.html" class="govuk-link">Progress at heading</a></li>
+          <li><a href="/concepts/physical-injuries/ideas/sidebar-progress.html" class="govuk-link">Sidebar progress</a></li>
+          </ul>
+          <hr>
 
-      <h3 class="govuk-heading-m">One question per page idea</h3>
-      <p>v1 prototype. Usability tested on 14th and 15th May 2020</p>
-      <p><a href="/concepts/physical-injuries/one-q-page/context-physical-injuries" class="govuk-link">View v1 prototype</a></p>
-      <p><a href="/concepts/physical-injuries/one-q-page-v2/context-physical-injuries" class="govuk-link">View v2 prototype</a></p>
-      <p><a href="/concepts/physical-injuries/one-q-page-v3/context-physical-injuries" class="govuk-link">View v3 prototype</a></p>
-      <hr>
+          <h3 class="govuk-heading-m">One question per page idea</h3>
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-2">V1 prototype: usability tested on 14th and 15th May 2020</h4>
+          <p class="govuk-body govuk-!-margin-bottom-0">Includes other types of injuries (paralysis,HIV). Asks surface injuries after specific body part injuries.</p>
+          <p><a href="/concepts/physical-injuries/one-q-page/context-physical-injuries" class="govuk-link">View v1 prototype</a></p>
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-2">V2 prototype: usability tested on 28th and 29th May 2020</h4>
+          <p class="govuk-body govuk-!-margin-bottom-0">Removed other types of injuries (paralysis,HIV) for now. Asks surface injuries after top level body part, but before specific body part injuries.</p>
+          <p><a href="/concepts/physical-injuries/one-q-page-v2/context-physical-injuries" class="govuk-link">View v2 prototype</a></p>
+          <hr>
 
-      <h3 class="govuk-heading-m">Most common injuries first</h3>
-      <p><a href="/concepts/physical-injuries/most-common-first/context-physical-injuries" class="govuk-link">View v1 prototype</a></p>
-      <p><a href="/concepts/physical-injuries/most-common-first-v2/context-physical-injuries" class="govuk-link">View v2 prototype</a></p>
-      <hr>
+          <h3 class="govuk-heading-m">Autocomplete</h3>
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Basic autocomplete: usability tested on 14th and 15th May 2020</h4>
+          <p class="govuk-body govuk-!-margin-bottom-0">Basic implementation of the autocomplete component which builds a list of injuries.</p>
+          <p><a href="/concepts/physical-injuries/basic-autocomplete/context-physical-injuries" class="govuk-link">View prototype</a></p>
 
-      <h3 class="govuk-heading-m">Ideas</h3>
-      <p><a href="/concepts/physical-injuries/ideas/progress-context.html" class="govuk-link">A progress context page</a></p>
-      <p><a href="/concepts/physical-injuries/ideas/heading-progress.html" class="govuk-link">Progress at heading</a></p>
-      <p><a href="/concepts/physical-injuries/ideas/sidebar-progress.html" class="govuk-link">Sidebar progress</a></p>
-      <hr>
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Advanced autocomplete: usability tested on 28th and 29th May 2020</h4>
+          <p class="govuk-body govuk-!-margin-bottom-0">Implementation of the LAA version of the autocomplete functionality to build a list of injuries.</p>
+          <p><a href="/concepts/physical-injuries/advanced-autocomplete/context-physical-injuries" class="govuk-link">View prototype</a></p>
+          <hr>
 
-    </section>
+          <h3 class="govuk-heading-m">Exclude ineligibles + free text description</h3>
+          <p><a href="/concepts/physical-injuries/free-text/context-physical-injuries" class="govuk-link">View prototype</a></p>
+          <hr>
 
-      <section class="govuk-!-padding-top-9">
-        <h2 class="govuk-body-l">Prototypes we have discounted</h2>
-        <hr>
+          <h3 class="govuk-heading-m">Most common injuries first</h3>
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-2">v1 prototype: usability tested on 28th May 2020</h4>
+          <p class="govuk-body govuk-!-margin-bottom-0">On this version the most common injuries include categories, like broken bones and scarring. The applicant then has to drill down and select the body parts affected.</p>
+          <p><a href="/concepts/physical-injuries/most-common-first/context-physical-injuries" class="govuk-link">View v1 prototype</a></p>
+          <h4 class="govuk-heading-s govuk-!-margin-bottom-2">v2 prototype: usability tested on 29th May 2020</h4>
+          <p class="govuk-body govuk-!-margin-bottom-0">On this version the most common injuries are a list of individual injuries so no further detail required unless the applicant says they have other injuries.</p>
+          <p><a href="/concepts/physical-injuries/most-common-first-v2/context-physical-injuries" class="govuk-link">View v2 prototype</a></p>
+          <hr>
 
-        <h3 class="govuk-heading-m">Exclude ineligibles + free text description</h3>
-        <p><a href="/concepts/physical-injuries/free-text/context-physical-injuries" class="govuk-link">View prototype</a></p>
-        <hr>
-      </section>
+        </div>
+      </div>
+
 
     </div>
 </div>
