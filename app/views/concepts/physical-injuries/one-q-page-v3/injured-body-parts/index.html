@@ -40,25 +40,25 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           text: headNeckFaceInjuryQuestionHint
         },
         items: [
+        {
+          value: "Head, face or neck",
+          text: "Head, face or neck",
+          checked: checked("injuredParts", "Head, face or neck")
+        },
           {
             value: "Arms",
             text: "Arms or hands",
             checked: checked("injuredParts", "Arms")
           },
           {
-            value: "Head, face or neck",
-            text: "Head, face or neck",
-            checked: checked("injuredParts", "Head, face or neck")
+            value: "Torso",
+            text: "Torso, back or abdomen",
+            checked: checked("injuredParts", "Torso")
           },
           {
             value: "Legs",
             text: "Legs or feet",
             checked: checked("injuredParts", "Legs")
-          },
-          {
-            value: "Torso",
-            text: "Torso, back or abdomen",
-            checked: checked("injuredParts", "Torso")
           }
           ]
       }) }}

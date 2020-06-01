@@ -47,45 +47,49 @@ var headPageCount = localStorage.getItem('headPages');
           text: headNeckFaceInjuryQuestionHint
         },
         items: [
+        {
+          value: "Head or brain",
+          text: "Head or brain",
+          checked: checked("headNeckFaceInjuredPart", "Head or brain")
+        },
+        {
+          value: "Face",
+          text: "Face",
+          checked: checked("headNeckFaceInjuredPart", "Face")
+        },
+        {
+          value: "Eye or eyesight",
+          text: "Eye or eyesight",
+          checked: checked("headNeckFaceInjuredPart", "Eye or eyesight")
+        },
           {
             value: "Ear or hearing",
             text: "Ear or hearing",
             checked: checked("headNeckFaceInjuredPart", "Ear or hearing")
           },
           {
-            value: "Eye or eyesight",
-            text: "Eye or eyesight",
-            checked: checked("headNeckFaceInjuredPart", "Eye or eyesight")
-          },
-          {
-            value: "Face",
-            text: "Face",
-            checked: checked("headNeckFaceInjuredPart", "Face")
-          },
-          {
-            value: "Head or brain",
-            text: "Head or brain",
-            checked: checked("headNeckFaceInjuredPart", "Head or brain")
-          },
+         value: "Nose",
+         text: "Nose",
+         checked: checked("headNeckFaceInjuredPart", "Nose")
+       },
+       {
+         value: "Teeth",
+         text: "Teeth",
+         checked: checked("headNeckFaceInjuredPart", "Teeth")
+       },
+       {
+         value: "Tongue",
+         text: "Tongue",
+         checked: checked("headNeckFaceInjuredPart", "Tongue")
+       },
+
           {
             value: "Neck",
             text: "Neck",
             checked: checked("headNeckFaceInjuredPart", "Neck")
-          },          {
-            value: "Nose",
-            text: "Nose",
-            checked: checked("headNeckFaceInjuredPart", "Nose")
-          },
-          {
-            value: "Teeth",
-            text: "Teeth",
-            checked: checked("headNeckFaceInjuredPart", "Teeth")
-          },
-          {
-            value: "Tongue",
-            text: "Tongue",
-            checked: checked("headNeckFaceInjuredPart", "Tongue")
           }
+
+
         ]
       }) }}
       {{ govukButton({
