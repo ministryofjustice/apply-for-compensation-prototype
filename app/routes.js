@@ -523,10 +523,6 @@ require('./views/concepts/physical-injuries/most-common-first-v2/most-common/cut
 require('./views/concepts/physical-injuries/most-common-first-v2/most-common/scarring/routes')(router, viewContent);
 
 
-
-
-
-
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);
 
