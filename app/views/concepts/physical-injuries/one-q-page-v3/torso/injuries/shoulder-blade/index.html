@@ -50,10 +50,25 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           text: shoulderBladeInjuriesQuestionHint
         },
         items: [
+        {
+          value: " Broken shoulder",
+          text: "Broken shoulder",
+          checked: checked("shoulderInjuries", " Broken shoulder")
+        },
           {
-            value: " Broken shoulder",
-            text: "Broken shoulder",
-            checked: checked("shoulderBladeInjuries", " Broken shoulder")
+            value: " Dislocated shoulder",
+            text: "Dislocated shoulder",
+            checked: checked("shoulderInjuries", " Dislocated shoulder")
+          },
+          {
+            value: " Frozen shoulder",
+            text: "Frozen shoulder",
+            checked: checked("shoulderInjuries", " Frozen shoulder")
+          },
+          {
+            value: " Keyhole surgery on shoulder",
+            text: "Keyhole surgery on shoulder",
+            checked: checked("shoulderInjuries", " Keyhole surgery on shoulder")
           }
         ]
       }) }}
