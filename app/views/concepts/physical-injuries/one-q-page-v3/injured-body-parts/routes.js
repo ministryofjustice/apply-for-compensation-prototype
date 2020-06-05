@@ -4,22 +4,16 @@ module.exports = function (router, content) {
   router.post('/concepts/physical-injuries/one-q-page-v3/injured-body-parts', function (req, res) {
     let injuredParts = req.session.data['injuredParts'] || []
 
-    // If they pick apple or banana then show them the success page
-     if (injuredParts.includes('Arms')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/arms/')
-    } else if (injuredParts.includes('Head, face or neck')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/head-face-neck')
-    } else if (injuredParts.includes('Legs')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/legs/')
+     if (injuredParts.includes('Head, face or neck')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/head-face-neck')
     } else if (injuredParts.includes('Torso')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/torso/')
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/torso/')
+    } else if (injuredParts.includes('Arms or hands')) {
+     res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/arms/')
+    } else if (injuredParts.includes('Legs or feet')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/legs/')
     }
   })
 
-
-  // Pass the question in to the page
-  router.get('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/', function (req, res) {
-    res.render('concepts/physical-injuries/one-q-page-v3/injured-body-parts/index', content)
-  })
   // END__######################################################################################################
 }

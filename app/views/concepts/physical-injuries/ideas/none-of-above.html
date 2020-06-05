@@ -4,24 +4,6 @@
 Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
-{% block pageScripts %}
-<script>
-
-  $('.govuk-checkboxes__input').change(function() {
-
-      if ($(this).is('#none')) {
-          $('.govuk-checkboxes__input').not(this).removeAttr('checked');
-      }
-      else {
-          $('#none').removeAttr('checked');
-      }
-  });
-
-  $( ".govuk-checkboxes__item" ).last().before( "<div class='govuk-radios__divider'>or</div>");
-
-</script>
-{% endblock %}
-
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
