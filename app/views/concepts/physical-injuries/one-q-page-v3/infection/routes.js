@@ -13,5 +13,11 @@ router.post('/concepts/physical-injuries/one-q-page-v3/infection', function (req
   }
 })
 
+router.post('/concepts/physical-injuries/one-q-page-v3/infection/details', function (req, res) {
+    res.redirect('/concepts/physical-injuries/one-q-page-v3/pregnancy-loss')
+})
+
+
+
 // END__######################################################################################################
 }
