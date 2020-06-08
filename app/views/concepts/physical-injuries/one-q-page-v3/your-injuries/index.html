@@ -186,9 +186,20 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         </tbody>
 
       </table>
-    {% endif %}
+    {% else %}
 
+    <table class="govuk-table govuk-!-margin-top-5 your-injuries">
+      <caption class="govuk-heading-m" style="text-align: left;">
+        You have selected these injuries
+        </caption>
+      <tbody class="govuk-table__body">
+          <tr><th class="govuk-table__cell govuk-body">Cuts and grazes to the face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+          <tr><th class="govuk-table__cell govuk-body">Scars on the arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+          <tr><th class="govuk-table__cell govuk-body">Broken arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+      </tbody>
 
+    </table>
+        {% endif %}
 
    <form class="form" method="post">
 
