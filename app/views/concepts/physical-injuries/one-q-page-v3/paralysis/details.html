@@ -33,7 +33,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             "name": "paralysisType",
             "fieldset": {
               "legend": {
-                "text": "Select the paralysis you have as a result of the crime",
+                "text": "What paralysis do you have?",
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -41,22 +41,17 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             "items": [
               {
                 "value": "Hemiplegia",
-                "text": "Hemiplegia",
+                "text": "Hemiplegia (one side of your body)",
                 checked: checked("havePhysicalInjuries", "Hemiplegia")
               },
               {
                 "value": "Paraplegia",
-                "text": "Paraplegia",
+                "text": "Paraplegia (the lower half of your body)",
                 checked: checked("havePhysicalInjuries", "Paraplegia")
               },
               {
-                "value": "Quadplegia",
-                "text": "Quadplegia",
-                checked: checked("havePhysicalInjuries", "Quadplegia")
-              },
-              {
                 "value": "Tetraplegia or quadriplegia",
-                "text": "Tetraplegia or quadriplegia",
+                "text": "Tetraplegia or quadriplegia (from the neck down) ",
                 checked: checked("havePhysicalInjuries", "Tetraplegia or quadriplegia")
               },
               {
@@ -72,7 +67,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
               },
               {
                 value: "none",
-                text: "I do not have these injuries",
+                text: "I do not have paralysis",
                 checked: checked("faceSurfaceInjuries", "none"),
                 id: "none"
               }
