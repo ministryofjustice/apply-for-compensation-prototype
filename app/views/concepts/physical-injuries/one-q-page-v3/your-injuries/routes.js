@@ -8,7 +8,7 @@ router.post('/concepts/physical-injuries/one-q-page-v3/your-injuries', function 
     // Redirect to the relevant page
     res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts')
   } else {
-    res.redirect('/concepts/physical-injuries/one-q-page-v3/end')
+    res.redirect('/concepts/physical-injuries/one-q-page-v3/treatment')
   }
 })
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ physicalTreatmentQuestion }} - {{ serviceName }} - GOV.UK
+{{ mentalHealthvisitedGPQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -28,26 +28,29 @@
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "physicalTreatment",
-            "name": "physicalTreatment",
-            currentValue: data['physicalTreatment'],
+            "idPrefix": "visitedGP",
+            "name": "visitedGP",
+            currentValue: data['visitedGP'],
             "fieldset": {
               "legend": {
-                "text": "Are you still receiving treatment for your physical injuries?",
+                "text": visitedGPQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
+            },
+            hint: {
+              text: visitedGPQuestionHint
             },
             "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("physicalTreatment", "Yes")
+                checked: checked("visitedGP", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("physicalTreatment", "No")
+                checked: checked("visitedGP", "No")
               }
             ]
           }) }}

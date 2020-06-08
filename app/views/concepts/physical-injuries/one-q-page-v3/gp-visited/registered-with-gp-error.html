@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ physicalTreatmentQuestion }} - {{ serviceName }} - GOV.UK
+Error: {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
+
 
 
 {% block beforeContent %}
@@ -22,32 +23,48 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
     <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: britishCitizenError,
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "physicalTreatment",
-            "name": "physicalTreatment",
-            currentValue: data['physicalTreatment'],
+            "idPrefix": "britishCitizen",
+            "name": "britishCitizen",
+            currentValue: data['britishCitizen'],
             "fieldset": {
               "legend": {
-                "text": "Are you still receiving treatment for your physical injuries?",
+                "text": britishCitizenQuestion,
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
             },
+            errorMessage: {
+            text: britishCitizenError
+          },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
-                checked: checked("physicalTreatment", "Yes")
+                "text": "Yes"
               },
               {
                 "value": "No",
-                "text": "No",
-                checked: checked("physicalTreatment", "No")
+                "text": "No"
               }
             ]
           }) }}
@@ -59,6 +76,8 @@
     </form>
 
   </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

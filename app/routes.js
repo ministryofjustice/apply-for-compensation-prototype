@@ -488,13 +488,18 @@ require('./views/concepts/physical-injuries/one-q-page-v3/injured-body-parts/tor
 require('./views/concepts/physical-injuries/one-q-page-v3/injured-body-parts/torso/tail-bone/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/injured-body-parts/torso/pelvis/routes')(router, viewContent);
 
+require('./views/concepts/physical-injuries/one-q-page-v3/your-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/treatment/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/context-about-dmi/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi-duration/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi-finished-treatment/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi-treatment-types/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi-more-info/routes')(router, viewContent);
-
+require('./views/concepts/physical-injuries/one-q-page-v3/context-medical-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/gp-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/gp-registered/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/gp-visited/routes')(router, viewContent);
 
 
 //Extra questions & equal oportunities //
