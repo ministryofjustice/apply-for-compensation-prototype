@@ -179,7 +179,7 @@ module.exports = {
     contextPrevCompHeading:'Other compensation',
     contextYourDetailsHeading:'Your details',
     contextDMIHeading: 'Your mental health',
-    contextMedicalDetailsHeading: 'Your GP',
+    contextMedicalDetailsHeading: 'Your treatment',
 
     // Removed Options and adding in DMI + Option 2 filter screens //
     yourClaimQuestion:'Are you claiming for any of these things?',
