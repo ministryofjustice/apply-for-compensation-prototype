@@ -1,11 +1,31 @@
 
 
-<table class="govuk-table govuk-!-margin-top-5 your-injuries">
+<table class="govuk-table govuk-!-margin-top-5">
   <caption class="govuk-heading-m" style="text-align: left;">
     You have selected these injuries
     </caption>
   <tbody class="govuk-table__body">
 
+    <!-- Soft tissue injuries -->
+
+    {% include "../includes/soft-tissue/answers-cuts.html" %}
+    {% include "../includes/soft-tissue/answers-bruises.html" %}
+    {% include "../includes/soft-tissue/answers-scars.html" %}
+    {% include "../includes/soft-tissue/answers-burns.html" %}
+    {% include "../includes/soft-tissue/answers-muscle.html" %}
+
+    <!-- Paralysis, infection, loss of pregnancy -->
+    {% include "../includes/paralysis.html" %}
+    {% include "../includes/infection.html" %}
+    {% include "../includes/pregnancy-loss.html" %}
+
+    <!-- Head, face or neck injuries -->
+
+    <!-- Torso -->
+
+    <!-- Arm or hand injuries -->
+
+    <!-- Leg or foot injuries -->
 
 
     </tbody>

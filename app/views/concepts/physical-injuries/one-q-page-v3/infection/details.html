@@ -42,17 +42,17 @@ Physical injuries  - {{ serviceName }} - GOV.UK
               {
                 "value": "HIV",
                 "text": "HIV",
-                checked: checked("havePhysicalInjuries", "HIV")
+                checked: checked("infectionType", "HIV")
               },
               {
                 "value": "Hepatitis B",
                 "text": "Hepatitis B",
-                checked: checked("havePhysicalInjuries", "Hepatitis B")
+                checked: checked("infectionType", "Hepatitis B")
               },
               {
                 "value": "Hepatitis C",
                 "text": "Hepatitis C",
-                checked: checked("havePhysicalInjuries", "Hepatitis C")
+                checked: checked("infectionType", "Hepatitis C")
               },
               {
                 value: "none",
@@ -68,6 +68,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             }) }}
 
     </form>
+
+    {% include "../includes/answers-template.html" %}
 
   </div>
 </div>
