@@ -11,7 +11,7 @@ router.post('/concepts/physical-injuries/one-q-page-v3/gp-visited', function (re
 
   if ((registeredGP === 'No') && (visitedGP === 'No')) {
     // Redirect to the relevant page
-    res.redirect('/concepts/physical-injuries/one-q-page-v3/context-prev-compensation')
+    res.redirect('/concepts/physical-injuries/one-q-page-v3/hospital-visited')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/concepts/physical-injuries/one-q-page-v3/gp-details')

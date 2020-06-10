@@ -1,13 +1,9 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  router.post('/concepts/physical-injuries/one-q-page-v3/gp-details', function (req, res) {
+  // File: address-manually
+  // will produce an address on multiple lines on the 'check your answers page'
+  router.post('/concepts/physical-injuries/one-q-page-v3/hospital-details', function (req, res) {
     res.redirect('/concepts/physical-injuries/one-q-page-v3/end')
-  })
-
-
-  // Pass the question in to the page
-  router.get('/concepts/physical-injuries/one-q-page-v3/gp-details/', function (req, res) {
-    res.render('application/gp-details/index', content)
   })
 
   // END__######################################################################################################

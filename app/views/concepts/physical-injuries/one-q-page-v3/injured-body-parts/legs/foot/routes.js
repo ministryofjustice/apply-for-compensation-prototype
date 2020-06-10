@@ -11,13 +11,8 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Torso')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v3/torso/')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/other-injuries-details')
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/your-injuries/')
     }
-  })
-
-  // Pass the question in to the page
-  router.get('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/foot/', function (req, res) {
-    res.render('concepts/physical-injuries/one-q-page-v3/injured-body-parts/foot/index', content)
   })
   // END__######################################################################################################
 }

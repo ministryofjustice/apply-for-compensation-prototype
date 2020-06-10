@@ -19,6 +19,8 @@ module.exports = function (router, content) {
      res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/arms/')
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/legs/')
+    } else {
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/your-injuries/')
     }
   })
 }

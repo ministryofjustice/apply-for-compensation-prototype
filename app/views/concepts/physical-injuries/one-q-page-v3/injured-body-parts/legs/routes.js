@@ -19,9 +19,8 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/legs/toes')
       // Go to body part section
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/other-injuries-details')
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/your-injuries/')
     }
   })
-
   // END__######################################################################################################
 }

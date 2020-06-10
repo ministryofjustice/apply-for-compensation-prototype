@@ -23,10 +23,8 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Torso')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/torso/')
     } else {
-      // Go to end
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/other-injuries-details')
+      res.redirect('/concepts/physical-injuries/one-q-page-v3/your-injuries/')
     }
   })
-
   // END__######################################################################################################
 }

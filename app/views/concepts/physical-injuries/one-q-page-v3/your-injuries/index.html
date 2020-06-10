@@ -212,28 +212,28 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       name: "yourInjuriesCorrect",
       fieldset: {
         legend: {
-          text: "Are these injuries correct?",
+          text: "Do you want to add more physical injuries?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
-      items: [
-      {
-        "value": "No",
-        "text": "No",
-        checked: checked("yourInjuriesCorrect", "No")
-      },
-      {
+        items: [
+        {
+          "value": "No",
+          "text": "No",
+          checked: checked("yourInjuriesCorrect", "No")
+        },
+        {
           "value": "Yes",
           "text": "Yes",
           checked: checked("yourInjuriesCorrect", "Yes")
-        }
-      ]
-    }) }}
+        }]
+      })
+    }}
 
-      {{ govukButton({
+    {{ govukButton({
       "text": "Continue"
-      }) }}
+    }) }}
     </form>
 
   </div>

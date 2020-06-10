@@ -490,6 +490,7 @@ require('./views/concepts/physical-injuries/one-q-page-v3/injured-body-parts/tor
 
 require('./views/concepts/physical-injuries/one-q-page-v3/your-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/treatment/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/treatment-details/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/context-about-dmi/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/dmi-duration/routes')(router, viewContent);
@@ -500,6 +501,8 @@ require('./views/concepts/physical-injuries/one-q-page-v3/context-medical-detail
 require('./views/concepts/physical-injuries/one-q-page-v3/gp-details/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/gp-registered/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/gp-visited/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/hospital-visited/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/hospital-details/routes')(router, viewContent);
 
 
 //Extra questions & equal oportunities //
