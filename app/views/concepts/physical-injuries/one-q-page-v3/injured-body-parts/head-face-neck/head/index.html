@@ -27,8 +27,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk"import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "headInjury",
-        name: "headInjury",
+        idPrefix: "headInjuries",
+        name: "headInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your head or brain",
@@ -40,27 +40,27 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         {
           value: "Brain damage",
           text: "Brain damage",
-          checked: checked("headInjury", "Brain damage")
+          checked: checked("headInjuries", "Brain damage")
         },
         {
           value: "Epilepsy",
           text: "Epilepsy",
-          checked: checked("headInjury", "Epilepsy")
+          checked: checked("headInjuries", "Epilepsy")
         },
         {
           value: "Nerve damage",
           text: "Nerve damage",
-          checked: checked("headInjury", "Nerve damage")
+          checked: checked("headInjuries", "Nerve damage")
         },
         {
           value: "Fractured skull",
           text: "Fractured skull",
-          checked: checked("headInjury", "Fractured skull")
+          checked: checked("headInjuries", "Fractured skull")
         },
         {
           value: "none",
           text: "I do not have these injuries",
-          checked: checked("headInjury", "none"),
+          checked: checked("headInjuries", "none"),
           id: "none"
         }
         ]

@@ -27,8 +27,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "toesInjuries",
-        name: "toesInjuries",
+        idPrefix: "toeInjuries",
+        name: "toeInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your toes",
@@ -40,12 +40,12 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken toe",
             text: "Broken toe",
-            checked: checked("toesInjuries", "Broken toe")
+            checked: checked("toeInjuries", "Broken toe")
           },
           {
             value: "Amputated toe",
             text: "Amputated toe",
-            checked: checked("toesInjuries", "Amputated toe")
+            checked: checked("toeInjuries", "Amputated toe")
           },
           {
             value: "none",

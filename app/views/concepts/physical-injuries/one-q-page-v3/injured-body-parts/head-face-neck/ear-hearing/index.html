@@ -27,8 +27,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "earHearingInjuries",
-        name: "earHearingInjuries",
+        idPrefix: "earInjuries",
+        name: "earInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your ear or hearing",
@@ -40,42 +40,42 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken ear bone",
             text: "Broken ear bone",
-            checked: checked("earHearingInjuries", "Broken ear bone")
+            checked: checked("earInjuries", "Broken ear bone")
           },
           {
             value: "Deafness",
             text: "Deafness",
-            checked: checked("earHearingInjuries", "Deafness")
+            checked: checked("earInjuries", "Deafness")
           },
           {
             value: "Loss of ear",
             text: "Loss of ear",
-            checked: checked("earHearingInjuries", "Loss of ear")
+            checked: checked("earInjuries", "Loss of ear")
           },
           {
             value: "One perforated eardrum",
             text: "One perforated eardrum",
-            checked: checked("earHearingInjuries", "One perforated eardrum")
+            checked: checked("earInjuries", "One perforated eardrum")
           },
           {
-            value: "Two perforated eardrums ",
+            value: "Two perforated eardrums",
             text: "Two perforated eardrums ",
-            checked: checked("earHearingInjuries", "Two perforated eardrums ")
+            checked: checked("earInjuries", "Two perforated eardrums")
           },
           {
             value: "Ringing in ears",
             text: "Ringing in ears",
-            checked: checked("earHearingInjuries", "Ringing in ears")
+            checked: checked("earInjuries", "Ringing in ears")
           },
           {
             value: "Dizziness",
             text: "Dizziness",
-            checked: checked("earHearingInjuries", "Dizziness")
+            checked: checked("earInjuries", "Dizziness")
           },
           {
             value: "none",
             text: "I do not have these injuries",
-            checked: checked("headInjury", "none"),
+            checked: checked("earInjuries", "none"),
             id: "none"
           }
         ]

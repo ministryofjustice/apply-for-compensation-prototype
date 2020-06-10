@@ -16,8 +16,6 @@ module.exports = function (router, content) {
       // Go to new body part section
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/legs/')
-    } else if (injuredParts.includes('Torso')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts/torso/')
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page-v3/your-injuries/')
     }

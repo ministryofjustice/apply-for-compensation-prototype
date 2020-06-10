@@ -27,8 +27,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk"import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "facialInjuries",
-        name: "facialInjuries",
+        idPrefix: "faceInjuries",
+        name: "faceInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your face",
@@ -40,37 +40,37 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         {
           value: "Face fractures",
           text: "Face fractures",
-          checked: checked("facialInjuries", "Face fractures")
+          checked: checked("faceInjuries", "Face fractures")
         },
         {
           value: "Face numbness",
           text: "Face numbness",
-          checked: checked("facialInjuries", "Face numbness")
+          checked: checked("faceInjuries", "Face numbness")
         },
         {
           value: "Broken cheekbone",
           text: "Broken cheekbone",
-          checked: checked("facialInjuries", "Broken cheekbone")
+          checked: checked("faceInjuries", "Broken cheekbone")
         },
         {
           value: "Broken jaw",
           text: "Broken jaw",
-          checked: checked("facialInjuries", "Broken jaw")
+          checked: checked("faceInjuries", "Broken jaw")
         },
         {
           value: "Clicking jaw",
           text: "Clicking jaw",
-          checked: checked("facialInjuries", "Clicking jaw")
+          checked: checked("faceInjuries", "Clicking jaw")
         },
         {
           value: "Dislocated jaw",
           text: "Dislocated jaw",
-          checked: checked("facialInjuries", "Dislocated jaw")
+          checked: checked("faceInjuries", "Dislocated jaw")
         },
         {
           value: "none",
           text: "I do not have these injuries",
-          checked: checked("headInjury", "none"),
+          checked: checked("faceInjuries", "none"),
           id: "none"
         }
         ]

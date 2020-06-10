@@ -27,8 +27,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "genitilsInjuries",
-        name: "genitilsInjuries",
+        idPrefix: "genitalsInjuries",
+        name: "genitalsInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your genitals",
@@ -40,17 +40,17 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Genital injury",
             text: "Genital injury",
-            checked: checked("genitilsInjuries", "Genital injury")
+            checked: checked("genitalsInjuries", "Genital injury")
           },
           {
             value: "Infertitlity",
             text: "Infertitlity",
-            checked: checked("genitilsInjuries", "Infertitlity")
+            checked: checked("genitalsInjuries", "Infertitlity")
           },
           {
             value: "none",
             text: "I do not have these injuries",
-            checked: checked("headInjury", "none"),
+            checked: checked("genitalsInjuries", "none"),
             id: "none"
           }
         ]

@@ -27,8 +27,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "fingerThumbInjuries",
-        name: "fingerThumbInjuries",
+        idPrefix: "fingerInjuries",
+        name: "fingerInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your finger or thumb",
@@ -40,32 +40,32 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Dislocated finger",
             text: "Dislocated finger",
-            checked: checked("fingerThumbInjuries", "Dislocated finger")
+            checked: checked("fingerInjuries", "Dislocated finger")
           },
           {
             value: "Broken finger",
             text: "Broken finger",
-            checked: checked("fingerThumbInjuries", "Broken finger")
+            checked: checked("fingerInjuries", "Broken finger")
           },
           {
             value: "Loss of finger",
             text: "Loss of finger",
-            checked: checked("fingerThumbInjuries", "Loss of finger")
+            checked: checked("fingerInjuries", "Loss of finger")
           },
           {
             value: "Loss of part of finger",
             text: "Loss of part of finger",
-            checked: checked("fingerThumbInjuries", "Loss of part of finger")
+            checked: checked("fingerInjuries", "Loss of part of finger")
           },
           {
             value: "Broken thumb",
             text: "Broken thumb",
-            checked: checked("fingerThumbInjuries", "Broken thumb")
+            checked: checked("fingerInjuries", "Broken thumb")
           },
           {
             value: "Loss of fingernail",
             text: "Loss of fingernail",
-            checked: checked("fingerThumbInjuries", "Loss of fingernail")
+            checked: checked("fingerInjuries", "Loss of fingernail")
           },
           {
             value: "none",
