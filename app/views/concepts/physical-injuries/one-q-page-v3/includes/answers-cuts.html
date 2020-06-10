@@ -1,6 +1,7 @@
+
 {% if data['cutsOn'].includes("Head, neck or face") %}
   <tr><th class="govuk-table__cell govuk-body">Cuts and grazes on head, neck or face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
-{% endif %}
+{% else %}
 
 {% if data['cutsOn'].includes("Torso") %}
   <tr><th class="govuk-table__cell govuk-body">Cuts and grazes on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
