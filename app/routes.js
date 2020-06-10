@@ -504,6 +504,13 @@ require('./views/concepts/physical-injuries/one-q-page-v3/gp-visited/routes')(ro
 require('./views/concepts/physical-injuries/one-q-page-v3/hospital-visited/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v3/hospital-details/routes')(router, viewContent);
 
+require('./views/concepts/physical-injuries/one-q-page-v3/context-your-money/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/loss-earnings-claim/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/returned-work/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/returned-work-date/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/work-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v3/special-expenses/routes')(router, viewContent);
+
 
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);

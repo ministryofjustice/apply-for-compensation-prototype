@@ -8,7 +8,7 @@ router.post('/concepts/physical-injuries/one-q-page-v3/treatment', function (req
     // Redirect to the relevant page
     res.redirect('/concepts/physical-injuries/one-q-page-v3/treatment-details')
   } else {
-    res.redirect('/concepts/physical-injuries/one-q-page-v3/one-q-page-v3/context-about-dmi')
+    res.redirect('/concepts/physical-injuries/one-q-page-v3/context-about-dmi')
   }
 })
 
