@@ -188,7 +188,7 @@ module.exports = {
     dmiQuestion:'Do you have a disabling mental injury?',
     dmiQuestionHint:'This means it\'s much harder than usual to do things you would normally do, like going to work, seeing friends, or having a relationship.',
     dmiDurationQuestion:'Has your mental injury lasted 6 weeks or more?',
-    dmiTreatmentTypesQuestion:'Select any treatments you\'ve had',
+    dmiTreatmentTypesQuestion:'What mental health treatments have you had?',
     dmiTreatmentTypesHint:'Include any treatment you\'re waiting to get.',
     dmiFinsihedTreatmentQuestion:'Have you finished your mental health treatment?',
     dmiMoreInfoQuestion:'Briefly say how the crime has affected your daily life',
