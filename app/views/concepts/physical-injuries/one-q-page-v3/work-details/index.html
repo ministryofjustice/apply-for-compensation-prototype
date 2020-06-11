@@ -24,11 +24,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
     <form class="form" method="post">
 
-      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      {{ govukCheckboxes({
-            "classes": "govuk-checkboxes",
+      {{ govukRadios({
+            "classes": "govuk-radios",
             "idPrefix": "workDetails",
             "name": "workDetails",
             "fieldset": {
