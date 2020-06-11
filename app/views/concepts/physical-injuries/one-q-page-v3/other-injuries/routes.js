@@ -13,9 +13,9 @@ router.post('/concepts/physical-injuries/one-q-page-v3/other-injuries', function
   if (haveOtherInjuries === 'Yes') {
     res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts')
   } else if (haveOtherInjuries === 'No') {
-    res.redirect('/concepts/physical-injuries/one-q-page-v3/context-about-dmi')
+    res.redirect('/concepts/physical-injuries/one-q-page-v3/treatment')
   } else if (softTissueInjuries.includes('none') && (haveParalysis === 'No') && (haveInfection === 'No') && (pregnancyLoss === 'No') && (haveOtherInjuries === 'No') ) {
-    res.redirect('/concepts/physical-injuries/one-q-page-v3/context-about-dmi')
+    res.redirect('/concepts/physical-injuries/one-q-page-v3/treatment')
   } else if( paralysisType !== 'undefined' ) {
     res.redirect('/concepts/physical-injuries/one-q-page-v3/injured-body-parts')
   } else if( infectionType !== 'undefined' ) {
