@@ -512,6 +512,80 @@ require('./views/concepts/physical-injuries/one-q-page-v3/work-details/routes')(
 require('./views/concepts/physical-injuries/one-q-page-v3/special-expenses/routes')(router, viewContent);
 
 
+// One question per page v4
+
+require('./views/concepts/physical-injuries/one-q-page-v4/context-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/have-physical-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/soft-tissue/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/paralysis/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/infection/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/pregnancy-loss/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/other-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/arm/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/elbow/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/hand/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/tongue/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/teeth/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/leg/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/ankle/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/foot/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/hip/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/knee/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/back/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/breast-bone/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/chest/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/collar-bone/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/genitals/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/internal-organs/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/ribs/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/tail-bone/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+
+require('./views/concepts/physical-injuries/one-q-page-v4/your-injuries/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/treatment/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/treatment-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/context-about-dmi/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dmi/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dmi-duration/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dmi-finished-treatment/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dmi-treatment-types/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dmi-more-info/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/context-medical-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/gp-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/gp-registered/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/gp-visited/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/hospital-visited/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/hospital-details/routes')(router, viewContent);
+
+require('./views/concepts/physical-injuries/one-q-page-v4/context-your-money/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/loss-earnings-claim/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/returned-work/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/returned-work-date/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/work-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/special-expenses/routes')(router, viewContent);
+
+
+
+
 //Extra questions & equal oportunities //
 require('./views/concepts/survey/routes')(router, viewContent);
 
