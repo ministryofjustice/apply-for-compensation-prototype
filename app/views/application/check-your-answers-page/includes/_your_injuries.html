@@ -7,6 +7,34 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
+      {{ physicalInjuriesQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['physicalInjuries'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi">
+        Change<span class="govuk-visually-hidden">{{ physicalInjuriesQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ specialPaymentsQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['specialPayments'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="dmi">
+        Change<span class="govuk-visually-hidden">{{ specialPaymentsQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
       {{ dmiQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
