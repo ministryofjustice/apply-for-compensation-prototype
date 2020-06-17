@@ -38,9 +38,19 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         },
         items: [
         {
+          value: "Concussion, headaches or loss of balance lasting 28 weeks or more",
+          text: "Concussion, headaches or loss of balance lasting 28 weeks or more",
+          checked: checked("headInjuries", "Concussion, headaches or loss of balance lasting 28 weeks or more")
+        },
+        {
           value: "Brain damage",
           text: "Brain damage",
           checked: checked("headInjuries", "Brain damage")
+        },
+        {
+          value: "Fractured skull",
+          text: "Fractured skull",
+          checked: checked("headInjuries", "Fractured skull")
         },
         {
           value: "Epilepsy",
@@ -52,11 +62,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           text: "Nerve damage",
           checked: checked("headInjuries", "Nerve damage")
         },
-        {
-          value: "Fractured skull",
-          text: "Fractured skull",
-          checked: checked("headInjuries", "Fractured skull")
-        },
+
         {
           value: "none",
           text: "I do not have these injuries",
