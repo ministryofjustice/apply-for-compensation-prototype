@@ -27,11 +27,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukCheckboxes({
-        idPrefix: "teethInjuries",
-        name: "teethInjuries",
+        idPrefix: "mouthInjuries",
+        name: "mouthInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your teeth",
+            text: "Select any injuries to your mouth",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -40,17 +40,32 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken teeth",
             text: "Teeth knocked out",
-            checked: checked("teethInjuries", "Broken teeth")
+            checked: checked("mouthInjuries", "Broken teeth")
           },
           {
             value: "Loose teeth",
             text: "Loose teeth",
-            checked: checked("teethInjuries", "Loose teeth")
+            checked: checked("mouthInjuries", "Loose teeth")
+          },
+          {
+            value: "Impaired speech",
+            text: "Impaired speech",
+            checked: checked("mouthInjuries", "Impaired speech")
+          },
+          {
+            value: "Permanent loss of speech",
+            text: "Permanent loss of speech",
+            checked: checked("mouthInjuries", "Permanent loss of speech")
+          },
+          {
+            value: "Loss of tongue",
+            text: "Loss of tongue",
+            checked: checked("mouthInjuries", "Loss of tongue")
           },
           {
             value: "none",
             text: "I do not have these injuries",
-            checked: checked("teethInjuries", "none"),
+            checked: checked("mouthInjuries", "none"),
             id: "none"
           }
         ]
