@@ -37,15 +37,15 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           }
         },
         items: [
+        {
+          value: "Loose teeth",
+          text: "Loose teeth",
+          checked: checked("mouthInjuries", "Loose teeth")
+        },
           {
-            value: "Broken teeth",
-            text: "Teeth knocked out",
-            checked: checked("mouthInjuries", "Broken teeth")
-          },
-          {
-            value: "Loose teeth",
-            text: "Loose teeth",
-            checked: checked("mouthInjuries", "Loose teeth")
+            value: "Damaged or broken teeth",
+            text: "Damaged or broken teeth",
+            checked: checked("mouthInjuries", "Damaged or broken teeth")
           },
           {
             value: "Difficulty speaking",
@@ -61,6 +61,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Loss of tongue",
             text: "Loss of tongue",
             checked: checked("mouthInjuries", "Loss of tongue")
+          },
+          {
+            value: "Loss of smell or taste",
+            text: "Loss of smell or taste",
+            checked: checked("noseInjuries", "Loss of smell or taste")
           },
           {
             value: "none",
