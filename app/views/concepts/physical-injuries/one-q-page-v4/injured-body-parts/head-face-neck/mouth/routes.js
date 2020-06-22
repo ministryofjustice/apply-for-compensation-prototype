@@ -1,7 +1,8 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
 
-  router.post('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/tongue', function (req, res) {
+  router.post('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/mouth', function (req, res) {
+    let headFaceNeckInjuredParts = req.session.data['headFaceNeckInjuredParts'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
     if (injuredParts.includes('Torso')) {

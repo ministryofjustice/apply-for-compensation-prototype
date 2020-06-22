@@ -7,10 +7,8 @@ module.exports = function (router, content) {
 
     if (headFaceNeckInjuredParts.includes('Nose')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/nose/')
-    } else if (headFaceNeckInjuredParts.includes('Teeth')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/teeth/')
-    } else if (headFaceNeckInjuredParts.includes('Tongue')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/tongue/')
+    } else if (headFaceNeckInjuredParts.includes('Mouth')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/mouth/')
     } else if (injuredParts.includes('Torso')) {
      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/')
     } else if (injuredParts.includes('Arms or hands')) {
