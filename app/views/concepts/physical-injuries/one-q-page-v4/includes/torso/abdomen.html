@@ -1,3 +1,23 @@
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Kidney damage") %}
+  <tr><th class="govuk-table__cell govuk-body">Kidney damage</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Loss of kidney") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of kidney</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Loss of pancreas") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of pancreas</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Loss of spleen") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of spleen</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Hernia") %}
+  <tr><th class="govuk-table__cell govuk-body">Hernia</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
 {% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Keyhole surgery on torso") %}
   <tr><th class="govuk-table__cell govuk-body">Keyhole surgery on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}

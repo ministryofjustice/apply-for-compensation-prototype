@@ -17,3 +17,15 @@
 {% if data['chestInjuries'] and data['chestInjuries'].includes("Broken collarbone") %}
   <tr><th class="govuk-table__cell govuk-body">Broken collarbone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Punctured lung") %}
+  <tr><th class="govuk-table__cell govuk-body">Punctured lung</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Collapsed lung") %}
+  <tr><th class="govuk-table__cell govuk-body">Collapsed lung</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Lung damage from smoke or chemicals") %}
+  <tr><th class="govuk-table__cell govuk-body">Lung damage from smoke or chemicals</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

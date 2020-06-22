@@ -7,8 +7,6 @@ module.exports = function (router, content) {
 
     if (torsoInjuredParts.includes('Abdomen')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen')
-    } else if (torsoInjuredParts.includes('Internal organs')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/internal-organs')
     } else if (torsoInjuredParts.includes('Back')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/back')
     } else if (torsoInjuredParts.includes('Tail bone')) {
