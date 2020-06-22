@@ -9,3 +9,7 @@
 {% if data['backInjuries'] and data['backInjuries'].includes("Back strain") %}
   <tr><th class="govuk-table__cell govuk-body">Back strain</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Broken tailbone") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken tailbone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
