@@ -1,5 +1,13 @@
+{% if data['headInjuries'] and data['headInjuries'].includes("Concussion, headaches or loss of balance lasting 28 weeks or more") %}
+  <tr><th class="govuk-table__cell govuk-body">Concussion, headaches or loss of balance lasting 28 weeks or more</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
 {% if data['headInjuries'] and data['headInjuries'].includes("Brain damage") %}
   <tr><th class="govuk-table__cell govuk-body">Brain damage</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Fractured skull") %}
+  <tr><th class="govuk-table__cell govuk-body">Fractured skull</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
 {% if data['headInjuries'] and data['headInjuries'].includes("Epilepsy") %}
@@ -8,8 +16,4 @@
 
 {% if data['headInjuries'] and data['headInjuries'].includes("Nerve damage") %}
   <tr><th class="govuk-table__cell govuk-body">Nerve damage</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
-{% endif %}
-
-{% if data['headInjuries'] and data['headInjuries'].includes("Fractured skull") %}
-  <tr><th class="govuk-table__cell govuk-body">Fractured skull</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}

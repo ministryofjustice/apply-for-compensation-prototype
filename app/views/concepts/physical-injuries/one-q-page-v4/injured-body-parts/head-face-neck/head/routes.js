@@ -7,8 +7,6 @@ module.exports = function (router, content) {
 
     if (headFaceNeckInjuredParts.includes('Face')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/face/')
-    } else if (headFaceNeckInjuredParts.includes('Neck')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/neck/')
     } else if (headFaceNeckInjuredParts.includes('Eye or eyesight')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/eye-sight/')
     } else if (headFaceNeckInjuredParts.includes('Ear or hearing')) {
@@ -17,6 +15,8 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/nose/')
     } else if (headFaceNeckInjuredParts.includes('Mouth')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/mouth/')
+    } else if (headFaceNeckInjuredParts.includes('Neck')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/neck/')
     } else if (injuredParts.includes('Torso')) {
      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/')
     } else if (injuredParts.includes('Arms or hands')) {

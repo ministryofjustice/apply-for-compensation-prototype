@@ -1,21 +1,21 @@
-{% if data['chestInjuries'] and data['chestInjuries'].includes("Chest surgery") %}
-  <tr><th class="govuk-table__cell govuk-body">Chest surgery</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
-{% endif %}
-
-{% if data['chestInjuries'] and data['chestInjuries'].includes("Broken breast bone") %}
-  <tr><th class="govuk-table__cell govuk-body">Broken breast bone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
-{% endif %}
-
-{% if data['chestInjuries'] and data['chestInjuries'].includes("Broken rib") %}
-  <tr><th class="govuk-table__cell govuk-body">Broken rib</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
-{% endif %}
-
 {% if data['chestInjuries'] and data['chestInjuries'].includes("Separated shoulder") %}
   <tr><th class="govuk-table__cell govuk-body">Separated shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
 {% if data['chestInjuries'] and data['chestInjuries'].includes("Broken collarbone") %}
   <tr><th class="govuk-table__cell govuk-body">Broken collarbone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['chestInjuries'] and data['chestInjuries'].includes("Broken breast bone") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken breast bone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['chestInjuries'] and data['chestInjuries'].includes("Chest surgery") %}
+  <tr><th class="govuk-table__cell govuk-body">Chest surgery</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['chestInjuries'] and data['chestInjuries'].includes("Broken rib") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken rib</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
 {% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Punctured lung") %}
