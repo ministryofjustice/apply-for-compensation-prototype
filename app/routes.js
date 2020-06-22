@@ -549,12 +549,9 @@ require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/leg
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/back/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/breast-bone/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/chest/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/collar-bone/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/genitals/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/internal-organs/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/ribs/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/shoulder/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/tail-bone/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/pelvis/routes')(router, viewContent);

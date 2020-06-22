@@ -5,11 +5,7 @@ module.exports = function (router, content) {
     let torsoInjuredParts = req.session.data['torsoInjuredParts'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
-    if (torsoInjuredParts.includes('Breast bone')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/breast-bone')
-    } else if (torsoInjuredParts.includes('Ribs')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/ribs')
-    } else if (torsoInjuredParts.includes('Abdomen')) {
+    if (torsoInjuredParts.includes('Abdomen')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen')
     } else if (torsoInjuredParts.includes('Internal organs')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/internal-organs')

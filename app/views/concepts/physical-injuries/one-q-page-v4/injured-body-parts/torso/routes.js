@@ -7,14 +7,8 @@ module.exports = function(router, content) {
 
         if (torsoInjuredParts.includes('Shoulder')) {
           res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/shoulder')
-        } else if (torsoInjuredParts.includes('Collar bone')) {
-          res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/collar-bone')
         } else if (torsoInjuredParts.includes('Chest')) {
           res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/chest')
-        } else if (torsoInjuredParts.includes('Breast bone')) {
-          res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/breast-bone')
-        } else if (torsoInjuredParts.includes('Ribs')) {
-          res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/ribs')
         } else if (torsoInjuredParts.includes('Abdomen')) {
           res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen')
         } else if (torsoInjuredParts.includes('Internal organs')) {
