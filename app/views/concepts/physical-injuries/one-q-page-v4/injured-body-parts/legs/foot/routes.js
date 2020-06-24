@@ -7,9 +7,9 @@ module.exports = function (router, content) {
 
     if (legInjuredParts.includes('Toes')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/toes')
+    } else if (legInjuredParts.includes('Skin')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/skin')
       // Go to body part section
-    } else if (injuredParts.includes('Torso')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/torso/')
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/your-injuries/')
     }

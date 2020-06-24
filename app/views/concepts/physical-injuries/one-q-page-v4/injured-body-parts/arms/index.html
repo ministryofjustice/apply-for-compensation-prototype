@@ -69,8 +69,21 @@
             value: "Finger and thumb",
             text: "Finger and thumb",
             checked: checked("armsInjuredParts", "Finger and thumb")
+          },
+          {
+            value: "Skin",
+            text: "Skin",
+            hint: {
+              text: "Including cuts, bruises, burns and scars"
+            },
+            checked: checked("armsInjuredParts", "Skin")
+          },
+          {
+            value: "Muscle, ligament, or tendon injury",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("armsInjuredParts", "Muscle, ligament, or tendon injury")
           }
-        ]
+          ]
       }) }}
       {{ govukButton({
         "text": "Continue"

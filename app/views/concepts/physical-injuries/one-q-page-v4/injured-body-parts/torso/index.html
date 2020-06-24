@@ -28,7 +28,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {{ govukCheckboxes({
         idPrefix: "injuryCheckboxes",
-        class: "jen",
         name: "torsoInjuredParts",
         fieldset: {
           legend: {
@@ -70,6 +69,19 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Genitals",
             text: "Genitals",
             checked: checked("torsoInjuredParts", "Genitals")
+          },
+          {
+            value: "Skin",
+            text: "Skin",
+            hint: {
+              text: "Including cuts, bruises, burns and scars"
+            },
+            checked: checked("torsoInjuredParts", "Skin")
+          },
+          {
+            value: "Muscle, ligament, or tendon injury",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("torsoInjuredParts", "Muscle, ligament, or tendon injury")
           }
         ]
       }) }}

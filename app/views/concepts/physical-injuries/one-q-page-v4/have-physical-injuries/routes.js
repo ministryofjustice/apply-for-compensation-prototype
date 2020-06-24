@@ -9,7 +9,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/have-physical-injuries', 
     res.redirect('/concepts/physical-injuries/one-q-page-v4/context-about-dmi')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/infection')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts')
   }
 })
 

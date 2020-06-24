@@ -13,6 +13,8 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/foot')
     } else if (legInjuredParts.includes('Toes')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/toes')
+    } else if (legInjuredParts.includes('Skin')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/skin')
       // Go to body part section
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/your-injuries/')

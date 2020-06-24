@@ -517,7 +517,6 @@ require('./views/concepts/physical-injuries/one-q-page-v3/special-expenses/route
 require('./views/concepts/physical-injuries/one-q-page-v4/context-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/have-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/soft-tissue/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/paralysis/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/infection/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/pregnancy-loss/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/other-injuries/routes')(router, viewContent);
@@ -529,6 +528,7 @@ require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arm
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/hand/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/shoulder/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/skin/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
@@ -538,7 +538,7 @@ require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/hea
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/leg/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/ankle/routes')(router, viewContent);
@@ -546,6 +546,7 @@ require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/leg
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/hip/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/knee/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/skin/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/back/routes')(router, viewContent);
@@ -553,6 +554,7 @@ require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/tor
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/genitals/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/shoulder/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/skin/routes')(router, viewContent);
 
 require('./views/concepts/physical-injuries/one-q-page-v4/your-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/treatment/routes')(router, viewContent);
