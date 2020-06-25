@@ -25,7 +25,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <h1 class="govuk-heading-xl">
       Your injuries
     </h1>
-<!--    <h2 class="govuk-heading-m">Head, neck or face</h2> -->
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -56,11 +55,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           </a>
         </dd>
       </div>
-    </dl>
-<!--
-    <h2 class="govuk-heading-m">Torso</h2> -->
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Shoulder
@@ -90,32 +84,39 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     </dl>
 
 
-   <form class="form" method="post">
+    <form class="form" method="post">
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+     {% from "govuk/components/button/macro.njk" import govukButton %}
 
-    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+         {{ govukRadios({
+           classes: "govuk-radios",
+           idPrefix: "yourInjuriesCorrect",
+           name: "yourInjuriesCorrect",
+           fieldset: {
+             legend: {
+               text: "What would you like to do now?",
+               isPageHeading: true,
+               classes: "govuk-fieldset__legend--m"
+             }
+           },
+           items: [
+           {
+             "value": "Add more",
+             "text": "Add more injuries",
+             checked: checked("yourInjuriesCorrect", "Add more")
+           },
+           {
+             "value": "Continue to next section",
+             "text": "Continue to next section",
+             checked: checked("yourInjuriesCorrect", "Continue to next section")
+           }
+           ]
+         }) }}
 
-    {{ govukTextarea({
-      name: "pi-details",
-      id: "pi-details",
-      value: data['pi-details'],
-      label: {
-        "text": "Enter details of any other injuries",
-        "isPageHeading": true,
-        "classes": 'govuk-label--m  '
-      },
-      hint: {
-        text: piDetailsHint
-      }
-    }) }}
-
-
-    {{ govukButton({
-      "text": "Continue"
-    }) }}
-
-    </form>
+       {{ govukButton({
+         "text": "Continue"
+       }) }}
+     </form>
 
   </div>
 </div>
