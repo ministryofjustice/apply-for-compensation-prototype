@@ -29,28 +29,25 @@ Finacial losses  - {{ serviceName }} - GOV.UK
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "lossEarningsClaim",
-            "name": "lossEarningsClaim",
+            "idPrefix": "workCapacity",
+            "name": "workCapacity",
             "fieldset": {
               "legend": {
-                "text": "Are you claiming for loss of earnings?",
+                "text": "Has the crime made you less able to work for at least 28 weeks?",
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
-            },
-            hint: {
-              text: "You must have had very limited or no ability to work for more than 28 weeks."
             },
             "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("lossEarningsClaim", "Yes")
+                checked: checked("workCapacity", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("lossEarningsClaim", "No")
+                checked: checked("workCapacity", "No")
               }
             ]
           }) }}

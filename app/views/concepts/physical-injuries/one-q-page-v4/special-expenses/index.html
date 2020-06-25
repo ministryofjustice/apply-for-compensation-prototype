@@ -23,33 +23,46 @@
 
     <form class="form" method="post">
 
-      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
 
-      {{ govukRadios({
-            "classes": "govuk-radios--inline",
+      {{ govukCheckboxes({
+            "classes": "govuk-checkboxes",
             "idPrefix": "specialExpenses",
             "name": "specialExpenses",
             currentValue: data['specialExpenses'],
             "fieldset": {
               "legend": {
-                "text": specialExpensesQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Select any expenses you want to claim for",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
               }
-            },
-            hint: {
-              text: specialExpensesQuestionHint
             },
             "items": [
               {
-                "value": "Yes",
-                "text": "Yes",
-                checked: checked("specialExpenses", "Yes")
+                "value": "equipment",
+                "text": "equipment",
+                checked: checked("specialExpenses", "equipment")
               },
               {
-                "value": "No",
-                "text": "No",
-                checked: checked("specialExpenses", "No")
+                "value": "home alterations",
+                "text": "home alterations",
+                checked: checked("home alterations", "No")
+              },
+              {
+                "value": "care",
+                "text": "home care",
+                checked: checked("home alterations", "care")
+              },
+              {
+                "value": "NHS treatment",
+                "text": "NHS treatment",
+                checked: checked("home alterations", "NHS treatment")
+              },
+              {
+                "value": "I do not want to claim for any special expenses",
+                "text": "I do not want to claim for any special expenses",
+                checked: checked("home alterations", "I do not want to claim for special expenses"),
+                id: "none"
               }
             ]
           }) }}

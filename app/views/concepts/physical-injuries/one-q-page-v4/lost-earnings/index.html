@@ -29,11 +29,11 @@ Finacial losses  - {{ serviceName }} - GOV.UK
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "returnedToWork",
-            "name": "returnedToWork",
+            "idPrefix": "lossEarningsClaim",
+            "name": "lossEarningsClaim",
             "fieldset": {
               "legend": {
-                "text": "Have you returned to work?",
+                "text": "Have you lost earnings as a result of the crime?",
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -42,12 +42,12 @@ Finacial losses  - {{ serviceName }} - GOV.UK
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("returnedToWork", "Yes")
+                checked: checked("lossEarningsClaim", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("returnedToWork", "No")
+                checked: checked("lossEarningsClaim", "No")
               }
             ]
           }) }}
