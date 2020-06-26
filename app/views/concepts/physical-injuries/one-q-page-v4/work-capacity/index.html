@@ -28,17 +28,20 @@ Finacial losses  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "workCapacity",
-            "name": "workCapacity",
-            "fieldset": {
-              "legend": {
-                "text": "Has the crime made you less able to work for at least 28 weeks?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
-              }
-            },
-            "items": [
+              "classes": "govuk-radios--inline",
+              "idPrefix": "workCapacity",
+              "name": "workCapacity",
+              "fieldset": {
+                "legend": {
+                  "text": "Have you been unable to work due to your injuries?",
+                  "isPageHeading": true,
+                  "classes": 'govuk-fieldset__legend--xl'
+                }
+              },
+              hint: {
+                text: "This includes working less hours or being unable to look for work."
+              },
+              "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
