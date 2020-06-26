@@ -32,7 +32,7 @@
             currentValue: data['specialExpenses'],
             "fieldset": {
               "legend": {
-                text: "Select any expenses you want to claim for",
+                text: "Select the expenses you want to claim",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -40,17 +40,17 @@
             "items": [
               {
                 "value": "equipment",
-                "text": "equipment",
+                "text": "Buying or replacing physical aids",
                 checked: checked("specialExpenses", "equipment")
               },
               {
                 "value": "home alterations",
-                "text": "home alterations",
+                "text": "Home alterations",
                 checked: checked("home alterations", "No")
               },
               {
                 "value": "care",
-                "text": "home care",
+                "text": "Home care",
                 checked: checked("home alterations", "care")
               },
               {
@@ -60,7 +60,7 @@
               },
               {
                 "value": "I do not want to claim for any special expenses",
-                "text": "I do not want to claim for any special expenses",
+                "text": "I do not have these expenses",
                 checked: checked("home alterations", "I do not want to claim for special expenses"),
                 id: "none"
               }
