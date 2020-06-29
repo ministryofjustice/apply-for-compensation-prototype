@@ -32,7 +32,7 @@
             currentValue: data['specialExpenses'],
             "fieldset": {
               "legend": {
-                text: "Select the expenses you want to claim",
+                text: "What expenses have you had?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -45,7 +45,7 @@
               },
               {
                 "value": "home alterations",
-                "text": "Home alterations",
+                "text": "Alterations to your home",
                 checked: checked("home alterations", "No")
               },
               {
@@ -55,12 +55,12 @@
               },
               {
                 "value": "NHS treatment",
-                "text": "NHS treatment",
+                "text": "NHS treatment you've paid for",
                 checked: checked("home alterations", "NHS treatment")
               },
               {
                 "value": "I do not want to claim for any special expenses",
-                "text": "I do not have these expenses",
+                "text": "I have not had these expenses",
                 checked: checked("home alterations", "I do not want to claim for special expenses"),
                 id: "none"
               }

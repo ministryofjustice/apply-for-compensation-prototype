@@ -40,16 +40,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             },
             "items": [
               {
-                "value": "employed",
-                "text": "I had a job when the crime happened",
-                checked: checked("workDetails", "employed")
-              },
-              {
-                "value": "employed-3-years",
-                "text": "I had a job for at least 3 years before the crime",
-                checked: checked("workDetails", "employed-3-years")
-              },
-              {
                 "value": "minor",
                 "text": "I was too young to work",
                 checked: checked("workDetails", "minor")
@@ -61,8 +51,18 @@ Physical injuries  - {{ serviceName }} - GOV.UK
               },
               {
                 value: "carer",
-                text: "I had temporarily stopped working to care for someone",
+                text: "I was caring for someone",
                 checked: checked("faceSurfaceInjuries", "carer")
+              },
+              {
+                value: "seasonal",
+                text: "I was doing seasonal work",
+                checked: checked("faceSurfaceInjuries", "seasonal")
+              },
+              {
+                value: "other",
+                text: "Other",
+                checked: checked("faceSurfaceInjuries", "other")
               }
               ]
           })
