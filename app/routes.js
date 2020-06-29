@@ -575,7 +575,6 @@ require('./views/concepts/physical-injuries/one-q-page-v4/hospital-details/route
 require('./views/concepts/physical-injuries/one-q-page-v4/context-your-money/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/lost-earnings/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/work-capacity/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/returned-work-date/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/work-details/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/special-expenses/routes')(router, viewContent);
 

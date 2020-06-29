@@ -6,10 +6,10 @@ router.post('/concepts/physical-injuries/one-q-page-v4/lost-earnings', function 
 
   if (lossEarningsClaim === 'No') {
     // Redirect to the relevant page
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/special-expenses')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/work-details')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/returned-work-date')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/special-expenses')
   }
 })
 
