@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
   // Pass the question in to the page
   router.get('/concepts/physical-injuries/one-q-page-v4/gp-details/', function (req, res) {
-    res.render('application/gp-details/index', content)
+    res.render('concepts/physical-injuries/one-q-page-v4/gp-details/index', content)
   })
 
   // END__######################################################################################################

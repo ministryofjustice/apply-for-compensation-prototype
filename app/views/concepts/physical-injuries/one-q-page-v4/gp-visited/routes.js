@@ -20,7 +20,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/gp-visited', function (re
 
 // Pass the question in to the page
 router.get('/concepts/physical-injuries/one-q-page-v4/gp-visited/', function (req, res) {
-  res.render('application/gp-visited/index', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/gp-visited/index', content)
 })
 
 

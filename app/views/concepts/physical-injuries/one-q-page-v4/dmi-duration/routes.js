@@ -21,11 +21,11 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dmi-duration', function (
 
 // Pass the question in to the page
 router.get('/concepts/physical-injuries/one-q-page-v4/dmi-duration/', function (req, res) {
-  res.render('application/dmi-duration/index', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/dmi-duration/index', content)
 })
 
 router.get('/concepts/physical-injuries/one-q-page-v4/dmi-duration/dmi-duration-error', function (req, res) {
-  res.render('application/dmi-duration/dmi-duration-error', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/dmi-duration/dmi-duration-error', content)
 })
 
 // END__######################################################################################################

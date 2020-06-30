@@ -16,7 +16,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/gp-registered', function 
 
 // Pass the question in to the page
 router.get('/concepts/physical-injuries/one-q-page-v4/gp-registered/', function (req, res) {
-  res.render('application/gp-registered/index', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/gp-registered/index', content)
 })
 
 // END__######################################################################################################

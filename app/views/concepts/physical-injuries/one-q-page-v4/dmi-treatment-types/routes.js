@@ -16,7 +16,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dmi-treatment-types', fun
 
 // Pass the question in to the page
 router.get('/concepts/physical-injuries/one-q-page-v4/dmi-treatment-types/', function (req, res) {
-  res.render('application/dmi-treatment-types/index', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/dmi-treatment-types/index', content)
 })
 
 // END__######################################################################################################

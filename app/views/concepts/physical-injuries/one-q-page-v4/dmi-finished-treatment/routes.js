@@ -16,7 +16,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dmi-finished-treatment', 
 
 // Pass the question in to the page
 router.get('/concepts/physical-injuries/one-q-page-v4/dmi-finished-treatment/', function (req, res) {
-  res.render('application/dmi-finished-treatment/index', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/dmi-finished-treatment/index', content)
 })
 
 

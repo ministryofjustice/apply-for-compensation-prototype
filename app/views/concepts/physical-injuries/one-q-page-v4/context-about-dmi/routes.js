@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
   // Pass the question in to the page
   router.get('/concepts/physical-injuries/one-q-page-v4/context-about-dmi/', function (req, res) {
-    res.render('application/context-about-dmi/index', content)
+    res.render('concepts/physical-injuries/one-q-page-v4/context-about-dmi/index', content)
   })
   // END__######################################################################################################
 }

@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
   // Pass the question in to the page
   router.get('/concepts/physical-injuries/one-q-page-v4/context-medical-details/', function (req, res) {
-    res.render('application/context-medical-details/index', content)
+    res.render('concepts/physical-injuries/one-q-page-v4/context-medical-details/index', content)
   })
   // END__######################################################################################################
 }

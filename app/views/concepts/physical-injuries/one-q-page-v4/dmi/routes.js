@@ -21,11 +21,11 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dmi', function (req, res)
 
 // Pass the question in to the page
 router.get('/concepts/physical-injuries/one-q-page-v4/dmi/', function (req, res) {
-  res.render('application/dmi/index', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/dmi/index', content)
 })
 
 router.get('/concepts/physical-injuries/one-q-page-v4/dmi/mental-health-error', function (req, res) {
-  res.render('application/dmi/mental-health-error', content)
+  res.render('concepts/physical-injuries/one-q-page-v4/dmi/mental-health-error', content)
 })
 
 // END__######################################################################################################
