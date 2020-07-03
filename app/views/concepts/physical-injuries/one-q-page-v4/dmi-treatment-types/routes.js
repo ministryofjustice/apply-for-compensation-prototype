@@ -10,7 +10,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dmi-treatment-types', fun
       return res.redirect('/concepts/physical-injuries/one-q-page-v4/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/dmi-finished-treatment')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/finished-treatment')
 
 })
 

@@ -6,9 +6,9 @@ router.post('/concepts/physical-injuries/one-q-page-v4/your-injuries', function 
 
   if (yourInjuriesCorrect === 'No') {
     // Redirect to the relevant page
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/treatment')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/context-about-dmi')
   } else {
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/soft-tissue')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts')
   }
 })
 

@@ -562,10 +562,10 @@ require('./views/concepts/physical-injuries/one-q-page-v4/treatment-details/rout
 require('./views/concepts/physical-injuries/one-q-page-v4/context-about-dmi/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/dmi/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/dmi-duration/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/dmi-finished-treatment/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/finished-treatment/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/dmi-treatment-types/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/dmi-more-info/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/context-medical-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/how-it-affected-you/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/context-treatment/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/gp-details/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/gp-registered/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/gp-visited/routes')(router, viewContent);

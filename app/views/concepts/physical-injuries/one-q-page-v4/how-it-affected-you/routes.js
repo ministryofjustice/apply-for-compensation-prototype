@@ -3,7 +3,7 @@ module.exports = function (router, content) {
 // File: Mental Health
 // Variable: mentalHealthMoreInfo
 
-router.post('/concepts/physical-injuries/one-q-page-v4/dmi-more-info', function (req, res) {
+router.post('/concepts/physical-injuries/one-q-page-v4/how-it-affected-you', function (req, res) {
   // Get the answer from the query string
   var mentalHealthMoreInfo = req.session.data['mentalHealthMoreInfoMoreInfo']
 
@@ -11,12 +11,12 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dmi-more-info', function 
       return res.redirect('/concepts/physical-injuries/one-q-page-v4/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/context-medical-details')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/context-treatment')
 })
 
 // Pass the question in to the page
-router.get('/concepts/physical-injuries/one-q-page-v4/dmi-more-info/', function (req, res) {
-  res.render('concepts/physical-injuries/one-q-page-v4/dmi-more-info/index', content)
+router.get('/concepts/physical-injuries/one-q-page-v4/how-it-affected-you/', function (req, res) {
+  res.render('concepts/physical-injuries/one-q-page-v4/how-it-affected-you/index', content)
 })
 
 
