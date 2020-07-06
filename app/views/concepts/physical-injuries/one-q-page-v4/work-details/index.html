@@ -26,6 +26,20 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set otherHtml %}
+        {{ govukInput({
+          id: "other-work-detail",
+          name: "other-work-detail",
+          type: "text",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Details"
+          }
+        }) }}
+      {% endset -%}
+
 
       {{ govukRadios({
             "classes": "govuk-radios",
@@ -62,7 +76,10 @@ Physical injuries  - {{ serviceName }} - GOV.UK
               {
                 value: "other",
                 text: "Other",
-                checked: checked("faceSurfaceInjuries", "other")
+                checked: checked("faceSurfaceInjuries", "other"),
+                conditional: {
+                  html: otherHtml
+                }
               }
               ]
           })
