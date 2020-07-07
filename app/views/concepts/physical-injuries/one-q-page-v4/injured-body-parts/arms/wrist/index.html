@@ -24,11 +24,23 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherArmInjury",
+        name: "otherArmInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
 
       {{ govukCheckboxes({
-        idPrefix: "wristInjuries",
-        name: "wristInjuries",
+        idPrefix: "otherWristInjuries",
+        name: "otherWristInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your wrist",
@@ -48,12 +60,14 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("wristInjuries", "Sprained wrist")
           },
           {
-            value: "none",
-            text: "I do not have these injuries",
-            checked: checked("headInjury", "none"),
-            id: "none"
+            value: "other",
+            text: "Other",
+            checked: checked("wristInjuries", "other"),
+            conditional: {
+              html: otherHtml
+            }
           }
-        ]
+          ]
       }) }}
       {{ govukButton({
         "text": "Continue"

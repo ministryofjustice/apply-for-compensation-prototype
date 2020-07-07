@@ -33,7 +33,19 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherPelvisInjury",
+        name: "otherPelvisInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
 
       {{ govukCheckboxes({
         idPrefix: "pelvisInjuries",
@@ -52,12 +64,14 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("pelvisInjuries", "Broken pelvis")
           },
           {
-            value: "none",
-            text: "I do not have this injury",
-            checked: checked("pelvisInjuries", "none"),
-            id: "none"
+            value: "other",
+            text: "Other",
+            checked: checked("pelvisInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
           }
-        ]
+          ]
       }) }}
       {{ govukButton({
         "text": "Continue"

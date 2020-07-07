@@ -3,6 +3,7 @@ module.exports = function (router, content) {
 
   router.post('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/genitals', function (req, res) {
     let injuredParts = req.session.data['injuredParts'] || []
+    let torsoInjuredParts = req.session.data['torsoInjuredParts'] || []
 
     if (torsoInjuredParts.includes('Skin')) {
      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/skin')

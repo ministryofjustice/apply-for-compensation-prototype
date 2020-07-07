@@ -24,7 +24,19 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherChestInjury",
+        name: "otherChestInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
 
       {{ govukCheckboxes({
         idPrefix: "chestInjuries",
@@ -73,12 +85,14 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("chestInjuries", "Lung damage from smoke or chemicals")
           },
           {
-            value: "none",
-            text: "I do not have this injury",
-            checked: checked("chestInjuries", "none"),
-            id: "none"
+            value: "other",
+            text: "Other",
+            checked: checked("chestInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
           }
-        ]
+          ]
       }) }}
       {{ govukButton({
         "text": "Continue"

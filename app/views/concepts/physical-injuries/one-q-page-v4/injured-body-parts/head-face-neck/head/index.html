@@ -26,6 +26,18 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk"import govukInput %}
 
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherHeadInjury",
+        name: "otherHeadInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
       {{ govukCheckboxes({
         idPrefix: "headInjuries",
         name: "headInjuries",
@@ -67,12 +79,13 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           text: "Nerve damage",
           checked: checked("headInjuries", "Nerve damage")
         },
-
         {
-          value: "none",
-          text: "I do not have these injuries",
-          checked: checked("headInjuries", "none"),
-          id: "none"
+          value: "other",
+          text: "Other",
+          checked: checked("headInjuries", "Other"),
+          conditional: {
+            html: otherHtml
+          }
         }
         ]
       }) }}

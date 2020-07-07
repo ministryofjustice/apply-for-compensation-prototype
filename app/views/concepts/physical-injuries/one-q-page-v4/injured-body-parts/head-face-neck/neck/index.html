@@ -33,6 +33,18 @@ var headPageCount = localStorage.getItem('headPages');
       {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk"import govukInput %}
 
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherNeckInjury",
+        name: "otherNeckInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
       {{ govukCheckboxes({
         idPrefix: "neckInjuries",
         name: "neckInjuries",
@@ -58,10 +70,12 @@ var headPageCount = localStorage.getItem('headPages');
           checked: checked("neckInjuries", "Whiplash")
         },
         {
-          value: "none",
-          text: "I do not have these injuries",
-          checked: checked("neckInjuries", "none"),
-          id: "none"
+          value: "other",
+          text: "Other",
+          checked: checked("neckInjuries", "Other"),
+          conditional: {
+            html: otherHtml
+          }
         }
         ]
       }) }}

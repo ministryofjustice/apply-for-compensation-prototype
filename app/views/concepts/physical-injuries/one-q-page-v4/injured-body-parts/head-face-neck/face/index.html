@@ -26,6 +26,18 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
       {% from "govuk/components/input/macro.njk"import govukInput %}
 
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherFaceInjury",
+        name: "otherFaceInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
       {{ govukCheckboxes({
         idPrefix: "faceInjuries",
         name: "faceInjuries",
@@ -68,10 +80,12 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           checked: checked("faceInjuries", "Dislocated jaw")
         },
         {
-          value: "none",
-          text: "I do not have these injuries",
-          checked: checked("faceInjuries", "none"),
-          id: "none"
+          value: "other",
+          text: "Other",
+          checked: checked("faceInjuries", "Other"),
+          conditional: {
+            html: otherHtml
+          }
         }
         ]
       }) }}

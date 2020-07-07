@@ -24,7 +24,19 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
 
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherMouthInjury",
+        name: "otherMouthInjury",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
 
       {{ govukCheckboxes({
         idPrefix: "mouthInjuries",
@@ -65,15 +77,17 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Loss of smell or taste",
             text: "Loss of smell or taste",
-            checked: checked("noseInjuries", "Loss of smell or taste")
+            checked: checked("mouthInjuries", "Loss of smell or taste")
           },
           {
-            value: "none",
-            text: "I do not have these injuries",
-            checked: checked("mouthInjuries", "none"),
-            id: "none"
+            value: "other",
+            text: "Other",
+            checked: checked("mouthInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
           }
-        ]
+          ]
       }) }}
       {{ govukButton({
         "text": "Continue"
