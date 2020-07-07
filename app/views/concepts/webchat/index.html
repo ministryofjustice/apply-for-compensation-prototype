@@ -21,23 +21,19 @@ You need to use another service - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-       Web chat
+       Chat to an adviser online
     </h1>
-
-    <p class="govuk-body">Use this service to:</p>
-
+<p class="govuk-body">You can use this service to get general advice from an adviser.</p>
+<p class="govuk-body">You <b>cannot</b> discuss the details of your claim here. Instead you should:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>do something</li>
-      <li>update your name, address or other details</li>
-      <li>do something else</li>
+      <li>call 0300 003 3601</li>
+      <li>email?</li>
     </ul>
-
-    <p class="govuk-body">Registering takes around 5 minutes.</p>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-      text: "Continue"
+      text: "Start a chat"
     })}}
 
     <form class="form" method="post">
