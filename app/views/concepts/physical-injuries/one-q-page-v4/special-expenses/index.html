@@ -40,7 +40,7 @@
             "items": [
               {
                 "value": "equipment",
-                "text": "Buying or replacing physical aids",
+                "text": "Buying or repairing physical aids",
                 checked: checked("specialExpenses", "equipment")
               },
               {
@@ -56,6 +56,9 @@
               {
                 "value": "NHS treatment",
                 "text": "NHS treatment I've paid for",
+                hint: {
+                  text: "Or treatment from a state health service in another country"
+                },
                 checked: checked("home alterations", "NHS treatment")
               },
               {
