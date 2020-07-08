@@ -21,3 +21,11 @@
 {% if data['toeInjuries'] and data['toeInjuries'].includes("2 or more amputated toes") %}
   <tr><th class="govuk-table__cell govuk-body">2 or more amputated toes</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['toeInjuries'] and data['toeInjuries'].includes("Paralysed toe") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysed toe</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherToeInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherToeInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

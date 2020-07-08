@@ -28,8 +28,9 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {% set otherHtml %}
       {{ govukInput({
-        id: "otherArmInjury",
-        name: "otherArmInjury",
+        id: "otherWristInjury",
+        name: "otherWristInjury",
+        value: data['otherWristInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -39,8 +40,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% endset -%}
 
       {{ govukCheckboxes({
-        idPrefix: "otherWristInjuries",
-        name: "otherWristInjuries",
+        idPrefix: "wristInjuries",
+        name: "wristInjuries",
         fieldset: {
           legend: {
             text: "Select any injuries to your wrist",

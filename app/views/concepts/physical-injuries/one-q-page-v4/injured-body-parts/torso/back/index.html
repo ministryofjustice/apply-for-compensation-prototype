@@ -30,6 +30,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherBackInjury",
         name: "otherBackInjury",
+        value: data['otherBackInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -68,6 +69,16 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Broken tailbone",
             text: "Broken tailbone",
             checked: checked("backInjuries", "Broken tailbone")
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("backInjuries", "Hemiplegia (paralysis of one side of the the body)")
+          },
+          {
+            value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            checked: checked("backInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
           },
           {
             value: "other",

@@ -30,6 +30,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherToeInjury",
         name: "otherToeInjury",
+        value: data['otherToeInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -78,6 +79,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "2 or more amputated toes",
             text: "2 or more amputated toes",
             checked: checked("toeInjuries", "2 or more amputated toes")
+          },
+          {
+            value: "Paralysed toe",
+            text: "Paralysed toe",
+            checked: checked("toeInjuries", "Paralysed toe")
           },
           {
             value: "none",

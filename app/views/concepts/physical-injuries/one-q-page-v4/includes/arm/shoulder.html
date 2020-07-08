@@ -1,5 +1,5 @@
-{% if data['shoulderInjuries'] and data['shoulderInjuries'].includes("Broken shoulder") %}
-  <tr><th class="govuk-table__cell govuk-body">Broken shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% if data['shoulderInjuries'] and data['shoulderInjuries'].includes("Broken shoulder blade") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken shoulder blade</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
 {% if data['shoulderInjuries'] and data['shoulderInjuries'].includes("Dislocated shoulder") %}
@@ -10,6 +10,10 @@
   <tr><th class="govuk-table__cell govuk-body">Frozen shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
-{% if data['shoulderInjuries'] and data['shoulderInjuries'].includes("Keyhole surgery on shoulder") %}
-  <tr><th class="govuk-table__cell govuk-body">Keyhole surgery on shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% if data['shoulderInjuries'] and data['shoulderInjuries'].includes("Separated shoulder") %}
+  <tr><th class="govuk-table__cell govuk-body">Separated shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherShoulderInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherShoulderInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}

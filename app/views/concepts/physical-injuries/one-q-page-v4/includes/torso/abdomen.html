@@ -25,3 +25,15 @@
 {% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Stoma") %}
   <tr><th class="govuk-table__cell govuk-body">Stoma</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Hemiplegia (paralysis of one side of the the body)") %}
+  <tr><th class="govuk-table__cell govuk-body">Hemiplegia (paralysis of one side of the the body)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Quadriplegia or tetraplegia (paralysis of all 4 limbs)") %}
+  <tr><th class="govuk-table__cell govuk-body">Quadriplegia or tetraplegia (paralysis of all 4 limbs)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherAbdomenInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherAbdomenInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

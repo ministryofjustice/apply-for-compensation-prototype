@@ -37,6 +37,7 @@ var headPageCount = localStorage.getItem('headPages');
       {{ govukInput({
         id: "otherNeckInjury",
         name: "otherNeckInjury",
+        value: data['otherNeckInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -68,6 +69,16 @@ var headPageCount = localStorage.getItem('headPages');
           value: "Whiplash",
           text: "Whiplash",
           checked: checked("neckInjuries", "Whiplash")
+        },
+        {
+          value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          checked: checked("neckInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
+        },
+        {
+          value: "Hemiplegia (paralysis of one side of the the body)",
+          text: "Hemiplegia (paralysis of one side of the the body)",
+          checked: checked("neckInjuries", "Hemiplegia (paralysis of one side of the the body)")
         },
         {
           value: "other",

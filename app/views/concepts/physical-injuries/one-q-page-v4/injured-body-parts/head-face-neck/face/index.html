@@ -30,6 +30,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherFaceInjury",
         name: "otherFaceInjury",
+        value: data['otherFaceInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -78,6 +79,16 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           value: "Dislocated jaw",
           text: "Dislocated jaw",
           checked: checked("faceInjuries", "Dislocated jaw")
+        },
+        {
+          value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          checked: checked("faceInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
+        },
+        {
+          value: "Hemiplegia (paralysis of one side of the the body)",
+          text: "Hemiplegia (paralysis of one side of the the body)",
+          checked: checked("faceInjuries", "Hemiplegia (paralysis of one side of the the body)")
         },
         {
           value: "other",

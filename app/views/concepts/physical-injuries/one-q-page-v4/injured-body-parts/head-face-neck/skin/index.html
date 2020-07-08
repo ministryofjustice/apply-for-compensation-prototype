@@ -28,8 +28,9 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {% set otherHtml %}
       {{ govukInput({
-        id: "otherSkinInjury",
-        name: "otherSkinInjury",
+        id: "otherHeadSkinInjury",
+        name: "otherHeadSkinInjury",
+        value: data['otherHeadSkinInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {

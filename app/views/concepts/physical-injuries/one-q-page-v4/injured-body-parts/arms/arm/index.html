@@ -31,6 +31,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherArmInjury",
         name: "otherArmInjury",
+        value: data['otherArmInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -65,6 +66,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Paralysed arm",
             text: "Paralysed arm",
             checked: checked("armInjuries", "Paralysed arm")
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("armInjuries", "Hemiplegia (paralysis of one side of the the body)")
           },
           {
             value: "none",

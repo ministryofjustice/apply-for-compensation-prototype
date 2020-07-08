@@ -30,6 +30,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherLegInjury",
         name: "otherLegInjury",
+        value: data['otherLegInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -69,6 +70,16 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Paralysed leg",
             text: "Paralysed leg",
             checked: checked("legInjuries", "Paralysed leg")
+          },
+          {
+            value: "Paraplegia (paralysis of lower half of the body)",
+            text: "Paraplegia (paralysis of lower half of the body)",
+            checked: checked("legInjuries", "Paraplegia (paralysis of lower half of the body)")
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("legInjuries", "Hemiplegia (paralysis of one side of the the body)")
           },
           {
             value: "none",

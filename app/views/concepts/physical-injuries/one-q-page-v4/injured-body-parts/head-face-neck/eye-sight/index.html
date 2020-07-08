@@ -30,6 +30,7 @@ Physical injuries - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherEyeInjury",
         name: "otherEyeInjury",
+        value: data['otherEyeInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -84,7 +85,6 @@ Physical injuries - {{ serviceName }} - GOV.UK
             text: "Bleeding in eye",
             checked: checked("eyeInjuries", "Bleeding in eye")
           },
-
           {
             value: "Blindness",
             text: "Blindness",
@@ -137,7 +137,7 @@ Physical injuries - {{ serviceName }} - GOV.UK
             checked: checked("eyeInjuries", "Damaged eye drain")
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("eyeInjuries", "Other"),
             conditional: {

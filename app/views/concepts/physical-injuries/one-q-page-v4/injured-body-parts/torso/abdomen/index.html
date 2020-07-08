@@ -30,6 +30,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherAbdomenInjury",
         name: "otherAbdomenInjury",
+        value: data['otherAbdomenInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -83,6 +84,16 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Stoma",
             text: "Stoma",
             checked: checked("abdomenInjuries", "Stoma")
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("abdomenInjuries", "Hemiplegia (paralysis of one side of the the body)")
+          },
+          {
+            value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            checked: checked("abdomenInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
           },
           {
             value: "other",

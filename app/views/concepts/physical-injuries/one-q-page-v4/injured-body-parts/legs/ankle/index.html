@@ -28,8 +28,9 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {% set otherHtml %}
       {{ govukInput({
-        id: "otherLegInjury",
-        name: "otherLegInjury",
+        id: "otherAnkleInjury",
+        name: "otherAnkleInjury",
+        value: data['otherAnkleInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {

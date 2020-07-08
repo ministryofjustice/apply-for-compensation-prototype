@@ -9,3 +9,7 @@
 {% if data['handInjuries'] and data['handInjuries'].includes("Loss of grip") %}
   <tr><th class="govuk-table__cell govuk-body">Loss of grip</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['otherHandInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherHandInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

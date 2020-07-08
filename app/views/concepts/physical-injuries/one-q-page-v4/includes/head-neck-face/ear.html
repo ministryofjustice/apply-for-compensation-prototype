@@ -25,3 +25,7 @@
 {% if data['earInjuries'] and data['earInjuries'].includes("Dizziness") %}
   <tr><th class="govuk-table__cell govuk-body">Dizziness</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['otherEarInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherEarInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

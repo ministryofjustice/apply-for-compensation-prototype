@@ -30,6 +30,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {{ govukInput({
         id: "otherFingerInjury",
         name: "otherFingerInjury",
+        value: data['otherFingerInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -108,6 +109,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             value: "Loss of fingernail",
             text: "Loss of fingernail",
             checked: checked("fingerInjuries", "Loss of fingernail")
+          },
+          {
+            value: "Paralysis of finger",
+            text: "Paralysis of finger",
+            checked: checked("fingerInjuries", "Paralysis of finger")
           },
           {
             value: "none",

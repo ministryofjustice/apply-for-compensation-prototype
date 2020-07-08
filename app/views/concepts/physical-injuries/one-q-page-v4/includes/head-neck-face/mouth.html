@@ -22,3 +22,7 @@
 {% if data['mouthInjuries'] and data['mouthInjuries'].includes("Loss of smell or taste") %}
   <tr><th class="govuk-table__cell govuk-body">Loss of smell or taste</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['otherMouthInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherMouthInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

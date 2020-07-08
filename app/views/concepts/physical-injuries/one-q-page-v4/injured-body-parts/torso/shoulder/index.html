@@ -28,8 +28,9 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {% set otherHtml %}
       {{ govukInput({
-        id: "otherShoulderInjury",
-        name: "otherShoulderInjury",
+        id: "otherShoulderBladeInjury",
+        name: "otherShoulderBladeInjury",
+        value: data['otherShoulderBladeInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -70,7 +71,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("shoulderBladeInjuries", "Frozen shoulder")
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("shoulderBladeInjuries", "Other"),
             conditional: {

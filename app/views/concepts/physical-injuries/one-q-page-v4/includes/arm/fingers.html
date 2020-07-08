@@ -45,3 +45,11 @@
 {% if data['fingerInjuries'] and data['fingerInjuries'].includes("Broken fingers on both hands") %}
   <tr><th class="govuk-table__cell govuk-body">Loss of fingernail</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Paralysis of finger") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysis of finger</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherFingerInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherFingerInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

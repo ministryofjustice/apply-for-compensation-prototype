@@ -26,8 +26,8 @@
   <tr><th class="govuk-table__cell govuk-body">Bleeding in eye</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
-{% if data['eyeInjuries'] and data['eyeInjuries'].includes("Blindess") %}
-  <tr><th class="govuk-table__cell govuk-body">Blindess</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% if data['eyeInjuries'] and data['eyeInjuries'].includes("Blindness") %}
+  <tr><th class="govuk-table__cell govuk-body">Blindness</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
 {% if data['eyeInjuries'] and data['eyeInjuries'].includes("Sight loss") %}
@@ -61,6 +61,11 @@
 {% if data['eyeInjuries'] and data['eyeInjuries'].includes("Floater") %}
   <tr><th class="govuk-table__cell govuk-body">Floater</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
+
 {% if data['eyeInjuries'] and data['eyeInjuries'].includes("Damaged eye drain") %}
   <tr><th class="govuk-table__cell govuk-body">Damaged eye drain</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherEyeInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherEyeInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}

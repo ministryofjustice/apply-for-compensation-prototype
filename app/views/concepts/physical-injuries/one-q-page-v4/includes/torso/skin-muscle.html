@@ -14,6 +14,10 @@
   <tr><th class="govuk-table__cell govuk-body">Burns on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}
 
+{% if data['otherTorsoSkinInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherTorsoSkinInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
 {% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Muscle, ligament, or tendon injury") %}
-  <tr><th class="govuk-table__cell govuk-body">Muscle, ligament, or tendon injury</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+  <tr><th class="govuk-table__cell govuk-body">Muscle, ligament, or tendon injury on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
 {% endif %}

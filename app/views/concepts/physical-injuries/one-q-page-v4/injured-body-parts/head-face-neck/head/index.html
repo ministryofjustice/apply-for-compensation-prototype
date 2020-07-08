@@ -31,6 +31,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         id: "otherHeadInjury",
         name: "otherHeadInjury",
         type: "text",
+        value: data['otherHeadInjury'],
         classes: "govuk-!-width-one-third",
         label: {
           text: "Type of injury"
@@ -80,7 +81,17 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           checked: checked("headInjuries", "Nerve damage")
         },
         {
-          value: "other",
+          value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          checked: checked("headInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
+        },
+        {
+          value: "Hemiplegia (paralysis of one side of the the body)",
+          text: "Hemiplegia (paralysis of one side of the the body)",
+          checked: checked("headInjuries", "Hemiplegia (paralysis of one side of the the body)")
+        },
+        {
+          value: "Other",
           text: "Other",
           checked: checked("headInjuries", "Other"),
           conditional: {
