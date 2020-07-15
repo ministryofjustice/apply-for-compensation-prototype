@@ -55,30 +55,35 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken arm",
             text: "Broken arm",
-            checked: checked("armInjuries", "Broken arm")
+            checked: checked("armInjuries", "Broken arm"),
+            id: "Broken arm"
           },
           {
             value: "Loss of arm",
             text: "Loss of arm",
-            checked: checked("armInjuries", "Loss of arm")
+            checked: checked("armInjuries", "Loss of arm"),
+            id: "Loss of arm"
           },
           {
             value: "Paralysed arm",
             text: "Paralysed arm",
-            checked: checked("armInjuries", "Paralysed arm")
+            checked: checked("armInjuries", "Paralysed arm"),
+            id: "Paralysed arm"
           },
           {
             value: "Hemiplegia (paralysis of one side of the the body)",
             text: "Hemiplegia (paralysis of one side of the the body)",
-            checked: checked("armInjuries", "Hemiplegia (paralysis of one side of the the body)")
+            checked: checked("armInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+            id: "Hemiplegia"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("armInjuries", "other"),
+            checked: checked("armInjuries", "Other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: "Other arm injury"
           }
           ]
       }) }}
@@ -86,7 +91,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         "text": "Continue"
       }) }}
 
-      {% include "../../../includes/answers-template.html" %}
+      {% include "../../../includes/simple-injury-list.html" %}
 
     </form>
 

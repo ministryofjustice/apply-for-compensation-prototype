@@ -53,20 +53,23 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken wrist",
             text: "Broken wrist",
-            checked: checked("wristInjuries", "Broken wrist")
+            checked: checked("wristInjuries", "Broken wrist"),
+            id: "Broken wrist"
           },
           {
             value: "Sprained wrist",
             text: "Sprained wrist",
-            checked: checked("wristInjuries", "Sprained wrist")
+            checked: checked("wristInjuries", "Sprained wrist"),
+            id: "Sprained wrist"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
-            checked: checked("wristInjuries", "other"),
+            checked: checked("wristInjuries", "Other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: "Other wrist injury"
           }
           ]
       }) }}
@@ -74,7 +77,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         "text": "Continue"
       }) }}
 
-      {% include "../../../includes/answers-template.html" %}
+      {% include "../../../includes/simple-injury-list.html" %}
 
     </form>
 

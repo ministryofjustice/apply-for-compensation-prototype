@@ -65,20 +65,23 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Dislocated elbow",
             text: "Dislocated elbow",
-            checked: checked("elbowInjuries", "Dislocated elbow")
+            checked: checked("elbowInjuries", "Dislocated elbow"),
+            id: "Dislocated elbow"
           },
           {
             value: "Broken elbow",
             text: "Broken elbow",
-            checked: checked("elbowInjuries", "Broken elbow")
+            checked: checked("elbowInjuries", "Broken elbow"),
+            id: "Broken elbow"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("elbowInjuries", "other"),
+            checked: checked("elbowInjuries", "Other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: "Other elbow injury"
           }
           ]
       }) }}
@@ -86,7 +89,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         "text": "Continue"
       }) }}
 
-      {% include "../../../includes/answers-template.html" %}
+      {% include "../../../includes/simple-injury-list.html" %}
 
     </form>
 

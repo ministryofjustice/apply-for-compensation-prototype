@@ -53,30 +53,35 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Cuts",
             text: "Cuts",
-            checked: checked("armSkinInjuries", "Cuts")
+            checked: checked("armSkinInjuries", "Cuts"),
+            id: "Cuts on arm"
           },
           {
             value: "Bruises",
             text: "Bruises",
-            checked: checked("armSkinInjuries", "Bruises")
+            checked: checked("armSkinInjuries", "Bruises"),
+            id: "Bruises on arm"
           },
           {
             value: "Scars",
             text: "Scars",
-            checked: checked("armSkinInjuries", "Scars")
+            checked: checked("armSkinInjuries", "Scars"),
+            id: "Scars on arm"
           },
           {
             value: "Burns",
             text: "Burns",
-            checked: checked("armSkinInjuries", "Burns")
+            checked: checked("armSkinInjuries", "Burns"),
+            id: "Burns on arm"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("armSkinInjuries", "other"),
+            checked: checked("armSkinInjuries", "Other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: "Other injury to skin on arm"
           }
           ]
       }) }}
@@ -84,7 +89,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         "text": "Continue"
       }) }}
 
-      {% include "../../../includes/answers-template.html" %}
+      {% include "../../../includes/simple-injury-list.html" %}
 
     </form>
 

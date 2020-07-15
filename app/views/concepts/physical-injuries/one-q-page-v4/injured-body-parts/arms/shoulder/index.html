@@ -53,22 +53,26 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         {
           value: "Broken shoulder blade",
           text: "Broken shoulder blade",
-          checked: checked("shoulderBladeInjuries", "Broken shoulder blade")
+          checked: checked("shoulderBladeInjuries", "Broken shoulder blade"),
+          id: ""
         },
           {
             value: "Dislocated shoulder",
             text: "Dislocated shoulder",
-            checked: checked("shoulderBladeInjuries", "Dislocated shoulder")
+            checked: checked("shoulderBladeInjuries", "Dislocated shoulder"),
+            id: ""
           },
           {
             value: "Separated shoulder",
             text: "Separated shoulder",
-            checked: checked("shoulderBladeInjuries", "Separated shoulder")
+            checked: checked("shoulderBladeInjuries", "Separated shoulder"),
+            id: ""
           },
           {
             value: "Frozen shoulder",
             text: "Frozen shoulder",
-            checked: checked("shoulderBladeInjuries", "Frozen shoulder")
+            checked: checked("shoulderBladeInjuries", "Frozen shoulder"),
+            id: ""
           },
           {
             value: "none",
@@ -76,7 +80,8 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("shoulderBladeInjuries", "other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: ""
           }
           ]
       }) }}
@@ -84,7 +89,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         "text": "Continue"
       }) }}
 
-      {% include "../../../includes/answers-template.html" %}
+      {% include "../../../includes/simple-injury-list.html" %}
 
     </form>
 

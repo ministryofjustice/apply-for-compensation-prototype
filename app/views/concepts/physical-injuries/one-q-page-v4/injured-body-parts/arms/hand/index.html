@@ -53,33 +53,37 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken hand",
             text: "Broken hand",
-            checked: checked("handInjuries", "Broken hand")
+            checked: checked("handInjuries", "Broken hand"),
+            id: "Broken hand"
           },
           {
             value: "Loss of use of hand",
             text: "Loss of use of hand",
-            checked: checked("handInjuries", "Loss of use of hand")
+            checked: checked("handInjuries", "Loss of use of hand"),
+            id: "Loss of use of hand"
           },
           {
             value: "Loss of grip",
             text: "Loss of grip",
-            checked: checked("handInjuries", "Loss of grip")
+            checked: checked("handInjuries", "Loss of grip"),
+            id: "Loss of grip"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("handInjuries", "other"),
+            checked: checked("handInjuries", "Other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: "Other hand injury"
           }
           ]
       }) }}
       {{ govukButton({
         "text": "Continue"
       }) }}
-
-      {% include "../../../includes/answers-template.html" %}
+      
+      {% include "../../../includes/simple-injury-list.html" %}
 
     </form>
 

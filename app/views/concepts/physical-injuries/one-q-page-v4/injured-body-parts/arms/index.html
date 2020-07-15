@@ -43,32 +43,38 @@
           {
             value: "Shoulder",
             text: "Shoulder",
-            checked: checked("armsInjuredParts", "Shoulder")
+            checked: checked("armsInjuredParts", "Shoulder"),
+            id: "Shoulder injury"
           },
           {
             value: "Arm",
             text: "Arm",
-            checked: checked("armsInjuredParts", "Arm")
+            checked: checked("armsInjuredParts", "Arm"),
+            id: "Arm injury"
           },
           {
             value: "Elbow",
             text: "Elbow",
-            checked: checked("armsInjuredParts", "Elbow")
+            checked: checked("armsInjuredParts", "Elbow"),
+            id: "Elbow injury"
           },
           {
             value: "Wrist",
             text: "Wrist",
-            checked: checked("armsInjuredParts", "Wrist")
+            checked: checked("armsInjuredParts", "Wrist"),
+            id: "Wrist injury"
           },
           {
             value: "Hand",
             text: "Hand",
-            checked: checked("armsInjuredParts", "Hand")
+            checked: checked("armsInjuredParts", "Hand"),
+            id: "Hand injury"
           },
           {
             value: "Finger and thumb",
             text: "Finger and thumb",
-            checked: checked("armsInjuredParts", "Finger and thumb")
+            checked: checked("armsInjuredParts", "Finger and thumb"),
+            id: "Finger and thumb injury"
           },
           {
             value: "Skin",
@@ -76,12 +82,14 @@
             hint: {
               text: "Including cuts, bruises, burns and scars"
             },
-            checked: checked("armsInjuredParts", "Skin")
+            checked: checked("armsInjuredParts", "Skin"),
+            id: "Skin injury on arm"
           },
           {
             value: "Muscle, ligament, or tendon injury",
             text: "Muscle, ligament, or tendon injury",
-            checked: checked("armsInjuredParts", "Muscle, ligament, or tendon injury")
+            checked: checked("armsInjuredParts", "Muscle, ligament, or tendon injury"),
+            id: "Muscle, ligament, or tendon injuryon arm"
           }
           ]
       }) }}
@@ -89,7 +97,7 @@
         "text": "Continue"
       }) }}
 
-      {% include "../../includes/answers-template.html" %}
+      {% include "../../includes/simple-injury-list.html" %}
 
     </form>
 
