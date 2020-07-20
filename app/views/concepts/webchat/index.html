@@ -1,50 +1,31 @@
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-You need to use another service - {{ serviceName }} - GOV.UK
-{% endblock %}
-
-{% block beforeContent %}
-{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
-{{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }}
-
-<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  Making email address optional (SMS confirmation) - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Chat to us online</h1>
-<p class="govuk-body">You <b>cannot</b> get an update on your claim here.</p>
-<p class="govuk-body">You can get help with:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>how to make a claim</li>
-  <li>what you can claim for</li>
-  <li>where to send evidence</li>
-</ul>
-<p class="govuk-body">The chat is open from 10am to 3pm, Monday to Friday.</p>
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Live chat
+      </h1>
 
-    {{ govukButton({
-      text: "Start a chat"
-    })}}
-    <h2 class="govuk-heading-l">Other ways to contact us</h2>
-    <p class="govuk-body">Discuss your claim by:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>email at <a href="mailto:someone@example.com">info@cica.gov.uk</a></li>
-          <li>telephone on 0300 003 3601</li>
-        </ul>
+      <hr><br>
+      <h2 class="govuk-heading-m">Open chat</h2>
+      <p class="govuk-body">This page will show during the agreed opening hours, allowing a user to start a chat.</p>
+      <p><a href="/concepts/webchat/open">Open landing page</a></p>
 
-    <form class="form" method="post">
+      <hr>
+      <br>
+      <h2 class="govuk-heading-m">Closed chat</h2>
+      <p class="govuk-body">This page will show when the chat is closed.</p>
+      <p><a href="/concepts/webchat/closed">Closed landing page</a></p>
 
-    </form>
-  </div>
+
+    </div>
 </div>
 
 {% endblock %}
