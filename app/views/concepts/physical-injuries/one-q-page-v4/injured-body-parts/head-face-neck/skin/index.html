@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the skin - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "headSkinInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your skin on your head, face or neck",
+            text: "Select any injuries to the skin on your head, face or neck",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,25 +53,29 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Cuts",
             text: "Cuts",
-            checked: checked("headSkinInjuries", "Cuts")
+            checked: checked("headSkinInjuries", "Cuts"),
+            id: "Cuts"
           },
           {
             value: "Bruises",
             text: "Bruises",
-            checked: checked("headSkinInjuries", "Bruises")
+            checked: checked("headSkinInjuries", "Bruises"),
+            id: "Bruises"
           },
           {
             value: "Scars",
             text: "Scars",
-            checked: checked("headSkinInjuries", "Scars")
+            checked: checked("headSkinInjuries", "Scars"),
+            id: "Scars"
           },
           {
             value: "Burns",
             text: "Burns",
-            checked: checked("headSkinInjuries", "Burns")
+            checked: checked("headSkinInjuries", "Burns"),
+            id: "Burns"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("headSkinInjuries", "Other"),
             conditional: {

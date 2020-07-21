@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-What parts of the genitals were injured? - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ What parts of the genitals were injured? - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This website is for research use only'
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -28,9 +28,9 @@ What parts of the genitals were injured? - {{ serviceName }} - GOV.UK
 
       {% set otherHtml %}
       {{ govukInput({
-        id: "otherGenitalInjury",
-        name: "otherGenitalInjury",
-        value: data['otherGenitalInjury'],
+        id: "otherWristInjury",
+        name: "otherWristInjury",
+        value: data['otherWristInjury'],
         type: "text",
         classes: "govuk-!-width-one-third",
         label: {
@@ -40,35 +40,36 @@ What parts of the genitals were injured? - {{ serviceName }} - GOV.UK
       {% endset -%}
 
       {{ govukCheckboxes({
-        idPrefix: "genitalsInjuries",
-        name: "genitalsInjuries",
+        idPrefix: "wristInjuries",
+        name: "wristInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to the genitals",
+            text: "Select any injuries to your wrist",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [
           {
-            value: "Genital injury",
-            text: "Genital injury",
-            checked: checked("genitalsInjuries", "Genital injury"),
-            id: "Genital injury"
+            value: "Broken wrist",
+            text: "Broken wrist",
+            checked: checked("wristInjuries", "Broken wrist"),
+            id: "Broken wrist"
           },
           {
-            value: "Infertility",
-            text: "Infertility",
-            checked: checked("genitalsInjuries", "Infertility"),
-            id: "Infertility"
+            value: "Sprained wrist",
+            text: "Sprained wrist",
+            checked: checked("wristInjuries", "Sprained wrist"),
+            id: "Sprained wrist"
           },
           {
             value: "Other",
             text: "Other",
-            checked: checked("genitalsInjuries", "Other"),
+            checked: checked("wristInjuries", "Other"),
             conditional: {
               html: otherHtml
-            }
+            },
+            id: "Other wrist injury"
           }
           ]
       }) }}

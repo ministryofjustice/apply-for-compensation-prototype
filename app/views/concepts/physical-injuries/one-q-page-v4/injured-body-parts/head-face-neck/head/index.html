@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the head - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "headInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your head or brain",
+            text: "Select any injuries to the head or brain",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,42 +53,50 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         {
           value: "Concussion, headaches or loss of balance lasting 28 weeks or more",
           text: "Concussion, headaches or loss of balance lasting 28 weeks or more",
-          checked: checked("headInjuries", "Concussion, headaches or loss of balance lasting 28 weeks or more")
+          checked: checked("headInjuries", "Concussion, headaches or loss of balance lasting 28 weeks or more"),
+          id: "Concussion, headaches or loss of balance lasting 28 weeks or more"
         },
         {
           value: "Brain damage",
           text: "Brain damage",
-          checked: checked("headInjuries", "Brain damage")
+          checked: checked("headInjuries", "Brain damage"),
+          id: "Brain damage"
         },
         {
           value: "Fractured skull",
           text: "Fractured skull",
-          checked: checked("headInjuries", "Fractured skull")
+          checked: checked("headInjuries", "Fractured skull"),
+          id: "Fractured skull"
         },
         {
           value: "Hair pulled out",
           text: "Hair pulled out",
-          checked: checked("headInjuries", "Hair pulled out")
+          checked: checked("headInjuries", "Hair pulled out"),
+          id: "Hair pulled out"
         },
         {
           value: "Epilepsy",
           text: "Epilepsy",
-          checked: checked("headInjuries", "Epilepsy")
+          checked: checked("headInjuries", "Epilepsy"),
+          id: "Epilepsy"
         },
         {
           value: "Nerve damage",
           text: "Nerve damage",
-          checked: checked("headInjuries", "Nerve damage")
+          checked: checked("headInjuries", "Nerve damage"),
+          id: "Nerve damage"
         },
         {
           value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
           text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
-          checked: checked("headInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
+          checked: checked("headInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)"),
+          id: "Quadriplegia or tetraplegia"
         },
         {
           value: "Hemiplegia (paralysis of one side of the the body)",
           text: "Hemiplegia (paralysis of one side of the the body)",
-          checked: checked("headInjuries", "Hemiplegia (paralysis of one side of the the body)")
+          checked: checked("headInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+          id: "Hemiplegia"
         },
         {
           value: "Other",

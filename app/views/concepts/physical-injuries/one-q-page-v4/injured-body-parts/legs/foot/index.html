@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the foot were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "footInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your foot",
+            text: "Select any injuries to the foot",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,17 +53,19 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken foot",
             text: "Broken foot",
-            checked: checked("footInjuries", "Broken foot")
+            checked: checked("footInjuries", "Broken foot"),
+            id: "Broken foot"
           },
           {
             value: "Broken heel",
             text: "Broken heel",
-            checked: checked("footInjuries", "Broken heel")
+            checked: checked("footInjuries", "Broken heel"),
+            id: "Broken heel"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("footInjuries", "other"),
+            checked: checked("footInjuries", "Other"),
             conditional: {
               html: otherHtml
             }

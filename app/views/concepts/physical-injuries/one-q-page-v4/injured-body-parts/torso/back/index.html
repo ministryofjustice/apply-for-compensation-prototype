@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the back? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "backInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your back",
+            text: "Select any injuries to the back",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,35 +53,41 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken vertebra",
             text: "Broken vertebra",
-            checked: checked("backInjuries", "Broken vertebra")
+            checked: checked("backInjuries", "Broken vertebra"),
+            id: "Broken vertebra"
           },
           {
             value: "Slipped disc",
             text: "Slipped disc",
-            checked: checked("backInjuries", "Slipped disc")
+            checked: checked("backInjuries", "Slipped disc"),
+            id: "Slipped disc"
           },
           {
             value: "Back strain",
             text: "Back strain",
-            checked: checked("backInjuries", "Back strain")
+            checked: checked("backInjuries", "Back strain"),
+            id: "Back strain"
           },
           {
             value: "Broken tailbone",
             text: "Broken tailbone",
-            checked: checked("backInjuries", "Broken tailbone")
+            checked: checked("backInjuries", "Broken tailbone"),
+            id: "Broken tailbone"
           },
           {
             value: "Hemiplegia (paralysis of one side of the the body)",
             text: "Hemiplegia (paralysis of one side of the the body)",
-            checked: checked("backInjuries", "Hemiplegia (paralysis of one side of the the body)")
+            checked: checked("backInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+            id: "Hemiplegia"
           },
           {
             value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
             text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
-            checked: checked("backInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
+            checked: checked("backInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)"),
+            id: "Quadriplegia or tetraplegia"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("backInjuries", "Other"),
             conditional: {

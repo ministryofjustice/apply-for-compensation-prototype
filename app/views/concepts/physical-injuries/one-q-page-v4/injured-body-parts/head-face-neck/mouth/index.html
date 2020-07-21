@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the mouth - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,44 +44,50 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "mouthInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your mouth",
+            text: "Select any injuries to the mouth",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [
-        {
-          value: "Loose teeth",
-          text: "Loose teeth",
-          checked: checked("mouthInjuries", "Loose teeth")
-        },
+          {
+            value: "Loose teeth",
+            text: "Loose teeth",
+            checked: checked("mouthInjuries", "Loose teeth"),
+            id: "Loose teeth"
+          },
           {
             value: "Damaged or broken teeth",
             text: "Damaged or broken teeth",
-            checked: checked("mouthInjuries", "Damaged or broken teeth")
+            checked: checked("mouthInjuries", "Damaged or broken teeth"),
+            id: "Damaged or broken teeth"
           },
           {
             value: "Difficulty speaking",
             text: "Difficulty speaking",
-            checked: checked("mouthInjuries", "Difficulty speaking")
+            checked: checked("mouthInjuries", "Difficulty speaking"),
+            id: "Difficulty speaking"
           },
           {
             value: "Permanent loss of speech",
             text: "Permanent loss of speech",
-            checked: checked("mouthInjuries", "Permanent loss of speech")
+            checked: checked("mouthInjuries", "Permanent loss of speech"),
+            id: "Permanent loss of speech"
           },
           {
             value: "Loss of tongue",
             text: "Loss of tongue",
-            checked: checked("mouthInjuries", "Loss of tongue")
+            checked: checked("mouthInjuries", "Loss of tongue"),
+            id: "Loss of tongue"
           },
           {
             value: "Loss of smell or taste",
             text: "Loss of smell or taste",
-            checked: checked("mouthInjuries", "Loss of smell or taste")
+            checked: checked("mouthInjuries", "Loss of smell or taste"),
+            id: "Loss of smell or taste"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("mouthInjuries", "Other"),
             conditional: {

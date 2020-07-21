@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the ear or hearing - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "earInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your ear or hearing",
+            text: "Select any injuries to the ear or hearing",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,40 +53,47 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken ear bone",
             text: "Broken ear bone",
-            checked: checked("earInjuries", "Broken ear bone")
+            checked: checked("earInjuries", "Broken ear bone"),
+            id: "Broken ear bone"
           },
           {
             value: "Hearing loss",
             text: "Hearing loss",
-            checked: checked("earInjuries", "Hearing loss")
+            checked: checked("earInjuries", "Hearing loss"),
+            id: "Hearing loss"
           },
           {
             value: "Loss of ear",
             text: "Loss of ear",
-            checked: checked("earInjuries", "Loss of ear")
+            checked: checked("earInjuries", "Loss of ear"),
+            id: "Loss of ear"
           },
           {
-            value: "One perforated eardrum",
+            value: "1 perforated eardrum",
             text: "1 perforated eardrum",
-            checked: checked("earInjuries", "One perforated eardrum")
+            checked: checked("earInjuries", "1 perforated eardrum"),
+            id: "1 perforated eardrum"
           },
           {
-            value: "Two perforated eardrums",
-            text: "2 perforated eardrums ",
-            checked: checked("earInjuries", "Two perforated eardrums")
+            value: "2 perforated eardrums",
+            text: "2 perforated eardrums",
+            checked: checked("earInjuries", "2 perforated eardrums"),
+            id: "2 perforated eardrums"
           },
           {
             value: "Ringing in ears",
             text: "Ringing in ears",
-            checked: checked("earInjuries", "Ringing in ears")
+            checked: checked("earInjuries", "Ringing in ears"),
+            id: "Ringing in ears"
           },
           {
             value: "Dizziness",
             text: "Dizziness",
-            checked: checked("earInjuries", "Dizziness")
+            checked: checked("earInjuries", "Dizziness"),
+            id: "Dizziness"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("earInjuries", "Other"),
             conditional: {

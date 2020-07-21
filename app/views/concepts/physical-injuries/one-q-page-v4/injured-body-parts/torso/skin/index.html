@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the skin on your torso were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "torsoSkinInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your skin on your torso",
+            text: "Select any injuries to the skin on your torso",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,25 +53,29 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Cuts",
             text: "Cuts",
-            checked: checked("legSkinInjuredParts", "Cuts")
+            checked: checked("legSkinInjuredParts", "Cuts"),
+            id: "Cuts to torso"
           },
           {
             value: "Bruises",
             text: "Bruises",
-            checked: checked("legSkinInjuredParts", "Bruises")
+            checked: checked("legSkinInjuredParts", "Bruises"),
+            id: "Bruises to torso"
           },
           {
             value: "Scars",
             text: "Scars",
-            checked: checked("legSkinInjuredParts", "Scars")
+            checked: checked("legSkinInjuredParts", "Scars"),
+            id: "Scars to torso"
           },
           {
             value: "Burns",
             text: "Burns",
-            checked: checked("legSkinInjuredParts", "Burns")
+            checked: checked("legSkinInjuredParts", "Burns"),
+            id: "Burns to torso"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("legSkinInjuredParts", "Other"),
             conditional: {

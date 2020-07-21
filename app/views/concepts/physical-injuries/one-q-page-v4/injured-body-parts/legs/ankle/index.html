@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the ankle were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "ankleInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your ankle",
+            text: "Select any injuries to the ankle",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,22 +53,25 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Dislocated ankle",
             text: "Dislocated ankle",
-            checked: checked("ankleInjuries", "Dislocated ankle")
+            checked: checked("ankleInjuries", "Dislocated ankle"),
+            id: "Dislocated ankle"
           },
           {
             value: "Broken ankle",
             text: "Broken ankle",
-            checked: checked("ankleInjuries", "Broken ankle")
+            checked: checked("ankleInjuries", "Broken ankle"),
+            id: "Broken ankle"
           },
           {
             value: "Sprained ankle",
             text: "Sprained ankle",
-            checked: checked("ankleInjuries", "Sprained ankle")
+            checked: checked("ankleInjuries", "Sprained ankle"),
+            id: "Sprained ankle"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("ankleInjuries", "other"),
+            checked: checked("ankleInjuries", "Other"),
             conditional: {
               html: otherHtml
             }

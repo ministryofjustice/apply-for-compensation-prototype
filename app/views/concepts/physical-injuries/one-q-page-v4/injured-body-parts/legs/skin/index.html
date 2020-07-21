@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the skin were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "legSkinInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your skin on your legs or feet",
+            text: "Select any injuries to the skin on your legs or feet",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,27 +53,31 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Cuts",
             text: "Cuts",
-            checked: checked("legSkinInjuries", "Cuts")
+            checked: checked("legSkinInjuries", "Cuts"),
+            id: "Cuts on leg or foot"
           },
           {
             value: "Bruises",
             text: "Bruises",
-            checked: checked("legSkinInjuries", "Bruises")
+            checked: checked("legSkinInjuries", "Bruises"),
+            id: "Bruises on leg or foot"
           },
           {
             value: "Scars",
             text: "Scars",
-            checked: checked("legSkinInjuries", "Scars")
+            checked: checked("legSkinInjuries", "Scars"),
+            id: "Scars on leg or foot"
           },
           {
             value: "Burns",
             text: "Burns",
-            checked: checked("legSkinInjuries", "Burns")
+            checked: checked("legSkinInjuries", "Burns"),
+            id: "Burns on leg or foot"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("legSkinInjuries", "other"),
+            checked: checked("legSkinInjuries", "Other"),
             conditional: {
               html: otherHtml
             }

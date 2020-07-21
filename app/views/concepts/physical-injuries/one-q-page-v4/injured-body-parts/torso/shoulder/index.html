@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the shoulder were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,31 +44,35 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "shoulderBladeInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your shoulder",
+            text: "Select any injuries to the shoulder",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         items: [
-        {
-          value: "Broken shoulder blade",
-          text: "Broken shoulder blade",
-          checked: checked("shoulderBladeInjuries", "Broken shoulder blade")
-        },
+          {
+            value: "Broken shoulder blade",
+            text: "Broken shoulder blade",
+            checked: checked("shoulderBladeInjuries", "Broken shoulder blade"),
+            id: "Broken shoulder blade (torso)"
+          },
           {
             value: "Dislocated shoulder",
             text: "Dislocated shoulder",
-            checked: checked("shoulderBladeInjuries", "Dislocated shoulder")
+            checked: checked("shoulderBladeInjuries", "Dislocated shoulder"),
+            id: "Dislocated shoulder (torso)"
           },
           {
             value: "Separated shoulder",
             text: "Separated shoulder",
-            checked: checked("shoulderBladeInjuries", "Separated shoulder")
+            checked: checked("shoulderBladeInjuries", "Separated shoulder"),
+            id: "Separated shoulder (torso)"
           },
           {
             value: "Frozen shoulder",
             text: "Frozen shoulder",
-            checked: checked("shoulderBladeInjuries", "Frozen shoulder")
+            checked: checked("shoulderBladeInjuries", "Frozen shoulder"),
+            id: "Frozen shoulder (torso)"
           },
           {
             value: "Other",

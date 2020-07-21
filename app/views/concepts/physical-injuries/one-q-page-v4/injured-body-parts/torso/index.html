@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the torso were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -31,7 +31,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "torsoInjuredParts",
         fieldset: {
           legend: {
-            text: "What parts of your torso were injured?",
+            text: "What parts of the torso were injured?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -43,32 +43,38 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Shoulder",
             text: "Shoulder",
-            checked: checked("torsoInjuredParts", "Shoulder")
+            checked: checked("torsoInjuredParts", "Shoulder"),
+            id: "Shoulder"
           },
           {
             value: "Chest",
             text: "Chest",
-            checked: checked("torsoInjuredParts", "Chest")
+            checked: checked("torsoInjuredParts", "Chest"),
+            id: "Chest"
           },
           {
             value: "Abdomen",
             text: "Abdomen",
-            checked: checked("torsoInjuredParts", "Abdomen")
+            checked: checked("torsoInjuredParts", "Abdomen"),
+            id: "Abdomen"
           },
           {
             value: "Back",
             text: "Back",
-            checked: checked("torsoInjuredParts", "Back")
+            checked: checked("torsoInjuredParts", "Back"),
+            id: "Back"
           },
           {
             value: "Pelvis",
             text: "Pelvis",
-            checked: checked("torsoInjuredParts", "Pelvis")
+            checked: checked("torsoInjuredParts", "Pelvis"),
+            id: "Pelvis"
           },
           {
             value: "Genitals",
             text: "Genitals",
-            checked: checked("torsoInjuredParts", "Genitals")
+            checked: checked("torsoInjuredParts", "Genitals"),
+            id: "Genitals"
           },
           {
             value: "Skin",
@@ -76,12 +82,14 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             hint: {
               text: "Including cuts, bruises, burns and scars"
             },
-            checked: checked("torsoInjuredParts", "Skin")
+            checked: checked("torsoInjuredParts", "Skin"),
+            id: "Skin injury on the torso"
           },
           {
             value: "Muscle, ligament, or tendon injury",
             text: "Muscle, ligament, or tendon injury",
-            checked: checked("torsoInjuredParts", "Muscle, ligament, or tendon injury")
+            checked: checked("torsoInjuredParts", "Muscle, ligament, or tendon injury"),
+            id: "Muscle, ligament, or tendon injury on the torso"
           }
         ]
       }) }}

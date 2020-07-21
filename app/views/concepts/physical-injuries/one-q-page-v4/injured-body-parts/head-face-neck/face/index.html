@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the face - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "faceInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your face",
+            text: "Select any injuries to the face",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,45 +53,53 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         {
           value: "Face fractures",
           text: "Face fractures",
-          checked: checked("faceInjuries", "Face fractures")
+          checked: checked("faceInjuries", "Face fractures"),
+          id: "Face fractures"
         },
         {
           value: "Face numbness",
           text: "Face numbness",
-          checked: checked("faceInjuries", "Face numbness")
+          checked: checked("faceInjuries", "Face numbness"),
+          id: "Face numbness"
         },
         {
           value: "Broken cheekbone",
           text: "Broken cheekbone",
-          checked: checked("faceInjuries", "Broken cheekbone")
+          checked: checked("faceInjuries", "Broken cheekbone"),
+          id: "Broken cheekbone"
         },
         {
           value: "Broken jaw",
           text: "Broken jaw",
-          checked: checked("faceInjuries", "Broken jaw")
+          checked: checked("faceInjuries", "Broken jaw"),
+          id: "Broken jaw"
         },
         {
           value: "Clicking jaw",
           text: "Clicking jaw",
-          checked: checked("faceInjuries", "Clicking jaw")
+          checked: checked("faceInjuries", "Clicking jaw"),
+          id: "Clicking jaw"
         },
         {
           value: "Dislocated jaw",
           text: "Dislocated jaw",
-          checked: checked("faceInjuries", "Dislocated jaw")
+          checked: checked("faceInjuries", "Dislocated jaw"),
+          id: "Dislocated jaw"
         },
         {
           value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
           text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
-          checked: checked("faceInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)")
+          checked: checked("faceInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)"),
+          id: "Quadriplegia or tetraplegia"
         },
         {
           value: "Hemiplegia (paralysis of one side of the the body)",
           text: "Hemiplegia (paralysis of one side of the the body)",
-          checked: checked("faceInjuries", "Hemiplegia (paralysis of one side of the the body)")
+          checked: checked("faceInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+          id: "Hemiplegia"
         },
         {
-          value: "other",
+          value: "Other",
           text: "Other",
           checked: checked("faceInjuries", "Other"),
           conditional: {

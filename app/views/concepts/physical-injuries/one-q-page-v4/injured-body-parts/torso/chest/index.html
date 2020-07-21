@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the chest were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "chestInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your chest",
+            text: "Select any injuries to the chest",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,40 +53,47 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken collarbone",
             text: "Broken collarbone",
-            checked: checked("chestInjuries", "Broken collarbone")
+            checked: checked("chestInjuries", "Broken collarbone"),
+            id: "Broken collarbone"
           },
           {
             value: "Broken breast bone",
             text: "Broken breast bone",
-            checked: checked("chestInjuries", "Broken breast bone")
+            checked: checked("chestInjuries", "Broken breast bone"),
+            id: "Broken breast bone"
           },
           {
             value: "Chest surgery",
             text: "Chest surgery",
-            checked: checked("chestInjuries", "Chest surgery")
+            checked: checked("chestInjuries", "Chest surgery"),
+            id: "Chest surgery"
           },
           {
             value: "Broken rib",
             text: "Broken rib",
-            checked: checked("chestInjuries", "Broken rib")
+            checked: checked("chestInjuries", "Broken rib"),
+            id: "Broken rib"
           },
           {
             value: "Punctured lung",
             text: "Punctured lung",
-            checked: checked("chestInjuries", "Punctured lung")
+            checked: checked("chestInjuries", "Punctured lung"),
+            id: "Punctured lung"
           },
           {
             value: "Collapsed lung",
             text: "Collapsed lung",
-            checked: checked("chestInjuries", "Collapsed lung")
+            checked: checked("chestInjuries", "Collapsed lung"),
+            id: "Collapsed lung"
           },
           {
             value: "Lung damage from smoke or chemicals",
             text: "Lung damage from smoke or chemicals",
-            checked: checked("chestInjuries", "Lung damage from smoke or chemicals")
+            checked: checked("chestInjuries", "Lung damage from smoke or chemicals"),
+            id: "Lung damage from smoke or chemicals"
           },
           {
-            value: "other",
+            value: "Other",
             text: "Other",
             checked: checked("chestInjuries", "Other"),
             conditional: {

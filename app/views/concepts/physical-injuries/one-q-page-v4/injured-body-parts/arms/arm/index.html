@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the arm - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -46,7 +46,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "armInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your arm",
+            text: "Select any injuries to the arm",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -82,8 +82,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("armInjuries", "Other"),
             conditional: {
               html: otherHtml
-            },
-            id: "Other arm injury"
+            }
           }
           ]
       }) }}

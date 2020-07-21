@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+What parts of the leg were injured? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -44,7 +44,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "legInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your leg",
+            text: "Select any injuries to the leg",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -54,37 +54,43 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           {
             value: "Broken leg",
             text: "Broken leg",
-            checked: checked("legInjuries", "Broken leg")
+            checked: checked("legInjuries", "Broken leg"),
+            id: "Broken leg"
           },
           {
             value: "Keyhole surgery to leg",
             text: "Keyhole surgery to leg",
-            checked: checked("legInjuries", "Keyhole surgery to leg")
+            checked: checked("legInjuries", "Keyhole surgery to leg"),
+            id: "Keyhole surgery to leg"
           },
           {
             value: "Amputated leg",
             text: "Amputated leg",
-            checked: checked("legInjuries", "Amputated leg")
+            checked: checked("legInjuries", "Amputated leg"),
+            id: "Amputated leg"
           },
           {
             value: "Paralysed leg",
             text: "Paralysed leg",
-            checked: checked("legInjuries", "Paralysed leg")
+            checked: checked("legInjuries", "Paralysed leg"),
+            id: "Paralysed leg"
           },
           {
             value: "Paraplegia (paralysis of lower half of the body)",
             text: "Paraplegia (paralysis of lower half of the body)",
-            checked: checked("legInjuries", "Paraplegia (paralysis of lower half of the body)")
+            checked: checked("legInjuries", "Paraplegia (paralysis of lower half of the body)"),
+            id: "Paraplegia"
           },
           {
             value: "Hemiplegia (paralysis of one side of the the body)",
             text: "Hemiplegia (paralysis of one side of the the body)",
-            checked: checked("legInjuries", "Hemiplegia (paralysis of one side of the the body)")
+            checked: checked("legInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+            id: "Hemiplegia"
           },
           {
-            value: "none",
+            value: "Other",
             text: "Other",
-            checked: checked("legInjuries", "other"),
+            checked: checked("legInjuries", "Other"),
             conditional: {
               html: otherHtml
             }

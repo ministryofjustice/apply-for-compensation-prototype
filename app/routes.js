@@ -518,7 +518,7 @@ require('./views/concepts/physical-injuries/one-q-page-v4/context-physical-injur
 require('./views/concepts/physical-injuries/one-q-page-v4/have-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/soft-tissue/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/infection/routes')(router, viewContent);
-require('./views/concepts/physical-injuries/one-q-page-v4/pregnancy-loss/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/pregnancy/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/other-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/routes')(router, viewContent);

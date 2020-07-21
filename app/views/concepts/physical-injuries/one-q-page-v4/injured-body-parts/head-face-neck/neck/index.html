@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the neck - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block pageScripts %}
@@ -51,7 +51,7 @@ var headPageCount = localStorage.getItem('headPages');
         name: "neckInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your neck",
+            text: "Select any injuries to the neck",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -81,7 +81,7 @@ var headPageCount = localStorage.getItem('headPages');
           checked: checked("neckInjuries", "Hemiplegia (paralysis of one side of the the body)")
         },
         {
-          value: "other",
+          value: "Other",
           text: "Other",
           checked: checked("neckInjuries", "Other"),
           conditional: {

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Physical injuries  - {{ serviceName }} - GOV.UK
+Select any injuries to the elbow - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block pageScripts %}
@@ -22,7 +22,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     tag: {
       text: "beta"
     },
-    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    html: 'This website is for research use only'
   }) }}
 
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -56,7 +56,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "elbowInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to your elbow",
+            text: "Select any injuries to the elbow",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -80,8 +80,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             checked: checked("elbowInjuries", "Other"),
             conditional: {
               html: otherHtml
-            },
-            id: "Other elbow injury"
+            }
           }
           ]
       }) }}
