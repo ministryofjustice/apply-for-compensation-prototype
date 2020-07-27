@@ -7,10 +7,10 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{ whoIsMakingTheApplicationQuestion }}
+      Who are you applying for?
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['direct-applicant'] }}
+      Myself
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="who-is-making-the-application">
@@ -21,10 +21,10 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{ over18Question }}
+      Are you 18 or over?
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['over18'] }}
+      Yes
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="who-is-making-the-application">
@@ -38,7 +38,7 @@
       Confirmation method
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['confirmationPreference'] }}
+      Email
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="confirmation-options">
@@ -49,10 +49,10 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{ sexualAbuseQuestion }}
+      Were you a victim of sexual assault or abuse?
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['sexualAssault'] }}
+      Yes
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="sexual-assault-application">
@@ -61,14 +61,12 @@
     </dd>
   </div>
 
-  {% if data['applicationDelay'] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="border:none">
-      {{ whyDelayQuestion }}
+      Select reasons for the delay in making your application
     </dt>
     <dd class="govuk-summary-list__value" style="border:none">
 
-      {{ data['applicationDelay'] }}
 
     </dd>
     <dd class="govuk-summary-list__actions" style="border:none">
@@ -77,18 +75,15 @@
       </a>
     </dd>
   </div>
-  {% endif %}
 
-  {% if data['delay-application'] %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      {{ delayApplyExplanation }}
+      Briefly explain these reasons
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['delay-application'] }}
+
     </dd>
     <dd class="govuk-summary-list__actions">
     </dd>
   </div>
-  {% endif %}
 </dl>
