@@ -580,6 +580,10 @@ require('./views/concepts/physical-injuries/one-q-page-v4/work-capacity/routes')
 require('./views/concepts/physical-injuries/one-q-page-v4/work-details/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/special-expenses/routes')(router, viewContent);
 
+// Dentist details
+require('./views/concepts/dental-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/concepts/dental-treatment/dentist-details/routes')(router, viewContent);
+
 
 
 
