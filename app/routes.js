@@ -573,6 +573,8 @@ require('./views/concepts/physical-injuries/one-q-page-v4/gp-registered/routes')
 require('./views/concepts/physical-injuries/one-q-page-v4/gp-visited/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/hospital-visited/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/hospital-details/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dentist-visited/routes')(router, viewContent);
+require('./views/concepts/physical-injuries/one-q-page-v4/dentist-details/routes')(router, viewContent);
 
 require('./views/concepts/physical-injuries/one-q-page-v4/context-your-money/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/one-q-page-v4/lost-earnings/routes')(router, viewContent);

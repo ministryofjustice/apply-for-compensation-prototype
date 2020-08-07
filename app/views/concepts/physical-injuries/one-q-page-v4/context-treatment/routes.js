@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/concepts/physical-injuries/one-q-page-v4/context-treatment', function (req, res) {
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/treatment-details')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/gp-registered')
   })
 
   // Pass the question in to the page

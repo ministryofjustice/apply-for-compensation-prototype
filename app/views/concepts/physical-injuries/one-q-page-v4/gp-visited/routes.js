@@ -8,10 +8,16 @@ router.post('/concepts/physical-injuries/one-q-page-v4/gp-visited', function (re
 
   var visitedGP = req.session.data['visitedGP']
   var registeredGP = req.session.data['registeredGP']
+  let injuredParts = req.session.data['injuredParts'] || []
 
   if ((registeredGP === 'No') && (visitedGP === 'No')) {
-    // Redirect to the relevant page
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/hospital-visited')
+
+    if (injuredParts.includes('Head, face or neck')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/dentist-visited')
+    } else {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/hospital-visited/')
+    }
+
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/concepts/physical-injuries/one-q-page-v4/gp-details')
