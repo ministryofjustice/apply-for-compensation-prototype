@@ -8,7 +8,7 @@
   <!-- Previously applied question --->
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Have you applied to us before?
     </dt>
     <dd class="govuk-summary-list__value">
@@ -22,7 +22,7 @@
   </div>
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Enter your previous reference number if you know it
     </dt>
     <dd class="govuk-summary-list__value">
@@ -38,7 +38,7 @@
   <!-- Other compensation question --->
 
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     Have you applied for or received any other form of compensation?
   </dt>
   <dd class="govuk-summary-list__value">
@@ -54,7 +54,7 @@
 <!-- Other compensation question - NO - Why not? --->
 
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     Briefly explain why you have not applied for or received any other form of compensation
   </dt>
   <dd class="govuk-summary-list__value">
@@ -73,7 +73,7 @@
 
 {% if data['other-compensation'] === 'Yes' %}
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ otherCompensationProviderQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
@@ -89,7 +89,7 @@
 <!-- Have they made a decision? --->
 
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ otherCompensationDecisionQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
@@ -107,7 +107,7 @@
 
 {% if data['comp-decision-answer'] === 'Yes' %}
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ otherCompensationAmountQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
@@ -125,7 +125,7 @@
 
 {% if data['comp-decision-answer'] === 'No' %}
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ otherCompensationDecisionWhenQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
