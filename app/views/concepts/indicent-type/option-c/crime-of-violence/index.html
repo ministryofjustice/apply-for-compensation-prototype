@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Have you seen a dentist about your injuries? - {{ serviceName }} - GOV.UK
+Were you the victim of a violent crime? - {{ serviceName }} - GOV.UK
 {% endblock %}
-
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
@@ -22,18 +21,22 @@ Have you seen a dentist about your injuries? - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
     <form class="form" method="post">
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "visitedDentist",
-            "name": "visitedDentist",
-            currentValue: data['visitedDentist'],
+            "idPrefix": "crimeOfViolence",
+            "name": "crimeOfViolence",
+            currentValue: data['crimeOfViolence'],
             "fieldset": {
               "legend": {
-                "text": "Have you seen a dentist about your injuries?",
+                "text": "Were you the victim of a violent crime?",
                 "isPageHeading": true,
                 "classes": 'govuk-fieldset__legend--xl'
               }
@@ -42,12 +45,12 @@ Have you seen a dentist about your injuries? - {{ serviceName }} - GOV.UK
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("visitedDentist", "Yes")
+                checked: checked("crimeOfViolence", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("visitedDentist", "No")
+                checked: checked("crimeOfViolence", "No")
               }
             ]
           }) }}
@@ -59,6 +62,8 @@ Have you seen a dentist about your injuries? - {{ serviceName }} - GOV.UK
     </form>
 
   </div>
+</div>
+</main>
 </div>
 
 {% endblock %}

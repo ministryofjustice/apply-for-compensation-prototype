@@ -586,7 +586,17 @@ require('./views/concepts/physical-injuries/one-q-page-v4/special-expenses/route
 require('./views/concepts/dental-treatment/dentist-visited/routes')(router, viewContent);
 require('./views/concepts/dental-treatment/dentist-details/routes')(router, viewContent);
 
+// Incident Type
+require('./views/concepts/indicent-type/option-c/context-about-the-crime/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-c/sexual-assault-application/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-c/crime-of-violence/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-c/incident-description/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-c/not-crime-violence/routes')(router, viewContent);
 
+require('./views/concepts/indicent-type/option-d/context-about-the-crime/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-d/sexual-assault-application/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-d/crime-of-violence/routes')(router, viewContent);
+require('./views/concepts/indicent-type/option-d/not-crime-violence/routes')(router, viewContent);
 
 
 //Extra questions & equal oportunities //
