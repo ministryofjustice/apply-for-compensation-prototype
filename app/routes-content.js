@@ -120,6 +120,7 @@ module.exports = {
     delayReportExplanation: 'Briefly explain these reasons',
     selectAddressLable: 'Select an address',
     sexualAbuseQuestion: 'Were you a victim of sexual assault or abuse?',
+    violentCrimeQuestion: 'Were you a victim of a violent crime?',
     sexualAbuseError: 'Select yes if you were a victim of sexual assault or abuse',
     sexualAbuseTransitionHeading: 'You must use another service if your claim is not for sexual assault or abuse',
     singleOrMultipleIncidentsQuestion: 'Did the crime happen once or over a period of time?',

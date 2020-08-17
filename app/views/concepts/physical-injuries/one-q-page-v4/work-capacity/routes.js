@@ -9,7 +9,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/work-capacity', function 
     res.redirect('/concepts/physical-injuries/one-q-page-v4/lost-earnings')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/end')
+    res.redirect('/application/context-prev-compensation')
   }
 })
 
