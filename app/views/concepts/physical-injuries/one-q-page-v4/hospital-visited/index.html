@@ -28,9 +28,9 @@
 
       {{ govukRadios({
             "classes": "govuk-radios--inline",
-            "idPrefix": "visitedHospital",
-            "name": "visitedHospital",
-            currentValue: data['visitedHospital'],
+            "idPrefix": "seekMedicalHelp",
+            "name": "seekMedicalHelp",
+            currentValue: data['seekMedicalHelp'],
             "fieldset": {
               "legend": {
                 "text": "Did you get other medical help for your injuries?",
@@ -45,12 +45,12 @@
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("visitedHospital", "Yes")
+                checked: checked("seekMedicalHelp", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("visitedHospital", "No")
+                checked: checked("seekMedicalHelp", "No")
               }
             ]
           }) }}

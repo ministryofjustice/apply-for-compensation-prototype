@@ -17,7 +17,7 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/your-injuries/')
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/context-about-dmi/')
     }
   })
   // END__######################################################################################################

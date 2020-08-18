@@ -6,12 +6,12 @@
 
 <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
 <!--   * `app-check-your-answers--short` for short questions -->
-<!--   * `govuk-summary-list__keys-long` for long questions -->
+<!--   * `govuk-summary-list__key govuk-!-width-one-halfs-long` for long questions -->
 <!--   * none for single group of q&a -->
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Address
     </dt>
     <dd class="govuk-summary-list__value">
@@ -37,7 +37,7 @@
 {% if data['emailAddress'] %}
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Email address
     </dt>
     <dd class="govuk-summary-list__value">
@@ -55,7 +55,7 @@
 {% if data['phoneNumber'] %}
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Telephone number
     </dt>
     <dd class="govuk-summary-list__value">

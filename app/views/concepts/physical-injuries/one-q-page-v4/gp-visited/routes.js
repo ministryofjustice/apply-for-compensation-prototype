@@ -8,7 +8,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/gp-visited', function (re
 
   var visitedGP = req.session.data['visitedGP']
   var registeredGP = req.session.data['registeredGP']
-  let injuredParts = req.session.data['injuredParts'] || []
+  let injuredParts = req.session.data['injuredParts']
 
   if ((registeredGP === 'No') && (visitedGP === 'No')) {
 

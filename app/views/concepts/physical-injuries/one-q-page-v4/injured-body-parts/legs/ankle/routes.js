@@ -13,7 +13,7 @@ module.exports = function (router, content) {
     } else if (legInjuredParts.includes('Skin')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/skin')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/your-injuries/')
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/context-about-dmi/')
     }
   })
   // END__######################################################################################################
