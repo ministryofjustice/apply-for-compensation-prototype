@@ -21,6 +21,7 @@ require('./views/application/over-18/routes')(router, viewContent);
 require('./views/application/who-is-making-the-application/routes')(router, viewContent);
 require('./views/application/who-is-making-the-application/routes')(router, viewContent);
 require('./views/application/sexual-assault-application/routes')(router, viewContent);
+require('./views/application/violent-crime/routes')(router, viewContent);
 require('./views/application/confirmation-options/routes')(router, viewContent);
 require('./views/application/you-have-a-choice/routes')(router, viewContent);
 require('./views/application/impact-on-you/routes')(router, viewContent);

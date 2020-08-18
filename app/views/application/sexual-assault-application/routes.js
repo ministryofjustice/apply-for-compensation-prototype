@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (sexualAssault === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/transition')
+      res.redirect('/application/violent-crime')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/incident-reported')

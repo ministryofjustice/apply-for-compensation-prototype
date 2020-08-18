@@ -6,7 +6,7 @@
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ whoIsMakingTheApplicationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
@@ -20,7 +20,7 @@
   </div>
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ over18Question }}
     </dt>
     <dd class="govuk-summary-list__value">
@@ -34,7 +34,7 @@
   </div>
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Confirmation method
     </dt>
     <dd class="govuk-summary-list__value">
@@ -48,7 +48,7 @@
   </div>
 
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ sexualAbuseQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
@@ -56,14 +56,30 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="sexual-assault-application">
-        Change<span class="govuk-visually-hidden">{{ sexualAssault }} </span>
+        Change<span class="govuk-visually-hidden">{{ sexualAbuseQuestion }} </span>
       </a>
     </dd>
   </div>
 
+  {% if data['sexualAssault'] === 'No' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ violentCrimeQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['violentCrime'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="sexual-assault-application">
+        Change<span class="govuk-visually-hidden">{{ violentCrimeQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
   {% if data['applicationDelay'] %}
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key" style="border:none">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half" style="border:none">
       {{ whyDelayQuestion }}
     </dt>
     <dd class="govuk-summary-list__value" style="border:none">
@@ -81,7 +97,7 @@
 
   {% if data['delay-application'] %}
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ delayApplyExplanation }}
     </dt>
     <dd class="govuk-summary-list__value">

@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (knowOffender === 'No')  {
       // Redirect to the relevant page
-      res.redirect('/application/context-about-dmi')
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/context-physical-injuries')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/offender-name')

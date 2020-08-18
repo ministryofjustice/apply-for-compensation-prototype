@@ -5,9 +5,9 @@ module.exports = function (router, content) {
     let headFaceNeckInjuredParts = req.session.data['headFaceNeckInjuredParts'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
-     if (headFaceNeckInjuredParts.includes('Head')) {
+     if (headFaceNeckInjuredParts.includes('Head or brain')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/head')
-    } else if (headFaceNeckInjuredParts.includes('Face')) {
+    } else if (headFaceNeckInjuredParts.includes('Face or jaw')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/face/')
     } else if (headFaceNeckInjuredParts.includes('Eye or eyesight')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/eye-sight/')
@@ -28,7 +28,7 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/your-injuries/')
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/context-about-dmi/')
     }
   })
 }
