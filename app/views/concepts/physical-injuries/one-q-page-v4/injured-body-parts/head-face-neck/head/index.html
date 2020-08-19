@@ -52,7 +52,7 @@ Select any injuries to the head - {{ serviceName }} - GOV.UK
         items: [
         {
           value: "Concussion, headaches or loss of balance lasting 28 weeks or more",
-          text: "Concussion, headaches or loss of balance lasting 28 weeks or more",
+          text: "Head injury causing concussion, headaches or loss of balance",
           checked: checked("headInjuries", "Concussion, headaches or loss of balance lasting 28 weeks or more"),
           id: "Concussion, headaches or loss of balance lasting 28 weeks or more"
         },
@@ -85,6 +85,12 @@ Select any injuries to the head - {{ serviceName }} - GOV.UK
           text: "Nerve damage",
           checked: checked("headInjuries", "Nerve damage"),
           id: "Nerve damage"
+        },
+        {
+          value: "Dizziness",
+          text: "Injury affecting balance",
+          checked: checked("earInjuries", "Dizziness"),
+          id: "Dizziness"
         },
         {
           value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
