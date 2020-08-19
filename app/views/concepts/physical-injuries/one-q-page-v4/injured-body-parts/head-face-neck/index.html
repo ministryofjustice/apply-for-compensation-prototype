@@ -89,10 +89,13 @@ What parts of the head, face or neck were injured? - {{ serviceName }} - GOV.UK
             id: "Skin injury on head, face or neck"
           },
           {
-            value: "Muscle, ligament or tendon",
-            text: "Muscle, ligament or tendon",
-            checked: checked("headFaceNeckInjuredParts", "Muscle, ligament or tendon"),
-            id: "Muscle, ligament or tendon injury on head, face or neck"
+            value: "Tissue",
+            text: "Tissue",
+            hint: {
+              text: "Including cartilage, muscle, ligament or tendon"
+            },
+            checked: checked("headFaceNeckInjuredParts", "Tissue"),
+            id: "Tissue injury on head, face or neck"
           }
           ]
       })

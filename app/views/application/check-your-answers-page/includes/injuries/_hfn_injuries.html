@@ -157,17 +157,20 @@
 </div>
 {% endif %}
 
-{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Muscle, ligament or tendon") %}
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Tissue") %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half">
-    Muscle, ligament, tendon on head, face or neck injuries
+    Tissue on head, face or neck injuries
   </dt>
   <dd class="govuk-summary-list__value">
-    Need to fix this
+    {{ data['headTissueInjuries'] }}
+    {% if data['otherHeadTissueInjury'] %}
+      {{ data['otherHeadTissueInjury'] }}
+    {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="#">
-      Change<span class="govuk-visually-hidden">Muscle, ligament, tendon on head, face or neck injuries</span>
+      Change<span class="govuk-visually-hidden">Tissue on head, face or neck injuries</span>
     </a>
   </dd>
 </div>

@@ -86,10 +86,13 @@ What parts of the leg were injured? - {{ serviceName }} - GOV.UK
             id: "Skin injuries to the leg or foot"
           },
           {
-            value: "Muscle, ligament, or tendon injury",
-            text: "Muscle, ligament, or tendon injury",
-            checked: checked("legInjuredParts", "Muscle, ligament, or tendon injury"),
-            id: "Muscle, ligament, or tendon injury to the leg or foot"
+            value: "Tissue",
+            text: "Tissue",
+            hint: {
+              text: "Including cartilage, muscle, ligament or tendon"
+            },
+            checked: checked("legInjuredParts", "Tissue"),
+            id: "Tissue injury on leg or foot"
           }
         ]
       }) }}

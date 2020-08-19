@@ -138,17 +138,20 @@
 </div>
 {% endif %}
 
-{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Muscle, ligament, or tendon injury") %}
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Tissue") %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half">
-    Leg muscle, ligament, or tendon injuries
+    Tissue on your legs or feet injuries
   </dt>
   <dd class="govuk-summary-list__value">
-    Fix this
+    {{ data['legTissueInjuries'] }}
+    {% if data['otherLegTissueInjury'] %}
+      {{ data['otherLegTissueInjury'] }}
+    {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="#">
-      Change<span class="govuk-visually-hidden">Skin on head, face or neck injuries</span>
+      Change<span class="govuk-visually-hidden">Tissue on your legs or feet injuries injuries</span>
     </a>
   </dd>
 </div>

@@ -1,14 +1,11 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
 
-  router.post('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/skin', function (req, res) {
-    let torsoInjuredParts = req.session.data['torsoInjuredParts'] || []
+  router.post('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/tissue', function (req, res) {
     let injuredParts = req.session.data['injuredParts'] || []
 
-    if (torsoInjuredParts.includes('Tissue')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/tissue')
-    } else if (injuredParts.includes('Arms or hands')) {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/')
+    if (injuredParts.includes('Arms or hands')) {
+     res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/')
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/')
     } else {

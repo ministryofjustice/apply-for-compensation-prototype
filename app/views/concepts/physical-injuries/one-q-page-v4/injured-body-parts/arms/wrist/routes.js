@@ -11,6 +11,8 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/finger-thumb')
     } else if (armsInjuredParts.includes('Skin')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/skin')
+    } else if (armsInjuredParts.includes('Tissue')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/tissue')
       // Go to new body part section
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/')

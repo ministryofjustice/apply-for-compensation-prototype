@@ -86,10 +86,13 @@ What parts of the arms or hands were injured? - {{ serviceName }} - GOV.UK
             id: "Skin injury on arm"
           },
           {
-            value: "Muscle, ligament, or tendon injury",
-            text: "Muscle, ligament, or tendon injury",
-            checked: checked("armsInjuredParts", "Muscle, ligament, or tendon injury"),
-            id: "Muscle, ligament, or tendon injuryon arm"
+            value: "Tissue",
+            text: "Tissue",
+            hint: {
+              text: "Including cartilage, muscle, ligament or tendon"
+            },
+            checked: checked("armsInjuredParts", "Tissue"),
+            id: "Tissue injury on arm"
           }
           ]
       }) }}

@@ -86,10 +86,13 @@ What parts of the torso were injured? - {{ serviceName }} - GOV.UK
             id: "Skin injury on the torso"
           },
           {
-            value: "Muscle, ligament, or tendon injury",
-            text: "Muscle, ligament, or tendon injury",
-            checked: checked("torsoInjuredParts", "Muscle, ligament, or tendon injury"),
-            id: "Muscle, ligament, or tendon injury on the torso"
+            value: "Tissue",
+            text: "Tissue",
+            hint: {
+              text: "Including cartilage, muscle, ligament or tendon"
+            },
+            checked: checked("torsoInjuredParts", "Tissue"),
+            id: "Tissue injury on torso"
           }
         ]
       }) }}

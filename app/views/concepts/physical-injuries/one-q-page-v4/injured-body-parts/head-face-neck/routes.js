@@ -21,6 +21,8 @@ module.exports = function (router, content) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/neck/')
     } else if (headFaceNeckInjuredParts.includes('Skin')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/skin/')
+    } else if (headFaceNeckInjuredParts.includes('Tissue')) {
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/tissue/')
     } else if (injuredParts.includes('Torso')) {
      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/')
     } else if (injuredParts.includes('Arms or hands')) {

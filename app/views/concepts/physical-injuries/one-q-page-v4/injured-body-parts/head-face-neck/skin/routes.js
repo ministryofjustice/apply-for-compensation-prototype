@@ -5,7 +5,9 @@ module.exports = function (router, content) {
     let headFaceNeckInjuredParts = req.session.data['headFaceNeckInjuredParts'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
-    if (injuredParts.includes('Torso')) {
+    if (headFaceNeckInjuredParts.includes('Tissue')) {
+     res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/tissue/')
+    } else if (injuredParts.includes('Torso')) {
      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/')
     } else if (injuredParts.includes('Arms or hands')) {
      res.redirect('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/')
