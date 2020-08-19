@@ -5,9 +5,9 @@ module.exports = function (router, content) {
 
   router.post('/application/violent-crime', function (req, res) {
     // Get the answer from the query string
-    var sexualAssault = req.session.data['sexualAssault']
+    var violentCrime = req.session.data['violentCrime']
 
-    if (sexualAssault === 'No') {
+    if (violentCrime === 'No') {
       // Redirect to the relevant page
       res.redirect('/application/violent-crime/eligibility')
     } else {

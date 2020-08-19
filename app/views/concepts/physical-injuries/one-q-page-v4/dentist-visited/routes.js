@@ -18,7 +18,7 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dentist-visited', functio
     if ((registeredGP === 'No') && (visitedGP === 'No')) {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/hospital-visited/')
     } else {
-      res.redirect('/concepts/physical-injuries/one-q-page-v4/treatment-details/')
+      res.redirect('/concepts/physical-injuries/one-q-page-v4/context-your-money/')
     }
   }
 })
