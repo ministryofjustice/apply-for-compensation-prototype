@@ -50,17 +50,17 @@ Select any injuries to the skin on your arms - {{ serviceName }} - GOV.UK
           }
         },
         items: [
+        {
+          value: "Muscle",
+          text: "Muscle",
+          checked: checked("armTissueInjuries", "Muscle"),
+          id: "Muscle damage on arm"
+        },
           {
-            value: "Cartilage",
-            text: "Cartilage",
-            checked: checked("armTissueInjuries", "Cartilage"),
-            id: "Cartilage damage on arm"
-          },
-          {
-            value: "Muscle",
-            text: "Muscle",
-            checked: checked("armTissueInjuries", "Muscle"),
-            id: "Muscle damage on arm"
+            value: "Ligament",
+            text: "Ligament",
+            checked: checked("armTissueInjuries", "Ligament"),
+            id: "Ligament damage on arm"
           },
           {
             value: "Tendon",
@@ -69,10 +69,10 @@ Select any injuries to the skin on your arms - {{ serviceName }} - GOV.UK
             id: "Tendon damage on arm"
           },
           {
-            value: "Ligament",
-            text: "Ligament",
-            checked: checked("armTissueInjuries", "Ligament"),
-            id: "Ligament damage on arm"
+            value: "Cartilage",
+            text: "Cartilage",
+            checked: checked("armTissueInjuries", "Cartilage"),
+            id: "Cartilage damage on arm"
           },
           {
             value: "Other",
