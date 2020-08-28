@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/skin', function (req, res) {
-    let headFaceNeckInjuredParts = req.session.data['armsInjuredParts'] || []
+    let armsInjuredParts = req.session.data['armsInjuredParts'] || []
     let injuredParts = req.session.data['injuredParts'] || []
 
     if (armsInjuredParts.includes('Tissue')) {
