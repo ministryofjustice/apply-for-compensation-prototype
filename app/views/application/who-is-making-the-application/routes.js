@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var directApplicant = req.session.data['direct-applicant']
 
-    if (directApplicant === 'Myself') {
+    if (directApplicant === 'Me') {
       // Redirect to the relevant page
       res.redirect('/application/over-18')
     } else {
