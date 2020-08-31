@@ -16,6 +16,7 @@ router.get('/', function (req, res) {
 
 
 // CURRENT RELEASE - RELEASE 8 MVP PROJECT //
+require('./views/application/fatal-application/routes')(router, viewContent);
 require('./views/application/british-citizen/routes')(router, viewContent);
 require('./views/application/over-18/routes')(router, viewContent);
 require('./views/application/who-is-making-the-application/routes')(router, viewContent);

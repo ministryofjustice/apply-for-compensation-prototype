@@ -1,15 +1,15 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: who-is-making-the-application
+  // File: fatal-application
   // Variable: direct-applicant
 
-  router.post('/application/who-is-making-the-application', function (req, res) {
+  router.post('/application/fatal-application', function (req, res) {
     // Get the answer from the query string
-    var directApplicant = req.session.data['direct-applicant']
+    var fatalApplication = req.session.data['fatalApplication']
 
-    if (directApplicant === 'Myself') {
+    if (fatalApplication === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/british-citizen')
+      res.redirect('/application/who-is-making-the-application')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/transition')
@@ -17,12 +17,12 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/application/who-is-making-the-application/', function (req, res) {
-    res.render('application/who-is-making-the-application/index', content)
+  router.get('/application/fatal-application/', function (req, res) {
+    res.render('application/fatal-application/index', content)
   })
   // Error state
-  router.get('/application/who-is-making-the-application/error', function (req, res) {
-    res.render('application/who-is-making-the-application/error', content)
+  router.get('/application/fatal-application/error', function (req, res) {
+    res.render('application/fatal-application/error', content)
   })
   // END__######################################################################################################
 }
