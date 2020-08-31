@@ -1,9 +1,9 @@
 {% if data['torsoInjuredParts'] %}
-
+<!--
 <h3 class="govuk-heading-m">Torso injuries</h3>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+-->
 {% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Shoulder") %}
 
 <div class="govuk-summary-list__row">
@@ -17,7 +17,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/shoulder">
       Change<span class="govuk-visually-hidden">Shoulder blade injuries</span>
     </a>
   </dd>
@@ -36,7 +36,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/chest">
       Change<span class="govuk-visually-hidden">Chest injuries </span>
     </a>
   </dd>
@@ -55,7 +55,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen">
       Change<span class="govuk-visually-hidden">Abdomen injuries</span>
     </a>
   </dd>
@@ -74,7 +74,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/back">
       Change<span class="govuk-visually-hidden">Back injuries</span>
     </a>
   </dd>
@@ -93,7 +93,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/pelvis">
       Change<span class="govuk-visually-hidden">Pelvis injuries</span>
     </a>
   </dd>
@@ -112,7 +112,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/genitals">
       Change<span class="govuk-visually-hidden">Genital injuries</span>
     </a>
   </dd>
@@ -131,7 +131,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/skin">
       Change<span class="govuk-visually-hidden">Torso skin injuries</span>
     </a>
   </dd>
@@ -150,11 +150,14 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/tissue">
       Change<span class="govuk-visually-hidden">Tissue on your torso injuries injuries</span>
     </a>
   </dd>
 </div>
 {% endif %}
+
+<!--
 </dl>
+-->
 {% endif %}

@@ -1,9 +1,9 @@
 {% if data['legInjuredParts'] %}
-
+<!--
 <h3 class="govuk-heading-m">Leg and foot injuries</h3>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+-->
 {% if data['legInjuredParts'] and data['legInjuredParts'].includes("Hip") %}
 
 <div class="govuk-summary-list__row">
@@ -17,7 +17,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/hip">
       Change<span class="govuk-visually-hidden">Hip injuries</span>
     </a>
   </dd>
@@ -36,7 +36,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/leg">
       Change<span class="govuk-visually-hidden">Leg injuries</span>
     </a>
   </dd>
@@ -55,7 +55,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/knee">
       Change<span class="govuk-visually-hidden">Knee injuries </span>
     </a>
   </dd>
@@ -74,7 +74,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/ankle">
       Change<span class="govuk-visually-hidden">Ankle injuries</span>
     </a>
   </dd>
@@ -93,7 +93,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/foot">
       Change<span class="govuk-visually-hidden">Foot injuries</span>
     </a>
   </dd>
@@ -112,7 +112,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/toes">
       Change<span class="govuk-visually-hidden">Toe injuries</span>
     </a>
   </dd>
@@ -131,7 +131,7 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/skin">
       Change<span class="govuk-visually-hidden">Neck injuries</span>
     </a>
   </dd>
@@ -150,11 +150,13 @@
     {% endif %}
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a href="#">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/tissue">
       Change<span class="govuk-visually-hidden">Tissue on your legs or feet injuries injuries</span>
     </a>
   </dd>
 </div>
 {% endif %}
+<!--
 </dl>
+-->
 {% endif %}

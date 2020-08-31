@@ -15,7 +15,7 @@
       {{ data['haveInfection'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/infection/">
         Change<span class="govuk-visually-hidden"> Do you have HIV, hepatitis or an STI? </span>
       </a>
     </dd>
@@ -30,7 +30,7 @@
       {{ data['haveInfection'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/infection/vosaa">
         Change<span class="govuk-visually-hidden"> Do you have HIV, hepatitis or an STI? </span>
       </a>
     </dd>
@@ -40,6 +40,7 @@
 
 
   {% if data['haveInfection'] === 'Yes' %}
+  {% if data['sexualAssault'] === 'No' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       What infection do you have?
@@ -48,11 +49,26 @@
       {{ data['infectionType'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/infection/details">
         Change<span class="govuk-visually-hidden"> What infection do you have? </span>
       </a>
     </dd>
   </div>
+  {% else %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      What infection do you have?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['infectionType'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/infection/details-vosaa">
+        Change<span class="govuk-visually-hidden"> What infection do you have? </span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
   {% endif %}
 
   {% if data['sexualAssault'] === 'Yes' %}
@@ -64,7 +80,7 @@
       {{ data['pregnancy'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/pregnancy">
         Change<span class="govuk-visually-hidden"> Did you become pregnant? </span>
       </a>
     </dd>
@@ -79,7 +95,7 @@
       {{ data['pregnancyLoss'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/pregnancy/loss">
         Change<span class="govuk-visually-hidden"> Did you lose a pregnancy? </span>
       </a>
     </dd>
@@ -93,7 +109,7 @@
       {{ data['havePhysicalInjuries'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/have-physical-injuries">
         Change<span class="govuk-visually-hidden">Do you have physical injuries? </span>
       </a>
     </dd>
@@ -108,22 +124,17 @@
       {{ data['injuredParts'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
-        Change<span class="govuk-visually-hidden">What was injured? </span>
+      <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts">
+        Change<span class="govuk-visually-hidden">What was injured?</span>
       </a>
     </dd>
   </div>
   {% endif %}
 
-</dl>
-
-
   {% include "./injuries/_hfn_injuries.html" %}
   {% include "./injuries/_torso_injuries.html" %}
   {% include "./injuries/_arm_injuries.html" %}
   {% include "./injuries/_leg_injuries.html" %}
-
-  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -133,7 +144,7 @@
       {{ data['dmiDoYouHave'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="#">
+      <a href="/concepts/physical-injuries/one-q-page-v4/dmi">
         Change<span class="govuk-visually-hidden">{{ dmiQuestion }} </span>
       </a>
     </dd>
