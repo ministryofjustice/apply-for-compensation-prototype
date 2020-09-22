@@ -30,3 +30,31 @@ $govuk-assets-path: '/govuk/assets/';
   text-transform: uppercase;
   }
 }
+
+
+#feedback-panel {
+  background: $govuk-link-colour;
+  color: white;
+  padding: 15px;
+  p, .govuk-body, h2 {
+    color: white;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: govuk-colour("white");
+    }
+
+    &:hover {
+      color: lighten(govuk-colour("blue"), 45%);
+    }
+
+    &:focus {
+      color: govuk-colour("black");
+    }
+  }
+}
