@@ -12,11 +12,11 @@ module.exports = function (router, content) {
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/check-your-answers-page')
-    } else if (confirmationPreference === 'neither') {
-      // If the variable is any other value (or is missing) render the page requested
+    } else if ((confirmationPreference === 'Email') || (confirmationPreference === 'Text')) {
+      res.redirect('/application/name')
+    } else {
       res.redirect('/application/confirmation-options/transition')
     }
-    res.redirect('/application/name')
   })
 
   // Pass the question in to the page

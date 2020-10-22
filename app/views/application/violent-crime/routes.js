@@ -17,7 +17,7 @@ module.exports = function (router, content) {
   })
 
   router.post('/application/violent-crime/eligibility', function (req, res) {
-    res.render('application/incident-reported/index', content)
+    res.redirect('/application/incident-reported')
   })
 
 
