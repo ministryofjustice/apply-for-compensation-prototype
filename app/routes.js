@@ -15,97 +15,144 @@ router.get('/', function (req, res) {
 })
 
 
-// CURRENT RELEASE - RELEASE 8 MVP PROJECT //
-require('./views/application/fatal-application/routes')(router, viewContent);
-require('./views/application/british-citizen/routes')(router, viewContent);
-require('./views/application/over-18/routes')(router, viewContent);
-require('./views/application/who-is-making-the-application/routes')(router, viewContent);
-require('./views/application/who-is-making-the-application/routes')(router, viewContent);
-require('./views/application/sexual-assault-application/routes')(router, viewContent);
-require('./views/application/violent-crime/routes')(router, viewContent);
-require('./views/application/confirmation-options/routes')(router, viewContent);
-require('./views/application/you-have-a-choice/routes')(router, viewContent);
-require('./views/application/impact-on-you/routes')(router, viewContent);
-require('./views/application/your-choices/routes')(router, viewContent);
-require('./views/application/declaration/routes')(router, viewContent);
-require('./views/application/incident-reported/routes')(router, viewContent);
-require('./views/application/reporting-crime-not-reported/routes')(router, viewContent);
-require('./views/application/crime-reported-date/routes')(router, viewContent);
-require('./views/application/police-force/routes')(router, viewContent);
-require('./views/application/reporting-details-what-force/routes')(router, viewContent);
-require('./views/application/reporting-details-what-force-manual/routes')(router, viewContent);
-require('./views/application/crime-reference/routes')(router, viewContent);
-require('./views/application/single-or-multiple-incidents/routes')(router, viewContent);
-require('./views/application/period-of-abuse-start/routes')(router, viewContent);
-require('./views/application/period-of-abuse-end/routes')(router, viewContent);
-require('./views/application/incident-date/routes')(router, viewContent);
-require('./views/application/incident-location/routes')(router, viewContent);
-require('./views/application/do-you-know-offender-name/routes')(router, viewContent);
-require('./views/application/offender-name/routes')(router, viewContent);
-require('./views/application/contact-with-offender/routes')(router, viewContent);
-require('./views/application/what-is-relationship/routes')(router, viewContent);
-require('./views/application/name/routes')(router, viewContent);
-require('./views/application/name-have-other/routes')(router, viewContent);
-require('./views/application/name-other/routes')(router, viewContent);
-require('./views/application/gender/routes')(router, viewContent);
-require('./views/application/date-of-birth/routes')(router, viewContent);
-require('./views/application/email-address/routes')(router, viewContent);
-// require('./views/application/address/routes')(router, viewContent);
-require('./views/application/address-manually/routes')(router, viewContent);
-// require('./views/application/address-non-uk/routes')(router, viewContent);
-require('./views/application/phone-number/routes')(router, viewContent);
+// CURRENT RELEASE //
 
-require('./views/application/other-compensation/routes')(router, viewContent);
-require('./views/application/other-compensation-amount/routes')(router, viewContent);
-require('./views/application/other-compensation-decision/routes')(router, viewContent);
-require('./views/application/other-compensation-provider/routes')(router, viewContent);
-require('./views/application/other-compensation-when/routes')(router, viewContent);
-require('./views/application/other-compensation-why-not/routes')(router, viewContent);
+// 1 - Qualifying questions
 
-require('./views/application/check-your-answers-page/routes')(router, viewContent);
-// @todo these files need to go in the right place in the list above
-require('./views/application/previous-applications/routes')(router, viewContent);
-// require('./views/application/previous-not-eligible/routes')(router, viewContent);
-require('./views/application/application-delay/routes')(router, viewContent);
-// require('./views/application/find-uk-address/routes')(router, viewContent);
-require('./views/application/reporting-delay/routes')(router, viewContent);
-require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
+require('./views/application/_1-qualifying/fatal-application/routes')(router, viewContent);
+require('./views/application/_1-qualifying/sexual-assault-application/routes')(router, viewContent);
+require('./views/application/_1-qualifying/violent-crime/routes')(router, viewContent);
+require('./views/application/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
+require('./views/application/_1-qualifying/incident-reported/routes')(router, viewContent);
+require('./views/application/_1-qualifying/over-18/routes')(router, viewContent);
+require('./views/application/_1-qualifying/british-citizen/routes')(router, viewContent);
 
-// Context pages //
-require('./views/application/context-incident-details/routes')(router, viewContent);
-require('./views/application/context-contact-with-offender/routes')(router, viewContent);
-require('./views/application/context-prev-compensation/routes')(router, viewContent);
-require('./views/application/context-your-details/routes')(router, viewContent);
-require('./views/application/context-medical-details/routes')(router, viewContent);
-require('./views/application/context-about-your-injuries/routes')(router, viewContent);
-require('./views/application/context-about-dmi/routes')(router, viewContent);
+// 2 - Your details
+require('./views/application/_2-your-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_2-your-details/address/routes')(router, viewContent);
+require('./views/application/_2-your-details/context-your-details/routes')(router, viewContent);
+require('./views/application/_2-your-details/date-of-birth/routes')(router, viewContent);
+require('./views/application/_2-your-details/email-address/routes')(router, viewContent);
+require('./views/application/_2-your-details/name/routes')(router, viewContent);
+require('./views/application/_2-your-details/name-have-other/routes')(router, viewContent);
+require('./views/application/_2-your-details/name-other/routes')(router, viewContent);
+require('./views/application/_2-your-details/phone-number/routes')(router, viewContent);
 
-// Removing the options screen - adding mental and physical injuries //
-require('./views/application/your-claim/routes')(router, viewContent);
-require('./views/application/physical-injuries/routes')(router, viewContent);
-require('./views/application/special-payments/routes')(router, viewContent);
-require('./views/application/special-expenses/routes')(router, viewContent);
-require('./views/application/lost-earnings/routes')(router, viewContent);
-require('./views/application/other-expenses/routes')(router, viewContent);
-require('./views/application/dmi/routes')(router, viewContent);
-require('./views/application/dmi-duration/routes')(router, viewContent);
-require('./views/application/dmi-treatment-types/routes')(router, viewContent);
-require('./views/application/dmi-finished-treatment/routes')(router, viewContent);
-require('./views/application/dmi-more-info/routes')(router, viewContent);
+// 3 Incident details
+require('./views/application/_3-incident-details/application-delay/routes')(router, viewContent);
+require('./views/application/_3-incident-details/context-incident-details/routes')(router, viewContent);
+require('./views/application/_3-incident-details/crime-reference/routes')(router, viewContent);
+require('./views/application/_3-incident-details/crime-reported-date/routes')(router, viewContent);
+require('./views/application/_3-incident-details/england-location/routes')(router, viewContent);
+require('./views/application/_3-incident-details/incident-date/routes')(router, viewContent);
+require('./views/application/_3-incident-details/incident-location/routes')(router, viewContent);
+require('./views/application/_3-incident-details/period-of-abuse-end/routes')(router, viewContent);
+require('./views/application/_3-incident-details/period-of-abuse-start/routes')(router, viewContent);
+require('./views/application/_3-incident-details/police-force/routes')(router, viewContent);
+require('./views/application/_3-incident-details/reporting-delay/routes')(router, viewContent);
+require('./views/application/_3-incident-details/scotland-location/routes')(router, viewContent);
+require('./views/application/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/application/_3-incident-details/somewhere-else/routes')(router, viewContent);
+require('./views/application/_3-incident-details/wales-location/routes')(router, viewContent);
 
-require('./views/application/gp-visited/routes')(router, viewContent);
-require('./views/application/gp-registered/routes')(router, viewContent);
-require('./views/application/gp-details/routes')(router, viewContent);
+// 4 offender
+
+require('./views/application/_4-offender/contact-with-offender/routes')(router, viewContent);
+require('./views/application/_4-offender/context-contact-with-offender/routes')(router, viewContent);
+require('./views/application/_4-offender/do-you-know-offender-name/routes')(router, viewContent);
+require('./views/application/_4-offender/offender-name/routes')(router, viewContent);
+require('./views/application/_4-offender/what-is-relationship/routes')(router, viewContent);
+
+// 5 Injuries
+
+require('./views/application/_5-injuries/context-physical-injuries/routes')(router, viewContent);
+require('./views/application/_5-injuries/have-physical-injuries/routes')(router, viewContent);
+require('./views/application/_5-injuries/infection/routes')(router, viewContent);
+require('./views/application/_5-injuries/pregnancy/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/arm/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/elbow/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/hand/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/skin/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/arms/tissue/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/leg/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/ankle/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/foot/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/hip/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/knee/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/skin/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/legs/tissue/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/back/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/chest/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/genitals/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/skin/routes')(router, viewContent);
+require('./views/application/_5-injuries/injured-body-parts/torso/tissue/routes')(router, viewContent);
+require('./views/application/_5-injuries/context-about-dmi/routes')(router, viewContent);
+require('./views/application/_5-injuries/dmi/routes')(router, viewContent);
+require('./views/application/_5-injuries/dmi-duration/routes')(router, viewContent);
+require('./views/application/_5-injuries/how-it-affected-you/routes')(router, viewContent);
 
 
-// Police MVP //
-require('./views/application/england-location/routes')(router, viewContent);
-require('./views/application/england-forces/routes')(router, viewContent);
-require('./views/application/scotland-location/routes')(router, viewContent);
-require('./views/application/scotland-forces/routes')(router, viewContent);
-require('./views/application/wales-location/routes')(router, viewContent);
-require('./views/application/wales-forces/routes')(router, viewContent);
-require('./views/application/somewhere-else/routes')(router, viewContent);
+// 6 Treatment
+
+require('./views/application/_6-treatment/treatment-details/routes')(router, viewContent);
+require('./views/application/_6-treatment/finished-treatment/routes')(router, viewContent);
+require('./views/application/_6-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/_6-treatment/context-treatment/routes')(router, viewContent);
+require('./views/application/_6-treatment/gp-details/routes')(router, viewContent);
+require('./views/application/_6-treatment/gp-registered/routes')(router, viewContent);
+require('./views/application/_6-treatment/gp-visited/routes')(router, viewContent);
+require('./views/application/_6-treatment/hospital-visited/routes')(router, viewContent);
+require('./views/application/_6-treatment/hospital-details/routes')(router, viewContent);
+require('./views/application/_6-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/application/_6-treatment/dentist-details/routes')(router, viewContent);
+
+require('./views/application/_7-financial-losses/context-your-money/routes')(router, viewContent);
+require('./views/application/_7-financial-losses/lost-earnings/routes')(router, viewContent);
+require('./views/application/_7-financial-losses/work-capacity/routes')(router, viewContent);
+require('./views/application/_7-financial-losses/work-details/routes')(router, viewContent);
+require('./views/application/_7-financial-losses/special-expenses/routes')(router, viewContent);
+
+// 8 Other comp
+
+require('./views/application/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
+require('./views/application/_8-other-comp/other-compensation/routes')(router, viewContent);
+require('./views/application/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
+require('./views/application/_8-other-comp/other-compensation-decision/routes')(router, viewContent);
+require('./views/application/_8-other-comp/other-compensation-provider/routes')(router, viewContent);
+require('./views/application/_8-other-comp/other-compensation-when/routes')(router, viewContent);
+require('./views/application/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
+require('./views/application/_8-other-comp/previous-applications/routes')(router, viewContent);
+
+// End Screens
+require('./views/application/_9-end/check-your-answers-page/routes')(router, viewContent);
+require('./views/application/_9-end/declaration/routes')(router, viewContent);
+
+
+//-------------------------//
+//  Concepts and ideation  //
+//-------------------------//
 
 // Police Force Concept for possible testing //
 require('./views/concepts/police-force/incident-location/routes')(router, viewContent);
