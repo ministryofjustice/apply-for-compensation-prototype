@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ violentCrimeQuestion }} - {{ serviceName }} - GOV.UK
+{{ over18Question }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,30 +30,27 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "violentCrime",
-            "name": "violentCrime",
-            currentValue: data['violentCrime'],
-            "fieldset": {
-              "legend": {
-                "text": violentCrimeQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+            classes: "govuk-radios--inline",
+            idPrefix: "applicationAdditionalInfoQ",
+            name: "applicationAdditionalInfoQ",
+            currentValue: data['applicationAdditionalInfoQ'],
+            fieldset: {
+              legend: {
+                text: "Is there anything else you want to tell us about the incident?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
-          hint: {
-          text: 'This could include if you were there when a loved one was attacked and saw it happen, or you were there immediately after.'
-          },
             "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("violentCrime", "Yes")
+                checked: checked("applicationAdditionalInfoQ", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("violentCrime", "No")
+                checked: checked("applicationAdditionalInfoQ", "No")
               }
             ]
           }) }}

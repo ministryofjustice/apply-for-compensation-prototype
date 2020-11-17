@@ -20,7 +20,7 @@ module.exports = function (router, content) {
       // @todo we need to build a page that explains to users that they can only use this service if they are over 18
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/_9-end/check-your-answers-page')
+      return res.redirect('/application/_10-end/check-your-answers-page')
     }
     res.redirect('/application/_2-your-details/address')
   })

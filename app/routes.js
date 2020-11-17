@@ -20,8 +20,6 @@ router.get('/', function (req, res) {
 // 1 - Qualifying questions
 
 require('./views/application/_1-qualifying/fatal-application/routes')(router, viewContent);
-require('./views/application/_1-qualifying/sexual-assault-application/routes')(router, viewContent);
-require('./views/application/_1-qualifying/violent-crime/routes')(router, viewContent);
 require('./views/application/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
 require('./views/application/_1-qualifying/incident-reported/routes')(router, viewContent);
 require('./views/application/_1-qualifying/over-18/routes')(router, viewContent);
@@ -46,6 +44,7 @@ require('./views/application/_3-incident-details/crime-reported-date/routes')(ro
 require('./views/application/_3-incident-details/england-location/routes')(router, viewContent);
 require('./views/application/_3-incident-details/incident-date/routes')(router, viewContent);
 require('./views/application/_3-incident-details/incident-location/routes')(router, viewContent);
+require('./views/application/_3-incident-details/incident-type/routes')(router, viewContent);
 require('./views/application/_3-incident-details/period-of-abuse-end/routes')(router, viewContent);
 require('./views/application/_3-incident-details/period-of-abuse-start/routes')(router, viewContent);
 require('./views/application/_3-incident-details/police-force/routes')(router, viewContent);
@@ -54,6 +53,8 @@ require('./views/application/_3-incident-details/scotland-location/routes')(rout
 require('./views/application/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
 require('./views/application/_3-incident-details/somewhere-else/routes')(router, viewContent);
 require('./views/application/_3-incident-details/wales-location/routes')(router, viewContent);
+require('./views/application/_3-incident-details/other-details-question/routes')(router, viewContent);
+require('./views/application/_3-incident-details/other-details/routes')(router, viewContent);
 
 // 4 offender
 
@@ -145,9 +146,15 @@ require('./views/application/_8-other-comp/other-compensation-when/routes')(rout
 require('./views/application/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
 require('./views/application/_8-other-comp/previous-applications/routes')(router, viewContent);
 
+// 9 Additional info
+
+require('./views/application/_9-additional-info/context-additional-info/routes')(router, viewContent);
+require('./views/application/_9-additional-info/do-you-have/routes')(router, viewContent);
+require('./views/application/_9-additional-info/additional-info/routes')(router, viewContent);
+
 // End Screens
-require('./views/application/_9-end/check-your-answers-page/routes')(router, viewContent);
-require('./views/application/_9-end/declaration/routes')(router, viewContent);
+require('./views/application/_10-end/check-your-answers-page/routes')(router, viewContent);
+require('./views/application/_10-end/declaration/routes')(router, viewContent);
 
 
 //-------------------------//

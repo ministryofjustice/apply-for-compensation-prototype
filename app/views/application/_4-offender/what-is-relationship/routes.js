@@ -5,7 +5,7 @@ module.exports = function (router, content) {
   router.post('/application/_4-offender/what-is-relationship', function (req, res) {
 
     if(req.session.checking_answers) {
-      return res.redirect('/application/_9-end/check-your-answers-page')
+      return res.redirect('/application/_10-end/check-your-answers-page')
     }
     res.redirect('/application/_5-injuries/context-physical-injuries')
   })

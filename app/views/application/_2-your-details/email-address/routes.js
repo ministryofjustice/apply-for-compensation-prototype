@@ -8,7 +8,7 @@ module.exports = function (router, content) {
       req.session.data['emailAddress'] = 'name@domain.com'
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/_9-end/check-your-answers-page')
+      return res.redirect('/application/_10-end/check-your-answers-page')
     }
     res.redirect('/application/_3-incident-details/context-incident-details')
   })

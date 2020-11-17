@@ -42,6 +42,8 @@ Check your answers - {{ serviceName }} - GOV.UK
 
         {% include "./includes/_contact_details.html" %}
 
+        {% include "./includes/_additional-info.html" %}
+
     <form class="form" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton(

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ sexualAbuseQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+            classes: "govuk-checkboxes",
+            idPrefix: "incidentType",
+            name: "incidentType",
+            currentValue: data['incidentType'],
+            fieldset: {
+              legend: {
+                text: "What was the cause of your injuries?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Attack using an animal",
+                "text": "Attack using an animal",
+                checked: checked("incidentType", "Attacked using an animal")
+              },
+              {
+                "value": "Attack using a vehicle",
+                "text": "Attack using a vehicle",
+                checked: checked("incidentType", "Attack using a vehicle")
+              },
+              {
+                "value": "Assault using a weapon",
+                "text": "Assault using a weapon",
+                checked: checked("incidentType", "Assault using a weapon")
+              },
+              {
+                "value": "Assault",
+                "text": "Assault",
+                checked: checked("incidentType", "Assault")
+              },
+              {
+                "value": "Arson",
+                "text": "Arson",
+                checked: checked("incidentType", "Arson")
+              },
+              {
+                "value": "Domestic or family violence",
+                "text": "Domestic or family violence",
+                checked: checked("incidentType", "Domestic or family violence")
+              },
+              {
+                "value": "Poisoning",
+                "text": "Poisoning",
+                checked: checked("incidentType", "Poisoning")
+              },
+              {
+                "value": "Sexual assault or abuse",
+                "text": "Sexual assault or abuse",
+                checked: checked("incidentType", "Sexual assault or abuse")
+              },
+              {
+                "value": "Sporting injury",
+                "text": "Sporting injury",
+                checked: checked("incidentType", "Sporting injury")
+              },
+              {
+                "value": "Witnessed the incident",
+                "text": "Witnessed the incident",
+                checked: checked("incidentType", "Witnessed the incident")
+              }
+              ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

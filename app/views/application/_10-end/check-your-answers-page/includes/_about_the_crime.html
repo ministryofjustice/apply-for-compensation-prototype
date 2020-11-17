@@ -7,6 +7,20 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Cause of injuries
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['incidentType'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="single-or-multiple-incidents">
+        Change<span class="govuk-visually-hidden"> cause of injuries</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ singleOrMultipleIncidentsQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
@@ -158,6 +172,37 @@
     </dd>
   </div>
     {% endif %}
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Is there anything else you want to tell us about the incident?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['otherIncidentDetailsQ'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="who-is-making-the-application">
+          Change<span class="govuk-visually-hidden">Is there anything else you want to tell us about the incident? </span>
+        </a>
+      </dd>
+    </div>
+
+    {% if data['otherIncidentDetailsQ'] === 'Yes' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Other information about the incident
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['indidentOtherInfo'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="over-18">
+          Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">

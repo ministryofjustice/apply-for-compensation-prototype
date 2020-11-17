@@ -12,7 +12,7 @@ module.exports = function (router, content) {
      res.redirect('/application/_8-other-comp/other-compensation-why-not')
    } else {
      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-       return res.redirect('/application/_9-end/check-your-answers-page')
+       return res.redirect('/application/_10-end/check-your-answers-page')
      }
      // If the variable is any other value (or is missing) render the page requested
      res.redirect('/application/_8-other-comp/other-compensation-provider')

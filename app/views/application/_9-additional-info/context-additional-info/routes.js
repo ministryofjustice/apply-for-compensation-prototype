@@ -3,13 +3,13 @@ module.exports = function (router, content) {
   // File: bridge
   // Variable: criminalConvictions
 
-  router.post('/application/_3-incident-details/context-incident-details', function (req, res) {
-    res.redirect('/application/_3-incident-details/incident-type')
+  router.post('/application/_9-additional-info/context-additional-info', function (req, res) {
+    res.redirect('/application/_9-additional-info/do-you-have')
   })
 
   // Pass the question in to the page
-  router.get('/application/_3-incident-details/context-incident-details/', function (req, res) {
-    res.render('application/_3-incident-details/context-incident-details/index', content)
+  router.get('/application/_9-additional-info/context-additional-info/', function (req, res) {
+    res.render('application/_9-additional-info/context-additional-info/index', content)
   })
   // END__######################################################################################################
 }

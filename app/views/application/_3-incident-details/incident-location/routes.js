@@ -5,7 +5,7 @@ module.exports = function (router, content) {
   router.post('/application/_3-incident-details/incident-location', function (req, res) {
 
     // if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    //   return res.redirect('/application/_3-incident-details/_9-end/check-your-answers-page')
+    //   return res.redirect('/application/_3-incident-details/_10-end/check-your-answers-page')
     // }
 
   // Get the answer from the query string

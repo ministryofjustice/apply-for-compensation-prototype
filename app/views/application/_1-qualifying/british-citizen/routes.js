@@ -12,10 +12,10 @@ router.post('/application/_1-qualifying/british-citizen', function (req, res) {
     res.redirect('/application/transition')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/_9-end/check-your-answers-page')
+      return res.redirect('/application/_10-end/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/_1-qualifying/sexual-assault-application')
+    res.redirect('/application/_1-qualifying/incident-reported')
   }
 })
 

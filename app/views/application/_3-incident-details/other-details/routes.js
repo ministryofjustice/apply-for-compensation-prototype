@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: over-18
   // Variable: over18
 
-  router.post('/application/_1-qualifying/over-18', function (req, res) {
+  router.post('/application/_3-incident-details/other-details', function (req, res) {
     // Get the answer from the query string
     var over18 = req.session.data['over18']
 
@@ -15,21 +15,21 @@ module.exports = function (router, content) {
         return res.redirect('/application/_10-end/check-your-answers-page')
       }
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_1-qualifying/british-citizen')
+      res.redirect('/application/_4-offender/context-contact-with-offender')
     }
   })
 
   // Pass the question in to the page
-  router.get('/application/_1-qualifying/over-18/', function (req, res) {
-    res.render('application/_1-qualifying/over-18/index', content)
+  router.get('/application/_3-incident-details/other-details/', function (req, res) {
+    res.render('application/_3-incident-details/other-details/index', content)
   })
   //error page
-  router.get('/application/_1-qualifying/over-18/error', function (req, res) {
-    res.render('application/_1-qualifying/over-18/error', content)
+  router.get('/application/_3-incident-details/other-details/error', function (req, res) {
+    res.render('application/_3-incident-details/other-details/error', content)
   })
   //error page
-  router.get('/application/_1-qualifying/over-18/transition', function (req, res) {
-    res.render('application/_1-qualifying/over-18/transition', content)
+  router.get('/application/_3-incident-details/other-details/transition', function (req, res) {
+    res.render('application/_3-incident-details/other-details/transition', content)
   })
   // END__######################################################################################################
 }
