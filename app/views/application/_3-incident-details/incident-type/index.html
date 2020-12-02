@@ -36,7 +36,7 @@
             currentValue: data['incidentType'],
             fieldset: {
               legend: {
-                text: "What was the cause of your injuries?",
+                text: "What led to your injuries?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -88,9 +88,9 @@
                 checked: checked("incidentType", "Witnessing an incident")
               },
               {
-                "value": "None of the above",
-                "text": "None of the above",
-                checked: checked("incidentType", "None of the above")
+                "value": "Other",
+                "text": "Other",
+                checked: checked("incidentType", "Other")
               }
               ]
           }) }}
@@ -102,8 +102,6 @@
     </form>
 
   </div>
-</div>
-</main>
 </div>
 
 {% endblock %}
