@@ -27,10 +27,10 @@
 
     <form class="form" method="post">
 
-      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
-      {{ govukCheckboxes({
-            classes: "govuk-checkboxes",
+      {{ govukRadios({
+            classes: "govuk-radios",
             idPrefix: "incidentType",
             name: "incidentType",
             currentValue: data['incidentType'],
@@ -43,39 +43,14 @@
             },
             "items": [
               {
-                "value": "Attack using an animal",
-                "text": "Attack using an animal",
-                checked: checked("incidentType", "Attacked using an animal")
+                "value": "Physical assault",
+                "text": "Physical assault",
+                checked: checked("incidentType", "Physical assault")
               },
               {
-                "value": "Attack using a vehicle",
-                "text": "Attack using a vehicle",
-                checked: checked("incidentType", "Attack using a vehicle")
-              },
-              {
-                "value": "Assault using a weapon",
-                "text": "Assault using a weapon",
-                checked: checked("incidentType", "Assault using a weapon")
-              },
-              {
-                "value": "Assault",
-                "text": "Assault",
-                checked: checked("incidentType", "Assault")
-              },
-              {
-                "value": "Arson",
-                "text": "Arson",
-                checked: checked("incidentType", "Arson")
-              },
-              {
-                "value": "Domestic or family violence",
-                "text": "Domestic or family violence",
-                checked: checked("incidentType", "Domestic or family violence")
-              },
-              {
-                "value": "Poisoning",
-                "text": "Poisoning",
-                checked: checked("incidentType", "Poisoning")
+                "value": "Assault with a weapon",
+                "text": "Assault with a weapon",
+                checked: checked("incidentType", "Assault with a weapon")
               },
               {
                 "value": "Sexual assault or abuse",
@@ -83,14 +58,39 @@
                 checked: checked("incidentType", "Sexual assault or abuse")
               },
               {
-                "value": "Sporting injury",
-                "text": "Sporting injury",
-                checked: checked("incidentType", "Sporting injury")
+                "value": "Domestic or family violence",
+                "text": "Domestic or family violence",
+                checked: checked("incidentType", "Domestic or family violence")
               },
               {
-                "value": "Witnessed the incident",
-                "text": "Witnessed the incident",
-                checked: checked("incidentType", "Witnessed the incident")
+                "value": "Arson",
+                "text": "Arson",
+                checked: checked("incidentType", "Arson")
+              },
+              {
+                "value": "Poisoning",
+                "text": "Poisoning",
+                checked: checked("incidentType", "Poisoning")
+              },
+              {
+                "value": "Animal attack",
+                "text": "Animal attack",
+                checked: checked("incidentType", "Animal attack")
+              },
+              {
+                "value": "Vehicle attack",
+                "text": "Vehicle attack",
+                checked: checked("incidentType", "Vehicle attack")
+              },
+              {
+                "value": "Witnessing an incident",
+                "text": "Witnessing an incident",
+                checked: checked("incidentType", "Witnessing an incident")
+              },
+              {
+                "value": "None of the above",
+                "text": "None of the above",
+                checked: checked("incidentType", "None of the above")
               }
               ]
           }) }}
