@@ -175,14 +175,14 @@
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        Is there anything else you want to tell us about the incident?
+        Would you like to describe the crime in your own words?
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['otherIncidentDetailsQ'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="who-is-making-the-application">
-          Change<span class="govuk-visually-hidden">Is there anything else you want to tell us about the incident? </span>
+          Change<span class="govuk-visually-hidden">Would you like to describe the crime in your own words? </span>
         </a>
       </dd>
     </div>
@@ -190,14 +190,14 @@
     {% if data['otherIncidentDetailsQ'] === 'Yes' %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        Other information about the incident
+        Your description of the crime
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['indidentOtherInfo'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="over-18">
-          Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+          Change<span class="govuk-visually-hidden"> your description of the crime</span>
         </a>
       </dd>
     </div>

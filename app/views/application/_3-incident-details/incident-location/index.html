@@ -59,15 +59,21 @@
             ]
           }) }}
 
-      {{ govukButton({
+          {{ govukDetails({
+            summaryText: "Help with where it happened",
+            text: "If the crime took place in more than one country, you can provide additional details later in this claim."
+          }) }}
+
+
+          {{ govukButton({
             "text": "Continue"
           }) }}
+
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
 
     </form>
 
   </div>
-</div>
-</main>
 </div>
 
 {% endblock %}

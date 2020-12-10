@@ -46,6 +46,12 @@
                   "name": "WalesLocation"
                   }) }}
 
+
+      {{ govukDetails({
+        summaryText: "Help with where it happened",
+        text: "If the crime took place in more than one place, you can provide additional details later in this claim."
+      }) }}
+
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({

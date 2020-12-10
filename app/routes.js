@@ -53,8 +53,8 @@ require('./views/application/_3-incident-details/scotland-location/routes')(rout
 require('./views/application/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
 require('./views/application/_3-incident-details/somewhere-else/routes')(router, viewContent);
 require('./views/application/_3-incident-details/wales-location/routes')(router, viewContent);
-require('./views/application/_3-incident-details/other-details-question/routes')(router, viewContent);
-require('./views/application/_3-incident-details/other-details/routes')(router, viewContent);
+require('./views/application/_3-incident-details/own-words-question/routes')(router, viewContent);
+require('./views/application/_3-incident-details/own-words/routes')(router, viewContent);
 
 // 4 offender
 
@@ -149,8 +149,8 @@ require('./views/application/_8-other-comp/previous-applications/routes')(router
 // 9 Additional info
 
 require('./views/application/_9-additional-info/context-additional-info/routes')(router, viewContent);
-require('./views/application/_9-additional-info/do-you-have/routes')(router, viewContent);
-require('./views/application/_9-additional-info/additional-info/routes')(router, viewContent);
+require('./views/application/_9-additional-info/additional-info-question/routes')(router, viewContent);
+require('./views/application/_9-additional-info/additional-info-details/routes')(router, viewContent);
 
 // End Screens
 require('./views/application/_10-end/check-your-answers-page/routes')(router, viewContent);

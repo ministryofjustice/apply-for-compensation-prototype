@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ over18Question }} - {{ serviceName }} - GOV.UK
+Would you like to describe the crime in your own words? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,26 +31,29 @@
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            idPrefix: "applicationAdditionalInfoQ",
-            name: "applicationAdditionalInfoQ",
-            currentValue: data['applicationAdditionalInfoQ'],
+            idPrefix: "otherIncidentDetailsQ",
+            name: "otherIncidentDetailsQ",
+            currentValue: data['otherIncidentDetailsQ'],
             fieldset: {
               legend: {
-                text: "Is there anything else you want to tell us about the incident?",
+                text: "Would you like to describe the crime in your own words?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
+            },
+            hint: {
+              text: "You may want to include details that are not included in the crime report that the police will send us."
             },
             "items": [
               {
                 "value": "Yes",
                 "text": "Yes",
-                checked: checked("applicationAdditionalInfoQ", "Yes")
+                checked: checked("otherIncidentDetailsQ", "Yes")
               },
               {
                 "value": "No",
                 "text": "No",
-                checked: checked("applicationAdditionalInfoQ", "No")
+                checked: checked("otherIncidentDetailsQ", "No")
               }
             ]
           }) }}

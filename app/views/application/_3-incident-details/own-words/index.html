@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ over18Question }} - {{ serviceName }} - GOV.UK
+Additional details of the crime - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,12 +30,15 @@
     {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
-            name: "applicationAdditionalInfo",
-            id: "applicationAdditionalInfo",
-            currentValue: data['applicationAdditionalInfo'],
+            name: "indidentOtherInfo",
+            id: "indidentOtherInfo",
+            currentValue: data['indidentOtherInfo'],
             label: {
-              text: "Enter any other details about the incident",
+              text: "Additional details of the crime",
               classes: "govuk-label--xl"
+            },
+            hint: {
+              text: "You can add details that are not included in the crime report that the police will send us."
             }
           }) }}
 

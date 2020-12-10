@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: over-18
   // Variable: over18
 
-  router.post('/application/_3-incident-details/other-details', function (req, res) {
+  router.post('/application/_3-incident-details/own-words', function (req, res) {
     // Get the answer from the query string
     var over18 = req.session.data['over18']
 
@@ -20,16 +20,16 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/application/_3-incident-details/other-details/', function (req, res) {
-    res.render('application/_3-incident-details/other-details/index', content)
+  router.get('/application/_3-incident-details/own-words/', function (req, res) {
+    res.render('application/_3-incident-details/own-words/index', content)
   })
   //error page
-  router.get('/application/_3-incident-details/other-details/error', function (req, res) {
-    res.render('application/_3-incident-details/other-details/error', content)
+  router.get('/application/_3-incident-details/own-words/error', function (req, res) {
+    res.render('application/_3-incident-details/own-words/error', content)
   })
   //error page
-  router.get('/application/_3-incident-details/other-details/transition', function (req, res) {
-    res.render('application/_3-incident-details/other-details/transition', content)
+  router.get('/application/_3-incident-details/own-words/transition', function (req, res) {
+    res.render('application/_3-incident-details/own-words/transition', content)
   })
   // END__######################################################################################################
 }
