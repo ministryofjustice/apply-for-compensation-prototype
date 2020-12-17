@@ -22,25 +22,22 @@
     <h1 class="govuk-heading-xl">
       {{ declarationHeading }}
     </h1>
-    <p class="govuk-body">By submitting the application you agree that:</p>
+    <p class="govuk-body">By submitting this application you agree that:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>the information you’ve given is true as far as you know</li>
-      <li>we can share your details with other organisations and gather information from them</li>
+      <li>the information you’ve given here is true as far as you know</li>
+      <li>we can share the information you’ve given in this claim with:
+        <ul>
+          <li>police, prosecutors and ACRO Criminal Records Office</li>
+          <li>medical organisations and staff, including police medical staff/li>
+          <li>any other individuals or organisations needed to process your application (including medical or other experts)</li>
+          </ul>
+      <li>we can receive information from the organisations and individuals described above</li>
     </ul>
-    <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Who we may share your data with
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body">These organisations may include:</p>
-          <ul class="govuk-list govuk-list--bullet">
-          <li>the police, prosecutors and ACRO Criminal Records Office</li>
-          <li>medical organisations and medical staff, including police medical staff</li>
-          <li>any other person or organisation needed to process your application (including medical experts or other experts)</li></ul></div>
-      </details>
-      <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
+
+    <p class="govuk-body">We often have to ask your GP or other service provider for evidence about your injuries and treatment. We will let you know if we need to do this.</p>
+
+
+    <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
     {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
     {{ govukWarningText({
@@ -57,8 +54,5 @@
 
     </form>
   </div>
-</div>
-</div>
-</main>
 </div>
 {% endblock %}

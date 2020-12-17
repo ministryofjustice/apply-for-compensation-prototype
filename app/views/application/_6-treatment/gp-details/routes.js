@@ -11,8 +11,6 @@ module.exports = function (router, content) {
     }
   })
 
-
-
   // Pass the question in to the page
   router.get('/application/_6-treatment/gp-details/', function (req, res) {
     res.render('application/_6-treatment/gp-details/index', content)

@@ -4,12 +4,13 @@ router.post('/application/_5-injuries/context-physical-injuries', function (req,
   // Get the answer from the query string
   var incidentType = req.session.data['incidentType']
 
-  if (incidentType === 'saoa') {
+  if (incidentType === 'Sexual assault or abuse') {
     // Redirect to the relevant page
-    res.redirect('/application/_5-injuries/infection')
+    res.redirect('/application/_5-injuries/infection/vosaa')
+
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/_5-injuries/infection/vosaa')
+    res.redirect('/application/_5-injuries/infection')
   }
 })
 

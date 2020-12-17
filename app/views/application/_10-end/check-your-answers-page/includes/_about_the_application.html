@@ -7,6 +7,20 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Are you applying for someone who has died?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['fatalApplication'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="who-is-making-the-application">
+        Change<span class="govuk-visually-hidden">Are you applying for someone who has died?</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ whoIsMakingTheApplicationQuestion }}
     </dt>
     <dd class="govuk-summary-list__value">
@@ -38,7 +52,19 @@
       Confirmation method
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['confirmationPreference'] }}
+
+      {% if data['confirmationPreference'] === 'Text' %}
+
+      Text message to {{ data['phoneNumber'] }}
+
+      {% endif %}
+
+      {% if data['confirmationPreference'] === 'Email' %}
+
+      Email to {{ data['emailAddress'] }}
+
+      {% endif %}
+
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="confirmation-options">

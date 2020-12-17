@@ -10,16 +10,14 @@ router.post('/application/_6-treatment/dentist-visited', function (req, res) {
   var visitedGP = req.session.data['visitedGP']
   var registeredGP = req.session.data['registeredGP']
 
-  if (visitedDentist === 'Yes') {
-    // Redirect to the relevant page
-    res.redirect('/application/_6-treatment/dentist-details')
-  } else {
-
-    if ((registeredGP === 'No') && (visitedGP === 'No')) {
+  if (visitedDentist === 'No') {
+    if (visitedGP === 'No') {
       res.redirect('/application/_6-treatment/hospital-visited/')
     } else {
-      res.redirect('/application/_6-treatment/context-your-money/')
+      res.redirect('/application/_7-financial-losses/context-your-money/')
     }
+  } else if (visitedDentist === 'Yes') {
+    res.redirect('/application/_6-treatment/dentist-details')
   }
 })
 

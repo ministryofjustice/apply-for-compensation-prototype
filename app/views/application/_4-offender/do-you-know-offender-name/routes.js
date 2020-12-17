@@ -6,10 +6,16 @@ module.exports = function (router, content) {
   router.post('/application/_4-offender/do-you-know-offender-name', function (req, res) {
     // Get the answer from the query string
     var knowOffender = req.session.data['know-offender']
+    var incidentType = req.session.data['incidentType']
 
     if (knowOffender === 'No')  {
       // Redirect to the relevant page
-      res.redirect('/application/_5-injuries/context-physical-injuries')
+      if (incidentType === 'Witnessing an incident') {
+          // Redirect to the relevant page
+          res.redirect('/application/_5-injuries/context-about-dmi')
+      } else {
+        res.redirect('/application/_5-injuries/context-physical-injuries')
+      }
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_4-offender/offender-name')

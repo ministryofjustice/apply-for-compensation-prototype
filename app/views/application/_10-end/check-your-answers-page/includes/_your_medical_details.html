@@ -1,6 +1,6 @@
 <!-- About the crime -->
 <h2 class="govuk-heading-l">
-  Your treatment
+  Your medical details
 </h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -23,7 +23,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Treatment for your mental health
+      Mental health treatments
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['treatmentTypes'] }}
@@ -157,14 +157,14 @@
     {% if (data['havePhysicalInjuries'] === 'Yes') or (data['haveInfection'] === 'Yes') or (data['pregnancyLoss'] == 'Yes') or (data['pregnancy'] == 'Yes') %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        Did you seek medical help?
+        Did you seek other medical help?
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['seekMedicalHelp'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="/application/_5-injuries/hospital-visited">
-          Change<span class="govuk-visually-hidden">Did you seek medical help? </span>
+          Change<span class="govuk-visually-hidden">Did you seek other medical help?</span>
         </a>
       </dd>
     </div>
@@ -176,7 +176,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Treatment provider
+      Where did you have treatment?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['medical-practice-name'] }}<br />

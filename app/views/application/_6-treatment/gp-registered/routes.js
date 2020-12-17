@@ -5,13 +5,21 @@ module.exports = function (router, content) {
 
 router.post('/application/_6-treatment/gp-registered', function (req, res) {
   // Get the answer from the query string
-  var mentalHealth = req.session.data['registeredGP']
+  var registeredGP = req.session.data['registeredGP']
+  let injuredParts = req.session.data['injuredParts']
 
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/_9_end/check-your-answers-page')
+  if (registeredGP === 'No') {
+
+    if (injuredParts && injuredParts.includes('Head, face or neck')) {
+      res.redirect('/application/_6-treatment/dentist-visited')
+    } else {
+      res.redirect('/application/_6-treatment/hospital-visited/')
     }
+
+  } else if (registeredGP === 'Yes') {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/_6-treatment/gp-visited')
+  }
 })
 
 // Pass the question in to the page

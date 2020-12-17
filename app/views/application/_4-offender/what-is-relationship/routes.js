@@ -4,10 +4,14 @@ module.exports = function (router, content) {
   //
   router.post('/application/_4-offender/what-is-relationship', function (req, res) {
 
-    if(req.session.checking_answers) {
-      return res.redirect('/application/_10-end/check-your-answers-page')
+    var incidentType = req.session.data['incidentType']
+
+    if (incidentType === 'Witnessing an incident') {
+        // Redirect to the relevant page
+        res.redirect('/application/_5-injuries/context-about-dmi')
+    } else {
+      res.redirect('/application/_5-injuries/context-physical-injuries')
     }
-    res.redirect('/application/_5-injuries/context-physical-injuries')
   })
 
   // Pass the question in to the page

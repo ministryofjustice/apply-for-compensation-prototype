@@ -10,7 +10,7 @@ router.post('/application/_6-treatment/gp-visited', function (req, res) {
   var registeredGP = req.session.data['registeredGP']
   let injuredParts = req.session.data['injuredParts']
 
-  if ((registeredGP === 'No') && (visitedGP === 'No')) {
+  if (visitedGP === 'No') {
 
     if (injuredParts.includes('Head, face or neck')) {
       res.redirect('/application/_6-treatment/dentist-visited')
@@ -18,7 +18,7 @@ router.post('/application/_6-treatment/gp-visited', function (req, res) {
       res.redirect('/application/_6-treatment/hospital-visited/')
     }
 
-  } else {
+  } else if (visitedGP === 'Yes') {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/_6-treatment/gp-details')
   }
