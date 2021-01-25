@@ -10,8 +10,8 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/application/_2-your-details/somewhere-else/', function (req, res) {
-    res.render('application/_2-your-details/somewhere-else/index', content)
+  router.get('/application/_3-incident-details/somewhere-else/', function (req, res) {
+    res.render('application/_3-incident-details/somewhere-else/index', content)
   })
 
   // END__######################################################################################################

@@ -58,3 +58,14 @@ $govuk-assets-path: '/govuk/assets/';
     }
   }
 }
+
+
+
+.govuk-button--blue {
+  background: #1d70b8;
+  &:hover {
+    background: #003078;
+  }
+}
+
+.hidden {display: none;}

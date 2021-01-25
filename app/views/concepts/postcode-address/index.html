@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Enter your address - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Enter your address
+          </h1>
+        </legend>
+
+        <div id="address-manually" class="hidden">
+          {% include "./includes/address-manually.html" %}
+          <p class="govuk-body"><a id="search-postcode" class="govuk-link" href="#">Search by postcode</a></p>
+        </div>
+        <div id="postcode-finder" class="">
+          {% include "./includes/postcode-finder.html" %}
+          <p class="govuk-body"><a id="enter-manually" class="govuk-link" href="#">Enter address manually</a></p>
+        </div>
+
+    </fieldset>
+
+        {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+
+  $( "#find-address" ).click(function() {
+    $( "#address-select" ).removeClass('hidden');
+    return false;
+  });
+
+  $( "#address-select select" ).change(function() {
+    $( "#address-select" ).addClass('hidden');
+    $( "#address-fields" ).removeClass('hidden');
+  });
+
+  $( "#enter-manually" ).click(function() {
+    $('#postcode-finder').addClass('hidden');
+    $('#address-manually').removeClass('hidden');
+    return false;
+  });
+
+  $( "#search-postcode" ).click(function() {
+    $('#postcode-finder').removeClass('hidden');
+    $('#address-manually').addClass('hidden');
+    return false;
+  });
+
+
+</script>
+{% endblock %}

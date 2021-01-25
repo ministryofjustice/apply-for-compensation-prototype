@@ -12,7 +12,10 @@ router.post('/application/_6-treatment/gp-visited', function (req, res) {
 
   if (visitedGP === 'No') {
 
-    if (injuredParts.includes('Head, face or neck')) {
+    if (registeredGP === 'Yes') {
+      res.redirect('/application/_6-treatment/gp-details')
+
+    } else if (injuredParts.includes('Head, face or neck')) {
       res.redirect('/application/_6-treatment/dentist-visited')
     } else {
       res.redirect('/application/_6-treatment/hospital-visited/')

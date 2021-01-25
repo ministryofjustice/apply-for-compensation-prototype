@@ -1,0 +1,64 @@
+<div class="govuk-form-group">
+  <label class="govuk-label" for="address-postcode">
+    Postcode
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"><br>
+  <button id="find-address" class="govuk-button govuk-button--blue govuk-!-margin-top-3 govuk-!-margin-bottom-5" data-module="govuk-button">
+    Find address
+  </button>
+</div>
+
+<div id="address-select" class="govuk-form-group hidden">
+  <label class="govuk-label" for="sort">
+    Select address
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="" >Select the address</option>
+    <option value="updated">0/1 1023 High Street, Glasgow, G1 1DS</option>
+    <option value="updated">0/2 1023 High Street, Glasgow, G1 1DS</option>
+    <option value="updated">1/1 1023 High Street, Glasgow, G1 1DS</option>
+    <option value="updated">1/2 1023 High Street, Glasgow, G1 1DS</option>
+    <option value="updated">2/1 1023 High Street, Glasgow, G1 1DS</option>
+    <option value="updated">2/2 1023 High Street, Glasgow, G1 1DS</option>
+  </select>
+</div>
+
+<div id="address-fields" class="hidden">
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-1">
+      Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+    </label>
+    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1" value="0/1 1023 High Street">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-2">
+      <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+    </label>
+    <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-town">
+      Town or city
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2" value=
+    "Glasgow">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-county">
+      County (optional)
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-postcode">
+      Postcode (optional)
+    </label>
+    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="G1 1DS">
+  </div>
+
+</div>
