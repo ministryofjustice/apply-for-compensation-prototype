@@ -235,69 +235,26 @@ require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, 
 
 
 //MINORS JOURNEY //
-require('./views/concepts/minors/british-citizen/routes')(router, viewContent);
-require('./views/concepts/minors/care-order/routes')(router, viewContent);
-require('./views/concepts/minors/care-order-details/routes')(router, viewContent);
-require('./views/concepts/minors/declaration/routes')(router, viewContent);
-require('./views/concepts/minors/date-of-birth/routes')(router, viewContent);
-require('./views/concepts/minors/impact-on-you/routes')(router, viewContent);
-require('./views/concepts/minors/incident-location/routes')(router, viewContent);
-require('./views/concepts/minors/incident-reported/routes')(router, viewContent);
-require('./views/concepts/minors/reporting-crime-not-reported/routes')(router, viewContent);
-require('./views/concepts/minors/sexual-assault-application/routes')(router, viewContent);
-require('./views/concepts/minors/transition/routes')(router, viewContent);
-require('./views/concepts/minors/victim-name/routes')(router, viewContent);
-require('./views/concepts/minors/victim-name-have-other/routes')(router, viewContent);
-require('./views/concepts/minors/victim-name-other/routes')(router, viewContent);
-require('./views/concepts/minors/who-are-you/routes')(router, viewContent);
-require('./views/concepts/minors/who-is-making-the-application/routes')(router, viewContent);
-require('./views/concepts/minors/your-choices/routes')(router, viewContent);
-require('./views/concepts/minors/your-name/routes')(router, viewContent);
-require('./views/concepts/minors/authority-to-apply/routes')(router, viewContent);
-require('./views/concepts/minors/crime-reference/routes')(router, viewContent);
-require('./views/concepts/minors/crime-reported-date/routes')(router, viewContent);
-require('./views/concepts/minors/single-or-multiple-incidents/routes')(router, viewContent);
-require('./views/concepts/minors/incident-date/routes')(router, viewContent);
-require('./views/concepts/minors/period-of-abuse-start/routes')(router, viewContent);
-require('./views/concepts/minors/period-of-abuse-end/routes')(router, viewContent);
-require('./views/concepts/minors/england-location/routes')(router, viewContent);
-require('./views/concepts/minors/scotland-location/routes')(router, viewContent);
-require('./views/concepts/minors/wales-location/routes')(router, viewContent);
-require('./views/concepts/minors/somewhere-else/routes')(router, viewContent);
-require('./views/concepts/minors/do-you-know-offender/routes')(router, viewContent);
-require('./views/concepts/minors/offender-name/routes')(router, viewContent);
-require('./views/concepts/minors/what-is-relationship/routes')(router, viewContent);
-require('./views/concepts/minors/compensation/routes')(router, viewContent);
-require('./views/concepts/minors/other-compensation/routes')(router, viewContent);
-require('./views/concepts/minors/previous-applications/routes')(router, viewContent);
-require('./views/concepts/minors/email-address/routes')(router, viewContent);
-require('./views/concepts/minors/phone-number/routes')(router, viewContent);
-require('./views/concepts/minors/check-your-answers-page/routes')(router, viewContent);
-require('./views/concepts/minors/address-manually/routes')(router, viewContent);
-require('./views/concepts/minors/confirmation-page/routes')(router, viewContent);
-require('./views/concepts/minors/transition-over-18/routes')(router, viewContent);
-require('./views/concepts/minors/child-address/routes')(router, viewContent);
-require('./views/concepts/minors/child-address-manually/routes')(router, viewContent);
-require('./views/concepts/minors/application-delay/routes')(router, viewContent);
-require('./views/concepts/minors/police-force/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/care-order/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/care-order-details/routes')(router, viewContent);
 
-require('./views/concepts/minors/eligibility-to-apply/option-1/upload-choice/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-1/upload-choice/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
 
-require('./views/concepts/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-2/upload-choice/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/upload-choice/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
 
 
-require('./views/concepts/minors/eligibility-to-apply/option-3/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-3/upload/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-3/upload-choice/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-3/confirm-names/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-3/upload-name-change/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-3/upload-another/routes')(router, viewContent);
-require('./views/concepts/minors/eligibility-to-apply/option-3/upload-another-document/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-choice/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/confirm-names/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-name-change/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-another/routes')(router, viewContent);
+require('./views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-another-document/routes')(router, viewContent);
 
 
 
