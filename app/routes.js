@@ -332,8 +332,6 @@ require('./views/concepts/confirmation-choice/v2/check-your-answers-page/routes'
 
 // CONCEPTS Physical injuries questions //
 
-require('./views/concepts/physical-injuries/check-your-answers-page/routes')(router, viewContent);
-
 require('./views/concepts/physical-injuries/basic-autocomplete/context-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/basic-autocomplete/have-physical-injuries/routes')(router, viewContent);
 require('./views/concepts/physical-injuries/advanced-autocomplete/context-physical-injuries/routes')(router, viewContent);
