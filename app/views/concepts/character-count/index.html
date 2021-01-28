@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Briefly say how the crime has affected your daily life - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+      {{ govukCharacterCount({
+        name: "with-hint",
+        id: "with-hint",
+        maxlength: 1000,
+        label: {
+          text: "Briefly say how the crime has affected your daily life.",
+          isPageHeading: true,
+          classes: "govuk-label--xl"
+        },
+        hint: {
+          text: "This helps us understand how the crime has affected you. You can leave this blank, but we may have to ask for more information later."
+        }
+      }) }}
+
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
