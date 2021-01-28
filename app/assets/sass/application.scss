@@ -23,6 +23,11 @@ $govuk-assets-path: '/govuk/assets/';
 @import "injuries";
 @import "concepts";
 
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .sentence-case {
