@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You need to send proof that you’re the child’s parent - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-xl">You need to send proof that you’re the child’s parent</h1>
+
+      <p class="govuk-body">You must send us proof that you have the right to apply on your child’s behalf.</p>
+
+      <p class="govuk-body">You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>take a photo and send it by email</li>
+        <li>photograph or scan it and send it by post</li>
+      </ul>
+
+      <p class="govuk-body">If your name or your child’s name has changed, you’ll have to show proof of the change too.</p>
+
+      {{ govukButton({
+      "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Would you like to describe the crime in your own words? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "otherIncidentDetailsQ",
+            name: "otherIncidentDetailsQ",
+            currentValue: data['otherIncidentDetailsQ'],
+            fieldset: {
+              legend: {
+                text: "Would you like to describe the crime in your own words?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "You may want to include details that are not included in the crime report that the police will send us."
+            },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("otherIncidentDetailsQ", "Yes")
+              },
+              {
+                "value": "No",
+                "text": "No",
+                checked: checked("otherIncidentDetailsQ", "No")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
