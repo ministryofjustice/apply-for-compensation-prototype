@@ -1,6 +1,6 @@
 module.exports = function (router, content) {
 // START__####################################################################################################
-// File: Mental Health
+// File: Dentist visited?
 // Variable: mentalHealth
 
 router.post('/application/_6-treatment/dentist-visited', function (req, res) {

@@ -1,7 +1,6 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: bridge
-  // Variable: criminalConvictions
+  // File: Context Treatment
 
   router.post('/application/_6-treatment/context-treatment', function (req, res) {
     var havePhysicalInjuries = req.session.data['havePhysicalInjuries']

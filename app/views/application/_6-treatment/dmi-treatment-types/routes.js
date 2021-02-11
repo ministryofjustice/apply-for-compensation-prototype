@@ -1,7 +1,6 @@
 module.exports = function (router, content) {
 // START__####################################################################################################
-// File: Mental Health
-// Variable: mentalHealthDiagnosis
+// File: DMI Treatment
 
 router.post('/application/_6-treatment/dmi-treatment-types', function (req, res) {
   // Get the answer from the query string

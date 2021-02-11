@@ -1,7 +1,6 @@
 module.exports = function (router, content) {
 // START__####################################################################################################
-// File: Mental Health
-// Variable: mentalHealth
+// File: GP Registered
 
 router.post('/application/_6-treatment/gp-registered', function (req, res) {
   // Get the answer from the query string
