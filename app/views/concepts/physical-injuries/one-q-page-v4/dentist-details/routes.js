@@ -5,8 +5,8 @@ module.exports = function (router, content) {
     var visitedGP = req.session.data['visitedGP']
     var registeredGP = req.session.data['registeredGP']
 
-
-    if ((registeredGP === 'No') && (visitedGP === 'No')) {
+    
+    if (visitedGP === 'No') {
         res.redirect('/concepts/physical-injuries/one-q-page-v4/hospital-visited/')
       } else {
         res.redirect('/concepts/physical-injuries/one-q-page-v4/context-your-money/')

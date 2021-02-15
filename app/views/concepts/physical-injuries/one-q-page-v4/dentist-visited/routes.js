@@ -1,6 +1,6 @@
 module.exports = function (router, content) {
 // START__####################################################################################################
-// File: Mental Health
+// File: Dentist visited?
 // Variable: mentalHealth
 
 router.post('/concepts/physical-injuries/one-q-page-v4/dentist-visited', function (req, res) {
@@ -10,16 +10,14 @@ router.post('/concepts/physical-injuries/one-q-page-v4/dentist-visited', functio
   var visitedGP = req.session.data['visitedGP']
   var registeredGP = req.session.data['registeredGP']
 
-  if (visitedDentist === 'Yes') {
-    // Redirect to the relevant page
-    res.redirect('/concepts/physical-injuries/one-q-page-v4/dentist-details')
-  } else {
-
-    if ((registeredGP === 'No') && (visitedGP === 'No')) {
+  if (visitedDentist === 'No') {
+    if (visitedGP === 'No') {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/hospital-visited/')
     } else {
       res.redirect('/concepts/physical-injuries/one-q-page-v4/context-your-money/')
     }
+  } else if (visitedDentist === 'Yes') {
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/dentist-details')
   }
 })
 
