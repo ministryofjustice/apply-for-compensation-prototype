@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Victim deatils - {{ serviceName }} - GOV.UK
+Physical injuries  - {{ serviceName }} - GOV.UK
 {% endblock %}
+
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
@@ -20,23 +21,22 @@ Victim deatils - {{ serviceName }} - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-xl">
-      Victim details
+      End of prototype
     </h1>
-
-    <p class="govuk-body">We’re going to ask for some details about the victim.</p>
-
-    <p class="govuk-body">We’ll use these to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-       <li>get a report about the crime from the police</li>
-      </ul>
 
     <form class="form" method="post">
       {{ govukButton({
-          "text": "Continue"
-          }) }}
+      text: "Continue",
+      href: "/prototype-admin/clear-data"
+      }) }}
     </form>
+
   </div>
 </div>
 
 {% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
