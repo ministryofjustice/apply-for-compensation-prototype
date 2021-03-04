@@ -27,15 +27,15 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "care-order",
-            "name": "care-order",
+            name: "care-order",
             currentValue: data['care-order'],
             "fieldset": {
               "legend": {
-                "text": minorCareOrderQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: minorCareOrderQuestion,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
@@ -45,19 +45,19 @@
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("care-order", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("care-order", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

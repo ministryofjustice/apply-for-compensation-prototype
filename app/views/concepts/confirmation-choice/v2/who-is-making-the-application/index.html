@@ -19,31 +19,31 @@
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
-            "classes": "govuk-radios",
+            classes: "govuk-radios",
             "idPrefix": "direct-applicant",
-            "name": "direct-applicant",
+            name: "direct-applicant",
             "fieldset": {
             "legend": {
-            "text": whoIsMakingTheApplicationQuestion,
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
+            text: whoIsMakingTheApplicationQuestion,
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
             }
             },
             "items": [
             {
             "value": "Myself",
-            "text": "Myself"
+            text: "Myself"
             },
             {
             "value": "Someone else",
-            "text": "Someone else"
+            text: "Someone else"
             }
             ]
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

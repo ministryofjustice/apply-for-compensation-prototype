@@ -30,33 +30,33 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "sexualAssault",
-            "name": "sexualAssault",
+            name: "sexualAssault",
             currentValue: data['sexualAssault'],
             "fieldset": {
               "legend": {
-                "text": sexualAbuseQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: sexualAbuseQuestion,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("sexualAssault", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("sexualAssault", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

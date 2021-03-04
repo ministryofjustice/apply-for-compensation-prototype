@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-Continue your claim - {{ serviceName }} - GOV.UK
+{{ minorCareOrderDetailsQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,23 +19,25 @@ Continue your claim - {{ serviceName }} - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      You cannot claim if you are not the child's legal guardian
-    </h1>
-    <p class="govuk-body">You'll be taken to another website to continue your claim.</p>
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {{ govukButton({
-          text: "Continue",
-          href: "https://www.cica.gov.uk/oas/Account/Create"
-        })}}
-
-
-
     <form class="form" method="post">
 
+
+            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+              name: "care-order-details",
+              id: "care-order-details",
+              label: {
+                text: "Tell us about the care or supervision order",
+                classes: "govuk-label--xl",
+                isPageHeading: true
+              }
+            }) }}
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
     </form>
   </div>
 </div>
-
 {% endblock %}

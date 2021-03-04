@@ -28,9 +28,9 @@
             label: {
             text: townOrCityLabel
             },
-            "classes": 'govuk-input--width-30',
-            "id": "WalesTown",
-            "name": "WalesTown"
+            classes: 'govuk-input--width-30',
+            id: "WalesTown",
+            name: "WalesTown"
             }) }}
 
         {{ govukInput({
@@ -41,15 +41,15 @@
                   hint: {
                   text: locationHint
                   },
-                  "classes": 'govuk-input--width-30',
-                  "id": "WalesLocation",
-                  "name": "WalesLocation"
+                  classes: 'govuk-input--width-30',
+                  id: "WalesLocation",
+                  name: "WalesLocation"
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

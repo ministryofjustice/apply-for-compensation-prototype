@@ -43,7 +43,7 @@ Select any injuries to the elbow - {{ serviceName }} - GOV.UK
         id: "otherElbowInjury",
         name: "otherElbowInjury",
         value: data['otherElbowInjury'],
-        type: "text",
+        type: text,
         classes: "govuk-!-width-full",
         label: {
           text: "Type of injury"
@@ -85,7 +85,7 @@ Select any injuries to the elbow - {{ serviceName }} - GOV.UK
           ]
       }) }}
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
       {% include "../../../includes/simple-injury-list.html" %}

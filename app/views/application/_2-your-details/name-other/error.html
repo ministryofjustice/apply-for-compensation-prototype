@@ -38,24 +38,24 @@ Error: {{ nameOtherWhatQuestion }} - {{ serviceName }} - GOV.UK
             }) }}
 
       {{ govukInput({
-            "label": {
-            "text": nameOtherWhatQuestion,
-            "isPageHeading": true,
-            "classes": 'govuk-label--xl'
+            label: {
+            text: nameOtherWhatQuestion,
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
           },
           errorMessage: {
           text: otherNameWhatError
           },
-            "classes": 'govuk-input',
-            "id": "nameOther",
-            "name": "nameOther",
+            classes: 'govuk-input',
+            id: "nameOther",
+            name: "nameOther",
             "value": data['nameOther']
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
     </form>

@@ -37,10 +37,10 @@ Error: {{ emailAddressQuestion }} - {{ serviceName }} - GOV.UK
               ]
             }) }}
       {{ govukInput({
-            "label": {
-            "text": emailAddressErrorSubHeader,
-            "isPageHeading": true,
-            "classes": 'govuk-label--xl'
+            label: {
+            text: emailAddressErrorSubHeader,
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
           },
           hint: {
             text: emailAddressHint
@@ -48,16 +48,16 @@ Error: {{ emailAddressQuestion }} - {{ serviceName }} - GOV.UK
           errorMessage: {
           text: emailAddressError
           },
-            "classes": 'govuk-input--width-20',
-            "id": "emailAddress",
-            "name": "emailAddress",
+            classes: 'govuk-input--width-20',
+            id: "emailAddress",
+            name: "emailAddress",
             "value": data['emailAddress']
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

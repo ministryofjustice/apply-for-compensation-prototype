@@ -28,9 +28,9 @@
             label: {
             text: townOrCityLabel
             },
-            "classes": 'govuk-input--width-30',
-            "id": "ScotlandTown",
-            "name": "ScotlandTown"
+            classes: 'govuk-input--width-30',
+            id: "ScotlandTown",
+            name: "ScotlandTown"
             }) }}
 
         {{ govukInput({
@@ -41,15 +41,15 @@
                   hint: {
                   text: locationHint
                   },
-                  "classes": 'govuk-input--width-30',
-                  "id": "ScotlandLocation",
-                  "name": "ScotlandLocation"
+                  classes: 'govuk-input--width-30',
+                  id: "ScotlandLocation",
+                  name: "ScotlandLocation"
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

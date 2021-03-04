@@ -8,7 +8,7 @@ module.exports = function (router, content) {
     if (victimLivesWithApplicant === 'No')  {
       return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/address')
     }
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/care-order')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_3-incident-details/context-incident-details')
   })
 
   // Pass the question in to the page

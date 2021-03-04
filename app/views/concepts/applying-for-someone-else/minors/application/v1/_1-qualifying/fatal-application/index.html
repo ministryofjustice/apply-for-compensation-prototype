@@ -19,25 +19,25 @@ Are you applying for someone who died from their injuries? - {{ serviceName }} -
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "fatalApplication",
-            "name": "fatalApplication",
+            name: "fatalApplication",
             "fieldset": {
             "legend": {
-            "text": "Are you applying for someone who died from their injuries?",
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
+            text: "Are you applying for someone who died from their injuries?",
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
             }
             },
             "items": [
             {
               "value": "Yes",
-              "text": "Yes",
+              text: "Yes",
               checked: checked("fatalApplication", "Yes")
             },
             {
               "value": "No",
-              "text": "No",
+              text: "No",
               checked: checked("fatalApplication", "No")
             }
             ]
@@ -45,7 +45,7 @@ Are you applying for someone who died from their injuries? - {{ serviceName }} -
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

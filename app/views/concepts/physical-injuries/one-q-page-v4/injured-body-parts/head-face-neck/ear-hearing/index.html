@@ -31,7 +31,7 @@ Select any injuries to the ear or hearing - {{ serviceName }} - GOV.UK
         id: "otherEarInjury",
         name: "otherEarInjury",
         value: data['otherEarInjury'],
-        type: "text",
+        type: text,
         classes: "govuk-!-width-full",
         label: {
           text: "Type of injury"
@@ -103,7 +103,7 @@ Select any injuries to the ear or hearing - {{ serviceName }} - GOV.UK
           ]
       }) }}
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
       {% include "../../../includes/simple-injury-list.html"%}

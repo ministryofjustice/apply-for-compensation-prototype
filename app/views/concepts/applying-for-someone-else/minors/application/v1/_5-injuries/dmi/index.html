@@ -27,16 +27,16 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "dmiDoYouHave",
-            "name": "dmiDoYouHave",
+            name: "dmiDoYouHave",
             currentValue: data['dmiDoYouHave'],
             "fieldset": {
               "legend": {
-                "text": "Do they have a disabling mental injury?",
+                text: "Do they have a disabling mental injury?",
                 "hint": dmiQuestionHint,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
@@ -45,19 +45,19 @@
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("dmiDoYouHave", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("dmiDoYouHave", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

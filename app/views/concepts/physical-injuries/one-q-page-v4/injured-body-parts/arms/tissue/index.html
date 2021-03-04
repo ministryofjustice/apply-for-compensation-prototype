@@ -31,7 +31,7 @@ Select any injuries to the skin on your arms - {{ serviceName }} - GOV.UK
         id: "otherArmTissueInjury",
         name: "otherArmTissueInjury",
         value: data['otherArmTissueInjury'],
-        type: "text",
+        type: text,
         classes: "govuk-!-width-full",
         label: {
           text: "Type of injury"
@@ -85,7 +85,7 @@ Select any injuries to the skin on your arms - {{ serviceName }} - GOV.UK
           ]
       }) }}
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
       {% include "../../../includes/simple-injury-list.html" %}

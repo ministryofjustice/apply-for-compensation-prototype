@@ -19,25 +19,28 @@ Are you a parent or guardian applying for a child? - {{ serviceName }} - GOV.UK
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
-            "idPrefix": "parentGuardian",
-            "name": "parentGuardian",
-            "fieldset": {
-            "legend": {
-            "text": "Are you a parent or guardian applying for a child?",
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
-            }
+            classes: "govuk-radios--inline",
+            idPrefix: "parentGuardian",
+            name: "parentGuardian",
+            fieldset: {
+            legend: {
+              text: "Do you have parental rights and responsibilities for the child?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
             },
-            "items": [
+            hint: {
+              text: "This means you are responsible for the care, protection and maintenance of the child."
+            },
+            items: [
             {
-              "value": "Yes",
-              "text": "Yes",
+              value: "Yes",
+              text: "Yes",
               checked: checked("parentGuardian", "Yes")
             },
             {
-              "value": "No",
-              "text": "No",
+              value: "No",
+              text: "No",
               checked: checked("parentGuardian", "No")
             }
             ]
@@ -45,7 +48,7 @@ Are you a parent or guardian applying for a child? - {{ serviceName }} - GOV.UK
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

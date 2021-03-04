@@ -6,7 +6,7 @@ module.exports = function (router, content) {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_10-end/check-your-answers-page')
     }
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/address')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/what-is-relationship')
   })
 
   // Pass the question in to the page

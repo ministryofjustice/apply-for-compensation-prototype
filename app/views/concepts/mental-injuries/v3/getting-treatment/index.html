@@ -27,38 +27,38 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios",
+            classes: "govuk-radios",
             "idPrefix": "gettingTreatment",
-            "name": "gettingTreatment",
+            name: "gettingTreatment",
             currentValue: data['gettingTreatment'],
             "fieldset": {
               "legend": {
-                "text": mentalHealthTreatmentQuestionv2,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: mentalHealthTreatmentQuestionv2,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("gettingTreatment", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("gettingTreatment", "No")
               },
               {
                 "value": "waiting-list",
-                "text": "I'm on a waiting list",
+                text: "I'm on a waiting list",
                 checked: checked("gettingTreatment", "waiting-list")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

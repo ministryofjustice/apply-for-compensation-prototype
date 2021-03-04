@@ -31,7 +31,7 @@ Select any injuries to the tissue on your legs - {{ serviceName }} - GOV.UK
         id: "otherLegTissueInjury",
         name: "otherLegTissueInjury",
         value: data['otherLegTissueInjury'],
-        type: "text",
+        type: text,
         classes: "govuk-!-width-full",
         label: {
           text: "Type of injury"
@@ -85,7 +85,7 @@ Select any injuries to the tissue on your legs - {{ serviceName }} - GOV.UK
           ]
       }) }}
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
       {% include "../../../includes/simple-injury-list.html" %}

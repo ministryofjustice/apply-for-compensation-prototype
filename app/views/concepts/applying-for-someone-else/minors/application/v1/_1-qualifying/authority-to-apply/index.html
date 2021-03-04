@@ -1,54 +1,60 @@
 {% extends "layout.html" %}
+
 {% block pageTitle %}
-Are you the child's legal guardian? - {{ serviceName }} - GOV.UK
+You need to send proof that you’re the child’s parent - {{ serviceName }} - GOV.UK
 {% endblock %}
 
+
 {% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "prototype"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <form class="form" method="post">
 
-      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
-      {{ govukRadios({
-            classes: "govuk-radios--inline",
-            idPrefix: "legalGuardian",
-            name: "legalGuardian",
-            fieldset: {
-              legend: {
-                text: "Are you the child's legal guardian?",
-                isPageHeading: true,
-                classes: 'govuk-fieldset__legend--xl'
-              }
-            },
-            items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: checked("legalGuardian", "Yes")
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: checked("legalGuardian", "No")
-            }
-            ]
-            }) }}
+      <h1 class="govuk-heading-xl">You need to send proof that you’re the child’s parent or guardian</h1>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <p class="govuk-body">We need this so we know you have the right to apply on the child’s behalf. This can be either a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>full birth or adoption certficate or</li>
+        <li>court order</li>
+      </ul>
+
+      <p class="govuk-body">You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>take or scan a photo and send it via email</li>
+        <li>send a photocopy of this to us via post</li>
+      </ul>
+
+      <p class="govuk-body">If your name or the child’s name has changed, you’ll have to show proof of this change.</p>
+
+      <p class="govuk-body"> We'll tell you how you to send this at the end of the application.</p>
+
+
       {{ govukButton({
-            "text": "Continue"
-            }) }}
+      text: "Continue"
+      }) }}
 
     </form>
+
   </div>
 </div>
+
 {% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

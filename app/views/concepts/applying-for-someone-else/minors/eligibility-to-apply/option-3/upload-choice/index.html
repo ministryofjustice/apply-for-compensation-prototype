@@ -27,33 +27,33 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "minorUploadChoice",
-            "name": "minorUploadChoice",
+            name: "minorUploadChoice",
             currentValue: data['minorUploadChoice'],
             "fieldset": {
               "legend": {
-                "text": minorProofEligibilityUploadNowQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: minorProofEligibilityUploadNowQuestion,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes, I will upload the documents now",
+                text: "Yes, I will upload the documents now",
                 checked: checked("minorUploadChoice", "Yes")
               },
               {
                 "value": "No",
-                "text": "No, I will email or post the documents later",
+                text: "No, I will email or post the documents later",
                 checked: checked("minorUploadChoice", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

@@ -23,7 +23,7 @@ Error: {{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
 
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--xl" for="name">
+          <label class="govuk-label govuk-label--xl" for=name>
             {{ govukErrorSummary({
                     titleText: "There is a problem",
                     errorList: [
@@ -41,17 +41,17 @@ Error: {{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
       {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
 
       {{ govukInput({
-            "label": {
-            "text": crimeReferenceNumberQuestion,
-            "isPageHeading": true,
-            "classes": 'govuk-label--xl'
+            label: {
+            text: crimeReferenceNumberQuestion,
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
             },
             hint: {
             text: crimeReferenceNumberHint
             },
-            "classes": 'govuk-input--width-20',
-            "id": "crimeReferenceNumber",
-            "name": "crimeReferenceNumber",
+            classes: 'govuk-input--width-20',
+            id: "crimeReferenceNumber",
+            name: "crimeReferenceNumber",
             value: data['crimeReferenceNumber'],
             errorMessage: {
             text: crimeReferenceError
@@ -59,7 +59,7 @@ Error: {{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
             }) }}
 
       {{ govukButton({
-                "text": "Continue"
+                text: "Continue"
                 }) }}
     </form>
   </div>

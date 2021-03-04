@@ -28,35 +28,35 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukCheckboxes({
-            "classes": "govuk-checkboxes",
+            classes: "govuk-checkboxes",
             "idPrefix": "burnsOn",
-            "name": "burnsOn",
+            name: "burnsOn",
             "fieldset": {
               "legend": {
-                "text": "Where are your burns?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Where are your burns?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Head, neck or face",
-                "text": "Head, neck or face",
+                text: "Head, neck or face",
                 checked: checked("burnsOn", "Head, neck or face")
               },
               {
                 "value": "Torso",
-                "text": "Torso",
+                text: "Torso",
                 checked: checked("burnsOn", "Torso")
               },
               {
                 "value": "Arm or hand",
-                "text": "Arm or hand",
+                text: "Arm or hand",
                 checked: checked("burnsOn", "Arm or hand")
               },
               {
                 "value": "Leg or foot",
-                "text": "Leg or foot",
+                text: "Leg or foot",
                 checked: checked("burnsOn", "Leg or foot")
               },
               {
@@ -70,7 +70,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         }}
 
         {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
         }) }}
 
     </form>

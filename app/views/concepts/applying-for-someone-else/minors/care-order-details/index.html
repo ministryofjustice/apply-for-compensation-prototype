@@ -23,7 +23,7 @@
 
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--xl" for="name">
+          <label class="govuk-label govuk-label--xl" for=name>
             {{ minorCareOrderDetailsQuestion }}
           </label>
         </h1>
@@ -33,14 +33,14 @@
 
       {{ govukInput({
 
-            "classes": "govuk-input",
-            "id": "care-order-details",
-            "name": "care-order-details",
+            classes: "govuk-input",
+            id: "care-order-details",
+            name: "care-order-details",
             "value": data['care-order-details']
             }) }}
 
       {{ govukButton({
-                "text": "Continue"
+                text: "Continue"
                 }) }}
     </form>
   </div>

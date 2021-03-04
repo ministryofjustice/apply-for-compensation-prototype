@@ -27,15 +27,15 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "mentalHealthDiagnosis",
-            "name": "mentalHealthDiagnosis",
+            name: "mentalHealthDiagnosis",
             currentValue: data['mentalHealthDiagnosis'],
             "fieldset": {
               "legend": {
-                "text": mentalHealthDiagnosisQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: mentalHealthDiagnosisQuestion,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
@@ -44,19 +44,19 @@
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("mentalHealthDiagnosis", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("mentalHealthDiagnosis", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>
