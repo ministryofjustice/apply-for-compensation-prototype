@@ -39,39 +39,39 @@
       {% endset -%}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "previous-applications",
-            "name": "previous-applications",
+            name: "previous-applications",
             value: data['previous-applications'],
             "fieldset": {
               "legend": {
-              "text": previousApplicationsQuestion,
-              "isPageHeading": true,
-              "classes": 'govuk-fieldset__legend--xl'
+              text: previousApplicationsQuestion,
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
               }
               },
             "items": [
             {
             "value": "Yes",
-            "text": "Yes",
+            text: "Yes",
             conditional: {
                 html: referenceHtml
               }
             },
             {
             "value": "No",
-            "text": "No"
+            text: "No"
             },
             {
             "value": "I do not know",
-            "text": "I do not know"
+            text: "I do not know"
             }
             ]
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

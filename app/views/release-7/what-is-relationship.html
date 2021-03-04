@@ -19,20 +19,20 @@
           {% from "govuk/components/input/macro.njk" import govukInput %}
 
           {{ govukInput({
-          "label": {
-          "text": "What contact do you have with them?",
-          "isPageHeading": true,
-          "classes": 'govuk-label--xl'
+          label: {
+          text: "What contact do you have with them?",
+          isPageHeading: true,
+          classes: 'govuk-label--xl'
         },
-          "classes": 'govuk-input--width-20',
-          "id": "relationship-text",
-          "name": "relationship-text"
+          classes: 'govuk-input--width-20',
+          id: "relationship-text",
+          name: "relationship-text"
           }) }}
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
           }) }}
 
         </form>

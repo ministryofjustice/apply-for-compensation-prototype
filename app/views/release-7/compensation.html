@@ -19,55 +19,55 @@
             {% set emailHtml %}
             {{ govukInput({
               "idPrefix": "whoPaid",
-              "name": "whoPaid",
-              "classes": "govuk-!-width-two-thirds",
-              "label": {
-                "text": "Who did you claim compensation from?"
+              name: "whoPaid",
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Who did you claim compensation from?"
               }
             }) }}
             {{ govukInput({
               "idPrefix": "howMuch",
-              "name": "howMuch",
-              "classes": "govuk-!-width-one-quarter",
-              "label": {
-                "text": "How much compensation did you get, if applicable?"
+              name: "howMuch",
+              classes: "govuk-!-width-one-quarter",
+              label: {
+                text: "How much compensation did you get, if applicable?"
               }
             }) }}
             {% endset -%}
 
             {{ govukRadios({
-              "classes": "govuk-radios--inline",
+              classes: "govuk-radios--inline",
               "idPrefix": "otherCompensation",
-              "name": "otherCompensation",
+              name: "otherCompensation",
               "fieldset": {
               "legend": {
-              "text": "Have you applied for compensation from any other sources?",
-              "isPageHeading": true,
-              "classes": "govuk-fieldset__legend--xl"
+              text: "Have you applied for compensation from any other sources?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
               }
               },
               "hint": {
-                "text": "Before we assess your application you must try to get compensation from elsewhere."
+                text: "Before we assess your application you must try to get compensation from elsewhere."
 
               },
               "items": [
                 {
                   "value": "yes",
-                  "text": "Yes",
+                  text: "Yes",
                   "conditional": {
                     "html": emailHtml
                   }
                 },
                 {
                   "value": "no",
-                  "text": "No"
+                  text: "No"
                 }
               ]
             }) }}
 
             {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
           </form>
         </div>

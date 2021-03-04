@@ -24,6 +24,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qu
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/incident-reported/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/crime-reference/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/parent-guardian/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/under-18/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/british-citizen/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/parent-guardian/routes')(router, viewContent);

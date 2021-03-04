@@ -14,31 +14,31 @@
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
             {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "previous-applications",
-            "name": "previous-applications",
+            name: "previous-applications",
             "fieldset": {
             "legend": {
-            "text": 'Is this your first application for compensation from us for this crime?',
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--xl'
+            text: 'Is this your first application for compensation from us for this crime?',
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
             }
             },
             "items": [
             {
             "value": "yes",
-            "text": "Yes"
+            text: "Yes"
             },
             {
             "value": "no",
-            "text": "No"
+            text: "No"
             }
             ]
             }) }}
 
             {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
           </form>

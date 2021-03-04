@@ -35,24 +35,24 @@
 
             {% from 'govuk/components/radios/macro.njk' import govukRadios %}
             {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "declaration",
-            "name": "declaration",
+            name: "declaration",
             "fieldset": {
             "legend": {
-            "text": 'I confirm that I have read and agree with the above statements',
-            "isPageHeading": true,
-            "classes": 'govuk-fieldset__legend--m'
+            text: 'I confirm that I have read and agree with the above statements',
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--m'
             }
             },
             "items": [
             {
             "value": "yes",
-            "text": "Yes"
+            text: "Yes"
             },
             {
             "value": "no",
-            "text": "No"
+            text: "No"
             }
             ]
             }) }}
@@ -60,7 +60,7 @@
 
             {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
           </form>
