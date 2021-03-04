@@ -41,9 +41,9 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
             label: {
             text: townOrCityLabel
             },
-            "classes": 'govuk-input--width-30',
-            "id": "EnglandTown",
-            "name": "EnglandTown"
+            classes: 'govuk-input--width-30',
+            id: "EnglandTown",
+            name: "EnglandTown"
             }) }}
 
         {{ govukInput({
@@ -57,15 +57,15 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
                   errorMessage: {
                   text: detailedLocationError
                 },
-                  "classes": 'govuk-input--width-30',
-                  "id": "EnglandLocation",
-                  "name": "EnglandLocation"
+                  classes: 'govuk-input--width-30',
+                  id: "EnglandLocation",
+                  name: "EnglandLocation"
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

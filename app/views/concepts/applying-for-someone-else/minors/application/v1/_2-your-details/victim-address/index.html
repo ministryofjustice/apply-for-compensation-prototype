@@ -27,33 +27,33 @@ Does the victim also live at this address? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "victimLivesWithApplicant",
-            "name": "victimLivesWithApplicant",
+            name: "victimLivesWithApplicant",
             currentValue: data['victimLivesWithApplicant'],
             "fieldset": {
               "legend": {
-                "text": "Does the victim also live at this address?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Does the victim also live at this address?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("victimLivesWithApplicant", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("victimLivesWithApplicant", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

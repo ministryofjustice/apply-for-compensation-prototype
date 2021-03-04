@@ -28,40 +28,40 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukCheckboxes({
-            "classes": "govuk-checkboxes",
+            classes: "govuk-checkboxes",
             "idPrefix": "paralysisType",
-            "name": "paralysisType",
+            name: "paralysisType",
             "fieldset": {
               "legend": {
-                "text": "What paralysis do you have?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "What paralysis do you have?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Hemiplegia",
-                "text": "Hemiplegia (one side of your body)",
+                text: "Hemiplegia (one side of your body)",
                 checked: checked("paralysisType", "Hemiplegia")
               },
               {
                 "value": "Paraplegia",
-                "text": "Paraplegia (the lower half of your body)",
+                text: "Paraplegia (the lower half of your body)",
                 checked: checked("paralysisType", "Paraplegia")
               },
               {
                 "value": "Tetraplegia or quadriplegia",
-                "text": "Tetraplegia or quadriplegia (from the neck down)",
+                text: "Tetraplegia or quadriplegia (from the neck down)",
                 checked: checked("paralysisType", "Tetraplegia or quadriplegia")
               },
               {
                 "value": "Arm",
-                "text": "Paralysis of an arm",
+                text: "Paralysis of an arm",
                 checked: checked("paralysisType", "Arm")
               },
               {
                 "value": "Leg",
-                "text": "Paralysis of a leg",
+                text: "Paralysis of a leg",
                 checked: checked("paralysisType", "Leg"),
                 hint:"hshsh"
               },
@@ -75,7 +75,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

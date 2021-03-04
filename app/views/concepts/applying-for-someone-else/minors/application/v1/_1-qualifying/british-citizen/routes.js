@@ -11,7 +11,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_1-qualif
     // Redirect to the relevant page
     res.redirect('/concepts/applying-for-someone-else/minors/application/v1/transition')
   } else {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/authority-to-apply')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/parent-guardian')
   }
 })
 

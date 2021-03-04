@@ -28,45 +28,45 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukCheckboxes({
-            "classes": "govuk-checkboxes",
+            classes: "govuk-checkboxes",
             "idPrefix": "scarsOn",
-            "name": "scarsOn",
+            name: "scarsOn",
             "fieldset": {
               "legend": {
-                "text": "Where are your scars?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Where are your scars?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Head",
-                "text": "Head",
+                text: "Head",
                 checked: checked("scarsOn", "Head")
               },
               {
                 "value": "Neck",
-                "text": "Neck",
+                text: "Neck",
                 checked: checked("scarsOn", "Neck")
               },
               {
                 "value": "Face",
-                "text": "Face",
+                text: "Face",
                 checked: checked("scarsOn", "Face")
               },
               {
                 "value": "Torso",
-                "text": "Torso",
+                text: "Torso",
                 checked: checked("scarsOn", "Torso")
               },
               {
                 "value": "Arm or hand",
-                "text": "Arm or hand",
+                text: "Arm or hand",
                 checked: checked("scarsOn", "Arm or hand")
               },
               {
                 "value": "Leg or foot",
-                "text": "Leg or foot",
+                text: "Leg or foot",
                 checked: checked("scarsOn", "Leg or foot")
               },
               {
@@ -80,7 +80,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         }}
 
         {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
         }) }}
 
     </form>

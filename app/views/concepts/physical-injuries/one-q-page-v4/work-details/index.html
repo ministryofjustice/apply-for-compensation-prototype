@@ -32,7 +32,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         {{ govukInput({
           id: "other-work-detail",
           name: "other-work-detail",
-          type: "text",
+          type: text,
           classes: "govuk-!-width-one-third",
           label: {
             text: "Details"
@@ -42,20 +42,20 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
 
       {{ govukRadios({
-            "classes": "govuk-radios",
+            classes: "govuk-radios",
             "idPrefix": "workDetails",
-            "name": "workDetails",
+            name: "workDetails",
             "fieldset": {
               "legend": {
-                "text": "Select the option that applies to you",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Select the option that applies to you",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "I was too young to work",
-                "text": "I was too young to work",
+                text: "I was too young to work",
                 checked: checked("workDetails", "I was too young to work")
               },
               {
@@ -86,7 +86,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         }}
 
         {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
         }) }}
 
     </form>

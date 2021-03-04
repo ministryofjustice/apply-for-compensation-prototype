@@ -14,18 +14,18 @@
             
           {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
           {{ govukTextarea({
-            "id": "why-not-apply-compensation-other",
-            "name": "why-not-apply-compensation-other",
+            id: "why-not-apply-compensation-other",
+            name: "why-not-apply-compensation-other",
             label: {
               text: "Why did you not apply for compensation from another source?",
-              "isPageHeading": true,
-              "classes": 'govuk-label--xl'
+              isPageHeading: true,
+              classes: 'govuk-label--xl'
             }
           }) }}
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
           {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
           }) }}
 
           </form>

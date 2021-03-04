@@ -23,7 +23,7 @@
 
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--xl" for="name">
+          <label class="govuk-label govuk-label--xl" for=name>
             Join our research
           </label>
         </h1>
@@ -33,7 +33,7 @@
 
       <div class="govuk-form-group">
         <h2 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--m" for="name">
+          <label class="govuk-label govuk-label--m" for=name>
             Your name
           </label>
         </h2>
@@ -43,7 +43,7 @@
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
       {{ govukInput({
               label: {
-                "text": "First name"
+                text: "First name"
               },
               id: "first-name",
               name: "first-name",
@@ -52,7 +52,7 @@
 
       {{ govukInput({
               label: {
-                "text": "Last name"
+                text: "Last name"
               },
               id: "last-name",
               name: "last-name",
@@ -139,7 +139,7 @@
                   }
                 },
                 {
-                  value: "text",
+                  value: text,
                   text: "Text message",
                   conditional: {
                     html: textHtml
@@ -156,7 +156,7 @@
             }) }}
 
       {{ govukButton({
-                "text": "Continue"
+                text: "Continue"
                 }) }}
     </form>
   </div>

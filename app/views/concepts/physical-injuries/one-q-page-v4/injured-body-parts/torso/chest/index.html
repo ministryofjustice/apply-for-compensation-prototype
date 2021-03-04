@@ -31,7 +31,7 @@ What parts of the chest were injured? - {{ serviceName }} - GOV.UK
         id: "otherChestInjury",
         name: "otherChestInjury",
         value: data['otherChestInjury'],
-        type: "text",
+        type: text,
         classes: "govuk-!-width-full",
         label: {
           text: "Type of injury"
@@ -103,7 +103,7 @@ What parts of the chest were injured? - {{ serviceName }} - GOV.UK
           ]
       }) }}
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
       {% include "../../../includes/simple-injury-list.html" %}

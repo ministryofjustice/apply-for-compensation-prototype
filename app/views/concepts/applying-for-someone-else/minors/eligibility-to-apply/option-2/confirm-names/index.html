@@ -37,19 +37,19 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "minorConfirmNames",
-            "name": "minorConfirmNames",
+            name: "minorConfirmNames",
             currentValue: data['minorConfirmNames'],
             items: [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("minorConfirmNames", "Yes")
               },
               {
                 "value": "No, my name has changed",
-                "text": "No",
+                text: "No",
                 checked: checked("minorConfirmNames", "No")
               }
             ]
@@ -58,7 +58,7 @@
       </fieldset>
 
           {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
           }) }}
 
     </form>

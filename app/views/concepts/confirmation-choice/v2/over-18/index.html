@@ -30,31 +30,31 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "over18",
-            "name": "over18",
+            name: "over18",
             currentValue: data['over18'],
             "fieldset": {
               "legend": {
-                "text": over18Question,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: over18Question,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes"
+                text: "Yes"
               },
               {
                 "value": "No",
-                "text": "No"
+                text: "No"
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

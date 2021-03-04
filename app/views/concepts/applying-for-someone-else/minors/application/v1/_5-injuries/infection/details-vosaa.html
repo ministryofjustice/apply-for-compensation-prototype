@@ -28,42 +28,42 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukCheckboxes({
-            "classes": "govuk-checkboxes",
+            classes: "govuk-checkboxes",
             "idPrefix": "infectionType",
-            "name": "infectionType",
+            name: "infectionType",
             "fieldset": {
               "legend": {
-                "text": "What infection do they have?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "What infection do they have?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "HIV",
-                "text": "HIV",
+                text: "HIV",
                 checked: checked("infectionType", "HIV")
               },
               {
                 "value": "Hepatitis B",
-                "text": "Hepatitis B",
+                text: "Hepatitis B",
                 checked: checked("infectionType", "Hepatitis B")
               },
               {
                 "value": "Hepatitis C",
-                "text": "Hepatitis C",
+                text: "Hepatitis C",
                 checked: checked("infectionType", "Hepatitis C")
               },
               {
                 "value": "Other sexually transmitted infection (STI)",
-                "text": "Other sexually transmitted infection (STI)",
+                text: "Other sexually transmitted infection (STI)",
                 checked: checked("infectionType", "Other sexually transmitted infection (STI)")
               }
               ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

@@ -31,7 +31,7 @@ Select any injuries to the tissue on your head, face or neck - {{ serviceName }}
         id: "otherHeadTissueInjury",
         name: "otherHeadTissueInjury",
         value: data['otherHeadTissueInjury'],
-        type: "text",
+        type: text,
         classes: "govuk-!-width-full",
         label: {
           text: "Type of injury"
@@ -85,7 +85,7 @@ Select any injuries to the tissue on your head, face or neck - {{ serviceName }}
           ]
       }) }}
       {{ govukButton({
-        "text": "Continue"
+        text: "Continue"
       }) }}
 
       {% include "../../../includes/simple-injury-list.html" %}

@@ -24,17 +24,17 @@
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
-            "label": {
-            "text": phoneNumberQuestion,
-            "isPageHeading": true,
-            "classes": 'govuk-label--xl'
+            label: {
+            text: phoneNumberQuestion,
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
             },
             hint: {
               text: phoneNumberHint
             },
-            "classes": 'govuk-input--width-20',
-            "id": "phoneNumber",
-            "name": "phoneNumber",
+            classes: 'govuk-input--width-20',
+            id: "phoneNumber",
+            name: "phoneNumber",
             value: data['phoneNumber'],
             type: "tel",
             classes: "govuk-input--width-20"
@@ -43,7 +43,7 @@
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

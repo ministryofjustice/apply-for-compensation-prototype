@@ -27,15 +27,15 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "visitedHospital",
-            "name": "visitedHospital",
+            name: "visitedHospital",
             currentValue: data['visitedHospital'],
             "fieldset": {
               "legend": {
-                "text": "Did you seek medical help for your injuries?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Did you seek medical help for your injuries?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
@@ -44,19 +44,19 @@
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("visitedHospital", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("visitedHospital", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

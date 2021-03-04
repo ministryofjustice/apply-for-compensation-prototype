@@ -27,33 +27,33 @@ Are they a British citizen or EU national? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "britishCitizen",
-            "name": "britishCitizen",
+            name: "britishCitizen",
             currentValue: data['britishCitizen'],
             "fieldset": {
               "legend": {
-                "text": "Are they a British citizen or EU national?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Are they a British citizen or EU national?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("britishCitizen", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("britishCitizen", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

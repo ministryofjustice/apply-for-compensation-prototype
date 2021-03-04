@@ -30,33 +30,33 @@ Is the child under 18? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "under18",
-            "name": "under18",
+            name: "under18",
             currentValue: data['under18'],
             "fieldset": {
               "legend": {
-                "text": "Is the child under 18?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Is the person under 18?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("under18", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("under18", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

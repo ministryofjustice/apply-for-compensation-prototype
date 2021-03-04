@@ -30,33 +30,33 @@ Were you the victim of a violent crime? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "crimeOfViolence",
-            "name": "crimeOfViolence",
+            name: "crimeOfViolence",
             currentValue: data['crimeOfViolence'],
             "fieldset": {
               "legend": {
-                "text": "Were you a victim of violent crime?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Were you a victim of violent crime?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("crimeOfViolence", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("crimeOfViolence", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

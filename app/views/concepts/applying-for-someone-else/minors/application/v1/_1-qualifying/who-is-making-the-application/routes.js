@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       res.redirect('/concepts/applying-for-someone-else/minors/application/v1/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/parent-guardian')
+      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/under-18')
     }
   })
 

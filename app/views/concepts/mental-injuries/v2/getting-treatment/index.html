@@ -27,33 +27,33 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "gettingTreatment",
-            "name": "gettingTreatment",
+            name: "gettingTreatment",
             currentValue: data['gettingTreatment'],
             "fieldset": {
               "legend": {
-                "text": mentalHealthTreatmentQuestionv2,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: mentalHealthTreatmentQuestionv2,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("gettingTreatment", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("gettingTreatment", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

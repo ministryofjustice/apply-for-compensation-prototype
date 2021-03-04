@@ -32,32 +32,32 @@
             {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
             {{ govukRadios({
-                  "classes": "govuk-radios",
+                  classes: "govuk-radios",
                   "idPrefix": "policeWales",
-                  "name": "policeWales",
+                  name: "policeWales",
                   "value": data['policeWales'],
                   "fieldset": {
                   },
                   "items": [
                   {
                     "value": "British Transport Police",
-                    "text": "British Transport Police"
+                    text: "British Transport Police"
                   },
                   {
                     "value": "Dyfed-Powys",
-                    "text": "Dyfed-Powys"
+                    text: "Dyfed-Powys"
                   },
                   {
                     "value": "Gwent",
-                    "text": "Gwent"
+                    text: "Gwent"
                   },
                   {
                     "value": "North Wales",
-                    "text": "North Wales"
+                    text: "North Wales"
                   },
                   {
                     "value": "South Wales",
-                    "text": "South Wales"
+                    text: "South Wales"
                   }
                   ]
                 }) }}
@@ -68,7 +68,7 @@
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

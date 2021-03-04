@@ -28,32 +28,32 @@ Finacial losses  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "lossEarningsClaim",
-            "name": "lossEarningsClaim",
+            name: "lossEarningsClaim",
             "fieldset": {
               "legend": {
-                "text": "Did you have a job when crime happened?",
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: "Did you have a job when crime happened?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("lossEarningsClaim", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("lossEarningsClaim", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

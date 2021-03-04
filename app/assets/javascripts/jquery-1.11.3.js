@@ -707,7 +707,7 @@ var i,
 	ridentifier = new RegExp( "^" + identifier + "$" ),
 
 	matchExpr = {
-		"ID": new RegExp( "^#(" + characterEncoding + ")" ),
+		id: new RegExp( "^#(" + characterEncoding + ")" ),
 		"CLASS": new RegExp( "^\\.(" + characterEncoding + ")" ),
 		"TAG": new RegExp( "^(" + characterEncoding.replace( "w", "w*" ) + ")" ),
 		"ATTR": new RegExp( "^" + attributes ),
@@ -859,10 +859,10 @@ function Sizzle( selector, context, results, seed ) {
 			if ( nodeType === 1 && context.nodeName.toLowerCase() !== "object" ) {
 				groups = tokenize( selector );
 
-				if ( (old = context.getAttribute("id")) ) {
+				if ( (old = context.getAttribute(id)) ) {
 					nid = old.replace( rescape, "\\$&" );
 				} else {
-					context.setAttribute( "id", nid );
+					context.setAttribute( id, nid );
 				}
 				nid = "[id='" + nid + "'] ";
 
@@ -883,7 +883,7 @@ function Sizzle( selector, context, results, seed ) {
 				} catch(qsaError) {
 				} finally {
 					if ( !old ) {
-						context.removeAttribute("id");
+						context.removeAttribute(id);
 					}
 				}
 			}
@@ -1125,7 +1125,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// ID find and filter
 	if ( support.getById ) {
-		Expr.find["ID"] = function( id, context ) {
+		Expr.find[id] = function( id, context ) {
 			if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
 				var m = context.getElementById( id );
 				// Check parentNode to catch when Blackberry 4.6 returns
@@ -1133,21 +1133,21 @@ setDocument = Sizzle.setDocument = function( node ) {
 				return m && m.parentNode ? [ m ] : [];
 			}
 		};
-		Expr.filter["ID"] = function( id ) {
+		Expr.filter[id] = function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
-				return elem.getAttribute("id") === attrId;
+				return elem.getAttribute(id) === attrId;
 			};
 		};
 	} else {
 		// Support: IE6/7
 		// getElementById is not reliable as a find shortcut
-		delete Expr.find["ID"];
+		delete Expr.find[id];
 
-		Expr.filter["ID"] =  function( id ) {
+		Expr.filter[id] =  function( id ) {
 			var attrId = id.replace( runescape, funescape );
 			return function( elem ) {
-				var node = typeof elem.getAttributeNode !== "undefined" && elem.getAttributeNode("id");
+				var node = typeof elem.getAttributeNode !== "undefined" && elem.getAttributeNode(id);
 				return node && node.value === attrId;
 			};
 		};
@@ -1259,12 +1259,12 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// The type and name attributes are restricted during .innerHTML assignment
 			var input = doc.createElement("input");
 			input.setAttribute( "type", "hidden" );
-			div.appendChild( input ).setAttribute( "name", "D" );
+			div.appendChild( input ).setAttribute( name, "D" );
 
 			// Support: IE8
 			// Enforce case-sensitivity of name attribute
 			if ( div.querySelectorAll("[name=d]").length ) {
-				rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
+				rbuggyQSA.push( name + whitespace + "*[*^$|!~]?=" );
 			}
 
 			// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
@@ -1977,14 +1977,14 @@ Expr = Sizzle.selectors = {
 			return name === "input" && elem.type === "button" || name === "button";
 		},
 
-		"text": function( elem ) {
+		text: function( elem ) {
 			var attr;
 			return elem.nodeName.toLowerCase() === "input" &&
-				elem.type === "text" &&
+				elem.type === text &&
 
 				// Support: IE<8
-				// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
-				( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === "text" );
+				// New HTML5 attribute values (e.g., "search") appear with elem.type === text
+				( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === text );
 		},
 
 		// Position-in-collection
@@ -2524,11 +2524,11 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 
 		// Take a shortcut and set the context if the root selector is an ID
 		tokens = match[0] = match[0].slice( 0 );
-		if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
+		if ( tokens.length > 2 && (token = tokens[0]).type === id &&
 				support.getById && context.nodeType === 9 && documentIsHTML &&
 				Expr.relative[ tokens[1].type ] ) {
 
-			context = ( Expr.find["ID"]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
+			context = ( Expr.find[id]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
 			if ( !context ) {
 				return results;
 
@@ -3838,7 +3838,7 @@ function internalRemoveData( elem, name, pvt ) {
 					}
 				}
 			} else {
-				// If "name" is an array of keys...
+				// If name is an array of keys...
 				// When data is initially created, via ("key", "val") signature,
 				// keys will be converted to camelCase.
 				// Since there is no way to tell _how_ a key was added, remove
@@ -7305,7 +7305,7 @@ function propFilter( props, specialEasing ) {
 			delete props[ name ];
 
 			// not quite $.extend, this wont overwrite keys already present.
-			// also - reusing 'index' from above because we have the correct "name"
+			// also - reusing 'index' from above because we have the correct name
 			for ( index in value ) {
 				if ( !( index in props ) ) {
 					props[ index ] = value[ index ];

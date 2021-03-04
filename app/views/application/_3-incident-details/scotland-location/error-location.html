@@ -41,9 +41,9 @@ Error: {{ scotlandLocationQuestion }} - {{ serviceName }} - GOV.UK
             label: {
             text: townOrCityLabel
             },
-            "classes": 'govuk-input--width-30',
-            "id": "ScotlandTown",
-            "name": "ScotlandTown"
+            classes: 'govuk-input--width-30',
+            id: "ScotlandTown",
+            name: "ScotlandTown"
             }) }}
 
         {{ govukInput({
@@ -57,15 +57,15 @@ Error: {{ scotlandLocationQuestion }} - {{ serviceName }} - GOV.UK
                   errorMessage: {
                   text: detailedLocationError
                 },
-                  "classes": 'govuk-input--width-30',
-                  "id": "ScotlandLocation",
-                  "name": "ScotlandLocation"
+                  classes: 'govuk-input--width-30',
+                  id: "ScotlandLocation",
+                  name: "ScotlandLocation"
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

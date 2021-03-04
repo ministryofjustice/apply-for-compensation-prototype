@@ -26,9 +26,9 @@
       {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
 
       {{ govukCheckboxes({
-            "classes": "govuk-checkboxes",
+            classes: "govuk-checkboxes",
             "idPrefix": "specialExpenses",
-            "name": "specialExpenses",
+            name: "specialExpenses",
             currentValue: data['specialExpenses'],
             "fieldset": {
               "legend": {
@@ -40,22 +40,22 @@
             "items": [
               {
                 "value": "equipment",
-                "text": "Buying or repairing physical aids",
+                text: "Buying or repairing physical aids",
                 checked: checked("specialExpenses", "equipment")
               },
               {
                 "value": "home alterations",
-                "text": "Alterations to my home",
+                text: "Alterations to my home",
                 checked: checked("home alterations", "No")
               },
               {
                 "value": "care",
-                "text": "Home care",
+                text: "Home care",
                 checked: checked("home alterations", "care")
               },
               {
                 "value": "NHS treatment",
-                "text": "NHS treatment I've paid for",
+                text: "NHS treatment I've paid for",
                 hint: {
                   text: "Or treatment from a state health service in another country"
                 },
@@ -63,7 +63,7 @@
               },
               {
                 "value": "I do not want to claim for any special expenses",
-                "text": "I have not had these expenses",
+                text: "I have not had these expenses",
                 checked: checked("home alterations", "I do not want to claim for special expenses"),
                 id: "none"
               }
@@ -71,7 +71,7 @@
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

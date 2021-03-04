@@ -41,15 +41,15 @@ Error: {{ whoIsMakingTheApplicationQuestion }} - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            "classes": "govuk-radios--stacked",
+            classes: "govuk-radios--stacked",
             "idPrefix": "whoIsMakingTheApplication",
-            "name": "whoIsMakingTheApplication",
+            name: "whoIsMakingTheApplication",
             currentValue: data['whoIsMakingTheApplication'],
             "fieldset": {
               "legend": {
-                "text": whoIsMakingTheApplicationQuestion,
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: whoIsMakingTheApplicationQuestion,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             errorMessage: {
@@ -58,17 +58,17 @@ Error: {{ whoIsMakingTheApplicationQuestion }} - {{ serviceName }} - GOV.UK
           "items": [
           {
           "value": "Myself",
-          "text": "Myself"
+          text: "Myself"
           },
           {
           "value": "Someone else",
-          "text": "Someone else"
+          text: "Someone else"
           }
           ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

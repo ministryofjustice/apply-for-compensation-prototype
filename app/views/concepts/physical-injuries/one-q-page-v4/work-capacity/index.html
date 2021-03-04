@@ -28,14 +28,14 @@ Financial losses  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukRadios({
-              "classes": "govuk-radios--inline",
+              classes: "govuk-radios--inline",
               "idPrefix": "workCapacity",
-              "name": "workCapacity",
+              name: "workCapacity",
               "fieldset": {
                 "legend": {
-                  "text": "Have you been unable to work for more than 28 weeks?",
-                  "isPageHeading": true,
-                  "classes": 'govuk-fieldset__legend--xl'
+                  text: "Have you been unable to work for more than 28 weeks?",
+                  isPageHeading: true,
+                  classes: 'govuk-fieldset__legend--xl'
                 }
               },
               hint: {
@@ -44,19 +44,19 @@ Financial losses  - {{ serviceName }} - GOV.UK
               "items": [
               {
                 "value": "Yes",
-                "text": "Yes",
+                text: "Yes",
                 checked: checked("workCapacity", "Yes")
               },
               {
                 "value": "No",
-                "text": "No",
+                text: "No",
                 checked: checked("workCapacity", "No")
               }
             ]
           }) }}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

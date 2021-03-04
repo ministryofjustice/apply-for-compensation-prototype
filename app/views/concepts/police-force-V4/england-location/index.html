@@ -27,9 +27,9 @@
             label: {
             text: townOrCityLabel
             },
-            "classes": 'govuk-input--width-30',
-            "id": "EnglandTown",
-            "name": "EnglandTown",
+            classes: 'govuk-input--width-30',
+            id: "EnglandTown",
+            name: "EnglandTown",
             "value": data['EnglandTown']
             }) }}
 
@@ -40,16 +40,16 @@
                   hint: {
                   text: locationHint
                   },
-                  "classes": 'govuk-input--width-30',
-                  "id": "EnglandLocation",
-                  "name": "EnglandLocation",
+                  classes: 'govuk-input--width-30',
+                  id: "EnglandLocation",
+                  name: "EnglandLocation",
                   "value": data['EnglandLocation']
                   }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>
