@@ -29,23 +29,23 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            "idPrefix": "haveInfection",
+            idPrefix: "haveInfection",
             name: "haveInfection",
-            "fieldset": {
-              "legend": {
+            fieldset: {
+              legend: {
                 text: "Do you have HIV or hepatitis as a result of the crime?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
             },
-            "items": [
+            items: [
               {
-                "value": "Yes",
+                value: "Yes",
                 text: "Yes",
                 checked: checked("haveInfection", "Yes")
               },
               {
-                "value": "No",
+                value: "No",
                 text: "No",
                 checked: checked("haveInfection", "No")
               }
@@ -57,8 +57,6 @@ Physical injuries  - {{ serviceName }} - GOV.UK
             }) }}
 
     </form>
-
-    
 
   </div>
 </div>

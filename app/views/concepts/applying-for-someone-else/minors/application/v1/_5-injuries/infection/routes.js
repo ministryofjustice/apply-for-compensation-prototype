@@ -6,7 +6,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuri
 
   if (haveInfection === 'No') {
     // Redirect to the relevant page
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy/loss')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details')
@@ -27,7 +27,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuri
 })
 
 router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy/loss')
 })
 
 router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details-vosaa', function (req, res) {
