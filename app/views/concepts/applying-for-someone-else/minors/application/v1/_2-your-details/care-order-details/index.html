@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Who do you share this with? - {{ serviceName }} - GOV.UK
+Which local authority is the order with? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,16 +22,20 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
     <form class="form" method="post">
 
 
-            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
 
-            {{ govukTextarea({
-              name: "care-order-details",
-              id: "care-order-details",
-              label: {
-                text: "Tell us about the care or supervision order",
-                classes: "govuk-label--xl",
-                isPageHeading: true
-              }
+      {{ govukInput({
+            label: {
+            text: "Which local authority is the order with?",
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
+            },
+            classes: 'govuk-input--width-20',
+            id: "careOrderDetails",
+            name: "careOrderDetails",
+            value: data['careOrderDetails'],
+            type: "tel",
+            classes: "govuk-input--width-20"
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -39,6 +43,7 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
       {{ govukButton({
             text: "Continue"
             }) }}
+
     </form>
   </div>
 </div>
