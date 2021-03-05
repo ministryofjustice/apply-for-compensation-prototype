@@ -1,6 +1,6 @@
 module.exports = function (router, content) {
 // START__####################################################################################################
-// File: Mental Health
+// File: Dentist visited?
 // Variable: mentalHealth
 
 router.post('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-visited', function (req, res) {
@@ -10,14 +10,14 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_6-treatm
   var visitedGP = req.session.data['visitedGP']
   var registeredGP = req.session.data['registeredGP']
 
-  if (visitedDentist === 'No') {
+  if (visitedDentist === 'Yes') {
+   res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-details')
+  } else if (visitedDentist === 'No') {
     if (visitedGP === 'No') {
       res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-visited/')
     } else {
-      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-financial-losses/context-your-money/')
+      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/end/')
     }
-  } else if (visitedDentist === 'Yes') {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-details')
   }
 })
 

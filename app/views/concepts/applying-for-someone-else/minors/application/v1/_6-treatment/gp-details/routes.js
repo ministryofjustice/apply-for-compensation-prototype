@@ -2,12 +2,21 @@ module.exports = function (router, content) {
   // START__####################################################################################################
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/gp-details', function (req, res) {
 
+    var visitedGP = req.session.data['visitedGP']
     let injuredParts = req.session.data['injuredParts']
 
-    if (injuredParts.includes('Head, face or neck')) {
+    // My physical injuries included a Head, neck or Face injury
+    if (injuredParts && injuredParts.includes('Head, face or neck')) {
       res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-visited')
     } else {
-      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-financial-losses/context-your-money/')
+      // I did NOT visit a GP
+      if (visitedGP === 'No') {
+        // So ask who I did see
+        res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-visited/')
+      } else {
+        // If I did visit a GP take me to the next secyion
+        res.redirect('/concepts/applying-for-someone-else/minors/application/v1/end/')
+      }
     }
   })
 

@@ -7,12 +7,7 @@ module.exports = function (router, content) {
 
     var confirmationPreference = req.session.data['confirmationPreference']
 
-    if (!req.session.data['emailAddress']) {
-      req.session.data['emailAddress'] = 'name@domain.com'
-    }
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_10-end/check-your-answers-page')
-    } else if ((confirmationPreference === 'Email') || (confirmationPreference === 'Text')) {
+    if ((confirmationPreference === 'Email') || (confirmationPreference === 'Text')) {
       res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/name')
     } else {
       res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/confirmation-options/transition')
