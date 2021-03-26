@@ -125,6 +125,11 @@ require('../views/concepts/indicent-type/option-d/not-crime-violence/routes')(ro
 //Extra questions & equal oportunities //
 require('../views/concepts/survey/routes')(router, viewContent);
 
+//Equality questions //
+require('../views/concepts/equality-questions/concept-1-hmcts/routes')(router, viewContent);
+require('../views/concepts/equality-questions/concept-2-gds/routes')(router, viewContent);
+
+
 
 // Add your routes here - above the module.exports line
 module.exports = router;

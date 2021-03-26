@@ -22,6 +22,7 @@ router.get('/', function (req, res) {
 
 // 1 - Qualifying questions
 
+require('./views/application/_1-qualifying/crime-reference/routes')(router, viewContent);
 require('./views/application/_1-qualifying/fatal-application/routes')(router, viewContent);
 require('./views/application/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
 require('./views/application/_1-qualifying/incident-reported/routes')(router, viewContent);

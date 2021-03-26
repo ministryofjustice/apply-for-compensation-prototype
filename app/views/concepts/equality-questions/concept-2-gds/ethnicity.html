@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "prototype"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "ethnic-group",
+      name: "ethnicgroup",
+      fieldset: {
+        legend: {
+          text: "What is your ethnic group?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "White",
+          text: "White"
+        },
+        {
+          value: "Mixed or multiple ethnic groups",
+          text: "Mixed or multiple ethnic groups"
+        },
+         {
+          value: "Asian or Asian British",
+          text: "Asian or Asian British"
+        },
+        {
+          value: "Black, African, Caribbean or Black British",
+          text: "Black, African, Caribbean or Black British"
+        },
+        {
+          value: "Other ethnic group",
+          text: "Other ethnic group"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "prefer-not-to-say",
+          text: "Prefer not to say",
+          label: {
+            classes: 'govuk-label'
+          }
+        }
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

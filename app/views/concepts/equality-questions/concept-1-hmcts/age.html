@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your age? (optional) - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+    {% set dobHtml %}
+    {{ govukDateInput({
+      id: "dob",
+      namePrefix: "dob",
+      hint: {
+        text: "For example, 26 5 1987"
+      },
+      items: [
+        {
+          name: "day",
+          classes: "govuk-input--width-2",
+          autocomplete: "bday-day"
+        },
+        {
+          name: "month",
+          classes: "govuk-input--width-2",
+          autocomplete: "bday-month"
+        },
+        {
+          name: "year",
+          classes: "govuk-input--width-4",
+          autocomplete: "bday-year"
+        }
+      ]
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "age",
+      name: "age",
+      fieldset: {
+        legend: {
+          text: "What is your date of birth?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "date-of-birth",
+          text: "Enter your date of birth",
+          conditional: {
+            html: dobHtml
+          }
+        },
+        {
+          value: "prefer-not-to-say",
+          text: "Prefer not to say"
+        }
+      ]
+    }) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "sex"
+}) }}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Why we are asking this question",
+  text: "This information helps us check that we’re treating people equally and fairly. It helps us to meet our commitment to equality (under the Equality Act 2010)."
+}) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your sex? (optional) - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {% set enterGenderHtml %}
+      {{ govukInput({
+        id: "enter-gender",
+        name: "enter-gender",
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Please enter your gender"
+        }
+      }) }}
+      {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "what-is-your-gender",
+      name: "what-is-your-gender",
+      fieldset: {
+        legend: {
+          text: "Is your gender the same as the sex you were registered at birth?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No",
+          conditional: {
+            html: enterGenderHtml
+          }
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "prefer-not-to-say",
+          text: "Prefer not to say"
+        }
+      ]
+    }) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue",
+  href: "sexual-orientation"
+}) }}
+
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+  {{ govukDetails({
+    summaryText: "Why we are asking this question",
+    text: "This information helps us check that we’re treating people equally and fairly. It helps us to meet our commitment to equality (under the Equality Act 2010)."
+  }) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

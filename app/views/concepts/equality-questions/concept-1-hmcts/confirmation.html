@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Equality questions - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+    {% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+          {{ govukPanel({
+            titleText: "You have answered the equality questions",
+            background: $govuk-brand-colour,
+            html: "The next steps are to check your details"
+          }) }}
+
+          <p>Your answers will help us check we are treating people fairly and equally.</p>
+          <p>Find out how we use this information in <a href="https://hmcts-access.service.gov.uk/privacy-policy">our privacy policy</a>.</p>
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+                text: "Continue to the next steps"
+            }) }}
+
+        </div>
+      </div>
+    {% endblock %}
+
+
+  </div>
+</div>
+</main>
+</div>

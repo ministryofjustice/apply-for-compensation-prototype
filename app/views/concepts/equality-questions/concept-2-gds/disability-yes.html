@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you have any disabilities? (optional) - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {{ govukRadios({
+        idPrefix: "disabilityYes",
+        name: "disabilityYes",
+        fieldset: {
+          legend: {
+            text: "Do any of your conditions or illnesses reduce your ability to carry out day to day activities?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example eating, washing, walking or going shopping."
+        },
+
+          "items": [
+          {
+            "value": "yes-a-lot",
+            text: "Yes, limited a lot",
+            checked: checked("disabilityYes", "yes-a-lot")
+          },
+          {
+            "value": "yes-a-little",
+            text: "Yes, limited a little",
+            checked: checked("disabilityYes", "yes-a-little")
+          },
+          {
+            "value": "not-at-all",
+            text: "Not at all",
+            checked: checked("disabilityYes", "not-at-all")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "prefer-not-to-say",
+            text: "Prefer not to say",
+            checked: checked("disabilityYes", "prefer-not-to-say")
+          }
+          ]
+          }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+          text: "Continue",
+          href: "ethnicity"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (fatalApplication === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/_1-qualifying/who-is-making-the-application')
+      res.redirect('/application/_1-qualifying/incident-reported')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/transition')

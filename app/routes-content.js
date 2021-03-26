@@ -37,7 +37,7 @@ module.exports = {
     compYesError: 'Enter an amount',
     compNoError: 'Enter an approximate date',
     countyLabel: 'County (optional)',
-    crimeReferenceNumberHint: 'This is the reference number the police gave the crime when it was reported.',
+    crimeReferenceNumberHint: 'This is the number the police gave the crime when it was reported. We need this to get information about the crime given to police.',
     crimeReferenceNumberQuestion: 'What\'s the crime reference number?',
     crimeReferenceNumberQuestionCA: 'Crime reference number?',
     crimeReferenceWarningSummary: 'Help with your crime reference number',

@@ -15,7 +15,7 @@ router.post('/application/_1-qualifying/british-citizen', function (req, res) {
       return res.redirect('/application/_10-end/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/_1-qualifying/incident-reported')
+    res.redirect('/application/_1-qualifying/crime-reference')
   }
 })
 
