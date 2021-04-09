@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Do you have parental rights and responsibilities for the child? - {{ serviceName }} - GOV.UK
+Are you the child's parent? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,6 +13,18 @@ Do you have parental rights and responsibilities for the child? - {{ serviceName
 {% endblock %}
 
 {% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content to be finalised',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
@@ -24,7 +36,7 @@ Do you have parental rights and responsibilities for the child? - {{ serviceName
             name: "parentGuardian",
             fieldset: {
             legend: {
-              text: "Do you have parental rights and responsibilities for the child?",
+              text: "Are you the child's parent?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }

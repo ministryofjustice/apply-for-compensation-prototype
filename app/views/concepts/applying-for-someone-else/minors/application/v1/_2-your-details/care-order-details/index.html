@@ -17,6 +17,17 @@ Which local authority is the order with? - {{ serviceName }} - GOV.UK
 
 {% block content %}
 
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content to be finalised',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
@@ -25,24 +36,29 @@ Which local authority is the order with? - {{ serviceName }} - GOV.UK
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
-            label: {
-            text: "Which local authority is the order with?",
-            isPageHeading: true,
-            classes: 'govuk-label--xl'
-            },
-            classes: 'govuk-input--width-20',
-            id: "careOrderDetails",
-            name: "careOrderDetails",
-            value: data['careOrderDetails'],
-            type: "tel",
-            classes: "govuk-input--width-20"
-            }) }}
+        label: {
+          text: "What local authority is this with?",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          text: "We need to know this as it may be the local authority or other organisation that handles the application after you've submitted it."
+        },
+        classes: 'govuk-input--width-20',
+        id: "careOrderDetails",
+        name: "careOrderDetails",
+        value: data['careOrderDetails'],
+        classes: "govuk-input--width-20"
+      }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
             text: "Continue"
             }) }}
+
+
+
 
     </form>
   </div>

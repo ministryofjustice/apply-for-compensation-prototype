@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: phone-number
   //
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/phone-number', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/context-victim-details')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/what-is-relationship')
   })
 
   // Pass the question in to the page

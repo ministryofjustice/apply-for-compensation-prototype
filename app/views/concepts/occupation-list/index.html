@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which of these best describes your working situation when the crime happened?  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content TBC',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "other-occupation",
+        name: "other-occupation",
+        spellcheck: false,
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "What was your occupation at the time?"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "applicant-occupation",
+        name: "applicant-occupation",
+        fieldset: {
+          legend: {
+            text: "Which of these best describes your working situation when the crime happened?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "x",
+            text: "Unemployed"
+          },
+          {
+            value: "x",
+            text: "Full-time employee"
+          },
+          {
+            value: "x",
+            text: "Part-time employee"
+          },
+          {
+            value: "x",
+            text: "Self-employed"
+          },
+          {
+            value: "x",
+            text: "Freelancer"
+          },
+          {
+            value: "x",
+            text: "Contract worker"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "other-occupation",
+            text: "Other occupation",
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

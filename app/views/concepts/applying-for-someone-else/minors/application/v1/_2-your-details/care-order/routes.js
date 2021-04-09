@@ -9,7 +9,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_2-your-d
 
   if (careOrder === 'No') {
     // Redirect to the relevant page
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/address')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/context-victim-details')
   } else {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/application/v1/check-your-answers-page')

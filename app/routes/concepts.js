@@ -129,6 +129,36 @@ require('../views/concepts/survey/routes')(router, viewContent);
 require('../views/concepts/equality-questions/concept-1-hmcts/routes')(router, viewContent);
 require('../views/concepts/equality-questions/concept-2-gds/routes')(router, viewContent);
 
+//Care order context //
+require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-1/care-order/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-1/care-order-details/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-2/care-order/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-2/care-order-details/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-3/care-order/routes')(router, viewContent);
+
+//Filter non-parents //
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-1/parent-guardian/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/authority-to-apply/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/parent-guardian/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/parent-guardian-proof/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/authority-to-apply/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/parent-guardian/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/birth-certificate-proof/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/birth-certificate/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/other-proof/routes')(router, viewContent);
+
+//Split money journey//
+require('../views/concepts/split-money-journey/context-loss-of-earnings/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/loe-how-long/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/loe-continuous-period/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/loe-briefly-describe-circumstances/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/loe-circumstances-detail/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/context-special-expenses/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/special-expenses/routes')(router, viewContent);
+
+
+
 
 
 // Add your routes here - above the module.exports line

@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // varialbe: email-address
   // if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/email-address', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/context-victim-details')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/what-is-relationship')
   })
 
   // Pass the question in to the page

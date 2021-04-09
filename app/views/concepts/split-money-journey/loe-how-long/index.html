@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Are you the child's parent? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content TBC',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "howLong",
+            name: "howLong",
+            fieldset: {
+            legend: {
+              text: "For how long?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "xxx"
+            },
+            items: [
+            {
+              value: "up-to-7-weeks",
+              text: "Up to 7 weeks",
+              checked: checked("howLong", "up-to-7-weeks")
+            },
+            {
+              value: "7-14-weeks",
+              text: "Between 7 and 14 weeks",
+              checked: checked("howLong", "7-14-weeks")
+            },
+            {
+              value: "14-21-weeks",
+              text: "Between 14 and 21 weeks",
+              checked: checked("howLong", "14-21-weeks")
+            },
+            {
+              value: "21-28-weeks",
+              text: "Between 21 and 28 weeks",
+              checked: checked("howLong", "21-28-weeks")
+            },
+            {
+              value: "28-weeks-or-more",
+              text: "28 weeks or more",
+              checked: checked("howLong", "28-weeks-or-more")
+            }
+            ]
+            }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      xxx
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">xxx:</p>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>xxx</li>
+                        <li>xxx</li>
+                      </ul>
+                    </div>
+              </details>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
