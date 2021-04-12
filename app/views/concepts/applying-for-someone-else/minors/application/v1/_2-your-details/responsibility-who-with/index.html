@@ -17,17 +17,6 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
 
 {% block content %}
 
-<!-- CONTENT TBC BADGE -->
-  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-  {{ mojBadge({
-  text: 'Content to be finalised',
-  classes: 'moj-badge--red'
-  }) }}
-  <br>
-  <br>
-  <br>
-<!-- CONTENT TBC BADGE -->
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
@@ -41,7 +30,7 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
             classes: 'govuk-label--xl'
             },
             hint: {
-            text: "This lets our team better understand the shared responsibility agreement."
+            text: "This lets us better understand the shared parental rights for the child."
               },
             classes: 'govuk-input--width-20',
             id: "responsibilityWhoWith",
@@ -52,6 +41,18 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I share parental rights with more than one person
+            </span>
+        </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">You can add any additional names of shared parental rights holders at the end of this application.</p>
+              <p>Find out more about <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="new">who has parental responsibilities (opens in new tab)</a>.</p>
+            </div>
+      </details>
 
       {{ govukButton({
             text: "Continue"

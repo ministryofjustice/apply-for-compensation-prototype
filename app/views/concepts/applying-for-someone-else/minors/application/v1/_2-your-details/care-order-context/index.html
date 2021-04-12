@@ -19,29 +19,18 @@ You need to send proof that you’re the child’s parent - {{ serviceName }} - 
 
 {% block content %}
 
-<!-- CONTENT TBC BADGE -->
-  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-  {{ mojBadge({
-  text: 'Content to be finalised',
-  classes: 'moj-badge--red'
-  }) }}
-  <br>
-  <br>
-  <br>
-<!-- CONTENT TBC BADGE -->
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">Care, supervision or other local authority orders</h1>
+      <h1 class="govuk-heading-xl">Ownership of this application may change</h1>
 
-      <p class="govuk-body">We ask for this information as it may be the local authority or other organisation that handles this application after you’ve submitted it.</p>
+      <p class="govuk-body">We ask about care, supervision and other local authority orders to identify who we need to talk to about the application.</p>
 
-      <p class="govuk-body">This might be because of an existing care, supervision or other local authority order.</p>
+      <p class="govuk-body">This is because it may be the local authority or other organisation that handles it after you submit it. This could be because of an existing care, supervision or other local authority order.</p>
 
-      <p class="govuk-body">You can still continue your application and submit this.</p>
+      <p class="govuk-body">You can still continue and submit your application.</p>
 
       {{ govukButton({
       text: "Continue",
