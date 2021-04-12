@@ -149,6 +149,7 @@ require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/o
 
 //Split money journey//
 require('../views/concepts/split-money-journey/context-loss-of-earnings/routes')(router, viewContent);
+require('../views/concepts/split-money-journey/loe-working-situation/routes')(router, viewContent);
 require('../views/concepts/split-money-journey/loe-stopped-working/routes')(router, viewContent);
 require('../views/concepts/split-money-journey/loe-how-long/routes')(router, viewContent);
 require('../views/concepts/split-money-journey/loe-continuous-period/routes')(router, viewContent);
