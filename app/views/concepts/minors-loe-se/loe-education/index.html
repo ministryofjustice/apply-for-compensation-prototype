@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Are you the child's parent? - {{ serviceName }} - GOV.UK
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,46 +32,31 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            idPrefix: "stoppedWorking",
-            name: "stoppedWorking",
+            idPrefix: "educationStatus",
+            name: "educationStatus",
             fieldset: {
             legend: {
-              text: "Have you had to stop working as a result of the incident?",
+              text: "Were they in full-time or higher education at the time of the incident?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: "xxx"
+              text: "This might be school, college, university or distanced learning."
             },
             items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("stoppedWorking", "Yes")
+              checked: checked("educationStatus", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("stoppedWorking", "No")
+              checked: checked("educationStatus", "No")
             }
             ]
             }) }}
-
-            <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      xxx
-                    </span>
-                </summary>
-                    <div class="govuk-details__text">
-                      <p class="govuk-body">xxx:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>xxx</li>
-                        <li>xxx</li>
-                      </ul>
-                    </div>
-              </details>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

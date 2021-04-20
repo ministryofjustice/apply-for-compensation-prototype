@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Are you the child's parent? - {{ serviceName }} - GOV.UK
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,44 +31,29 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
-            classes: "govuk-radios",
-            idPrefix: "howLong",
-            name: "howLong",
+            classes: "govuk-radios--inline",
+            idPrefix: "stoppedWorkingHowLong",
+            name: "stoppedWorkingHowLong",
             fieldset: {
             legend: {
-              text: "For how long?",
+              text: "Was this for a period of 28 weeks or more?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: "xxx"
+              text: "28 weeks is 140 working days, from Monday to Friday. This can be a single period of time or span several times since the incident."
             },
             items: [
             {
-              value: "up-to-7-weeks",
-              text: "Up to 7 weeks",
-              checked: checked("howLong", "up-to-7-weeks")
+              value: "Yes",
+              text: "Yes",
+              checked: checked("stoppedWorkingHowLong", "Yes")
             },
             {
-              value: "7-14-weeks",
-              text: "Between 7 and 14 weeks",
-              checked: checked("howLong", "7-14-weeks")
-            },
-            {
-              value: "14-21-weeks",
-              text: "Between 14 and 21 weeks",
-              checked: checked("howLong", "14-21-weeks")
-            },
-            {
-              value: "21-28-weeks",
-              text: "Between 21 and 28 weeks",
-              checked: checked("howLong", "21-28-weeks")
-            },
-            {
-              value: "28-weeks-or-more",
-              text: "28 weeks or more",
-              checked: checked("howLong", "28-weeks-or-more")
+              value: "No",
+              text: "No",
+              checked: checked("stoppedWorkingHowLong", "No")
             }
             ]
             }) }}
@@ -76,15 +61,12 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
             <details class="govuk-details">
                 <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
-                      xxx
+                      Help with this (title TBC)
                     </span>
                 </summary>
                     <div class="govuk-details__text">
-                      <p class="govuk-body">xxx:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>xxx</li>
-                        <li>xxx</li>
-                      </ul>
+                      <p class="govuk-body">If the child has been unable to work or look for a job for 28 weeks, you can apply for loss of earnings and special expenses.</p>
+                      <p class="govuk-body">The 28-week period can be continuous or span different times.</p>
                     </div>
               </details>
 

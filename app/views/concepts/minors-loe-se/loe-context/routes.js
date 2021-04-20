@@ -1,13 +1,13 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
 
-  router.post('/concepts/split-money-journey/loe-how-long', function (req, res) {
-    res.redirect('/concepts/split-money-journey/loe-continuous-period')
+  router.post('/concepts/minors-loe-se/loe-context', function (req, res) {
+    res.redirect('/concepts/minors-loe-se/loe-working-age')
   })
 
   // Pass the question in to the page
-  router.get('/concepts/split-money-journey/loe-how-long/', function (req, res) {
-    res.render('concepts/split-money-journey/loe-how-long/index', content)
+  router.get('/concepts/minors-loe-se/loe-context/', function (req, res) {
+    res.render('concepts/minors-loe-se/loe-context/index', content)
   })
   // END__######################################################################################################
 }

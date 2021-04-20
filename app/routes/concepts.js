@@ -148,15 +148,15 @@ require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/o
 require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/other-proof/routes')(router, viewContent);
 
 //Split money journey//
-require('../views/concepts/split-money-journey/context-loss-of-earnings/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/loe-working-situation/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/loe-stopped-working/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/loe-how-long/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/loe-continuous-period/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/loe-briefly-describe-circumstances/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/loe-circumstances-detail/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/context-special-expenses/routes')(router, viewContent);
-require('../views/concepts/split-money-journey/special-expenses/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-working-age/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-working-why-not/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-education/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-stopped-working-how-long/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-se-future-capacity/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/loe-se-special-expenses/routes')(router, viewContent);
 
 
 

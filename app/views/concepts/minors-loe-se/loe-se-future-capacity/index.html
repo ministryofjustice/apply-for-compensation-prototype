@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Are you the child's parent? - {{ serviceName }} - GOV.UK
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,20 +29,34 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-      {{ govukTextarea({
-        name: "circumstancesDetail",
-        id: "circumstancesDetail",
-        label: {
-          text: "Briefly describe the circumstances",
-          classes: "govuk-label--xl",
-          isPageHeading: true
-        },
-        hint: {
-          text: "xxx"
-        }
-      }) }}
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "futureCapacity",
+            name: "futureCapacity",
+            fieldset: {
+            legend: {
+              text: "Has their future capacity to work or attend eduation been affected by the incident?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "xxx"
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("futureCapacity", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("futureCapacity", "No")
+            }
+            ]
+            }) }}
 
             <details class="govuk-details">
                 <summary class="govuk-details__summary">

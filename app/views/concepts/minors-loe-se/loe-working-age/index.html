@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Are you the child's parent? - {{ serviceName }} - GOV.UK
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,46 +32,28 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            idPrefix: "describeCircumstances",
-            name: "describeCircumstances",
+            idPrefix: "workingAge",
+            name: "workingAge",
             fieldset: {
             legend: {
-              text: "Would you like to briefly describe the circumstances?",
+              text: "Was the child over 16 at the time of the incident?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
-            },
-            hint: {
-              text: "xxx"
             },
             items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("describeCircumstances", "Yes")
+              checked: checked("workingAge", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("describeCircumstances", "No")
+              checked: checked("workingAge", "No")
             }
             ]
             }) }}
-
-            <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      xxx
-                    </span>
-                </summary>
-                    <div class="govuk-details__text">
-                      <p class="govuk-body">xxx:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>xxx</li>
-                        <li>xxx</li>
-                      </ul>
-                    </div>
-              </details>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

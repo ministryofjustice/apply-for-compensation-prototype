@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Special expenses - {{ serviceName }} - GOV.UK
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,10 +32,19 @@ Special expenses - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Special expenses
+      The impact this incident might have on the child
     </h1>
 
-    <p class="govuk-body">We're going to ask you about special expenses you may have had as a result of the incident.</p>
+    <p class="govuk-body">We’re going to ask you questions about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the child's educational or employment status</li>
+        <li>the impact the crime has had on the child</li>
+        <li>if it's affected their ability to work just now or in future</li>
+        <li>if you have had any financial help from the time of the incident until now</li>
+      </ul>
+
+      <p class="govuk-body">The answers you give help build an understanding of the case. This also helps support the information we receive in the medical and police reports.</p>
 
     <form class="form" method="post">
       {{ govukButton({
