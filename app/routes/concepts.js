@@ -156,7 +156,11 @@ require('../views/concepts/minors-loe-se/loe-education/routes')(router, viewCont
 require('../views/concepts/minors-loe-se/loe-stopped-working/routes')(router, viewContent);
 require('../views/concepts/minors-loe-se/loe-stopped-working-how-long/routes')(router, viewContent);
 require('../views/concepts/minors-loe-se/loe-se-future-capacity/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-se-special-expenses/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/se-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/se-home-alterations/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/se-home-care/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/se-nhs-treatment/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/se-physical-aids/routes')(router, viewContent);
 
 
 

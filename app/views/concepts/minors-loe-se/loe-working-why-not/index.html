@@ -14,17 +14,6 @@
 
 {% block content %}
 
-<!-- CONTENT TBC BADGE -->
-  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-  {{ mojBadge({
-  text: 'Content TBC',
-  classes: 'moj-badge--red'
-  }) }}
-  <br>
-  <br>
-  <br>
-<!-- CONTENT TBC BADGE -->
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
@@ -40,7 +29,7 @@
         spellcheck: true,
         classes: "govuk-!-width-full",
         label: {
-          text: "Tell us why"
+          text: "Tell us more:"
         }
       }) }}
       {% endset -%}
@@ -61,24 +50,24 @@
             },
             items: [
             {
-              value: "Option 1",
+              value: "education",
               text: "At school, college or university",
-              checked: checked("workingStatus", "Option 1")
+              checked: checked("workingStatus", "education")
             },
             {
-              value: "Option 2",
+              value: "searching-for-employment",
               text: "Searching for employment",
-              checked: checked("workingStatus", "Option 2")
+              checked: checked("workingStatus", "searching-for-employment")
             },
             {
-              value: "Option 3",
+              value: "caring-for-someone",
               text: "Caring for someone",
-              checked: checked("workingStatus", "Option 3")
+              checked: checked("workingStatus", "caring-for-someone")
             },
             {
-              value: "Option 4",
+              value: "other",
               text: "Other",
-              checked: checked("workingStatus", "Option 4"),
+              checked: checked("workingStatus", "other"),
               conditional: {
                 html: otherReasonHtml
               }

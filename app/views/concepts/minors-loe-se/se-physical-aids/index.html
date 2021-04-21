@@ -21,28 +21,44 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            idPrefix: "futureCapacity",
-            name: "futureCapacity",
+            idPrefix: "physicalAids",
+            name: "physicalAids",
             fieldset: {
             legend: {
-              text: "Has the child’s ability to study or work in future been affected by the incident?",
+              text: "Have you or the child had to buy or pay for the repair of physical aids?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
+            },
+            hint: {
+              text: "They were lost or damaged during the incident."
             },
             items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("futureCapacity", "Yes")
+              checked: checked("physicalAids", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("futureCapacity", "No")
+              checked: checked("physicalAids", "No")
             }
             ]
             }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with physical aids
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">This applies to replacing or repairing physical aids. And cannot be considered if it is an ongoing expense.</p>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
