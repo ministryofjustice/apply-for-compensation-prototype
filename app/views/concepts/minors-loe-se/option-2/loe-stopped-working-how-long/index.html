@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "stoppedWorkingHowLong",
+            name: "stoppedWorkingHowLong",
+            fieldset: {
+            legend: {
+              text: "Was this for a period of six months or more?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "This must be equal to 196 days (28 weeks). It can be a single period of time or span several different times since the incident."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("stoppedWorkingHowLong", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("stoppedWorkingHowLong", "No")
+            }
+            ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding six months or more
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">If the child has been unable to work or look for a job for six months or more (196 days or 28 weeks), you can apply for loss of earnings and special expenses.</p>
+                      <p class="govuk-body">This timeframe can be a single period of time or span different times.</p>
+                    </div>
+              </details>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

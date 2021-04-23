@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Applying for special expenses
+    </h1>
+
+    <p class="govuk-body">The child may qualify for special expenses if they've experienced any of the following because of the injury:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>lost money from their job as they were off</li>
+      <li>had to leave their job</li>
+      <li>were unable to work</li>
+    </ul>
+    <p class="govuk-body">This must be for a period of 6 months or more. It has to be at least 196 days (28 weeks) or more. This can be a single period of time or span several different periods of time.</p>
+    <p class="govuk-body">Special expenses you and/or the child can apply for are considered as the following:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>physical aids lost or damaged during the incident</li>
+      <li>cost of treatments delivered by the NHS</li>
+      <li>cost of treatments delivered by a state health service outside the United Kingdom</li>
+      <li>special equipment</li>
+      <li>required changes to the home as a result of the incident</li>
+      <li>cost of care that resulted from the incident</li>
+      <li>cost of supervision by care professionals</li>
+      <li>cost of administrators who handle their affairs</li>
+      <li>cost of setting up a trust as instructed by a claims officer</li>
+    </ul>
+
+    <p class="govuk-body">In applying for special expenses, we may ask you to provide evidence of any information you provide after you've sent the application.</p>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

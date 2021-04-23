@@ -147,20 +147,29 @@ require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/o
 require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/birth-certificate/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/other-proof/routes')(router, viewContent);
 
-//Split money journey//
-require('../views/concepts/minors-loe-se/loe-context/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-working-age/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-working/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-working-why-not/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-education/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-stopped-working/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-stopped-working-how-long/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/loe-se-future-capacity/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/se-context/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/se-home-alterations/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/se-home-care/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/se-nhs-treatment/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/se-physical-aids/routes')(router, viewContent);
+//Minors loss of earnings and special expenses//
+require('../views/concepts/minors-loe-se/option-1/loe-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-education/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-se-future-capacity/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-stopped-working-how-long/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-working-age/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/loe-working-why-not/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/se-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/se-home-alterations/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/se-home-care/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/se-nhs-treatment/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-1/se-physical-aids/routes')(router, viewContent);
+
+require('../views/concepts/minors-loe-se/option-2/loe-capacity/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/loe-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/loe-not-working-why/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/loe-stopped-working-how-long/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/loe-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/se-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-2/se-expenses/routes')(router, viewContent);
 
 
 

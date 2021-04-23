@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+            classes: "govuk-checkboxes",
+            "idPrefix": "specialExpenses",
+            name: "specialExpenses",
+            currentValue: data['specialExpenses'],
+            "fieldset": {
+              "legend": {
+                text: "Have you or the child had special expenses for any of the following items needed after the incident?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            "items": [
+              {
+                "value": "equipment",
+                text: "Replacement physical aids",
+                hint: {
+                  text: "Were these lost or damaged during the incident?"
+                },
+                checked: checked("specialExpenses", "equipment")
+              },
+              {
+                "value": "NHS treatment",
+                text: "NHS or other state health treatments",
+                hint: {
+                  text: "Did you receive this from the National Health Service or other state health services outside the United Kingdom?"
+                },
+                checked: checked("home alterations", "NHS treatment")
+              },
+              {
+                "value": "care",
+                text: "Home care services",
+                hint: {
+                  text: "The child has received services to help with their daily functions and/or meal preparation."
+                },
+                checked: checked("home alterations", "care")
+              },
+              {
+                "value": "home alterations",
+                text: "Changes to the home",
+                hint: {
+                  text: "Your home was altered based on approved changes. Only applies to the home the child stayed in at the time."
+                },
+                checked: checked("home alterations", "No")
+              },
+              {
+                "value": "Other",
+                text: "Other",
+                hint: {
+                  text: "Includes other special equipment, administrators who handle your affairs and setting up a trust as instructed by a claims officer."
+                },
+                checked: checked("home alterations", "NHS treatment")
+              },
+              {
+                "value": "None",
+                text: "None",
+                checked: checked("home alterations", "None"),
+                id: "none",
+                hint: {
+                  text: "You have not received any special expenses relating to the incident."
+                }
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
