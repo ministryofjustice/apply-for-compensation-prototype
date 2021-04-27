@@ -21,31 +21,50 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            idPrefix: "workStatus",
-            name: "workStatus",
+            idPrefix: "anyOtherExpenses",
+            name: "anyOtherExpenses",
             fieldset: {
             legend: {
-              text: "Did the child have a job when the crime happened?",
+              text: "Have you or the child paid for any other expenses not already mentioned?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: "This can be a full-time, part-time, freelance, seasonal or self-employed job."
+              text: "If yes, tell us more at the end of this application."
             },
             items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("workStatus", "Yes")
+              checked: checked("anyOtherExpenses", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("workStatus", "No")
+              checked: checked("anyOtherExpenses", "No")
             }
             ]
             }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with any other expenses
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">Other expenses can be the cost of:</p>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>special equipment
+                        <li>supervision by care professionals</li>
+                        <li>administrators who handle your affairs</li>
+                        <li>setting up a trust as instructed by a claims officer</li>
+                      </ul>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

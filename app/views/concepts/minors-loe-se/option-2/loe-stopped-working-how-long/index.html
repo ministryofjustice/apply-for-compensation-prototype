@@ -31,7 +31,7 @@
               }
             },
             hint: {
-              text: "This must be equal to 196 days (28 weeks). It can be a single period of time or span several different times since the incident."
+              text: "This must be 197 days or more. It can be a single period of time or cover several different times since the incident."
             },
             items: [
             {
@@ -47,23 +47,23 @@
             ]
             }) }}
 
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding the timeframe
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">If the child has been unable to work or look for a job for six months or more (197 days or 28 full weeks), you can apply for loss of earnings and special expenses.</p>
+                      <p class="govuk-body">This timeframe can be a single period of time or cover different time periods. For example, the child may go back to work in the same week the crime happens. But, they then cannot continue attending work due to the injuries sustained during the crime.</p>
+                      <p class="govuk-body">Our team will ask you for more details about this when they get in touch with you after you've sent the application.</p>
+                    </div>
+              </details>
+
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
             text: "Continue"
             }) }}
-
-
-            <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Help understanding six months or more
-                    </span>
-                </summary>
-                    <div class="govuk-details__text">
-                      <p class="govuk-body">If the child has been unable to work or look for a job for six months or more (196 days or 28 weeks), you can apply for loss of earnings and special expenses.</p>
-                      <p class="govuk-body">This timeframe can be a single period of time or span different times.</p>
-                    </div>
-              </details>
 
     </form>
   </div>

@@ -25,13 +25,10 @@
             name: "stoppedWorking",
             fieldset: {
             legend: {
-              text: "Was the child unable to work or look for a job because of the incident?",
+              text: "Was the child unable to work or look for a job because of the crime?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
-            },
-            hint: {
-              text: "Were they off work, had to leave a job or unable to look for a job because of the incident?"
             },
             items: [
             {
@@ -46,6 +43,18 @@
             }
             ]
             }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with working and looking for a job
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">The child being unable to work includes them missing work or having to leave their job because of the injuries they received from the crime.</p>
+                      <p class="govuk-body">It can also apply to them being unable to look for another job in any line of work because of the injuries.</p>
+                    </div>
+              </details>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

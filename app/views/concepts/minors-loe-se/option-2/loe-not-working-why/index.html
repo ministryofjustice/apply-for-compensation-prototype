@@ -19,64 +19,66 @@
     <form class="form" method="post">
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
-      {% from "govuk/components/button/macro.njk" import govukButton %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {% set otherHtml %}
-        {{ govukInput({
-          id: "other-work-detail",
-          name: "other-work-detail",
-          type: text,
-          classes: "govuk-!-width-full",
-          label: {
-            text: "Tell us more"
-          }
-        }) }}
+      {% set otherReasonHtml %}
+      {{ govukInput({
+        id: "otherReasonHtml",
+        name: "otherReasonHtml",
+        type: "text",
+        spellcheck: true,
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Tell us more:"
+        }
+      }) }}
       {% endset -%}
-
 
       {{ govukRadios({
             classes: "govuk-radios",
-            "idPrefix": "workDetails",
+            idPrefix: "workDetails",
             name: "workDetails",
-            "fieldset": {
-              "legend": {
-                text: "Tell us why the child was not employed at this time",
-                isPageHeading: true,
-                classes: 'govuk-fieldset__legend--xl'
+            fieldset: {
+            legend: {
+              text: "Tell us why the child was not employed at this time",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
               }
             },
-            "items": [
-              {
-                "value": "They were at school, college or university",
-                text: "They were at school, college or university",
-                checked: checked("workDetails", "They were at school, college or university")
-              },
-              {
-                value: "They were searching for employment",
-                text: "They were searching for employment",
-                checked: checked("workDetails", "They were searching for employment")
-              },
-              {
-                value: "They were caring for someone",
-                text: "They were caring for someone",
-                checked: checked("workDetails", "They were caring for someone")
-              },
-              {
-                value: "other",
-                text: "Other",
-                checked: checked("workDetails", "other"),
-                conditional: {
-                  html: otherHtml
-                }
+            hint: {
+              text: "Select one option. They were:"
+            },
+            items: [
+            {
+              value: "education",
+              text: "At school, college or university",
+              checked: checked("workDetails", "education")
+            },
+            {
+              value: "searching-for-employment",
+              text: "Searching for employment",
+              checked: checked("workDetails", "searching-for-employment")
+            },
+            {
+              value: "caring-for-someone",
+              text: "Caring for someone",
+              checked: checked("workDetails", "caring-for-someone")
+            },
+            {
+              value: "other",
+              text: "Other",
+              checked: checked("workDetails", "other"),
+              conditional: {
+                html: otherReasonHtml
               }
-              ]
-          })
-        }}
-
-        {{ govukButton({
-          text: "Continue"
+            }
+            ]
         }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
 
     </form>
   </div>
