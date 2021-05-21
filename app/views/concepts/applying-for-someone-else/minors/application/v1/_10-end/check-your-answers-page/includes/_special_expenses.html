@@ -1,0 +1,80 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  Special expenses
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      NHS treatments
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['nhsTreatment'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/application/_5-injuries/work-capacity">
+        Change<span class="govuk-visually-hidden"> NHS treatments</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Home care
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['homeCare'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/application/_5-injuries/work-capacity">
+        Change<span class="govuk-visually-hidden"> Home care</span>
+      </a>
+    </dd>
+  </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Home alterations
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['homeAlterations'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Home alterations</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Physical aids
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['physicalAids'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Physical aids</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Other special expenses
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['anyOtherExpenses'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Other special expenses</span>
+        </a>
+      </dd>
+    </div>
+
+
+</dl>

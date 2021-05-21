@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "homeCare",
+            name: "homeCare",
+            fieldset: {
+            legend: {
+              text: "Have you or the child paid for home care services as a result of the crime?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "If you care for the child yourself, select yes."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("homeCare", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("homeCare", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding home care
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+
+                      <p class="govuk-body">This applies to costs for home care services the child needed after the incident.</p>
+                      <p class="govuk-body">The care the child needs might include:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>going to the toilet</li>
+                          <li>bathing</li>
+                          <li>continence management</li>
+                          <li>food preparation</li>
+                          <li>eating</li>
+                          <li>taking medication</li>
+                          <li>administering other treatments</li>
+                        </ul>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

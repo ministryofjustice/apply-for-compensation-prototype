@@ -12,7 +12,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_6-treatm
     res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-details')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/end/')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-context/')
   }
 })
 

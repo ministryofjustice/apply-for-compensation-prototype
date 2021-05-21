@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: address-manually
   // will produce an address on multiple lines on the 'check your answers page'
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-details', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/end/')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-context/')
   })
 
   // END__######################################################################################################

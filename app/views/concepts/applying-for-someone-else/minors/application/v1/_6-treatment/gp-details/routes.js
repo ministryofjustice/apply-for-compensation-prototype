@@ -15,7 +15,7 @@ module.exports = function (router, content) {
         res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-visited/')
       } else {
         // If I did visit a GP take me to the next secyion
-        res.redirect('/concepts/applying-for-someone-else/minors/application/v1/end/')
+        res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-context/')
       }
     }
   })

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "nhsTreatment",
+            name: "nhsTreatment",
+            fieldset: {
+            legend: {
+              text: "Have you or the child paid for hospital treatments in the UK or from other state health services because of the crime?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "This includes paid treatments from the NHS or other health services from outside the UK."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("nhsTreatment", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("nhsTreatment", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with treatments
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">This applies only to costs for treatments you or the child has paid for. It includes payments for treatments provided by the National Health Service (NHS) or other state health services outside the UK.</p>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

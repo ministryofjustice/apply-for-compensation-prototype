@@ -19,10 +19,11 @@ module.exports = function (router, content) {
     var reportedDate = dateHelper.getDatefrom3inputs(reportedDateDay, reportedDateMonth, reportedDateYear) //that's the date reported based on the 3 elements we received from the user
 
     var duration = moment.duration(incidentDate.diff(reportedDate)); // / calculate the difference between the two (that's in milliseconds or something)
-    var delayInDays = duration.asDays(); // take that number in years  - we can do that thanks to the Moment library
+    var delayInDays = duration.asDays(); // take that number in days  - we can do that thanks to the Moment library
 
     console.log(incidentDate);
     console.log(reportedDate);
+    console.log(delayInDays);
 
     // if (req.session.data['incidentReported-day']) { //we have the data for the day the crime was reported (so we must have come back here from the 'Change' on the check your answer page as it's out of sequence)
     //   var reportingDateDay = req.session.data['incidentReported-day']
@@ -37,8 +38,8 @@ module.exports = function (router, content) {
     // req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
 
 
-    if (delayInDays > 2){ //apply more than 2 years after the incident
-      return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_3-incident-details/application-delay')
+    if (delayInDays < (365*2)){ //apply more than 2 years after the incident
+      return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_3-incident-details/reporting-delay')
     }
     req.session.data['applicationDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
     // else we're under 2 years

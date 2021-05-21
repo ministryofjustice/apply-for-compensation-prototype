@@ -149,6 +149,52 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-tr
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-details/routes')(router, viewContent);
 
 
+// 7 Loss of earnings & special expenses
+
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-context/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-education/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-se-future-capacity/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-stopped-working-how-long/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-working/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-working-age/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-working-why-not/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-any-other/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-context/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-home-alterations/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-home-care/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-nhs-treatment/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-physical-aids/routes')(router, viewContent);
+
+
+
+// 8 Other comp
+
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation-decision/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation-provider/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation-when/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/previous-applications/routes')(router, viewContent);
+
+
+// 9 Additional info
+
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_9-additional-info/context-additional-info/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_9-additional-info/additional-info-question/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_9-additional-info/additional-info-details/routes')(router, viewContent);
+
+
+// 10 End Screens
+
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_10-end/check-your-answers-page/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_10-end/declaration/routes')(router, viewContent);
+
+
+
+
 // MINORS JOURNEY Based on MVP VOSAA Journey - Late 2019 / Early 2020 //
 
 require('../views/concepts/applying-for-someone-else/minors/care-order/routes')(router, viewContent);

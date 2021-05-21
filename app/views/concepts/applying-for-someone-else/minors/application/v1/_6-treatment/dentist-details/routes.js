@@ -9,7 +9,7 @@ module.exports = function (router, content) {
     if (visitedGP === 'No') {
         res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-visited/')
       } else {
-        res.redirect('/concepts/applying-for-someone-else/minors/application/v1/end/')
+        res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-context/')
       }
   })
 

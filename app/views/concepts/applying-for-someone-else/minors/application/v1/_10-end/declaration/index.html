@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ declarationHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ declarationHeading }}
+    </h1>
+    <!-- <p class="govuk-body">By submitting this application you agree that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the information you’ve given here is true as far as you know</li>
+      <li>we can share the information you’ve given in this claim with:
+        <ul>
+          <li>police, prosecutors and ACRO Criminal Records Office</li>
+          <li>medical organisations and staff, including police medical staff/li>
+          <li>any other individuals or organisations needed to process your application (including medical or other experts)</li>
+          </ul>
+      <li>we can receive information from the organisations and individuals described above</li>
+    </ul>
+
+    <p class="govuk-body">We often have to ask your GP or other service provider for evidence about your injuries and treatment. We will let you know if we need to do this.</p>
+
+
+    <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+          text: warningText,
+          iconFallbackText: "Warning"
+        }) }} -->
+
+        <p class="govuk-body">By submitting this application I, Mr Enter Name, applying on behalf of Ms Child Name, agree that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the information I've given here is true as far as I know</li>
+          <li>CICA can share the information I've given in this claim with:
+            <ul>
+              <li>police, prosecutors and ACRO Criminal Records Office</li>
+              <li>medical organisations and staff, including police medical staff</li>
+              <li>any other individuals or organisations needed to process this application (including medical or other experts)</li>
+              </ul>
+          <li>CICA can receive information from the organisations and individuals described above</li>
+          <li>If I deliberately provide information that I know is false or misleading, I may be prosecuted and the application for compensation may be refused.</li>
+        </ul>
+
+        <p class="govuk-body">We often have to ask the child's GP or other health service provider for evidence about their injuries and treatment. We will let you know if we need to do this.</p>
+
+
+        <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Agree and submit"
+          }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

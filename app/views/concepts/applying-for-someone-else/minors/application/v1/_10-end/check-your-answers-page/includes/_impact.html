@@ -1,0 +1,99 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  Financial impact
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Was the child over 16 at the time of the crime?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['workingAge'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Was the child over 16 at the time of the crime?</span>
+        </a>
+      </dd>
+    </div>
+
+{% if data['workingAge'] === 'No' %}
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Were they in education?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['educationStatus'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Were they in education?</span>
+        </a>
+      </dd>
+    </div>
+{% endif %}
+
+{% if data['workingAge'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Did they have a job?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['workingStatus'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Did they have a job?</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Were they unable to work or look for a job?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['stoppedWorking'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/application/_5-injuries/work-capacity">
+            Change<span class="govuk-visually-hidden"> Were they unable to work or look for a job?</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Was this for six months or more?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['stoppedWorkingHowLong'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/application/_5-injuries/work-capacity">
+              Change<span class="govuk-visually-hidden"> Was this for six months or more?</span>
+            </a>
+          </dd>
+        </div>
+
+{% endif %}
+
+  <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Has their ability to study or work in future been affected?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['futureCapacity'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/application/_5-injuries/work-capacity">
+          Change<span class="govuk-visually-hidden"> Has their ability to study or work in future been affected?</span>
+        </a>
+      </dd>
+    </div>
+
+
+
+</dl>

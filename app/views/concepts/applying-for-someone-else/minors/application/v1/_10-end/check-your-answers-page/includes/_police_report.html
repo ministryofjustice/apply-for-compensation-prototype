@@ -1,0 +1,99 @@
+<h2 class="govuk-heading-l">
+  Police report
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    {{ incidentReportedQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['crimeReported'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="incident-reported">
+      Change<span class="govuk-visually-hidden"> {{ incidentReportedQuestion }}</span>
+    </a>
+  </dd>
+</div>
+
+{% if data['crimeReported'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    {{ crimeReportedDateQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="crime-reported-date">
+      Change<span class="govuk-visually-hidden"> date crime was reported</span>
+    </a>
+  </dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Crime reference number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['crimeReferenceNumber'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="crime-reference">
+      Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestion }}</span>
+    </a>
+  </dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    {{ policeForceQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['investigating-force'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="police-force">
+      Change<span class="govuk-visually-hidden">the police force</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
+  <!-- Reporting delay -->
+
+{% if data['reportingDelay'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half" style="border:none">
+    Reasons for the delay in reporting the crime to the police
+  </dt>
+  <dd class="govuk-summary-list__value" style="border:none">
+    {{data['reportingDelay']}}
+  </dd>
+  <dd class="govuk-summary-list__actions" style="border:none">
+    <a href="reporting-delay">
+      Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['delay-reporting'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    {{ delayReportExplanation }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['delay-reporting'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
+</div>
+{% endif %}
+
+</dl>
