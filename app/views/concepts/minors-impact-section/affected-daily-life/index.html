@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ whatIsRelationshipQuestion }} - {{ serviceName }} - GOV.UK
+{{ dmiMoreInfoQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
+
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
@@ -26,27 +27,27 @@
       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
-            name: "relationship-text",
-            id: "relationship-text",
-            currentValue: data['relationship-text'],
-            value: data['relationship-text'],
-            label: {
-              text: "Describe the child's contact with the offender",
-              isPageHeading: true,
-              classes: "govuk-label--xl"
-            },
-            hint: {
-              text: offenderContactHint
-            }
-          }) }}
+        name: "affectedDailyLife",
+        id: "affectedDailyLife",
+        value: data['affectedDailyLife'],
+        label: {
+          text: "Briefly say how the crime has affected their daily life",
+          isPageHeading: true,
+          classes: 'govuk-label--xl'
+        },
+        hint: {
+          text: "This helps us understand how the crime has affected them. You can leave this blank, but we may have to ask for more information later."
+        }
+      }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-          text: "Continue"
-          }) }}
+            text: "Continue"
+            }) }}
+
 
     </form>
+
   </div>
 </div>
 

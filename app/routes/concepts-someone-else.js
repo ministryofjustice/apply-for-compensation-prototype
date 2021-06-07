@@ -134,6 +134,15 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-in
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/how-it-affected-you/routes')(router, viewContent);
 
 
+// 5 Impact
+
+require('../views/concepts/minors-impact-section/affected-daily-life/routes')(router, viewContent);
+require('../views/concepts/minors-impact-section/context-impact/routes')(router, viewContent);
+require('../views/concepts/minors-impact-section/gp-contact/routes')(router, viewContent);
+require('../views/concepts/minors-impact-section/has-crime-affected/routes')(router, viewContent);
+require('../views/concepts/minors-impact-section/impact-long-term/routes')(router, viewContent);
+
+
 // 6 Treatment
 
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/treatment-details/routes')(router, viewContent);
