@@ -4,7 +4,7 @@ module.exports = function (router, content) {
 // Variable: mentalHealthDuration
 
 router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/dmi-duration', function (req, res) {
-  res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/how-it-affected-you')
+  res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-impact/context-impact')
 })
 
 // Pass the question in to the page

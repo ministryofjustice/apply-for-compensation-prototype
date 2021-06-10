@@ -131,50 +131,30 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-in
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-about-dmi/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/dmi/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/dmi-duration/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/how-it-affected-you/routes')(router, viewContent);
 
 
-// 5 Impact
+// 6 Impact
 
-require('../views/concepts/minors-impact-section/affected-daily-life/routes')(router, viewContent);
-require('../views/concepts/minors-impact-section/context-impact/routes')(router, viewContent);
-require('../views/concepts/minors-impact-section/gp-contact/routes')(router, viewContent);
-require('../views/concepts/minors-impact-section/has-crime-affected/routes')(router, viewContent);
-require('../views/concepts/minors-impact-section/impact-long-term/routes')(router, viewContent);
-
-
-// 6 Treatment
-
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/treatment-details/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/finished-treatment/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dmi-treatment-types/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/context-treatment/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/gp-details/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/gp-registered/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/gp-visited/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-visited/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/hospital-details/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-visited/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-treatment/dentist-details/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/affected-daily-life/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/context-impact/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/next-steps/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/has-crime-affected/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/impact-long-term/routes')(router, viewContent);
 
 
-// 7 Loss of earnings & special expenses
+// 7 Treatment
 
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-context/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-education/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-se-future-capacity/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-stopped-working/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-stopped-working-how-long/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-working/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-working-age/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/loe-working-why-not/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-any-other/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-context/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-home-alterations/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-home-care/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-nhs-treatment/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-loss-of-earnings-special-expenses/se-physical-aids/routes')(router, viewContent);
-
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/treatment-details/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/finished-treatment/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/context-treatment/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/gp-details/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/gp-registered/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/gp-visited/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/hospital-visited/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/hospital-details/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/dentist-visited/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/dentist-details/routes')(router, viewContent);
 
 
 // 8 Other comp
