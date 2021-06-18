@@ -13,7 +13,7 @@ module.exports = function (router, content) {
   })
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/incident-reported/not-reported', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/crime-reference')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/who-is-making-the-application')
   })
 
   // Pass the question in to the page

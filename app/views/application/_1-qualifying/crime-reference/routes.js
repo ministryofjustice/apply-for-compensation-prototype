@@ -8,12 +8,12 @@ module.exports = function (router, content) {
     if (haveCrimeReference === 'No') {
        return res.redirect('/application/_1-qualifying/crime-reference/no-crime-reference')
     } else {
-      res.redirect('/application/_2-your-details/context-your-details')
+      res.redirect('/application/_1-qualifying/who-is-making-the-application')
     }
   })
 
   router.post('/application/_1-qualifying/crime-reference/no-crime-reference', function (req, res) {
-    res.redirect('/application/_2-your-details/context-your-details')
+    res.redirect('/application/_1-qualifying/who-is-making-the-application')
   })
 
   // Pass the question in to the page

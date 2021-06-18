@@ -1,6 +1,5 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: bridge
   // Variable: criminalConvictions
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/context-treatment', function (req, res) {

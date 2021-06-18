@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // Variable: otherCompensation
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/other-compensation-when', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_9-additional-info/additional-info-question')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_9-additional-info/context-additional-info')
  })
 
  // Pass the question in to the page
