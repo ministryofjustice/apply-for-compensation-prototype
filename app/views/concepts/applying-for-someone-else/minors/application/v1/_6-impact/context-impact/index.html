@@ -14,33 +14,20 @@
 
 {% block content %}
 
-<!-- CONTENT TBC BADGE -->
-  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-  {{ mojBadge({
-  text: 'Content TBC',
-  classes: 'moj-badge--red'
-  }) }}
-  <br>
-  <br>
-  <br>
-<!-- CONTENT TBC BADGE -->
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      The impact the crime has had
+      The impact the crime has had — daily life and financially
     </h1>
-    <p class="govuk-body">xxx.</p>
-    <p class="govuk-body">xxx.</p>
-    <h2 class="govuk-heading-m">xxx</h2>
-    <p class="govuk-body">xxx:</p>
+    <p class="govuk-body">We’re going to ask you questions about:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>x</li>
-      <li>x</li>
-      <li>x</li>
+      <li>how the child’s daily abilities have been impacted by the crime</li>
+      <li>if their injuries are long-term</li>
+      <li>whether you want to tell us more about the child’s injuries</li>
     </ul>
-    <p class="govuk-body">xxx.</p>
+    <p class="govuk-body">The answers you give help build an understanding of how the crime has affected you and the child. This also helps support the information we receive in the medical and police reports.</p>
+    <p class="govuk-body">In sending this application, it will also help us understand if you’ve experienced any financial losses because of the case. Furthermore, the child will be considered for loss of earnings and special expenses. This relates to any payments you or the child have had to make in relation to the child’s injuries.</p>
 
     <form class="form" method="post">
       {{ govukButton({

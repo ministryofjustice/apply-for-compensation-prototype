@@ -5,7 +5,7 @@ module.exports = function (router, content) {
   // UPDATE THESE VARIABLES
   var questionPage = 'concepts/applying-for-someone-else/minors/application/v1/_6-impact/affected-daily-life';   // where is the question?
                                                                           // note: no slash at beginning or end
-  var route = '/concepts/applying-for-someone-else/minors/application/v1/_6-impact/next-steps';                                            // route if left blank
+  var route = '/concepts/applying-for-someone-else/minors/application/v1/_6-impact/considering-loe-se';                                            // route if left blank
 
   router.post('/' + questionPage, function (req, res) {
     res.redirect(route)
