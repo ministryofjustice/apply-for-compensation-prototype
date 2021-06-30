@@ -137,7 +137,6 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-in
 
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/affected-daily-life/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/context-impact/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/considering-loe-se/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/has-crime-affected/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/impact-long-term/routes')(router, viewContent);
 
