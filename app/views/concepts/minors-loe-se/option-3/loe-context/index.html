@@ -1,25 +1,22 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
 {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
       text: "prototype"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
-  }) }}
-
-<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-xl">
       The impact the crime has had — daily life and financially
     </h1>
@@ -29,14 +26,19 @@
       <li>if their injuries are long-term</li>
     </ul>
     <p class="govuk-body">The answers you give help build an understanding of how the crime has affected them.</p>
-    <p class="govuk-body">In sending this application, the child is considered for compensation for loss of earnings and special expenses. If the medical evidence indicates the injury will have a long-term impact, they may receive payment for these financial losses they may experience.</p>
+    <p class="govuk-body">In sending this application, the child will be considered for compensation for loss of earnings and special expenses.</p>
+    <h2 class="govuk-heading-m">Loss of earnings</h2>
+    <p class="govuk-body">If the medical evidence shows the injuries result in limited or no capacity to work, they may get a loss of earnings payment.</p>
+    <h2 class="govuk-heading-m">Special expenses</h2>
+    <p class="govuk-body">If the child cannot work for more than six months or is likely to lose earnings because of how severe the injuries are, they may get a special expenses payment.</p>
+    <p class="govuk-body">Both of these payment types are to compensate for any financial losses they have because of the crime.</p>
 
     <form class="form" method="post">
       {{ govukButton({
-          text: "Continue"
-          }) }}
+      text: "Continue"
+      }) }}
     </form>
+
   </div>
 </div>
-
 {% endblock %}
