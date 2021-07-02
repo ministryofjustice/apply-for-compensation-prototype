@@ -172,7 +172,19 @@ require('../views/concepts/minors-loe-se/option-2/loe-working/routes')(router, v
 require('../views/concepts/minors-loe-se/option-2/se-context/routes')(router, viewContent);
 require('../views/concepts/minors-loe-se/option-2/se-expenses/routes')(router, viewContent);
 
-
+require('../views/concepts/minors-loe-se/option-3/loe-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-working-age/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-working-why-not/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-stopped-working-how-long/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-se-future-capacity/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-se-affected-daily-life/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-daily-capacity/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-affected-six-months/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/loe-affected-six-months-future/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-context/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-expenses/routes')(router, viewContent);
 
 
 

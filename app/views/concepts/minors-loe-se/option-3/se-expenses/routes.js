@@ -1,15 +1,13 @@
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: bridge
-  // Variable: criminalConvictions
 
-  router.post('/concepts/minors-impact-section/gp-contact', function (req, res) {
+  router.post('/concepts/minors-loe-se/option-3/se-expenses', function (req, res) {
     res.redirect('/concepts/end')
   })
 
   // Pass the question in to the page
-  router.get('/concepts/minors-impact-section/gp-contact/', function (req, res) {
-    res.render('concepts/minors-impact-section/gp-contact/index', content)
+  router.get('/concepts/minors-loe-se/option-3/se-expenses/', function (req, res) {
+    res.render('concepts/minors-loe-se/option-3/se-expenses/index', content)
   })
   // END__######################################################################################################
 }
