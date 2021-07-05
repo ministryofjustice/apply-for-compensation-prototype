@@ -4,12 +4,12 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuri
   // Get the answer from the query string
   var haveInfection = req.session.data['haveInfection']
 
-  if (haveInfection === 'No') {
+  if (haveInfection === 'Yes') {
     // Redirect to the relevant page
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy/loss')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-pregnancy')
   }
 })
 
@@ -17,21 +17,21 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuri
   // Get the answer from the query string
   var haveInfection = req.session.data['haveInfection']
 
-  if (haveInfection === 'No') {
+  if (haveInfection === 'Yes') {
     // Redirect to the relevant page
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details-vosaa')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details-vosaa')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-pregnancy')
   }
 })
 
 router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy/loss')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-pregnancy')
 })
 
 router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details-vosaa', function (req, res) {
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-pregnancy')
 })
 
 // END__######################################################################################################

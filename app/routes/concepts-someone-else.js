@@ -88,6 +88,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_4-of
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-physical-injuries/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/have-physical-injuries/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-pregnancy/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/pregnancy/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/injured-body-parts/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);
