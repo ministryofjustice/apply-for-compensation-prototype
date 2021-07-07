@@ -9,7 +9,7 @@ module.exports = function (router, content) {
     } else if (legInjuredParts.includes('Tissue')) {
       res.redirect('/application/_5-injuries/injured-body-parts/legs/tissue')
     } else {
-      res.redirect('/application/_5-injuries/context-about-dmi/')
+      res.redirect('/application/_5-injuries/infection/')
     }
   })
 }

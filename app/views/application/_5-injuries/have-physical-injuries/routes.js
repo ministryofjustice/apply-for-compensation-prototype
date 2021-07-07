@@ -6,7 +6,7 @@ router.post('/application/_5-injuries/have-physical-injuries', function (req, re
 
   if (havePhysicalInjuries === 'No') {
     // Redirect to the relevant page
-    res.redirect('/application/_5-injuries/context-about-dmi')
+    res.redirect('/application/_5-injuries/infections')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/application/_5-injuries/injured-body-parts')

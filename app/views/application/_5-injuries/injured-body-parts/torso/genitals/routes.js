@@ -14,7 +14,7 @@ module.exports = function (router, content) {
     } else if (injuredParts.includes('Legs or feet')) {
       res.redirect('/application/_5-injuries/injured-body-parts/legs/')
     } else {
-      res.redirect('/application/_5-injuries/context-about-dmi/')
+      res.redirect('/application/_5-injuries/infection/')
     }
   })
   // END__######################################################################################################

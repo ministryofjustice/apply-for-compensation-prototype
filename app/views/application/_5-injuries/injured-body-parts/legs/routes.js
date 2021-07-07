@@ -23,7 +23,7 @@ module.exports = function (router, content) {
       res.redirect('/application/_5-injuries/injured-body-parts/legs/tissue')
       // Go to body part section
     } else {
-      res.redirect('/application/_5-injuries/context-about-dmi/')
+      res.redirect('/application/_5-injuries/infection/')
     }
   })
   // END__######################################################################################################

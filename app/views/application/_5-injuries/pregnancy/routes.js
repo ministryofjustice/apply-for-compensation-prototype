@@ -5,7 +5,7 @@ router.post('/application/_5-injuries/pregnancy', function (req, res) {
 })
 
 router.post('/application/_5-injuries/pregnancy/loss', function (req, res) {
-    res.redirect('/application/_5-injuries/have-physical-injuries')
+    res.redirect('/application/_5-injuries/context-about-dmi')
 })
 
 // END__######################################################################################################

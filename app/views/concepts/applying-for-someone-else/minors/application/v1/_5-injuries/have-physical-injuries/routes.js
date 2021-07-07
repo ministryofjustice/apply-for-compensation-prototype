@@ -6,7 +6,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuri
 
   if (havePhysicalInjuries === 'No') {
     // Redirect to the relevant page
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/context-about-dmi')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection')
   } else {
     // If the variable is any other value (or is missing) render the page requested
     res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/injured-body-parts')

@@ -73,6 +73,7 @@ require('./views/application/_4-offender/what-is-relationship/routes')(router, v
 require('./views/application/_5-injuries/context-physical-injuries/routes')(router, viewContent);
 require('./views/application/_5-injuries/have-physical-injuries/routes')(router, viewContent);
 require('./views/application/_5-injuries/infection/routes')(router, viewContent);
+require('./views/application/_5-injuries/context-pregnancy/routes')(router, viewContent);
 require('./views/application/_5-injuries/pregnancy/routes')(router, viewContent);
 require('./views/application/_5-injuries/injured-body-parts/routes')(router, viewContent);
 require('./views/application/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);

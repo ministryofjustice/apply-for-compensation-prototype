@@ -29,12 +29,12 @@ Physical injuries  - {{ serviceName }} - GOV.UK
 
           {{ govukCheckboxes({
                 classes: "govuk-checkboxes",
-                "idPrefix": "haveInfection",
-                name: "haveInfection",
-                currentValue: data['haveInfection'],
+                "idPrefix": "infectionType",
+                name: "infectionType",
+                currentValue: data['infectionType'],
                 "fieldset": {
                   "legend": {
-                    text: "What infection did they get?",
+                    text: "What infection?",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--xl"
                   }
