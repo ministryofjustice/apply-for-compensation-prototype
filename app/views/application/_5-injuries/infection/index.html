@@ -28,12 +28,12 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukRadios({
-            classes: "govuk-radios--inline",
+            classes: "govuk-radios--stacked",
             idPrefix: "haveInfection",
             name: "haveInfection",
             fieldset: {
               legend: {
-                text: "Did you get any infections as a result of the crime?",
+                text: "Did you have or do you have an infection as a result of the crime?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -48,6 +48,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
                 value: "No",
                 text: "No",
                 checked: checked("haveInfection", "No")
+              },
+              {
+                value: "I'm not sure",
+                text: "I'm not sure",
+                checked: checked("haveInfection", "I'm not sure")
               }
             ]
           }) }}
