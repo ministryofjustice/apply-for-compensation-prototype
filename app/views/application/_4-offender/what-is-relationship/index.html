@@ -23,22 +23,24 @@
 
     <form class="form" method="post">
 
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-      {{ govukTextarea({
-            name: "relationship-text",
-            id: "relationship-text",
-            currentValue: data['relationship-text'],
-            value: data['relationship-text'],
-            label: {
-              text: whatIsRelationshipQuestion,
-              isPageHeading: true,
-              classes: "govuk-label--xl"
-            },
-            hint: {
-              text: offenderContactHint
-            }
-          }) }}
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+      {{ govukCharacterCount({
+        name: "relationship-text",
+        id: "relationship-text",
+        currentValue: data['relationship-text'],
+        value: data['relationship-text'],
+        maxlength: 500,
+        label: {
+          text: whatIsRelationshipQuestion,
+          isPageHeading: true,
+          classes: "govuk-label--xl"
+        },
+        hint: {
+          text: offenderContactHint
+        }
+      }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 

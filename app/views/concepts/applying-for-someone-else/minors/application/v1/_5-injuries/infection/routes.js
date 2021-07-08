@@ -42,8 +42,6 @@ module.exports = function (router, content) {
   // non-VOSAA cases - details
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details', function (req, res) {
-    // Get the answer from the query string
-
       // only show pregnancy questions if over a certain age
 
       var ageToCheck = 7;
@@ -73,8 +71,6 @@ module.exports = function (router, content) {
   // non-VOSAA cases - details
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/infection/details-vosaa', function (req, res) {
-    // Get the answer from the query string
-
       // only show pregnancy questions if over a certain age
 
       var ageToCheck = 7;

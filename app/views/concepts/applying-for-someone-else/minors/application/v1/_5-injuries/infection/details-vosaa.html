@@ -27,6 +27,17 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "other-infection",
+        name: "other-infection",
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Other infection:"
+        }
+      }) }}
+      {% endset -%}
+
           {{ govukCheckboxes({
                 classes: "govuk-checkboxes",
                 "idPrefix": "infectionType",

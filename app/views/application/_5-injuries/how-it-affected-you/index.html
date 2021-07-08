@@ -24,12 +24,13 @@
 
     <form class="form" method="post">
 
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      {{ govukTextarea({
+      {{ govukCharacterCount({
         name: "dmi-more-detail",
         id: "dmi-more-detail",
         value: data['dmi-more-detail'],
+        maxlength: 1000,
         label: {
           text: dmiMoreInfoQuestion,
           isPageHeading: true,
@@ -39,7 +40,6 @@
           text: dmiMoreInfoHint
         }
       }) }}
-
 
       {{ govukButton({
             text: "Continue"

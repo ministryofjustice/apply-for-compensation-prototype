@@ -24,12 +24,13 @@
 
     <form class="form" method="post">
 
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      {{ govukTextarea({
+      {{ govukCharacterCount({
         name: "affectedDailyLife",
         id: "affectedDailyLife",
         value: data['affectedDailyLife'],
+        maxlength: 1000,
         label: {
           text: "Briefly say how the crime has affected their daily life",
           isPageHeading: true,

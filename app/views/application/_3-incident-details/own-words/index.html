@@ -27,20 +27,24 @@ Additional details of the crime - {{ serviceName }} - GOV.UK
 
     <form class="form" method="post">
 
-    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      {{ govukTextarea({
-            name: "indidentOtherInfo",
-            id: "indidentOtherInfo",
-            currentValue: data['indidentOtherInfo'],
-            label: {
-              text: "Briefly describe the crime in your own words",
-              classes: "govuk-label--xl"
-            },
-            hint: {
-              text: "You can add details that may not be included in the crime report."
-            }
-          }) }}
+      {{ govukCharacterCount({
+        name: "indidentOtherInfo",
+        id: "indidentOtherInfo",
+        currentValue: data['indidentOtherInfo'],
+        value: data['indidentOtherInfo'],
+        classes: "govuk-!-width-full",
+        maxlength: 1000,
+        label: {
+          text: "Briefly describe the crime in your own words",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          text: "You can add details that may not be included in the crime report."
+        }
+      }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

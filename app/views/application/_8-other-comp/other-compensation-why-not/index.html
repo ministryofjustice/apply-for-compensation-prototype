@@ -21,20 +21,20 @@
         <div class="govuk-grid-column-two-thirds">
           <form class="form" method="post">
 
-            {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+            {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-            {{ govukTextarea({
-                  id: "comp-no-reason",
-                  name: "comp-no-reason",
-                  value: data['comp-no-reason'],
-                  classes: "govuk-!-width-full",
-                  label: {
-                    text: otherCompensationWhyNotQuestion,
-                    isPageHeading: true,
-                    classes: "govuk-label--xl"
-                  } 
-                })
-            }}
+            {{ govukCharacterCount({
+              id: "comp-no-reason",
+              name: "comp-no-reason",
+              value: data['comp-no-reason'],
+              classes: "govuk-!-width-full",
+              maxlength: 500,
+              label: {
+                text: otherCompensationWhyNotQuestion,
+                isPageHeading: true,
+                classes: "govuk-label--xl"
+              }
+            }) }}
 
             {{ govukButton({
                       text: "Continue"

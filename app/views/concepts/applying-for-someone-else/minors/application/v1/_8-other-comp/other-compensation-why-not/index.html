@@ -24,8 +24,8 @@
             {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
             {{ govukCharacterCount({
-              name: "comp-no-reason",
               id: "comp-no-reason",
+              name: "comp-no-reason",
               value: data['comp-no-reason'],
               classes: "govuk-!-width-full",
               maxlength: 500,
@@ -35,8 +35,6 @@
                 classes: "govuk-label--xl"
               }
             }) }}
-
-
 
 
             {{ govukButton({

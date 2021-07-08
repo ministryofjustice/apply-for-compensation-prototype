@@ -16,7 +16,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_7-treatm
     if (visitedGP === 'No') {
       res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/hospital-visited/')
     } else {
-      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-impact/context-impact/')
+      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/context-prev-compensation/')
     }
   }
 })
