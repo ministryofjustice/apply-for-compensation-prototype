@@ -26,18 +26,28 @@ Does the child live at this address? - {{ serviceName }} - GOV.UK
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Does the child live at this address?
+            </h1>
+          </legend>
+          <div class="govuk-inset-text">
+            {{ data['address-line-1'] }} <br>
+            {{ data['address-line-2'] }} <br>
+            {{ data['address-town'] }} <br>
+            {{ data['address-county'] }} <br>
+            {{ data['address-postcode'] }}
+          </div>
+        </fieldset>
+      </div>
+
       {{ govukRadios({
             classes: "govuk-radios--inline",
             "idPrefix": "victimLivesWithApplicant",
             name: "victimLivesWithApplicant",
             currentValue: data['victimLivesWithApplicant'],
-            "fieldset": {
-              "legend": {
-                text: "Does the child live at this address?",
-                isPageHeading: true,
-                classes: 'govuk-fieldset__legend--xl'
-              }
-            },
             "items": [
               {
                 "value": "Yes",

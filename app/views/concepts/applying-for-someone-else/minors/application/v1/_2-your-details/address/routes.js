@@ -3,7 +3,16 @@ module.exports = function (router, content) {
   // File: address
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/address', function (req, res) {
-      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/victim-address')
+    // Get the answer from the query string
+    var confirmationPreference = req.session.data['confirmationPreference']
+
+    if (confirmationPreference === 'Email') {
+      // Redirect to the relevant page
+      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/phone-number')
+    } else if (confirmationPreference === 'Text') {
+      // If the variable is any other value (or is missing) render the page requested
+      res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/email-address')
+    }
   })
 
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/address', function (req, res) {

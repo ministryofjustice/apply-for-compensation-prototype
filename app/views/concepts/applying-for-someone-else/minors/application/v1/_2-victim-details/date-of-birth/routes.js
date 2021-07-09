@@ -4,11 +4,7 @@ module.exports = function (router, content) {
   // File: date-of-birth
   //
   router.post('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/date-of-birth', function (req, res) {
-    var victimLivesWithApplicant = req.session.data['victimLivesWithApplicant'];
-    if (victimLivesWithApplicant === 'No')  {
-      return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/address')
-    }
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_3-incident-details/context-incident-details')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/victim-address')
   })
 
   // Pass the question in to the page
