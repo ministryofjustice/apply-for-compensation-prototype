@@ -27,6 +27,7 @@
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
             {{ govukRadios({
+              classes: "govuk-radios--inline",
               idPrefix: "comp-decision-answer",
               name: "comp-decision-answer",
               value : data['comp-decision-answer'],

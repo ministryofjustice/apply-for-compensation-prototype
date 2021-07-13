@@ -25,45 +25,59 @@ Do you have a crime reference number? - {{ serviceName }} - GOV.UK
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
-      {{ govukRadios({
-              idPrefix: "haveCrimeReference",
-              name: "haveCrimeReference",
-              currentValue : data['haveCrimeReference'],
-              classes: "govuk-radios--inline",
-              fieldset: {
-                legend: {
-                  text: "Do you have a crime reference number?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl"
-                }
-              },
-              hint: {
-                text: "This is the number the police gave the crime when it was reported. We need this to get information about the crime from them. You will need to add this later in the application."
-              },
-              items: [
-                {
-                  value: "Yes",
-                  text: "Yes",
-                  checked: checked("haveCrimeReference", "Yes")
-                },
-                {
-                  value: "No",
-                  text: "No",
-                  checked: checked("haveCrimeReference", "No")
-                }
-              ]
-            }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a crime reference number?
+            </h1>
+          </legend>
+          <div id="crn-hint" class="govuk-hint">
+            This is the number the police gave the crime when it was reported. We need this to get information about the crime from them.
+          </div>
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You will need to add this later in the application.
+            </strong>
+          </div>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukRadios({
+                idPrefix: "haveCrimeReference",
+                name: "haveCrimeReference",
+                currentValue : data['haveCrimeReference'],
+                classes: "govuk-radios--inline",
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("haveCrimeReference", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("haveCrimeReference", "No")
+                  }
+                ]
+              }) }}
 
-      {{ govukDetails({
-        summaryText: "I do not know the crime reference number",
-        text: "If you do not have your crime reference number, call 101 to speak to your local police station. They can help you get this."
-      }) }}
+              <br>
 
-      {{ govukButton({
-            text: "Continue"
-            }) }}
+              {{ govukDetails({
+                summaryText: "I do not know the crime reference number",
+                text: "If you do not have your crime reference number, call 101 to speak to your local police station. They can help you get this."
+              }) }}
+
+
+          {{ govukButton({
+                text: "Continue"
+                }) }}
+
+
+        </fieldset>
+      </div>
+
 
     </form>
 

@@ -25,6 +25,7 @@
             {% from "govuk/components/input/macro.njk" import govukInput %}
 
             {{ govukRadios({
+                  classes: "govuk-radios--inline",
                   idPrefix: "other-compensation",
                   name: "other-compensation",
                   currentValue: data['other-compensation'],

@@ -27,12 +27,13 @@ Enter additional information - {{ serviceName }} - GOV.UK
 
     <form class="form" method="post">
 
-    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      {{ govukTextarea({
+      {{ govukCharacterCount({
             name: "applicationAdditionalInfo",
             id: "applicationAdditionalInfo",
             currentValue: data['applicationAdditionalInfo'],
+            maxlength: 1000,
             label: {
               text: "Enter additional information",
               classes: "govuk-label--xl"

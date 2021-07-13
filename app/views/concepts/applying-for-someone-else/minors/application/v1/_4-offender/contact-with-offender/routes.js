@@ -8,7 +8,7 @@ module.exports = function (router, content) {
     var contactOffender = req.session.data['contact-offender']
     var incidentType = req.session.data['incidentType']
 
-    if (contactOffender === 'No')  {
+    if (contactOffender !== 'Yes')  {
       // Redirect to the relevant page
       if (incidentType === 'Witnessing an incident') {
           // Redirect to the relevant page

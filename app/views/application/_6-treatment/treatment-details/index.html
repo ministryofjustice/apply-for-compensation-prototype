@@ -24,11 +24,13 @@
 
     <form class="form" method="post">
 
-      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      {{ govukTextarea({
+      {{ govukCharacterCount({
         name: "physicalTreatment",
         id: "physicalTreatment",
+        value: data['physicalTreatment'],
+        maxlength: 500,
         label: {
           text: "What treatment are you receiving for your physical injuries?",
           isPageHeading: true,

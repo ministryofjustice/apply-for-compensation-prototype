@@ -17,7 +17,7 @@
       {{ data['victim-title'] }}&nbsp;{{ data['victim-first-name'] }}&nbsp;{{ data['victim-last-name'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href=name>
+      <a href="../_2-victim-details/name">
         Change<span class="govuk-visually-hidden"> name</span>
       </a>
     </dd>
@@ -31,7 +31,7 @@
       {{ data['haveOtherName'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="name-have-other">
+      <a href="../_2-victim-details/name-have-other">
         Change<span class="govuk-visually-hidden">have they ever been known by any other names</span>
       </a>
     </dd>
@@ -46,7 +46,7 @@
       {{ data['nameOther'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="name-other">
+      <a href="../_2-victim-details/name-other">
         Change<span class="govuk-visually-hidden"> other name</span>
       </a>
     </dd>
@@ -72,13 +72,13 @@
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="address-manually">
+      <a href="../_2-your-details/address">
         Change<span class="govuk-visually-hidden"> address</span>      </a>
     </dd>
   </div>
   {% endif %}
 
-  {% if data['victimLivesWithApplicant'] === "No" %}
+  {% if data['victimLivesWithApplicant'] !== "Yes" %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       Address
@@ -97,7 +97,7 @@
       {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="address-manually">
+      <a href="../_2-victim-details/address">
         Change<span class="govuk-visually-hidden"> address</span>      </a>
     </dd>
   </div>
@@ -111,7 +111,7 @@
       {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="date-of-birth">
+      <a href="../_2-victim-details/date-of-birth">
         Change<span class="govuk-visually-hidden"> date of birth</span>
       </a>
     </dd>
@@ -125,7 +125,7 @@
       {{ data['britishCitizen'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="british-citizen">
+      <a href="../_1-qualifying/british-citizen">
         Change<span class="govuk-visually-hidden">Are they a British citizen or EU national?</span>
       </a>
     </dd>
