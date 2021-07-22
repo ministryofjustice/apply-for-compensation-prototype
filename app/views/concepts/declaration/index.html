@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Declaration
+      </h1>
+
+      <p class="govuk-body-m">Mock ups to see how the declaration screen looks and feels with a check box.</p>
+
+      <h2 class="govuk-heading-m">Why?</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>To prevent users accidentally agreeing</li>
+        <li>To prevent users "clicking through" this screen as every other context screen</li>
+        <li>To allow a mechanism for telling a user what to do if they do not agree to the declaration</li>
+        <li>Consistency in format — we provide users with an input on every other question screen</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Options</h2>
+      <p>Option 1 —
+        <a href="/concepts/declaration/declaration-option-1">
+          Screen
+        </a> |
+        <a href="/concepts/declaration/declaration-option-1/error">
+          Error screen
+        </a>
+       — Simple checkbox added</p>
+      <p>Option 2 —
+        <a href="/concepts/declaration/declaration-option-2">
+          Screen
+        </a> |
+        <a href="/concepts/declaration/declaration-option-2/error">
+          Error screen
+        </a>
+      — Contrast box surrounding checkbox to draw attention based on <a href="https://github.com/alphagov/govuk-design-system-backlog/issues/29#issuecomment-564580929" target="new">insight</a> from Apply for a Divorce declaration screen</p>
+      <p>Option 3 —
+        <a href="/concepts/declaration/declaration-option-3">
+          Screen
+        </a> |
+        <a href="/concepts/declaration/declaration-option-3/error">
+          Error screen
+        </a>
+         — Declaration at bottom of check your answers screen</p>
+
+
+    </div>
+</div>
+
+{% endblock %}

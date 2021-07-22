@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ declarationHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select if you agree to the declaration",
+            href: "index"
+          }
+        ]
+      }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Declaration
+    </h1>
+    <p class="govuk-body">By submitting this application you agree that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the information you’ve given here is true as far as you know</li>
+      <li>we can share the information you’ve given in this claim with:
+        <ul>
+          <li>police, prosecutors and ACRO Criminal Records Office, including for a convictions check</li>
+          <li>medical organisations and staff, including police medical staff</li>
+          <li>any other individuals or organisations needed to process your application (including medical or other experts)</li>
+          </ul>
+      <li>we can receive information from the organisations and individuals described above</li>
+    </ul>
+
+    <p class="govuk-body">We often have to ask your GP or other service provider for evidence about your injuries and treatment. We will let you know if we need to do this.</p>
+
+
+    <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+    {{ govukWarningText({
+          text: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
+          iconFallbackText: "Warning"
+        }) }}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="agree-hint">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="agree">
+                <label class="govuk-label govuk-checkboxes__label" for="agree">
+                  I agree
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+<br>
+    <form class="form" method="post">
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Submit"
+          }) }}
+
+    </form>
+    <br>
+  </div>
+</div>
+{% endblock %}

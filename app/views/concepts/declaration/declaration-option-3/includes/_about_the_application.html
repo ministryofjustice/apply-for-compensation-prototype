@@ -1,0 +1,200 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  About the application
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Are you applying for someone who has died?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['fatalApplication'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/fatal-application">
+        Change<span class="govuk-visually-hidden">Are you applying for someone who has died?</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ whoIsMakingTheApplicationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['direct-applicant'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/who-is-making-the-application">
+        Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Is the person under 18?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['under18'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/under-18">
+        Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Are you the child's parent?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['parentGuardian'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/parent-guardian">
+        Change<span class="govuk-visually-hidden"> Are you the child's parent?</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Your relationship to the child
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['whatIsRelationship'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-your-details/what-is-relationship">
+        Change<span class="govuk-visually-hidden"> Your relationship to the child?</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Do you share parental rights for the child with another person?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['sharedResponsibility'] }}<br />
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-your-details/do-you-share-responsibility">
+        Change<span class="govuk-visually-hidden"> Do you share parental rights for the child with another person?</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['sharedResponsibility'] === "Yes" %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      With who?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['responsibilityWhoWith'] }}<br />
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-your-details/responsibility-who-with">
+        Change<span class="govuk-visually-hidden"> Who do you share responsibility with?</span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  {% if data['care-order'] === "Yes" %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Is there a care, supervision or other local authority order?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['care-order'] }}<br />
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-your-details/care-order">
+        Change<span class="govuk-visually-hidden"> Is there a care, supervision or other local authority order?</span>
+      </a>
+    </dd>
+  </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Care order authority
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['careOrderDetails'] }}<br />
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_2-your-details/care-order-details">
+          Change<span class="govuk-visually-hidden"> email address</span>
+        </a>
+      </dd>
+    </div>
+
+    {% endif %}
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Confirmation method
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      {% if data['confirmationPreference'] === 'Text' %}
+
+      Text message to {{ data['phoneNumber'] }}
+
+      {% endif %}
+
+      {% if data['confirmationPreference'] === 'Email' %}
+
+      Email to {{ data['emailAddress'] }}
+
+      {% endif %}
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-your-details/confirmation-options">
+        Change<span class="govuk-visually-hidden"> confirmation receipt</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['applicationDelay'] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half" style="border:none">
+      {{ whyDelayQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value" style="border:none">
+
+      {{ data['applicationDelay'] }}
+
+    </dd>
+    <dd class="govuk-summary-list__actions" style="border:none">
+      <a href="../_3-incident-details/application-delay">
+        Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['delay-application'] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ delayApplyExplanation }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['delay-application'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+  </div>
+  {% endif %}
+</dl>
