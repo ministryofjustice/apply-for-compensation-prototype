@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/concepts/minors-loe-se/option-3/se-context', function (req, res) {
-    res.redirect('/concepts/minors-loe-se/option-3/se-expenses')
+    res.redirect('/concepts/minors-loe-se/option-3/se-nhs-treatment')
   })
 
   // Pass the question in to the page

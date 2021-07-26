@@ -183,8 +183,12 @@ require('../views/concepts/minors-loe-se/option-3/loe-se-affected-daily-life/rou
 require('../views/concepts/minors-loe-se/option-3/loe-daily-capacity/routes')(router, viewContent);
 require('../views/concepts/minors-loe-se/option-3/loe-affected-six-months/routes')(router, viewContent);
 require('../views/concepts/minors-loe-se/option-3/loe-affected-six-months-future/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-any-other/routes')(router, viewContent);
 require('../views/concepts/minors-loe-se/option-3/se-context/routes')(router, viewContent);
-require('../views/concepts/minors-loe-se/option-3/se-expenses/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-home-alterations/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-home-care/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-nhs-treatment/routes')(router, viewContent);
+require('../views/concepts/minors-loe-se/option-3/se-physical-aids/routes')(router, viewContent);
 
 
 
