@@ -23,7 +23,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Select if you agree to the declaration",
+            text: "To submit your application, you need to agree to the declaration",
             href: "index"
           }
         ]
@@ -57,9 +57,12 @@
           iconFallbackText: "Warning"
         }) }}
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
           <fieldset class="govuk-fieldset" aria-describedby="agree-hint">
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <span id="nationality-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> You need to agree to the declaration
+              </span>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="agree">
                 <label class="govuk-label govuk-checkboxes__label" for="agree">
