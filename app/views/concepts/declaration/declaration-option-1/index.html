@@ -40,11 +40,6 @@
     <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
     {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-    {{ govukWarningText({
-          text: "If you deliberately give false or misleading information, you may get less compensation or be prosecuted.",
-          iconFallbackText: "Warning"
-        }) }}
-
       <form class="form" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}

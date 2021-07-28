@@ -8,7 +8,7 @@ module.exports = function (router, content) {
     var confirmationPreference = req.session.data['confirmationPreference']
 
     if (!req.session.data['emailAddress']) {
-      req.session.data['emailAddress'] = 'name@domain.com'
+      req.session.data['emailAddress'] = ''
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/_10-end/check-your-answers-page')

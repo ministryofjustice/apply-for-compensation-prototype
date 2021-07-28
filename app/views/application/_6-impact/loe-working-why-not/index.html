@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content TBC',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set otherReasonHtml %}
+      {{ govukInput({
+        id: "otherReasonHtml",
+        name: "otherReasonHtml",
+        type: "text",
+        spellcheck: true,
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Tell us more:"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "noJobReason",
+        name: "noJobReason",
+        fieldset: {
+          legend: {
+            text: "Tell us why the child was not employed at this time",
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "At school, college or university",
+            text: "At school, college or university",
+            checked: checked("noJobReason", "education")
+          },
+          {
+            value: "Searching for employment",
+            text: "Searching for employment",
+            checked: checked("noJobReason", "searching-for-employment")
+          },
+          {
+            value: "Caring for someone",
+            text: "Caring for someone",
+            checked: checked("noJobReason", "caring-for-someone")
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("noJobReason", "other"),
+            conditional: {
+              html: otherReasonHtml
+            }
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

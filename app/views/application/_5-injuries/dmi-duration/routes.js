@@ -4,7 +4,7 @@ module.exports = function (router, content) {
 // Variable: mentalHealthDuration
 
 router.post('/application/_5-injuries/dmi-duration', function (req, res) {
-  res.redirect('/application/_5-injuries/how-it-affected-you')
+  res.redirect('/application/_6-impact/loe-context')
 })
 
 // Pass the question in to the page

@@ -1,0 +1,96 @@
+
+<h2 class="govuk-heading-l">
+  Your injuries
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <!-- Physical injuries -->
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Do they have physical injuries?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['havePhysicalInjuries'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_5-injuries/have-physical-injuries">
+        Change<span class="govuk-visually-hidden">Do they have physical injuries? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['havePhysicalInjuries'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      What was injured?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['injuredParts'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_5-injuries/injured-body-parts">
+        Change<span class="govuk-visually-hidden">What was injured?</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% include "./injuries/_hfn_injuries.html" %}
+  {% include "./injuries/_torso_injuries.html" %}
+  {% include "./injuries/_arm_injuries.html" %}
+  {% include "./injuries/_leg_injuries.html" %}
+
+
+  <!-- Infections -->
+
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Do they have any infections?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['haveInfection'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_5-injuries/infection/vosaa">
+          Change<span class="govuk-visually-hidden"> Do they have HIV, hepatitis or an STI? </span>
+        </a>
+      </dd>
+    </div>
+
+    {% if data['haveInfection'] === 'Yes' %}
+    {% if data['sexualAssault'] === 'No' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        What infection do they have?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['infectionType'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_5-injuries/infection/details">
+          Change<span class="govuk-visually-hidden"> What infection do they have? </span>
+        </a>
+      </dd>
+    </div>
+    {% else %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        What infection do they have?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['infectionType'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_5-injuries/infection/details-vosaa">
+          Change<span class="govuk-visually-hidden"> What infection do they have? </span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+    {% endif %}
+
+</dl>

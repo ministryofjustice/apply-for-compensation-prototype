@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ dmiMoreInfoQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+      {{ govukTextarea({
+        name: "affectedDailyLife",
+        id: "affectedDailyLife",
+        value: data['affectedDailyLife'],
+        label: {
+          text: "Briefly say how the crime has affected their daily life",
+          isPageHeading: true,
+          classes: 'govuk-label--xl'
+        },
+        hint: {
+          text: "This helps us understand how the crime has affected them. You can leave this blank, but we may have to ask for more information later."
+        }
+      }) }}
+
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

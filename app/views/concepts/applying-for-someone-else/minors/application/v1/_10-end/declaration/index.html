@@ -22,28 +22,6 @@
     <h1 class="govuk-heading-xl">
       {{ declarationHeading }}
     </h1>
-    <!-- <p class="govuk-body">By submitting this application you agree that:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>the information you’ve given here is true as far as you know</li>
-      <li>we can share the information you’ve given in this claim with:
-        <ul>
-          <li>police, prosecutors and ACRO Criminal Records Office</li>
-          <li>medical organisations and staff, including police medical staff/li>
-          <li>any other individuals or organisations needed to process your application (including medical or other experts)</li>
-          </ul>
-      <li>we can receive information from the organisations and individuals described above</li>
-    </ul>
-
-    <p class="govuk-body">We often have to ask your GP or other service provider for evidence about your injuries and treatment. We will let you know if we need to do this.</p>
-
-
-    <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
-    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-
-    {{ govukWarningText({
-          text: warningText,
-          iconFallbackText: "Warning"
-        }) }} -->
 
         <p class="govuk-body">By submitting this application I, Mr Enter Name, applying on behalf of Ms Child Name, agree that:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -64,10 +42,22 @@
 
     <form class="form" method="post">
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-            text: "Agree and submit"
-          }) }}
+      {{ govukCheckboxes({
+        idPrefix: "agreeToDeclaration",
+        name: "agreeToDeclaration",
+        items: [
+          {
+            value: "agree",
+            text: "I agree",
+            checked: checked("agreeToDeclaration", "aasdada")
+          }
+        ]
+      }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+          text: "Submit"
+        }) }}
 
     </form>
   </div>

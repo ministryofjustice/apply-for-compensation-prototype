@@ -24,25 +24,30 @@ Check your answers - {{ serviceName }} - GOV.UK
       Check your answers
     </h1>
 
-        {% include "./includes/_about_the_application.html" %}
+        {% include "./includes/_1_about_the_application.html" %}
 
-        {% include "./includes/_victim_details.html" %}
+        {% include "./includes/_2_victim_details.html" %}
 
-        {% include "./includes/_about_the_crime.html" %}
+        {% include "./includes/_3_about_the_crime.html" %}
 
-        {% include "./includes/_police_report.html" %}
+        {% include "./includes/_4_about_the_offender.html" %}
 
-        {% include "./includes/_your_injuries.html" %}
+        {% include "./includes/_5_1_about_your_injuries.html" %}
 
-        {% include "./includes/_your_medical_details.html" %}
+        {% include "./includes/_5_2_about_your_injuries_pregnancy.html" %}
 
-        {% include "./includes/_your_money.html" %}
+        {% include "./includes/_5_3_about_your_injuries_mental_health.html" %}
 
-        {% include "./includes/_other_compensation.html" %}
+        {% include "./includes/_6_1_impact-loe.html" %}
 
-        {% include "./includes/_contact_details.html" %}
+        {% include "./includes/_6_2_impact-se.html" %}
 
-        {% include "./includes/_additional-info.html" %}
+        {% include "./includes/_7_treatment.html" %}
+
+        {% include "./includes/_8_other_compensation.html" %}
+
+        {% include "./includes/_9_additional_information.html" %}
+
 
     <form class="form" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}

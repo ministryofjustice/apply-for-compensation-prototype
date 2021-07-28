@@ -12,7 +12,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_7-treatm
     res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/hospital-details')
   } else {
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/context-prev-compensation/')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_8-other-comp/context-prev-compensation')
   }
 })
 

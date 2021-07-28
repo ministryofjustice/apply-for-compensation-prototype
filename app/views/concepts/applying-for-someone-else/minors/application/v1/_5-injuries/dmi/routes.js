@@ -15,7 +15,7 @@ router.post('/concepts/applying-for-someone-else/minors/application/v1/_5-injuri
       return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-impact/context-impact')
+    res.redirect('/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-context')
   }
 })
 

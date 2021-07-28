@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content TBC',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "workingStatus",
+            name: "workingStatus",
+            fieldset: {
+            legend: {
+              text: "Did the child have a job when the crime happened?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "This can be a full-time, part-time, freelance, seasonal or self-employed job."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("workingStatus", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("workingStatus", "No")
+            }
+            ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -15,7 +15,7 @@ router.post('/application/_5-injuries/dmi', function (req, res) {
       return res.redirect('/application/_5-injuries/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/_5-injuries/how-it-affected-you')
+    res.redirect('/application/_6-impact/loe-context')
   }
 })
 

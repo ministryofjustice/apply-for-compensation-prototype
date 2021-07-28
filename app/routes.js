@@ -117,30 +117,38 @@ require('./views/application/_5-injuries/injured-body-parts/torso/tissue/routes'
 require('./views/application/_5-injuries/context-about-dmi/routes')(router, viewContent);
 require('./views/application/_5-injuries/dmi/routes')(router, viewContent);
 require('./views/application/_5-injuries/dmi-duration/routes')(router, viewContent);
-require('./views/application/_5-injuries/how-it-affected-you/routes')(router, viewContent);
 
 
-// 6 Treatment
+// 6 Impact
 
-require('./views/application/_6-treatment/treatment-details/routes')(router, viewContent);
-require('./views/application/_6-treatment/finished-treatment/routes')(router, viewContent);
-require('./views/application/_6-treatment/dmi-treatment-types/routes')(router, viewContent);
-require('./views/application/_6-treatment/context-treatment/routes')(router, viewContent);
-require('./views/application/_6-treatment/gp-details/routes')(router, viewContent);
-require('./views/application/_6-treatment/gp-registered/routes')(router, viewContent);
-require('./views/application/_6-treatment/gp-visited/routes')(router, viewContent);
-require('./views/application/_6-treatment/hospital-visited/routes')(router, viewContent);
-require('./views/application/_6-treatment/hospital-details/routes')(router, viewContent);
-require('./views/application/_6-treatment/dentist-visited/routes')(router, viewContent);
-require('./views/application/_6-treatment/dentist-details/routes')(router, viewContent);
+require('./views/application/_6-impact/loe-context/routes')(router, viewContent);
+require('./views/application/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
+require('./views/application/_6-impact/loe-stopped-working/routes')(router, viewContent);
+require('./views/application/_6-impact/loe-stopped-working-how-long/routes')(router, viewContent);
+require('./views/application/_6-impact/loe-working/routes')(router, viewContent);
+require('./views/application/_6-impact/loe-working-why-not/routes')(router, viewContent);
+require('./views/application/_6-impact/se-any-other/routes')(router, viewContent);
+require('./views/application/_6-impact/se-context/routes')(router, viewContent);
+require('./views/application/_6-impact/se-home-alterations/routes')(router, viewContent);
+require('./views/application/_6-impact/se-home-care/routes')(router, viewContent);
+require('./views/application/_6-impact/se-nhs-treatment/routes')(router, viewContent);
+require('./views/application/_6-impact/se-physical-aids/routes')(router, viewContent);
 
-// 7 Financial Losses
 
-require('./views/application/_7-financial-losses/context-your-money/routes')(router, viewContent);
-require('./views/application/_7-financial-losses/lost-earnings/routes')(router, viewContent);
-require('./views/application/_7-financial-losses/work-capacity/routes')(router, viewContent);
-require('./views/application/_7-financial-losses/work-details/routes')(router, viewContent);
-require('./views/application/_7-financial-losses/special-expenses/routes')(router, viewContent);
+// 7 Treatment
+
+require('./views/application/_7-treatment/treatment-details/routes')(router, viewContent);
+require('./views/application/_7-treatment/finished-treatment/routes')(router, viewContent);
+require('./views/application/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/_7-treatment/context-treatment/routes')(router, viewContent);
+require('./views/application/_7-treatment/gp-details/routes')(router, viewContent);
+require('./views/application/_7-treatment/gp-registered/routes')(router, viewContent);
+require('./views/application/_7-treatment/gp-visited/routes')(router, viewContent);
+require('./views/application/_7-treatment/hospital-visited/routes')(router, viewContent);
+require('./views/application/_7-treatment/hospital-details/routes')(router, viewContent);
+require('./views/application/_7-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/application/_7-treatment/dentist-details/routes')(router, viewContent);
+
 
 // 8 Other comp
 

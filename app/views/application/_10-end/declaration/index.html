@@ -20,7 +20,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ declarationHeading }}
+      Declaration
     </h1>
     <p class="govuk-body">By submitting this application you agree that:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -30,6 +30,7 @@
           <li>police, prosecutors and ACRO Criminal Records Office, including for a convictions check</li>
           <li>medical organisations and staff, including police medical staff</li>
           <li>any other individuals or organisations needed to process your application (including medical or other experts)</li>
+          <li>if you deliberately provide information that you know is wrong or misleading, you may be prosecuted and the application for compensation may be refused.</li>
           </ul>
       <li>we can receive information from the organisations and individuals described above</li>
     </ul>
@@ -40,17 +41,26 @@
     <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
     {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
-    {{ govukWarningText({
-          text: warningText,
-          iconFallbackText: "Warning"
-        }) }}
+
 
     <form class="form" method="post">
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-            text: "Agree and submit"
-          }) }}
+      {{ govukCheckboxes({
+        idPrefix: "agreeToDeclaration",
+        name: "agreeToDeclaration",
+        items: [
+          {
+            value: "agree",
+            text: "I agree",
+            checked: checked("agreeToDeclaration", "aasdada")
+          }
+        ]
+      }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+          text: "Submit"
+        }) }}
 
     </form>
   </div>

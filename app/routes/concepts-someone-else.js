@@ -134,15 +134,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-in
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_5-injuries/dmi-duration/routes')(router, viewContent);
 
 
-// 6 Impact
-
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/affected-daily-life/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/context-impact/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/has-crime-affected/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/impact-long-term/routes')(router, viewContent);
-
-
-// 7 Treatment
+// 6 Treatment
 
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/treatment-details/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/finished-treatment/routes')(router, viewContent);
@@ -155,6 +147,28 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-tr
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/hospital-details/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/dentist-visited/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_7-treatment/dentist-details/routes')(router, viewContent);
+
+
+
+// 7 Impact
+
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-affected-six-months/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-affected-six-months-future/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-context/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-daily-capacity/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-se-future-capacity/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-stopped-working/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-stopped-working-how-long/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-working/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-working-age/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/loe-working-why-not/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-any-other/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-context/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-home-alterations/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-home-care/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-nhs-treatment/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-physical-aids/routes')(router, viewContent);
 
 
 // 8 Other comp
