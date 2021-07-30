@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/application/_6-impact/loe-working-why-not', function (req, res) {
-    res.redirect('/application/_6-impact/loe-se-affected-daily-life')
+    res.redirect('/application/_6-impact/loe-stopped-working')
   })
 
   // Pass the question in to the page
