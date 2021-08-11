@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+We need the crime reference number - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "prototype"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--xl" for=name>
+          We need the crime reference number
+        </label>
+      </h1>
+
+      <p class="govuk-body">We need this number so we can access a copy of the information given to police when the crime was reported.</p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          We'll ask you for this again later in this application.
+        </strong>
+      </div>
+
+      <details class="govuk-details">
+          <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help with crime reference number
+              </span>
+          </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">If you don't have your crime reference number, you can call 101 to speak to your local police station. </p>
+                <p class="govuk-body"> If you have more than one crime reference number, you can provide additional details later in this claim.</p>
+              </div>
+        </details>
+
+
+    <form class="form" method="post">
+      {{ govukButton({
+            text: "Continue anyway"
+            }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

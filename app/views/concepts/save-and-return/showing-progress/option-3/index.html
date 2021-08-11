@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextIncidentDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Resume your application
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Application details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Miss Jane Doe
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">jane@jane.doe</p>
+          <p class="govuk-body">07871581234</p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Save and return reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">HDJ2123F</p>
+        </dd>
+      </div>
+    </dl>
+
+    <br>
+
+    <h2 class="govuk-heading-m">
+      Application progress
+    </h2>
+
+      <p class="govuk-body">You exited the application form on the <a href="#">Enter your date of birth</a> screen.</p>
+
+      <p class="govuk-body">The next screen is <a href="#">Enter your address</a>.</p>
+
+      <br>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

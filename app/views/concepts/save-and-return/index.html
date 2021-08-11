@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Save and return
+      </h1>
+
+      <p class="govuk-body-l">Options for allowing users to save their progress and return to the application at a later date - <a href="https://miro.com/app/board/o9J_l4RQHVA=/" target="new">Miro ideation board</a>.</p>
+
+      <p class="govuk-body"><a href="https://miro.com/app/board/o9J_lL7cyK8=/">Miro ideation board (password: userneeds)</a></p>
+
+      <hr>
+      <br>
+      <h2 class="govuk-heading-m">Option 1</h2>
+      <p>Two-factor authentication via SMS or email.</p>
+      <p>Would not allow CSC to resume a claim on behalf of an applicant.</p>
+      <p>From start of application to end of your details section, with routing based on the self-applicant journey.</p>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Start prototype",
+          href: "/concepts/save-and-return/option-1"
+        }) }}
+
+        <br>
+        <br>
+        <h2 class="govuk-heading-m">Option 2</h2>
+        <p>Based on the
+          <a href="https://github.com/alphagov/govuk-design-system-backlog/issues/87" target="new">
+            save their progress</a> pattern used on the <a href="https://employmenttribunals.service.gov.uk/apply" target="new">make a claim to an employment tribunal</a> service, with routing based on the self-applicant journey.</p>
+            <p>From start of application to end of your details section, with routing based on the self-applicant journey.</p>
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Start prototype",
+            href: "/concepts/save-and-return/option-2"
+          }) }}
+
+      <hr>
+      <br>
+      <h2 class="govuk-heading-m">"Resume a claim" screen options</h2>
+      <p class="govuk-body">Static mockups</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/concepts/save-and-return/resume-claim-screen/option-1">Option 1</a> — Single screen with multiple inputs. Contact details as validation.
+        </li>
+        <li>
+          <a href="/concepts/save-and-return/resume-claim-screen/option-2/save-and-return-number">Option 2</a> — One thing per screen. Surname as validation.
+        </li>
+      </ul>
+
+      <hr>
+      <br>
+      <h2 class="govuk-heading-m">Showing progress</h2>
+      <p class="govuk-body">Static mockups</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/concepts/save-and-return/showing-progress/option-1">Option 1</a> — Task list.
+        </li>
+        <li>
+          <a href="/concepts/save-and-return/showing-progress/option-2">Option 2</a> — Check your answers screen.
+        </li>
+        <li>
+          <a href="/concepts/save-and-return/showing-progress/option-3">Option 3</a> — Reminder context screen.
+        </li>
+      </ul>
+
+      <hr>
+      <br>
+      <h2 class="govuk-heading-m">Start screen CTAs</h2>
+      <p class="govuk-body">Static mockups</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/concepts/save-and-return/start-screen-buttons/option-1">Option 1</a> — Brand colour secondary button.
+        </li>
+        <li>
+          <a href="/concepts/save-and-return/start-screen-buttons/option-2">Option 2</a> — Link.
+        </li>
+        <li>
+          <a href="/concepts/save-and-return/start-screen-buttons/option-3">Option 3</a> — Standard secondary button.
+        </li>
+      </ul>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ whoIsMakingTheApplicationQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+              id: "memorable-word",
+              name: "memorable-word",
+              label: {
+                text: "Choose a memorable word",
+                isPageHeading: true,
+                classes: 'govuk-label--xl'
+              },
+              hint: {
+                text: "You will need this word to resume your application if you save your application and return later"
+              },
+              id: "memorable-word",
+              name: "memorable-word",
+              classes: "govuk-input--width-20",
+              value: data['memorable-word']
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

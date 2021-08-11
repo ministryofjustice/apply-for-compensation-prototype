@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ smsConfirmationTransitionHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ smsConfirmationTransitionHeading }}
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-1">Telephone: 0300 003 3601</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Outside the UK: +44 (0) 203 684 2517</p>
+    <p class="govuk-body"><a href="https://www.relayuk.bt.com/">Relay UK</a>: (if you cannot hear or speak on the phone) 18001 0300 003 3601 </p>
+    <p class="govuk-body">Our phone lines are open Monday to Friday, 10am to 3pm.</p>
+
+    <p class="govuk-body"><a href="/call-charges">Find out about call charges</a></p>
+
+    <form class="form" method="post">
+
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
