@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/concepts/save-and-return/option-2/_2-your-details/context-your-details', function (req, res) {
-    res.redirect('/concepts/save-and-return/option-2/_2-your-details/confirmation-options')
+    res.redirect('/concepts/save-and-return/option-2/_2-your-details/memorable-word')
   })
 
   // Pass the question in to the page

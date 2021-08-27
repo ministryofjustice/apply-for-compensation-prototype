@@ -25,13 +25,13 @@
             name: "homeCare",
             fieldset: {
             legend: {
-              text: "Have you or the child paid for home care services as a result of the incident?",
+              text: "Have you paid for any care providers because of the crime?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: "Care applies to the child’s functions or meal preparation."
+              text: "This can be care provided by a family member or care provider. It includes preparation of meals and help going to the bathroom, if the person is unable to do these daily tasks themselves."
             },
             items: [
             {
@@ -46,29 +46,6 @@
             }
             ]
             }) }}
-
-            <!-- DETAILS ELEMENT -->
-            <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Help with home care services
-                    </span>
-                </summary>
-                    <div class="govuk-details__text">
-                      <p class="govuk-body">This applies to costs for home care services the child needed after the incident.</p>
-                      <p class="govuk-body">The care the child needs might include:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>going to the toilet</li>
-                        <li>bathing</li>
-                        <li>continence management</li>
-                        <li>food preparation</li>
-                        <li>eating</li>
-                        <li>taking medication</li>
-                        <li>administering other treatments</li>
-                      </ul>
-                    </div>
-              </details>
-            <!-- DETAILS ELEMENT -->
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

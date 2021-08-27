@@ -201,13 +201,6 @@ require('../views/concepts/save-and-return/resume-claim-screen/option-2/save-and
   require('../views/concepts/save-and-return/option-1/one-time-password/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-1/application-progress/routes')(router, viewContent);
 
-  require('../views/concepts/save-and-return/option-1/_1-qualifying/crime-reference/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-1/_1-qualifying/fatal-application/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-1/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-1/_1-qualifying/incident-reported/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-1/_1-qualifying/over-18/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-1/_1-qualifying/british-citizen/routes')(router, viewContent);
-
   require('../views/concepts/save-and-return/option-1/_2-your-details/confirmation-options/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-1/_2-your-details/address/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-1/_2-your-details/context-your-details/routes')(router, viewContent);
@@ -223,14 +216,7 @@ require('../views/concepts/save-and-return/resume-claim-screen/option-2/save-and
   require('../views/concepts/save-and-return/option-2/resume-a-claim/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-2/application-progress/routes')(router, viewContent);
 
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/crime-reference/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/fatal-application/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/incident-reported/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/over-18/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/british-citizen/routes')(router, viewContent);
-  require('../views/concepts/save-and-return/option-2/_1-qualifying/memorable-word/routes')(router, viewContent);
-
+  require('../views/concepts/save-and-return/option-2/_2-your-details/memorable-word/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-2/_2-your-details/confirmation-options/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-2/_2-your-details/address/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-2/_2-your-details/context-your-details/routes')(router, viewContent);
@@ -240,6 +226,23 @@ require('../views/concepts/save-and-return/resume-claim-screen/option-2/save-and
   require('../views/concepts/save-and-return/option-2/_2-your-details/name-have-other/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-2/_2-your-details/name-other/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-2/_2-your-details/phone-number/routes')(router, viewContent);
+
+
+  // Save and return - Option 3
+
+  require('../views/concepts/save-and-return/option-3/resume-a-claim/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/application-progress/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/send-confirmation-question/routes')(router, viewContent);
+
+  require('../views/concepts/save-and-return/option-3/_2-your-details/confirmation-options/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/address/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/context-your-details/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/date-of-birth/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/email-address/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/name/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/name-have-other/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/name-other/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/_2-your-details/phone-number/routes')(router, viewContent);
 
 
 // Add your routes here - above the module.exports line

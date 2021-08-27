@@ -169,6 +169,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-im
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-home-care/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-nhs-treatment/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_6-impact/se-special-equipment/routes')(router, viewContent);
 
 
 // 8 Other comp

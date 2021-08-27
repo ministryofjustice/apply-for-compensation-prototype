@@ -25,13 +25,13 @@
             name: "anyOtherExpenses",
             fieldset: {
             legend: {
-              text: "Have you or the child paid for any other expenses not already mentioned?",
+              text: "Have you paid for anything else not already asked about?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: "If yes, tell us more at the end of this application."
+              text: "If yes, provide more information about these expenses at the end of the application."
             },
             items: [
             {
@@ -46,25 +46,6 @@
             }
             ]
             }) }}
-
-            <!-- DETAILS ELEMENT -->
-            <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Help with any other expenses
-                    </span>
-                </summary>
-                    <div class="govuk-details__text">
-                      <p class="govuk-body">Other expenses can be the cost of:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>special equipment
-                        <li>supervision by care professionals</li>
-                        <li>administrators who handle your affairs</li>
-                        <li>setting up a trust as instructed by a claims officer</li>
-                      </ul>
-                    </div>
-              </details>
-            <!-- DETAILS ELEMENT -->
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

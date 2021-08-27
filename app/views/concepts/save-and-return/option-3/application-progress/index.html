@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Application progress
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Application details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact details
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {% if data['emailAddress'] !== '' %}
+          <p class="govuk-body">{{ data['emailAddress'] }}</p>
+          {% endif %}
+
+          {% if data['phoneNumber'] !== '' %}
+          <p class="govuk-body">{{ data['phoneNumber'] }}</p>
+          {% endif %}
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Save and return reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">HDJ2123F</p>
+        </dd>
+      </div>
+    </dl>
+
+    <br>
+
+    {% if data['screen-exited'] !== '' %}
+      <p class="govuk-body">Your saved your application on this screen:</p>
+    {% endif %}
+
+      <div class="govuk-inset-text">
+
+          {% if data['screen-exited'] === 'name' %}
+            <a href="_2-your-details/name">Enter your name</a>
+          {% endif %}
+
+          {% if data['screen-exited'] === 'name-have-other' %}
+            <a href="_2-your-details/name-have-other">Have you ever been known by any other names?</a>
+          {% endif %}
+
+          {% if data['screen-exited'] === 'name-other' %}
+            <a href="_2-your-details/name-other">What other names have you been known by?</a>
+          {% endif %}
+
+          {% if data['screen-exited'] === 'date-of-birth' %}
+            <a href="_2-your-details/date-of-birth">Enter your date of birth</a>
+          {% endif %}
+
+          {% if data['screen-exited'] === 'address' %}
+            <a href="_2-your-details/address">Enter your address</a>
+          {% endif %}
+
+          {% if data['screen-exited'] === 'email-address' %}
+            <a href="_2-your-details/email-address">Enter your email address</a>
+          {% endif %}
+
+          {% if data['screen-exited'] === 'phone-number' %}
+            <a href="_2-your-details/phone-number">Enter your telephone number</a>
+          {% endif %}
+
+        </div>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

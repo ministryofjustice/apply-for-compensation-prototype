@@ -25,7 +25,7 @@
             name: "futureCapacity",
             fieldset: {
             legend: {
-              text: "Has the child’s ability to work in future been affected by the incident?",
+              text: "Has the child’s ability to work in future been affected by the crime?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
@@ -42,12 +42,25 @@
               checked: checked("futureCapacity", "No")
             },
             {
-              value: "I don't know",
-              text: "I don't know",
-              checked: checked("futureCapacity", "I don't know")
+              value: "I do not know",
+              text: "I do not know",
+              checked: checked("futureCapacity", "I do not know")
             }
             ]
             }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding the ability to work in future
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">They must have no capacity or very limited capacity to work because of the injury. This must be for longer than 28 weeks. It can be a full-time, part-time, freelance, seasonal or self-employed job. It includes if the child had a formal job offer at the time of the crime. This is the only situation in which we can make a loss of earnings payment.</p>
+                      <p class="govuk-body">You cannot get a payment for the first 28 weeks of any loss of earnings suffered.</p>
+                    </div>
+              </details>
+
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({

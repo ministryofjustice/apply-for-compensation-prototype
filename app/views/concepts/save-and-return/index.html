@@ -17,12 +17,12 @@
 
       <p class="govuk-body"><a href="https://miro.com/app/board/o9J_lL7cyK8=/">Miro ideation board (password: userneeds)</a></p>
 
-      <hr>
+      <!-- <hr>
       <br>
       <h2 class="govuk-heading-m">Option 1</h2>
       <p>Two-factor authentication via SMS or email.</p>
       <p>Would not allow CSC to resume a claim on behalf of an applicant.</p>
-      <p>From start of application to end of your details section, with routing based on the self-applicant journey.</p>
+      <p>Showing <strong>your details</strong> section only.</p>
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -37,14 +37,27 @@
         <p>Based on the
           <a href="https://github.com/alphagov/govuk-design-system-backlog/issues/87" target="new">
             save their progress</a> pattern used on the <a href="https://employmenttribunals.service.gov.uk/apply" target="new">make a claim to an employment tribunal</a> service, with routing based on the self-applicant journey.</p>
-            <p>From start of application to end of your details section, with routing based on the self-applicant journey.</p>
+            <p>Showing <strong>your details</strong> section only.</p>
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
             text: "Start prototype",
             href: "/concepts/save-and-return/option-2"
-          }) }}
+          }) }} -->
+
+          <br>
+          <br>
+          <h2 class="govuk-heading-m">WIP Concept</h2>
+          <p>Provides the user with a unique token and randomly generated three-word password, and asks if they would like the information sent to their preferred contact method.</p>
+          <p>Showing <strong>your details</strong> section only.</p>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Start prototype",
+              href: "/concepts/save-and-return/option-3"
+            }) }}
 
       <hr>
       <br>

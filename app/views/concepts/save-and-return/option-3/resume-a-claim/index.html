@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="example">
+              Resume a claim
+            </label></h1>
+
+            <p class="govuk-body">
+              Your save and return number and three-word passcode were shown to you when you saved your application. You may have also requested to get them by email or text message.
+            </p>
+
+          <br>
+
+<!-- Reference token -->
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "What is your save and return number?",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-20",
+          id: "save-and-return-number",
+          name: "save-and-return-number"
+        }) }}
+
+<br>
+<!-- Email or phone number -->
+
+        {{ govukInput({
+          label: {
+            text: "What is your three-word passcode?",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-20",
+          id: "memorable-word-input",
+          name: "memorable-word-input"
+        }) }}
+
+</div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
