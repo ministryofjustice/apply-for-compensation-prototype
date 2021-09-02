@@ -13,7 +13,7 @@ module.exports = function (router, content) {
       }
       res.redirect('/concepts/save-and-return/option-3/_2-your-details/name-other')
     } else if (buttonClicked === 'Save and finish later') {
-      return res.redirect('/concepts/save-and-return/option-3/send-confirmation-question')
+      return res.redirect('/concepts/save-and-return/option-3/confirmation')
     }
   })
 

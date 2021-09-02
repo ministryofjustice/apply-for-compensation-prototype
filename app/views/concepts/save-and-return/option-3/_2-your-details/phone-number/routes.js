@@ -11,7 +11,7 @@ module.exports = function (router, content) {
         return res.redirect('/concepts/save-and-return/option-3/_10-end/check-your-answers-page')
       }
     } else if (buttonClicked === 'Save and finish later') {
-      return res.redirect('/concepts/save-and-return/option-3/send-confirmation-question')
+      return res.redirect('/concepts/save-and-return/option-3/confirmation')
     }
 
   })

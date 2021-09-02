@@ -32,31 +32,41 @@
         </div>
       </div>
 
-      <!-- <p class="govuk-body">
-        We have sent
-
-        {% if data['confirmationPreference'] === 'Text' %}
-
-        a text message to {{ data['phoneNumber'] }} with
-
-        {% endif %}
-
-        {% if data['confirmationPreference'] === 'Email' %}
-
-        an email to {{ data['emailAddress'] }} with
-
-        {% endif %}
-        instructions on how to resume this application.
-      </p> -->
-
       <p class="govuk-body">
         If you want to resume the application now, <a href="javascript: history.go(-1)">click here</a>.
       </p>
 
+      <h2 class="govuk-heading-m">Recording this information</h2>
+
+      <p class="govuk-body">
+        <p class="govuk-body">
+          You should print this screen or take a note of the information as you will need it to resume your application.
+        </p>
+
+        <p class="govuk-body">
+          {% if data['confirmationPreference'] !== '' %}
+
+            You can also
+
+            {% if data['confirmationPreference'] === 'Text' %}
+              <a href="link-telephone">link your telephone number to this application</a>
+            {% endif %}
+
+            {% if data['confirmationPreference'] === 'Email' %}
+              <a href="link-email">link your email address to this application</a>
+            {% endif %}
+
+            to provide additional security.
+
+          {% endif %}
+
+        </p>
+
+
       <h2 class="govuk-heading-m">What happens next</h2>
 
       <p class="govuk-body">
-        You can resume your application at any time by entering your save and return reference and passcode.
+        You can resume your application at any time by entering your save and return reference and three-word passcode.
       </p>
 
       <h2 class="govuk-heading-m">How long we keep your information</h2>

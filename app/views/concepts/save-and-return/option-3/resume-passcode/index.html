@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- - {{ serviceName }} - GOV.UK
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,15 +24,6 @@
 
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--xl" for="example">
-              Resume a claim
-            </label></h1>
-
-            <p class="govuk-body">
-              Your save and return number and three-word passcode were shown to you when you saved your application. You may have also requested to get them by email or text message.
-            </p>
-
-          <br>
 
 <!-- Reference token -->
 
@@ -40,28 +31,19 @@
 
         {{ govukInput({
           label: {
-            text: "What is your save and return number?",
-            classes: "govuk-label--s"
+            text: "What is the three-word passcode?",
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
+          },
+          hint: {
+            text: "This was shown to you when you saved your application."
           },
           classes: "govuk-input--width-20",
-          id: "save-and-return-number",
-          name: "save-and-return-number"
+          id: "three-word-passcode",
+          name: "three-word-passcode"
         }) }}
 
-<br>
-<!-- Email or phone number -->
-
-        {{ govukInput({
-          label: {
-            text: "What is your three-word passcode?",
-            classes: "govuk-label--s"
-          },
-          classes: "govuk-input--width-20",
-          id: "memorable-word-input",
-          name: "memorable-word-input"
-        }) }}
-
-</div>
+      </div>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 

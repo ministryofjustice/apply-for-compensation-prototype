@@ -230,9 +230,13 @@ require('../views/concepts/save-and-return/resume-claim-screen/option-2/save-and
 
   // Save and return - Option 3
 
-  require('../views/concepts/save-and-return/option-3/resume-a-claim/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-3/application-progress/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-3/send-confirmation-question/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/resume-unique-token/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/resume-passcode/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/link-email/routes')(router, viewContent);
+  require('../views/concepts/save-and-return/option-3/link-telephone/routes')(router, viewContent);
+
 
   require('../views/concepts/save-and-return/option-3/_2-your-details/confirmation-options/routes')(router, viewContent);
   require('../views/concepts/save-and-return/option-3/_2-your-details/address/routes')(router, viewContent);

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Your telephone number has been linked
+    </h1>
+
+      {% if data['confirmationPreference'] === 'Text' %}
+        <p class="govuk-body">
+          We have linked {{ data['phoneNumber'] }} to your application.
+        </p>
+      {% endif %}
+
+      {% if data['confirmationPreference'] !== 'Text' %}
+        <p class="govuk-body">
+          We have linked your telephone number to your application.
+        </p>
+      {% endif %}
+
+    <p class="govuk-body">
+      When you return to your application, we will ask you to verify your identity by sending a code to your phone.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
