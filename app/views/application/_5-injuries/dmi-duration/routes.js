@@ -4,6 +4,10 @@ module.exports = function (router, content) {
 // Variable: mentalHealthDuration
 
 router.post('/application/_5-injuries/dmi-duration', function (req, res) {
+
+  // set section status to completed
+  req.session.data['your_injuries_status'] = 'completed'
+
   res.redirect('/application/_6-impact/loe-context')
 })
 

@@ -8,6 +8,10 @@ module.exports = function (router, content) {
     var crimeReported = req.session.data['crimeReported']
 
     if (crimeReported === 'No')  {
+
+      // set section status for task list
+      req.session.data['about_the_crime_status'] = 'completed'
+      
       // Redirect to the relevant page
       res.redirect('/application/_4-offender/context-contact-with-offender')
     } else {

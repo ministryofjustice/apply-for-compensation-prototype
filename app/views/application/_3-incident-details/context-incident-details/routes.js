@@ -4,6 +4,10 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/application/_3-incident-details/context-incident-details', function (req, res) {
+
+    // set section status for task list
+    req.session.data['about_the_crime_status'] = 'in progress'
+
     res.redirect('/application/_3-incident-details/incident-type')
   })
 

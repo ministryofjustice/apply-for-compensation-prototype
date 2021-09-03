@@ -2,6 +2,10 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/application/_6-impact/loe-context', function (req, res) {
+
+    // set section status to completed
+    req.session.data['impact_status'] = 'in progress'
+
     res.redirect('/application/_6-impact/loe-working')
   })
 

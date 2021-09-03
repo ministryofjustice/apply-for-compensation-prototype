@@ -6,6 +6,9 @@ module.exports = function (router, content) {
 
     var incidentType = req.session.data['incidentType']
 
+    // set section status to completed
+    req.session.data['about_the_offender_status'] = 'completed'
+
     if (incidentType === 'Witnessing an incident') {
         // Redirect to the relevant page
         res.redirect('/application/_5-injuries/context-about-dmi')

@@ -4,6 +4,10 @@ module.exports = function (router, content) {
   // varialbe: email-address
   // if the user has entered an email address, it will be in 'data'. If not, we put a default value for it: name@domain.com
   router.post('/application/_2-your-details/email-address', function (req, res) {
+
+    // set section status for task list
+    req.session.data['your_details_status'] = 'completed'
+
     if (!req.session.data['emailAddress']) {
       req.session.data['emailAddress'] = 'name@domain.com'
     }

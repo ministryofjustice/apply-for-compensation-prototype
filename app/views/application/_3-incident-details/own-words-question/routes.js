@@ -8,12 +8,20 @@ module.exports = function (router, content) {
     var otherIncidentDetailsQ = req.session.data['otherIncidentDetailsQ']
 
     if (otherIncidentDetailsQ === 'Yes') {
+
+      // set section status for task list
+      req.session.data['about_the_crime_status'] = 'in progress'
+
       // Redirect to the relevant page
       res.redirect('/application/_3-incident-details/own-words')
     } else {
       if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
         return res.redirect('/application/_10-end/check-your-answers-page')
       }
+
+      // set section status for task list
+      req.session.data['about_the_crime_status'] = 'completed'
+
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_4-offender/context-contact-with-offender')
     }

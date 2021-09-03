@@ -4,6 +4,11 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/application/_5-injuries/context-physical-injuries', function (req, res) {
+
+    // set section status to completed
+    req.session.data['your_injuries_status'] = 'in progress'
+
+
     res.redirect('/application/_5-injuries/have-physical-injuries')
   })
 

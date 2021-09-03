@@ -6,8 +6,16 @@ module.exports = function (router, content) {
   router.post('/application/_10-end/declaration', function (req, res) {
     var agreeToDeclaration = req.session.data['agreeToDeclaration']
     if (agreeToDeclaration == 'agree') {
+
+      // set section status to completed
+      req.session.data['declaration_status'] = 'completed'
+
       res.redirect('/application/_10-end/confirmation-page')
     } else {
+
+      // set section status to completed
+      req.session.data['declaration_status'] = 'in progress'
+
       res.redirect('/application/_10-end/declaration/error')
     }
   })
@@ -15,8 +23,16 @@ module.exports = function (router, content) {
   router.post('/application/_10-end/declaration/error', function (req, res) {
     var agreeToDeclaration = req.session.data['agreeToDeclaration']
     if (agreeToDeclaration == 'agree') {
+
+      // set section status to completed
+      req.session.data['declaration_status'] = 'completed'
+
       res.redirect('/application/_10-end/confirmation-page')
     } else {
+
+      // set section status to completed
+      req.session.data['declaration_status'] = 'in progress'
+
       res.redirect('/application/_10-end/declaration/error')
     }
   })

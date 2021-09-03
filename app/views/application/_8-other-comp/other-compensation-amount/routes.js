@@ -4,6 +4,10 @@ module.exports = function (router, content) {
   // Variable: otherCompensation
 
   router.post('/application/_8-other-comp/other-compensation-amount', function (req, res) {
+
+    // set section status to completed
+    req.session.data['other_compensation_status'] = 'completed'
+
     res.redirect('/application/_9-additional-info/context-additional-info')
  })
 

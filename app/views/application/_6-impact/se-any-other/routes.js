@@ -2,6 +2,10 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/application/_6-impact/se-any-other', function (req, res) {
+
+    // set section status to completed
+    req.session.data['impact_status'] = 'completed'
+    
     res.redirect('/application/_7-treatment/context-treatment')
   })
 

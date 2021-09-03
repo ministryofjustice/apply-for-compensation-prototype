@@ -4,6 +4,10 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/application/_2-your-details/context-your-details', function (req, res) {
+
+    // set section status for task list
+    req.session.data['your_details_status'] = 'in progress'
+
     res.redirect('/application/_2-your-details/confirmation-options')
   })
 

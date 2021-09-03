@@ -3,6 +3,10 @@ module.exports = function (router, content) {
   // File: Context Treatment
 
   router.post('/application/_7-treatment/context-treatment', function (req, res) {
+
+    // set section status to completed
+    req.session.data['your_treatment_status'] = 'in progress'
+
     var havePhysicalInjuries = req.session.data['havePhysicalInjuries']
     var haveInfection = req.session.data['haveInfection']
     var pregnancy = req.session.data['pregnancy']
