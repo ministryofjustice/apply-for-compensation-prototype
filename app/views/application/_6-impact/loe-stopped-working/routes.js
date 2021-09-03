@@ -6,9 +6,17 @@ module.exports = function (router, content) {
     var stoppedWorking = req.session.data['stoppedWorking']
 
     if (stoppedWorking === 'No') {
+
+      // set section status to completed
+      req.session.data['impact_status'] = 'completed'
+
       // Redirect to the relevant page
       res.redirect('/application/_7-treatment/context-treatment')
     } else {
+
+      // set section status to completed
+      req.session.data['impact_status'] = 'in progress'
+
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_6-impact/loe-stopped-working-how-long')
     }

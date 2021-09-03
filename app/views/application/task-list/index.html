@@ -1,0 +1,454 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+
+<!-- NUNJUCKS TO SET COMPLETED STATUS OF SECTIONS -->
+
+<!-- Set amount of sections completed to 0 -->
+{% set total_sections = 11 %}
+{% set completed_sections = 0 %}
+
+<!-- ABOUT YOUR APPLICATION -->
+  <!-- If neither first or last question has been answered -->
+  {% if (data['fatalApplication']|length === 0)
+    and (data['britishCitizen']|length === 0) %}
+    {% set about_your_application = "Not started yet" %}
+  {% endif %}
+  <!-- If only first question has been answered -->
+  {% if (data['fatalApplication']|length > 0)
+    and (data['britishCitizen']|length === 0) %}
+    {% set about_your_application = "In progress" %}
+  {% endif %}
+  <!-- If both first and last question have been answered -->
+  {% if (data['fatalApplication']|length > 0)
+    and (data['britishCitizen']|length > 0) %}
+    {% set about_your_application = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- YOUR DETAILS -->
+  {% if data['your_details_status']|length === 0 %}
+    {% set your_details = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['your_details_status'] === 'in progress' ) %}
+    {% set your_details = "In progress" %}
+  {% endif %}
+
+  {% if (data['your_details_status'] === 'completed' ) %}
+    {% set your_details = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- ABOUT THE CRIME -->
+  {% if data['about_the_crime_status']|length === 0 %}
+    {% set about_the_crime = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['about_the_crime_status'] === 'in progress' ) %}
+    {% set about_the_crime = "In progress" %}
+  {% endif %}
+
+  {% if (data['about_the_crime_status'] === 'completed' ) %}
+    {% set about_the_crime = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- ABOUT THE OFFENDER -->
+  {% if data['about_the_offender_status']|length === 0 %}
+    {% set about_the_offender = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['about_the_offender_status'] === 'in progress' ) %}
+    {% set about_the_offender = "In progress" %}
+  {% endif %}
+
+  {% if (data['about_the_offender_status'] === 'completed' ) %}
+    {% set about_the_offender = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- YOUR INJURIES -->
+  {% if data['your_injuries_status']|length === 0 %}
+    {% set your_injuries = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['your_injuries_status'] === 'in progress' ) %}
+    {% set your_injuries = "In progress" %}
+  {% endif %}
+
+  {% if (data['your_injuries_status'] === 'completed' ) %}
+    {% set your_injuries = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- THE IMPACT THE CRIME HAS HAD -->
+  {% if data['impact_status']|length === 0 %}
+    {% set impact = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['impact_status'] === 'in progress' ) %}
+    {% set impact = "In progress" %}
+  {% endif %}
+
+  {% if (data['impact_status'] === 'completed' ) %}
+    {% set impact = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- YOUR TREATMENT -->
+  {% if data['your_treatment_status']|length === 0 %}
+    {% set your_treatment = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['your_treatment_status'] === 'in progress' ) %}
+    {% set your_treatment = "In progress" %}
+  {% endif %}
+
+  {% if (data['your_treatment_status'] === 'completed' ) %}
+    {% set your_treatment = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- OTHER COMPENSATION -->
+  {% if data['other_compensation_status']|length === 0 %}
+    {% set other_compensation = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['other_compensation_status'] === 'in progress' ) %}
+    {% set other_compensation = "In progress" %}
+  {% endif %}
+
+  {% if (data['other_compensation_status'] === 'completed' ) %}
+    {% set other_compensation = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- ADDITIONAL INFO -->
+  {% if data['additional_info_status']|length === 0 %}
+    {% set additional_info = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['additional_info_status'] === 'in progress' ) %}
+    {% set additional_info = "In progress" %}
+  {% endif %}
+
+  {% if (data['additional_info_status'] === 'completed' ) %}
+    {% set additional_info = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- CHECK YOUR ANSWERS -->
+  {% if data['check_your_answers_status']|length === 0 %}
+    {% set check_your_answers = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['check_your_answers_status'] === 'in progress' ) %}
+    {% set check_your_answers = "In progress" %}
+  {% endif %}
+
+  {% if (data['check_your_answers_status'] === 'completed' ) %}
+    {% set check_your_answers = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+<!-- DECLARATION -->
+  {% if data['declaration_status']|length === 0 %}
+    {% set declaration = "Not started yet" %}
+  {% endif %}
+
+  {% if (data['declaration_status'] === 'in progress' ) %}
+    {% set declaration = "In progress" %}
+  {% endif %}
+
+  {% if (data['declaration_status'] === 'completed' ) %}
+    {% set declaration = "Completed" %}
+    {% set completed_sections = (completed_sections + 1) %}
+  {% endif %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Your progress
+      </h1>
+
+      <p class="govuk-body">
+
+          {% if  total_sections !== completed_sections %}
+          <strong>
+            Application incomplete
+          </strong>
+          {% endif %}
+
+          {% if  total_sections === completed_sections %}
+          <strong>
+            Application complete
+          </strong>
+          {% endif %}
+
+        <br>
+        You have completed {{ completed_sections }} of {{ total_sections }} tasks.
+      </p>
+
+
+      <br>
+
+      <ol class="app-task-list">
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Your application
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <!-- <a href="#" aria-describedby="xxx"> -->
+                  About your application
+                <!-- </a> -->
+              </span>
+
+              {% if (about_your_application == "Not started yet") %}
+                <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ about_your_application }}</strong>
+              {% endif %}
+
+              {% if (about_your_application == "In progress") %}
+                <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ about_your_application }}</strong>
+              {% endif %}
+
+              {% if (about_your_application == "Completed") %}
+                <strong class="govuk-tag app-task-list__task-completed">{{ about_your_application }}</strong>
+              {% endif %}
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <!-- <a href="#" aria-describedby="xxx"> -->
+                  Your details
+                <!-- </a> -->
+              </span>
+              {% if (your_details == "Not started yet") %}
+                <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ your_details }}</strong>
+              {% endif %}
+
+              {% if (your_details == "In progress") %}
+                <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ your_details }}</strong>
+              {% endif %}
+
+              {% if (your_details == "Completed") %}
+                <strong class="govuk-tag app-task-list__task-completed">{{ your_details }}</strong>
+              {% endif %}
+            </li>
+          </ul>
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> The crime and its impact
+            </h2>
+            <ul class="app-task-list__items">
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="xxx"> -->
+                    About the crime
+                  <!-- </a> -->
+                </span>
+                {% if (about_the_crime == "Not started yet") %}
+                  <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ about_the_crime }}</strong>
+                {% endif %}
+
+                {% if (about_the_crime == "In progress") %}
+                  <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ about_the_crime }}</strong>
+                {% endif %}
+
+                {% if (about_the_crime == "Completed") %}
+                  <strong class="govuk-tag app-task-list__task-completed">{{ about_the_crime }}</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="xxx"> -->
+                    About the offender
+                  <!-- </a> -->
+                </span>
+                {% if (about_the_offender == "Not started yet") %}
+                  <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ about_the_offender }}</strong>
+                {% endif %}
+
+                {% if (about_the_offender == "In progress") %}
+                  <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ about_the_offender }}</strong>
+                {% endif %}
+
+                {% if (about_the_offender == "Completed") %}
+                  <strong class="govuk-tag app-task-list__task-completed">{{ about_the_offender }}</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="xxx"> -->
+                    Your injuries
+                  <!-- </a> -->
+                </span>
+                {% if (your_injuries == "Not started yet") %}
+                  <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ your_injuries }}</strong>
+                {% endif %}
+
+                {% if (your_injuries == "In progress") %}
+                  <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ your_injuries }}</strong>
+                {% endif %}
+
+                {% if (your_injuries == "Completed") %}
+                  <strong class="govuk-tag app-task-list__task-completed">{{ your_injuries }}</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="xxx"> -->
+                    The impact the crime has had
+                  <!-- </a> -->
+                </span>
+                {% if (impact == "Not started yet") %}
+                  <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ impact }}</strong>
+                {% endif %}
+
+                {% if (impact == "In progress") %}
+                  <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ impact }}</strong>
+                {% endif %}
+
+                {% if (impact == "Completed") %}
+                  <strong class="govuk-tag app-task-list__task-completed">{{ impact }}</strong>
+                {% endif %}
+              </li>
+
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="xxx"> -->
+                    Your treatment
+                  <!-- </a> -->
+                </span>
+                {% if (your_treatment == "Not started yet") %}
+                  <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ your_treatment }}</strong>
+                {% endif %}
+
+                {% if (your_treatment == "In progress") %}
+                  <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ your_treatment }}</strong>
+                {% endif %}
+
+                {% if (your_treatment == "Completed") %}
+                  <strong class="govuk-tag app-task-list__task-completed">{{ your_treatment }}</strong>
+                {% endif %}
+              </li>
+            </ul>
+
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">3. </span> Other information
+              </h2>
+              <ul class="app-task-list__items">
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <!-- <a href="#" aria-describedby="xxx"> -->
+                      Other compensation
+                    <!-- </a> -->
+                  </span>
+                  {% if (other_compensation == "Not started yet") %}
+                    <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ other_compensation }}</strong>
+                  {% endif %}
+
+                  {% if (other_compensation == "In progress") %}
+                    <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ other_compensation }}</strong>
+                  {% endif %}
+
+                  {% if (other_compensation == "Completed") %}
+                    <strong class="govuk-tag app-task-list__task-completed">{{ other_compensation }}</strong>
+                  {% endif %}
+                </li>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <!-- <a href="#" aria-describedby="xxx"> -->
+                      Additional information
+                    <!-- </a> -->
+                  </span>
+                  {% if (additional_info == "Not started yet") %}
+                    <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ additional_info }}</strong>
+                  {% endif %}
+
+                  {% if (additional_info == "In progress") %}
+                    <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ additional_info }}</strong>
+                  {% endif %}
+
+                  {% if (additional_info == "Completed") %}
+                    <strong class="govuk-tag app-task-list__task-completed">{{ additional_info }}</strong>
+                  {% endif %}
+                </li>
+              </ul>
+
+              <li>
+                <h2 class="app-task-list__section">
+                  <span class="app-task-list__section-number">4. </span> Check and apply
+                </h2>
+                <ul class="app-task-list__items">
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <!-- <a href="#" aria-describedby="xxx"> -->
+                        Check your answers
+                      <!-- </a> -->
+                    </span>
+                    {% if (check_your_answers == "Not started yet") %}
+                      <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ check_your_answers }}</strong>
+                    {% endif %}
+
+                    {% if (check_your_answers == "In progress") %}
+                      <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ check_your_answers }}</strong>
+                    {% endif %}
+
+                    {% if (check_your_answers == "Completed") %}
+                      <strong class="govuk-tag app-task-list__task-completed">{{ check_your_answers }}</strong>
+                    {% endif %}
+                  </li>
+
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <!-- <a href="#" aria-describedby="xxx"> -->
+                        Declaration
+                      <!-- </a> -->
+                    </span>
+                    {% if (declaration == "Not started yet") %}
+                      <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">{{ declaration }}</strong>
+                    {% endif %}
+
+                    {% if (declaration == "In progress") %}
+                      <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >{{ declaration }}</strong>
+                    {% endif %}
+
+                    {% if (declaration == "Completed") %}
+                      <strong class="govuk-tag app-task-list__task-completed">{{ declaration }}</strong>
+                    {% endif %}
+                  </li>
+                </ul>
+              </li>
+      </ol>
+
+      <form class="form" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton(
+              { text: "Continue" })
+            }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

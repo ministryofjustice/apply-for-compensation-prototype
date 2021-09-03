@@ -4,6 +4,10 @@ module.exports = function (router, content) {
   // Variable: over18
 
   router.post('/application/_9-additional-info/additional-info-details', function (req, res) {
+
+    // set section status to completed
+    req.session.data['additional_info_status'] = 'completed'
+
       res.redirect('/application/_10-end/check-your-answers-page')
   })
 

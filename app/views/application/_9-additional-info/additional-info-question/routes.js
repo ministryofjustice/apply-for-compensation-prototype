@@ -8,12 +8,20 @@ module.exports = function (router, content) {
     var applicationAdditionalInfoQ = req.session.data['applicationAdditionalInfoQ']
 
     if (applicationAdditionalInfoQ === 'Yes') {
+
+      // set section status to completed
+      req.session.data['additional_info_status'] = 'in progress'
+
       // Redirect to the relevant page
       res.redirect('/application/_9-additional-info/additional-info-details')
     } else {
       if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
         return res.redirect('/application/_10-end/check-your-answers-page')
       }
+
+      // set section status to completed
+      req.session.data['additional_info_status'] = 'completed'
+      
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_10-end/check-your-answers-page')
     }

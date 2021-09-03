@@ -4,8 +4,11 @@ module.exports = function(router, content) {
   // Variable: mentalHealth
 
   router.post('/application/_7-treatment/dentist-visited', function(req, res) {
-    // Get the answer from the query string
 
+    // set section status to completed
+    req.session.data['your_treatment_status'] = 'in progress'
+
+    // Get the answer from the query string
     var visitedDentist = req.session.data['visitedDentist']
     var visitedGP = req.session.data['visitedGP']
     var registeredGP = req.session.data['registeredGP']
@@ -16,6 +19,10 @@ module.exports = function(router, content) {
       if (visitedGP === 'No') {
         res.redirect('/application/_7-treatment/hospital-visited/')
       } else {
+
+        // set section status to completed
+        req.session.data['your_treatment_status'] = 'completed'
+
         res.redirect('/application/_8-other-comp/context-prev-compensation')
       }
     } else if (visitedDentist === 'Yes') {
