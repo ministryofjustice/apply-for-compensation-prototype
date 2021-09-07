@@ -50,6 +50,11 @@ GOV.UK Prototype Kit
           </a>
         </li>
         <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#change-log">
+            Change log
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#archive">
             Archive
           </a>
@@ -63,7 +68,7 @@ GOV.UK Prototype Kit
 
       <!-- Current tab -->
       <section class="govuk-tabs__panel" id="current-prototype">
-        <h2 class="govuk-heading-l">Complete self journey applications</h2>
+        <h2 class="govuk-heading-l">Adult self-applicants — complete journey</h2>
         <p>This is the <strong>work in progress</strong> prototype, iterating what was put into private beta.</p>
         <p>This version is the post-pilot work complete in November 2020.</p>
 
@@ -113,6 +118,15 @@ GOV.UK Prototype Kit
 
         <!-- The concepts area is in an include file to make this page more manageable -->
         {% include "includes/home-page/concepts.html" %}
+
+      </section>
+
+      <!-- Change log tab -->
+
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="change-log">
+
+        <!-- The concepts area is in an include file to make this page more manageable -->
+        {% include "includes/home-page/change-log.html" %}
 
       </section>
 
