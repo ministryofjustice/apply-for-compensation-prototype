@@ -195,6 +195,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_9-ad
 
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_10-end/check-your-answers-page/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_10-end/declaration/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_10-end/declaration-under-12/routes')(router, viewContent);
 
 
 
