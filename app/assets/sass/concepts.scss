@@ -72,3 +72,13 @@
     width: 60%;
   }
 }
+
+
+.govuk-panel--credentials {
+  background: govuk-colour("light-grey");
+  text-align: left;
+}
+
+.govuk-panel--credentials .govuk-panel__body {
+  font-size: 1.5em;
+}

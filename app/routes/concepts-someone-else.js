@@ -25,7 +25,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qu
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/crime-reference/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/parent-guardian/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/under-18/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/over-18/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/british-citizen/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/parent-guardian/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_1-qualifying/authority-to-apply/routes')(router, viewContent);
@@ -41,6 +41,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-yo
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/care-order/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/care-order-details/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/address/routes')(router, viewContent);
+require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/victim-address/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/email-address/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/phone-number/routes')(router, viewContent);
 
@@ -51,7 +52,6 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-vi
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/name-other/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/date-of-birth/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/address/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-victim-details/victim-address/routes')(router, viewContent);
 
 
 
