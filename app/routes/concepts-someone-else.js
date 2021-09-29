@@ -41,7 +41,7 @@ require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-yo
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/care-order/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/care-order-details/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/address/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/victim-address/routes')(router, viewContent);
+// require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/victim-address/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/email-address/routes')(router, viewContent);
 require('../views/concepts/applying-for-someone-else/minors/application/v1/_2-your-details/phone-number/routes')(router, viewContent);
 
