@@ -254,6 +254,25 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 require('../views/concepts/save-and-return-post/i-means-of-saving/save-button/routes')(router, viewContent);
 
 
+require('../views/concepts/save-and-return-post/mvp-proto/application-progress/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/resume-unique-token/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/resume-passcode/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/credentials/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/mismatch/routes')(router, viewContent);
+
+
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/confirmation-options/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/address/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/context-your-details/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/date-of-birth/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/email-address/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/name/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/name-have-other/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/name-other/routes')(router, viewContent);
+require('../views/concepts/save-and-return-post/mvp-proto/_2-your-details/phone-number/routes')(router, viewContent);
+
+
+
 
 // Add your routes here - above the module.exports line
 module.exports = router;
