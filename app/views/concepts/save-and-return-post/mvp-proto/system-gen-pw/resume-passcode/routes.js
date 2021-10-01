@@ -11,7 +11,7 @@ module.exports = function (router, content) {
 
     if (knowPassword === 'Yes') {
 
-      if ((reference === 'ABC123') && (password === 'threerandomwords')) {
+      if ((reference === 'ABC123') && (password === '9y5sepsw1ft7eyqi')) {
         res.redirect('/concepts/save-and-return-post/mvp-proto/system-gen-pw/application-progress/')
       } else {
         res.redirect('/concepts/save-and-return-post/mvp-proto/system-gen-pw/mismatch/')

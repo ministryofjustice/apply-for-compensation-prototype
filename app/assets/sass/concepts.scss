@@ -48,7 +48,17 @@
   background-color:     $govuk-link-hover-colour;
 }
 
+// save and finish later button hack
 
+.savebutton {
+    background: none;
+    padding: 0;
+    border:0 none;
+    cursor: pointer;
+    color: $govuk-link-colour;
+    text-decoration: underline;
+    font-size: 1.1875rem;
+  }
 
 // Task list styles
 

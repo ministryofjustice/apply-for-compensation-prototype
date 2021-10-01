@@ -3,15 +3,18 @@
 <!-- Set screen-exited to name of screen exited in hidden input -->
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Continue",
+    text: "Save and continue",
     name: "buttonClicked",
     value: "Continue"
   }) }}
 
-  {{ govukButton({
+  <!-- {{ govukButton({
     text: "Save and finish later",
     classes: "govuk-button--secondary",
     name: "buttonClicked",
     value: "Save and finish later"
-  }) }}
+  }) }} -->
+
+  <input type="submit" class="savebutton govuk-link" name="buttonClicked" value="Save and finish later">
+
 </div>
