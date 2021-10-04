@@ -285,6 +285,8 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
   require('../views/concepts/save-and-return-post/mvp-proto/user-gen-pw/_2-your-details/phone-number/routes')(router, viewContent);
   require('../views/concepts/save-and-return-post/mvp-proto/user-gen-pw/_2-your-details/freetext/routes')(router, viewContent);
 
+  require('../views/concepts/save-and-return-post/mvp-proto/user-or-system-gen-pw/password-choice/routes')(router, viewContent);
+
 
 
 
