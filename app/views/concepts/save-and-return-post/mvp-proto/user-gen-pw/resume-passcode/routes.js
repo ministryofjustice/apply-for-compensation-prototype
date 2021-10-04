@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 
     var knowPassword = req.session.data['know-password'];
     var reference = req.session.data['save-and-return-reference'];
-    var password = req.session.data['password'];
+    var password = req.session.data['password-user-gen'];
     var userPassword = req.session.data['userPassword'];
 
 
