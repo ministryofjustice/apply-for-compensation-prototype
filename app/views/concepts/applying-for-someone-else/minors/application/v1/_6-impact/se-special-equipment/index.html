@@ -21,28 +21,25 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            idPrefix: "physicalAids",
-            name: "physicalAids",
+            idPrefix: "specialEquipment",
+            name: "specialEquipment",
             fieldset: {
             legend: {
-              text: "Have you paid for any special equipment because of the crime?",
+              text: "Have you paid for any special equipment because of the injuries?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
-            },
-            hint: {
-              text: "This can be costs for items, such as physical aids, you’ve had to buy after the crime happened."
             },
             items: [
             {
               value: "Yes",
               text: "Yes",
-              checked: checked("physicalAids", "Yes")
+              checked: checked("specialEquipment", "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: checked("physicalAids", "No")
+              checked: checked("specialEquipment", "No")
             }
             ]
             }) }}
@@ -62,7 +59,7 @@
                         <li>kitchen implements</li>
                         <li>specially-adapted vehicles</li>
                       </ul>
-                      <p class="govuk-body">We can only consider an award for these costs if the equipment is needed. And if something similar is not available free of charge from another source.</p>
+                      <p class="govuk-body">We can only consider an award for these costs if the equipment is needed.</p>
 
                     </div>
               </details>
