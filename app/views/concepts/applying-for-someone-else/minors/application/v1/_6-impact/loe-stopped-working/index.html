@@ -25,10 +25,13 @@
             name: "stoppedWorking",
             fieldset: {
             legend: {
-              text: "Were they unable to work or search for a job because of the crime?",
+              text: "Are they incapable of working or have very limited capacity to work due to their injuries?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
+            },
+            hint: {
+              text: "Very limited capacity means they are not capable of undertaking paid work for more than a few hours each week."
             },
             items: [
             {
@@ -44,7 +47,7 @@
             ]
             }) }}
 
-            <details class="govuk-details">
+            <!-- <details class="govuk-details">
                 <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
                       Help understanding what we mean by unable to work or search for a job
@@ -54,7 +57,7 @@
                       <p class="govuk-body">The child being unable to work includes them missing work or having to leave their job because of a physical or mental injury caused by the crime.</p>
                       <p class="govuk-body">It also applies if they are unable to search for another job in any line of work. Or if they had a formal offer of a job which they were unable to take up because of the injury.</p>
                     </div>
-              </details>
+              </details> -->
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
