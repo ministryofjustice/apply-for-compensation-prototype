@@ -31,7 +31,7 @@
               }
             },
             hint: {
-              text: "This can be care provided by a family member or care provider. It includes preparation of meals and help going to the bathroom, if the person is unable to do these daily tasks themselves."
+              text: "This can be care provided by a family member or care provider."
             },
             items: [
             {
@@ -46,6 +46,31 @@
             }
             ]
             }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding care and supervision
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <h2 class="govuk-heading-s">Care</h2>
+                      <p class="govuk-body">This means they cannot do daily tasks themselves. For example, care for the victim may include but is not limited to.</p>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>preparing meals</li>
+                        <li>helping them to eat</li>
+                        <li>helping them go to the bathroom</li>
+                        <li>taking medication</li>
+                        <li>administering other medical treatments</li>
+                      </ul>
+
+                      <h2 class="govuk-heading-s">Supervision</h2>
+                      <p class="govuk-body">This means they pose a substantial danger to themselves or others.</p>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
