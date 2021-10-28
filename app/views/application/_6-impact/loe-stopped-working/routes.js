@@ -7,11 +7,8 @@ module.exports = function (router, content) {
 
     if (stoppedWorking === 'No') {
 
-      // set section status to completed
-      req.session.data['impact_status'] = 'completed'
-
       // Redirect to the relevant page
-      res.redirect('/application/_7-treatment/context-treatment')
+      res.redirect('/application/_6-impact/loe-se-affected-daily-life')
     } else {
 
       // set section status to completed
