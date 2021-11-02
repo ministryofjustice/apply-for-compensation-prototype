@@ -2,15 +2,23 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/application/_6-impact/loe-working', function (req, res) {
-    // Get the answer from the query string
-    var workingStatus = req.session.data['workingStatus']
 
-    if (workingStatus === 'No') {
-      // Redirect to the relevant page
-      res.redirect('/application/_6-impact/loe-working-why-not')
-    } else {
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_6-impact/loe-stopped-working')
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      // Get the answer from the query string
+      var workingStatus = req.session.data['workingStatus']
+
+      if (workingStatus === 'No') {
+        // Redirect to the relevant page
+        res.redirect('/application/_6-impact/loe-working-why-not')
+      } else {
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/_6-impact/loe-stopped-working')
+      }
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

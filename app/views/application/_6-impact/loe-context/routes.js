@@ -3,10 +3,17 @@ module.exports = function (router, content) {
 
   router.post('/application/_6-impact/loe-context', function (req, res) {
 
-    // set section status to completed
-    req.session.data['impact_status'] = 'in progress'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    res.redirect('/application/_6-impact/loe-working')
+    if (buttonClicked === 'Continue') {
+
+      // set section status to completed
+      req.session.data['impact_status'] = 'in progress'
+
+      res.redirect('/application/_6-impact/loe-working')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page

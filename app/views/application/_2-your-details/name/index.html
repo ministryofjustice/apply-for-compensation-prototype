@@ -64,9 +64,11 @@
             }) }}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {{ govukButton({
-                text: "Continue"
-                }) }}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
     </form>
   </div>
 </div>

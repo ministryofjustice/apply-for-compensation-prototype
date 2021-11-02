@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content TBC',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Saving your application
+    </h1>
+
+      <p class="govuk-body">
+        You can save your claim and return to it at any time.
+      </p>
+      <p class="govuk-body">
+        You will need your save and return reference (below), and password, which you'll create next.
+      </p>
+
+      <!-- Would prefer to use a GDS pattern for dev time -->
+      <div class="govuk-panel govuk-panel--credentials">
+        <div class="govuk-panel__body">
+          Your save and return reference:
+          <strong>
+            <!-- display randomly generated credential  -->
+            <span id="credential"></span>
+          </strong>
+        </div>
+      </div>
+
+      <p class="govuk-body">
+        You will not be able to return to your application if you forget either of these.
+      </p>
+      <p class="govuk-body">
+        <a href="#">Print this page</a> to have a copy of your save and return reference.
+      </p>
+
+      <form class="form" method="post">
+        <!-- generate a random credential from array -->
+        {% include "../../../includes/generate-credentials.html" %}
+
+        {% include "../../../includes/opt-in-buttons.html" %}
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}

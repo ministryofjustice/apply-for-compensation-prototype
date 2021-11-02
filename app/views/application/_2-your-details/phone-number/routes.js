@@ -4,13 +4,21 @@ module.exports = function (router, content) {
   //
   router.post('/application/_2-your-details/phone-number', function (req, res) {
 
-    // set section status for task list
-    req.session.data['your_details_status'] = 'completed'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/_10-end/check-your-answers-page')
-    }
-    res.redirect('/application/_3-incident-details/context-incident-details')
+    if (buttonClicked === 'Continue') {
+
+        // set section status for task list
+        req.session.data['your_details_status'] = 'completed'
+
+        if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+          return res.redirect('/application/_10-end/check-your-answers-page')
+        }
+        res.redirect('/application/_3-incident-details/context-incident-details')
+
+      } else if (buttonClicked === 'Save and finish later') {
+        return res.redirect('/application/_0-start-screens/save-confirmation')
+      }
   })
 
   // Pass the question in to the page

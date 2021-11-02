@@ -2,22 +2,29 @@ module.exports = function (router, content) {
   // START__####################################################################################################
   router.post('/application/_7-treatment/dentist-details', function (req, res) {
 
-    // set section status to completed
-    req.session.data['your_treatment_status'] = 'in progress'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    var visitedGP = req.session.data['visitedGP']
-    var registeredGP = req.session.data['registeredGP']
+    if (buttonClicked === 'Continue') {
+
+      // set section status to completed
+      req.session.data['your_treatment_status'] = 'in progress'
+
+      var visitedGP = req.session.data['visitedGP']
+      var registeredGP = req.session.data['registeredGP']
 
 
-    if (visitedGP === 'No') {
-        res.redirect('/application/_7-treatment/hospital-visited/')
-      } else {
+      if (visitedGP === 'No') {
+          res.redirect('/application/_7-treatment/hospital-visited/')
+        } else {
 
-        // set section status to completed
-        req.session.data['your_treatment_status'] = 'completed'
+          // set section status to completed
+          req.session.data['your_treatment_status'] = 'completed'
 
-        res.redirect('/application/_8-other-comp/context-prev-compensation')
-      }
+          res.redirect('/application/_8-other-comp/context-prev-compensation')
+        }
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page

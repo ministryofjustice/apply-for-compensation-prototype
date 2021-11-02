@@ -4,19 +4,28 @@ module.exports = function (router, content) {
   // Variable: over18
 
   router.post('/application/_1-qualifying/over-18', function (req, res) {
-    // Get the answer from the query string
-    var over18 = req.session.data['over18']
 
-    if (over18 === 'No') {
-      // Redirect to the relevant page
-      res.redirect('/application/transition')
-    } else {
-      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-        return res.redirect('/application/_10-end/check-your-answers-page')
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      // Get the answer from the query string
+      var over18 = req.session.data['over18']
+
+      if (over18 === 'No') {
+        // Redirect to the relevant page
+        res.redirect('/application/transition')
+      } else {
+        if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+          return res.redirect('/application/_10-end/check-your-answers-page')
+        }
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/_1-qualifying/british-citizen')
       }
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_1-qualifying/british-citizen')
-    }
+
+      } else if (buttonClicked === 'Save and finish later') {
+        return res.redirect('/application/_0-start-screens/save-confirmation')
+      }
   })
 
   // Pass the question in to the page

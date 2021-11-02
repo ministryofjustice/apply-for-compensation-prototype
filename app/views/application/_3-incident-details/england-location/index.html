@@ -53,9 +53,10 @@
         text: "If the crime took place in more than one place, you can provide additional details later in this claim."
       }) }}
 
-      {{ govukButton({
-       text: "Continue"
-      }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
 
     </form>
   </div>

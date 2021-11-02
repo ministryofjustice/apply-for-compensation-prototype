@@ -4,21 +4,28 @@ module.exports = function (router, content) {
 
   router.post('/application/_7-treatment/context-treatment', function (req, res) {
 
-    // set section status to completed
-    req.session.data['your_treatment_status'] = 'in progress'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    var havePhysicalInjuries = req.session.data['havePhysicalInjuries']
-    var haveInfection = req.session.data['haveInfection']
-    var pregnancy = req.session.data['pregnancy']
-    var pregnancyLoss = req.session.data['pregnancyLoss']
-    var dmiDoYouHave = req.session.data['dmiDoYouHave']
+    if (buttonClicked === 'Continue') {
 
-    if ((havePhysicalInjuries === 'Yes') || (haveInfection === 'Yes') || (pregnancy === 'Yes') || (pregnancyLoss === 'Yes') ) {
-      res.redirect('/application/_7-treatment/treatment-details')
-    } else if (dmiDoYouHave === 'Yes') {
-      res.redirect('/application/_7-treatment/dmi-treatment-types')
-    } else {
-      res.redirect('/application/_7-treatment/gp-registered')
+      // set section status to completed
+      req.session.data['your_treatment_status'] = 'in progress'
+
+      var havePhysicalInjuries = req.session.data['havePhysicalInjuries']
+      var haveInfection = req.session.data['haveInfection']
+      var pregnancy = req.session.data['pregnancy']
+      var pregnancyLoss = req.session.data['pregnancyLoss']
+      var dmiDoYouHave = req.session.data['dmiDoYouHave']
+
+      if ((havePhysicalInjuries === 'Yes') || (haveInfection === 'Yes') || (pregnancy === 'Yes') || (pregnancyLoss === 'Yes') ) {
+        res.redirect('/application/_7-treatment/treatment-details')
+      } else if (dmiDoYouHave === 'Yes') {
+        res.redirect('/application/_7-treatment/dmi-treatment-types')
+      } else {
+        res.redirect('/application/_7-treatment/gp-registered')
+      }
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

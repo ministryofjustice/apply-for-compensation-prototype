@@ -4,22 +4,31 @@ module.exports = function (router, content) {
   // Variable: over18
 
   router.post('/application/_3-incident-details/own-words', function (req, res) {
-    // Get the answer from the query string
-    var over18 = req.session.data['over18']
 
-    if (over18 === 'No') {
-      // Redirect to the relevant page
-      res.redirect('/application/transition')
-    } else {
-      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-        return res.redirect('/application/_10-end/check-your-answers-page')
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      // Get the answer from the query string
+      var over18 = req.session.data['over18']
+
+      if (over18 === 'No') {
+        // Redirect to the relevant page
+        res.redirect('/application/transition')
+      } else {
+        if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+          return res.redirect('/application/_10-end/check-your-answers-page')
+        }
+
+        // set section status for task list
+        req.session.data['about_the_crime_status'] = 'completed'
+
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/_4-offender/context-contact-with-offender')
       }
 
-      // set section status for task list
-      req.session.data['about_the_crime_status'] = 'completed'
-
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_4-offender/context-contact-with-offender')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

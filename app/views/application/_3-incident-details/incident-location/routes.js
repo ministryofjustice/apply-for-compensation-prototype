@@ -4,11 +4,9 @@ module.exports = function (router, content) {
   //
   router.post('/application/_3-incident-details/incident-location', function (req, res) {
 
-    // if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    //   return res.redirect('/application/_3-incident-details/_10-end/check-your-answers-page')
-    // }
+    var buttonClicked = req.session.data['buttonClicked'];
 
-  // Get the answer from the query string
+    if (buttonClicked === 'Continue') {
 
       var yourChoice = req.session.data['incidentlocation']
 
@@ -30,7 +28,10 @@ module.exports = function (router, content) {
             res.redirect('/application/_3-incident-details/somewhere-else')
           }
 
-      })
+      } else if (buttonClicked === 'Save and finish later') {
+        return res.redirect('/application/_0-start-screens/save-confirmation')
+      }
+    })
   // Pass the question in to the page
   router.get('/application/_3-incident-details/incident-location/', function (req, res) {
     res.render('application/_3-incident-details/incident-location/index', content)

@@ -3,8 +3,16 @@ module.exports = function (router, content) {
 // File: Finished Treatment
 
 router.post('/application/_7-treatment/finished-treatment', function (req, res) {
+
+  var buttonClicked = req.session.data['buttonClicked'];
+
+  if (buttonClicked === 'Continue') {
+
     res.redirect('/application/_7-treatment/gp-registered')
 
+  } else if (buttonClicked === 'Save and finish later') {
+    return res.redirect('/application/_0-start-screens/save-confirmation')
+  }
 })
 
 // Pass the question in to the page

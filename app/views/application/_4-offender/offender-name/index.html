@@ -43,7 +43,10 @@
           text: "If there was more than 1 offender, you can provide additional details later in this claim."
         }) }}
 
-        <input class="govuk-button" type="submit" value="Continue">
+        <!-- hidden field records screen exited for save and return functionality -->
+        {% include "../../includes/screen-exited.html" %}
+        <!-- button group for save and return -->
+        {% include "../../includes/buttons.html" %}
       </form>
     </div>
   </div>

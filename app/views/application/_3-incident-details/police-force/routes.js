@@ -3,7 +3,16 @@ module.exports = function (router, content) {
   // File: crime-reference
   //
   router.post('/application/_3-incident-details/police-force', function (req, res) {
-   res.redirect('/application/_3-incident-details/crime-reference')
+
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      res.redirect('/application/_3-incident-details/crime-reference')
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page

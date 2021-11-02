@@ -4,19 +4,27 @@ module.exports = function (router, content) {
   // Variable: otherCompensation
 
   router.post('/application/_8-other-comp/other-compensation-decision', function (req, res) {
-    // Get the answer from the query string
-    var otherCompDecision = req.session.data['comp-decision-answer']
 
-    if (otherCompDecision === 'No') {
-      // Redirect to the relevant page
-      res.redirect('/application/_8-other-comp/other-compensation-when')
-    } else {
-      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-        return res.redirect('/application/_10-end/check-your-answers-page')
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      // Get the answer from the query string
+      var otherCompDecision = req.session.data['comp-decision-answer']
+
+      if (otherCompDecision === 'No') {
+        // Redirect to the relevant page
+        res.redirect('/application/_8-other-comp/other-compensation-when')
+      } else {
+        if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+          return res.redirect('/application/_10-end/check-your-answers-page')
+        }
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/_8-other-comp/other-compensation-amount')
       }
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_8-other-comp/other-compensation-amount')
-    }
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }    
   })
 
  // Pass the question in to the page

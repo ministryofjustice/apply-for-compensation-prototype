@@ -60,11 +60,10 @@
             text: "If you enter an approximate date or if you reported the crime on more than one occasion, you can provide additional details later in this claim."
           }) }}
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
-          {{ govukButton({
-          text: "Continue"
-          }) }}
+          <!-- hidden field records screen exited for save and return functionality -->
+          {% include "../../includes/screen-exited.html" %}
+          <!-- button group for save and return -->
+          {% include "../../includes/buttons.html" %}
         </form>
 
       </div>

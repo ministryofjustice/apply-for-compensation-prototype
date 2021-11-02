@@ -4,10 +4,17 @@ module.exports = function (router, content) {
   // will produce an address on multiple lines on the 'check your answers page'
   router.post('/application/_7-treatment/hospital-details', function (req, res) {
 
-    // set section status to completed
-    req.session.data['your_treatment_status'] = 'completed'
-    
-    res.redirect('/application/_8-other-comp/context-prev-compensation')
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      // set section status to completed
+      req.session.data['your_treatment_status'] = 'completed'
+
+      res.redirect('/application/_8-other-comp/context-prev-compensation')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // END__######################################################################################################

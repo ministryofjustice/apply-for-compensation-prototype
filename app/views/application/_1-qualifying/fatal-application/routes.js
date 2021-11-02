@@ -4,16 +4,26 @@ module.exports = function (router, content) {
   // Variable: direct-applicant
 
   router.post('/application/_1-qualifying/fatal-application', function (req, res) {
+    var buttonClicked = req.session.data['buttonClicked'];
+
     // Get the answer from the query string
     var fatalApplication = req.session.data['fatalApplication']
 
-    if (fatalApplication === 'No') {
-      // Redirect to the relevant page
-      res.redirect('/application/_1-qualifying/incident-reported')
-    } else {
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/transition')
+    if (buttonClicked === 'Continue') {
+
+      if (fatalApplication === 'No') {
+        // Redirect to the relevant page
+        res.redirect('/application/_1-qualifying/incident-reported')
+      } else {
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/transition')
+      }
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
+
+
   })
 
   // Pass the question in to the page

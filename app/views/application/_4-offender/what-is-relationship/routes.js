@@ -4,16 +4,24 @@ module.exports = function (router, content) {
   //
   router.post('/application/_4-offender/what-is-relationship', function (req, res) {
 
-    var incidentType = req.session.data['incidentType']
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    // set section status to completed
-    req.session.data['about_the_offender_status'] = 'completed'
+    if (buttonClicked === 'Continue') {
 
-    if (incidentType === 'Witnessing an incident') {
-        // Redirect to the relevant page
-        res.redirect('/application/_5-injuries/context-about-dmi')
-    } else {
-      res.redirect('/application/_5-injuries/context-physical-injuries')
+      var incidentType = req.session.data['incidentType']
+
+      // set section status to completed
+      req.session.data['about_the_offender_status'] = 'completed'
+
+      if (incidentType === 'Witnessing an incident') {
+          // Redirect to the relevant page
+          res.redirect('/application/_5-injuries/context-about-dmi')
+      } else {
+        res.redirect('/application/_5-injuries/context-physical-injuries')
+      }
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

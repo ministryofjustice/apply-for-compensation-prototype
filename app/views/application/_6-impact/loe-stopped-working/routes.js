@@ -2,23 +2,31 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/application/_6-impact/loe-stopped-working', function (req, res) {
-    // Get the answer from the query string
-    var stoppedWorking = req.session.data['stoppedWorking']
 
-    if (stoppedWorking === 'No') {
+    var buttonClicked = req.session.data['buttonClicked'];
 
-      // set section status to completed
-      req.session.data['impact_status'] = 'completed'
+    if (buttonClicked === 'Continue') {
 
-      // Redirect to the relevant page
-      res.redirect('/application/_7-treatment/context-treatment')
-    } else {
+      // Get the answer from the query string
+      var stoppedWorking = req.session.data['stoppedWorking']
 
-      // set section status to completed
-      req.session.data['impact_status'] = 'in progress'
+      if (stoppedWorking === 'No') {
 
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_6-impact/loe-stopped-working-how-long')
+        // set section status to completed
+        req.session.data['impact_status'] = 'completed'
+
+        // Redirect to the relevant page
+        res.redirect('/application/_7-treatment/context-treatment')
+      } else {
+
+        // set section status to completed
+        req.session.data['impact_status'] = 'in progress'
+
+        // If the variable is any other value (or is missing) render the page requested
+        res.redirect('/application/_6-impact/loe-stopped-working-how-long')
+      }
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

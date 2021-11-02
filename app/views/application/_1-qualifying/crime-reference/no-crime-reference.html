@@ -50,9 +50,10 @@ We need the crime reference number - {{ serviceName }} - GOV.UK
 
 
     <form class="form" method="post">
-      {{ govukButton({
-            text: "Continue anyway"
-            }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
     </form>
   </div>
 </div>

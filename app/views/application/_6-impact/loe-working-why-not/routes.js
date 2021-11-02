@@ -2,7 +2,15 @@ module.exports = function (router, content) {
   // START__####################################################################################################
 
   router.post('/application/_6-impact/loe-working-why-not', function (req, res) {
-    res.redirect('/application/_6-impact/loe-stopped-working')
+
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      res.redirect('/application/_6-impact/loe-stopped-working')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page

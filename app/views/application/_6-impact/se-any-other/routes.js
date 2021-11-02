@@ -3,10 +3,17 @@ module.exports = function (router, content) {
 
   router.post('/application/_6-impact/se-any-other', function (req, res) {
 
-    // set section status to completed
-    req.session.data['impact_status'] = 'completed'
-    
-    res.redirect('/application/_7-treatment/context-treatment')
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      // set section status to completed
+      req.session.data['impact_status'] = 'completed'
+
+      res.redirect('/application/_7-treatment/context-treatment')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page
