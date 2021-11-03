@@ -10,6 +10,10 @@ module.exports = function (router, content) {
       // Get the answer from the query string
       var stoppedWorking = req.session.data['stoppedWorking']
 
+      // Redirect to the relevant page
+      res.redirect('/application/_6-impact/loe-se-affected-daily-life')
+    } else {
+
       if (stoppedWorking === 'No') {
 
         // set section status to completed
