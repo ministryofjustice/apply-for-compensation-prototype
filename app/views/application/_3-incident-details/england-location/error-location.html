@@ -30,7 +30,7 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
                 }
               ]
             }) }}
-            
+
 <h1 class="govuk-heading-xl">{{englandLocationQuestion}}</h1>
 
 
@@ -62,11 +62,10 @@ Error: {{ englandLocationQuestion }} - {{ serviceName }} - GOV.UK
                   name: "EnglandLocation"
                   }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-            text: "Continue"
-            }) }}
+          <!-- hidden field records screen exited for save and return functionality -->
+          {% include "../../includes/screen-exited.html" %}
+          <!-- button group for save and return -->
+          {% include "../../includes/buttons.html" %}
 
     </form>
   </div>

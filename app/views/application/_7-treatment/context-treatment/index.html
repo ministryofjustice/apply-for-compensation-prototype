@@ -34,9 +34,10 @@
     <p class="govuk-body">We often have to ask your GP or other health service provider for evidence about your injuries and treatment. We will let you know if we need to do this.</p>
 
     <form class="form" method="post">
-      {{ govukButton({
-          text: "Continue"
-      }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
     </form>
   </div>
 </div>

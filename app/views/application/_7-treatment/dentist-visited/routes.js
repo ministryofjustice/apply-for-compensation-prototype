@@ -5,28 +5,35 @@ module.exports = function(router, content) {
 
   router.post('/application/_7-treatment/dentist-visited', function(req, res) {
 
-    // set section status to completed
-    req.session.data['your_treatment_status'] = 'in progress'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    // Get the answer from the query string
-    var visitedDentist = req.session.data['visitedDentist']
-    var visitedGP = req.session.data['visitedGP']
-    var registeredGP = req.session.data['registeredGP']
+    if (buttonClicked === 'Continue') {
 
-    if (visitedDentist === 'Yes') {
-      res.redirect('/application/_7-treatment/dentist-details')
-    } else if (visitedDentist === 'No') {
-      if (visitedGP === 'No') {
-        res.redirect('/application/_7-treatment/hospital-visited/')
-      } else {
+      // set section status to completed
+      req.session.data['your_treatment_status'] = 'in progress'
 
-        // set section status to completed
-        req.session.data['your_treatment_status'] = 'completed'
+      // Get the answer from the query string
+      var visitedDentist = req.session.data['visitedDentist']
+      var visitedGP = req.session.data['visitedGP']
+      var registeredGP = req.session.data['registeredGP']
 
-        res.redirect('/application/_8-other-comp/context-prev-compensation')
+      if (visitedDentist === 'Yes') {
+        res.redirect('/application/_7-treatment/dentist-details')
+      } else if (visitedDentist === 'No') {
+        if (visitedGP === 'No') {
+          res.redirect('/application/_7-treatment/hospital-visited/')
+        } else {
+
+          // set section status to completed
+          req.session.data['your_treatment_status'] = 'completed'
+
+          res.redirect('/application/_8-other-comp/context-prev-compensation')
+        }
+      } else if (visitedDentist === 'Yes') {
+        res.redirect('/application/_7-treatment/dentist-details')
       }
-    } else if (visitedDentist === 'Yes') {
-      res.redirect('/application/_7-treatment/dentist-details')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

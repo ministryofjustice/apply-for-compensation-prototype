@@ -13,6 +13,8 @@ module.exports = function (router, content) {
       res.redirect('/application/_7-treatment/context-treatment')
     } else {
       res.redirect('/application/_6-impact/se-context')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

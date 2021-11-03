@@ -30,9 +30,10 @@ Physical injuries  - {{ serviceName }} - GOV.UK
     <p class="govuk-body">We’ll ask you about your mental health later in the application.</p>
 
     <form class="form" method="post">
-      {{ govukButton({
-      text: "Continue"
-      }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
     </form>
 
   </div>

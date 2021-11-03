@@ -3,13 +3,29 @@ module.exports = function (router, content) {
   // File: incident-reported
   // Variable: incidentReported
   router.post('/application/_1-qualifying/incident-reported', function (req, res) {
-    // Get the answer from the query string
-   var crimeReported = req.session.data['crimeReported']
-    if (crimeReported === 'No') {
-       return res.redirect('/application/_1-qualifying/incident-reported/not-reported')
-    } else {
-      res.redirect('/application/_1-qualifying/crime-reference')
+
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      var fatalApplication = req.session.data['fatalApplication'];
+
+      if (fatalApplication === 'No') {
+
+        // Get the answer from the query string
+       var crimeReported = req.session.data['crimeReported']
+        if (crimeReported === 'No') {
+           return res.redirect('/application/_1-qualifying/incident-reported/not-reported')
+        } else {
+          res.redirect('/application/_1-qualifying/crime-reference')
+        }
+
+      }
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
+
   })
 
   router.post('/application/_1-qualifying/incident-reported/not-reported', function (req, res) {

@@ -4,19 +4,27 @@ module.exports = function (router, content) {
   // Variable: declaration
 
   router.post('/application/_10-end/declaration', function (req, res) {
-    var agreeToDeclaration = req.session.data['agreeToDeclaration']
-    if (agreeToDeclaration == 'agree') {
 
-      // set section status to completed
-      req.session.data['declaration_status'] = 'completed'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-      res.redirect('/application/_10-end/confirmation-page')
-    } else {
+    if (buttonClicked === 'Continue') {
 
-      // set section status to completed
-      req.session.data['declaration_status'] = 'in progress'
+      var agreeToDeclaration = req.session.data['agreeToDeclaration']
+      if (agreeToDeclaration == 'agree') {
 
-      res.redirect('/application/_10-end/declaration/error')
+        // set section status to completed
+        req.session.data['declaration_status'] = 'completed'
+
+        res.redirect('/application/_10-end/confirmation-page')
+      } else {
+
+        // set section status to completed
+        req.session.data['declaration_status'] = 'in progress'
+
+        res.redirect('/application/_10-end/declaration/error')
+      }
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
     }
   })
 

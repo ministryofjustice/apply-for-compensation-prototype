@@ -1,0 +1,16 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    name: "buttonClicked",
+    value: "Continue"
+  }) }}
+
+  {% if data['optIn'] === 'Continue' %}
+
+  <input type="submit" class="savebutton govuk-link" name="buttonClicked" value="Save and finish later">
+
+  {% endif %}
+
+</div>

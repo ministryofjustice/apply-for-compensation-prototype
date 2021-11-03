@@ -5,10 +5,18 @@ module.exports = function (router, content) {
 
   router.post('/application/_3-incident-details/context-incident-details', function (req, res) {
 
-    // set section status for task list
-    req.session.data['about_the_crime_status'] = 'in progress'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    res.redirect('/application/_3-incident-details/incident-type')
+    if (buttonClicked === 'Continue') {
+
+        // set section status for task list
+        req.session.data['about_the_crime_status'] = 'in progress'
+
+        res.redirect('/application/_3-incident-details/incident-type')
+
+      } else if (buttonClicked === 'Save and finish later') {
+        return res.redirect('/application/_0-start-screens/save-confirmation')
+      }
   })
 
   // Pass the question in to the page

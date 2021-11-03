@@ -50,10 +50,10 @@ Check your answers - {{ serviceName }} - GOV.UK
 
 
     <form class="form" method="post">
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton(
-            { text: "Continue" })
-          }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
     </form>
   </div>
 </div>

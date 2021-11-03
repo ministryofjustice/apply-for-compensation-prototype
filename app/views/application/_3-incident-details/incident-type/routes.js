@@ -4,7 +4,16 @@ module.exports = function (router, content) {
   // Variable: sexualAssault
 
   router.post('/application/_3-incident-details/incident-type', function (req, res) {
-      res.redirect('/application/_3-incident-details/single-or-multiple-incidents')
+
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+        res.redirect('/application/_3-incident-details/single-or-multiple-incidents')
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page

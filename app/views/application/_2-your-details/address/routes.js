@@ -3,16 +3,25 @@ module.exports = function (router, content) {
   // File: address
 
   router.post('/application/_2-your-details/address', function (req, res) {
-    // Get the answer from the query string
-    var confirmationPreference = req.session.data['confirmationPreference']
 
-    if (confirmationPreference === 'Email') {
-      // Redirect to the relevant page
-      res.redirect('/application/_2-your-details/phone-number')
-    } else if (confirmationPreference === 'Text') {
-      // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_2-your-details/email-address')
-    }
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+        // Get the answer from the query string
+        var confirmationPreference = req.session.data['confirmationPreference']
+
+        if (confirmationPreference === 'Email') {
+          // Redirect to the relevant page
+          res.redirect('/application/_2-your-details/phone-number')
+        } else if (confirmationPreference === 'Text') {
+          // If the variable is any other value (or is missing) render the page requested
+          res.redirect('/application/_2-your-details/email-address')
+        }
+
+      } else if (buttonClicked === 'Save and finish later') {
+        return res.redirect('/application/_0-start-screens/save-confirmation')
+      }
   })
 
   router.post('/application/_2-your-details/address', function (req, res) {

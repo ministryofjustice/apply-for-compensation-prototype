@@ -5,10 +5,17 @@ module.exports = function (router, content) {
 
   router.post('/application/_8-other-comp/other-compensation-when', function (req, res) {
 
-    // set section status to completed
-    req.session.data['other_compensation_status'] = 'completed'
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    res.redirect('/application/_9-additional-info/context-additional-info')
+    if (buttonClicked === 'Continue') {
+
+      // set section status to completed
+      req.session.data['other_compensation_status'] = 'completed'
+
+      res.redirect('/application/_9-additional-info/context-additional-info')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
  })
 
  // Pass the question in to the page

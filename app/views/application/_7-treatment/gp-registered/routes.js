@@ -3,8 +3,17 @@ module.exports = function (router, content) {
 // File: GP Registered
 
 router.post('/application/_7-treatment/gp-registered', function (req, res) {
-  // Get the answer from the query string
-    res.redirect('/application/_7-treatment/gp-visited')
+
+  var buttonClicked = req.session.data['buttonClicked'];
+
+  if (buttonClicked === 'Continue') {
+
+    // Get the answer from the query string
+      res.redirect('/application/_7-treatment/gp-visited')
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
 // Pass the question in to the page

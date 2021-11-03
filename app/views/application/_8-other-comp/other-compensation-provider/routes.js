@@ -4,11 +4,19 @@ module.exports = function (router, content) {
   // Variable: otherCompensation
 
   router.post('/application/_8-other-comp/other-compensation-provider', function (req, res) {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/_10-end/check-your-answers-page')
-  }
-  res.redirect('/application/_8-other-comp/other-compensation-decision')
- })
+
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
+      if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+      return res.redirect('/application/_10-end/check-your-answers-page')
+      }
+      res.redirect('/application/_8-other-comp/other-compensation-decision')
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
+  })
 
  // Pass the question in to the page
  router.get('/application/_8-other-comp/other-compensation-provider/', function (req, res) {

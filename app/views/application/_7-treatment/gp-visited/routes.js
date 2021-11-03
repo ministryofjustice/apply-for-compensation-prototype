@@ -3,37 +3,45 @@ module.exports = function(router, content) {
   // File: GP Visited?
 
   router.post('/application/_7-treatment/gp-visited', function(req, res) {
-    // Get the answer from the query string
 
-    var visitedGP = req.session.data['visitedGP']
-    var registeredGP = req.session.data['registeredGP']
-    var havePhysicalInjuries = req.session.data['havePhysicalInjuries']
-    let injuredParts = req.session.data['injuredParts']
+    var buttonClicked = req.session.data['buttonClicked'];
 
-    // I am registered with a GP
-    if (registeredGP === 'Yes') {
-      res.redirect('/application/_7-treatment/gp-details')
-      // I am not registered with a GP
-    } else if (registeredGP === 'No') {
-      // I did visit a GP
-      if (visitedGP === 'Yes') {
+    if (buttonClicked === 'Continue') {
+
+      // Get the answer from the query string
+
+      var visitedGP = req.session.data['visitedGP']
+      var registeredGP = req.session.data['registeredGP']
+      var havePhysicalInjuries = req.session.data['havePhysicalInjuries']
+      let injuredParts = req.session.data['injuredParts']
+
+      // I am registered with a GP
+      if (registeredGP === 'Yes') {
         res.redirect('/application/_7-treatment/gp-details')
-        // I did NOT visit a GP
-      } else if (visitedGP === 'No') {
-        // I do have physical injuries
-        if (havePhysicalInjuries === 'Yes') {
-          if (injuredParts && injuredParts.includes('Head, face or neck')) {
-          // My physical injuries included a Head, neck or Face injury
-          res.redirect('/application/_7-treatment/dentist-visited')
+        // I am not registered with a GP
+      } else if (registeredGP === 'No') {
+        // I did visit a GP
+        if (visitedGP === 'Yes') {
+          res.redirect('/application/_7-treatment/gp-details')
+          // I did NOT visit a GP
+        } else if (visitedGP === 'No') {
+          // I do have physical injuries
+          if (havePhysicalInjuries === 'Yes') {
+            if (injuredParts && injuredParts.includes('Head, face or neck')) {
+            // My physical injuries included a Head, neck or Face injury
+            res.redirect('/application/_7-treatment/dentist-visited')
+            } else {
+              // My physical injuries DO NOT included a Head, neck or Face injury
+              res.redirect('/application/_7-treatment/hospital-visited/')
+            }
+            // I do NOT have physical injuries
           } else {
-            // My physical injuries DO NOT included a Head, neck or Face injury
             res.redirect('/application/_7-treatment/hospital-visited/')
           }
-          // I do NOT have physical injuries
-        } else {
-          res.redirect('/application/_7-treatment/hospital-visited/')
-        }
+      }
     }
+  } else if (buttonClicked === 'Save and finish later') {
+    return res.redirect('/application/_0-start-screens/save-confirmation')
   }
 })
 

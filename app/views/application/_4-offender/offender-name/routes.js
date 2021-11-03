@@ -3,7 +3,16 @@ module.exports = function (router, content) {
   // File: offender-name
 
   router.post('/application/_4-offender/offender-name', function (req, res) {
+
+    var buttonClicked = req.session.data['buttonClicked'];
+
+    if (buttonClicked === 'Continue') {
+
       res.redirect('/application/_4-offender/contact-with-offender')
+
+    } else if (buttonClicked === 'Save and finish later') {
+      return res.redirect('/application/_0-start-screens/save-confirmation')
+    }
   })
 
   // Pass the question in to the page

@@ -20,8 +20,20 @@ router.get('/', function (req, res) {
 // This routes file only contains the routes for the main prototype to keep things simpler //
 
 
-// 1 - Qualifying questions
+// 0 - Start screens and save and return
+require('./views/application/_0-start-screens/new-application/create-password/routes')(router, viewContent);
+require('./views/application/_0-start-screens/new-application/create-password/error-pw-both/routes')(router, viewContent);
+require('./views/application/_0-start-screens/new-application/create-password/error-pw-mismatch/routes')(router, viewContent);
+require('./views/application/_0-start-screens/new-application/create-password/error-pw-protocol/routes')(router, viewContent);
+require('./views/application/_0-start-screens/new-application/credential-display/routes')(router, viewContent);
+require('./views/application/_0-start-screens/new-application/credentials-created/routes')(router, viewContent);
+require('./views/application/_0-start-screens/resume-application/enter-password/routes')(router, viewContent);
+require('./views/application/_0-start-screens/resume-application/enter-ref/routes')(router, viewContent);
+require('./views/application/_0-start-screens/resume-application/credentials-error/routes')(router, viewContent);
+require('./views/application/_0-start-screens/resume-application/dont-know-credentials/routes')(router, viewContent);
+require('./views/application/_0-start-screens/resume-application/success/routes')(router, viewContent);
 
+// 1 - Qualifying questions
 require('./views/application/_1-qualifying/crime-reference/routes')(router, viewContent);
 require('./views/application/_1-qualifying/fatal-application/routes')(router, viewContent);
 require('./views/application/_1-qualifying/who-is-making-the-application/routes')(router, viewContent);
@@ -61,7 +73,6 @@ require('./views/application/_3-incident-details/own-words-question/routes')(rou
 require('./views/application/_3-incident-details/own-words/routes')(router, viewContent);
 
 // 4 offender
-
 require('./views/application/_4-offender/contact-with-offender/routes')(router, viewContent);
 require('./views/application/_4-offender/context-contact-with-offender/routes')(router, viewContent);
 require('./views/application/_4-offender/do-you-know-offender-name/routes')(router, viewContent);
@@ -69,7 +80,6 @@ require('./views/application/_4-offender/offender-name/routes')(router, viewCont
 require('./views/application/_4-offender/what-is-relationship/routes')(router, viewContent);
 
 // 5 Injuries
-
 require('./views/application/_5-injuries/context-physical-injuries/routes')(router, viewContent);
 require('./views/application/_5-injuries/have-physical-injuries/routes')(router, viewContent);
 require('./views/application/_5-injuries/infection/routes')(router, viewContent);
@@ -118,9 +128,7 @@ require('./views/application/_5-injuries/context-about-dmi/routes')(router, view
 require('./views/application/_5-injuries/dmi/routes')(router, viewContent);
 require('./views/application/_5-injuries/dmi-duration/routes')(router, viewContent);
 
-
 // 6 Impact
-
 require('./views/application/_6-impact/loe-context/routes')(router, viewContent);
 require('./views/application/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
 require('./views/application/_6-impact/loe-stopped-working/routes')(router, viewContent);
@@ -134,9 +142,7 @@ require('./views/application/_6-impact/se-home-care/routes')(router, viewContent
 require('./views/application/_6-impact/se-nhs-treatment/routes')(router, viewContent);
 require('./views/application/_6-impact/se-physical-aids/routes')(router, viewContent);
 
-
 // 7 Treatment
-
 require('./views/application/_7-treatment/treatment-details/routes')(router, viewContent);
 require('./views/application/_7-treatment/finished-treatment/routes')(router, viewContent);
 require('./views/application/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
@@ -149,9 +155,7 @@ require('./views/application/_7-treatment/hospital-details/routes')(router, view
 require('./views/application/_7-treatment/dentist-visited/routes')(router, viewContent);
 require('./views/application/_7-treatment/dentist-details/routes')(router, viewContent);
 
-
 // 8 Other comp
-
 require('./views/application/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
 require('./views/application/_8-other-comp/other-compensation/routes')(router, viewContent);
 require('./views/application/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
@@ -162,7 +166,6 @@ require('./views/application/_8-other-comp/other-compensation-why-not/routes')(r
 require('./views/application/_8-other-comp/previous-applications/routes')(router, viewContent);
 
 // 9 Additional info
-
 require('./views/application/_9-additional-info/context-additional-info/routes')(router, viewContent);
 require('./views/application/_9-additional-info/additional-info-question/routes')(router, viewContent);
 require('./views/application/_9-additional-info/additional-info-details/routes')(router, viewContent);
