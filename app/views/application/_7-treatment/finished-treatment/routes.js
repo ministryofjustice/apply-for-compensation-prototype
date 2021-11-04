@@ -11,7 +11,7 @@ router.post('/application/_7-treatment/finished-treatment', function (req, res) 
     res.redirect('/application/_7-treatment/gp-registered')
 
   } else if (buttonClicked === 'Save and finish later') {
-    return res.redirect('/application/_0-start-screens/save-confirmation')
+    return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })
 

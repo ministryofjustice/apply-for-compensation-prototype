@@ -1,3 +1,5 @@
+<!-- Continue button -->
+
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 <div class="govuk-button-group">
@@ -7,10 +9,27 @@
     value: "Continue"
   }) }}
 
+<!-- "Save and finish later" button - only shown if user has opted in to save and return -->
+
   {% if data['optIn'] === 'Continue' %}
 
-  <input type="submit" class="savebutton govuk-link" name="buttonClicked" value="Save and finish later">
+  <div id="saveButton">
+    <input type="submit" class="savebutton govuk-link" name="buttonClicked" value="Save and finish later">
+  </div>
 
   {% endif %}
 
 </div>
+
+<!-- don't show "save and finish later" button in _1-qualifying or _2-your-details sections -->
+<script>
+  var pageURL = window.location.href;
+  var lastTwoSegments = pageURL
+    .split("/") // split to an array
+    .slice(-2) // take the two last elements
+  var appSection = lastTwoSegments[0];
+
+    if ( (appSection === '_1-qualifying') || (appSection === '_2-your-details') ) {
+      document.getElementById("saveButton").classList.add('hidden');;
+    }
+</script>

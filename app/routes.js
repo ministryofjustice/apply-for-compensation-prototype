@@ -21,17 +21,22 @@ router.get('/', function (req, res) {
 
 
 // 0 - Start screens and save and return
-require('./views/application/_0-start-screens/new-application/create-password/routes')(router, viewContent);
-require('./views/application/_0-start-screens/new-application/create-password/error-pw-both/routes')(router, viewContent);
-require('./views/application/_0-start-screens/new-application/create-password/error-pw-mismatch/routes')(router, viewContent);
-require('./views/application/_0-start-screens/new-application/create-password/error-pw-protocol/routes')(router, viewContent);
-require('./views/application/_0-start-screens/new-application/credential-display/routes')(router, viewContent);
-require('./views/application/_0-start-screens/new-application/credentials-created/routes')(router, viewContent);
-require('./views/application/_0-start-screens/resume-application/enter-password/routes')(router, viewContent);
-require('./views/application/_0-start-screens/resume-application/enter-ref/routes')(router, viewContent);
-require('./views/application/_0-start-screens/resume-application/credentials-error/routes')(router, viewContent);
-require('./views/application/_0-start-screens/resume-application/dont-know-credentials/routes')(router, viewContent);
-require('./views/application/_0-start-screens/resume-application/success/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/new-application/create-password/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/new-application/create-password/error-pw-both/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/new-application/create-password/error-pw-mismatch/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/new-application/create-password/error-pw-protocol/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/new-application/credential-display/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/new-application/credentials-created/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/dont-know-credentials/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/success/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/resume-application-attempt-1/enter-credentials/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/resume-application-attempt-1/enter-dob/routes')(router, viewContent);
+require('./views/application/_0-save-and-return-screens/resume-application-attempt-1/credentials-error/routes')(router, viewContent);
+// require('./views/application/_0-save-and-return-screens/resume-application-attempt-2/enter-credentials/routes')(router, viewContent);
+// require('./views/application/_0-save-and-return-screens/resume-application-attempt-2/credentials-error/routes')(router, viewContent);
+// require('./views/application/_0-save-and-return-screens/resume-application-attempt-3/enter-credentials/routes')(router, viewContent);
+// require('./views/application/_0-save-and-return-screens/resume-application-attempt-3/credentials-error/routes')(router, viewContent);
+
 
 // 1 - Qualifying questions
 require('./views/application/_1-qualifying/crime-reference/routes')(router, viewContent);

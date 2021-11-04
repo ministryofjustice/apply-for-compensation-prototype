@@ -14,10 +14,10 @@ module.exports = function (router, content) {
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
           return res.redirect('/application/_10-end/check-your-answers-page')
         }
-        res.redirect('/application/_3-incident-details/context-incident-details')
+        res.redirect('/application/_0-save-and-return-screens/new-application/credential-display')
 
       } else if (buttonClicked === 'Save and finish later') {
-        return res.redirect('/application/_0-start-screens/save-confirmation')
+        return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
       }
   })
 

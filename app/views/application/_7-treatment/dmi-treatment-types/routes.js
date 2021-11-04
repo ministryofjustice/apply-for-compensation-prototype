@@ -16,7 +16,7 @@ router.post('/application/_7-treatment/dmi-treatment-types', function (req, res)
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_7-treatment/finished-treatment')
     } else if (buttonClicked === 'Save and finish later') {
-      return res.redirect('/application/_0-start-screens/save-confirmation')
+      return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
 })
 

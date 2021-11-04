@@ -15,7 +15,7 @@ module.exports = function (router, content) {
       res.redirect('/application/_4-offender/do-you-know-offender-name')
 
     } else if (buttonClicked === 'Save and finish later') {
-      return res.redirect('/application/_0-start-screens/save-confirmation')
+      return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
   })
 

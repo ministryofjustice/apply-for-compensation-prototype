@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- CONTENT TBC BADGE -->
+  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+  {{ mojBadge({
+  text: 'Content TBC',
+  classes: 'moj-badge--red'
+  }) }}
+  <br>
+  <br>
+  <br>
+<!-- CONTENT TBC BADGE -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Resume an application
+    </h1>
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+            id: 'dob-input',
+            name: 'dob-input',
+            namePrefix: 'dob-input',
+            fieldset: {
+            legend: {
+            text: "Enter your date of birth",
+            classes: 'govuk-fieldset__legend-xs'
+            }
+            },
+            hint: {
+            text: 'For example, 31 3 1980'
+            },
+            items:[
+            {
+            classes: "govuk-input--width-2",
+            name: 'day',
+            value: data['dob-input-day']
+            },
+            {
+            classes: "govuk-input--width-2",
+            name: 'month',
+            value: data['dob-input-month']
+            },
+            {
+            classes: "govuk-input--width-4",
+            name: 'year',
+            value: data['dob-input-year']
+            }
+            ]
+            })
+            }}
+
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

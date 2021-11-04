@@ -14,7 +14,7 @@ module.exports = function (router, content) {
 
       res.redirect('/application/_9-additional-info/additional-info-question')
     } else if (buttonClicked === 'Save and finish later') {
-      return res.redirect('/application/_0-start-screens/save-confirmation')
+      return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
   })
 
