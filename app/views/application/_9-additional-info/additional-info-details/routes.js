@@ -7,13 +7,13 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       // set section status to completed
       req.session.data['additional_info_status'] = 'completed'
 
         res.redirect('/application/_10-end/check-your-answers-page')
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
   })

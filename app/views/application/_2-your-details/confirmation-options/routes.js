@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
         var confirmationPreference = req.session.data['confirmationPreference']
 
@@ -21,7 +21,7 @@ module.exports = function (router, content) {
         } else {
           res.redirect('/application/_2-your-details/confirmation-options/transition')
         }
-      } else if (buttonClicked === 'Save and finish later') {
+      } else if (buttonClicked === 'Save and complete application later') {
         return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
       }
 

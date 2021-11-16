@@ -8,7 +8,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
       if (confirmationPreference === 'Email') {
         // Redirect to the relevant page
         res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/_2-your-details/phone-number')
@@ -16,7 +16,7 @@ module.exports = function (router, content) {
         // If the variable is any other value (or is missing) render the page requested
         res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/_2-your-details/email-address')
       }
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/confirmation')
     }
 

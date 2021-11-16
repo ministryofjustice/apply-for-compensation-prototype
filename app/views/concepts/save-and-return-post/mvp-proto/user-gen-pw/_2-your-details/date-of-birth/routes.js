@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       // getting the inputs to be able to calculate if the user is a minor or not on the day of application
       var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
@@ -30,7 +30,7 @@ module.exports = function (router, content) {
       res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/_2-your-details/address')
 
 
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/confirmation')
     }
 

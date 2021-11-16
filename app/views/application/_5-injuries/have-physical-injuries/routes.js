@@ -4,7 +4,7 @@ router.post('/application/_5-injuries/have-physical-injuries', function (req, re
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // Get the answer from the query string
     var havePhysicalInjuries = req.session.data['havePhysicalInjuries']
@@ -17,7 +17,7 @@ router.post('/application/_5-injuries/have-physical-injuries', function (req, re
       res.redirect('/application/_5-injuries/injured-body-parts')
     }
 
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
   

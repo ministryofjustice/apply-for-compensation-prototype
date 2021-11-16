@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       // Get the answer from the query string
       var knowOffender = req.session.data['know-offender']
@@ -34,7 +34,7 @@ module.exports = function (router, content) {
         res.redirect('/application/_4-offender/offender-name')
       }
 
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
 

@@ -4,11 +4,11 @@ router.post('/application/_5-injuries/pregnancy', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     res.redirect('/application/_5-injuries/pregnancy/loss')
 
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })

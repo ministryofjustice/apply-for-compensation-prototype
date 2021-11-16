@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
         // set section status for task list
         req.session.data['your_details_status'] = 'completed'
@@ -14,9 +14,9 @@ module.exports = function (router, content) {
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
           return res.redirect('/application/_10-end/check-your-answers-page')
         }
-        res.redirect('/application/_0-save-and-return-screens/new-application/credential-display')
+        res.redirect('/application/_3-incident-details/context-incident-details')
 
-      } else if (buttonClicked === 'Save and finish later') {
+      } else if (buttonClicked === 'Save and complete application later') {
         return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
       }
   })

@@ -7,7 +7,7 @@ router.post('/application/_5-injuries/dmi', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // Get the answer from the query string
     var haveDMI = req.session.data['dmiDoYouHave']
@@ -31,7 +31,7 @@ router.post('/application/_5-injuries/dmi', function (req, res) {
       res.redirect('/application/_6-impact/loe-context')
     }
 
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })

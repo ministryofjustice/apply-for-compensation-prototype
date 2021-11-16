@@ -1,35 +1,46 @@
-<!-- Continue button -->
-
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    name: "buttonClicked",
-    value: "Continue"
-  }) }}
+{% if data['optIn']|length === 0 %}
+  <input id="continueButton" type="submit" class="govuk-button" name="buttonClicked" value="Continue">
+{% endif %}
 
-<!-- "Save and finish later" button - only shown if user has opted in to save and return -->
+<!-- If user opts out, only show 'Continue' button -->
+{% if data['optIn'] === 'I do not want to save my progress' %}
+  <input id="continueButton" type="submit" class="govuk-button" name="buttonClicked" value="Continue">
+{% endif %}
 
-  {% if data['optIn'] === 'Continue' %}
-
-  <div id="saveButton">
-    <input type="submit" class="savebutton govuk-link" name="buttonClicked" value="Save and finish later">
+<!-- If user opts in, show both buttons -->
+{% if data['optIn'] === 'Continue' %}
+  <div class="govuk-button-group">
+    <input id="continueButton" type="submit" class="govuk-button" name="buttonClicked" value="Save and continue">
+    <input id="saveButton" type="submit" class="savebutton" name="buttonClicked" value="Save and complete application later">
   </div>
+{% endif %}
 
-  {% endif %}
-
-</div>
-
-<!-- don't show "save and finish later" button in _1-qualifying or _2-your-details sections -->
+<!-- don't show "save and finish later" button in 'triage' or 'your details' sections -->
 <script>
   var pageURL = window.location.href;
-  var lastTwoSegments = pageURL
+  var urlSegments = pageURL
     .split("/") // split to an array
-    .slice(-2) // take the two last elements
-  var appSection = lastTwoSegments[0];
+  var screenName = urlSegments[urlSegments.length - 1]
+    .split("-")
+  var continueButton = document.getElementById("continueButton");
+  var saveButton = document.getElementById("saveButton");
 
-    if ( (appSection === '_1-qualifying') || (appSection === '_2-your-details') ) {
-      document.getElementById("saveButton").classList.add('hidden');;
-    }
+  // hide the "save and continue application later" button if in qualifying or your details sections
+  if ( urlSegments.includes('_1-qualifying') || urlSegments.includes('_2-your-details') ) {
+      continueButton.value = 'Continue';
+      saveButton.classList.add("hidden");
+  }
+
+  // make main CTA read 'Continue' on context screens
+  if ( screenName.includes('context') ) {
+    continueButton.value = 'Continue';
+    saveButton.classList.add("govuk-link");
+  // apply govuk-link styling if "save and continue application later" button is visible
+  // needed to add this separately as the "govuk-link" CSS class cancels out the "hidden" class
+  } else if ( !urlSegments.includes('_1-qualifying') && !urlSegments.includes('_2-your-details') ) {
+      saveButton.classList.add("govuk-link");
+  }
+
 </script>

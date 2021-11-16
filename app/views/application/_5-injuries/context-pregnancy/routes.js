@@ -4,7 +4,7 @@ router.post('/application/_5-injuries/context-pregnancy', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // Get the answer from the query string
     var incidentType = req.session.data['incidentType']
@@ -18,7 +18,7 @@ router.post('/application/_5-injuries/context-pregnancy', function (req, res) {
       res.redirect('/application/_5-injuries/pregnancy/loss')
     }
 
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })

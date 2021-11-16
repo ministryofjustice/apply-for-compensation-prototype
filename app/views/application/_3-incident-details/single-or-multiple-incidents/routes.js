@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       // Get the answer from the query string
       var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
@@ -22,7 +22,7 @@ module.exports = function (router, content) {
         // else we're under 2 days
         res.redirect('/application/_3-incident-details/incident-date')
       }
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
   })

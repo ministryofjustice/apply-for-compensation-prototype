@@ -7,14 +7,14 @@ router.post('/application/_5-injuries/dmi-duration', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // set section status to completed
     req.session.data['your_injuries_status'] = 'completed'
 
     res.redirect('/application/_6-impact/loe-context')
 
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })

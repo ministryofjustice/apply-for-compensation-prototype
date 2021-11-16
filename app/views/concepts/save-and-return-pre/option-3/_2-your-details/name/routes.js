@@ -5,14 +5,14 @@ module.exports = function (router, content) {
   router.post('/concepts/save-and-return-pre/option-3/_2-your-details/name', function (req, res) {
 
     var buttonClicked = req.session.data['buttonClicked'];
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
         return res.redirect('/concepts/save-and-return-pre/option-3/_10-end/check-your-answers-page')
       }
       res.redirect('/concepts/save-and-return-pre/option-3/_2-your-details/name-have-other')
 
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-pre/option-3/confirmation')
     }
 

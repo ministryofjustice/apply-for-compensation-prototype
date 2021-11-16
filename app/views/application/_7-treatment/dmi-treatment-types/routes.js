@@ -6,7 +6,7 @@ router.post('/application/_7-treatment/dmi-treatment-types', function (req, res)
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // Get the answer from the query string
 
@@ -15,7 +15,7 @@ router.post('/application/_7-treatment/dmi-treatment-types', function (req, res)
       }
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_7-treatment/finished-treatment')
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
 })

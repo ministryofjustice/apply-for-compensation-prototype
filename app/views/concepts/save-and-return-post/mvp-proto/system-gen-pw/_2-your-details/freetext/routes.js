@@ -5,9 +5,9 @@ module.exports = function (router, content) {
   router.post('/concepts/save-and-return-post/mvp-proto/system-gen-pw/_2-your-details/freetext', function (req, res) {
 
     var buttonClicked = req.session.data['buttonClicked'];
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
       res.redirect('/concepts/save-and-return-post/mvp-proto/system-gen-pw/end')
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-post/mvp-proto/system-gen-pw/confirmation')
     }
 

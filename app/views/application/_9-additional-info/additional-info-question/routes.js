@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       // Get the answer from the query string
       var applicationAdditionalInfoQ = req.session.data['applicationAdditionalInfoQ']
@@ -30,7 +30,7 @@ module.exports = function (router, content) {
         // If the variable is any other value (or is missing) render the page requested
         res.redirect('/application/_10-end/check-your-answers-page')
       }
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
   })

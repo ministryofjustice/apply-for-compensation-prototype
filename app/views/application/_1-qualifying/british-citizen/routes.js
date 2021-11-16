@@ -7,7 +7,7 @@ router.post('/application/_1-qualifying/british-citizen', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       // Get the answer from the query string
       var britishCitizen = req.session.data['britishCitizen']
@@ -23,7 +23,7 @@ router.post('/application/_1-qualifying/british-citizen', function (req, res) {
         res.redirect('/application/_2-your-details/context-your-details')
       }
 
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
 

@@ -287,14 +287,6 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 
   require('../views/concepts/save-and-return-post/mvp-proto/user-or-system-gen-pw/password-choice/routes')(router, viewContent);
 
-  // S&R email login options
-
-  require('../views/concepts/save-and-return-email-login/new-application/enter-email/routes')(router, viewContent);
-  require('../views/concepts/save-and-return-email-login/new-application/enter-otp/routes')(router, viewContent);
-  require('../views/concepts/save-and-return-email-login/new-application/success/routes')(router, viewContent);
-  require('../views/concepts/save-and-return-email-login/resume-application/check-email/routes')(router, viewContent);
-  require('../views/concepts/save-and-return-email-login/resume-application/enter-otp/routes')(router, viewContent);
-  require('../views/concepts/save-and-return-email-login/resume-application/success/routes')(router, viewContent);
 
 
 

@@ -6,7 +6,7 @@ router.post('/application/_7-treatment/hospital-visited', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // Get the answer from the query string
 
@@ -27,7 +27,7 @@ router.post('/application/_7-treatment/hospital-visited', function (req, res) {
       res.redirect('/application/_8-other-comp/context-prev-compensation')
     }
 
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })

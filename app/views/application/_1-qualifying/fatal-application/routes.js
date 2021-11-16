@@ -9,7 +9,7 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var fatalApplication = req.session.data['fatalApplication']
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       if (fatalApplication === 'No') {
         // Redirect to the relevant page
@@ -19,7 +19,7 @@ module.exports = function (router, content) {
         res.redirect('/application/transition')
       }
 
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
 

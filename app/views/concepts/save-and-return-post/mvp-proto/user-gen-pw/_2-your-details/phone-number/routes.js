@@ -6,9 +6,9 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
         return res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/_2-your-details/freetext')
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-post/mvp-proto/user-gen-pw/confirmation')
     }
   })

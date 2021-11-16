@@ -78,22 +78,24 @@
 
       <p class="govuk-body">You cannot save your application and return to it later. The service will time out if you stop using it for 30 minutes or more.</p>
 
-      <div class="govuk-button-group">
+      <form class="form" method="post">
+        <div class="govuk-button-group">
 
-        <a href="save-and-return-email-login/new-application/enter-email" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-          Make a claim
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-          </svg>
-        </a>
+            {% from "govuk/components/button/macro.njk" import govukButton %}
 
-        <p class="govuk-body">
-          <a href="save-and-return-email-login/resume-application/check-email">
-              Resume a claim
-          </a>
-        <p>
+            {{ govukButton({
+              text: "Make a claim",
+              isStartButton: true
+            }) }}
 
-      </div>
+            <p class="govuk-body">
+              <a href="#">
+                  Resume a claim
+              </a>
+            <p>
+        </div>
+      </form>
+
 
       <br>
       <br>
@@ -114,7 +116,7 @@
               Outside the UK: +44 (0)203 684 2517<br>
               Monday, Tuesday, Thursday and Friday, 8.30am to 5pm<br>
               Wednesday, 10am to 5pm<br>
-              <a href="https://www.relayuk.bt.com">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601<br>
+              <a href="https://www.relayuk.bt.com" target="_blank">Relay UK (opens in new tab)</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601<br>
               <a href="/call-charges">Find out about call charges</a>
             </p>
           </div>

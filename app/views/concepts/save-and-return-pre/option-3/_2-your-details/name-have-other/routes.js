@@ -7,12 +7,12 @@ module.exports = function (router, content) {
     var haveOtherName = req.session.data['haveOtherName'];
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
       if (haveOtherName === 'No')  {
         return res.redirect('/concepts/save-and-return-pre/option-3/_2-your-details/date-of-birth')
       }
       res.redirect('/concepts/save-and-return-pre/option-3/_2-your-details/name-other')
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-pre/option-3/confirmation')
     }
   })

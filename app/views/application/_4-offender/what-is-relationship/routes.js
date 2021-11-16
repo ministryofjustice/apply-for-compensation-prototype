@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 
     var buttonClicked = req.session.data['buttonClicked'];
 
-    if (buttonClicked === 'Continue') {
+    if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
       var incidentType = req.session.data['incidentType']
 
@@ -20,7 +20,7 @@ module.exports = function (router, content) {
         res.redirect('/application/_5-injuries/context-physical-injuries')
       }
 
-    } else if (buttonClicked === 'Save and finish later') {
+    } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }
   })

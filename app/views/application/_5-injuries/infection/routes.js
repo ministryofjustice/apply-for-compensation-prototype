@@ -4,7 +4,7 @@ router.post('/application/_5-injuries/infection', function (req, res) {
 
   var buttonClicked = req.session.data['buttonClicked'];
 
-  if (buttonClicked === 'Continue') {
+  if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
     // Get the answer from the query string
     var haveInfection = req.session.data['haveInfection']
@@ -17,7 +17,7 @@ router.post('/application/_5-injuries/infection', function (req, res) {
     } else {
       res.redirect('/application/_5-injuries/infection/details')        // otherwise, show the non-vosaa infection details question
     }
-  } else if (buttonClicked === 'Save and finish later') {
+  } else if (buttonClicked === 'Save and complete application later') {
     return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
   }
 })
