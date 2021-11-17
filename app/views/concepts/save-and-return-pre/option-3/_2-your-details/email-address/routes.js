@@ -15,7 +15,7 @@ module.exports = function (router, content) {
       if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
         return res.redirect('/concepts/save-and-return-pre/option-3/_10-end/check-your-answers-page')
       }
-      res.redirect('/application/_3-incident-details/context-incident-details')
+      res.redirect('/application/_1-adult/_3-incident-details/context-incident-details')
 
     } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/concepts/save-and-return-pre/option-3/confirmation')

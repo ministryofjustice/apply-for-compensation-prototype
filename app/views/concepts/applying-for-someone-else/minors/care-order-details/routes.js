@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   //
   router.post('/concepts/applying-for-someone-else/minors/care-order-details', function (req, res) {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/concepts/applying-for-someone-else/minors/application/v1/check-your-answers-page')
+      return res.redirect('/application/_2-applying-for-minors/check-your-answers-page')
     }
     res.redirect('/concepts/applying-for-someone-else/minors/your-name')
   })
