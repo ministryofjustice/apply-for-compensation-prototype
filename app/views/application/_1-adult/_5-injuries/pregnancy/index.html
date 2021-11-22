@@ -28,7 +28,7 @@ Physical injuries  - {{ serviceName }} - GOV.UK
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukRadios({
-            classes: "govuk-radios--inline",
+            classes: "govuk-radios--stacked",
             "idPrefix": "pregnancy",
             name: "pregnancy",
             "fieldset": {
@@ -48,6 +48,11 @@ Physical injuries  - {{ serviceName }} - GOV.UK
                 "value": "No",
                 text: "No",
                 checked: checked("pregnancy", "No")
+              },
+              {
+                "value": "I'm not sure",
+                text: "I'm not sure",
+                checked: checked("pregnancy", "I'm not sure")
               }
             ]
           }) }}

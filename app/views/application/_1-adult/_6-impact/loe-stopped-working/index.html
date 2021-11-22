@@ -14,17 +14,6 @@
 
 {% block content %}
 
-<!-- CONTENT TBC BADGE -->
-  {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-  {{ mojBadge({
-  text: 'Content TBC',
-  classes: 'moj-badge--red'
-  }) }}
-  <br>
-  <br>
-  <br>
-<!-- CONTENT TBC BADGE -->
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
@@ -36,10 +25,13 @@
             name: "stoppedWorking",
             fieldset: {
             legend: {
-              text: "Were you unable to work or look for a job because of the crime?",
+              text: "Are you incapable of working or do you have very limited capacity to work due to your injuries?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
+            },
+            hint: {
+              text: "Very limited capacity means you are not capable of undertaking paid work for more than a few hours each week"
             },
             items: [
             {
@@ -54,19 +46,7 @@
             }
             ]
             }) }}
-
-            <details class="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Help with working and looking for a job
-                    </span>
-                </summary>
-                    <div class="govuk-details__text">
-                      <p class="govuk-body">Being unable to work includes missing work or having to leave your job because of the injuries you received from the crime.</p>
-                      <p class="govuk-body">It can also apply to being unable to look for another job in any line of work because of the injuries.</p>
-                    </div>
-              </details>
-
+            
       <!-- hidden field records screen exited for save and return functionality -->
       {% include "../../includes/screen-exited.html" %}
       <!-- button group for save and return -->

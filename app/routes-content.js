@@ -13,7 +13,7 @@ module.exports = {
     //new questions - 24/02/2020
     otherCompensationQuestion:'Have you applied for or received any other form of compensation?',
     otherCompensationQuestionHint: 'For example, if you sought civil damages or a court decided you should get compensation.',
-    otherCompensationWhyNotQuestion:'Briefly explain why you have not applied for or received any other form of compensation',
+    otherCompensationWhyNotQuestion:'Tell us why you have not applied for or received any other form of compensation',
     otherCompensationAmountQuestion:'How much compensation were you awarded?',
     otherCompensationProviderQuestion:'Who have you applied to or received compensation from?',
     otherCompensationProviderQuestionHint:'',
