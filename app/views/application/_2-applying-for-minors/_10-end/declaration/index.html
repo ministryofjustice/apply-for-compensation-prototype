@@ -22,7 +22,7 @@
     <h1 class="govuk-heading-xl">
       {{ declarationHeading }}
     </h1>
-
+    <div id="anchor-point">
         <p class="govuk-body">By submitting this application, I, [main applicant or rep], confirm that [applicant’s name] understands the following:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>the information I’ve given here is true</li>
@@ -48,7 +48,7 @@
         <p class="govuk-body">If we make an award, we will pay it only to an applicant or their legal representative. This is unless the application has been made on behalf of an adult who cannot manage their own financial affairs or a child who is under 18 years of age. It is our general policy to put an award for a child in an interest earning deposit account until they reach the age of 18.</p>
 
         <p class="govuk-body">If it is decided that a representative’s services are no longer required, you must tell us in writing as soon as possible. If a monetary award is to be made and there is a dispute about outstanding legal fees, it is our policy to retain the disputed amount until the parties involved resolve the dispute.</p>
-
+    </div>
 
     <form class="form" method="post">
 
@@ -58,7 +58,7 @@
         items: [
           {
             value: "agree",
-            text: "I have read and understood the information and declaration above",
+            html: 'I have read and understood the <a href="#anchor-point">information and declaration</a>',
             checked: checked("agreeToDeclaration", "agree")
           }
         ]
