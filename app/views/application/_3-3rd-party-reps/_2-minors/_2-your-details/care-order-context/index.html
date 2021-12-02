@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You need to send proof that you’re the child’s parent - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-xl">Application status moving forward</h1>
+
+      <p class="govuk-body">We ask about care, supervision and other local authority orders to find out who a shared responsibility agreement is with. This allows us to identify the local authority or other organisation we may need to also contact about this application.</p>
+
+      <p class="govuk-body">In some cases, it may be this organisation who handles the application after you’ve sent it. This can happen if a care order gives the local authority sole responsibility for the child. We may also ask to see a copy of any existing care order.</p>
+
+      <p class="govuk-body">You can still submit this application.</p>
+
+      {{ govukButton({
+      text: "Continue",
+      href: "../_2-victim-details/context-victim-details"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

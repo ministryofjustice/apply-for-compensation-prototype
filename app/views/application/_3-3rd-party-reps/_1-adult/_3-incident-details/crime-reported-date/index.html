@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+ {% block beforeContent %}
+ {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+ {{ govukPhaseBanner({
+   tag: {
+     text: "prototype"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+ <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+ {% endblock %}
+
+ {% block content %}
+
+     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form"  method="post">
+          {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+          {{ govukDateInput({
+            id: 'incidentReported',
+            namePrefix: 'incidentReported',
+            fieldset: {
+            legend: {
+            text: crimeReportedDateQuestion,
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
+            }
+            },
+            hint: {
+            text: 'For example, 31 3 2018. You can enter an approximate date. '
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: data["incidentReported-day"]
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: data["incidentReported-month"]
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: data["incidentReported-year"]
+                }
+              ]
+          }) }}
+
+          {{ govukDetails({
+            summaryText: "Help with when it was reported",
+            text: "If you enter an approximate date or if you reported the crime on more than one occasion, you can provide additional details later in this claim."
+          }) }}
+
+          <!-- hidden field records screen exited for save and return functionality -->
+          {% include "../../includes/screen-exited.html" %}
+          <!-- button group for save and return -->
+          {% include "../../includes/buttons.html" %}
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}

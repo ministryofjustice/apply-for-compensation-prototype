@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "anyOtherExpenses",
+            name: "anyOtherExpenses",
+            fieldset: {
+            legend: {
+              text: "Have you paid for anything else or are you likely to pay for any of the expenses already mentioned in future?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "Add more information about this at the end of the application."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("anyOtherExpenses", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("anyOtherExpenses", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding your current and future expenses
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">You may have expenses, now or in future, due to the injuries suffered.</p>
+
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>NHS or other state health services treatments</li>
+                        <li>care or supervision</li>
+                        <li>changes to your home</li>
+                        <li>special equipment</li>
+                        <li>replacing or repairing physical aids</li>
+                        <li>costs of administering their affairs if they lack mental capacity to do so</li>
+                        <li>fees to the Court of Protection, Public Guardian or Sheriff Court</li>
+                      </ul>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

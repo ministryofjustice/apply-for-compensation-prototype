@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ mentalHealthvisitedGPQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            "idPrefix": "visitedGP",
+            name: "visitedGP",
+            currentValue: data['visitedGP'],
+            "fieldset": {
+              "legend": {
+                text: visitedGPQuestion,
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: visitedGPQuestionHint
+            },
+            "items": [
+              {
+                "value": "Yes",
+                text: "Yes",
+                checked: checked("visitedGP", "Yes")
+              },
+              {
+                "value": "No",
+                text: "No",
+                checked: checked("visitedGP", "No")
+              }
+            ]
+          }) }}
+
+          <!-- hidden field records screen exited for save and return functionality -->
+          {% include "../../includes/screen-exited.html" %}
+          <!-- button group for save and return -->
+          {% include "../../includes/buttons.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

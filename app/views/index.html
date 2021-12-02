@@ -1,170 +1,171 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-GOV.UK Prototype Kit
+{{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a prototype. Some things may not work as expected.'
-  }) }}
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a prototype. Some things may not work as expected. <a href="/" class="govuk-link">Go back to the start</a>.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
 
-{% endblock %}
+<main role="main" class="govuk-main-wrapper">
 
-{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Apply for compensation for a criminal injury
-      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
-    </h1>{{releaseVersion | log }}
-  </div>
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+      <h2 class="govuk-heading-l">
+        Make a claim
+      </h2>
+      <p class="govuk-body">You can claim for compensation online.</p>
 
-  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-inset-text">
+        <p class="govuk-body">If the crime happened between 1 August 1964 and 30 September 1979 and you lived with the attacker as a family member at the time of the incident, you can also <a href="/claim-compensation-criminal-injury/victim-lived-with-attacker-before-october-1979">request someone to call you</a> to start your claim.</p>
+      </div>
 
-    <p>The prototypes below show the current and previous iterations of the applications users will complete to apply for compensation if they have been a victim of violent crime.</p>
+      <p class="govuk-body">When you make a claim to the Criminal Injuries Compensation Authority (CICA), you may need to provide:</p>
 
-    <br>
-  </div>
-    <div class="govuk-grid-column-full">
-
-    <!-- Tab names -->
-
-    <div class="govuk-tabs" data-module="govuk-tabs">
-      <h2 class="govuk-tabs__title">Contents</h2>
-
-      <ul class="govuk-tabs__list">
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#current-prototype">
-            Current
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#concepts">
-            Concepts
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#change-log">
-            Change log
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#archive">
-            Archive
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#notes">
-            Notes
-          </a>
-        </li>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the date and location of the crime</li>
+        <li>the name of the police station where the crime was reported</li>
+        <li>your crime reference number</li>
+        <li>your GP’s name and address</li>
+        <li>your dentist’s name and address (if you had dental treatment because of your injuries)</li>
+        <li>details of any previous applications you’ve made to CICA</li>
+        <li>details of any unspent criminal convictions</li>
       </ul>
 
-      <!-- Current tab -->
-      <section class="govuk-tabs__panel" id="current-prototype">
-        <h2 class="govuk-heading-l">Current prototype</h2>
-        <p>This is the <strong>work in progress</strong> prototype, iterating what was put into private beta, including:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              The complete adult journey
-            </li>
-            <li>
-              The complete <strong>work in progress</strong> minor journey
-            </li>
-          </ul>
-        <p>This version is the post-pilot work complete in November 2020.</p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          If you deliberately provide information you know is wrong or misleading, you may be prosecuted and your application for compensation may be refused.
+        </strong>
+      </div>
 
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Clicking "Make a claim" on the start page clears all previously entered session data in the prototype.
-          </strong>
+      <p class="govuk-body">You’ll be asked if you’ve tried to get compensation or other money you’re entitled to, for example:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>by claiming benefits</li>
+        <li>through insurance payments</li>
+        <li>from a civil court claim</li>
+        <li>from a criminal court case (if the crime went to court)</li>
+      </ul>
+
+      <p class="govuk-body">You do not need to wait for the outcome of other claims before you apply.</p>
+
+      <p class="govuk-body">It does not cost anything to apply and you do not have to use a legal adviser.</p>
+
+      <h2 class="govuk-heading-m">
+        Saving and returning to your application
+      </h2>
+
+      <p class="govuk-body">You can save and return to your application later if you need to.</p>
+
+      <p class="govuk-body">You’ll receive a unique reference number and create a password to access your application. This will allow you to save your progress and return to your application later. We’ll save your application for 30 days after you’ve first saved it.</p>
+
+      <p class="govuk-body">The application will time out if you stop using it for 30 minutes or more. We'll save your application if this happens. You can save your progress every time you answer a question. But, you can only do this after you complete the <strong>“Your details”</strong> section of the application.</p>
+
+      <div class="govuk-button-group">
+
+      <!-- this start screen directs the user to the triage questions with a timeout message -->
+
+        <a href="/application/_0-start-and-qualifying/fatal-application" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Make a claim
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+
+        <!-- <p class="govuk-body">
+          <a href="/application/_0-save-and-return-screens/resume-application-attempt-1/enter-credentials">
+              Continue your application
+          </a>
+        <p> -->
+
+      </div>
+
+      <br>
+      <br>
+
+        <h2 class="govuk-heading-m">Help making your application</h2>
+
+        <p class="govuk-body">Contact the CICA helpline if you need help because you:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>do not feel confident using a computer or mobile device</li>
+          <li>do not have internet access</li>
+        </ul>
+
+          <div class="contact">
+            <p class="govuk-body">
+              CICA<br>
+              Inside the UK: 0300 003 3601<br>
+              Outside the UK: +44 (0)203 684 2517<br>
+              Monday, Tuesday, Thursday and Friday, 8.30am to 5pm<br>
+              Wednesday, 10am to 5pm<br>
+              <a href="https://www.relayuk.bt.com">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601<br>
+              <a href="/call-charges">Find out about call charges</a>
+            </p>
+          </div>
+
+        <p class="govuk-body">You can ask a friend or relative to make an application on your behalf.</p>
+
+        <h2 class="govuk-heading-m">General enquiries</h2>
+
+        <p class="govuk-body">Email <a href="mailto:info@cica.gov.uk">info@cica.gov.uk</a> if you have a question about the claims process.</p>
+
+
+        <div class="govuk-inset-text">
+          <p class="govuk-body">You cannot claim the cost of using a legal adviser.</p>
         </div>
 
-        <details class="govuk-details govuk-!-margin-bottom-5">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What's changed?
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p>The following are changes since the last major update</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>added crime reference number questions and updated content in main prototype and <a href="concepts/applying-for-someone-else">minor journey</a> concept</li>
-              <li>removed the sexual assault and violent crime question</li>
-              <li>added incident type question at the start of incident details</li>
-              <li>added a question at the end of indicent section - "Do you want to provide any more details about the incident"</li>
-              <li>added additional information screen if they say yes to above</li>
-              <li>created a section at the end of the application to ask if they want to provide any further information about the application</li>
-              <li>added additional information screen if they say yes to above</li>
-              <li>updated check your answers</li>
+      </div>
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-body-s">
+              <li>
+                <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                  Criminal injuries compensation tribunal
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                  Get support as a victim of crime
+                </a>
+              </li>
             </ul>
-            The following documents detail the changes:
-            <ul>
-              <li><a href="https://docs.google.com/drawings/d/1v0R0dq2aIsbVBDz8Y5QINaFzdmJDmMEzAbQsXRs-Gwc/edit?usp=sharing" target="_blank">Flow changes documented</a></li>
-            </ul>
-          </div>
-        </details>
-        <a href="/application/_0-start-and-qualifying/start-page" role="button" draggable="false" class="govuk-button govuk-button--start">
-          Start prototype
-        </a>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </nav>
+        </aside>
 
-
-        <!-- Other prototypes section -->
-        <h2 class="govuk-heading-m">Guidance</h2>
-        <p>This guidance was created for the customer service team to use when the MVP launched in November 2019. It has not been updated since adding more functionality and increasing the users.</p>
-        <ul class="govuk-list">
-          <li><a class="govuk-link" href="/concepts/guidance">AD Guidance</a></li>
-        </ul>
-      </section>
-
-
-
-      <!-- Concepts tab -->
-
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="concepts">
-
-        <!-- The concepts area is in an include file to make this page more manageable -->
-        {% include "includes/home-page/concepts.html" %}
-
-      </section>
-
-      <!-- Change log tab -->
-
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="change-log">
-
-        <!-- The concepts area is in an include file to make this page more manageable -->
-        {% include "includes/home-page/change-log.html" %}
-
-      </section>
-
-      <!-- Archive Tab -->
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
-        <!-- The beta archive is in an include file to make this page more manageable -->
-        {% include "includes/home-page/beta-archive.html" %}
-
-        <!-- The alpha archive is in an include file to make this page more manageable -->
-        {% include "includes/home-page/alpha-archive.html" %}
-
-      </section>
-
-
-      <section class="govuk-tabs__panel" id="notes">
-        {% include "includes/home-page/notes.html" %}
-
-      </section>
-
-
-    </div>
   </div>
-</div>
+</main>
 
 {% endblock %}

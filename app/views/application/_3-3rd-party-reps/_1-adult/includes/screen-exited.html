@@ -1,0 +1,13 @@
+<div class="hidden">
+  <input class="govuk-input" id="screenExited" name="screen-exited" type="text">
+</div>
+
+<script>
+  var pageURL = window.location.href;
+  var lastTwoSegments = pageURL
+    .split("/") // split to an array
+    .slice(-2) // take the two last elements
+    .join('/') // join back to a string;
+
+  document.getElementById("screenExited").value = lastTwoSegments;
+</script>

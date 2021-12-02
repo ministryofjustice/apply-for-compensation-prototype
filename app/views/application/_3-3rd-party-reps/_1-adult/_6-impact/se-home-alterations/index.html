@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "homeAlterations",
+            name: "homeAlterations",
+            fieldset: {
+            legend: {
+              text: "Have you had to pay for any changes to your home because of the incident?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "Costs can only relate to changes within the home you stayed in at the time."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("homeAlterations", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("homeAlterations", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with changes to the home
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">This applies to costs relating to changes you or the child  had to make within your home at the time of the incident. This does not apply to the cost of buying a new home because of the incident.</p>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+        <!-- hidden field records screen exited for save and return functionality -->
+        {% include "../../includes/screen-exited.html" %}
+        <!-- button group for save and return -->
+        {% include "../../includes/buttons.html" %}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
