@@ -4,7 +4,7 @@
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-<div class="govuk-summary-list__row">
+<!-- <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half">
     Confirmation method
   </dt>
@@ -28,7 +28,7 @@
       Change<span class="govuk-visually-hidden"> confirmation receipt</span>
     </a>
   </dd>
-</div>
+</div> -->
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half ">
@@ -111,42 +111,5 @@
     </a>
   </dd>
 </div>
-
-{% if data['emailAddress'] !== '' %}
-{% if data['confirmationPreference'] === 'Text' %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-    Email address
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data['emailAddress'] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="../_2-your-details/email-address">
-      Change<span class="govuk-visually-hidden"> email address</span>
-    </a>
-  </dd>
-</div>
-{% endif %}
-{% endif %}
-
-{% if data['phoneNumber'] !== '' %}
-{% if data['confirmationPreference'] === 'Email' %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-    Phone number
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data['phoneNumber'] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="../_2-your-details/phone-number">
-      Change<span class="govuk-visually-hidden"> phone number</span>
-    </a>
-  </dd>
-</div>
-{% endif %}
-{% endif %}
-
 
 </dl>
