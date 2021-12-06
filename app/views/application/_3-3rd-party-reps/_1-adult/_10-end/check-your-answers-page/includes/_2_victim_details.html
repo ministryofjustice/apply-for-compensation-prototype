@@ -112,4 +112,21 @@
   </dd>
 </div>
 
+{% if data['phoneNumber'] !== '' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['phoneNumber'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-your-details/phone-number">
+      Change<span class="govuk-visually-hidden"> phone number</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
 </dl>

@@ -26,7 +26,13 @@ Check your answers - {{ serviceName }} - GOV.UK
 
         {% include "./includes/_1_about_the_application.html" %}
 
-        {% include "./includes/_1_rep_details.html" %}
+        {% if (data['direct-applicant'] === 'Someone else')
+              and
+              (data['parentGuardian'] !== 'Yes') %}
+
+          {% include "./includes/_1_rep_details.html" %}
+
+        {% endif %}
 
         {% include "./includes/_2_1_your_details.html" %}
 

@@ -60,6 +60,8 @@
     </dd>
   </div>
 
+{% if data['direct-applicant'] === 'Myself' %}
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
       {{ over18Question }}
@@ -87,5 +89,58 @@
       </a>
     </dd>
   </div>
+
+{% endif %}
+
+{% if data['direct-applicant'] === 'Someone else' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Is the person over 18?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['over18'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/over-18">
+        Change<span class="govuk-visually-hidden">{{ over18Question }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Are they a British citizen or EU national?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['britishCitizen'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/british-citizen">
+        Change<span class="govuk-visually-hidden"> {{ britishCitizenQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+{% endif %}
+
+{% if data['over18'] === 'No' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Are you the child's parent?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['parentGuardian'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/parent-guardian">
+        Change<span class="govuk-visually-hidden">are you the child's parent? </span>
+      </a>
+    </dd>
+  </div>
+
+{% endif %}
+
 
 </dl>
