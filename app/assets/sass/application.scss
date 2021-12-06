@@ -83,3 +83,24 @@ $govuk-assets-path: '/govuk/assets/';
 .table-col-35percent {
   width: 35%;
 }
+
+.govuk-section-break--blue {
+  border: 1px solid $govuk-brand-colour;
+
+}
+
+.govuk-list--contents ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.govuk-list--contents li {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+.govuk-list--contents li:before {
+  content: "—";
+  padding-right: 10px;
+}
