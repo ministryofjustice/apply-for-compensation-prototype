@@ -8,7 +8,7 @@ module.exports = function (router, content) {
 
     if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
-        res.redirect('/application/_3-3rd-party-reps/_1-adult/_2-your-details/context-your-details')
+        res.redirect('/application/_3-3rd-party-reps/_1-adult/_3-incident-details/context-incident-details')
 
       } else if (buttonClicked === 'Save and complete application later') {
         return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
