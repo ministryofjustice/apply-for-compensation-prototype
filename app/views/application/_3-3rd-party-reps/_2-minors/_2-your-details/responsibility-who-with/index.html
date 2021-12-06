@@ -25,12 +25,12 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
 
       {{ govukInput({
             label: {
-            text: "What is their full name?",
+            text: "What is this person's full name?",
             isPageHeading: true,
             classes: 'govuk-label--xl'
             },
             hint: {
-            text: "We will never contact this person without your consent unless there is an exceptional situation where we have to."
+            text: "We will never contact this person without the child’s parent or guardian consent, unless there is an exceptional situation where we have to."
               },
             classes: 'govuk-input--width-20',
             id: "responsibilityWhoWith",
@@ -44,7 +44,7 @@ Who do you share this with? - {{ serviceName }} - GOV.UK
       <details class="govuk-details">
         <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              I share parental rights with more than one person
+              They share parental rights with more than one person
             </span>
         </summary>
             <div class="govuk-details__text">

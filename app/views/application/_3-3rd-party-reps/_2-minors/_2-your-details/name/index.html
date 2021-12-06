@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ nameQuestion }} - {{ serviceName }} - GOV.UK
+ - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,8 +24,12 @@
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl" for=name>
-            {{ nameQuestion }}
+            Enter the name of the child’s parent or guardian
           </label>
+          <div id="hint" class="govuk-hint">
+            Add the details of one of the child’s parents or guardians here. You can add another later if applicable.
+          </div>
+
         </h1>
       </div>
 

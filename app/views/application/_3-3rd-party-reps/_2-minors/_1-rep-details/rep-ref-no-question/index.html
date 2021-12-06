@@ -1,9 +1,7 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-{{ repRefNoQQuestion }} - {{ serviceName }} - GOV.UK
+{{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
-
 
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
@@ -21,49 +19,63 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <form class="form" method="post">
 
-      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {% set referenceHtml %}
+      {{ govukInput({
+            id: "rep-ref-no",
+            name: "rep-ref-no",
+            value: data['rep-ref-no'],
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Enter your reference number"
+            }
+          }) }}
+      {% endset -%}
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            "idPrefix": "repRefNoQ",
-            name: "repRefNoQ",
-            currentValue: data['repRefNoQ'],
+            "idPrefix": "rep-ref-no-question",
+            name: "rep-ref-no-question",
+            value: data['rep-ref-no-question'],
             "fieldset": {
               "legend": {
-                text: "Do you want to provide us with your own reference number?",
-                isPageHeading: true,
-                classes: 'govuk-fieldset__legend--xl'
+              text: "Do you have your own reference number?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+              },
+            "items": [
+            {
+            "value": "Yes",
+            text: "Yes",
+            checked: checked("rep-ref-no-question", "Yes"),
+            conditional: {
+                html: referenceHtml
               }
             },
-            "items": [
-              {
-                "value": "Yes",
-                text: "Yes",
-                checked: checked("repRefNoQ", "Yes")
-              },
-              {
-                "value": "No",
-                text: "No",
-                checked: checked("repRefNoQ", "No")
-              }
+            {
+            "value": "No",
+            text: "No",
+            checked: checked("rep-ref-no-question", "No")
+            }
             ]
-          }) }}
+            }) }}
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
 
     </form>
-
   </div>
+
 </div>
 </main>
 </div>
-
 {% endblock %}
-
-
-<!-- NOTE: do people understand the context of this question? -->

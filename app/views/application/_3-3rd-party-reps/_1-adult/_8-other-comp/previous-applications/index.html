@@ -33,7 +33,7 @@
             value: data['previous-reference'],
             classes: "govuk-!-width-full",
             label: {
-              text: previousReferenceHint
+              text: "Enter their previous reference number if you know it (optional)"
             }
           }) }}
       {% endset -%}
@@ -45,7 +45,7 @@
             value: data['previous-applications'],
             "fieldset": {
               "legend": {
-              text: previousApplicationsQuestion,
+              text: "Have they applied to us before?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }

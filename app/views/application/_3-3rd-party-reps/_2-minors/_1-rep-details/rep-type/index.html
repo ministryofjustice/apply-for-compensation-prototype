@@ -33,7 +33,7 @@
             currentValue: data['repType'],
             "fieldset": {
               "legend": {
-                text: "What type of rep are you?",
+                text: "What type of representative are you?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -45,27 +45,42 @@
                 checked: checked("repType", "Solicitor")
               },
               {
-                "value": "Claims Management Company",
-                text: "Claims Management Company",
-                checked: checked("repType", "Claims Management Company")
+                "value": "Claims management company",
+                text: "Claims management company",
+                checked: checked("repType", "Claims management company")
               },
               {
-                "value": "Victim Support",
-                text: "Victim Support",
-                checked: checked("repType", "Victim Support")
+                "value": "Victim support",
+                text: "Victim support",
+                checked: checked("repType", "Victim support")
               },
               {
-                "value": "Other Victim Services",
-                text: "Other Victim Services",
-                checked: checked("repType", "Other Victim Services")
+                "value": "Other victim services",
+                text: "Other victim services",
+                checked: checked("repType", "Other victim services")
               },
               {
-                "value": "Friend/relative",
-                text: "Friend/relative",
-                checked: checked("repType", "Friend/relative")
+                "value": "Friend or relative",
+                text: "Friend or relative",
+                checked: checked("repType", "Friend or relative")
               }
             ]
           }) }}
+
+          <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with knowing what type of representative you are
+                  </span>
+              </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">You are not a representative if you are applying on behalf of:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>a child and you are a parent or other person with parental responsibility</li>
+                      <li>an incapable adult and you are a deputy, guardian or other authorised person</li>
+                    </ul>
+                  </div>
+          </details>
 
           {{ govukButton({
             text: "Continue"

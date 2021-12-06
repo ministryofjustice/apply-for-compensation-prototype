@@ -24,7 +24,7 @@
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl" for=name>
-            Enter your company registration number
+            What is your company registration number?
           </label>
         </h1>
       </div>
@@ -34,7 +34,10 @@
       {{ govukInput({
               id: "company-reg-no",
               name: "company-reg-no",
-              value: data['company-reg-no']
+              value: data['company-reg-no'],
+              hint: {
+                text: "This is a unique 8-character code given to businesses in the United Kingdom. It may start with the letters ‘SC’."
+              }
             }) }}
       {% from "govuk/components/input/macro.njk" import govukInput %}
 

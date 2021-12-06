@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+ - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,12 +21,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ contextYourDetailsHeading }}
+      The child’s parent or guardian details
     </h1>
 
-    <p class="govuk-body">We’re going to ask for some details about you.</p>
+    <p class="govuk-body">We’re going to ask for some details about the child’s parent or guardian.</p>
 
-    <p class="govuk-body">We’ll use these to contact you about this application.</p>
+    <p class="govuk-body">This allows us to understand who has parental responsibility for the child as well as the child’s current circumstances.</p>
 
     <form class="form" method="post">
       {{ govukButton({

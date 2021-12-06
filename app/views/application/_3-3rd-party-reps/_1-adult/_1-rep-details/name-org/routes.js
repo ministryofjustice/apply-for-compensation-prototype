@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 
     var repType = req.session.data['repType']
 
-    if ( repType === 'Claims Management Company' ) {
+    if ( repType === 'Claims management company' ) {
       return res.redirect('/application/_3-3rd-party-reps/_1-adult/_1-rep-details/company-reg-no')
     } else {
       return res.redirect('/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-ref-no-question')

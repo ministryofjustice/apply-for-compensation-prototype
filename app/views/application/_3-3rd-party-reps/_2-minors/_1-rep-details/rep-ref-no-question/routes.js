@@ -3,16 +3,7 @@ module.exports = function (router, content) {
   // File: bridge
 
   router.post('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/rep-ref-no-question', function (req, res) {
-
-    var repRefNoQ = req.session.data['repRefNoQ']
-
-    if ( repRefNoQ === 'Yes' ) {
-      return res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/rep-ref-no')
-    } else {
-      return res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/address-org')
-    }
-
-
+    res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/address-org')
   })
 
   // Pass the question in to the page

@@ -20,7 +20,7 @@ module.exports = function (router, content) {
 
           var repType = req.session.data['repType']
 
-          if ( repType === 'Friend/relative' ) {
+          if ( repType === 'Friend or relative' ) {
             return res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/name')
           } else {
             return res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/name-org')
