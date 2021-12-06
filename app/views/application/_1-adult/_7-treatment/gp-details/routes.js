@@ -19,7 +19,7 @@ module.exports = function (router, content) {
           res.redirect('/application/_1-adult/_7-treatment/hospital-visited/')
         } else {
           // If I did visit a GP take me to the next secyion
-          res.redirect('/application/_1-adult/_6-impact/loe-context/')
+          res.redirect('/application/_1-adult/_8-other-comp/context-prev-compensation/')
         }
       }
     } else if (buttonClicked === 'Save and complete application later') {
