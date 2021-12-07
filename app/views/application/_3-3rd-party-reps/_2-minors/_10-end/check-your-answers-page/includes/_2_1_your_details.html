@@ -1,5 +1,5 @@
 <h2 class="govuk-heading-l">
-  Your details
+  Parent or guardian details
 </h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -32,7 +32,7 @@
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half ">
-    Your name
+    Name
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
@@ -91,21 +91,21 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/what-is-relationship">
-      Change<span class="govuk-visually-hidden"> Your relationship to the child</span>
+      Change<span class="govuk-visually-hidden"> relationship to the child</span>
     </a>
   </dd>
 </div>
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half ">
-    Do you share parental responsibility with another person?
+    Do they share parental responsibility with another person?
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['sharedResponsibility'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/do-you-share-responsibility">
-      Change<span class="govuk-visually-hidden">Do you share parental responsibility with another person?</span>
+      Change<span class="govuk-visually-hidden">Do they share parental responsibility with another person?</span>
     </a>
   </dd>
 </div>
@@ -113,14 +113,14 @@
 {% if data['sharedResponsibility'] === 'Yes' %}
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half ">
-    What is their full name?
+    What is this person's full name?
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['responsibilityWhoWith'] }}
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/do-you-share-responsibility">
-      Change<span class="govuk-visually-hidden">What is their full name?</span>
+      Change<span class="govuk-visually-hidden">What is this person's full name?</span>
     </a>
   </dd>
 </div>
