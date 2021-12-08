@@ -43,7 +43,7 @@ module.exports = function (router, content) {
       // req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 days, and filled in a reason why but then change the report or incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
 
 
-      if (delayInDays < (365*2)){ //apply more than 2 years after the incident
+      if (delayInDays < (-365*2)){ //apply more than 2 years after the incident
         return res.redirect('/application/_1-adult/_3-incident-details/reporting-delay')
       }
       req.session.data['reportingDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page

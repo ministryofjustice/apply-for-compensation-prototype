@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ addressQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+      {% call govukFieldset({
+      legend: {
+      text: "Enter your registered company office address",
+      classes: "govuk-fieldset__legend--xl",
+      isPageHeading: true
+      }
+      }) %}
+
+      {{ govukInput({
+            label: {
+              html: addressLine1Label
+            },
+            id: "rep-address-line-1",
+            name: "rep-address-line-1",
+            value: data['rep-address-line-1']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              html: addressLine2Label
+            },
+            id: "rep-address-line-2",
+            name: "rep-address-line-2",
+            value: data['rep-address-line-2']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: townOrCityLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "rep-address-town",
+            name: "rep-address-town",
+            value: data['rep-address-town']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: countyLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "rep-address-county",
+            name: "rep-address-county",
+            value: data['rep-address-county']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: addressPostcodeOptionalLabel
+            },
+            classes: "govuk-input--width-10",
+            id: "rep-address-postcode",
+            name: "rep-address-postcode",
+            value: data['rep-address-postcode']
+          }) }}
+
+      {% endcall %}
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

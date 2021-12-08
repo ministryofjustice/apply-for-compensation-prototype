@@ -1,0 +1,178 @@
+
+<h2 class="govuk-heading-l">
+  The impact the crime has had — daily life and financially
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Was the child over 16 at the time of the crime?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['workingAge'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-working-age">
+        Change<span class="govuk-visually-hidden">Was the child over 16 at the time of the crime? </span>
+      </a>
+    </dd>
+  </div>
+
+
+  <!-- If the child was over 16 -->
+
+  {% if data['workingAge'] === 'Yes' %}
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Did the child have a job when the crime happened?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['workingStatus'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_6-impact/loe-working">
+          Change<span class="govuk-visually-hidden">Did they have a job when the crime happened? </span>
+        </a>
+      </dd>
+    </div>
+
+    {% if data['workingStatus'] === 'No' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Why not?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['noJobReason'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_6-impact/loe-working">
+          Change<span class="govuk-visually-hidden">Why not? </span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+
+  {% if data['workingStatus'] === 'Yes' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Were they unable to work or look for a job because of the crime?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['stoppedWorking'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_6-impact/loe-stopped-working">
+          Change<span class="govuk-visually-hidden">Were they unable to work or look for a job because of the crime? </span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Was this for six months or more?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['stoppedWorkingHowLong'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_6-impact/loe-stopped-working-how-long">
+          Change<span class="govuk-visually-hidden">Was this for six months or more?</span>
+        </a>
+      </dd>
+    </div>
+    
+    {% endif %}
+
+  {% endif %}
+
+
+
+
+
+<!-- If the child was not over 16 -->
+
+{% if (data['workingAge'] === 'No') or (data['workingStatus'] === 'No') %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Has their capacity to do daily activities been affected by the incident?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dailyCapacity'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-daily-capacity">
+        Change<span class="govuk-visually-hidden">Has their capacity to do daily activities been affected by the incident? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['dailyCapacity'] === 'Yes' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Has it already affected them for over six months?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['affectedSixMonths'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_6-impact/loe-daily-capacity">
+          Change<span class="govuk-visually-hidden">Has it already affected them for over six months? </span>
+        </a>
+      </dd>
+    </div>
+
+    {% if data['affectedSixMonths'] === 'No' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Is it likely to affect them for more than six months?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['affectedSixMonthsFuture'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="../_6-impact/loe-daily-capacity-future">
+            Change<span class="govuk-visually-hidden">Is it likely to affect them for more than six months? </span>
+          </a>
+        </dd>
+      </div>
+    {% endif %}
+  {% endif %}
+
+{% endif %}
+
+
+<!-- Questions for all applicants -->
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Has the child’s ability to work in future been affected by the incident?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['futureCapacity'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-se-future-capacity">
+        Change<span class="govuk-visually-hidden">Has the child’s ability to work in future been affected by the incident? </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Briefly say how the crime has affected their daily life
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['affectedDailyLife'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-se-affected-daily-life">
+        Change<span class="govuk-visually-hidden">Briefly say how the crime has affected their daily life</span>
+      </a>
+    </dd>
+  </div>
+
+</dl>

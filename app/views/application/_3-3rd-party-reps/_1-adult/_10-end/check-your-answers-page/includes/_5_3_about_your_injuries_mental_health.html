@@ -1,0 +1,44 @@
+
+<h2 class="govuk-heading-l">
+  Your mental health
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <!-- Mental health -->
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ dmiQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dmiDoYouHave'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_5-injuries/dmi">
+        Change<span class="govuk-visually-hidden">{{ dmiQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['dmiDoYouHave'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ dmiDurationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dmiDuration'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_5-injuries/dmi-duration">
+        Change<span class="govuk-visually-hidden">{{ dmiDurationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+</dl>

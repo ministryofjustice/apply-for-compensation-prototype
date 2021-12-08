@@ -1,0 +1,221 @@
+<h2 class="govuk-heading-l">
+  Representative details
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Type of representative
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['repType'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/rep-type">
+        Change<span class="govuk-visually-hidden">type of representative</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Confirmation method
+    </dt>
+    <dd class="govuk-summary-list__value">
+
+      {% if data['confirmationPreference'] === 'Text' %}
+
+      Text message to {{ data['phoneNumber'] }}
+
+      {% endif %}
+
+      {% if data['confirmationPreference'] === 'Email' %}
+
+      Email to {{ data['emailAddress'] }}
+
+      {% endif %}
+
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/confirmation-options">
+        Change<span class="govuk-visually-hidden"> confirmation method</span>
+      </a>
+    </dd>
+  </div>
+
+
+{% if data['repType'] === 'Friend/relative' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Your name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['rep-title'] }}&nbsp;{{ data['rep-first-name'] }}&nbsp;{{ data['rep-last-name'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/name">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['rep-address-line-1'] }}<br />
+      {% if data['rep-address-line-2'] %}
+      {{ data['rep-address-line-2'] }}<br />
+      {% endif %}
+      {{ data['rep-address-town'] }}<br />
+      {% if data['rep-address-county'] %}
+      {{ data['rep-address-county'] }}<br />
+      {% endif %}
+      {% if data['rep-address-postcode'] %}
+      {{ data['rep-address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/address">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+
+{% endif %}
+
+
+
+
+{% if data['repType'] !== 'Friend/relative' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Organisation
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['rep-org-name'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/name-org">
+        Change<span class="govuk-visually-hidden"> organisation's name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Registration number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['company-reg-no'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/company-reg-no">
+        Change<span class="govuk-visually-hidden"> company registration number</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Do you want to provide your own reference number?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['rep-ref-no-question'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/rep-ref-no-question">
+        Change<span class="govuk-visually-hidden"> do you want to provide your own reference number?</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['rep-ref-no-question'] === 'Yes' %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Your reference
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['rep-ref-no'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="../_1-rep-details/rep-ref-no-question">
+          Change<span class="govuk-visually-hidden"> your reference</span>
+        </a>
+      </dd>
+    </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['rep-address-line-1'] }}<br />
+      {% if data['rep-address-line-2'] %}
+      {{ data['rep-address-line-2'] }}<br />
+      {% endif %}
+      {{ data['rep-address-town'] }}<br />
+      {% if data['rep-address-county'] %}
+      {{ data['rep-address-county'] }}<br />
+      {% endif %}
+      {% if data['rep-address-postcode'] %}
+      {{ data['rep-address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-rep-details/address-org">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+
+
+{% endif %}
+
+
+
+{% if data['emailAddress'] !== '' %}
+{% if data['confirmationPreference'] === 'Text' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Email address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['emailAddress'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-your-details/email-address">
+      Change<span class="govuk-visually-hidden"> email address</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+{% endif %}
+
+{% if data['phoneNumber'] !== '' %}
+{% if data['confirmationPreference'] === 'Email' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['phoneNumber'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-your-details/phone-number">
+      Change<span class="govuk-visually-hidden"> phone number</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+{% endif %}
+
+
+
+
+</dl>

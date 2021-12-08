@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Applying for special expenses
+    </h1>
+
+    <p class="govuk-body">In applying for special expenses, you confirm they experienced one of the following for a period of six months or more because of the crime. They:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>lost money from their job as they could not attend work</li>
+      <li>were unable to work due to their injuries</li>
+    </ul>
+    <p class="govuk-body">The period of six months or more must cover 197 days or more (28 full weeks). This can be a single period of time or cover several different periods of time.</p>
+    <p class="govuk-body">Special expenses you can apply for include:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>physical aids lost or damaged during the incident</li>
+      <li>cost of treatments delivered by the NHS</li>
+      <li>cost of treatments delivered by a state health service outside the United Kingdom</li>
+      <li>special equipment</li>
+      <li>required changes to the home as a result of the incident</li>
+      <li>cost of care that resulted from the incident</li>
+      <li>cost of supervision by care professionals</li>
+      <li>cost of administrators who handle their affairs</li>
+    </ul>
+
+    <form class="form" method="post">
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+
+<h2 class="govuk-heading-l">
+  The impact the crime has had — daily life and financially
+</h2>
+
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Did you have a job when the crime happened?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['workingStatus'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-working">
+        Change<span class="govuk-visually-hidden">Did you have a job when the crime happened? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['workingStatus'] === 'No' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Why not?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['noJobReason'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-working">
+        Change<span class="govuk-visually-hidden">Why not? </span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Were you unable to work or look for a job because of the crime?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['stoppedWorking'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-stopped-working">
+        Change<span class="govuk-visually-hidden">Were you unable to work or look for a job because of the crime? </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Was this for six months or more?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['stoppedWorkingHowLong'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-stopped-working-how-long">
+        Change<span class="govuk-visually-hidden">Was this for six months or more?</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Briefly say how the crime has affected your daily life
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['affectedDailyLife'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/loe-stopped-working-how-long">
+        Change<span class="govuk-visually-hidden">Briefly say how the crime has affected your daily life</span>
+      </a>
+    </dd>
+  </div>
+
+</dl>

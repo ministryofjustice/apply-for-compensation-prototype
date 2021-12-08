@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextIncidentDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Additional information
+    </h1>
+
+      <p class="govuk-body">We’re going to ask you if they want to provide any more details about their claim.</p>
+
+      <p class="govuk-body">This can be information that did not fit the questions you have been asked, such as:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+       <li>crime reference numbers</li>
+       <li>offender names</li>
+       <li>locations</li>
+       </ul>
+
+       <p class="govuk-body">This helps us get the information we need to make a decision about their claim.</p>
+
+       <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        If you need help or support
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">All links in this section open in a new tab.</p>
+      <p class="govuk-body">You can contact us for help with the application.</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">Telephone: 0300 003 3601</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">Outside the UK: +44 (0) 203 684 2517</p>
+      <p class="govuk-body"><a href="https://www.relayuk.bt.com/" target="_blank">Relay UK</a>: (if you cannot hear or speak on the phone) 18001 0300 003 3601 </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--s">Opening times</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Day</th>
+            <th scope="col" class="govuk-table__header">Opening times</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Monday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Tuesday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Wednesday</th>
+            <td class="govuk-table__cell">10am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Thursday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Friday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="govuk-body"><a href="/call-charges">Find out about call charges</a></p>
+      <p class="govuk-body">You can <a href="https://www.victimandwitnessinformation.org.uk/" target="_blank">get practical or emotional support</a> after a crime.
+      <p class="govuk-body">There is different practical or emotional support <a href="https://www.mygov.scot/victim-witness-support/" target="_blank">if you live in Scotland</a>.
+
+    </div>
+  </details>
+
+    <form class="form" method="post">
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

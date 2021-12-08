@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "stoppedWorking",
+            name: "stoppedWorking",
+            fieldset: {
+            legend: {
+              text: "Are they incapable of working or do they have very limited capacity to work due to their injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "Very limited capacity means they are not capable of undertaking paid work for more than a few hours each week."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("stoppedWorking", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("stoppedWorking", "No")
+            }
+            ]
+            }) }}
+
+            <!-- <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding what we mean by unable to work or search for a job
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">The child being unable to work includes them missing work or having to leave their job because of a physical or mental injury caused by the crime.</p>
+                      <p class="govuk-body">It also applies if they are unable to search for another job in any line of work. Or if they had a formal offer of a job which they were unable to take up because of the injury.</p>
+                    </div>
+              </details> -->
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -9,10 +9,10 @@ module.exports = function (router, content) {
 
       if (directApplicant === 'Myself') {
         // Redirect to the relevant page
-        res.redirect('/application/_1-adult/_1-qualifying/over-18')
+        res.redirect('/application/_0-start-and-qualifying/over-18-you')
       } else {
         // If the variable is any other value (or is missing) render the page requested
-        res.redirect('/application/_2-applying-for-minors/_1-qualifying/over-18')
+        res.redirect('/application/_0-start-and-qualifying/over-18-they')
       }
 
   })

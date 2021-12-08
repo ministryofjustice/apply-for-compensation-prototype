@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (parentGuardian === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/_2-applying-for-minors/transition-non-parent')
+      res.redirect('/application/_2-minors/transition-non-parent')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/parent-guardian-proof')
