@@ -26,13 +26,13 @@
 
       {% if data['confirmationPreference'] === 'Text' %}
 
-      Text message to {{ data['phoneNumber'] }}
+      Text message to {{ data['repPhoneNumber'] }}
 
       {% endif %}
 
       {% if data['confirmationPreference'] === 'Email' %}
 
-      Email to {{ data['emailAddress'] }}
+      Email to {{ data['repEmailAddress'] }}
 
       {% endif %}
 
