@@ -12,8 +12,8 @@ module.exports = function (router, content) {
         // set section status for task list
         req.session.data['your_details_status'] = 'completed'
 
-        if (!req.session.data['emailAddress']) {
-          req.session.data['emailAddress'] = 'name@domain.com'
+        if (!req.session.data['repEmailAddress']) {
+          req.session.data['repEmailAddress'] = 'name@domain.com'
         }
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
           return res.redirect('/application/_3-3rd-party-reps/_2-minors/_10-end/check-your-answers-page')
