@@ -22,7 +22,12 @@ router.post('/application/_3-3rd-party-reps/_1-adult/_5-injuries/infection', fun
   }
 })
 
+
 router.post('/application/_3-3rd-party-reps/_1-adult/_5-injuries/infection/details', function (req, res) {
+    res.redirect('/application/_3-3rd-party-reps/_1-adult/_5-injuries/context-pregnancy')
+})
+
+router.post('/application/_3-3rd-party-reps/_1-adult/_5-injuries/infection/details-vosaa', function (req, res) {
     res.redirect('/application/_3-3rd-party-reps/_1-adult/_5-injuries/context-pregnancy')
 })
 
