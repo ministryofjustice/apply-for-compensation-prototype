@@ -361,6 +361,17 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name/rou
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-have-other/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-other/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/capable-own-affairs/routes')(router, viewContent);
+
+// 3 - Capable adult
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/context-capable-adult/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/have-responsibility/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/phone-number/routes')(router, viewContent);
+
 
 // 3 Incident details
 require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/application-delay/routes')(router, viewContent);

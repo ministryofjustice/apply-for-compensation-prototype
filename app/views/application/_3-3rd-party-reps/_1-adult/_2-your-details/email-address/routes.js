@@ -9,16 +9,13 @@ module.exports = function (router, content) {
 
     if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
-        // set section status for task list
-        req.session.data['your_details_status'] = 'completed'
-
         if (!req.session.data['emailAddress']) {
           req.session.data['emailAddress'] = 'name@domain.com'
         }
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
           return res.redirect('/application/_3-3rd-party-reps/_1-adult/_10-end/check-your-answers-page')
         }
-        res.redirect('/application/_3-3rd-party-reps/_1-adult/_3-incident-details/context-incident-details')
+        res.redirect('/application/_3-3rd-party-reps/_1-adult/_2-your-details/capable-own-affairs')
 
       } else if (buttonClicked === 'Save and complete application later') {
         return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
