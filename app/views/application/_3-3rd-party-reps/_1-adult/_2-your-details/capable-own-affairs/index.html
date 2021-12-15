@@ -27,12 +27,12 @@
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            "idPrefix": "capableOwnAffairs",
-            name: "capableOwnAffairs",
-            "value": "capableOwnAffairs",
+            "idPrefix": "incapableOwnAffairs",
+            name: "incapableOwnAffairs",
+            "value": "incapableOwnAffairs",
             "fieldset": {
               "legend": {
-                text: "Are they capable of handling their own affairs?",
+                text: "Are they incapable of handling their own affairs?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -41,12 +41,12 @@
               {
                 "value": "Yes",
                 text: "Yes",
-                checked: checked("capableOwnAffairs", "Yes")
+                checked: checked("incapableOwnAffairs", "Yes")
               },
               {
                 "value": "No",
                 text: "No",
-                checked: checked("capableOwnAffairs", "No")
+                checked: checked("incapableOwnAffairs", "No")
               }
             ]
           }) }}
