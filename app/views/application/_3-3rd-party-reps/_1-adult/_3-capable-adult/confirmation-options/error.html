@@ -25,7 +25,7 @@
         "titleText": "There is a problem",
         "errorList": [
           {
-            "text": "Enter their email address or telephone number",
+            "text": "Enter their email address or UK mobile phone number",
             "href": "#emailAddress"
           }
         ]
@@ -43,9 +43,6 @@
         label: {
           text: "Email address"
         },
-        errorMessage: {
-          "text": "Enter their email address"
-        },
         attributes: {
           spellcheck: "false"
         }
@@ -60,9 +57,6 @@
         classes: "govuk-!-width-one-third",
         label: {
           text: "UK mobile phone number"
-        },
-        errorMessage: {
-          "text": "Enter their UK mobile phone number"
         }
       }) }}
       {% endset -%}
@@ -95,7 +89,10 @@
               html: textHtml
             }
           }
-        ]
+        ],
+        errorMessage: {
+          text: "Enter their email address or UK mobile phone number"
+        }
       }) }}
 
       {{ govukButton({
