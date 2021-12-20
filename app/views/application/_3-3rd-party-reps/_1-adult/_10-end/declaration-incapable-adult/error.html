@@ -17,10 +17,20 @@
 
 {% block content %}
 
+{{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "To submit your application, select the box to agree to the declaration",
+            href: "index"
+          }
+        ]
+      }) }}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ declarationHeading }}
+      Declaration
     </h1>
     <div id="anchor-point">
         <p class="govuk-body">By submitting this application, I, [main applicant or rep name], on behalf of [applicant’s name] confirm that I understand the following:</p>
