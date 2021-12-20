@@ -6,14 +6,14 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      {{ doYouKnowOffenderQuestion }}
+      Do they know the offender's name?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['know-offender'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_4-offender/do-you-know-offender-name">
-        Change<span class="govuk-visually-hidden"> {{ doYouKnowOffenderQuestion }}</span>
+        Change<span class="govuk-visually-hidden"> Do they know the offender's name?</span>
       </a>
     </dd>
   </div>
@@ -35,7 +35,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      {{ contactWithOffenderQuestion }}
+      Do they have contact with the offender?
     </dt>
     <dd class="govuk-summary-list__value">
       {% if data['contact-offender'] === 'No' %}
@@ -47,7 +47,7 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_4-offender/contact-with-offender">
-        Change<span class="govuk-visually-hidden"> {{ contactWithOffenderQuestion }}</span>
+        Change<span class="govuk-visually-hidden"> Do they have contact with the offender?</span>
       </a>
     </dd>
   </div>
@@ -55,14 +55,14 @@
   {% if data['contact-offender'] === 'Yes' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Describe your contact with the offender
+      Describe their contact with the offender
     </dt>
     <dd class="govuk-summary-list__value">
         {{ data['relationship-text'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_4-offender/what-is-relationship">
-        Change<span class="govuk-visually-hidden"> {{ whatIsRelationshipQuestion }}</span>
+        Change<span class="govuk-visually-hidden"> Describe their contact with the offender</span>
       </a>
     </dd>
   </div>
