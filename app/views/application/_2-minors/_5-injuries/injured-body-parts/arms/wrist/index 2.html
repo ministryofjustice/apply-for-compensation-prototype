@@ -44,11 +44,14 @@ Physical injuries  - {{ serviceName }} - GOV.UK
         name: "wristInjuries",
         fieldset: {
           legend: {
-            text: "Select any injuries to the wrist",
+            text: "Select any injuries to your wrist",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        hint: {
+          text: "Select all that apply."
+          },
         items: [
           {
             value: "Broken wrist",
@@ -73,9 +76,10 @@ Physical injuries  - {{ serviceName }} - GOV.UK
           }
           ]
       }) }}
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../../../includes/buttons.html" %}
 
 
 

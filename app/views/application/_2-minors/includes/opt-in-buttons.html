@@ -1,0 +1,13 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+
+  {{ govukButton({
+    text: "Continue",
+    name: "optIn",
+    value: "Continue"
+  }) }}
+
+  <input type="submit" class="savebutton govuk-link" name="optIn" value="I don't want to save my progress">
+
+</div>
