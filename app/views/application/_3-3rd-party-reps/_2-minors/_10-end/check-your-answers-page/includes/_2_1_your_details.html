@@ -44,6 +44,24 @@
   </dd>
 </div>
 
+{% if data['responsiblePersonOrg'] === 'Yes' %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half ">
+    Organisation
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['responsiblePersonOrgHtml'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-your-details/responsible-org">
+      Change<span class="govuk-visually-hidden"> organsation</span>
+    </a>
+  </dd>
+</div>
+
+{% endif %}
+
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half">
     Address

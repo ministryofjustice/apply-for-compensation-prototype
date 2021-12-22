@@ -536,6 +536,7 @@ require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/address
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/email-address/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/phone-number/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/authority-to-apply-minor/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/responsible-org/routes')(router, viewContent);
 
 // 2 - Victim details
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/context-victim-details/routes')(router, viewContent);
