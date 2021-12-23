@@ -36,6 +36,9 @@ What parts of the head, face or neck were injured? - {{ serviceName }} - GOV.UK
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        hint: {
+          text: "Select all that apply."
+          },
         items: [
           {
             value: "Head or brain",
@@ -100,9 +103,10 @@ What parts of the head, face or neck were injured? - {{ serviceName }} - GOV.UK
           ]
       })
     }}
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+    <!-- hidden field records screen exited for save and return functionality -->
+    {% include "../../../includes/screen-exited.html" %}
+    <!-- button group for save and return -->
+    {% include "../../../includes/buttons.html" %}
 
     </form>
 

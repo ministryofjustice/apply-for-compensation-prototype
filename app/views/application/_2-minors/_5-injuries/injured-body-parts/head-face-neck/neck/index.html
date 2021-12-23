@@ -57,8 +57,8 @@ var headPageCount = localStorage.getItem('headPages');
           }
         },
         hint: {
-          text: neckInjuriesQuestionHint
-        },
+          text: "Select all that apply."
+          },
         items: [
         {
           value: "Broken hyoid (throat bone)",
@@ -90,11 +90,12 @@ var headPageCount = localStorage.getItem('headPages');
         }
         ]
       }) }}
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../../../includes/buttons.html" %}
 
-      
+
 
     </form>
 

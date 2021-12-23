@@ -1,6 +1,6 @@
 <!-- About the crime -->
 <h2 class="govuk-heading-l">
-  Your treatment
+  Their treatment
 </h2>
 
 
@@ -9,14 +9,14 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Treatment for your physical injuries
+      Treatment for their physical injuries
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['physicalTreatment'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_7-treatment/treatment-details">
-        Change<span class="govuk-visually-hidden">{{ dmiTreatmentTypesQuestion }} </span>
+        Change<span class="govuk-visually-hidden"> Treatment for their physical injuries</span>
       </a>
     </dd>
   </div>
@@ -35,7 +35,7 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_7-treatment/dmi-treatment-types">
-        Change<span class="govuk-visually-hidden">{{ dmiTreatmentTypesQuestion }} </span>
+        Change<span class="govuk-visually-hidden"> Mental health treatments</span>
       </a>
     </dd>
   </div>
@@ -44,42 +44,42 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Have you finished your treatment?
+      Have they finished their treatment?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['finishedTreatment'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_7-treatment/finished-treatment">
-        Change<span class="govuk-visually-hidden">{{ dmiFinsihedTreatmentQuestion }} </span>
+        Change<span class="govuk-visually-hidden"> Have they finished their treatment?</span>
       </a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      {{ registeredGPQuestion }}
+      Are they registered with a GP practice?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['registeredGP'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_7-treatment/gp-registered">
-        Change<span class="govuk-visually-hidden">{{ registeredGPQuestion }} </span>
+        Change<span class="govuk-visually-hidden"> Are they registered with a GP practice?</span>
       </a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      {{ visitedGPQuestion }}
+      Have they seen a GP about their injuries?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['visitedGP'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_7-treatment/gp-visited">
-        Change<span class="govuk-visually-hidden">{{ visitedGPQuestion }} </span>
+        Change<span class="govuk-visually-hidden"> Have they seen a GP about their injuries?</span>
       </a>
     </dd>
   </div>
@@ -114,14 +114,14 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Have you seen a dentist about your injuries?
+      Have they seen a dentist about their injuries?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['visitedDentist'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_7-treatment/dentist-visited">
-        Change<span class="govuk-visually-hidden">Have you seen a dentist about your injuries?</span>
+        Change<span class="govuk-visually-hidden">Have they seen a dentist about their injuries?</span>
       </a>
     </dd>
   </div>
@@ -159,14 +159,14 @@
     {% if (data['havePhysicalInjuries'] === 'Yes') or (data['haveInfection'] === 'Yes') or (data['pregnancyLoss'] == 'Yes') or (data['pregnancy'] == 'Yes') %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        Did you seek other medical help?
+        Did they seek other medical help?
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['seekMedicalHelp'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="../_7-treatment/hospital-visited">
-          Change<span class="govuk-visually-hidden">Did you seek other medical help?</span>
+          Change<span class="govuk-visually-hidden"> Did they seek other medical help?</span>
         </a>
       </dd>
     </div>
@@ -178,7 +178,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Where did you have treatment?
+      Where did they have treatment?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['medical-practice-name'] }}<br />

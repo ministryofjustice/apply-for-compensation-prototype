@@ -49,6 +49,9 @@ Select any injuries to the head - {{ serviceName }} - GOV.UK
             classes: "govuk-fieldset__legend--xl"
           }
         },
+        hint: {
+          text: "Select all that apply."
+          },
         items: [
         {
           value: "Concussion, headaches or loss of balance lasting 28 weeks or more",
@@ -108,9 +111,10 @@ Select any injuries to the head - {{ serviceName }} - GOV.UK
         }
         ]
       }) }}
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../../../includes/buttons.html" %}
 
 
 

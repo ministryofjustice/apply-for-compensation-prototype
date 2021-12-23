@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You need to send proof that you’re the child’s parent - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-xl">You need to send proof they have legal responsibility for the injured person</h1>
+
+      <p class="govuk-body">We need proof so we know they have the right to apply on the injured person's behalf.</p>
+
+      <!-- <p class="govuk-body">This proof can be:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>xxx</li>
+        <li>xxx</li>
+        <li>xxx</li>
+        <li>xxx</li>
+      </ul> -->
+
+      <p class="govuk-body">You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>take or scan a photo and send it via email</li>
+        <li>send a photocopy of this to us via post</li>
+      </ul>
+
+      <p class="govuk-body">If their name or the injured person's name has changed, you’ll have to show proof of this change.</p>
+
+      <p class="govuk-body">We'll tell you how to send this at the end of the application.</p>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

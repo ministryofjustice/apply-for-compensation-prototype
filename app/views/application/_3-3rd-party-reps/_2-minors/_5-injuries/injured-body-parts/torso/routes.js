@@ -2,6 +2,11 @@ module.exports = function(router, content) {
     // START__####################################################################################################
 
     router.post('/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/', function(req, res) {
+
+      var buttonClicked = req.session.data['buttonClicked'];
+
+      if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
+
         let torsoInjuredParts = req.session.data['torsoInjuredParts'] || []
         let injuredParts = req.session.data['injuredParts'] || []
 
@@ -28,6 +33,9 @@ module.exports = function(router, content) {
         } else {
           res.redirect('/application/_3-3rd-party-reps/_2-minors/_5-injuries/infection/')
         }
-      })
-      // END__######################################################################################################
-    }
+      } else if (buttonClicked === 'Save and complete application later') {
+        return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
+      }
+    })
+  // END__######################################################################################################
+  }

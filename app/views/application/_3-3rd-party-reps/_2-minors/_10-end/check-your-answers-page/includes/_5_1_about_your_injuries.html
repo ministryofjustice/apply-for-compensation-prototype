@@ -17,7 +17,7 @@
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_5-injuries/have-physical-injuries">
-        Change<span class="govuk-visually-hidden">Do they have physical injuries? </span>
+        Change<span class="govuk-visually-hidden"> Do they have physical injuries?</span>
       </a>
     </dd>
   </div>
@@ -56,7 +56,7 @@
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="../_5-injuries/infection/vosaa">
-          Change<span class="govuk-visually-hidden"> Do they have HIV, hepatitis or an STI? </span>
+          Change<span class="govuk-visually-hidden"> Do they have any infections?</span>
         </a>
       </dd>
     </div>
@@ -65,28 +65,28 @@
     {% if data['sexualAssault'] === 'No' %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        What infection do they have?
+        What infections do they have?
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['infectionType'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="../_5-injuries/infection/details">
-          Change<span class="govuk-visually-hidden"> What infection do they have? </span>
+          Change<span class="govuk-visually-hidden"> What infections do they have? </span>
         </a>
       </dd>
     </div>
     {% else %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        What infection do they have?
+        What infections do they have?
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['infectionType'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="../_5-injuries/infection/details-vosaa">
-          Change<span class="govuk-visually-hidden"> What infection do they have? </span>
+          Change<span class="govuk-visually-hidden"> What infections do they have? </span>
         </a>
       </dd>
     </div>

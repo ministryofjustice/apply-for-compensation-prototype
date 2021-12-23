@@ -7,7 +7,7 @@ module.exports = function (router, content) {
 
     if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
-      res.redirect('/application/_1-adult/_6-impact/se-physical-aids')
+      res.redirect('/application/_1-adult/_6-impact/se-special-equipment')
     } else if (buttonClicked === 'Save and complete application later') {
       return res.redirect('/application/_0-save-and-return-screens/save-confirmation')
     }

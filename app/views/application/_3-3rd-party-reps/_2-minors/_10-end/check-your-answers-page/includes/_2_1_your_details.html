@@ -39,10 +39,28 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/name">
-      Change<span class="govuk-visually-hidden"> name</span>
+      Change<span class="govuk-visually-hidden"> Name</span>
     </a>
   </dd>
 </div>
+
+{% if data['responsiblePersonOrg'] === 'Yes' %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half ">
+    Organisation
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['responsiblePersonOrgHtml'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-your-details/responsible-org">
+      Change<span class="govuk-visually-hidden"> organsation</span>
+    </a>
+  </dd>
+</div>
+
+{% endif %}
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -63,7 +81,7 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/address">
-      Change<span class="govuk-visually-hidden"> address</span>
+      Change<span class="govuk-visually-hidden"> Address</span>
     </a>
   </dd>
 </div>
@@ -77,7 +95,7 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/phone-number">
-      Change<span class="govuk-visually-hidden"> phone number</span>
+      Change<span class="govuk-visually-hidden"> Phone number</span>
     </a>
   </dd>
 </div>
@@ -91,7 +109,7 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/what-is-relationship">
-      Change<span class="govuk-visually-hidden"> relationship to the child</span>
+      Change<span class="govuk-visually-hidden"> Relationship to the child</span>
     </a>
   </dd>
 </div>
@@ -105,7 +123,7 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/do-you-share-responsibility">
-      Change<span class="govuk-visually-hidden">Do they share parental responsibility with another person?</span>
+      Change<span class="govuk-visually-hidden"> Do they share parental responsibility with another person?</span>
     </a>
   </dd>
 </div>
@@ -135,7 +153,7 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/care-order">
-      Change<span class="govuk-visually-hidden">Is there a care, supervision or other local authority order in place for the child?</span>
+      Change<span class="govuk-visually-hidden"> Is there a care, supervision or other local authority order in place for the child?</span>
     </a>
   </dd>
 </div>
@@ -150,7 +168,7 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="../_2-your-details/care-order-details">
-      Change<span class="govuk-visually-hidden">What local authority is this with?</span>
+      Change<span class="govuk-visually-hidden"> What local authority is this with?</span>
     </a>
   </dd>
 </div>

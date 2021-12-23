@@ -138,6 +138,7 @@ require('./views/application/_1-adult/_6-impact/se-home-alterations/routes')(rou
 require('./views/application/_1-adult/_6-impact/se-home-care/routes')(router, viewContent);
 require('./views/application/_1-adult/_6-impact/se-nhs-treatment/routes')(router, viewContent);
 require('./views/application/_1-adult/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-special-equipment/routes')(router, viewContent);
 
 // 7 Treatment
 require('./views/application/_1-adult/_7-treatment/treatment-details/routes')(router, viewContent);
@@ -337,7 +338,7 @@ require('./views/application/_2-minors/_10-end/declaration-under-12/routes')(rou
 //                               //
 //-------------------------------//
 
-// 2 - Rep details
+// 1 - Rep details
 require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/context-rep-details/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-type/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/confirmation-options/routes')(router, viewContent);
@@ -350,6 +351,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/email-add
 require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/company-reg-no/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-ref-no-question/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-ref-no/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/main-contact-name/routes')(router, viewContent);
 
 // 2 - Your details
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/confirmation-options/routes')(router, viewContent);
@@ -361,6 +363,20 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name/rou
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-have-other/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-other/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/capable-own-affairs/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/are-you-responsible/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/authority-to-apply-adult/routes')(router, viewContent);
+
+// 3 - Capable adult
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/context-capable-adult/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/have-responsibility/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/authority-to-apply-adult/routes')(router, viewContent);
+
 
 // 3 Incident details
 require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/application-delay/routes')(router, viewContent);
@@ -519,6 +535,8 @@ require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/care-or
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/address/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/email-address/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/authority-to-apply-minor/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/responsible-org/routes')(router, viewContent);
 
 // 2 - Victim details
 require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/context-victim-details/routes')(router, viewContent);

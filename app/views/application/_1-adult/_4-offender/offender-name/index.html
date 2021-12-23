@@ -25,10 +25,16 @@
               {{ offenderNameQuestion }}
             </label>
           </h1>
-          <div id="offender-name-hint" class="govuk-hint">
-            We will never contact the offender.
-          </div>
         </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            We will never contact the offender.
+          </strong>
+        </div>
+
         <div id="offenderName">
           {{ govukInput({
             id: "first-name-offender",
@@ -39,7 +45,7 @@
 ​
         {{ govukDetails({
           summaryText: "Help with offender’s name",
-          text: "If there was more than 1 offender, you can provide additional details later in this claim."
+          text: "If there was more than 1 offender, you can provide these details in the ‘additional information’ screen later in the application."
         }) }}
 
         <!-- hidden field records screen exited for save and return functionality -->
