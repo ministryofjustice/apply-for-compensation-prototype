@@ -9,6 +9,20 @@ const moment = require('moment'); // this is to use the Moment JavaScript librar
 const viewContent = require('./routes-content');
 const utils = require('./utils')
 
+// Work around a bug where occasionally _unchecked would appear
+// Also coerce to array to be easier to work with
+const cleanInputData = data => {
+  if (!data || data == '_unchecked') {
+    return undefined
+  }
+  else {
+    data = [].concat(data) // coerce to arrays so we can filter them
+    // _unchecked sometimes appears - can't track down what's causing it
+    data = data.filter(item => item != '_unchecked')
+    return (data.length == 0) ? undefined : data // return undefined if array now empty
+  }
+}
+
 // Route index page
 router.get('/', function (req, res) {
     res.render('index')
