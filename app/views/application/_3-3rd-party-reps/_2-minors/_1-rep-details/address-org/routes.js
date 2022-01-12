@@ -11,7 +11,7 @@ module.exports = function (router, content) {
       res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/phone-number')
     } else if (confirmationPreference === 'Text') {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/email-address-org')
+      res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/email-address')
     }
 
   })
