@@ -481,6 +481,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-home-altera
 require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-home-care/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-nhs-treatment/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-special-equipment/routes')(router, viewContent);
 
 // 7 Treatment
 require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/treatment-details/routes')(router, viewContent);
