@@ -29,24 +29,24 @@
             value: data['applicationDelay'],
             fieldset: {
               legend: {
-                text: whyDelayQuestion,
+                text: "Select reasons for the delay in making this application",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-              text: "Select all options that apply to you."
+              text: "Select all options that apply."
             },
             items: [
             {
               value: "I was under 18",
-              text: "I was under 18",
+              text: "The injured person was under 18",
               id: "under-18",
               checked: checked("applicationDelay", "I was under 18")
             },
             {
               value: "I was advised to wait",
-              text: "I was advised to wait",
+              text: "The injured person was advised to wait",
               id: "advised-to-wait",
               checked: checked("applicationDelay", "I was advised to wait")
             },
