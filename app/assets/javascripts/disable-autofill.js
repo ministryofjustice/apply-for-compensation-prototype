@@ -18,7 +18,7 @@
 function disableBrowserAutofill () {
 
   const dataAttributeName = 'data-nameoriginal'
-  // const inputTypes = ['text', 'tel', 'email', 'number']
+  const inputTypes = ['text', 'tel', 'email', 'number']
 
   // Missing forEach on NodeList for IE11
   if (window.NodeList && !window.NodeList.prototype.forEach) {
@@ -33,7 +33,7 @@ function disableBrowserAutofill () {
 
 
     let inputs = [...form.querySelectorAll('input')]
-      // .filter(input => inputTypes.includes(input.type))
+      .filter(input => inputTypes.includes(input.type))
 
     if (form.dataset.jsDisableBrowserAutofill === 'on'){
       inputs = inputs.filter(input => input.dataset.jsDisableBrowserAutofill !== 'off')
