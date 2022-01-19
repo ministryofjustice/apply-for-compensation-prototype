@@ -514,6 +514,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_9-additional-info/addit
 // End Screens
 require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/check-your-answers-page/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/declaration/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/declaration-incapable-adult/routes')(router, viewContent);
 
 
 //-------------------------------//
