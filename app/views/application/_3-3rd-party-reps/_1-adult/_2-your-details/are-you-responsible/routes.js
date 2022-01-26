@@ -10,7 +10,7 @@ router.post('/application/_3-3rd-party-reps/_1-adult/_2-your-details/are-you-res
   if (haveResponsibility === 'Yes') {
     return res.redirect('/application/_3-3rd-party-reps/_1-adult/_2-your-details/authority-to-apply-adult')
   } else {
-    return res.redirect('/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/context-capable-adult')
+    return res.redirect('/application/_3-3rd-party-reps/_1-adult/_2-your-details/someone-else-responsible')
   }
 })
 

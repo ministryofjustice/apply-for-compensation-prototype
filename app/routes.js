@@ -379,6 +379,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-oth
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/phone-number/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/capable-own-affairs/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/are-you-responsible/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/someone-else-responsible/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/authority-to-apply-adult/routes')(router, viewContent);
 
 // 3 - Capable adult
