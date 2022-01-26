@@ -1,7 +1,164 @@
-<!-- REDIRECT -->
-<script>
-  setTimeout(function () {
-      window.open('application/_0-start-and-qualifying/overview-page', '_top');
-  });
-</script>
-<!-- REDIRECT -->
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a prototype. Some things may not work as expected.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Apply for compensation for a criminal injury
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>{{releaseVersion | log }}
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <p>The prototypes below show the current and previous iterations of the applications users will complete to apply for compensation if they have been a victim of violent crime.</p>
+
+    <br>
+  </div>
+    <div class="govuk-grid-column-full">
+
+    <!-- Tab names -->
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">Contents</h2>
+
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#current-prototype">
+            Current
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#concepts">
+            Concepts
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#change-log">
+            Change log
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#archive">
+            Archive
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#notes">
+            Notes
+          </a>
+        </li>
+      </ul>
+
+      <!-- Current tab -->
+      <section class="govuk-tabs__panel" id="current-prototype">
+        <h2 class="govuk-heading-l">Current prototype</h2>
+        <p>This is the <strong>work in progress</strong> prototype, iterating what was put into private beta, including:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              The complete adult journey
+            </li>
+            <li>
+              The complete <strong>work in progress</strong> minor journey
+            </li>
+          </ul>
+        <p>This version is the post-pilot work complete in November 2020.</p>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Clicking "Make a claim" on the start page clears all previously entered session data in the prototype.
+          </strong>
+        </div>
+
+        <details class="govuk-details govuk-!-margin-bottom-5">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What's changed?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>The following are changes since the last major update</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>added crime reference number questions and updated content in main prototype and <a href="concepts/applying-for-someone-else">minor journey</a> concept</li>
+              <li>removed the sexual assault and violent crime question</li>
+              <li>added incident type question at the start of incident details</li>
+              <li>added a question at the end of indicent section - "Do you want to provide any more details about the incident"</li>
+              <li>added additional information screen if they say yes to above</li>
+              <li>created a section at the end of the application to ask if they want to provide any further information about the application</li>
+              <li>added additional information screen if they say yes to above</li>
+              <li>updated check your answers</li>
+            </ul>
+            The following documents detail the changes:
+            <ul>
+              <li><a href="https://docs.google.com/drawings/d/1v0R0dq2aIsbVBDz8Y5QINaFzdmJDmMEzAbQsXRs-Gwc/edit?usp=sharing" target="_blank">Flow changes documented</a></li>
+            </ul>
+          </div>
+        </details>
+        <a href="/application/_0-start-and-qualifying/start-page" role="button" draggable="false" class="govuk-button govuk-button--start">
+          Start prototype
+        </a>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+        <!-- Other prototypes section -->
+        <h2 class="govuk-heading-m">Guidance</h2>
+        <p>This guidance was created for the customer service team to use when the MVP launched in November 2019. It has not been updated since adding more functionality and increasing the users.</p>
+        <ul class="govuk-list">
+          <li><a class="govuk-link" href="/concepts/guidance">AD Guidance</a></li>
+        </ul>
+      </section>
+
+
+
+      <!-- Concepts tab -->
+
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="concepts">
+
+        <!-- The concepts area is in an include file to make this page more manageable -->
+        {% include "includes/home-page/concepts.html" %}
+
+      </section>
+
+      <!-- Change log tab -->
+
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="change-log">
+
+        <!-- The concepts area is in an include file to make this page more manageable -->
+        {% include "includes/home-page/change-log.html" %}
+
+      </section>
+
+      <!-- Archive Tab -->
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
+        <!-- The beta archive is in an include file to make this page more manageable -->
+        {% include "includes/home-page/beta-archive.html" %}
+
+        <!-- The alpha archive is in an include file to make this page more manageable -->
+        {% include "includes/home-page/alpha-archive.html" %}
+
+      </section>
+
+
+      <section class="govuk-tabs__panel" id="notes">
+        {% include "includes/home-page/notes.html" %}
+
+      </section>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
