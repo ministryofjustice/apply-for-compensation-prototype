@@ -9,6 +9,20 @@ const moment = require('moment'); // this is to use the Moment JavaScript librar
 const viewContent = require('./routes-content');
 const utils = require('./utils')
 
+// Work around a bug where occasionally _unchecked would appear
+// Also coerce to array to be easier to work with
+const cleanInputData = data => {
+  if (!data || data == '_unchecked') {
+    return undefined
+  }
+  else {
+    data = [].concat(data) // coerce to arrays so we can filter them
+    // _unchecked sometimes appears - can't track down what's causing it
+    data = data.filter(item => item != '_unchecked')
+    return (data.length == 0) ? undefined : data // return undefined if array now empty
+  }
+}
+
 // Route index page
 router.get('/', function (req, res) {
     res.render('index')
@@ -365,6 +379,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-oth
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/phone-number/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/capable-own-affairs/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/are-you-responsible/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/someone-else-responsible/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/authority-to-apply-adult/routes')(router, viewContent);
 
 // 3 - Capable adult
@@ -467,6 +482,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-home-altera
 require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-home-care/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-nhs-treatment/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-special-equipment/routes')(router, viewContent);
 
 // 7 Treatment
 require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/treatment-details/routes')(router, viewContent);
@@ -499,6 +515,7 @@ require('./views/application/_3-3rd-party-reps/_1-adult/_9-additional-info/addit
 // End Screens
 require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/check-your-answers-page/routes')(router, viewContent);
 require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/declaration/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/declaration-incapable-adult/routes')(router, viewContent);
 
 
 //-------------------------------//

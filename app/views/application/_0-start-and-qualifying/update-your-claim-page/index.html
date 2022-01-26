@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Claim compensation if you were the victim of a violent crime
+      </h1>
+
+    <p class="govuk-body-s">
+      Contents
+      <ul class="govuk-list govuk-list--contents govuk-body-s">
+        <li><a href="overview-page">Overview</a></li>
+        <li><a href="eligibility-page">Eligibility</li>
+        <li><a href="start-page">Make a claim</a></li>
+        <li><a href="what-happens-next-page">What happens next</a></li>
+        <li>Update your claim</li>
+        <li><a href="srr-page">If you’re a victim who lived with the attacker before 1 October 1979</a></li>
+      </ul>
+    <p>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        Update your claim
+      </h2>
+
+      <p class="govuk-body"><a href="https://www.cica.gov.uk/OAS/Account/LogOn">Sign in to your account</a> to finish your application.</p>
+
+      <p class="govuk-body">You need to contact Criminal Injuries Compensation Authority (CICA) if:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your contact or personal details change</li>
+        <li>you stop using or change a legal adviser</li>
+        <li>you get compensation or money from any other sources after you apply</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        If you applied by phone
+      </h2>
+
+      <p class="govuk-body">Call CICA to update your claim if you applied by phone.</p>
+
+      <p class="govuk-body">You’ll need your reference number.</p>
+
+      <div class="contact">
+        <p class="govuk-body">
+          CICA<br>
+          Inside the UK: 0300 003 3601<br>
+          Outside the UK: +44 (0)203 684 2517<br>
+          Monday, Tuesday, Thursday and Friday, 8.30am to 5pm<br>
+          Wednesday, 10am to 5pm<br>
+          <a href="https://www.relayuk.bt.com" target="_blank">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601<br>
+          <a href="/call-charges">Find out about call charges</a>
+        </p>
+      </div>
+
+      </div>
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside role="complementary">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-body-s">
+              <li>
+                <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                  Criminal injuries compensation tribunal
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                  Get support as a victim of crime
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+  </div>
+</main>
+
+{% endblock %}

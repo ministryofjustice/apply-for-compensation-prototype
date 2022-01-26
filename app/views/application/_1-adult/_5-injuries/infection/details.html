@@ -71,12 +71,12 @@ Physical injuries  - {{ serviceName }} - GOV.UK
               checked: checked("infectionType", "Hepatitis C")
             },
             {
-              "value": "Other infection",
+              "value": data['other-infection'],
               text: "Other infection",
               conditional: {
                 html: otherHtml
               },
-              checked: checked("infectionType", "Other infection")
+              checked: checked("infectionType", data['other-infection'])
             }
             ]
           }) }}

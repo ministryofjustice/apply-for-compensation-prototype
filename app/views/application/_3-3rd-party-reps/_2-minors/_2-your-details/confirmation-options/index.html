@@ -56,13 +56,13 @@
         name: "confirmationPreference",
         fieldset: {
           legend: {
-            text: "How should we tell you we've got the application?",
+            text: "What is this person's preferred method of communication?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "We will only contact this person if we do not receive a response from you as the representative."
+          text: "We will only contact this person about the case if we cannot contact you for any reason."
         },
         items: [
           {
@@ -80,14 +80,6 @@
             conditional: {
               html: textHtml
             }
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "Neither",
-            text: "I don't have an email address or UK mobile phone number",
-            checked: checked("confirmationPreference", "Neither")
           }
         ]
       }) }}
