@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Person with parental responsibility - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Person with parental responsibility
+    </h1>
+
+    <p class="govuk-body">Content TBC</p>
+
+    <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

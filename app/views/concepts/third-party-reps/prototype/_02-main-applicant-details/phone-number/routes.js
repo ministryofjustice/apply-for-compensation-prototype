@@ -1,0 +1,15 @@
+module.exports = function (router, content) {
+  // START__####################################################################################################
+  // File: phone-number
+  //
+  router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number', function (req, res) {
+      res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility')
+  })
+
+  // Pass the question in to the page
+  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number/', function (req, res) {
+    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number/index', content)
+  })
+
+  // END__######################################################################################################
+}

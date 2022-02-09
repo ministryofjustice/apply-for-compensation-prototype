@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Enter your email address - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+            label: {
+            text: "Enter your email address",
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
+          },
+          hint: {
+            text: "Hint text TBC"
+          },
+            classes: 'govuk-input--width-20',
+            id: "repEmailAddress",
+            name: "repEmailAddress",
+            "value": data['repEmailAddress']
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

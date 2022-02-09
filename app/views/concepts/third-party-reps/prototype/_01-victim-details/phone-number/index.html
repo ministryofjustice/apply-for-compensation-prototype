@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+<!-- SET QUESTION CONTEXT -->
+  {% if data['direct-applicant'] === 'Myself' %}
+    {% set phoneNumberQuestion = "Enter your telephone number" %}
+    {% set phoneNumberHint = "We may use this to contact you if we need to clarify something on your application form (optional)." %}
+  {% else %}
+    {% set phoneNumberQuestion = "Enter the victim's telephone number" %}
+    {% set phoneNumberHint = "Hint text TBC" %}
+  {% endif %}
+
+{% block pageTitle %}
+{{ phoneNumberQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+            label: {
+            text: phoneNumberQuestion,
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
+            },
+            hint: {
+              text: phoneNumberHint
+            },
+            classes: 'govuk-input--width-20',
+            id: "phoneNumber",
+            name: "phoneNumber",
+            value: data['phoneNumber'],
+            type: "tel",
+            classes: "govuk-input--width-20"
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

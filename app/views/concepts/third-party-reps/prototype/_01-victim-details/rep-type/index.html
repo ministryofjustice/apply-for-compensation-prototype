@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+How are you representing the victim? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios",
+            "idPrefix": "rep-type",
+            name: "rep-type",
+            "fieldset": {
+            "legend": {
+            text: "How are you representing the victim?",
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
+            }
+            },
+            "items": [
+            {
+              "value": "Parent",
+              text: "Parent",
+              checked: checked("rep-type", "Parent")
+            },
+            {
+              "value": "Foster carer",
+              text: "Foster carer",
+              checked: checked("rep-type", "Foster carer")
+            },
+            {
+              "value": "Friend or relative (but not their parent)",
+              text: "Friend or relative (but not their parent)",
+              checked: checked("rep-type", "Friend or relative (but not their parent)")
+            },
+            {
+              "value": "Support service",
+              text: "Support service",
+              checked: checked("rep-type", "Support service")
+            },
+            {
+              "value": "Solicitor",
+              text: "Solicitor",
+              checked: checked("rep-type", "Solicitor")
+            },
+            {
+              "value": "Claims management company",
+              text: "Claims management company",
+              checked: checked("rep-type", "Claims management company")
+            },
+            {
+              "value": "Local authority",
+              text: "Local authority",
+              checked: checked("rep-type", "Local authority")
+            }
+            ]
+            }) }}
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

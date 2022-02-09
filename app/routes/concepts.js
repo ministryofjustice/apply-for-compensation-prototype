@@ -130,22 +130,22 @@ require('../views/concepts/equality-questions/concept-1-hmcts/routes')(router, v
 require('../views/concepts/equality-questions/concept-2-gds/routes')(router, viewContent);
 
 //Care order context //
-require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-1/care-order/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-1/care-order-details/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-2/care-order/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-2/care-order-details/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/care-order-context/option-3/care-order/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order-context/option-1/care-order/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order-context/option-1/care-order-details/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order-context/option-2/care-order/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order-context/option-2/care-order-details/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order-context/option-3/care-order/routes')(router, viewContent);
 
 //Filter non-parents //
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-1/parent-guardian/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/authority-to-apply/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/parent-guardian/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-2/parent-guardian-proof/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/authority-to-apply/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/parent-guardian/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/birth-certificate-proof/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/birth-certificate/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/filter-non-parents/option-3/other-proof/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-1/parent-guardian/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-2/authority-to-apply/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-2/parent-guardian/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-2/parent-guardian-proof/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-3/authority-to-apply/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-3/parent-guardian/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-3/birth-certificate-proof/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-3/birth-certificate/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/filter-non-parents/option-3/other-proof/routes')(router, viewContent);
 
 //Minors loss of earnings and special expenses//
 require('../views/concepts/minors-loe-se/option-1/loe-context/routes')(router, viewContent);
@@ -287,6 +287,55 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 
   require('../views/concepts/save-and-return-post/mvp-proto/user-or-system-gen-pw/password-choice/routes')(router, viewContent);
 
+
+  // Third party reps
+
+  // 00 - start and qualifying
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/crime-reference/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/fatal-application/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/incident-reported/routes')(router, viewContent);
+
+  // 01 - victim details
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/confirmation-options/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/context-victim-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/rep-type/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/who-is-making-the-application/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-have-other/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-other/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/phone-number/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/email-address/routes')(router, viewContent);
+
+  // 02 - main applicant details
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/adult/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/minor/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/confirmation-options/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/email-address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order-details/routes')(router, viewContent);
+
+  // 03 - rep details
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/company-reg-no/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/confirmation-options/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/email-address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/phone-number/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/rep-ref-no-question/routes')(router, viewContent);
+
+  // 04 - crime details
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details/routes')(router, viewContent);
 
 
 

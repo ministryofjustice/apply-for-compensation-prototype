@@ -17,25 +17,25 @@ const utils = require('../utils')
 
 // MINORS JOURNEY Based on MVP VOSAA Journey - Late 2019 / Early 2020 //
 
-require('../views/concepts/applying-for-someone-else/minors/care-order/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/care-order-details/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/care-order-details/routes')(router, viewContent);
 
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-1/upload-choice/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-1/upload-choice/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-1/upload/routes')(router, viewContent);
 
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/upload-choice/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-2/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-2/upload-choice/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-2/upload/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-2/confirm-names/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-2/upload-other-names/routes')(router, viewContent);
 
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-choice/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/confirm-names/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-name-change/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-another/routes')(router, viewContent);
-require('../views/concepts/applying-for-someone-else/minors/eligibility-to-apply/option-3/upload-another-document/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/upload/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/upload-choice/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/confirm-names/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/upload-name-change/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/upload-another/routes')(router, viewContent);
+require('../views/concepts/parents-applying-for-minors/minors/eligibility-to-apply/option-3/upload-another-document/routes')(router, viewContent);
 
 
 // Add your routes here - above the module.exports line
