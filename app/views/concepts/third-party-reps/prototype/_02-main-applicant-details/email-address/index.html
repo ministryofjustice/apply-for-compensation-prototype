@@ -3,12 +3,14 @@
 <!-- SET QUESTION CONTEXT -->
   {% if data['haveAuthority'] === 'Yes' %}
     {% set mainAppEmailAddressQuestion = "Enter your email address" %}
+    {% set mainAppEmailAddressHint = "Hint text TBC" %}
   {% else %}
     {% set mainAppEmailAddressQuestion = "Enter their email address" %}
+    {% set mainAppEmailAddressHint = "Hint text TBA" %}
   {% endif %}
 
 {% block pageTitle %}
-Enter your email address - {{ serviceName }} - GOV.UK
+{{ mainAppEmailAddressQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -38,7 +40,7 @@ Enter your email address - {{ serviceName }} - GOV.UK
             classes: 'govuk-label--xl'
           },
           hint: {
-            text: "Hint text TBC"
+            text: mainAppEmailAddressHint
           },
             classes: 'govuk-input--width-20',
             id: "mainAppEmailAddress",
