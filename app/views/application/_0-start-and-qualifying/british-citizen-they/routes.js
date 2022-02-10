@@ -17,7 +17,7 @@ router.post('/application/_0-start-and-qualifying/british-citizen-they', functio
 
     if (over18 === 'Yes') {
       // Redirect to the relevant page
-      res.redirect('/application/_3-3rd-party-reps/_1-adult/_1-rep-details/context-rep-details')
+      res.redirect('/application/_0-start-and-qualifying/transition')
     } else {
       res.redirect('/application/_0-start-and-qualifying/parent-guardian')
     }

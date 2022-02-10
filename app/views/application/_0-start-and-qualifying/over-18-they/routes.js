@@ -4,7 +4,15 @@ module.exports = function (router, content) {
   // Variable: over18
 
   router.post('/application/_0-start-and-qualifying/over-18-they', function (req, res) {
-    res.redirect('/application/_0-start-and-qualifying/british-citizen-they')
+
+    var over18 = req.session.data['over18']
+
+    if (over18 === 'Yes') {
+      res.redirect('/application/_0-start-and-qualifying/transition')
+    } else {
+      res.redirect('/application/_0-start-and-qualifying/british-citizen-they')
+    }
+
   })
 
   // Pass the question in to the page

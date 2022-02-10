@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     if (parentGuardian === 'No') {
       // Redirect to the relevant page
-      res.redirect('/application/_3-3rd-party-reps/_2-minors/_1-rep-details/context-rep-details')
+      res.redirect('/application/_0-start-and-qualifying/transition')
     } else {
       // If the variable is any other value (or is missing) render the page requested
       res.redirect('/application/_0-start-and-qualifying/authority-to-apply-minor')
