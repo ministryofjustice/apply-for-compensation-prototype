@@ -24,14 +24,13 @@
       End of prototype
     </h1>
 
-    <p class="govuk-body">Click the button below to go back to the beginning of the prototype.</p>
+    <p class="govuk-body">Click the button below to clear input data and restart the prototype.</p>
 
     <form class="form" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            text: "Continue",
-            href: "../_00-start-and-qualifying/fatal-application"
+            text: "Clear data and restart"
             }) }}
 
     </form>

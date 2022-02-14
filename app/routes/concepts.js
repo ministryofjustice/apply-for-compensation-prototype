@@ -336,6 +336,7 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 
   // 04 - crime details
     require('../views/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details/end/routes')(router, viewContent);
 
 
 

@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: bridge
 
   router.post('/concepts/third-party-reps/prototype/_03-rep-details/company-reg-no', function (req, res) {
-    res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/rep-ref-no')
+    res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/rep-ref-no-question')
   })
 
   // Pass the question in to the page
