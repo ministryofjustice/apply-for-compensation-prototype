@@ -1,14 +1,6 @@
 {% extends "layout.html" %}
-
-<!-- SET QUESTION CONTEXT -->
-  {% if data['haveAuthority'] === 'Yes' %}
-    {% set mainAppPhoneNumberQuestion = "Enter your telephone number" %}
-  {% else %}
-    {% set mainAppPhoneNumberQuestion = "Enter their telephone number" %}
-  {% endif %}
-
 {% block pageTitle %}
-{{ mainAppPhoneNumberQuestion }} - {{ serviceName }} - GOV.UK
+What is their full name? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,30 +25,38 @@
 
       {{ govukInput({
             label: {
-            text: mainAppPhoneNumberQuestion,
+            text: "What is their full name?",
             isPageHeading: true,
             classes: 'govuk-label--xl'
             },
             hint: {
-              text: "Hint text TBC"
-            },
+            text: "We will never contact this person without consent unless there is an exceptional situation where we have to."
+              },
             classes: 'govuk-input--width-20',
-            id: "phoneNumber",
-            name: "phoneNumber",
-            value: data['phoneNumber'],
-            type: "tel",
+            id: "responsibilityWhoWith",
+            name: "responsibilityWhoWith",
+            value: data['responsibilityWhoWith'],
             classes: "govuk-input--width-20"
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I share legal authority with more than one person
+            </span>
+        </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">You can add any additional names of legal authority holders at the end of this application.</p>
+            </div>
+      </details>
+
       {{ govukButton({
-        text: "Continue"
-      }) }}
+            text: "Continue"
+            }) }}
 
     </form>
   </div>
-</div>
-</main>
 </div>
 {% endblock %}

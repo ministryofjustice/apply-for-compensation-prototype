@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
+Have you given this application a reference number for your own records? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,7 +33,7 @@
             value: data['rep-ref-no'],
             classes: "govuk-!-width-full",
             label: {
-              text: "Enter your reference number"
+              text: "Enter the reference number"
             }
           }) }}
       {% endset -%}
@@ -45,10 +45,13 @@
             value: data['rep-ref-no-question'],
             "fieldset": {
               "legend": {
-              text: "Do you have a company reference number?",
+              text: "Have you given this application a reference number for your own records?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
+              },
+              hint: {
+                text: "This is a specific number you have given the application before you send it to us. This has not been provided by us."
               },
             "items": [
             {

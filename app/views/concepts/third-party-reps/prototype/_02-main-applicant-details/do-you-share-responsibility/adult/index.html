@@ -2,15 +2,15 @@
 
 <!-- SET QUESTION CONTEXT -->
   {% if data['haveAuthority'] === 'Yes' %}
-    {% set sharedResponsibilityQuestion = "Do you share parental responsibility for the victim with another person?" %}
-    {% set sharedResponsibilityHint = "This means you share this with another person named as their birth, step or adoptive parent. Or, someone named on a special guardianship order." %}
+    {% set sharedResponsibilityQuestion = "Do you share legal authority for the victim with another person?" %}
+    {% set sharedResponsibilityHint = "Hint text TBC" %}
   {% else %}
-    {% set sharedResponsibilityQuestion = "Do they share parental responsibility for the victim with another person?" %}
+    {% set sharedResponsibilityQuestion = "Do they share legal authority for the victim with another person?" %}
     {% set sharedResponsibilityHint = "Hint text TBC" %}
   {% endif %}
 
 {% block pageTitle %}
-Do you share parental responsibility for the victim with another person? - {{ serviceName }} - GOV.UK
+{{ sharedResponsibilityQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,6 +30,15 @@ Do you share parental responsibility for the victim with another person? - {{ se
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
+
+
+
+
+
+
+<!-- CONTEXTUALISE CONTENT FOR ADULTS AND CHILDREN, YOU AND THEY -->
+
+
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -67,12 +76,11 @@ Do you share parental responsibility for the victim with another person? - {{ se
       <details class="govuk-details">
           <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Help understanding shared parental responsibility
+                Help understanding shared legal authority
               </span>
           </summary>
               <div class="govuk-details__text">
-                <p class="govuk-body">There are a wide range of situations where a person holds parental responsibility for a child. You may or may not hold parental responsibility for the child and not know.</p>
-                <p class="govuk-body">Find out if you have parental responsibility and what this means <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="new">on the UK Government website (opens in new tab)</a>.</p>
+                <p class="govuk-body">Content TBC.</p>
               </div>
       </details>
 

@@ -1,12 +1,11 @@
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 module.exports = function (router, content) {
   // START__####################################################################################################
-  // File: bridge
-  // Variable: criminalConvictions
+  // File: name-have-other
+  // Variable: haveOtherName
+  router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/minor', function (req, res) {
 
-  router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/minor', function (req, res) {
-
-    var repType = req.session.data['rep-type']
+    var haveAuthority = req.session.data['haveAuthority'];
 
     // getting the inputs to be able to calculate if the user is a minor or not on the day of application
     var year = Number.parseInt(req.session.data['dob-year'], 10); // making sure with have a well formated number for year, month and day
@@ -19,26 +18,22 @@ module.exports = function (router, content) {
     var duration = moment.duration(currentDate.diff(dateOfBirth));// calculate the difference between the two
     var ageInYears = duration.asYears(); // take that number in years  - we can do that thanks to the Moment library
 
-
-    if ((repType === 'Birth, step or adoptive parent') || (repType === 'Person named on Special Guardianship order')) {
+    if (haveAuthority === 'Yes')  {
       if (ageInYears < 18) {
-        res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you/minor')
+        return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you/minor')
       } else {
-        res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you/adult')
+        return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you/adult')
       }
+    } else if (ageInYears < 18) {
+      res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/minor')
     } else {
-      if (ageInYears < 18) {
-        res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/minor')
-      } else {
-        res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/adult')
-
-      }
-    }
+    res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/adult')
+  }
   })
 
   // Pass the question in to the page
-  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/minor/', function (req, res) {
-    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/minor/index', content)
+  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/minor/', function (req, res) {
+    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/minor/index', content)
   })
   // END__######################################################################################################
 }

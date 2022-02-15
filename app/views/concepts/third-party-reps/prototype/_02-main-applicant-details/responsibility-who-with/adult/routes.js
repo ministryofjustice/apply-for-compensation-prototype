@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
   // File: responsibility-who-with
   //
-  router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with', function (req, res) {
+  router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/adult', function (req, res) {
 
     var repType = req.session.data['rep-type']
     var haveAuthority = req.session.data['haveAuthority'];
@@ -20,12 +20,12 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/', function (req, res) {
-    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/index', content)
+  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/adult/', function (req, res) {
+    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/adult/index', content)
   })
 
-  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/error', function (req, res) {
-    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/error', content)
+  router.get('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/adult/error', function (req, res) {
+    res.render('concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/adult/error', content)
   })
   // END__######################################################################################################
 }

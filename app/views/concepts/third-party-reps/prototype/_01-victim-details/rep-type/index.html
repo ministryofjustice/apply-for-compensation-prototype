@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-How are you representing the victim? - {{ serviceName }} - GOV.UK
+In what capacity are you representing the victim? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,31 +24,29 @@ How are you representing the victim? - {{ serviceName }} - GOV.UK
             name: "rep-type",
             "fieldset": {
             "legend": {
-            text: "How are you representing the victim?",
+            text: "In what capacity are you representing the victim?",
             isPageHeading: true,
             classes: 'govuk-fieldset__legend--xl'
             }
             },
+            hint: {
+              text: "You’re applying for the victim as you have the parental responsibility and/or the legal authority to do so."
+            },
             "items": [
             {
-              "value": "Parent",
-              text: "Parent",
-              checked: checked("rep-type", "Parent")
+              "value": "Birth, step or adoptive parent",
+              text: "Birth, step or adoptive parent",
+              checked: checked("rep-type", "Birth, step or adoptive parent")
+            },
+            {
+              "value": "Person named on Special Guardianship order",
+              text: "Person named on Special Guardianship order",
+              checked: checked("rep-type", "Person named on Special Guardianship order")
             },
             {
               "value": "Foster carer",
               text: "Foster carer",
               checked: checked("rep-type", "Foster carer")
-            },
-            {
-              "value": "Friend or relative (but not their parent)",
-              text: "Friend or relative (but not their parent)",
-              checked: checked("rep-type", "Friend or relative (but not their parent)")
-            },
-            {
-              "value": "Support service",
-              text: "Support service",
-              checked: checked("rep-type", "Support service")
             },
             {
               "value": "Solicitor",
@@ -61,12 +59,48 @@ How are you representing the victim? - {{ serviceName }} - GOV.UK
               checked: checked("rep-type", "Claims management company")
             },
             {
+              "value": "Support services",
+              text: "Support services",
+              checked: checked("rep-type", "Support services")
+            },
+            {
+              "value": "Friend or relative",
+              text: "Friend or relative",
+              checked: checked("rep-type", "Friend or relative")
+            },
+            {
               "value": "Local authority",
               text: "Local authority",
               checked: checked("rep-type", "Local authority")
             }
             ]
             }) }}
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Who has authority to apply for the victim?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You need to prove you have parental responsibility or legal authority for the victim to apply.</p>
+
+                <p>To prove this, you'll need relevant documents your name is on, such as:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the victim’s full birth certificate
+                  adoption documents</li>
+                  <li>a parental responsibility agreement</li>
+                  <li>a court order showing you have parental responsibility, which means you have legal authority, for the victim</li>
+                </ul>
+
+                  <p>We need proof so we know you have the right to apply on the victim’s behalf. We'll tell you how to send this at the end of the application.</p>
+
+                  <p>If you’re still unsure about parental responsibility and what it means, you can find out more <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="_new">on the UK Government website (opens in new tab)</a>.</p>
+
+              </div>
+            </details>
+
 
             {% from "govuk/components/button/macro.njk" import govukButton %}
 

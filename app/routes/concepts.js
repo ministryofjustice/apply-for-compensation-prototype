@@ -312,15 +312,19 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
   // 02 - main applicant details
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/adult/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/minor/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/adult/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/minor/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/adult/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/minor/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/confirmation-options/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/name/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/address/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/email-address/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/adult/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/minor/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/adult/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/minor/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order-details/routes')(router, viewContent);
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-We will ask for details of someone with legal authority in future - {{ serviceName }} - GOV.UK
+You must send us details of the person with parental responsibility for the victim - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -24,9 +24,13 @@ We will ask for details of someone with legal authority in future - {{ serviceNa
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">We will ask for details of someone with legal authority in future</h1>
+      <h1 class="govuk-heading-xl">You must send us details of the person with parental responsibility for the victim</h1>
 
-      <p class="govuk-body">Content TBC.</p>
+      <p class="govuk-body">You can submit this application today without providing details about who has parental responsibility for the victim.</p>
+
+      <p class="govuk-body">However, we will need you to provide these details once you have sent us the application.</p>
+
+      <p class="govuk-body">We'll tell you how to send this at the end of the application.</p>
 
       {{ govukButton({
       text: "Continue",

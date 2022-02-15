@@ -6,7 +6,7 @@
     {% set phoneNumberHint = "We may use this to contact you if we need to clarify something on your application form (optional)." %}
   {% else %}
     {% set phoneNumberQuestion = "Enter the victim's telephone number" %}
-    {% set phoneNumberHint = "Hint text TBC" %}
+    {% set phoneNumberHint = "We will only use this to contact the victim in the event we cannot contact you via one of your contact preferences you provided." %}
   {% endif %}
 
 {% block pageTitle %}
@@ -49,6 +49,27 @@
             type: "tel",
             classes: "govuk-input--width-20"
             }) }}
+
+      {% if data['direct-applicant'] === 'Someone else' %}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Why we ask you to provide the victim’s telephone number
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>We need the victim’s telephone number in the event we cannot reach you via the contact preferences you have provided.</p>
+
+          <p>We will never contact the victim in the first instance. This will only ever be after we’ve tried all of your contact preferences exhaustively.</p>
+
+          <p>We may also use it to contact the victim if they no longer want you to represent them.</p>
+        </div>
+      </details>
+
+
+      {% endif %}
+
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 

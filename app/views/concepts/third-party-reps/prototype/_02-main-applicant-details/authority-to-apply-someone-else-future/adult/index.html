@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-You need to send proof of the other person's legal authority for the victim - {{ serviceName }} - GOV.UK
+You must send us details of the person with legal authority for the victim - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -24,15 +24,17 @@ You need to send proof of the other person's legal authority for the victim - {{
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">You need to send proof of the other person's legal authority for the victim</h1>
+      <h1 class="govuk-heading-xl">You must send us details of the person with legal authority for the victim</h1>
 
-      <p class="govuk-body">Content TBC.</p>
+      <p class="govuk-body">You can submit this application today without providing details about who has legal authority for the victim.</p>
 
+      <p class="govuk-body">However, we will need you to provide these details once you have sent us the application.</p>
 
+      <p class="govuk-body">We'll tell you how to send this at the end of the application.</p>
 
       {{ govukButton({
       text: "Continue",
-      href: "name"
+      href: "/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details"
       }) }}
 
     </form>

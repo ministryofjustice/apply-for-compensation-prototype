@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Main applicant details - {{ serviceName }} - GOV.UK
+The person with legal authority for the victim - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,10 +20,21 @@ Main applicant details - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Main applicant details
+      The person with legal authority for the victim
     </h1>
 
-    <p class="govuk-body">Content TBC</p>
+    <p class="govuk-body">We’re going to ask for details about the person who has legal authority for the victim in this application. This means they can apply on their behalf.</p>
+
+    <p class="govuk-body">This may be:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>power of attorney document you’re named on</li>
+      <li>a court order showing you have legal authority for the victim</li>
+      <li>Social worker</li>
+      <li>Local authority</li>
+    </ul>
+
+    <p class="govuk-body">We ask for the personal and contact details of this person.</p>
 
     <form class="form" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}

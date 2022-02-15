@@ -41,15 +41,19 @@ Enter your address - {{ serviceName }} - GOV.UK
       }
       }) %}
 
-{% if (data['rep-type'] === "Support service")
-   or (data['rep-type'] === "Solicitor")
-   or (data['rep-type'] === "Claims management company")
-   or (data['rep-type'] === "Local authority")
-   %}
+{% if (data['rep-type'] === "Person named on Special Guardianship order") or
+      (data['rep-type'] === "Foster carer") or
+      (data['rep-type'] === "Solicitor") or
+      (data['rep-type'] === "Claims management company") or
+      (data['rep-type'] === "Support services") or
+      (data['rep-type'] === "Local authority")
+    %}
+
+      <!-- Show this to everyone who is entering someone else's details -->
 
       {{ govukInput({
             label: {
-              html: "Organisation"
+              html: "Organisation (optional)"
             },
             id: "main-app-organisation",
             name: "main-app-organisation",
