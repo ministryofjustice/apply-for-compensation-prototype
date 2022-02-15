@@ -3,8 +3,10 @@
 <!-- SET QUESTION CONTEXT -->
   {% if data['haveAuthority'] === 'Yes' %}
     {% set mainAppPhoneNumberQuestion = "Enter your telephone number" %}
+    {% set mainAppPhoneNumberHint = "We may use this to contact you if we need to clarify something in your application (optional)." %}
   {% else %}
     {% set mainAppPhoneNumberQuestion = "Enter their telephone number" %}
+    {% set mainAppPhoneNumberHint = "We will only use this to contact this person in the event we cannot contact you via one of your contact preferences you provide." %}
   {% endif %}
 
 {% block pageTitle %}
@@ -38,7 +40,7 @@
             classes: 'govuk-label--xl'
             },
             hint: {
-              text: "Hint text TBC"
+              text: mainAppPhoneNumberHint
             },
             classes: 'govuk-input--width-20',
             id: "phoneNumber",

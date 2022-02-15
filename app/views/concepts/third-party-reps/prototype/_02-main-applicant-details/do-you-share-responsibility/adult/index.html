@@ -3,10 +3,10 @@
 <!-- SET QUESTION CONTEXT -->
   {% if data['haveAuthority'] === 'Yes' %}
     {% set sharedResponsibilityQuestion = "Do you share legal authority for the victim with another person?" %}
-    {% set sharedResponsibilityHint = "Hint text TBC" %}
+    {% set sharedResponsibilityHint = "Legal authority means you have the right to apply on behalf of the victim. This might be shared with another person who is the power of attorney or another person named on a court order." %}
   {% else %}
     {% set sharedResponsibilityQuestion = "Do they share legal authority for the victim with another person?" %}
-    {% set sharedResponsibilityHint = "Hint text TBC" %}
+    {% set sharedResponsibilityHint = "Legal authority means they have the right to apply on behalf of the victim. This might be shared with another person who is the power of attorney or another person named on a court order." %}
   {% endif %}
 
 {% block pageTitle %}
@@ -72,17 +72,6 @@
       }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
-
-      <details class="govuk-details">
-          <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Help understanding shared legal authority
-              </span>
-          </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body">Content TBC.</p>
-              </div>
-      </details>
 
       {{ govukButton({
             text: "Continue"
