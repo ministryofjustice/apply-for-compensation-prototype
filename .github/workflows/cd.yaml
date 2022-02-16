@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'main'
+      - 'master'
 
 env:
   ECR_NAME: ${{ secrets.ECR_NAME }}
