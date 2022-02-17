@@ -24,4 +24,6 @@ RUN chown -R appuser:appgroup /app
 
 USER 1017
 
+RUN chmod +x start.sh
+
 CMD ["./start.sh"]
