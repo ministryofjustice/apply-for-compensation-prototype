@@ -34,15 +34,11 @@ Enter your address - {{ serviceName }} - GOV.UK
       }
       }) %}
 
-{% if (data['rep-type'] === "Support service")
-   or (data['rep-type'] === "Solicitor")
-   or (data['rep-type'] === "Claims management company")
-   or (data['rep-type'] === "Local authority")
-   %}
+{% if (data['rep-type'] !== "Friend or relative") %}
 
       {{ govukInput({
             label: {
-              html: "Organisation"
+              html: "Organisation (if applicable)"
             },
             id: "main-app-organisation",
             name: "main-app-organisation",

@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 
+<!-- SET QUESTION CONTEXT -->
+  {% if data['direct-applicant'] === 'Myself' %}
+    {% set victimDetailsHeading = "Your details" %}
+  {% else %}
+    {% set victimDetailsHeading = "The victim's details" %}
+  {% endif %}
+
+
 {% block pageTitle %}
-The victim's details - {{ serviceName }} - GOV.UK
+{{ victimDetailsHeading }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,13 +29,27 @@ The victim's details - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      The victim's details
+      {{ victimDetailsHeading }}
     </h1>
 
+    {% if data['direct-applicant'] === 'Myself' %}
+
+      <p class="govuk-body">We’re going to ask for some details about you.</p>
+
+      <p class="govuk-body">We’ll use these to contact you about this application.</p>
+
+
+    {% else %}
 
     <p class="govuk-body">We’re going to ask for some details about the victim.</p>
 
     <p class="govuk-body">We’ll use these to get a report about the crime from the police.</p>
+
+
+    {% endif %}
+
+
+
 
     <form class="form" method="post">
       {{ govukButton({

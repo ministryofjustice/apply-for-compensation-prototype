@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 
     var haveOtherName = req.session.data['haveOtherName'];
     if (haveOtherName === 'No')  {
-      return res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/address')
+      return res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth')
     }
     res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/name-other')
 

@@ -6,9 +6,9 @@ module.exports = function (router, content) {
 
     var incapableOwnAffairs = req.session.data['incapableOwnAffairs'];
     if (incapableOwnAffairs === 'Yes')  {
-      return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/adult')
+      return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details')
     }
-    res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/phone-number')
+    res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details')
 
   })
 

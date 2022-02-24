@@ -9,7 +9,7 @@ module.exports = function (router, content) {
     if (directApplicant === 'Myself') {
       res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
     } else {
-      res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details')
+      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs')
     }
 
 

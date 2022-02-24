@@ -1,14 +1,22 @@
 {% extends "layout.html" %}
 
 <!-- SET QUESTION CONTEXT -->
-  {% if data['haveAuthority'] === 'Yes' %}
-    {% set mainAppNameQuestion = "Enter your name" %}
-  {% else %}
-    {% set mainAppNameQuestion = "Enter their name" %}
-  {% endif %}
+
+{% if data['haveAuthority'] === 'Yes' %}
+  {% set mainAppNameQuestion = "Enter your name" %}
+{% endif %}
+
+{% if (data['haveAuthority'] === 'No') and (data['over18'] === 'No') %}
+  {% set mainAppNameQuestion = "Enter the name of the person with parental responsibility for the victim" %}
+{% endif %}
+
+{% if (data['haveAuthority'] === 'No') and (data['over18'] === 'Yes') %}
+  {% set mainAppNameQuestion = "Enter the name of the person with legal authority for the victim" %}
+{% endif %}
+
 
 {% block pageTitle %}
-Enter your name - {{ serviceName }} - GOV.UK
+{{ mainAppNameQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}

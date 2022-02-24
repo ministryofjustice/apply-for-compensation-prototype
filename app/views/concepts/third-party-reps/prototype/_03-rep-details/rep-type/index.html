@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+In what capacity are you representing the victim? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios",
+            "idPrefix": "rep-type",
+            name: "rep-type",
+            "fieldset": {
+            "legend": {
+            text: "What type of rep are you?",
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
+            }
+            },
+            hint: {
+              text: ""
+            },
+            "items": [
+            {
+              "value": "Solicitor",
+              text: "Solicitor",
+              checked: checked("rep-type", "Solicitor")
+            },
+            {
+              "value": "Claims management company",
+              text: "Claims management company",
+              checked: checked("rep-type", "Claims management company")
+            },
+            {
+              "value": "Support organisation",
+              text: "Support organisation",
+              checked: checked("rep-type", "Support organisation")
+            },
+            {
+              "value": "Social services",
+              text: "Social services",
+              checked: checked("rep-type", "Social services")
+            },
+            {
+              "value": "Friend or relative",
+              text: "Friend or relative",
+              checked: checked("rep-type", "Friend or relative")
+            },
+            {
+              "value": "Foster carer",
+              text: "Foster carer",
+              checked: checked("rep-type", "Foster carer")
+            }
+            ]
+            }) }}
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Who has authority to apply for the victim?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You need to prove you have parental responsibility or legal authority for the victim to apply.</p>
+
+                <p>To prove this, you'll need relevant documents your name is on, such as:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the victim’s full birth certificate
+                  adoption documents</li>
+                  <li>a parental responsibility agreement</li>
+                  <li>a court order showing you have parental responsibility, which means you have legal authority, for the victim</li>
+                </ul>
+
+                  <p>We need proof so we know you have the right to apply on the victim’s behalf. We'll tell you how to send this at the end of the application.</p>
+
+                  <p>If you’re still unsure about parental responsibility and what it means, you can find out more <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="_new">on the UK Government website (opens in new tab)</a>.</p>
+
+              </div>
+            </details>
+
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

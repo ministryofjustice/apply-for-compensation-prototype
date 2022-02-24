@@ -1,14 +1,7 @@
 {% extends "layout.html" %}
 
-<!-- SET QUESTION CONTEXT -->
-  {% if data['direct-applicant'] === 'Myself' %}
-    {% set nameOtherQuestion = "Have you ever been known by any other names?" %}
-  {% else %}
-    {% set nameOtherQuestion = "Have they ever been known by any other names?" %}
-  {% endif %}
-
 {% block pageTitle %}
-{{ nameOtherQuestion }} - {{ serviceName }} - GOV.UK
+Are you the victim's parent? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,12 +27,12 @@
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            "idPrefix": "haveOtherName",
-            name: "haveOtherName",
-            "value": "haveOtherName",
+            "idPrefix": "parent",
+            name: "parent",
+            "value": "parent",
             "fieldset": {
               "legend": {
-                text: nameOtherQuestion,
+                text: "Are you the victim's parent?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -48,12 +41,12 @@
               {
                 "value": "Yes",
                 text: "Yes",
-                checked: checked("haveOtherName", "Yes")
+                checked: checked("parent", "Yes")
               },
               {
                 "value": "No",
                 text: "No",
-                checked: checked("haveOtherName", "No")
+                checked: checked("parent", "No")
               }
             ]
           }) }}

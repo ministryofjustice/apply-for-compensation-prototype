@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   //
   router.post('/concepts/third-party-reps/prototype/_01-victim-details/name-other', function (req, res) {
 
-      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/address')
+      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth')
 
   })
 

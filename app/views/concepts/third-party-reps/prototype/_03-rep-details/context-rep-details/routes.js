@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   // Variable: criminalConvictions
 
   router.post('/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details', function (req, res) {
-    res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/confirmation-options')
+    res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/rep-type')
   })
 
   // Pass the question in to the page

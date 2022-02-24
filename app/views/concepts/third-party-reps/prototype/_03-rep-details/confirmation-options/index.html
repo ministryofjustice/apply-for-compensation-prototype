@@ -26,8 +26,8 @@ How should we tell you we've got your application? - {{ serviceName }} - GOV.UK
 
       {% set emailHtml %}
       {{ govukInput({
-        id: "emailAddress",
-        name: "emailAddress",
+        id: "repEmailAddress",
+        name: "repEmailAddress",
         type: "email",
         classes: "govuk-!-width-one-half",
         label: {
@@ -41,8 +41,8 @@ How should we tell you we've got your application? - {{ serviceName }} - GOV.UK
 
       {% set textHtml %}
       {{ govukInput({
-        id: "phoneNumber",
-        name: "phoneNumber",
+        id: "repPhoneNumber",
+        name: "repPhoneNumber",
         type: "tel",
         classes: "govuk-!-width-one-third",
         label: {

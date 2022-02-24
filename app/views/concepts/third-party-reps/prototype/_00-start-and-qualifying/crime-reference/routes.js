@@ -8,12 +8,12 @@ module.exports = function (router, content) {
     if (haveCrimeReference === 'No') {
        return res.redirect('/concepts/third-party-reps/prototype/_00-start-and-qualifying/crime-reference/no-crime-reference')
     } else {
-      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/context-victim-details')
+      res.redirect('/concepts/third-party-reps/prototype/_00-start-and-qualifying/who-is-making-the-application')
     }
   })
 
   router.post('/concepts/third-party-reps/prototype/_00-start-and-qualifying/crime-reference/no-crime-reference', function (req, res) {
-    res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/who-is-making-the-application')
+    res.redirect('/concepts/third-party-reps/prototype/_00-start-and-qualifying/who-is-making-the-application')
   })
 
   // Pass the question in to the page

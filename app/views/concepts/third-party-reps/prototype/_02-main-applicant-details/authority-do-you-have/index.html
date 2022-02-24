@@ -1,14 +1,16 @@
 {% extends "layout.html" %}
 
+
 <!-- SET QUESTION CONTEXT -->
-  {% if data['direct-applicant'] === 'Myself' %}
-    {% set nameOtherQuestion = "Have you ever been known by any other names?" %}
+  {% if data['over18'] === 'No' %}
+    {% set doYouHaveAuthorityQuestion = "Do you have parental responsibility for them?" %}
   {% else %}
-    {% set nameOtherQuestion = "Have they ever been known by any other names?" %}
+    {% set doYouHaveAuthorityQuestion = "Do you have legal authority for the victim?" %}
   {% endif %}
 
+
 {% block pageTitle %}
-{{ nameOtherQuestion }} - {{ serviceName }} - GOV.UK
+{{ doYouHaveAuthorityQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,12 +36,12 @@
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            "idPrefix": "haveOtherName",
-            name: "haveOtherName",
-            "value": "haveOtherName",
+            "idPrefix": "haveAuthority",
+            name: "haveAuthority",
+            "value": "haveAuthority",
             "fieldset": {
               "legend": {
-                text: nameOtherQuestion,
+                text: doYouHaveAuthorityQuestion,
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -48,12 +50,12 @@
               {
                 "value": "Yes",
                 text: "Yes",
-                checked: checked("haveOtherName", "Yes")
+                checked: checked("haveAuthority", "Yes")
               },
               {
                 "value": "No",
                 text: "No",
-                checked: checked("haveOtherName", "No")
+                checked: checked("haveAuthority", "No")
               }
             ]
           }) }}
