@@ -2,7 +2,7 @@
 
 <!-- SET QUESTION CONTEXT -->
 
-{% if data['haveAuthority'] === 'Yes' %}
+{% if (data['haveAuthority'] === 'Yes') or (data['parent'] === 'Yes') %}
   {% set mainAppNameQuestion = "Enter your name" %}
 {% endif %}
 

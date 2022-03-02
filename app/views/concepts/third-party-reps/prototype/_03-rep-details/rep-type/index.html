@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-In what capacity are you representing the victim? - {{ serviceName }} - GOV.UK
+In what capacity are you applying on behalf of the victim? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,13 +24,13 @@ In what capacity are you representing the victim? - {{ serviceName }} - GOV.UK
             name: "rep-type",
             "fieldset": {
             "legend": {
-            text: "What type of rep are you?",
+            text: "In what capacity are you applying on behalf of the victim?",
             isPageHeading: true,
             classes: 'govuk-fieldset__legend--xl'
             }
             },
             hint: {
-              text: ""
+              text: "This tells us who you are in relation to the victim."
             },
             "items": [
             {
@@ -49,9 +49,9 @@ In what capacity are you representing the victim? - {{ serviceName }} - GOV.UK
               checked: checked("rep-type", "Support organisation")
             },
             {
-              "value": "Social services",
-              text: "Social services",
-              checked: checked("rep-type", "Social services")
+              "value": "Social Services",
+              text: "Social Services",
+              checked: checked("rep-type", "Social Services")
             },
             {
               "value": "Friend or relative",
@@ -65,31 +65,6 @@ In what capacity are you representing the victim? - {{ serviceName }} - GOV.UK
             }
             ]
             }) }}
-
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Who has authority to apply for the victim?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p>You need to prove you have parental responsibility or legal authority for the victim to apply.</p>
-
-                <p>To prove this, you'll need relevant documents your name is on, such as:</p>
-
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>the victim’s full birth certificate
-                  adoption documents</li>
-                  <li>a parental responsibility agreement</li>
-                  <li>a court order showing you have parental responsibility, which means you have legal authority, for the victim</li>
-                </ul>
-
-                  <p>We need proof so we know you have the right to apply on the victim’s behalf. We'll tell you how to send this at the end of the application.</p>
-
-                  <p>If you’re still unsure about parental responsibility and what it means, you can find out more <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="_new">on the UK Government website (opens in new tab)</a>.</p>
-
-              </div>
-            </details>
 
 
             {% from "govuk/components/button/macro.njk" import govukButton %}

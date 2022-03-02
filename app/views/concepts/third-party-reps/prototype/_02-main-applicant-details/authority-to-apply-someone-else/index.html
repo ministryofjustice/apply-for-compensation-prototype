@@ -4,7 +4,7 @@
   {% if data['over18'] === 'Yes' %}
     {% set authoritySomeoneElseHeading = "You need to send proof the person has legal authority to apply for the victim" %}
   {% else %}
-    {% set authoritySomeoneElseHeading = "You need to send proof the person has parental responsibility to apply for the victim" %}
+    {% set authoritySomeoneElseHeading = "You need to send proof of who has parental responsibility for the victim" %}
   {% endif %}
 
 {% block pageTitle %}
@@ -59,7 +59,7 @@
 
         {% else %}
 
-          <p class="govuk-body">We need proof so we know the person has the right to apply on the child’s behalf.</p>
+          <p class="govuk-body">We need proof so we know they have the right to apply on the child’s behalf.</p>
 
           <p class="govuk-body">This proof can be:</p>
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Are they incapable of handling their own affairs? - {{ serviceName }} - GOV.UK
+Are they unable to handle their affairs? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,10 +32,13 @@ Are they incapable of handling their own affairs? - {{ serviceName }} - GOV.UK
             "value": "incapableOwnAffairs",
             "fieldset": {
               "legend": {
-                text: "Are they incapable of handling their own affairs?",
+                text: "Are they unable to handle their affairs?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
+            },
+            "hint": {
+              text: 'This means they lack the capacity to make decisions for themselves when they’re required to do so.'
             },
             "items": [
               {

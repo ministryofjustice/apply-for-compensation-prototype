@@ -1,24 +1,24 @@
 {% extends "layout.html" %}
 
 <!-- SET QUESTION CONTEXT -->
-  {% if (data['over18'] === 'Yes') and (data['haveAuthority'] === 'Yes') %}
+  {% if (data['over18'] === 'Yes') and ((data['haveAuthority'] === 'Yes') or (data['parent'] === 'Yes')) %}
     {% set relationshipVictimQuestion = "What is your relationship to the victim?" %}
-    {% set relationshipVictimHint = "For example, you’re their uncle, husband, friend, etc." %}
+    {% set relationshipVictimHint = "" %}
   {% endif %}
 
-  {% if (data['over18'] === 'No') and (data['haveAuthority'] === 'Yes') %}
-    {% set relationshipVictimQuestion = "What is your relationship to the victim?" %}
+  {% if (data['over18'] === 'No') and ((data['haveAuthority'] === 'Yes') or (data['parent'] === 'Yes')) %}
+    {% set relationshipVictimQuestion = "What is your relationship to the child?" %}
     {% set relationshipVictimHint = "For example, you’re their mother, father, grandparent etc" %}
   {% endif %}
 
   {% if (data['over18'] === 'Yes') and (data['haveAuthority'] === 'No') %}
     {% set relationshipVictimQuestion = "What is this person's relationship to the victim?" %}
-    {% set relationshipVictimHint = "For example, they are the victim's mother, father, grandparent etc" %}
+    {% set relationshipVictimHint = "" %}
   {% endif %}
 
   {% if (data['over18'] === 'No') and (data['haveAuthority'] === 'No') %}
-    {% set relationshipVictimQuestion = "What is this person's relationship to the victim?" %}
-    {% set relationshipVictimHint = "For example, they are the victim's mother, father, grandparent etc" %}
+    {% set relationshipVictimQuestion = "What is this person's relationship to the child?" %}
+    {% set relationshipVictimHint = "For example, they are the child's mother, father, grandparent etc" %}
   {% endif %}
 
 

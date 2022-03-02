@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 <!-- SET QUESTION CONTEXT -->
-  {% if data['haveAuthority'] === 'Yes' %}
+  {% if (data['haveAuthority'] === 'Yes') or (data['parent'] === 'Yes') %}
     {% set mainAppEmailAddressQuestion = "Enter your email address" %}
     {% set mainAppEmailAddressHint = "We may use this to contact you if we need to clarify something in your application (optional)." %}
   {% else %}
