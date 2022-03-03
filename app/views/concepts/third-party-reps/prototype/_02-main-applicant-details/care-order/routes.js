@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order', function (req, res) {
 
   var careOrder = req.session.data['care-order'];
-  var repType = req.session.data['rep-type'];
+  var parent = req.session.data['parent'];
   var haveAuthority = req.session.data['haveAuthority'];
 
   // if there is a care order, ask for details of it
@@ -14,7 +14,7 @@ router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/car
     res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order-details')
   } else {
     // if the person applying has authority or is the victim's parent, skip the rep details section
-    if (repType === 'Parent' || haveAuthority === 'Yes') {
+    if (parent === 'Yes' || haveAuthority === 'Yes') {
       res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
     } else {
       // otherwise, show the rep details section

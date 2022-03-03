@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 <!-- SET QUESTION CONTEXT -->
-  {% if data['haveAuthority'] === 'Yes' %}
+  {% if ((data['haveAuthority'] === 'Yes') or (data['parent'] === 'Yes')) %}
     {% set sharedResponsibilityQuestion = "Do you share parental responsibility for the victim with another person?" %}
     {% set sharedResponsibilityHint = "Parental responsibility means you have legal authority for the victim. This might be shared with another person who is the victim’s birth, step or adoptive parent. Or, someone named on a special guardianship order." %}
   {% else %}
