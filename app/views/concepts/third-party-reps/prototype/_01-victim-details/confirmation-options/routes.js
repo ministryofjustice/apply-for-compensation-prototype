@@ -13,7 +13,7 @@ module.exports = function (router, content) {
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
       return res.redirect('/application/_1-adult/_10-end/check-your-answers-page')
     } else if ((confirmationPreference === 'Email') || (confirmationPreference === 'Text')) {
-      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/name')
+      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/name/you')
     } else {
       res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/confirmation-options/transition')
     }

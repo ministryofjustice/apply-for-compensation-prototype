@@ -8,7 +8,7 @@ module.exports = function (router, content) {
     var haveAuthoritySomebodyElse = req.session.data['haveAuthoritySomebodyElse'];
 
     if (haveAuthoritySomebodyElse === 'Yes')  {
-      return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-someone-else')
+      return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-someone-else/over18')
     } else {
       res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-someone-else-future')
     }

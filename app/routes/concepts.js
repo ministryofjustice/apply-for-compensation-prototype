@@ -295,41 +295,60 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
     require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/fatal-application/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/incident-reported/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/who-is-making-the-application/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/over-18/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/british-citizen/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/over-18/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/over-18/they/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/british-citizen/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/british-citizen/they/routes')(router, viewContent);
 
   // 01 - victim details
     require('../views/concepts/third-party-reps/prototype/_01-victim-details/confirmation-options/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/context-victim-details/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-have-other/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-other/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/context-victim-details/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/context-victim-details/they/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/they/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name/they/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-have-other/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-have-other/they/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-other/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/name-other/they/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/address/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/address/they/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_01-victim-details/phone-number/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/phone-number/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_01-victim-details/phone-number/they/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_01-victim-details/email-address/routes')(router, viewContent);
 
   // 02 - main applicant details
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/over18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/under18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/over18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/under18/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-does-someone-else-have/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/confirmation-options/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/name/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/name/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/name/under18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/name/over18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/address/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/address/they/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/email-address/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/they/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order-details/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/are-you-their-parent/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/what-is-relationship/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/what-is-relationship/they/over18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/what-is-relationship/they/under18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/what-is-relationship/you/over18/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/what-is-relationship/you/under18/routes')(router, viewContent);
 
   // 03 - rep details
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/rep-type/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/org/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/non-org/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/company-reg-no/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/confirmation-options/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/email-address/routes')(router, viewContent);

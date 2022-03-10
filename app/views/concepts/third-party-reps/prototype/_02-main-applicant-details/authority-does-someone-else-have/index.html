@@ -1,13 +1,6 @@
 {% extends "layout.html" %}
 
-
-<!-- SET QUESTION CONTEXT -->
-  {% if data['over18'] === 'Yes' %}
-    {% set doesSomeoneElseHaveAuthorityQuestion = "Does someone else have legal authority for them?" %}
-  {% else %}
-    {% set doesSomeoneElseHaveAuthorityQuestion = "Does someone else have parental responsibility for them?" %}
-  {% endif %}
-
+{% set doesSomeoneElseHaveAuthorityQuestion = "Does someone else have legal authority for them?" %}
 
 {% block pageTitle %}
 {{ doesSomeoneElseHaveAuthorityQuestion }} - {{ serviceName }} - GOV.UK

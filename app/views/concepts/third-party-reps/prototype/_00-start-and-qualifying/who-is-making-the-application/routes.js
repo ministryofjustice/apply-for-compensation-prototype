@@ -4,7 +4,14 @@ module.exports = function (router, content) {
   // Variable: direct-applicant
 
   router.post('/concepts/third-party-reps/prototype/_00-start-and-qualifying/who-is-making-the-application', function (req, res) {
-      res.redirect('/concepts/third-party-reps/prototype/_00-start-and-qualifying/over-18')
+
+    var directApplicant = req.session.data['direct-applicant']
+
+    if (directApplicant === 'Myself') {
+      res.redirect('/concepts/third-party-reps/prototype/_00-start-and-qualifying/over-18/you')
+    } else {
+      res.redirect('/concepts/third-party-reps/prototype/_00-start-and-qualifying/over-18/they')
+    }
   })
 
   // Pass the question in to the page

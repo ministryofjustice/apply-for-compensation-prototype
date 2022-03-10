@@ -8,7 +8,7 @@ module.exports = function (router, content) {
     if (parent === 'Yes')  {
       return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you')
     }
-    res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have')
+    res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/under18')
 
   })
 
