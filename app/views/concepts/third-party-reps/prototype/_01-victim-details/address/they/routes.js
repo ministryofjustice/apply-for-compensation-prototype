@@ -6,9 +6,12 @@ module.exports = function (router, content) {
 
     var confirmationPreference = req.session.data['confirmationPreference']
     var over18 = req.session.data['over18']
+    var incapableOwnAffairs = req.session.data['incapableOwnAffairs'];
 
     if (over18 === 'No') {
       res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/under18')
+    } else if (incapableOwnAffairs === 'Yes') {
+      res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/context-main-applicant-details/over18')
     } else {
       res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/phone-number/they')
     }

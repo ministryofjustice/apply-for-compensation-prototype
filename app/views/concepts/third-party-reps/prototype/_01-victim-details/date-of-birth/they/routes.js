@@ -23,10 +23,10 @@ module.exports = function (router, content) {
         res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/they/transition')
         // @todo we need to build a page that explains to users that they can only use this service if they are over 18
       } else {
-        res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/address/they')
+        res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs')
       }
     } else {
-      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/address/they')
+      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs')
     }
 
 
