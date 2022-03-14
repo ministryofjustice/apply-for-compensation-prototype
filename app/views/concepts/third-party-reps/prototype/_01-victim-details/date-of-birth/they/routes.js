@@ -6,6 +6,7 @@ module.exports = function (router, content) {
   router.post('/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/they', function (req, res) {
 
     var directApplicant = req.session.data['direct-applicant']
+    var over18 = req.session.data['over18']
 
     if (directApplicant === 'Myself') {
       // getting the inputs to be able to calculate if the user is a minor or not on the day of application
@@ -22,11 +23,11 @@ module.exports = function (router, content) {
       if(ageInYears < 18) { // it's a minor
         res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/date-of-birth/they/transition')
         // @todo we need to build a page that explains to users that they can only use this service if they are over 18
-      } else {
+      } else if (over18 === 'Yes') {
         res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs')
       }
     } else {
-      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs')
+      res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/address/they')
     }
 
 
