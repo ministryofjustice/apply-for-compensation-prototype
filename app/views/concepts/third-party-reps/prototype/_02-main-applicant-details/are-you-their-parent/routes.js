@@ -6,7 +6,7 @@ module.exports = function (router, content) {
 
     var parent = req.session.data['parent'];
     if (parent === 'Yes')  {
-      return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you')
+      return res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-to-apply-you/under18')
     }
     res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/authority-do-you-have/under18')
 
