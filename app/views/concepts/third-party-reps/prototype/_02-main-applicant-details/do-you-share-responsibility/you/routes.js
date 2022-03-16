@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
     // if user says they share responsibility, ask who with
     if (sharedResponsibility === 'Yes') {
-      res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with')
+      res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/you')
     } else {
       res.redirect('/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order')
     }

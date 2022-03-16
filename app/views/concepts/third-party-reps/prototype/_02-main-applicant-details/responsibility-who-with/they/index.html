@@ -30,7 +30,7 @@ What is this person's full name? - {{ serviceName }} - GOV.UK
             classes: 'govuk-label--xl'
             },
             hint: {
-            text: "We will never contact this person without consent. This is unless there is an exceptional situation where we have to."
+            text: "We will not contact this person without your consent. Unless there is an exceptional situation where we have to."
               },
             classes: 'govuk-input--width-20',
             id: "responsibilityWhoWith",
@@ -41,22 +41,6 @@ What is this person's full name? - {{ serviceName }} - GOV.UK
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <!-- SET QUESTION CONTEXT -->
-        {% if data['haveAuthority'] === 'Yes' %}
-
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  I share parental responsibility with more than one person
-                </span>
-            </summary>
-                <div class="govuk-details__text">
-                  <p class="govuk-body">You can add any additional names of shared parental rights holders at the end of this application.</p>
-                  <p class="govuk-body">Find out if you share parental responsibility with another person <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="new">on the UK Government website (opens in new tab)</a>.</p>
-                </div>
-          </details>
-
-        {% else %}
 
         <details class="govuk-details">
           <summary class="govuk-details__summary">
@@ -69,8 +53,6 @@ What is this person's full name? - {{ serviceName }} - GOV.UK
                 <p class="govuk-body">Find out if parental responsibilities are shared with another person <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="new">on the UK Government website (opens in new tab)</a>.</p>
               </div>
         </details>
-
-        {% endif %}
 
 
 

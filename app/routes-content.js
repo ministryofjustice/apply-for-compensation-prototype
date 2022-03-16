@@ -318,7 +318,7 @@ module.exports = {
     smsDoYouHaveEmailQuestionHint: "We'll send an email to confirm we've got your application.",
     smsConfirmationPreferenceQuestion: "How should we tell you we've got your application?",
     smsConfirmationPreferenceQuestionHint: "We'll send a text message to confirm we've got your application.",
-    smsConfirmationTransitionHeading:"You must apply by telephone if you do not have an email address or UK mobile phone",
+    smsConfirmationTransitionHeading:"You must apply by telephone if you do not have an email address or UK mobile phone number",
     smsAddressQuestion: 'Enter your address',
     smsEmailQuestion: 'Enter your email address',
     smsTelephoneQuestion: 'Enter your telephone number',

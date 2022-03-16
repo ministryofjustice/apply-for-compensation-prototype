@@ -336,7 +336,8 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/phone-number/they/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/you/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/do-you-share-responsibility/they/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/you/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/they/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/care-order-details/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_02-main-applicant-details/are-you-their-parent/routes')(router, viewContent);

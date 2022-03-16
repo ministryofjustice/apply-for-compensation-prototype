@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Sending us details of the person with legal authority for the victim - {{ serviceName }} - GOV.UK
+Sending us details of the person with legal authority to act on behalf of the victim - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 
@@ -24,13 +24,22 @@ Sending us details of the person with legal authority for the victim - {{ servic
 
     <form class="form" method="post">
 
-      <h1 class="govuk-heading-xl">Sending us details of the person with legal authority for the victim</h1>
+      <h1 class="govuk-heading-xl">
+        Sending us details of the person with legal authority to act on behalf of the victim
+      </h1>
 
-      <p class="govuk-body">You can submit this application today without providing details about who has legal authority for the victim.</p>
+      <p class="govuk-body">We need the details of the person with legal authority to act on behalf of the victim to fully process the application. However, we understand this might not be confirmed as yet.</p>
 
-      <p class="govuk-body">However, we will need you to provide these details once you have sent us the application.</p>
+      <p class="govuk-body">You can still submit this application today without providing these details. And then send this on to us at a later date.</p>
 
-      <p class="govuk-body">You can make a copy of the documentation and email or post this to us. We'll tell you more about this at the end of the application.</p>
+      <p class="govuk-body">This proof can be a certified copy of a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>power of attorney document you’re named on</li>
+        <li>court order showing you have legal authority to act on behalf of the victim</li>
+      </ul>
+
+      <p class="govuk-body">Any documents you send must be certified. We <strong>will not accept photocopies</strong> of the document. We'll tell you more about this at the end of the application.</p>
 
       {{ govukButton({
       text: "Continue",
