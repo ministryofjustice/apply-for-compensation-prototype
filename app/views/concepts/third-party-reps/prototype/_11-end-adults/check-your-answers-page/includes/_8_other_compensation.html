@@ -1,0 +1,149 @@
+
+<h2 class="govuk-heading-l">
+  Other compensation
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <!-- Previously applied question --->
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Have they applied to us before?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['previous-applications'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_09-other-comp-adults/previous-applications">
+        Change<span class="govuk-visually-hidden"> Have they applied to us before? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['previous-applications'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ previousReferenceHint }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['previous-reference'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_09-other-comp-adults/previous-applications">
+        Change<span class="govuk-visually-hidden"> {{ previousReferenceHint }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <!-- Other compensation question --->
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Have they applied for or received any other form of compensation?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['other-compensation'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_09-other-comp-adults/other-compensation">
+      Change<span class="govuk-visually-hidden"> Have they applied for or received any other form of compensation?</span>
+    </a>
+  </dd>
+</div>
+
+<!-- Other compensation question - NO - Why not? --->
+
+{% if data['other-compensation'] === 'No' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Why not?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-no-reason'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_09-other-comp-adults/other-compensation-why-not">
+      Change<span class="govuk-visually-hidden"> Why not?</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['other-compensation'] === 'Yes' %}
+
+<!-- Who have you applied for other compensation from? --->
+
+{% if data['other-compensation'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Who have they applied to or received compensation from?
+
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-who'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_09-other-comp-adults/other-compensation-provider">
+      Change<span class="govuk-visually-hidden"> Who have they applied to or received compensation from?</span>
+    </a>
+  </dd>
+</div>
+
+<!-- Have they made a decision? --->
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Has the organisation made a decision about their claim?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-decision-answer'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_09-other-comp-adults/other-compensation-decision">
+      Change<span class="govuk-visually-hidden"> Has the organisation made a decision about their claim?</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+<!-- How much? --->
+
+{% if data['comp-decision-answer'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    How much compensation were they awarded?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-how-much'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_09-other-comp-adults/other-compensation-amount">
+      Change<span class="govuk-visually-hidden"> How much compensation were they awarded?c</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+<!-- When will they make a decision? --->
+
+{% if data['comp-decision-answer'] === 'No' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    When will they find out if they've been awarded compensation?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['comp-when'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_09-other-comp-adults/other-compensation-when">
+      Change<span class="govuk-visually-hidden"> When will they find out if they've been awarded compensation?</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% endif %}
+
+</dl>

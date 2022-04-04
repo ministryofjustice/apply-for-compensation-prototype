@@ -3,7 +3,14 @@ module.exports = function (router, content) {
   // File: bridge
 
   router.post('/concepts/third-party-reps/prototype/_03-rep-details/rep-ref-no-question', function (req, res) {
-    return res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
+
+    var over18 = req.session.data['over18']
+
+    if (over18 === 'Yes') {
+      res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-adults/context-incident-details')
+    } else {
+      res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-minors/context-incident-details')
+    }
   })
 
   // Pass the question in to the page

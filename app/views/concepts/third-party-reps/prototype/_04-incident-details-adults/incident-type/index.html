@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "incidentType",
+            name: "incidentType",
+            currentValue: data['incidentType'],
+            fieldset: {
+              legend: {
+                text: "What led to their injuries?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Physical assault",
+                text: "Physical assault",
+                checked: checked("incidentType", "Physical assault")
+              },
+              {
+                "value": "Assault with a weapon",
+                text: "Assault with a weapon",
+                checked: checked("incidentType", "Assault with a weapon")
+              },
+              {
+                "value": "Sexual assault or abuse",
+                text: "Sexual assault or abuse",
+                checked: checked("incidentType", "Sexual assault or abuse")
+              },
+              {
+                "value": "Domestic or family violence",
+                text: "Domestic or family violence",
+                checked: checked("incidentType", "Domestic or family violence")
+              },
+              {
+                "value": "Arson",
+                text: "Arson",
+                checked: checked("incidentType", "Arson")
+              },
+              {
+                "value": "Poisoning",
+                text: "Poisoning",
+                checked: checked("incidentType", "Poisoning")
+              },
+              {
+                "value": "Animal attack",
+                text: "Animal attack",
+                checked: checked("incidentType", "Animal attack")
+              },
+              {
+                "value": "Vehicle attack",
+                text: "Vehicle attack",
+                checked: checked("incidentType", "Vehicle attack")
+              },
+              {
+                "value": "Witnessing an incident",
+                text: "Witnessing an incident",
+                checked: checked("incidentType", "Witnessing an incident")
+              },
+              {
+                "value": "Other",
+                text: "Other",
+                checked: checked("incidentType", "Other")
+              }
+              ]
+          }) }}
+
+          
+          {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

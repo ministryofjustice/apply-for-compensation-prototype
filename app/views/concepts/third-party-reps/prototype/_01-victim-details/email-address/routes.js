@@ -9,7 +9,11 @@ module.exports = function (router, content) {
           req.session.data['emailAddress'] = 'name@domain.com'
         }
 
-        res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
+        if (over18 === 'Yes') {
+          res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-adults/context-incident-details')
+        } else {
+          res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-minors/context-incident-details')
+        }
   })
 
   // Pass the question in to the page

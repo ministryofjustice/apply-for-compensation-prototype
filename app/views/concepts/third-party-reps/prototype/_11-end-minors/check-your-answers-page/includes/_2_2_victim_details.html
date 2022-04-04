@@ -1,0 +1,105 @@
+<h2 class="govuk-heading-l">
+  Victim details
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half ">
+    The child's name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['victim-title'] }}&nbsp;{{ data['victim-first-name'] }}&nbsp;{{ data['victim-last-name'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-victim-details/name">
+      Change<span class="govuk-visually-hidden"> The child's name</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Have they ever been known by any other names?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['haveOtherName'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-victim-details/name-have-other">
+      Change<span class="govuk-visually-hidden"> Have they ever been known by any other names?</span>
+    </a>
+  </dd>
+</div>
+
+{% if data['haveOtherName'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Other names
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['nameOther'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-victim-details/name-other">
+      Change<span class="govuk-visually-hidden"> Other names</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Date of birth
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-victim-details/date-of-birth">
+      Change<span class="govuk-visually-hidden"> Date of birth</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Does the child live at your address?
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['victimLivesWithApplicant'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-victim-details/victim-address">
+      Change<span class="govuk-visually-hidden"> Does the child live at your address?</span>
+    </a>
+  </dd>
+</div>
+
+{% if data['victimLivesWithApplicant'] === 'No' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Child's address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['victim-address-line-1'] }}<br />
+    {% if data['victim-address-line-2'] %}
+    {{ data['victim-address-line-2'] }}<br />
+    {% endif %}
+    {{ data['victim-address-town'] }}<br />
+    {% if data['victim-address-county'] %}
+    {{ data['victim-address-county'] }}<br />
+    {% endif %}
+    {% if data['victim-address-postcode'] %}
+    {{ data['victim-address-postcode'] }}<br />
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="../_2-victim-details/address">
+      Change<span class="govuk-visually-hidden"> Child's address</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+</dl>

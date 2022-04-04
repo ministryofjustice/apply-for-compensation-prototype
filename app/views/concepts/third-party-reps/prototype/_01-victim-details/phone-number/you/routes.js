@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     var directApplicant = req.session.data['direct-applicant']
 
     if (directApplicant === 'Myself') {
-      res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
+      res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details') // SELF-APPLICANTS
     } else {
       res.redirect('/concepts/third-party-reps/prototype/_01-victim-details/incapable-own-affairs')
     }

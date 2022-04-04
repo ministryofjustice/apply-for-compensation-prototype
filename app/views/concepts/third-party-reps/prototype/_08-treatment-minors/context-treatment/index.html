@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextMedicalDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      The child’s treatment
+    </h1>
+
+    <p class="govuk-body">We’re going to ask for some details about their treatment.</p>
+
+    <p class="govuk-body">We’ll use these to understand:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if the child's GP is aware of the child’s injuries</li>
+        <li>who has evidence of their injuries</li>
+    </ul>
+    <p class="govuk-body">We often have to ask their GP or other health service provider for evidence about the child’s injuries and treatment. We will let you know if we need to do this.</p>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

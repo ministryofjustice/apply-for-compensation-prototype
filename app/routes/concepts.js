@@ -358,9 +358,258 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/phone-number/routes')(router, viewContent);
     require('../views/concepts/third-party-reps/prototype/_03-rep-details/rep-ref-no-question/routes')(router, viewContent);
 
-  // 04 - crime details
-    require('../views/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details/routes')(router, viewContent);
-    require('../views/concepts/third-party-reps/prototype/_04-incident-details/end/routes')(router, viewContent);
+  // 04 - incident details (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/application-delay/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/context-incident-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/crime-reference/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/crime-reported-date/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/england-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/incident-date/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/incident-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/incident-type/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/period-of-abuse-end/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/period-of-abuse-start/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/police-force/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/reporting-delay/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/scotland-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/single-or-multiple-incidents/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/somewhere-else/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/wales-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/own-words-question/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-adults/own-words/routes')(router, viewContent);
+
+  // 04 - incident details (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/application-delay/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/context-incident-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/crime-reference/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/crime-reported-date/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/england-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/incident-date/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/incident-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/incident-type/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/period-of-abuse-end/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/period-of-abuse-start/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/police-force/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/reporting-delay/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/scotland-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/single-or-multiple-incidents/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/somewhere-else/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/wales-location/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/own-words-question/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_04-incident-details-minors/own-words/routes')(router, viewContent);
+
+  // 05 - offender details (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_05-offender-adults/contact-with-offender/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-adults/context-contact-with-offender/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-adults/do-you-know-offender-name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-adults/offender-name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-adults/what-is-relationship/routes')(router, viewContent);
+
+  // 05 - offender details (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_05-offender-minors/contact-with-offender/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-minors/context-contact-with-offender/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-minors/do-you-know-offender-name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-minors/offender-name/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_05-offender-minors/what-is-relationship/routes')(router, viewContent);
+
+  // 06 - injury details (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/context-physical-injuries/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/have-physical-injuries/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/infection/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/context-pregnancy/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/pregnancy/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/arm/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/elbow/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/hand/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/wrist/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/arms/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/leg/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/ankle/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/foot/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/hip/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/knee/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/toes/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/legs/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/back/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/chest/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/genitals/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/injured-body-parts/torso/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/context-about-dmi/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/dmi/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-adults/dmi-duration/routes')(router, viewContent);
+
+  // 06 - injury details (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/context-physical-injuries/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/have-physical-injuries/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/infection/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/context-pregnancy/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/pregnancy/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/arm/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/elbow/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/hand/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/wrist/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/arms/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/leg/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/ankle/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/foot/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/hip/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/knee/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/toes/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/legs/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/back/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/chest/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/genitals/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/skin/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/injured-body-parts/torso/tissue/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/context-about-dmi/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/dmi/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_06-injuries-minors/dmi-duration/routes')(router, viewContent);
+
+  // 07 - impact (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/loe-context/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/loe-se-affected-daily-life/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/loe-stopped-working/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/loe-stopped-working-how-long/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/loe-working/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/loe-working-why-not/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-any-other/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-context/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-home-alterations/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-home-care/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-nhs-treatment/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-physical-aids/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-adults/se-special-equipment/routes')(router, viewContent);
+
+  // 07 - impact (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-affected-six-months/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-affected-six-months-future/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-context/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-daily-capacity/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-se-affected-daily-life/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-se-future-capacity/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-stopped-working/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-stopped-working-how-long/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-working/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-working-age/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/loe-working-why-not/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-any-other/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-context/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-home-alterations/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-home-care/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-nhs-treatment/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-physical-aids/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_07-impact-minors/se-special-equipment/routes')(router, viewContent);
+
+  // 08 - treatment (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/treatment-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/finished-treatment/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/dmi-treatment-types/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/context-treatment/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/gp-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/gp-registered/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/gp-visited/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/hospital-visited/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/hospital-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/dentist-visited/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-adults/dentist-details/routes')(router, viewContent);
+
+  // 08 - treatment (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/treatment-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/finished-treatment/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/dmi-treatment-types/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/context-treatment/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/gp-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/gp-registered/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/gp-visited/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/hospital-visited/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/hospital-details/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/dentist-visited/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_08-treatment-minors/dentist-details/routes')(router, viewContent);
+
+  // 09 - other compensation (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/context-prev-compensation/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation-amount/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation-decision/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation-provider/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation-when/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation-why-not/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-adults/previous-applications/routes')(router, viewContent);
+
+  // 09 - other compensation (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/context-prev-compensation/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/other-compensation/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/other-compensation-amount/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/other-compensation-decision/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/other-compensation-provider/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/other-compensation-when/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/other-compensation-why-not/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_09-other-comp-minors/previous-applications/routes')(router, viewContent);
+
+  // 10 - additional info (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_10-additional-info-adults/context-additional-info/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_10-additional-info-adults/additional-info-question/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_10-additional-info-adults/additional-info-details/routes')(router, viewContent);
+
+  // 10 - additional info (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_10-additional-info-minors/context-additional-info/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_10-additional-info-minors/additional-info-question/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_10-additional-info-minors/additional-info-details/routes')(router, viewContent);
+
+  // 11 - end screens (adults via reps)
+    require('../views/concepts/third-party-reps/prototype/_11-end-adults/check-your-answers-page/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_11-end-adults/declaration/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_11-end-adults/declaration-incapable-adult/routes')(router, viewContent);
+
+  // 11 - end screens (minors via reps)
+    require('../views/concepts/third-party-reps/prototype/_11-end-minors/check-your-answers-page/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_11-end-minors/declaration/routes')(router, viewContent);
+    require('../views/concepts/third-party-reps/prototype/_11-end-minors/declaration-under-12/routes')(router, viewContent);
 
 
 

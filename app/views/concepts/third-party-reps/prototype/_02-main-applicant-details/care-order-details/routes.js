@@ -10,7 +10,11 @@ module.exports = function (router, content) {
 
     // if the person applying has authority or is the victim's parent, skip the rep details section
     if (parent === 'Yes' || haveAuthority === 'Yes') {
-      res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
+      if (over18 === 'Yes') {
+        res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-adults/context-incident-details')
+      } else {
+        res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-minors/context-incident-details')
+      }
     } else {
       // otherwise, show the rep details section
       res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details')

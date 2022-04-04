@@ -3,7 +3,7 @@ module.exports = function (router, content) {
   // File: responsibility-who-with/you
   //
   router.post('/concepts/third-party-reps/prototype/_02-main-applicant-details/responsibility-who-with/you', function (req, res) {
-    res.redirect('/concepts/third-party-reps/prototype/_04-incident-details/context-incident-details')
+    res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-minors/context-incident-details')
   })
 
   // Pass the question in to the page

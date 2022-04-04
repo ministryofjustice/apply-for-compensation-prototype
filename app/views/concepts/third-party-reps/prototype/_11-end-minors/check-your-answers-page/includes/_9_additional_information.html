@@ -1,0 +1,38 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  Additional information
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Would they like to add any information to their claim?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['applicationAdditionalInfoQ'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_11-additional-info-minors/additional-info-question">
+        Change<span class="govuk-visually-hidden">Would they like to add any information to their claim? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['applicationAdditionalInfoQ'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Additional information
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['applicationAdditionalInfo'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_11-additional-info-minors/additional-info-details">
+        Change<span class="govuk-visually-hidden"> additional information</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+</dl>
