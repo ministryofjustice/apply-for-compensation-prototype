@@ -30,7 +30,7 @@ What would you like to do? - {{ serviceName }} - GOV.UK
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            classes: "govuk-radios--inline",
+            classes: "govuk-radios--stacked",
             "idPrefix": "existingOrNew",
             name: "existingOrNew",
             currentValue: data['existingOrNew'],
