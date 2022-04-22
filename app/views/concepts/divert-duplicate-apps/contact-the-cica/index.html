@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact the CICA
+      </h1>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">Use this form to check on an existing claim or find out more about what the CICA does.</p>
+
+    <p class="govuk-body">To complain about how the CICA has handled your claim, use our separate <a href="https://complain-to-the-cica.form.service.justice.gov.uk/">complaints form</a>.</p>
+
+
+      <h2 class="govuk-heading-l">
+        Before you start
+      </h2>
+
+      <p class="govuk-body">You may need to enter some personal information including your date of birth and address. If your enquiry relates to an existing application we may need this to confirm your identity before we can respond to your enquiry. You can read more about how we protect this information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice">privacy notice</a>.</p>
+
+      <p class="govuk-body">If you prefer not to provide this information, there are other ways to get in touch:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://claim-criminal-injuries-compensation.service.justice.gov.uk/start-chat">Live chat</a></li>
+        <li>Telephone: 0300 003 3601</li>
+        <li>From outside the UK: +44 20 3684 2517</li>
+        <li><a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601</li>
+        <li><a href="Find out about call charges">Find out about call charges</a></li>
+      </ul>
+
+      <p class="govuk-body">Our phone lines and live chat are open:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Monday, 8:30am to 5pm</li>
+        <li>Tuesday, 8:30am to 5pm</li>
+        <li>Wednesday, 8:30am to 3pm</li>
+        <li>Thursday, 8:30am to 5pm</li>
+        <li>Friday, 8:30am to 5pm</li>
+      </ul>
+
+      <form class="form" method="post">
+        <div class="govuk-button-group">
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Start",
+              isStartButton: true
+            }) }}
+
+            <!-- <p class="govuk-body">
+              <a href="#">
+                  Resume a claim
+              </a>
+            <p> -->
+        </div>
+      </form>
+
+  </div>
+</main>
+
+{% endblock %}
