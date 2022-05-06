@@ -32,56 +32,24 @@ Error - {{ whyDelayQuestion }} - {{ serviceName }} - GOV.UK
               ]
             }) }}
 
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-
-      {{ govukCheckboxes({
-            idPrefix: "applicationDelay",
-            name: "applicationDelay",
-            currentValue: data['applicationDelay'],
-            fieldset: {
-              legend: {
-                text: whyDelayQuestion,
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            hint: {
-              text: "Select all options that apply to you."
-            },
-            items: [
-            {
-              value: "I was under 18",
-              text: "I was under 18"
-            },
-            {
-              value: "I was advised to wait",
-              text: "I was advised to wait"
-            },
-            {
-              value: "Medical reasons",
-              text: "Medical reasons"
-            },
-            {
-              value: "Other reasons",
-              text: "Other reasons"
-            }
-            ]
-          }) }}
-
           {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-            {{ govukTextarea({
-                  name: "delay-application",
-                  id: "delay-application",
-                  currentValue: data['delay-application'],
-                  label: {
-                    text: delayApplyExplanation },
-                    errorMessage: {
-                    text: whyDelayErrorExplain
-                  },
-                    classes: "govuk-label--l"
-
-                }) }}
+          {{ govukTextarea({
+                name: "delay-application",
+                id: "delay-application",
+                currentValue: data['delay-application'],
+                value: data['delay-application'],
+                hint: {
+                  text: "You must send your application within 2 years of the crime happening. This is unless there are exceptional circumstances for not doing so."
+                },
+                label: {
+                  text: whyDelayQuestion,
+                  classes: "govuk-label--xl"
+                },
+                errorMessage: {
+                text: whyDelayErrorExplain
+                }
+              }) }}
 
       <!-- hidden field records screen exited for save and return functionality -->
       {% include "../../includes/screen-exited.html" %}

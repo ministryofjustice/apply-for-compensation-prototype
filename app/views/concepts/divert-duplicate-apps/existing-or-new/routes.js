@@ -6,7 +6,7 @@ module.exports = function (router, content) {
     var existingOrNew = req.session.data['existingOrNew']
 
     if (existingOrNew === 'Update an existing application') {
-      res.redirect('/concepts/divert-duplicate-apps/contact-the-cica')
+      res.redirect('/concepts/divert-duplicate-apps/transition')
     } else {
       res.redirect('/concepts/divert-duplicate-apps/fatal-application')
     }

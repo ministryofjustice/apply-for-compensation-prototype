@@ -294,9 +294,15 @@ require('../views/concepts/divert-duplicate-apps/existing-or-new/routes')(router
 require('../views/concepts/divert-duplicate-apps/fatal-application/routes')(router, viewContent);
 
 
+
 //--------------------------------------------------------//
 // THIRD PARTY REPS                                       //
 //--------------------------------------------------------//
+
+// Download a summary of an application
+
+require('../views/concepts/third-party-reps/download-a-copy/screen-between/download-a-summary/routes')(router, viewContent);
+
 
 // 00 - start and qualifying
   require('../views/concepts/third-party-reps/prototype/_00-start-and-qualifying/crime-reference/routes')(router, viewContent);

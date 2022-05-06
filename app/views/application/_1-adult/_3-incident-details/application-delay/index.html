@@ -21,50 +21,6 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-
-      {{ govukCheckboxes({
-            idPrefix: "applicationDelay",
-            name: "applicationDelay",
-            value: data['applicationDelay'],
-            fieldset: {
-              legend: {
-                text: whyDelayQuestion,
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            hint: {
-              text: "Select all options that apply to you."
-            },
-            items: [
-            {
-              value: "I was under 18",
-              text: "I was under 18",
-              id: "under-18",
-              checked: checked("applicationDelay", "I was under 18")
-            },
-            {
-              value: "I was advised to wait",
-              text: "I was advised to wait",
-              id: "advised-to-wait",
-              checked: checked("applicationDelay", "I was advised to wait")
-            },
-            {
-              value: "Medical reasons",
-              text: "Medical reasons",
-              id: "medical-reasons",
-              checked: checked("applicationDelay", "Medical reasons")
-            },
-            {
-              value: "Other reasons",
-              text: "Other reasons",
-              id: "other-reasons",
-              checked: checked("applicationDelay", "Other reasons")
-            }
-            ]
-          }) }}
-
           {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
             {{ govukTextarea({
@@ -72,11 +28,56 @@
                   id: "delay-application",
                   currentValue: data['delay-application'],
                   value: data['delay-application'],
+                  hint: {
+                    text: "You must send your application within 2 years of the crime happening. This is unless there are exceptional circumstances for not doing so."
+                  },
                   label: {
-                    text: delayApplyExplanation,
-                    classes: "govuk-label--l"
+                    text: whyDelayQuestion,
+                    classes: "govuk-label--xl"
                   }
                 }) }}
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with why we ask about the application not being sent until now
+                        </span>
+                    </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body">
+                            We must receive your application as soon as reasonably practicable and, no later than 2 years after the date of the crime.
+                          </p>
+                          <p class="govuk-body">
+                            The 2-year window is extendable where exceptional circumstances show why you could not apply sooner. For example, you may have delayed sending the application because:
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>
+                                you were under 18 at the time of the crime
+                              </li>
+                              <li>
+                                the impact of the injuries stopped you from applying sooner
+                              </li>
+                            </ul>
+                          </p>
+                          <p class="govuk-body">
+                            You may have to provide evidence to support any reason for a delay in applying. This evidence can include a letter from your GP or other medical professionals.
+                          </p>
+                          <p class="govuk-body">
+                            Any evidence to support your application should:
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>
+                                show why there was a delay for the entire 2-year period if you're applying 2 years after the crime has taken place
+                              </li>
+                              <li>
+                                be provided by someone in a professional capacity, such as a psychologist or GP
+                              </li>
+                            </ul>
+                          </p>
+                          <p class="govuk-body">
+                            By providing supporting evidence, the application may be determined without further extensive enquiries.
+                          </p>
+                        </div>
+                </details>
+
 
           <!-- hidden field records screen exited for save and return functionality -->
           {% include "../../includes/screen-exited.html" %}

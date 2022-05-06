@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Download this summary</a>.</p>
+      <p class="govuk-body">
+        <strong>Downloading a summary does not submit the application.</strong> You must still submit the application by completing the declaration on the next screen.
+      </p>
+    </div>
+
+        {% include "../includes/_about_the_application.html" %}
+
+        {% include "../includes/_victim_details.html" %}
+
+        {% include "../includes/_about_the_crime.html" %}
+
+        {% include "../includes/_police_report.html" %}
+
+        {% include "../includes/_your_injuries.html" %}
+
+        {% include "../includes/_your_medical_details.html" %}
+
+        {% include "../includes/_your_money.html" %}
+
+        {% include "../includes/_other_compensation.html" %}
+
+        {% include "../includes/_contact_details.html" %}
+
+    <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton(
+            { text: "Continue" })
+          }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
