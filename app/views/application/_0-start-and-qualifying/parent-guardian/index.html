@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Are you the child's parent? - {{ serviceName }} - GOV.UK
+Are you the victim's parent? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,13 +25,13 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
             name: "parentGuardian",
             fieldset: {
             legend: {
-              text: "Are you the child's parent?",
+              text: "Are you the victim's parent?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
-              text: "This means you have parental responsibility for the child as their birth, step or adoptive parent."
+              text: "This means you have parental responsibility for the victim as their birth, step or adoptive parent."
             },
             items: [
             {
@@ -50,14 +50,14 @@ Are you the child's parent? - {{ serviceName }} - GOV.UK
             <details class="govuk-details">
               <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
-                    Can I apply for the child?
+                    Can I apply for the victim?
                   </span>
               </summary>
                   <div class="govuk-details__text">
-                    <p class="govuk-body">You need to prove you have parental responsibility for the child to apply.</p>
+                    <p class="govuk-body">You need to prove you have parental responsibility for the victim to apply.</p>
                     <p class="govuk-body">To prove this, you'll need relevant documents your name is on, such as:</p>
                     <ul class="govuk-list govuk-list--bullet">
-                      <li>the child's full birth certificate</li>
+                      <li>the victim's full birth certificate</li>
                       <li>adoption documents</li>
                       <li>a parental responsibility agreement</li>
                       <li>a court order</li>

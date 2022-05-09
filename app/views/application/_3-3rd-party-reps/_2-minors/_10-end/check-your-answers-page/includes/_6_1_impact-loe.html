@@ -8,26 +8,26 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Was the child over 16 at the time of the crime?
+      Was the victim over 16 at the time of the crime?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['workingAge'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_6-impact/loe-working-age">
-        Change<span class="govuk-visually-hidden"> Was the child over 16 at the time of the crime?</span>
+        Change<span class="govuk-visually-hidden"> Was the victim over 16 at the time of the crime?</span>
       </a>
     </dd>
   </div>
 
 
-  <!-- If the child was over 16 -->
+  <!-- If the victim was over 16 -->
 
   {% if data['workingAge'] === 'Yes' %}
 
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        Did the child have a job when the crime happened?
+        Did the victim have a job when the crime happened?
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['workingStatus'] }}
@@ -92,7 +92,7 @@
 
 
 
-<!-- If the child was not over 16 -->
+<!-- If the victim was not over 16 -->
 
 {% if (data['workingAge'] === 'No') or (data['workingStatus'] === 'No') %}
 
@@ -149,14 +149,14 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Has the child’s ability to work in future been affected by the incident?
+      Has the victim’s ability to work in future been affected by the incident?
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['futureCapacity'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_6-impact/loe-se-future-capacity">
-        Change<span class="govuk-visually-hidden"> Has the child’s ability to work in future been affected by the incident? </span>
+        Change<span class="govuk-visually-hidden"> Has the victim’s ability to work in future been affected by the incident? </span>
       </a>
     </dd>
   </div>
