@@ -2,7 +2,7 @@ module.exports = function (router, content) {
   // START__####################################################################################################
   // File: address
 
-  router.post('/concepts/third-party-reps/prototype/_03-rep-details/address/non-org', function (req, res) {
+  router.post('/concepts/third-party-reps/prototype/_03-rep-details/address', function (req, res) {
 
     var repConfirmationPreference = req.session.data['repConfirmationPreference']
 
@@ -14,8 +14,8 @@ module.exports = function (router, content) {
   })
 
   // Pass the question in to the page
-  router.get('/concepts/third-party-reps/prototype/_03-rep-details/address/non-org/', function (req, res) {
-    res.render('concepts/third-party-reps/prototype/_03-rep-details/address/non-org/index', content)
+  router.get('/concepts/third-party-reps/prototype/_03-rep-details/address/', function (req, res) {
+    res.render('concepts/third-party-reps/prototype/_03-rep-details/address/index', content)
   })
 
   // END__######################################################################################################

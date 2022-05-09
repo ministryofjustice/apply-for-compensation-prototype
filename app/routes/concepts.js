@@ -363,8 +363,8 @@ require('../views/concepts/third-party-reps/download-a-copy/screen-between/downl
 // 03 - rep details
   require('../views/concepts/third-party-reps/prototype/_03-rep-details/rep-type/routes')(router, viewContent);
   require('../views/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details/routes')(router, viewContent);
-  require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/org/routes')(router, viewContent);
-  require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/non-org/routes')(router, viewContent);
+  require('../views/concepts/third-party-reps/prototype/_03-rep-details/organisation-name/routes')(router, viewContent);
+  require('../views/concepts/third-party-reps/prototype/_03-rep-details/address/routes')(router, viewContent);
   require('../views/concepts/third-party-reps/prototype/_03-rep-details/company-reg-no/routes')(router, viewContent);
   require('../views/concepts/third-party-reps/prototype/_03-rep-details/confirmation-options/routes')(router, viewContent);
   require('../views/concepts/third-party-reps/prototype/_03-rep-details/email-address/routes')(router, viewContent);

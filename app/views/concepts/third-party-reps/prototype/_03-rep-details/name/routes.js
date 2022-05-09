@@ -6,10 +6,10 @@ module.exports = function (router, content) {
 
     var repType = req.session.data['rep-type']
 
-    if (repType === 'Friend or relative') {
-      res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/address/non-org')
+    if (repType === 'Friend or relative' || repType === 'Foster carer') {
+      res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/address')
     } else {
-      res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/address/org')
+      res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/organisation-name')
     }
   })
 
