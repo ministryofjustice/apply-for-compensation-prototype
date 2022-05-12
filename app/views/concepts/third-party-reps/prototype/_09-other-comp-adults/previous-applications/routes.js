@@ -11,7 +11,7 @@ module.exports = function (router, content) {
 
       // If the variable is any other value (or is missing) render the page requested
       if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-        return res.redirect('/concepts/third-party-reps/prototype/_10-end-adults/check-your-answers-page')
+        return res.redirect('/concepts/third-party-reps/prototype/_11-end-adults/check-your-answers-page')
       }
       res.redirect('/concepts/third-party-reps/prototype/_09-other-comp-adults/other-compensation')
 

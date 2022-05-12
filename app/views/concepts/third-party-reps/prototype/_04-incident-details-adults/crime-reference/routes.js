@@ -4,7 +4,7 @@ module.exports = function (router, content) {
   //
   router.post('/concepts/third-party-reps/prototype/_04-incident-details-adults/crime-reference', function (req, res) {
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-          return res.redirect('/concepts/third-party-reps/prototype/_10-end-adults/check-your-answers-page')
+          return res.redirect('/concepts/third-party-reps/prototype/_11-end-adults/check-your-answers-page')
         }
         res.redirect('/concepts/third-party-reps/prototype/_04-incident-details-adults/own-words-question')
   })

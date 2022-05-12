@@ -13,7 +13,7 @@ module.exports = function (router, content) {
         res.redirect('/application/_0-start-and-qualifying/transition')
       } else {
         if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-          return res.redirect('/concepts/third-party-reps/prototype/_10-end-adults/check-your-answers-page')
+          return res.redirect('/concepts/third-party-reps/prototype/_11-end-adults/check-your-answers-page')
         }
 
         // set section status for task list

@@ -11,7 +11,7 @@ module.exports = function (router, content) {
       req.session.data['repEmailAddress'] = ''
     }
     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-      return res.redirect('/application/_1-adult/_10-end/check-your-answers-page')
+      return res.redirect('/application/_1-adult/_11-end/check-your-answers-page')
     } else if ((repConfirmationPreference === 'Email') || (repConfirmationPreference === 'Text')) {
       res.redirect('/concepts/third-party-reps/prototype/_03-rep-details/name')
     } else {

@@ -12,7 +12,7 @@ module.exports = function (router, content) {
       // set section status to completed
       req.session.data['additional_info_status'] = 'completed'
 
-        res.redirect('/concepts/third-party-reps/prototype/_10-end-adults/check-your-answers-page')
+        res.redirect('/concepts/third-party-reps/prototype/_11-end-adults/check-your-answers-page')
 
 
   })
