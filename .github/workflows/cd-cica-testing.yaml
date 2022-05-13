@@ -10,9 +10,9 @@ on:
       - 'cica-testing'
 
 env:
-  ECR_NAME: ${{ secrets.ECR_NAME }}
-  KUBE_CLUSTER: ${{ secrets.KUBE_CLUSTER }}
-  KUBE_NAMESPACE: ${{ secrets.KUBE_NAMESPACE }}
+  ECR_NAME_DEV: ${{ secrets.ECR_NAME_DEV }}
+  KUBE_CLUSTER_DEV: ${{ secrets.KUBE_CLUSTER_DEV }}
+  KUBE_NAMESPACE_DEV: ${{ secrets.KUBE_NAMESPACE_DEV }}
   PROTOTYPE_NAME: ${{ secrets.PROTOTYPE_NAME }}
 
 jobs:
@@ -27,23 +27,23 @@ jobs:
         id: ecr
         uses: jwalton/gh-ecr-push@v1
         with:
-          access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
-          secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
+          access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID_DEV }}
+          secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY_DEV }}
           region: eu-west-2
           local-image: foo
-          image: ${ECR_NAME}:${{ github.sha }}
+          image: ${ECR_NAME_DEV}:${{ github.sha }}
       - name: Update image tag
-        run: export IMAGE_TAG=${{ github.sha }} && cat kubernetes-deploy.tpl | envsubst > kubernetes-deploy.yaml
+        run: export IMAGE_TAG=${{ github.sha }} && cat kubernetes-deploy-cica-testing.tpl | envsubst > kubernetes-deploy.yaml
       - name: Authenticate to the cluster
         env:
-          KUBE_CERT: ${{ secrets.KUBE_CERT }}
-          KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
+          KUBE_CERT_DEV: ${{ secrets.KUBE_CERT_DEV }}
+          KUBE_TOKEN_DEV: ${{ secrets.KUBE_TOKEN_DEV }}
         run: |
-          echo "${KUBE_CERT}" > ca.crt
-          kubectl config set-cluster ${KUBE_CLUSTER} --certificate-authority=./ca.crt --server=https://${KUBE_CLUSTER}
-          kubectl config set-credentials deploy-user --token=${KUBE_TOKEN}
-          kubectl config set-context ${KUBE_CLUSTER} --cluster=${KUBE_CLUSTER} --user=deploy-user --namespace=${KUBE_NAMESPACE}
-          kubectl config use-context ${KUBE_CLUSTER}
+          echo "${KUBE_CERT_DEV}" > ca.crt
+          kubectl config set-cluster ${KUBE_CLUSTER_DEV} --certificate-authority=./ca.crt --server=https://${KUBE_CLUSTER_DEV}
+          kubectl config set-credentials deploy-user --token=${KUBE_TOKEN_DEV}
+          kubectl config set-context ${KUBE_CLUSTER_DEV} --cluster=${KUBE_CLUSTER_DEV} --user=deploy-user --namespace=${KUBE_NAMESPACE_DEV}
+          kubectl config use-context ${KUBE_CLUSTER_DEV}
       - name: Apply the updated manifest
         run: |
-          kubectl -n ${KUBE_NAMESPACE} apply -f kubernetes-deploy.yaml
+          kubectl -n ${KUBE_NAMESPACE_DEV} apply -f kubernetes-deploy.yaml
