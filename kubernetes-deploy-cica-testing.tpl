@@ -49,7 +49,7 @@ metadata:
   name: prototype-ingress-cica-testing
   annotations:
     kubernetes.io/ingress.class: nginx
-    external-dns.alpha.kubernetes.io/set-identifier: prototype-ingress-cica-testing-cica-testing-green
+    external-dns.alpha.kubernetes.io/set-identifier: prototype-ingress-cica-testing-apply-for-compensation-prototype-dev-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
