@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% set summaryHeader = 'Download your answers' %}
+
+{% block pageTitle %}
+{{ summaryHeader }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {{ summaryHeader }}
+    </h1>
+
+    <p class="govuk-body">You can <a href="check-your-answers" download>download your answers</a> for your records.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        To submit your application, you need to agree to the declaration on the next screen.
+      </strong>
+    </div>
+
+    <form class="form" method="post">
+
+      {{ govukButton({
+            text: "Continue",
+            href: "declaration"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->
