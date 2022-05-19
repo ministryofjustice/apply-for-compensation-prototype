@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+        {% include "../includes/_about_the_application.html" %}
+
+        {% include "../includes/_victim_details.html" %}
+
+        {% include "../includes/_about_the_crime.html" %}
+
+        {% include "../includes/_police_report.html" %}
+
+        {% include "../includes/_your_injuries.html" %}
+
+        {% include "../includes/_your_medical_details.html" %}
+
+        {% include "../includes/_your_money.html" %}
+
+        {% include "../includes/_other_compensation.html" %}
+
+        {% include "../includes/_contact_details.html" %}
+
+    <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton(
+            { text: "Continue",
+              href: 'download-question' })
+          }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

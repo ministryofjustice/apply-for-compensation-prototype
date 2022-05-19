@@ -20,21 +20,6 @@ Declaration - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-  {% if data['downloadSummary'] === 'Yes' %}
-      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Download complete
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <p class="govuk-notification-banner__heading">
-            You must still read and agree to the declaration below to submit your application.
-          </p>
-        </div>
-      </div>
-  {% endif %}
-
     <h1 class="govuk-heading-xl">
       Declaration
     </h1>

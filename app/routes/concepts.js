@@ -302,6 +302,8 @@ require('../views/concepts/divert-duplicate-apps/fatal-application/routes')(rout
 // Download a summary of an application
 
 require('../views/concepts/third-party-reps/download-a-copy/screen-between/download-a-summary/routes')(router, viewContent);
+require('../views/concepts/third-party-reps/download-a-copy/screen-between-v3/download-question/routes')(router, viewContent);
+require('../views/concepts/third-party-reps/download-a-copy/print-screen-on-cya/_10-additional-info-adults/additional-info-question/routes')(router, viewContent);
 
 
 // 00 - start and qualifying
