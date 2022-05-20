@@ -28,8 +28,13 @@
     </h1>
 
     <p class="govuk-body">
-      Download your answers as an HTML document for your records by clicking the button below.
+      You can download a summary of your answers to save or print for your records.
     <p>
+
+    <!-- <div class="govuk-inset-text"> -->
+      <!-- <a href="/concepts/third-party-reps/download-a-copy/download.html" download class="govuk-link">Download your answers</a> -->
+      <!-- <a class="govuk-button govuk-button--secondary" href="/concepts/third-party-reps/download-a-copy/download.html" download>Download answers</a> -->
+    <!-- </div> -->
 
 
     <div class="govuk-warning-text">
@@ -43,12 +48,13 @@
     <form class="form" method="post">
 
       <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue to declaration",
-          href: "declaration"
-        }) }}
 
         <a class="govuk-button govuk-button--secondary" href="/concepts/third-party-reps/download-a-copy/download.html" download>Download answers</a>
+
+        {{ govukButton({
+          text: "Continue",
+          href: "declaration"
+        }) }}
 
       </div>
     </form>
