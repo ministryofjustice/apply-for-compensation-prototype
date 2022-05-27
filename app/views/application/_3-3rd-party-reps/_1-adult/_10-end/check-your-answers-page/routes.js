@@ -4,7 +4,7 @@ module.exports = function (router, content) {
    router.post('/application/_3-3rd-party-reps/_1-adult/_10-end/check-your-answers-page', function (req, res) {
 
      var buttonClicked = req.session.data['buttonClicked'];
-     var incapableOwnAffairs = req.session.data['incapableOwnAffairs'];
+     var capableOwnAffairs = req.session.data['capableOwnAffairs'];
 
      if ( (buttonClicked === 'Save and continue') || (buttonClicked === 'Continue') ) {
 
@@ -15,7 +15,7 @@ module.exports = function (router, content) {
        // set section status to completed
        req.session.data['check_your_answers_status'] = 'completed'
 
-       if (incapableOwnAffairs === 'Yes') {
+       if (capableOwnAffairs === 'Yes') {
          return res.redirect('/application/_3-3rd-party-reps/_1-adult/_10-end/declaration-incapable-adult')
        } else {
          res.redirect('/application/_3-3rd-party-reps/_1-adult/_10-end/declaration')

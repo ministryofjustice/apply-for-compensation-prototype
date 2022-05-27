@@ -11,8 +11,8 @@ module.exports = function (router, content) {
       // set section status for task list
       req.session.data['your_details_status'] = 'completed'
 
-        var incapableOwnAffairs = req.session.data['incapableOwnAffairs'];
-        if (incapableOwnAffairs === 'Yes')  {
+        var capableOwnAffairs = req.session.data['capableOwnAffairs'];
+        if (capableOwnAffairs === 'Yes')  {
           return res.redirect('/application/_3-3rd-party-reps/_1-adult/_2-your-details/are-you-responsible')
         }
         res.redirect('/application/_3-3rd-party-reps/_1-adult/_3-incident-details/context-incident-details')

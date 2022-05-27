@@ -1,7 +1,7 @@
 
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ whyDelayQuestion }} - {{ serviceName }} - GOV.UK
+Tell us the reason why this application was not sent until now - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,10 +30,10 @@
                   currentValue: data['delay-application'],
                   value: data['delay-application'],
                   hint: {
-                    text: "You must send your application within 2 years of the crime happening. This is unless there are exceptional circumstances for not doing so."
+                    text: "There is a time limit to make this application. The time limit can be extended where you could not apply sooner because of exceptional circumstances and the claim can be decided without further extensive enquiries."
                   },
                   label: {
-                    text: whyDelayQuestion,
+                    text: "Tell us the reason why this application was not sent until now",
                     classes: "govuk-label--xl"
                   }
                 }) }}
@@ -45,36 +45,53 @@
                         </span>
                     </summary>
                         <div class="govuk-details__text">
+                          <h2 class="govuk-heading-s">
+                            If the victim was an adult at the time of the crime (18 years or older)
+                          </h2>
                           <p class="govuk-body">
-                            We must receive your application as soon as reasonably practicable and, no later than 2 years after the date of the crime.
+                            The application must be sent as soon as is reasonably practicable and in any event, no later than 2 years after the crime.
                           </p>
+                          <h2 class="govuk-heading-s">
+                            If the victim was a child at the time of the crime (under 18 years old)
+                          </h2>
                           <p class="govuk-body">
-                            The 2-year window is extendable where exceptional circumstances show why you could not apply sooner. For example, you may have delayed sending the application because:
+                            The application must be received:
                             <ul class="govuk-list govuk-list--bullet">
                               <li>
-                                you were under 18 at the time of the crime
+                                On or before their 20th birthday, if the crime was reported to police before their 18th birthday
                               </li>
                               <li>
-                                the impact of the injuries stopped you from applying sooner
+                                within 2 years of the crime first being reported to police, if the incident was reported on or after their 18th birthday
+                              </li>
+                            </ul>
+                          </p>
+                          <h2 class="govuk-heading-s">
+                            Extending the time limits
+                          </h2>
+                          <p class="govuk-body">
+                            We can only extend the time limits where:
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>
+                                due to exceptional circumstances, the application could not be made earlier (for example, where injuries stopped the victim applying)
+                              </li>
+                              <li>
+                                the evidence provided to support the application means it can be decided without further extensive enquiries
                               </li>
                             </ul>
                           </p>
                           <p class="govuk-body">
-                            You may have to provide evidence to support any reason for a delay in applying. This evidence can include a letter from your GP or other medical professionals.
+                            You may have to provide evidence to support any reason for a delay in applying. This evidence may include a letter from your GP or other medical professionals.
                           </p>
                           <p class="govuk-body">
                             Any evidence to support your application should:
                             <ul class="govuk-list govuk-list--bullet">
                               <li>
-                                show why there was a delay for the entire 2-year period if you're applying 2 years after the crime has taken place
+                                show why this application could not have been made earlier and explain the entire period of the delay
                               </li>
                               <li>
-                                be provided by someone in a professional capacity, such as a psychologist or GP
+                                provide us with enough information to make a decision on an application without the need for further extensive enquiries
                               </li>
                             </ul>
-                          </p>
-                          <p class="govuk-body">
-                            By providing supporting evidence, the application may be determined without further extensive enquiries.
                           </p>
                         </div>
                 </details>

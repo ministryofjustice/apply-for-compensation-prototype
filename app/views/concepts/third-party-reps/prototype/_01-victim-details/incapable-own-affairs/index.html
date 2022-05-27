@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Are they unable to handle their affairs? - {{ serviceName }} - GOV.UK
+Are they able to handle their affairs? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,29 +27,29 @@ Are they unable to handle their affairs? - {{ serviceName }} - GOV.UK
 
       {{ govukRadios({
             classes: "govuk-radios--inline",
-            "idPrefix": "incapableOwnAffairs",
-            name: "incapableOwnAffairs",
-            "value": "incapableOwnAffairs",
+            "idPrefix": "capableOwnAffairs",
+            name: "capableOwnAffairs",
+            "value": "capableOwnAffairs",
             "fieldset": {
               "legend": {
-                text: "Are they unable to handle their affairs?",
+                text: "Are they able to handle their affairs?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
             },
             "hint": {
-              text: 'This means they lack the capacity to make decisions for themselves when they’re required to do so.'
+              text: 'This means they have the capacity to make decisions for themselves when they’re required to do so.'
             },
             "items": [
               {
                 "value": "Yes",
                 text: "Yes",
-                checked: checked("incapableOwnAffairs", "Yes")
+                checked: checked("capableOwnAffairs", "Yes")
               },
               {
                 "value": "No",
                 text: "No",
-                checked: checked("incapableOwnAffairs", "No")
+                checked: checked("capableOwnAffairs", "No")
               }
             ]
           }) }}
