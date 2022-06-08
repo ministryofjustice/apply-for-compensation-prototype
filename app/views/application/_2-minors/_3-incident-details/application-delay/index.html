@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-{{ whyDelayQuestion }} - {{ serviceName }} - GOV.UK
+Tell us the reason why this application was not sent until now - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,50 +21,6 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-
-      {{ govukCheckboxes({
-            idPrefix: "applicationDelay",
-            name: "applicationDelay",
-            value: data['applicationDelay'],
-            fieldset: {
-              legend: {
-                text: "Select reasons for the delay in making this application",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            hint: {
-              text: "Select all options that apply."
-            },
-            items: [
-            {
-              value: "The victim was under 18",
-              text: "The victim was under 18",
-              id: "under-18",
-              checked: checked("applicationDelay", "I was under 18")
-            },
-            {
-              value: "The victim was advised to wait",
-              text: "The victim was advised to wait",
-              id: "advised-to-wait",
-              checked: checked("applicationDelay", "I was advised to wait")
-            },
-            {
-              value: "Medical reasons",
-              text: "Medical reasons",
-              id: "medical-reasons",
-              checked: checked("applicationDelay", "Medical reasons")
-            },
-            {
-              value: "Other reasons",
-              text: "Other reasons",
-              id: "other-reasons",
-              checked: checked("applicationDelay", "Other reasons")
-            }
-            ]
-          }) }}
-
           {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
             {{ govukTextarea({
@@ -72,16 +28,77 @@
                   id: "delay-application",
                   currentValue: data['delay-application'],
                   value: data['delay-application'],
+                  hint: {
+                    text: "There is a time limit to make this application. The time limit can be extended where you could not apply sooner because of exceptional circumstances and the claim can be decided without further extensive enquiries."
+                  },
                   label: {
-                    text: delayApplyExplanation,
-                    classes: "govuk-label--l"
+                    text: "Tell us the reason why this application was not sent until now",
+                    classes: "govuk-label--xl"
                   }
                 }) }}
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-          text: "Continue"
-          }) }}
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with why we ask about the application not being sent until now
+                        </span>
+                    </summary>
+                        <div class="govuk-details__text">
+                          <h2 class="govuk-heading-s">
+                            If the victim was an adult at the time of the crime (18 years or older)
+                          </h2>
+                          <p class="govuk-body">
+                            The application must be sent as soon as is reasonably practicable and in any event, no later than 2 years after the crime.
+                          </p>
+                          <h2 class="govuk-heading-s">
+                            If the victim was a child at the time of the crime (under 18 years old)
+                          </h2>
+                          <p class="govuk-body">
+                            The application must be received:
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>
+                                On or before their 20th birthday, if the crime was reported to police before their 18th birthday
+                              </li>
+                              <li>
+                                within 2 years of the crime first being reported to police, if the incident was reported on or after their 18th birthday
+                              </li>
+                            </ul>
+                          </p>
+                          <h2 class="govuk-heading-s">
+                            Extending the time limits
+                          </h2>
+                          <p class="govuk-body">
+                            We can only extend the time limits where:
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>
+                                due to exceptional circumstances, the application could not be made earlier (for example, where injuries stopped the victim applying)
+                              </li>
+                              <li>
+                                the evidence provided to support the application means it can be decided without further extensive enquiries
+                              </li>
+                            </ul>
+                          </p>
+                          <p class="govuk-body">
+                            You may have to provide evidence to support any reason for a delay in applying. This evidence may include a letter from your GP or other medical professionals.
+                          </p>
+                          <p class="govuk-body">
+                            Any evidence to support your application should:
+                            <ul class="govuk-list govuk-list--bullet">
+                              <li>
+                                show why this application could not have been made earlier and explain the entire period of the delay
+                              </li>
+                              <li>
+                                provide us with enough information to make a decision on an application without the need for further extensive enquiries
+                              </li>
+                            </ul>
+                          </p>
+                        </div>
+                </details>
+
+
+                {{ govukButton({
+                text: "Continue"
+                }) }}
 
     </form>
   </div>
