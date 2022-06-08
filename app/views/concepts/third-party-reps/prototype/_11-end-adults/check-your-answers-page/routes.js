@@ -4,7 +4,7 @@ module.exports = function (router, content) {
    router.post('/concepts/third-party-reps/prototype/_11-end-adults/check-your-answers-page', function (req, res) {
 
 
-     var incapableOwnAffairs = req.session.data['incapableOwnAffairs'];
+     var capableOwnAffairs = req.session.data['capableOwnAffairs'];
 
 
 
@@ -15,7 +15,7 @@ module.exports = function (router, content) {
        // set section status to completed
        req.session.data['check_your_answers_status'] = 'completed'
 
-       if (incapableOwnAffairs === 'Yes') {
+       if (capableOwnAffairs === 'Yes') {
          return res.redirect('/concepts/third-party-reps/prototype/_11-end-adults/declaration-incapable-adult')
        } else {
          res.redirect('/concepts/third-party-reps/prototype/_11-end-adults/declaration')
