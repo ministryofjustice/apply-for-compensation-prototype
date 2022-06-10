@@ -40,13 +40,13 @@ Enter your address - {{ serviceName }} - GOV.UK
             },
             id: "address-line-1",
             name: "address-line-1",
-            value: data['address-line-1']
+            value: data['rep-address-line-1']
           }) }}
 
       {{ govukInput({
             id: "address-line-2",
             name: "address-line-2",
-            value: data['address-line-2']
+            value: data['rep-address-line-2']
           }) }}
 
       {{ govukInput({
@@ -56,7 +56,7 @@ Enter your address - {{ serviceName }} - GOV.UK
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "address-town",
-            value: data['address-town']
+            value: data['rep-address-town']
           }) }}
 
       {{ govukInput({
@@ -66,7 +66,7 @@ Enter your address - {{ serviceName }} - GOV.UK
             classes: "govuk-!-width-two-thirds",
             id: "address-county",
             name: "address-county",
-            value: data['address-county']
+            value: data['rep-address-county']
           }) }}
 
       {{ govukInput({
@@ -76,7 +76,7 @@ Enter your address - {{ serviceName }} - GOV.UK
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "address-postcode",
-            value: data['address-postcode']
+            value: data['rep-address-postcode']
           }) }}
 
       {% endcall %}
