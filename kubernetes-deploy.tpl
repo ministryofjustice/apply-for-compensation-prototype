@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: moj-prototype-cicia-testing
+  name: moj-prototype
 spec:
   replicas: 1
   selector:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/${ECR_NAME_DEV}:${IMAGE_TAG}
+        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/${ECR_NAME}:${IMAGE_TAG}
         env:
           - name: USERNAME
             valueFrom:
@@ -32,9 +32,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service-cica-testing
+  name: nginx-service
   labels:
-    app: nginx-service-cica-testing
+    app: nginx-service
 spec:
   ports:
   - port: 3000
@@ -46,20 +46,20 @@ spec:
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: prototype-ingress-cica-testing
+  name: prototype-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    external-dns.alpha.kubernetes.io/set-identifier: prototype-ingress-cica-testing-apply-for-compensation-prototype-dev-green
+    external-dns.alpha.kubernetes.io/set-identifier: prototype-ingress-${PROTOTYPE_NAME}-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
   - hosts:
-    - cica-testing.apps.live.cloud-platform.service.justice.gov.uk
+    - ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
   rules:
-  - host: cica-testing.apps.live.cloud-platform.service.justice.gov.uk
+  - host: ${PROTOTYPE_NAME}.apps.live.cloud-platform.service.justice.gov.uk
     http:
       paths:
       - path: /
         backend:
-          serviceName: nginx-service-cica-testing
+          serviceName: nginx-service
           servicePort: 3000
