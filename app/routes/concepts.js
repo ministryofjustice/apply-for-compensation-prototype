@@ -290,8 +290,7 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 
 // Divert duplicate applications
 
-require('../views/concepts/divert-duplicate-apps/existing-or-new/routes')(router, viewContent);
-require('../views/concepts/divert-duplicate-apps/fatal-application/routes')(router, viewContent);
+require('../views/concepts/divert-duplicate-apps/routes')(router, viewContent);
 
 
 
