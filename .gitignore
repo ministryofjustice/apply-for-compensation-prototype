@@ -14,7 +14,7 @@ package-lock.json
 package.json
 lib/extensions/_extensions.scss
 # ignore continuous deployment files so they don't overwrite when merging
-kubernetes-deploy.tpl
-kubernetes-deploy-cica-testing.tpl
-.github/workflows/cd.yaml
-.github/workflows/cd-cica-testing.yaml
+# kubernetes-deploy.tpl
+# kubernetes-deploy-cica-testing.tpl
+# .github/workflows/cd.yaml
+# .github/workflows/cd-cica-testing.yaml
