@@ -40,7 +40,7 @@
       <ul class="govuk-list govuk-list--contents govuk-body-s">
         <li><a href="overview-page">Overview</a></li>
         <li><a href="eligibility-page">Eligibility</a></li>
-        <li>Make a claim</li>
+        <li>Make a new claim</li>
         <li><a href="what-happens-next-page">What happens next</a></li>
         <li><a href="update-claim">Update your claim</a></li>
         <li><a href="srr-page">If you’re a victim who lived with the attacker before 1 October 1979</a></li>
@@ -56,7 +56,7 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <h2 class="govuk-heading-m">
-        Make a claim
+        Make a new claim
       </h2>
       <p class="govuk-body">You can claim for compensation online.</p>
 
@@ -103,10 +103,8 @@
 
       <div class="govuk-button-group">
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
           {{ govukButton({
-            text: "Apply or update application",
+            text: "Make a claim",
             isStartButton: true,
             href: "./existing-or-new"
           }) }}

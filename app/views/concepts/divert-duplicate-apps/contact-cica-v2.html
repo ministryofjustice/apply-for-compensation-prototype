@@ -53,6 +53,12 @@
 
     <p>Read more about how we protect your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice">privacy notice</a>.</p>
 
+    {{ govukButton({
+      text: "Start",
+      isStartButton: true,
+      href: "https://contact-the-cica.form.service.justice.gov.uk/your-name"
+    }) }}
+
     <h2 class="govuk-heading-m">Other ways of contacting CICA</h2>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -72,25 +78,6 @@
         <li>Thursday, 8:30am to 5pm</li>
         <li>Friday, 8:30am to 5pm</li>
       </ul>
-
-      <form class="form" method="post">
-        <div class="govuk-button-group">
-
-            {% from "govuk/components/button/macro.njk" import govukButton %}
-
-            {{ govukButton({
-              text: "Start",
-              isStartButton: true,
-              href: "https://contact-the-cica.form.service.justice.gov.uk/your-name"
-            }) }}
-
-            <!-- <p class="govuk-body">
-              <a href="#">
-                  Resume a claim
-              </a>
-            <p> -->
-        </div>
-      </form>
 
   </div>
 </main>
