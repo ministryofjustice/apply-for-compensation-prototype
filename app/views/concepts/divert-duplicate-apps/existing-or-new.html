@@ -21,10 +21,6 @@ What would you like to do? - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
-          Have you applied for compensation from any other sources?
-        </h1> -->
-
     <form class="form" method="post">
 
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
@@ -36,7 +32,7 @@ What would you like to do? - {{ serviceName }} - GOV.UK
             currentValue: data['existingOrNew'],
             "fieldset": {
               "legend": {
-                text: "What would you like to do?",
+                text: "What do you want to do?",
                 isPageHeading: true,
                 classes: 'govuk-fieldset__legend--xl'
               }
@@ -56,8 +52,8 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           }) }}
 
       {{ govukButton({
-            text: "Continue"
-            }) }}
+          text: "Continue"
+      }) }}
 
     </form>
 

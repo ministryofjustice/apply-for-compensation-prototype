@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    {% include "../../includes/check-your-answers/_about_the_application.html" %}
+
+    {% include "../../includes/check-your-answers/_victim_details.html" %}
+
+    {% include "../../includes/check-your-answers/_about_the_crime.html" %}
+
+    {% include "../../includes/check-your-answers/_police_report.html" %}
+
+    {% include "../../includes/check-your-answers/_your_injuries.html" %}
+
+    {% include "../../includes/check-your-answers/_your_medical_details.html" %}
+
+    {% include "../../includes/check-your-answers/_your_money.html" %}
+
+    {% include "../../includes/check-your-answers/_other_compensation.html" %}
+
+    {% include "../../includes/check-your-answers/_contact_details.html" %}
+
+    {{ govukButton({ 
+        text: "Continue",
+        href: 'declaration' })
+    }}
+    
+  </div>
+</div>
+
+{% endblock %}
