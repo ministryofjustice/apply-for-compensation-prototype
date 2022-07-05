@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Contact CICA - {{ serviceName }} - GOV.UK
+What would you like to do? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,22 +21,25 @@ Contact CICA - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-      Contact CICA
-    </h1>
+    <form class="form" method="post" action="date-of-incident">
 
-    <p class="govuk-body">
-      You'll be taken to another website to contact CICA about your application.
-    <p>
-
-
-
-    <form class="form" method="post">
+      {{ govukInput({
+        label: {
+          text: "Enter your CICA reference",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          html: "<span>You will find this on emails and letters from us about your claim.</span><br>
+          <span>For example, X/21/123456-TMXX</span>"
+        },
+        id: "reference",
+        name: "reference"
+      }) }}
 
       {{ govukButton({
-            text: "Continue",
-            href: "/concepts/contact-cica/"
-            }) }}
+        text: "Continue"
+      }) }}
 
     </form>
 

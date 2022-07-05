@@ -292,7 +292,9 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 
 require('../views/concepts/divert-duplicate-apps/routes')(router, viewContent);
 
+// Contact CICA
 
+require('../views/concepts/contact-cica/routes')(router, viewContent);
 
 //--------------------------------------------------------//
 // THIRD PARTY REPS                                       //

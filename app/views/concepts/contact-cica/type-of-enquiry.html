@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What would you like to do? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post" action="details">
+
+      {{ govukRadios({
+        idPrefix: "enquiry type",
+        name: "enquiry-type",
+        fieldset: {
+          legend: {
+            text: "What is your enquiry about?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "update",
+            text: "Update request"
+          } if data.whoFor == 'myself',
+          {
+            value: "payment",
+            text: "Payment enquiry"
+          } if data.whoFor == 'myself',
+          {
+            value: "app help",
+            text: "Help with making an application"
+          } if data.whoFor === 'someone else',
+          {
+            value: "cica help",
+            text: "Help with CICA digital services"
+          } if data.whoFor === 'someone else',
+          {
+            value: "genral",
+            text: "General enquiry"
+          } if data.whoFor === 'someone else',
+          {
+            value: "sar",
+            text: "Subject access request"
+          },
+          {
+            value: "foi",
+            text: "Freedom of information"
+          } if data.whoFor === 'someone else',
+          {
+            value: "other",
+            text: "Something else"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+          text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- someone elseTE: do people understand the context of this question? -->

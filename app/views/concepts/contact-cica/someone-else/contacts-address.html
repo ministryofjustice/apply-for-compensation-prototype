@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What would you like to do? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post" action="../cica-reference">
+
+      {% call govukFieldset({
+        legend: {
+          text: "Enter the address of the person you are contacting us for (optional)",
+          classes: "govuk-fieldset__legend--xl",
+          isPageHeading: true
+        }
+      }) %}
+      
+        {{ govukInput({
+          label: {
+            text: 'Building and street',
+            classes: 'govuk-!-font-size-24 govuk-!-font-weight-bold'
+          },
+          id: "address-line-1",
+          name: "contact-address-line-1",
+          autocomplete: "address-line1"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: 'Address line 2 (optional)',
+            classes: 'govuk-visually-hidden'
+          },
+          id: "address-line-2",
+          name: "contact-address-line-2",
+          autocomplete: "address-line2"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Town or city",
+            classes: 'govuk-!-font-size-24 govuk-!-font-weight-bold'
+          },
+          classes: "govuk-!-width-full",
+          id: "address-town",
+          name: "contact-address-town",
+          autocomplete: "address-level2"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "County (optional)",
+            classes: 'govuk-!-font-size-24 govuk-!-font-weight-bold'
+          },
+          classes: "govuk-!-width-full",
+          id: "address-county",
+          name: "contact-address-county"
+        }) }}
+      
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: 'govuk-!-font-size-24 govuk-!-font-weight-bold'
+          },
+          classes: "govuk-input--width-10",
+          id: "address-postcode",
+          name: "contact-address-postcode",
+          autocomplete: "postal-code"
+        }) }}
+      
+      {% endcall %}
+
+      {{ govukButton({
+          text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

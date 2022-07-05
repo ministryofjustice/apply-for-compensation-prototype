@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Contact CICA - {{ serviceName }} - GOV.UK
+What would you like to do? - {{ serviceName }} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,26 +19,12 @@ Contact CICA - {{ serviceName }} - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl">
-      Contact CICA
-    </h1>
-
-    <p class="govuk-body">
-      You'll be taken to another website to contact CICA about your application.
-    <p>
-
-
-
-    <form class="form" method="post">
-
-      {{ govukButton({
-            text: "Continue",
-            href: "/concepts/contact-cica/"
-            }) }}
-
-    </form>
+    {{ govukPanel({
+      titleText: "Your enquiry has been sent",
+      html: "We will get back to you within 10 working days."
+    }) }}
 
   </div>
 </div>
