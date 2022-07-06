@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What would you like to do? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post" action="contacts-address">
+
+      {{ govukDateInput({
+        id: "contacts-dob",
+        namePrefix: "contacts-dob",
+        fieldset: {
+          legend: {
+            text: "Enter the date of birth of the person you are contacting us for (optional)",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            autocomplete: "contacts-dob-day",
+            value: data['contacts-dob-day']
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            autocomplete: "contacts-dob-month",
+            value: data['contacts-dob-month']
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            autocomplete: "contacts-dob-year",
+            value: data['contacts-dob-year']
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

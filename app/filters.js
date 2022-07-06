@@ -38,8 +38,30 @@ module.exports = function (env) {
 
   ------------------------------------------------------------------ */
 
+  filters.getDate = (x) => {
+    const date = new Date();
+    date.setDate(date.getDate() + x);
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+  };
+
+  filters.toMonth = function(x) {
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    if (x > 0) {
+        return months[x - 1]; // returns date as per month
+    } else {
+        return x;
+    }
+  }
+
+  filters.formatAddress = (lines) => `<div>${lines.join('<div></div>')}</div>`;
+
+
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+
   return filters
 }

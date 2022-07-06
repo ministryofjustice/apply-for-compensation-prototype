@@ -54,30 +54,39 @@
     <p>Read more about how we protect your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice">privacy notice</a>.</p>
 
     {{ govukButton({
-      text: "Start",
+      text: "Contact us",
       isStartButton: true,
-      href: "https://contact-the-cica.form.service.justice.gov.uk/your-name"
+      href: "your-name"
     }) }}
 
-    <h2 class="govuk-heading-m">Other ways of contacting CICA</h2>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with contacting CICA
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <h2 class="govuk-heading-m">Other ways of contacting CICA</h2>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <!-- <li><a href="https://claim-criminal-injuries-compensation.service.justice.gov.uk/start-chat">Live chat</a></li> -->
-        <li>Telephone: 0300 003 3601</li>
-        <li>From outside the UK: +44 20 3684 2517</li>
-        <li><a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601</li>
-        <li><a href="Find out about call charges">Find out about call charges</a></li>
-      </ul>
-
-      <p class="govuk-body">Our phone lines are open:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Monday, 8:30am to 5pm</li>
-        <li>Tuesday, 8:30am to 5pm</li>
-        <li>Wednesday, 8:30am to 3pm</li>
-        <li>Thursday, 8:30am to 5pm</li>
-        <li>Friday, 8:30am to 5pm</li>
-      </ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <!-- <li><a href="https://claim-criminal-injuries-compensation.service.justice.gov.uk/start-chat">Live chat</a></li> -->
+          <li>Telephone: 0300 003 3601</li>
+          <li>From outside the UK: +44 20 3684 2517</li>
+          <li><a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601</li>
+          <li><a href="Find out about call charges">Find out about call charges</a></li>
+        </ul>
+    
+        <p class="govuk-body">Our phone lines are open:</p>
+    
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Monday, 8:30am to 5pm</li>
+          <li>Tuesday, 8:30am to 5pm</li>
+          <li>Wednesday, 8:30am to 3pm</li>
+          <li>Thursday, 8:30am to 5pm</li>
+          <li>Friday, 8:30am to 5pm</li>
+        </ul>
+      </div>
+    </details>
 
   </div>
 </main>
