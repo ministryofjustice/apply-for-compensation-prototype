@@ -37,23 +37,23 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           {
             value: "update",
             text: "Update request"
-          } if data.whoFor == 'myself',
+          } if data.whoFor,
           {
             value: "payment",
             text: "Payment enquiry"
-          } if data.whoFor == 'myself',
+          } if data.whoFor,
           {
             value: "app help",
             text: "Help with making an application"
-          } if data.whoFor === 'someone else',
+          } if data.existing == 'no',
           {
             value: "cica help",
             text: "Help with CICA digital services"
-          } if data.whoFor === 'someone else',
+          } if data.existing == 'no',
           {
             value: "genral",
             text: "General enquiry"
-          } if data.whoFor === 'someone else',
+          } if data.existing == 'no',
           {
             value: "sar",
             text: "Subject access request"
@@ -61,7 +61,7 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           {
             value: "foi",
             text: "Freedom of information"
-          } if data.whoFor === 'someone else',
+          } if data.existing == 'no',
           {
             value: "other",
             text: "Something else"

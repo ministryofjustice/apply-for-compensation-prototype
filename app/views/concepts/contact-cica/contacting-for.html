@@ -36,10 +36,14 @@ What would you like to do? - {{ serviceName }} - GOV.UK
         items: [
           {
             value: "myself",
-            text: "Myself"          },
+            text: "Myself",
+            checked: checked("whoFor", "myself")         
+          },
           {
             value: "someone else",
-            text: "Someone else"          }
+            text: "Someone else",
+            checked: checked("whoFor", "someone else")                   
+          }
         ]
       }) }}
 

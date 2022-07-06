@@ -41,17 +41,20 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           {
             name: "day",
             classes: "govuk-input--width-2",
-            autocomplete: "incident-day"
+            autocomplete: "incident-day",
+            value: data['incident-day']
           },
           {
             name: "month",
             classes: "govuk-input--width-2",
-            autocomplete: "incident-month"
+            autocomplete: "incident-month",
+            value: data['incident-month']
           },
           {
             name: "year",
             classes: "govuk-input--width-4",
-            autocomplete: "incident-year"
+            autocomplete: "incident-year",
+            value: data['incident-year']
           }
         ]
       }) }}

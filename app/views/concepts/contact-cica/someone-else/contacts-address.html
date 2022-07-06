@@ -38,7 +38,8 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           },
           id: "address-line-1",
           name: "contact-address-line-1",
-          autocomplete: "address-line1"
+          autocomplete: "address-line1",
+          value: data['contact-address-line-1']
         }) }}
       
         {{ govukInput({
@@ -48,7 +49,8 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           },
           id: "address-line-2",
           name: "contact-address-line-2",
-          autocomplete: "address-line2"
+          autocomplete: "address-line2",
+          value: data['contact-address-line-2']
         }) }}
       
         {{ govukInput({
@@ -59,7 +61,8 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           classes: "govuk-!-width-full",
           id: "address-town",
           name: "contact-address-town",
-          autocomplete: "address-level2"
+          autocomplete: "address-level2",
+          value: data['contact-address-town']
         }) }}
       
         {{ govukInput({
@@ -69,7 +72,8 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           },
           classes: "govuk-!-width-full",
           id: "address-county",
-          name: "contact-address-county"
+          name: "contact-address-county",
+          value: data['contact-address-county']
         }) }}
       
         {{ govukInput({
@@ -80,7 +84,8 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           classes: "govuk-input--width-10",
           id: "address-postcode",
           name: "contact-address-postcode",
-          autocomplete: "postal-code"
+          autocomplete: "postal-code",
+          value: data['contact-address-postcode']
         }) }}
       
       {% endcall %}

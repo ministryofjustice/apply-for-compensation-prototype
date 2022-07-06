@@ -40,17 +40,20 @@ What would you like to do? - {{ serviceName }} - GOV.UK
           {
             name: "day",
             classes: "govuk-input--width-2",
-            autocomplete: "dob-day"
+            autocomplete: "dob-day",
+            value: data['dob-day']
           },
           {
             name: "month",
             classes: "govuk-input--width-2",
-            autocomplete: "dob-month"
+            autocomplete: "dob-month",
+            value: data['dob-month']
           },
           {
             name: "year",
             classes: "govuk-input--width-4",
-            autocomplete: "dob-year"
+            autocomplete: "dob-year",
+            value: data['dob-year']
           }
         ]
       }) }}

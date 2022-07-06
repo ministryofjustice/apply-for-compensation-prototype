@@ -36,11 +36,13 @@ What would you like to do? - {{ serviceName }} - GOV.UK
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("existing", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("existing", "no")
           }
         ]
       }) }}
