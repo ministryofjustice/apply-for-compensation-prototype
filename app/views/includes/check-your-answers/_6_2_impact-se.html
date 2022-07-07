@@ -1,90 +1,79 @@
-<!-- About the crime -->
+
 <h2 class="govuk-heading-l">
-  About the application
+  Applying for special expenses
 </h2>
+
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Who are you applying for?
+      Have they had to pay for any treatment?
     </dt>
     <dd class="govuk-summary-list__value">
-      Myself
+      {{ data['nhsTreatment'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="who-is-making-the-application">
-        Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      <a href="../_6-impact/se-nhs-treatment">
+        Change<span class="govuk-visually-hidden"> Have they had to pay for any treatment?</span>
       </a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Are you 18 or over?
+      Have they had to pay for any home care?
     </dt>
     <dd class="govuk-summary-list__value">
-      Yes
+      {{ data['homeCare'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="who-is-making-the-application">
-        Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      <a href="../_6-impact/se-home-care">
+        Change<span class="govuk-visually-hidden"> Have they had to pay for any home care?</span>
       </a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Confirmation method
+      Have they had to pay for any changes to your home?
     </dt>
     <dd class="govuk-summary-list__value">
-      Email
+      {{ data['homeAlterations'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="confirmation-options">
-        Change<span class="govuk-visually-hidden"> confirmation receipt</span>
+      <a href="../_6-impact/se-home-alterations">
+        Change<span class="govuk-visually-hidden"> Have they had to pay for any changes to your home?</span>
       </a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Were you a victim of sexual assault or abuse?
+      Have they had to pay for any physical aids?
     </dt>
     <dd class="govuk-summary-list__value">
-      Yes
+      {{ data['physicalAids'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
-      <a href="sexual-assault-application">
-        Change<span class="govuk-visually-hidden">{{ sexualAssault }} </span>
-      </a>
-    </dd>
-  </div>
-<!--
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-half" style="border:none">
-      Select reasons for the delay in making your application
-    </dt>
-    <dd class="govuk-summary-list__value" style="border:none">
-
-
-    </dd>
-    <dd class="govuk-summary-list__actions" style="border:none">
-      <a href="application-delay">
-        Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
+      <a href="../_6-impact/se-physical-aids">
+        Change<span class="govuk-visually-hidden"> Have they had to pay for any physical aids?</span>
       </a>
     </dd>
   </div>
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      Briefly explain these reasons
+      Have they had to pay for any other special expenses?
     </dt>
     <dd class="govuk-summary-list__value">
-
+      {{ data['anyOtherExpenses'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
+      <a href="../_6-impact/se-any-other">
+        Change<span class="govuk-visually-hidden"> Have they had to pay for any other special expenses?</span>
+      </a>
     </dd>
   </div>
-  -->
+
 </dl>

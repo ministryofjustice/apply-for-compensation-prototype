@@ -24,23 +24,37 @@ Check your answers - {{ serviceName }} - GOV.UK
       Check your answers
     </h1>
 
-    {% include "../../includes/check-your-answers/_about_the_application.html" %}
+    {% include "../../includes/check-your-answers/_1_about_the_application.html" %}
 
-    {% include "../../includes/check-your-answers/_victim_details.html" %}
+    {% if (data['direct-applicant'] === 'Someone else')
+          and
+          (data['parentGuardian'] !== 'Yes') %}
 
-    {% include "../../includes/check-your-answers/_about_the_crime.html" %}
+      {% include "../../includes/check-your-answers/_1_rep_details.html" %}
 
-    {% include "../../includes/check-your-answers/_police_report.html" %}
+    {% endif %}
 
-    {% include "../../includes/check-your-answers/_your_injuries.html" %}
+    {% include "../../includes/check-your-answers/_2_victim_details.html" %}
 
-    {% include "../../includes/check-your-answers/_your_medical_details.html" %}
+    {% include "../../includes/check-your-answers/_3_about_the_crime.html" %}
 
-    {% include "../../includes/check-your-answers/_your_money.html" %}
+    {% include "../../includes/check-your-answers/_4_about_the_offender.html" %}
 
-    {% include "../../includes/check-your-answers/_other_compensation.html" %}
+    {% include "../../includes/check-your-answers/_5_1_about_your_injuries.html" %}
 
-    {% include "../../includes/check-your-answers/_contact_details.html" %}
+    {% include "../../includes/check-your-answers/_5_2_about_your_injuries_pregnancy.html" %}
+
+    {% include "../../includes/check-your-answers/_5_3_about_your_injuries_mental_health.html" %}
+
+    {% include "../../includes/check-your-answers/_6_1_impact-loe.html" %}
+
+    {% include "../../includes/check-your-answers/_6_2_impact-se.html" %}
+
+    {% include "../../includes/check-your-answers/_7_treatment.html" %}
+
+    {% include "../../includes/check-your-answers/_8_other_compensation.html" %}
+
+    {% include "../../includes/check-your-answers/_9_additional_information.html" %}
 
     {{ govukButton({ 
         text: "Continue",

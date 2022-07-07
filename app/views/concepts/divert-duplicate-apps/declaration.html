@@ -23,31 +23,44 @@
         Declaration
     </h1>
     <div id="anchor-point">
-        <p class="govuk-body">By submitting this application, I, [applicant’s name], confirm that I understand the following:</p>
+
+      {% if data.applicant == 'myself' %}
+
+        <p>You have told us that you are [name] and you are applying on behalf of yourself.</p>
+        <p>By submitting this application, you confirm that you understand the following:</p>
+      
+      {% else %}
+
+        <p>You have told us that you are [name] and you are applying on behalf of [victim’s name] (the victim).</p>
+        <p>By submitting this application, you confirm that you and [victim’s name] understands the following:</p>
+
+      {% endif %}
+
         <ul class="govuk-list govuk-list--bullet">
-          <li>the information I’ve given here is true</li>
-          <li> CICA may share and receive information with the following parties for the purposes of processing this application for compensation or verifying information provided:
+          <li>the information given in this application for compensation is true</li>
+          <li>CICA may share and receive information with the following parties for the purposes of processing this application for compensation or verifying information provided:
             <ul>
-              <li>police, prosecutors and ACRO Criminal Records Office, including for the purposes of obtaining a report of the crime and a record of any criminal convictions I may have</li>
-              <li>medical organisations, practitioners, and police medical staff to obtain medical evidence - including medical records and expert reports. CICA will let me know if this is required</li>
+              <li>police, prosecutors and ACRO Criminal Records Office, including for the purposes of obtaining a report of the crime and a record of any criminal convictions the victim may have</li>
+              <li>medical organisations, practitioners, and police medical staff to obtain medical evidence – including medical records and expert reports. CICA will let you know if this is required</li>
               <li>any other individuals or organisations where necessary to process this application</li>
-              <li>any representative I may appoint to act for me in the course of this application</li>
+              <li>any representative appointed to act for the victim in the course of this application<br><br></li>
             </ul>
-          <li>if I deliberately provide information that I know is wrong or misleading, I may be refused compensation and may be prosecuted</li>
-          <li>I must notify CICA immediately of any change in circumstances relevant to this application, including my address and information about any other claim or proceedings which may give rise to a separate award or payment in respect of my injuries</li>
+          </li>
+          <li>CICA must be notified immediately of any change in circumstances relevant to this application, including any change of address and information about any other claim or proceedings which may give rise to a separate award or payment in respect of the victim’s injuries</li>
         </ul>
 
-        <p class="govuk-body">Read our privacy notice to see <a href="https://www.gov.uk/guidance/cica-privacy-notice" target="_blank">how we use your data (opens in new tab)</a>.</p>
+        <h2 class="govuk-heading-m">
+          Providing wrong or misleading information
+        </h2>
+        <p>If untrue or misleading information is deliberately provided, compensation may be refused and the person(s) responsible may be prosecuted.</p>
+        <p>Read our privacy notice to see <a href="https://www.gov.uk/guidance/cica-privacy-notice">how we use your data (opens in new tab)</a>.</p>
 
         <h2 class="govuk-heading-m">
           Information about appointing a legal or another representative
         </h2>
-
-        <p class="govuk-body">It is not necessary to appoint a legal or other paid representative to act on an applicant’s behalf. If one is appointed at any stage, please be aware that CICA cannot meet their costs. We will communicate directly with any appointed representative.</p>
-
-        <p class="govuk-body">If we make an award, we will pay it only to an applicant or their legal representative. This is unless the application has been made on behalf of an adult who cannot manage their own financial affairs.</p>
-
-        <p class="govuk-body">If it is decided that a representative’s services are no longer required, you must tell us in writing as soon as possible. If a monetary award is to be made and there is a dispute about outstanding legal fees, it is our policy to retain the disputed amount until the parties involved resolve the dispute.</p>
+        <p>It is not necessary to appoint a legal or other representative to act on a victim's behalf. If a representative is appointed at any stage, please be aware that CICA cannot meet their costs. We will communicate directly with any appointed representative.</p>
+        <p>If we make an award, we will pay it only to the victim or their legal representative. This is unless the application has been made on behalf of an adult who cannot manage their own financial affairs or a child who is under 18 years of age. It is our general policy to put an award for a child in an interest earning deposit account until they reach the age of 18.</p>
+        <p>If it is decided that a representative’s services are no longer required, you must tell us in writing as soon as possible. If a monetary award is to be made and there is a dispute about outstanding legal fees, it is our policy to retain the disputed amount until the dispute has been resolved.</p>
     </div>
 
     <form class="form" method="post">

@@ -38,9 +38,9 @@
     <p class="govuk-body-s">
       Contents
       <ul class="govuk-list govuk-list--contents govuk-body-s">
-        <li><a href="overview-page">Overview</a></li>
+        <li>Overview</li>
         <li><a href="eligibility-page">Eligibility</a></li>
-        <li>Make a new claim</li>
+        <li><a href="make-a-claim">Make a new claim</a></li>
         <li><a href="what-happens-next-page">What happens next</a></li>
         <li><a href="update-claim">Update your claim</a></li>
         <li><a href="srr-page">If you’re a victim who lived with the attacker before 1 October 1979</a></li>
@@ -56,129 +56,69 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <h2 class="govuk-heading-m">
-        Make a new claim
+        Overview
       </h2>
-      <p class="govuk-body">You can claim for compensation online.</p>
 
-      <!-- <div class="govuk-inset-text">
-        <p class="govuk-body">If the crime happened between 1 August 1964 and 30 September 1979 and you lived with the attacker as a family member at the time of the incident, you can also <a href="/claim-compensation-criminal-injury/victim-lived-with-attacker-before-october-1979">request someone to call you</a> to start your claim.</p>
-      </div> -->
-
-      <p class="govuk-body">When you make a claim to the Criminal Injuries Compensation Authority (CICA), you may need to provide:</p>
+      <p>You might be able to claim compensation if you were the victim of a violent crime. This includes if:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>the date and location of the crime</li>
-        <li>the name of the police station where the crime was reported</li>
-        <li>the crime reference number</li>
-        <li>GP’s name and address</li>
-        <li>dentist’s name and address (if dental treatment was needed because of the injuries)</li>
-        <li>details of any previous applications you’ve made to CICA</li>
-        <li>details of any unspent criminal convictions</li>
+        <li>you were injured</li>
+        <li>a close relative died</li>
+        <li>you saw the crime happen to a loved one (or were there immediately afterwards)</li>
+        <li>you paid for the funeral of a person who died</li>
       </ul>
 
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-warning-text__assistive">Warning</span>
-          If you deliberately provide information you know is wrong or misleading, you may be prosecuted and the application for compensation may be refused.
-        </strong>
-      </div>
+      <p>You usually have to claim within 2 years of the crime. The crime must be reported to the police before you apply.</p>
 
-      <p class="govuk-body">You’ll be asked if you’ve tried to get compensation or other money you, or the person you're representing, may be entitled to, for example:</p>
+      <p>It does not cost anything to apply.</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>by claiming benefits</li>
-        <li>through insurance payments</li>
-        <li>from a civil court claim</li>
-        <li>from a criminal court case (if the crime went to court)</li>
-      </ul>
+      <h2 class="govuk-heading-m">
+        If you were injured trying to stop a crime
+      </h2>
 
-      <p class="govuk-body">You do not need to wait for the outcome of other claims before applying.</p>
+      <p>You might also be able to claim compensation if you were taking a ‘justified and exceptional’ risk trying to stop a crime. For example somebody was in danger and it was not a situation that you were trained to deal with.</p>
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body">It does not cost anything to apply and you do not have to use a legal adviser.</p>
-      </div>
+      <h2 class="govuk-heading-m">
+        Get practical and emotional support
+      </h2>
 
-      <p class="govuk-body">You cannot save the application and return to it later. You'll lose the application if you stop completing questions for a period of 30 minutes or more.</p>
+      <p>Visit <a rel="external" href="https://www.victimandwitnessinformation.org.uk/">Victim and Witness information</a> if you’re in England and Wales.</p>
+      <p>Get <a rel="external" href="https://www.mygov.scot/victim-witness-support/">support as a victim or witness of crime</a> in Scotland.</p>
+      <p>You can also get help and advice from your trade union.</p>
 
-      <div class="govuk-button-group">
+      {% set next = {
+        title: "Make a new claim",
+        href: "make-a-claim"
+      } %}
+      {% include "includes/mainstream-buttons.html" %}
 
-          {{ govukButton({
-            text: "Make a claim",
-            isStartButton: true,
-            href: "./existing-or-new"
-          }) }}
+    </div>
 
-          <!-- <p class="govuk-body">
-            <a href="#">
-                Resume a claim
-            </a>
-          <p> -->
-      </div>
+    <div class="govuk-grid-column-one-third">
 
+      <aside role="complementary">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                Criminal injuries compensation tribunal
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                Get support as a victim of crime
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-      <br>
-      <br>
+    </div>
 
-        <h2 class="govuk-heading-m">Help making your application</h2>
-
-        <p class="govuk-body">Contact the CICA helpline if you need help because you:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>do not feel confident using a computer or mobile device</li>
-          <li>do not have internet access</li>
-        </ul>
-
-          <div class="contact">
-            <p class="govuk-body">
-              CICA<br>
-              Inside the UK: 0300 003 3601<br>
-              Outside the UK: +44 (0)203 684 2517<br>
-              Monday, Tuesday, Thursday and Friday, 8.30am to 5pm<br>
-              Wednesday, 8:30am to 3pm<br>
-              <a href="https://www.relayuk.bt.com" target="_blank">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601<br>
-              <a href="/call-charges">Find out about call charges</a>
-            </p>
-          </div>
-
-        <p class="govuk-body">You can ask a friend or relative to make an application on your behalf.</p>
-
-        <h2 class="govuk-heading-m">General enquiries</h2>
-
-        <p class="govuk-body">Email <a href="mailto:info@cica.gov.uk">info@cica.gov.uk</a> if you have a question about the claims process.</p>
-
-
-        <div class="govuk-inset-text">
-          <p class="govuk-body">You cannot claim the cost of using a legal adviser.</p>
-        </div>
-
-      </div>
-
-
-      <div class="govuk-grid-column-one-third">
-
-        <aside role="complementary">
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
-          <h2 class="govuk-heading-m" id="subsection-title">
-            Related content
-          </h2>
-          <nav role="navigation" aria-labelledby="subsection-title">
-            <ul class="govuk-list govuk-body-s">
-              <li>
-                <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
-                  Criminal injuries compensation tribunal
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
-                  Get support as a victim of crime
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-
-  </div>
 </main>
 
 {% endblock %}
