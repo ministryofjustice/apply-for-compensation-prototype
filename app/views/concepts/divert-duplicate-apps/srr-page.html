@@ -39,11 +39,11 @@
       Contents
       <ul class="govuk-list govuk-list--contents govuk-body-s">
         <li><a href="../divert-duplicate-apps/">Overview</a></li>
-        <li><a href="eligibility-page">Eligibility</a></li>
+        <li><a href="eligibility-page">Eligibility</li>
         <li><a href="make-a-claim">Make a new claim</a></li>
         <li><a href="what-happens-next-page">What happens next</a></li>
-        <li>Update your claim</li>
-        <li><a href="srr-page">If you’re a victim who lived with the attacker before 1 October 1979</a></li>
+        <li><a href="update-claim">Update your claim</a></li>
+        <li>If you’re a victim who lived with the attacker before 1 October 1979</li>
       </ul>
     <p>
 
@@ -56,29 +56,38 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <h2 class="govuk-heading-m">
-        Update your existing claim
+        If you’re a victim who lived with the attacker before 1 October 1979
       </h2>
 
-      <p class="govuk-body">You must contact the Criminal Injuries Compensation Authority (CICA) to update your claim if you have new information or if something changes. This includes if:</p>
+      <p class="govuk-body">The deadline to apply for compensation was 13 June 2021 if you were a victim of violent crime and:</p>
+
       <ul class="govuk-list govuk-list--bullet">
-        <li>your contact or personal details change</li>
-        <li>​you stop using or change a representative</li>
-        <li>you get compensation or money from another source</li>
+        <li>the crime happened between 1 August 1964 and 30 September 1979</li>
+        <li>you lived with the attacker as a family member at the time of the incident (this was known as the ‘same roof’ rule)</li>
       </ul>
 
-      <p>When you contact CICA, you will need to give the victim’s:</p>
+      <h2 class="govuk-heading-m">
+        Claims made after the deadline
+      </h2>
+
+      <p class="govuk-body">You may still be able to claim if you can show you were unable to apply before 13 June 2021 and you either:</p>
+
       <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
-        <li>date of birth</li>
-        <li>address</li>
-        <li>claim reference number</li>
+        <li>were a child at the time of the crime</li>
+        <li>could not apply earlier because of exceptional circumstances (you must provide enough evidence so your claim can be decided without further extensive enquiries)</li>
       </ul>
 
-      {{ govukButton({
-        text: "Update a claim",
-        isStartButton: true,
-        href: "./app/transition"
-      }) }}
+      <h2 class="govuk-heading-m">
+        If you’ve made a claim before
+      </h2>
+
+      <p class="govuk-body">If you’ve made a claim before but it was refused or reduced because of the ‘same roof’ rule you can reapply for compensation if you’re eligible. The ‘same roof’ rule does not apply anymore.</p>
+
+      <h2 class="govuk-heading-m">
+        How to make a claim
+      </h2>
+
+      <p class="govuk-body">You can <a href="make-a-claim-page">make a claim online</a> or on the phone by calling Criminal Injuries Compensation Authority (CICA). You can also call CICA to arrange a time for someone to take your claim over the phone.</p>
 
       <div class="contact">
         <p class="govuk-body">
@@ -92,20 +101,14 @@
         </p>
       </div>
 
-      <p>You can find out how your data will be handled in the <a href="https://www.gov.uk/guidance/cica-privacy-notice">CICA privacy notice</a>.</p>
-
       {% set previous = {
-        title: "What happens next",
-        href: "what-happens-next-page"
+        title: "Update your claim",
+        href: "update-claim"
       } %}
-      {% set next = {
-        title: "If you’re a victim who lived with the attacker before 1 October 1979",
-        href: "srr-page"
-      } %}
+
       {% include "includes/mainstream-buttons.html" %}
 
-
-    </div>
+      </div>
 
 
       <div class="govuk-grid-column-one-third">
@@ -131,7 +134,6 @@
           </nav>
         </aside>
 
-      </div>
   </div>
 </main>
 

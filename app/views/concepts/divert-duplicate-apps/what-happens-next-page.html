@@ -39,10 +39,10 @@
       Contents
       <ul class="govuk-list govuk-list--contents govuk-body-s">
         <li><a href="../divert-duplicate-apps/">Overview</a></li>
-        <li><a href="eligibility-page">Eligibility</a></li>
+        <li><a href="eligibility-page">Eligibility</li>
         <li><a href="make-a-claim">Make a new claim</a></li>
-        <li><a href="what-happens-next-page">What happens next</a></li>
-        <li>Update your claim</li>
+        <li>What happens next</li>
+        <li><a href="update-claim">Update your claim</a></li>
         <li><a href="srr-page">If you’re a victim who lived with the attacker before 1 October 1979</a></li>
       </ul>
     <p>
@@ -56,29 +56,31 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <h2 class="govuk-heading-m">
-        Update your existing claim
+        What happens next
       </h2>
 
-      <p class="govuk-body">You must contact the Criminal Injuries Compensation Authority (CICA) to update your claim if you have new information or if something changes. This includes if:</p>
+      <p class="govuk-body">You’ll get a reference number when you submit your claim. Use the reference number whenever you contact Criminal Injuries Compensation Authority (CICA) about your claim.</p>
+
+      <p class="govuk-body">Your claim will be assessed on:</p>
+
       <ul class="govuk-list govuk-list--bullet">
-        <li>your contact or personal details change</li>
-        <li>​you stop using or change a representative</li>
-        <li>you get compensation or money from another source</li>
+        <li>the information you provided in your application</li>
+        <li>information from the police, including the evidence you</li> gave them
+        <li>your criminal record</li>
+        <li>medical evidence (if it’s needed)</li>
       </ul>
 
-      <p>When you contact CICA, you will need to give the victim’s:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
-        <li>date of birth</li>
-        <li>address</li>
-        <li>claim reference number</li>
-      </ul>
+      <p class="govuk-body">CICA will contact you if they need more information and when they make a final decision.</p>
 
-      {{ govukButton({
-        text: "Update a claim",
-        isStartButton: true,
-        href: "./app/transition"
-      }) }}
+      <h2 class="govuk-heading-m">
+        Medical evidence
+      </h2>
+
+      <p class="govuk-body">You’ll be told if you need to provide a medical report. It can cost up to £50.</p>
+
+      <p class="govuk-body">Contact CICA if you need help getting or paying for the medical report.</p>
+
+      <p class="govuk-body">You might also need to attend a psychological assessment if you’re claiming compensation for mental injuries.</p>
 
       <div class="contact">
         <p class="govuk-body">
@@ -92,20 +94,43 @@
         </p>
       </div>
 
-      <p>You can find out how your data will be handled in the <a href="https://www.gov.uk/guidance/cica-privacy-notice">CICA privacy notice</a>.</p>
+      <h2 class="govuk-heading-m">
+        If you’re using a legal adviser
+      </h2>
+
+      <p class="govuk-body">If you and your legal adviser disagree about how much money you owe them, you normally will not be paid your compensation in full until you resolve this.</p>
+
+      <h2 class="govuk-heading-m">
+        Disagreeing with a decision
+      </h2>
+
+      <p class="govuk-body">Write to CICA and ask them to review a decision if you disagree with it.</p>
+
+      <div class="contact">
+        <p class="govuk-body">
+          CICA<br>
+          Alexander Bain House<br>
+          Atlantic Quay<br>
+          15 York Street<br>
+          Glasgow<br>
+          G2 8JQ
+        </p>
+      </div>
+
+
+      <p class="govuk-body">If you disagree with the outcome of CICA’s review, you can appeal to the <a href="https://www.gov.uk/criminal-injuries-compensation-tribunal">criminal injuries compensation tribunal</a>.</p>
 
       {% set previous = {
-        title: "What happens next",
-        href: "what-happens-next-page"
+        title: "Make a new claim",
+        href: "make-a-claim"
       } %}
       {% set next = {
-        title: "If you’re a victim who lived with the attacker before 1 October 1979",
-        href: "srr-page"
+        title: "Update your claim",
+        href: "update-claim"
       } %}
       {% include "includes/mainstream-buttons.html" %}
 
-
-    </div>
+      </div>
 
 
       <div class="govuk-grid-column-one-third">
@@ -131,7 +156,6 @@
           </nav>
         </aside>
 
-      </div>
   </div>
 </main>
 
