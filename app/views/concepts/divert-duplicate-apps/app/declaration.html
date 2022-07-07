@@ -24,15 +24,15 @@
     </h1>
     <div id="anchor-point">
 
-      {% if data.applicant == 'myself' %}
+      {% if data['direct-applicant'] === 'Myself' %}
 
-        <p>You have told us that you are [name] and you are applying on behalf of yourself.</p>
+        <p>You have told us that you are {{data['first-name']}} {{data['last-name']}} and you are applying on behalf of yourself.</p>
         <p>By submitting this application, you confirm that you understand the following:</p>
       
       {% else %}
 
-        <p>You have told us that you are [name] and you are applying on behalf of [victim’s name] (the victim).</p>
-        <p>By submitting this application, you confirm that you and [victim’s name] understands the following:</p>
+        <p>You have told us that you are {{data['first-name']}} {{data['last-name']}} and you are applying on behalf of {{data['victim-first-name']}} {{data['victim-last-name']}} (the victim).</p>
+        <p>By submitting this application, you confirm that you and {{data['victim-first-name']}} {{data['victim-last-name']}} understands the following:</p>
 
       {% endif %}
 

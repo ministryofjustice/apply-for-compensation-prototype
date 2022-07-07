@@ -106,14 +106,9 @@
           {{ govukButton({
             text: "Make a claim",
             isStartButton: true,
-            href: "./existing-or-new"
+            href: "./app/existing-or-new"
           }) }}
 
-          <!-- <p class="govuk-body">
-            <a href="#">
-                Resume a claim
-            </a>
-          <p> -->
       </div>
 
 
@@ -153,12 +148,12 @@
         </div>
 
         {% set previous = {
-          title: "Overview",
-          href: "../divert-duplicate-apps/"
+          title: "Eligibility",
+          href: "eligibility-page"
         } %}
         {% set next = {
-          title: "Update an existing claim",
-          href: "update-claim"
+          title: "What happens next",
+          href: "what-happens-next-page"
         } %}
         {% include "includes/mainstream-buttons.html" %}
   

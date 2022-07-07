@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Claim compensation if you were the victim of a violent crime
+      </h1>
+
+    <p class="govuk-body-s">
+      Contents
+      <ul class="govuk-list govuk-list--contents govuk-body-s">
+        <li><a href="../divert-duplicate-apps/">Overview</a></li>
+        <li>Eligibility</li>
+        <li><a href="make-a-claim">Make a new claim</a></li>
+        <li><a href="what-happens-next-page">What happens next</a></li>
+        <li><a href="update-claim">Update your claim</a></li>
+        <li><a href="srr-page">If you’re a victim who lived with the attacker before 1 October 1979</a></li>
+      </ul>
+    <p>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        Eligibility
+      </h2>
+
+      <p class="govuk-body">The crime must have happened in England, Wales or Scotland. It must be reported to the police.</p>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body">The process is different if the crime happened in <a href="https://www.justice-ni.gov.uk/topics/justice-and-law/compensation-services#toc-0">Northern Ireland</a> or <a href="https://www.gov.uk/compensation-victim-crime-abroad">in another country</a>.</p>
+      </div>
+
+      <h2 class="govuk-heading-m">
+        When you can claim
+      </h2>
+
+      <p class="govuk-body">In most cases you must apply within 2 years of the crime happening.</p>
+
+      <p class="govuk-body">You may be able to claim for a crime that happened more than 2 years ago if one or both of the following apply:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you’re claiming because of childhood sexual or physical abuse</li>
+        <li>you could not claim earlier, for example because your mental or physical health stopped you</li>
+      </ul>
+
+      <p class="govuk-body">You may also be able to claim if the crime happened before 1 October 1979 and you lived with the attacker as a family member at the time of the incident. This was known as the <a href="https://www.gov.uk/claim-compensation-criminal-injury/victim-lived-with-attacker-before-october-1979">‘same roof’ rule</a> and has changed.</p>
+
+      <h2 class="govuk-heading-m">
+        Your nationality
+      </h2>
+
+      <p class="govuk-body">You must have been one of the following when the crime happened:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a British citizen or <a href="https://www.gov.uk/eu-eea">EU or EEA national</a> (or their close relative)
+        <li>a family member of an EU or EEA national who has the <a href="https://www.gov.uk/family-permit/eligibility">right to be in the UK</a></li>
+        <li>a member of the armed forces (or you’re a close relative living in their household)</li>
+        <li>a potential victim of human trafficking on or before the date of your application - this must be confirmed by the UK Human Trafficking Centre and UK Visas and Immigration</li>
+        <li>an asylum seeker</li>
+        <li>a national of a <a href="https://www.coe.int/en/web/conventions/full-list/-/conventions/treaty/116/signatures?p_auth=762Omeg9">country that has signed up to the Council of Europe Convention on the Compensation of Victim of Violent Crimes</a></li>
+      </ul>
+
+      <p class="govuk-body">You’re also eligible if you were ‘ordinarily resident’ in the UK at the time of the crime. This depends on your connection to the UK, for example if you were living, working or studying there (or you were the family member of someone who was).</p>
+
+      <h2 class="govuk-heading-m">
+        What you can get compensation for
+      </h2>
+
+      <p class="govuk-body">You can get compensation for:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>physical injuries</li>
+        <li>disabling mental injuries</li>
+        <li>sexual or physical abuse</li>
+        <li>the death of a close relative</li>
+        <li>paying for someone’s funeral</li>
+        <li>loss of earnings and expenses</li>
+      </ul>
+
+      <h2 class="govuk-heading-s">
+        Disabling mental injuries
+      </h2>
+
+      <p class="govuk-body">A disabling mental injury is something that significantly affects your day-to-day performance at work or school, your relationships, or your sexual relationships. Mental injuries must be diagnosed by a psychiatrist or clinical psychologist.</p>
+
+      <h2 class="govuk-heading-s">
+        Loss of earnings and expenses
+      </h2>
+
+      <p class="govuk-body">You might get compensation for loss of earnings, or paid expenses to cover the cost of:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>care, home adaptations or mobility aids</li>
+        <li>damage to physical aids, such as dentures, walking sticks or glasses</li>
+      </ul>
+
+      <p class="govuk-body">You usually have to be unable to work or have very limited ability to work for 28 weeks or longer to be eligible.</p>
+
+      <p class="govuk-body">You will not be paid loss of earnings for the first 28 weeks you were unable to work.</p>
+
+      <p class="govuk-body">You must have been employed when the crime happened or for the 3 years immediately before it. If you were not employed, you might still be eligible if you could not work, for example because you were in full-time education, retired or caring for someone.</p>
+
+      {% set previous = {
+        title: "Overview",
+        href: "../divert-duplicate-apps/"
+      } %}
+      {% set next = {
+        title: "Make a new claim",
+        href: "make-a-claim"
+      } %}
+      {% include "includes/mainstream-buttons.html" %}
+
+      </div>
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside role="complementary">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-body-s">
+              <li>
+                <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                  Criminal injuries compensation tribunal
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                  Get support as a victim of crime
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+  </div>
+</main>
+
+{% endblock %}
