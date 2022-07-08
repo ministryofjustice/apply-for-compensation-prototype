@@ -125,13 +125,12 @@
       </dd>
     </div>
 
-    {% if data['incidentlocation'] === 'England' %}
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        {{ englandLocationQuestion }}
+        Where in {{data.incidentlocation}} did it happen?
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['EnglandLocation'] }}, {{ data['EnglandTown'] }}
+        {{ data['locationLocation'] }}, {{ data['locationTown'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a href="../_3-incident-details/england-location">
@@ -139,47 +138,14 @@
         </a>
       </dd>
     </div>
-      {% endif %}
-
-    {% if data['incidentlocation'] === 'Scotland' %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        {{ scotlandLocationQuestion }}
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['ScotlandLocation'] }}, {{ data['ScotlandTown'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a href="../_3-incident-details/scotland-location">
-          Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
-        </a>
-      </dd>
-    </div>
-      {% endif %}
-
-    {% if data['incidentlocation'] === 'Wales' %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        {{ walesLocationQuestion }}
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['WalesLocation'] }}, {{ data['WalesTown'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a href="../_3-incident-details/wales-location">
-          Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
-        </a>
-      </dd>
-    </div>
-      {% endif %}
 
   {% if data['crimeReported'] === 'Yes' %}
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key govuk-!-width-one-half">
-      {{ crimeReportedDateQuestion }}
+      When was the crime reported to the police?
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['incidentReported-day'] }}/{{ data['incidentReported-month'] }}/{{ data['incidentReported-year'] }}
+      {{ data['incidentReported-day'] }} {{ data['incidentReported-month'] | toMonth}} {{ data['incidentReported-year'] }}
     </dd>
     <dd class="govuk-summary-list__actions">
       <a href="../_3-incident-details/crime-reported-date">
@@ -221,7 +187,7 @@
 
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key govuk-!-width-one-half">
-    {{ policeForceQuestion }}
+    Which police force is investigating the crime?
   </dt>
   <dd class="govuk-summary-list__value">
     {{ data['investigating-force'] }}
