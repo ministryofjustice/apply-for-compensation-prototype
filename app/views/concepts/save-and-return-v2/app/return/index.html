@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Enter the victim's name - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="/concepts/save-and-return-v2/app/return/router">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for=name>
+            Return to an application
+          </label>
+        </h1>
+      </div>
+
+      {{ govukInput({
+            label: {
+              text: "Email address or mobile number"
+            },
+            hint: {
+              text: "The primary contact detail you chose to use"
+            },
+            classes: "govuk-input--width-30",
+            id: "return-contact",
+            name: "return-contact"            }) }}
+
+      {{ govukInput({
+              label: {
+                text: "Victim's name"
+              },
+              classes: "govuk-input--width-30",
+              id: "return-name",
+              name: "return-name"
+            }) }}
+
+            {{ govukDateInput({
+              id: "return-dob",
+              namePrefix: "return-dob",
+              fieldset: {
+                legend: {
+                  text: "Victim's date of birth",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend"
+                }
+              },
+              hint: {
+                text: "For example, 31 3 1980"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  autocomplete: "return-dob-day"
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  autocomplete: "return-dob-month"
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  autocomplete: "return-dob-year"
+                }
+              ]
+            }) }}
+
+      {{ govukButton({
+                text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  {% if error === true %}
+
+  {{ govukErrorSummary({
+    titleText: "Incorrect code",
+    errorList: [
+      {
+        text: "Make sure the code is the same as the number we sent to you",
+        href: "#otp"
+      },
+      {
+        text: "Request a new code",
+        href: "received-message"
+      }
+    ]
+  }) }}
+
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Enter your security code</h1>
+
+      <!-- <h1 class="govuk-heading-l">Check your {{ 'phone' if data.contact == 'text' else 'email' }}</h1>
+
+      <div class="govuk-inset-text">
+        <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
+      </div> -->
+
+      {% if data.contact == 'email' %}
+      <p>The email contains a 6 digit security code.</p>
+      <p>Open the email to get the security code, then enter it below. This helps us check the email address is correct.</p>
+      <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+      {% endif %}
+
+      <p><a href="auth-message">Request a new code</a> if you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>entered your {{ 'mobile number' if data.contact == 'text' else 'email address' }} incorrectly</li>
+        <li>need a new code</li>
+      </ul>
+
+      <form class="form" method="post" action="/concepts/save-and-return-v2/app/return/auth-router">
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "Enter the 6 digit security code"
+            },
+            errorMessage: {
+              text: "The date your passport was issued must be in the past"
+            } if error === true,
+            classes: "govuk-input--width-5",
+            name: "otp",
+            id: "otp"
+          }) }}
+        </div>
+
+        {{ govukButton({ text: "Continue" }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

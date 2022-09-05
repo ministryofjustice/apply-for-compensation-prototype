@@ -1,0 +1,25 @@
+<p class="govuk-body-s">Contents</p>
+
+<ul class="govuk-list govuk-list--contents govuk-body-s">
+    <li>
+        {{ 'Overview' if thisPage == 'overview' else '<a href="../govuk/">Overview</a>' | safe }}
+    </li>
+    <li>
+        {{ 'Eligibility' if thisPage == 'eligibility' else '<a href="eligibility">Eligibility</a>' | safe }}
+    </li>
+    <li>
+        {{ 'Make an new claim' if thisPage == 'make' else '<a href="make">Make a new claim</a>' | safe }}
+    </li>
+    <li>
+        {{ 'What happens next' if thisPage == 'whn' else '<a href="whn">What happens next</a>' | safe }}
+    </li>
+    <li>
+        {{ 'Continue a claim' if thisPage == 'continue' else '<a href="continue">Continue a claim</a>' | safe }}
+    </li>
+    <li>
+        {{ 'Update a submitted claim' if thisPage == 'update' else '<a href="update">Update a submitted claim</a>' | safe }}
+    </li>
+    <li>
+        {{ 'If you’re a victim who lived with the attacker before 1 October 1979' if thisPage == 'srr' else '<a href="srr">If you’re a victim who lived with the attacker before 1 October 1979</a>' | safe }}
+    </li>
+</ul>

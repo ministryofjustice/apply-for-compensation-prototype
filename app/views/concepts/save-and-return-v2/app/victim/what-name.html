@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ nameOtherWhatQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% include "../includes/save-btn.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="address">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+            id: "nameOther",
+            name: "nameOther",
+            label: {
+            text: "What other names have they used?" if data['direct-applicant'] == 'someone else' else "What other names have you used?",
+            isPageHeading: true,
+            classes: 'govuk-label--xl'
+            },
+            id: "nameOther",
+            name: "nameOther",
+            value: data['nameOther']
+        }) }}
+
+        {{ govukButton({
+            text: "Save and continue"
+        }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

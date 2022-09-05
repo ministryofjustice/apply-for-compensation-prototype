@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Check {{ "the victim's" if data['direct-applicant'] == 'someone else' else 'your' }} details
+    </h1>
+
+    <p class="govuk-body">Make sure these details are correct. You'll need these to return to this application.</p>
+
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Victim's name" if data['direct-applicant'] == 'someone else' else "Your name"
+          },
+          value: {
+            text: data['victim-first-name'] + ' ' + data['victim-last-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "victim-name",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Victim's date of birth" if data['direct-applicant'] == 'someone else' else "Your date of birth"
+          },
+          value: {
+            text: data['dob-day'] + ' ' + data['dob-month'] | toMonth + ' ' + data['dob-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "../eligibility/age",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}    
+
+    {{ govukButton({
+      text: "Continue",
+      href: "return"
+    }) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

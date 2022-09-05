@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      No applications found
+    </h1>
+
+    <p class="govuk-body-l">There are no unsubmitted applications matching those details.</p>
+
+    <h2 class="govuk-heading-m">What to do</h2>
+    <p>Your application wasn't found for one of the following reasons:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>You misstyped the application information incorrectly. In this case, you can <a href="../return/">try again</a></li>
+      <li>Your application has already been submitted. In this case, you can <a href="#">update a submitted application</a></li>
+      <li>Your application has expired. In this case, you'll need to <a href="../eligibility/fatal-application">restart the application</a></li>
+    </ul>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "../victim"
+    }) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

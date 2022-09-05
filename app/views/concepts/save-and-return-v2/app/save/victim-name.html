@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Enter the victim's name - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="age">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for=name>
+            {{ "Enter the victim's name" if data['direct-applicant'] == 'someone else' else 'Enter your name' }}
+          </label>
+        </h1>
+      </div>
+
+      {{ govukInput({
+            label: {
+            text: "Title"
+            },
+            classes: "govuk-input--width-10",
+            id: "victim-title",
+            name: "victim-title",
+            "value": data['victim-title']
+            }) }}
+
+      {{ govukInput({
+              label: {
+                text: "First name"
+              },
+              id: "victim-first-name",
+              name: "victim-first-name",
+              value: data['victim-first-name']
+            }) }}
+
+      {{ govukInput({
+              label: {
+                text: "Last name"
+              },
+              id: "victim-last-name",
+              name: "victim-last-name",
+              value: data['victim-last-name']
+            }) }}
+
+      {{ govukButton({
+                text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

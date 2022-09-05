@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      How to return to this application 
+    </h1>
+
+    <p>We sent you a link so you can return to your application.</p>
+    <p>You can return to this application any time in the next 30 days. Your progress will be lost if you are inactive for 30 days.</p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "../victim"
+    }) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}
