@@ -20,11 +20,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="saved">
+    <form class="form" method="post" action="../saved">
 
     {% from "govuk/components/input/macro.njk" import govukInput %}
 
-    {% if data['contact'] == 'email' %}
+    {% if data['contact'] == 'text' %}
 
         {{ govukInput({
             label: {
