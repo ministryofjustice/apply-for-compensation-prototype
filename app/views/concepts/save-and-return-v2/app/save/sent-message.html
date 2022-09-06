@@ -25,6 +25,19 @@
     <div class="govuk-inset-text">
       <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
     </div>
+
+    {% if data.contact == 'email' %}
+
+    <p>The email contains a 6 digit security code. You'll need to enter this code on the next page.</p>
+    <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+    <p>The code will expire after 15 minutes.</p>
+
+    {% else %}
+
+    <p>The text contains a 6 digit security code. You'll need to enter this code on the next page.</p>
+    <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+
+    {% endif %}
     
     {{ govukButton({
       text: "Continue",

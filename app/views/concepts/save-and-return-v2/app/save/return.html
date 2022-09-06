@@ -18,12 +18,17 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
+
+    {{ govukPanel({
+      titleText: "You can now save and return"
+    }) }}
+
+    <h2 class="govuk-heading-m">
       How to return to this application 
-    </h1>
+    </h2>
 
     <p>We sent you a link so you can return to your application.</p>
-    <p>You can return to this application any time in the next 30 days. Your progress will be lost if you are inactive for 30 days.</p>
+    <p>You can return to this application any time in the next 30 days. After this time, your application will expire and you'll have to start again.</p>
 
     {{ govukButton({
       text: "Continue",

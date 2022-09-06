@@ -21,7 +21,7 @@
       },
       {
         text: "Request a new code",
-        href: "received-message"
+        href: "auth-message"
       }
     ]
   }) }}
@@ -39,20 +39,7 @@
         <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
       </div> -->
 
-      {% if data.contact == 'email' %}
-      <p>The email contains a 6 digit security code.</p>
-      <p>Open the email to get the security code, then enter it below. This helps us check the email address is correct.</p>
-      <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
-      {% endif %}
-
-      <p><a href="auth-message">Request a new code</a> if you:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>entered your {{ 'mobile number' if data.contact == 'text' else 'email address' }} incorrectly</li>
-        <li>need a new code</li>
-      </ul>
-
-      <form class="form" method="post" action="/concepts/save-and-return-v2/app/return/auth-router">
+      <form class="form" method="post" action="/concepts/save-and-return-v2/app/save/auth-router">
         <div class="govuk-form-group">
           {{ govukInput({
             label: {
@@ -69,6 +56,9 @@
 
         {{ govukButton({ text: "Continue" }) }}
       </form>
+
+      <a href="auth-message" class="govuk-body govuk-link">Resend the security code</a>
+
     </div>
   </div>
 {% endblock %}

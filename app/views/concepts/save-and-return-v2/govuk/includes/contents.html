@@ -11,10 +11,10 @@
         {{ 'Make an new claim' if thisPage == 'make' else '<a href="make">Make a new claim</a>' | safe }}
     </li>
     <li>
-        {{ 'What happens next' if thisPage == 'whn' else '<a href="whn">What happens next</a>' | safe }}
+        {{ 'Continue a claim' if thisPage == 'continue' else '<a href="continue">Continue a claim</a>' | safe }}
     </li>
     <li>
-        {{ 'Continue a claim' if thisPage == 'continue' else '<a href="continue">Continue a claim</a>' | safe }}
+        {{ 'What happens next' if thisPage == 'whn' else '<a href="whn">What happens next</a>' | safe }}
     </li>
     <li>
         {{ 'Update a submitted claim' if thisPage == 'update' else '<a href="update">Update a submitted claim</a>' | safe }}
