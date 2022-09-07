@@ -140,7 +140,7 @@ module.exports = function (router, content) {
     var authCode = Number(req.session.data['auth-code'])
     var enterredCode = Number(req.session.data.otp)
     if (enterredCode == authCode) {
-      res.redirect('/concepts/save-and-return-v2/app/return/task-list')
+      res.redirect('/concepts/save-and-return-v2/app/return/context')
     } else {
       res.render('concepts/save-and-return-v2/app/return/authentication', {'error': true })
     }

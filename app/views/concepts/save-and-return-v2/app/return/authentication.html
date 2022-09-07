@@ -39,7 +39,7 @@
         <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
       </div> -->
 
-      <form class="form" method="post" action="/concepts/save-and-return-v2/app/save/auth-router">
+      <form class="form" method="post" action="/concepts/save-and-return-v2/app/return/auth-router">
         <div class="govuk-form-group">
           {{ govukInput({
             label: {
