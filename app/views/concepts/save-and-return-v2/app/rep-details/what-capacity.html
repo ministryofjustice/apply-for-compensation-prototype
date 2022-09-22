@@ -29,63 +29,56 @@
       {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
       {{ govukRadios({
-            classes: "govuk-radios--stacked",
-            "idPrefix": "repType",
-            name: "repType",
-            currentValue: data['repType'],
-            "fieldset": {
-              "legend": {
-                text: "What type of representative are you?",
-                isPageHeading: true,
-                classes: 'govuk-fieldset__legend--xl'
-              }
-            },
-            "items": [
-              {
-                "value": "Solicitor",
-                text: "Solicitor",
-                checked: checked("repType", "Solicitor")
-              },
-              {
-                "value": "Claims management company",
-                text: "Claims management company",
-                checked: checked("repType", "Claims management company")
-              },
-              {
-                "value": "Victim support",
-                text: "Victim support",
-                checked: checked("repType", "Victim support")
-              },
-              {
-                "value": "Other victim services",
-                text: "Other victim services",
-                checked: checked("repType", "Other victim services")
-              },
-              {
-                "value": "Friend or relative",
-                text: "Friend or relative",
-                checked: checked("repType", "Friend or relative")
-              }
-            ]
-          }) }}
+        classes: "govuk-radios",
+        "idPrefix": "rep-type",
+        name: "rep-type",
+        "fieldset": {
+        "legend": {
+        text: "In what capacity are you applying on behalf of the victim?",
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--xl'
+        }
+        },
+        hint: {
+          text: "This tells us who you are in relation to the victim."
+        },
+        "items": [
+        {
+          "value": "Solicitor",
+          text: "Solicitor",
+          checked: checked("rep-type", "Solicitor")
+        },
+        {
+          "value": "Claims management company",
+          text: "Claims management company",
+          checked: checked("rep-type", "Claims management company")
+        },
+        {
+          "value": "Support organisation",
+          text: "Support organisation",
+          checked: checked("rep-type", "Support organisation")
+        },
+        {
+          "value": "Social Services",
+          text: "Social Services",
+          checked: checked("rep-type", "Social Services")
+        },
+        {
+          "value": "Friend or relative",
+          text: "Friend or relative",
+          checked: checked("rep-type", "Friend or relative")
+        },
+        {
+          "value": "Foster carer",
+          text: "Foster carer",
+          checked: checked("rep-type", "Foster carer")
+        }
+        ]
+        }) }}
 
-          <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help with knowing what type of representative you are
-                  </span>
-              </summary>
-                  <div class="govuk-details__text">
-                    <p class="govuk-body">You are not a representative if you are applying on behalf of:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>a child and you are a parent or other person with parental responsibility</li>
-                    </ul>
-                  </div>
-          </details>
-
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
 
     </form>
 

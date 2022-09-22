@@ -29,65 +29,65 @@
       {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
       {% call govukFieldset({
-      legend: {
-      text: "Enter your registered company office address",
-      classes: "govuk-fieldset__legend--xl",
-      isPageHeading: true
-      }
-      }) %}
-
-      {{ govukInput({
-            label: {
-              html: 'Address line 1'
-            },
-            id: "rep-address-line-1",
-            name: "rep-address-line-1",
-            value: data['rep-address-line-1']
-          }) }}
-
-      {{ govukInput({
-            label: {
-              html: 'Address line 2 (optional)'
-            },
-            id: "rep-address-line-2",
-            name: "rep-address-line-2",
-            value: data['rep-address-line-2']
-          }) }}
-
-      {{ govukInput({
-            label: {
-              text: 'Town or city'
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "rep-address-town",
-            name: "rep-address-town",
-            value: data['rep-address-town']
-          }) }}
-
-      {{ govukInput({
-            label: {
-              text: 'County (optional)'
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "rep-address-county",
-            name: "rep-address-county",
-            value: data['rep-address-county']
-          }) }}
-
-      {{ govukInput({
-            label: {
-              text: 'Postcode'
-            },
-            classes: "govuk-input--width-10",
-            id: "rep-address-postcode",
-            name: "rep-address-postcode",
-            value: data['rep-address-postcode']
-          }) }}
-
-      {% endcall %}
-      {{ govukButton({
-        text: "Save and continue"
-      }) }}
+        legend: {
+        text: "Enter your address",
+        classes: "govuk-fieldset__legend--xl",
+        isPageHeading: true
+        }
+        }) %}
+  
+        {{ govukInput({
+              label: {
+                html: "Building and street"
+              },
+              id: "address-line-1",
+              name: "address-line-1",
+              value: data['rep-address-line-1']
+            }) }}
+  
+        {{ govukInput({
+              id: "address-line-2",
+              name: "address-line-2",
+              value: data['rep-address-line-2']
+            }) }}
+  
+        {{ govukInput({
+              label: {
+                text: "Town or city"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "address-town",
+              name: "address-town",
+              value: data['rep-address-town']
+            }) }}
+  
+        {{ govukInput({
+              label: {
+                text: "County (optional)"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "address-county",
+              name: "address-county",
+              value: data['rep-address-county']
+            }) }}
+  
+        {{ govukInput({
+              label: {
+                text: "Postcode (optional)"
+              },
+              classes: "govuk-input--width-10",
+              id: "address-postcode",
+              name: "address-postcode",
+              value: data['rep-address-postcode']
+            }) }}
+  
+        {% endcall %}
+  
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+        {{ govukButton({
+            text: "Continue and continue"
+        }) }}
 
     </form>
   </div>
