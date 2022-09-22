@@ -23,18 +23,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ "Victim details" if data['direct-applicant'] == 'someone else' else "Your details" }}
+      Your details as the representative
     </h1>
 
-    <p class="govuk-body">We’re going to ask for some details about {{ "the victim" if data['direct-applicant'] == 'someone else' else "you" }}.</p>
+    <p class="govuk-body">We’re going to ask for some details about you.</p>
 
-    <p class="govuk-body">We’ll use these to contact you about this application.</p>
+    <p class="govuk-body">We’ll use these to contact you about this claim.</p>
 
-    {{ govukButton({
-      text: "Continue",
-      href: "./victim/other-name"
-    }) }}
+    <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../includes/screen-exited.html" %}
 
+      {{ govukButton({
+        text: "Continue",
+        href: "./what-capacity"
+      }) }}
+    </form>
   </div>
 </div>
 

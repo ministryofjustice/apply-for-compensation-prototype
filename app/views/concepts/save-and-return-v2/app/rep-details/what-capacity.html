@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ repTypeQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% include "../includes/save-btn.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post" action="rep-name">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--stacked",
+            "idPrefix": "repType",
+            name: "repType",
+            currentValue: data['repType'],
+            "fieldset": {
+              "legend": {
+                text: "What type of representative are you?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Solicitor",
+                text: "Solicitor",
+                checked: checked("repType", "Solicitor")
+              },
+              {
+                "value": "Claims management company",
+                text: "Claims management company",
+                checked: checked("repType", "Claims management company")
+              },
+              {
+                "value": "Victim support",
+                text: "Victim support",
+                checked: checked("repType", "Victim support")
+              },
+              {
+                "value": "Other victim services",
+                text: "Other victim services",
+                checked: checked("repType", "Other victim services")
+              },
+              {
+                "value": "Friend or relative",
+                text: "Friend or relative",
+                checked: checked("repType", "Friend or relative")
+              }
+            ]
+          }) }}
+
+          <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with knowing what type of representative you are
+                  </span>
+              </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">You are not a representative if you are applying on behalf of:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>a child and you are a parent or other person with parental responsibility</li>
+                    </ul>
+                  </div>
+          </details>
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

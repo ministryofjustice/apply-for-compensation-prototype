@@ -18,19 +18,9 @@
 
 {% block content %}
 
-{% if data['direct-applicant'] == 'someone else' %}
-
-    {% set action = '../rep-details/' %}
-
-{% else %} 
-
-    {% set action = '../saved' %}
-
-{% endif %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="{{action}}">
+    <form class="form" method="post" action="company-reg-no">
 
     {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -38,7 +28,7 @@
 
         {{ govukInput({
             label: {
-                text: "Enter their email address (optional)" if data['direct-applicant'] == 'someone else' else 'Enter your email address (optional)',
+                text: 'Enter your email address (optional)',
                 isPageHeading: true,
                 classes: 'govuk-label--xl'
             },
@@ -56,7 +46,7 @@
 
         {{ govukInput({
             label: {
-                text: "Enter their telephone number (optional)" if data['direct-applicant'] == 'someone else' else 'Enter your telephone number (optional)',
+                text: 'Enter your telephone number (optional)',
                 isPageHeading: true,
                 classes: 'govuk-label--xl'
             },
