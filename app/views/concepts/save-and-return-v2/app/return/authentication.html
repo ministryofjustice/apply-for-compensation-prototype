@@ -13,14 +13,14 @@
   {% if error === true %}
 
   {{ govukErrorSummary({
-    titleText: "Incorrect code",
+    titleText: "There is a problem",
     errorList: [
       {
-        text: "Make sure the code is the same as the number we sent to you",
+        text: "Enter the 6-digit security code we sent you",
         href: "#otp"
       },
       {
-        text: "Request a new code",
+        text: " ",
         href: "auth-message"
       }
     ]
@@ -43,10 +43,10 @@
         <div class="govuk-form-group">
           {{ govukInput({
             label: {
-              text: "Enter the 6 digit security code"
+              text: "This is the 6-digit security code we just sent you"
             },
             errorMessage: {
-              text: "The date your passport was issued must be in the past"
+              text: "Enter the 6-digit security code"
             } if error === true,
             classes: "govuk-input--width-5",
             name: "otp",
@@ -57,7 +57,16 @@
         {{ govukButton({ text: "Continue" }) }}
       </form>
 
-      <a href="auth-message" class="govuk-body govuk-link">Resend the security code</a>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have not received the code
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          We can <a href="auth-message" class="govuk-body govuk-link">send you a new code</a>.
+        </div>
+      </details>
 
     </div>
   </div>

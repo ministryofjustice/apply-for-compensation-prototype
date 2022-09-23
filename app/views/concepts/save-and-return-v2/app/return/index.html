@@ -24,21 +24,18 @@ Enter the victim's name - {{ serviceName }} - GOV.UK
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl" for=name>
-            Return to an application
+            Continue a saved application
           </label>
         </h1>
       </div>
 
       {{ govukInput({
             label: {
-              text: "Email address or mobile number"
-            },
-            hint: {
-              text: "The primary contact detail you chose to use"
+              text: "Your email address or mobile number"
             },
             classes: "govuk-input--width-30",
             id: "return-contact",
-            name: "return-contact"        
+            name: "return-contact"
           }) }}
 
       {{ govukInput({

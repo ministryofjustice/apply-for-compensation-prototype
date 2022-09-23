@@ -19,14 +19,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Your application
+      CICA application
     </h1>
 
     {{ govukSummaryList({
       rows: [
         {
           key: {
-            text: "Victim's name" if data['direct-applicant'] == 'someone else' else "Your name"
+            text: "Victim's name" if data['direct-applicant'] == 'someone else' else "Name"
           },
           value: {
             text: data['victim-first-name'] + ' ' + data['victim-last-name']
@@ -34,7 +34,7 @@
         },
         {
           key: {
-            text: "Victim's date of birth" if data['direct-applicant'] == 'someone else' else "Your date of birth"
+            text: "Victim's date of birth" if data['direct-applicant'] == 'someone else' else "Date of birth"
           },
           value: {
             text: data['dob-day'] + ' ' + data['dob-month'] | toMonth + ' ' + data['dob-year']
@@ -44,14 +44,13 @@
     }) }}
 
     <h2 class="govuk-heading-m">
-      Your progress
+      Next steps
     </h2>
 
-    <p>Last time, you finished:  <strong>{{ "Victim details" if data['direct-applicant'] == 'someone else' else "Your details" }}</strong></p>
-    <p>Your next step is: <strong>Tell us about the crime</strong></p>
+    <p>You can now continue the application. You can submit this today or you have until [<strong>day, month, year</strong>] to submit it.</p>
 
     {{ govukButton({
-      text: "Continue",
+      text: "Continue application",
       href: "../crime/"
     }) }}
 
