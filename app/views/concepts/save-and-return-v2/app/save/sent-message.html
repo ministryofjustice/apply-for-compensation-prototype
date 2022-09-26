@@ -20,24 +20,13 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Check your {{ 'phone' if data.contact == 'text' else 'email' }}</h1>
+    <h1 class="govuk-heading-l">We've sent you {{ 'a text' if data.contact == 'text' else 'an email' }}</h1>
 
     <div class="govuk-inset-text">
       <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
     </div>
 
-    {% if data.contact == 'email' %}
-
-    <p>The email contains a 6 digit security code. You'll need to enter this code on the next page.</p>
-    <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
-    <p>The code will expire after 15 minutes.</p>
-
-    {% else %}
-
-    <p>The text contains a 6 digit security code. You'll need to enter this code on the next page.</p>
-    <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
-
-    {% endif %}
+    <p>The {{ 'text' if data.contact == 'text' else 'email' }} contains a 6-digit security code. This code expires after 15 minutes. The {{ 'text' if data.contact == 'text' else 'email' }} might take a few minutes to arrive.</p>
     
     {{ govukButton({
       text: "Continue",

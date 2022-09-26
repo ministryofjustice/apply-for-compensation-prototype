@@ -11,7 +11,7 @@ module.exports = function (router, content) {
     } else if (existingOrNew === 'continue') {
       res.redirect('/concepts/save-and-return-v2/app/return/')
     } else {
-      res.redirect('/concepts/save-and-return-v2/app/eligibility/context')
+      res.redirect('/concepts/save-and-return-v2/app/eligibility/fatal-application')
     }
   })
 

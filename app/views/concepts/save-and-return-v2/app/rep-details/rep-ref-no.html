@@ -23,10 +23,8 @@ Do you have your own reference number for this application? - {{ serviceName }} 
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post" action="../saved">
 
-
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
-
 
       {% set referenceHtml %}
       {{ govukInput({
@@ -82,7 +80,6 @@ Do you have your own reference number for this application? - {{ serviceName }} 
                       <p class="govuk-body">As this is your reference number, we’ll use this in our correspondence with you to identify what application it relates to.</p>
                     </div>
             </details>
-
 
             {% from "govuk/components/input/macro.njk" import govukInput %}
 

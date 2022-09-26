@@ -26,9 +26,11 @@
           <time class="moj-message-list__date" datetime="17 March 2019">{{0 | getDate}}</time>
           <div class="moj-message-item moj-message-item--received">
             <div class="moj-message-item__text moj-message-item__text--received">
-              <span class="govuk-body govuk-body-s">Your authentication code is {{data.lpa.lpaType|lower}}: 
-                <span class="underline">{{ authCode }}</span>
-              </span>
+              <p class="govuk-body govuk-body-s">Claim criminal injuries compensation:
+                <span class="underline">{{ authCode }}</span> is your 6-digit security code.
+              </p>
+              <p class="govuk-body-s">The code expires in 15 minutes.</p>
+              <span class="govuk-body govuk-body-s">Do not reply to this message.</span>
             </div>
           </div>
         </div>
@@ -65,16 +67,21 @@
           },
           {
             key: { text: "Subject" },
-            value: { text: "Your authentication code" }
+            value: { text: "Your security code" }
           }
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">Your authentication code is:</h2>
+      <p>Do not reply to this email.</p>
+      <p>You’ve received this email from the Criminal Injuries Compensation Authority.</p>
+
+      <h2 class="govuk-heading-m">Your 6-digit security code is:</h2>
 
       {{ govukInsetText({
         html: authCode
       }) }}
+
+      <p>This code <strong>expires in 15 minutes</strong>.</p>
 
       <form class="form" method="post" action="authentication">
         <input type="hidden" name="auth-code" value="{{authCode}}">

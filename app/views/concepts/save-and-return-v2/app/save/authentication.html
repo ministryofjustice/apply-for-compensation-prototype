@@ -13,15 +13,11 @@
   {% if error === true %}
 
   {{ govukErrorSummary({
-    titleText: "Incorrect code",
+    titleText: "There is a problem",
     errorList: [
       {
-        text: "Make sure the code is the same as the number we sent to you",
+        text: "Enter the 6-digit authentication code we sent you.",
         href: "#otp"
-      },
-      {
-        text: "Request a new code",
-        href: "auth-message"
       }
     ]
   }) }}
@@ -33,20 +29,14 @@
 
       <h1 class="govuk-heading-l">Enter your security code</h1>
 
-      <!-- <h1 class="govuk-heading-l">Check your {{ 'phone' if data.contact == 'text' else 'email' }}</h1>
-
-      <div class="govuk-inset-text">
-        <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
-      </div> -->
-
       <form class="form" method="post" action="/concepts/save-and-return-v2/app/save/auth-router">
         <div class="govuk-form-group">
           {{ govukInput({
             label: {
-              text: "Enter the 6 digit security code"
+              text: "6-digit security code"
             },
             errorMessage: {
-              text: "The date your passport was issued must be in the past"
+              text: "Enter the 6-digit authentication code"
             } if error === true,
             classes: "govuk-input--width-5",
             name: "otp",
@@ -58,11 +48,11 @@
       </form>
 
       {% set helpText %}
-      We can <a href="auth-message">send the code again</a> or you can <a href="contact-detail">use a different {{ 'email address' if data.contact == 'email' else 'phone number' }}</a>.
+      We can <a href="auth-message">send you a new code</a>.
       {% endset %}
 
       {{ govukDetails({
-        summaryText: "Problems with the code?",
+        summaryText: "I have not received the code",
         html: helpText
       }) }}
 
