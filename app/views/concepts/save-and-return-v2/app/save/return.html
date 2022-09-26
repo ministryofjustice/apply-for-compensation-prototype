@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "You can now access and submit this application for the next 30 days"
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      What happens now? 
+    </h2>
+
+    <p>You have <strong>30 days from now</strong> to complete the application.</p>
+    <p>You can continue the application now if you choose to. Or, you can continue the application at a later date. To do so, you'll need the:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>email address or mobile phone number you provided</li>
+      <li>victim's name</li>
+      <li>victim's date of birth</li>
+    </ul>
+
+    <p>If you do not wish to continue the application now, you can close this window.</p>
+
+    <h2 class="govuk-heading-m">
+      How long do you have to finish the application?
+    </h2>
+    
+    <p>You have <strong>30 days to finish the application</strong> from now. After this, if you have not submitted it, you'll need to start again.</p>
+
+    <h2 class="govuk-heading-m">
+      You still need to send us the application
+    </h2>
+
+    <p>While you can now return to the application at a later date, you need to ensure you submit this before <strong>{{ 30 | getDate }}</strong>.</p>
+    <p>If you do not submit this, we are unable to process your application and you’ll need to do it again.</p>
+
+    {{ govukButton({
+      text: "Continue application",
+      href: "../victim"
+    }) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

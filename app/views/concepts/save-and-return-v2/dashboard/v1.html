@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">My applications</h1>
+
+    <button class="govuk-button">Start an application</button>
+
+    {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
+
+    {{ mojTicketPanel({
+      attributes: {
+        'aria-label': 'Sub navigation 1'
+      },
+      items: [{
+        html: '
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Tony Stark</h2><strong class="govuk-tag">Subitted</strong>
+        <span class="govuk-hint govuk-!-margin-bottom-1"><strong>Application number:</strong> 10238756382</span>
+        <div class="govuk-button-group">
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Update</a>
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Delete</a>
+        </div>
+        ',
+        attributes: {
+          'aria-label': 'Section 1'
+        },
+        classes: 'moj-ticket-panel__content--blue'
+      },
+      {
+        html: '
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Jean Grey</h2><strong class="govuk-tag govuk-tag--purple">started</strong>
+        <span class="govuk-hint govuk-!-margin-bottom-1"><strong>Application number:</strong> 10238756382</span>
+        <div class="govuk-button-group">
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Continue</a>
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Delete</a>
+        </div>
+        ',
+        attributes: {
+          'aria-label': 'Section 1'
+        },
+        classes: 'moj-ticket-panel__content--purple'
+      },
+      {
+        html: '
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Carol Danvers</h2><strong class="govuk-tag govuk-tag--yellow">information needed</strong>
+        <span class="govuk-hint govuk-!-margin-bottom-1"><strong>Application number:</strong> 10238756382</span>
+        <div class="govuk-button-group">
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Add requested information</a>
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Delete</a>
+        </div>
+        ',
+        attributes: {
+          'aria-label': 'Section 1'
+        },
+        classes: 'moj-ticket-panel__content--yellow'
+      },
+      {
+        html: '
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Bruce Banner</h2><strong class="govuk-tag govuk-tag--red">cancelled</strong>
+        <span class="govuk-hint govuk-!-margin-bottom-1"><strong>Application number:</strong> 10238756382</span>
+        <div class="govuk-button-group">
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-0" href="#">Delete</a>
+        </div>
+        ',
+        attributes: {
+          'aria-label': 'Section 1'
+        },
+        classes: 'moj-ticket-panel__content--red'
+      }
+      ]
+      
+    }) }}
+    
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

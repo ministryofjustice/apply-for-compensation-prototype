@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Claim compensation if you were the victim of a violent crime
+      </h1>
+
+      {% set thisPage = 'srr' %}
+      {% include "./includes/contents.html" %}
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        If you’re a victim who lived with the attacker before 1 October 1979
+      </h2>
+
+      <p class="govuk-body">The deadline to apply for compensation was 13 June 2021 if you were a victim of violent crime and:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the crime happened between 1 August 1964 and 30 September 1979</li>
+        <li>you lived with the attacker as a family member at the time of the incident (this was known as the ‘same roof’ rule)</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        Claims made after the deadline
+      </h2>
+
+      <p class="govuk-body">You may still be able to claim if you can show you were unable to apply before 13 June 2021 and you either:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>were a child at the time of the crime</li>
+        <li>could not apply earlier because of exceptional circumstances (you must provide enough evidence so your claim can be decided without further extensive enquiries)</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        If you’ve made a claim before
+      </h2>
+
+      <p class="govuk-body">If you’ve made a claim before but it was refused or reduced because of the ‘same roof’ rule you can reapply for compensation if you’re eligible. The ‘same roof’ rule does not apply anymore.</p>
+
+      <h2 class="govuk-heading-m">
+        How to make a claim
+      </h2>
+
+      <p class="govuk-body">You can <a href="make-a-claim-page">make a claim online</a> or on the phone by calling Criminal Injuries Compensation Authority (CICA). You can also call CICA to arrange a time for someone to take your claim over the phone.</p>
+
+      <div class="contact">
+        <p class="govuk-body">
+          CICA<br>
+          Inside the UK: 0300 003 3601<br>
+          Outside the UK: +44 (0)203 684 2517<br>
+          Monday, Tuesday, Thursday and Friday, 8.30am to 5pm<br>
+          Wednesday, 8:30am to 3pm<br>
+          <a href="https://www.relayuk.bt.com" target="_blank">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601<br>
+          <a href="/call-charges">Find out about call charges</a>
+        </p>
+      </div>
+
+      {% set previous = {
+        title: "Update an existing claim",
+        href: "update-claim"
+      } %}
+
+      {% include "includes/mainstream-buttons.html" %}
+
+      </div>
+
+
+      <div class="govuk-grid-column-one-third">
+
+        <aside role="complementary">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-body-s">
+              <li>
+                <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                  Criminal injuries compensation tribunal
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                  Get support as a victim of crime
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+  </div>
+</main>
+
+{% endblock %}

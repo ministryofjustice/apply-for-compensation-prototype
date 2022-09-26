@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Claim compensation if you were the victim of a violent crime
+      </h1>
+
+      {% set thisPage = 'overview' %}
+      {% include "./includes/contents.html" %}
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        Overview
+      </h2>
+
+      <p>You might be able to claim compensation if you were the victim of a violent crime. This includes if:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you were injured</li>
+        <li>a close relative died</li>
+        <li>you saw the crime happen to a loved one (or were there immediately afterwards)</li>
+        <li>you paid for the funeral of a person who died</li>
+      </ul>
+
+      <p>You usually have to claim within 2 years of the crime. The crime must be reported to the police before you apply.</p>
+
+      <p>It does not cost anything to apply.</p>
+
+      <h2 class="govuk-heading-m">
+        If you were injured trying to stop a crime
+      </h2>
+
+      <p>You might also be able to claim compensation if you were taking a ‘justified and exceptional’ risk trying to stop a crime. For example somebody was in danger and it was not a situation that you were trained to deal with.</p>
+
+      <h2 class="govuk-heading-m">
+        Get practical and emotional support
+      </h2>
+
+      <p>Visit <a rel="external" href="https://www.victimandwitnessinformation.org.uk/">Victim and Witness information</a> if you’re in England and Wales.</p>
+      <p>Get <a rel="external" href="https://www.mygov.scot/victim-witness-support/">support as a victim or witness of crime</a> in Scotland.</p>
+      <p>You can also get help and advice from your trade union.</p>
+
+      {% set next = {
+        title: "Eligibility",
+        href: "eligibility-page"
+      } %}
+      {% include "includes/mainstream-buttons.html" %}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside role="complementary">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                Criminal injuries compensation tribunal
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                Get support as a victim of crime
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+</main>
+
+{% endblock %}

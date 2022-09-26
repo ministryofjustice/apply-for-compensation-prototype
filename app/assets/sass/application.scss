@@ -20,6 +20,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 @import "components/accessible-autocomplete";
 @import "components/miller-columns";
+@import "components/ticket-panel";
 @import "injuries";
 @import "concepts";
 
@@ -157,4 +158,31 @@ $govuk-assets-path: '/govuk/assets/';
 }
 .mainstream-btn + .mainstream-btn {
     margin-top: 20px;
+}
+
+// Authentication text
+.overlay-container {
+  position: relative !important;
+  max-width: 300px;
+
+  .message {
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    left: 0;
+    padding: 0 8%;
+    .moj-message-list__date {
+      color: white;
+    }
+    .moj-message-item {
+      width: 70%;
+      padding-left: 15px !important;
+    }
+  }
+  .underline {
+    text-decoration: underline;
+  }
+  img {
+    width: 100%;
+  }
 }

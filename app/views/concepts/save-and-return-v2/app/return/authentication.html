@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  {% if error === true %}
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter the 6-digit security code we sent you",
+        href: "#otp"
+      },
+      {
+        text: " ",
+        href: "auth-message"
+      }
+    ]
+  }) }}
+
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Enter your security code</h1>
+
+      <!-- <h1 class="govuk-heading-l">Check your {{ 'phone' if data.contact == 'text' else 'email' }}</h1>
+
+      <div class="govuk-inset-text">
+        <p>We have sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
+      </div> -->
+
+      <form class="form" method="post" action="/concepts/save-and-return-v2/app/return/auth-router">
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "This is the 6-digit security code we just sent you"
+            },
+            errorMessage: {
+              text: "Enter the 6-digit security code"
+            } if error === true,
+            classes: "govuk-input--width-5",
+            name: "otp",
+            id: "otp"
+          }) }}
+        </div>
+
+        {{ govukButton({ text: "Continue" }) }}
+      </form>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have not received the code
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          We can <a href="auth-message" class="govuk-body govuk-link">send you a new code</a>.
+        </div>
+      </details>
+
+    </div>
+  </div>
+{% endblock %}

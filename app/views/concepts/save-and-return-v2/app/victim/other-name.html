@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ nameOtherQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% include "../includes/save-btn.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            "idPrefix": "haveOtherName",
+            name: "otherName",
+            "value": "otherName",
+            "fieldset": {
+              "legend": {
+                text: "Have they ever been known by any other names?" if data['direct-applicant'] == 'someone else' else "Have you ever been known by any other names?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "yes",
+                text: "Yes",
+                checked: checked("haveOtherName", "Yes")
+              },
+              {
+                "value": "no",
+                text: "No",
+                checked: checked("haveOtherName", "No")
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

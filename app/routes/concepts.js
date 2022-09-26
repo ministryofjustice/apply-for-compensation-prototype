@@ -287,6 +287,9 @@ require('../views/concepts/save-and-return-pre/resume-claim-screen/option-2/save
 
   require('../views/concepts/save-and-return-post/mvp-proto/user-or-system-gen-pw/password-choice/routes')(router, viewContent);
 
+// Save and return v2
+
+require('../views/concepts/save-and-return-v2/routes')(router, viewContent);
 
 // Divert duplicate applications
 

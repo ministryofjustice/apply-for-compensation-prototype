@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">We've sent you an {{ 'phone' if data.contact == 'text' else 'email' }}</h1>
+
+    <div class="govuk-inset-text">
+      <p>This has been sent {{ 'a text' if data.contact == 'text' else 'an email' }} to:<br><strong>{{ data['mobile-number'] if data.contact == 'text' else data['email-address'] }}</strong></p>
+    </div>
+
+    {% if data.contact == 'email' %}
+
+    <p>The email contains a 6-digit security code. <strong>This code expires after 15 minutes.</strong> You'll need to enter this code on the next page. The email might take a few minutes to arrive.</p>
+    <p>If you do not get an email, check your spam folder.</p>
+
+    {% else %}
+
+    <p>The text contains a 6 digit security code. <strong>This code expires after 15 minutes.</strong> You'll need to enter this code on the next page.</p>
+    <p>It might take a few minutes to arrive.</p>
+
+    {% endif %}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "auth-message"
+    }) }}
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

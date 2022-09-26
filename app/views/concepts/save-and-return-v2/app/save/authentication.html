@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your email
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  {% if error === true %}
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter the 6-digit security code we sent you",
+        href: "#otp"
+      }
+    ]
+  }) }}
+
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Enter your security code</h1>
+
+      <form class="form" method="post" action="/concepts/save-and-return-v2/app/save/auth-router">
+        <div class="govuk-form-group">
+          {{ govukInput({
+            label: {
+              text: "6-digit security code"
+            },
+            errorMessage: {
+              text: "Enter the 6-digit authentication code"
+            } if error === true,
+            classes: "govuk-input--width-5",
+            name: "otp",
+            id: "otp"
+          }) }}
+        </div>
+
+        {{ govukButton({ text: "Continue" }) }}
+      </form>
+
+      {% set helpText %}
+      We can <a href="auth-message">send you a new code</a>.
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "I have not received the code",
+        html: helpText
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

@@ -9,3 +9,9 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 @import "node_modules/govuk-frontend/govuk/all";
 
 //change
+
+.email-box {
+    border: 1px solid #b1b4b6;
+    padding: .5rem 1rem 1rem;
+    border-radius: .5rem;
+}
