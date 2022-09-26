@@ -16,7 +16,7 @@ module.exports = function (router, content) {
   })
 
   /* >>>>> Fatal application <<<<< */
-  router.post('/concepts/save-and-return-v2/app/eligibility/fatal-application', function (req, res) {
+  router.post('/concepts/save-and-return-v2/app/eligibility/fatal-application-router', function (req, res) {
     var fatalApplication = req.session.data['fatalApplication']
     if (fatalApplication === 'yes') {
       res.redirect('/concepts/end')

@@ -21,7 +21,13 @@ Do you have a crime reference number? - {{ serviceName }} - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" method="post" action="who-is-making-the-application">
+    {% if data.timeout == 'true' %}
+      {% set timeout1 = 'who-is-applying' %}
+    {% else %}
+      {% set timeout1 = 'timeout' %}
+    {% endif %}
+
+    <form class="form" method="post" action="{{timeout1}}">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
