@@ -26,13 +26,13 @@
           <time class="moj-message-list__date" datetime="17 March 2019">{{0 | getDate}}</time>
           <div class="moj-message-item moj-message-item--received">
             <div class="moj-message-item__text moj-message-item__text--received">
-              <span class="govuk-body govuk-body-s">Your authentication code is {{data.lpa.lpaType|lower}}: 
+              <span class="govuk-body govuk-body-s">Your security code is {{data.lpa.lpaType|lower}}:
                 <span class="underline">{{ authCode }}</span>
               </span>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
     <div class="govuk-grid-column-one-third">
       <h1 class="govuk-heading-m">
@@ -65,12 +65,16 @@
           },
           {
             key: { text: "Subject" },
-            value: { text: "Your authentication code" }
+            value: { text: "Your application security code" }
           }
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">Your authentication code is:</h2>
+      <p>Do not reply to this email.</p>
+
+      <p>You’ve received this email from the Criminal Injuries Compensation Authority.</p>
+
+      <h2 class="govuk-heading-m">Your security code is:</h2>
 
       {{ govukInsetText({
         html: authCode
