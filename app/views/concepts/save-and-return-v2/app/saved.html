@@ -31,11 +31,11 @@
     <p>After this time, the application will expire and you will not be able to access it.</p>
 
     <h2 class="govuk-heading-m">You still need to send us the application</h2>
-    <p>While you can now return to the application at a later date, you need to ensure you submit this before [<strong>day, month, year</strong>].</p>
+    <p>While you can now return to the application at a later date, you need to ensure you submit this before <strong>{{ 30 | getDate }}</strong>.</p>
     <p>If you do not submit this, we are unable to process your application and you’ll need to do it again.</p>
 
     {{ govukButton({
-      text: "Close window",
+      text: "Exit",
       href: "/concepts/save-and-return-v2/"
     }) }}
 
