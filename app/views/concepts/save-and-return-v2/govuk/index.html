@@ -36,6 +36,7 @@
       </h1>
 
       {% set thisPage = 'overview' %}
+      {% include "./includes/pages.html" %}
       {% include "./includes/contents.html" %}
 
     </div>
@@ -77,11 +78,7 @@
       <p>Get <a rel="external" href="https://www.mygov.scot/victim-witness-support/">support as a victim or witness of crime</a> in Scotland.</p>
       <p>You can also get help and advice from your trade union.</p>
 
-      {% set next = {
-        title: "Eligibility",
-        href: "eligibility-page"
-      } %}
-      {% include "includes/mainstream-buttons.html" %}
+      {% include "./includes/mainstream-buttons.html" %}
 
     </div>
 

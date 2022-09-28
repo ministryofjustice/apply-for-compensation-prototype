@@ -163,6 +163,7 @@ $govuk-assets-path: '/govuk/assets/';
 // Authentication text
 .overlay-container {
   position: relative !important;
+  width: 100%;
   max-width: 300px;
 
   .message {
