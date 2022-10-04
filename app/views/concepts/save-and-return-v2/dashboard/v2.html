@@ -4,12 +4,16 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+{% include "../app/includes/nav.html" %}
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">My applications</h1>
 
-    <button class="govuk-button">Start an application</button>
+    <button class="govuk-button">Start a new application</button>
     
     <table class="govuk-table" data-module="moj-sortable-table">
 
@@ -27,56 +31,53 @@
           <td class="govuk-table__cell">Tony Stark</td>
           <td class="govuk-table__cell" data-sort-value="6194">29 May 1970</td>
           <td class="govuk-table__cell"><a href="govuk-link">Continue</a></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="started">{{govukTag({ text: "Started", classes: "govuk-tag--grey" })}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="In progress">{{govukTag({ text: "In progress", classes: "govuk-tag--grey" })}}</td>
         </tr>
         
         <tr class="govuk-table__row">    
           <td class="govuk-table__cell">Jean Grey</td>
-          <td class="govuk-table__cell" data-sort-value="6961"></td>
-          <td class="govuk-table__cell"><a href="govuk-link">Update</a></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="completed">{{ govukTag({ text: "Started", classes: "govuk-tag--grey" }) }}</td>
+          <td class="govuk-table__cell" data-sort-value="6961">1 January 1967</td>
+          <td class="govuk-table__cell"><a href="govuk-link">Continue</a></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="completed">{{ govukTag({ text: "In progress", classes: "govuk-tag--grey" }) }}</td>
         </tr>
     
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Wanda Maximoff</td>
           <td class="govuk-table__cell" data-sort-value="6194">4 May 2015</td>
           <td class="govuk-table__cell"><a href="govuk-link">Continue</a></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="started">{{govukTag({ text: "Started", classes: "govuk-tag--grey" })}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="In progress">{{govukTag({ text: "In progress", classes: "govuk-tag--grey" })}}</td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Carol Danvers</td>
           <td class="govuk-table__cell" data-sort-value="6194">24 April 1960</td>
-          <td class="govuk-table__cell"><a href="govuk-link">Update</a></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="started">{{govukTag({ text: "Submitted", classes: "govuk-tag" })}}</td>
+          <td class="govuk-table__cell"><a href="govuk-link">View summary</a></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="In progress">{{govukTag({ text: "submitted", classes: "govuk-tag" })}}</td>
         </tr>
     
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Natasha Romanoff</td>
           <td class="govuk-table__cell" data-sort-value="5642">3 December 1984</td>
-          <td class="govuk-table__cell"><a href="govuk-link">Update</a></td>
+          <td class="govuk-table__cell"><a href="govuk-link">View summary</a></td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="requested">{{govukTag({ text: "submitted", classes: "govuk-tag" })}}</td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Bruce Banner</td>
           <td class="govuk-table__cell" data-sort-value="8850">18 December 1969</td>
-          <td class="govuk-table__cell"><a href="govuk-link">Submit</a></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1953">{{govukTag({ text: "Ready to submit", classes: "govuk-tag--blue" })}}</td>
+          <td class="govuk-table__cell"><a href="govuk-link">Remove</a></td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1953">{{govukTag({ text: "deleted", classes: "govuk-tag--red" })}}</td>
         </tr>
 
         <tr class="govuk-table__row">    
           <td class="govuk-table__cell">Stephen Vincent Strange</td>
           <td class="govuk-table__cell" data-sort-value="6961">18 November 1930</td>
-          <td class="govuk-table__cell"><a href="govuk-link">Update</a></td>
+          <td class="govuk-table__cell"><a href="govuk-link">View summary</a></td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="completed">{{ govukTag({ text: "submitted" }) }}</td>
         </tr>
     
       </tbody>
     </table>
-    
-    
-      
 
     </div>
 
