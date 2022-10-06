@@ -19,13 +19,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukPanel({
-      titleText: "You can now access and submit this application for the next 30 days"
-    }) }}
+    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-    <h2 class="govuk-heading-m">
+    {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        You can now save your progress for later
+      </h3>
+      <p class="govuk-body">You still need to finish and submit your application.</p>
+    {% endset %}
+    
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}    
+
+    <h1 class="govuk-heading-xl">
       What happens now? 
-    </h2>
+    </h1>
 
     <p>You have <strong>30 days from now</strong> to complete the application.</p>
     <p>You can continue the application now if you choose to. Or, you can continue the application at a later date. To do so, you'll need the:</p>
