@@ -1,0 +1,40 @@
+<div id="dialog"
+    class="hide"
+    role="dialog"
+    aria-labelledby="dialog-title"
+    aria-describedby="dialog-description"
+    aria-modal="true">
+    <div tabindex="0" class="dialog-focus"></div>
+    <h2 id="dialog-title" class="govuk-heading-l">{{ modelTitle }}</h2>
+    <p id="dialog-description">{{ modelDescription }}</p>
+
+    <div class="govuk-button-group govuk-!-margin-bottom-0">
+      {% if redButton %}
+      <a  class="govuk-button govuk-button--warning govuk-!-margin-bottom-1 govuk-!-margin-right-2" href="{{ redBtnHref }}">
+        {{ redButton }}
+      </a>
+      {% endif %}
+
+      {% if greenButton %}
+      <button  class="govuk-button govuk-!-margin-bottom-1 govuk-!-margin-right-2" onclick="hideModal()" data-module="govuk-button">
+        {{ greenButton }}
+      </button>
+      {% endif %}
+
+      {% if greyButton %}
+      <a  class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-!-margin-right-2" href="{{ greyBtnHref }}">
+        {{ greyButton }}
+      </a>
+      {% endif %}
+
+      {% if link %}
+      <a class="govuk-body govuk-link" class="close-dialog" href="{{ linkHref }}">
+        {{ link }}
+      </a>
+      {% endif %}
+
+    </div>
+
+</div>
+
+<div id="dialog-overlay" class="hide" tabindex="-1" onclick="hideModal()"></div>

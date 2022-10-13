@@ -90,3 +90,61 @@ $(document).ready(function(){
         }
     });
 });
+
+
+// New Modal counter
+var dialog = document.getElementById("dialog");
+var dialogOverlay = document.getElementById("dialog-overlay");
+function trapFocus(element) {
+    // Get all focussable elements in dialog box
+    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])'),
+        firstFocusableEl = focusableEls[0];
+        lastFocusableEl = focusableEls[focusableEls.length - 1];
+        KEYCODE_TAB = 9;
+        KEYCODE_ESC = 27;
+    // Set initial focus to be a empty div to gain focus within the dialog
+    element.querySelector('.dialog-focus').focus();
+    // Track Tab event and trap the focus to only elements within the dialog
+    // Also track ESC key for closing the window
+    element.addEventListener('keydown', function(e) {
+      var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+      var isEscPressed = (e.key === 'Esc' || e.keyCode === KEYCODE_ESC);
+      if (!isTabPressed && !isEscPressed) {
+          return;
+      }
+      if (isTabPressed) {
+        if ( e.shiftKey ) /* shift + tab */ {
+            if (document.activeElement === firstFocusableEl) {
+                lastFocusableEl.focus();
+                e.preventDefault();
+            }
+        } else /* tab */ {
+            if (document.activeElement === lastFocusableEl) {
+                firstFocusableEl.focus();
+                e.preventDefault();
+            }
+        }
+      }
+      if (isEscPressed) {
+        hideModal();
+      }
+  });
+}
+// toggle dialog and overlay classes
+function toggleDialog() {
+  dialog.classList.toggle("dialog");
+  dialog.classList.toggle("hide");
+  dialogOverlay.classList.toggle("hide");
+  dialogOverlay.classList.toggle("dialog-overlay");
+}
+// show Modal dialog
+function showModal() {
+  toggleDialog();
+  trapFocus(dialog);
+};
+// hide Modal dialog
+function hideModal() {
+  toggleDialog();
+}
+
+//dialogOverlay.addEventListener("click", hideModal());
