@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ over18Question }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post" action="/concepts/save-and-return-v2/app/eligibility/over-18-router">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+        {{ govukRadios({
+                classes: "govuk-radios--inline",
+                "idPrefix": "over18",
+                name: "over18",
+                currentValue: data['over18'],
+                "fieldset": {
+                  "legend": {
+                      text: 'Choose how to get security codes?',
+                      isPageHeading: true,
+                      classes: 'govuk-fieldset__legend--xl'
+                  }
+                },
+                hint: {
+                  text: "To finish creating your account, choose a way to prove it’s you when you sign in."
+                },
+                "items": [
+                {
+                    "value": "yes",
+                    text: "Yes",
+                    checked: checked("over18", "yes")
+                },
+                {
+                    "value": "no",
+                    text: "No",
+                    checked: checked("over18", "no")
+                }
+                ]
+            }) }}
+
+            {% set helpText %}
+            An authenticator app creates a security code that helps confirm it’s you when you sign in.
+            <br><br>
+            You can use an authenticator app on your smartphone, tablet or desktop computer. Download an authenticator app for your smartphone or tablet from your app store or search online for an authenticator app for your computer.
+            {% endset %}
+        
+            {{ govukDetails({
+              summaryText: "What is an authenticator app?",
+              html: helpText
+            }) }}
+
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

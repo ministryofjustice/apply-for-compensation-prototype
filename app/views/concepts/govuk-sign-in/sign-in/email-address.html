@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ phoneNumberQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="password">
+
+        {{ govukInput({
+            label: {
+              text: "Enter your email address to sign in to your GOV.UK account",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "email",
+            name: "email",
+            type: "email",
+            autocomplete: "email",
+            spellcheck: false
+          }) }}
+
+    {{ govukButton({
+        text: "Continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}
