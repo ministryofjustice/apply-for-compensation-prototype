@@ -43,15 +43,15 @@ spec:
   selector:
     app: prototype
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: prototype-ingress-cica-testing
   annotations:
-    kubernetes.io/ingress.class: nginx
     external-dns.alpha.kubernetes.io/set-identifier: prototype-ingress-cica-testing-apply-for-compensation-prototype-dev-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
+  ingressClassName: default
   tls:
   - hosts:
     - cica-testing.apps.live.cloud-platform.service.justice.gov.uk
@@ -60,6 +60,9 @@ spec:
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: nginx-service-cica-testing
-          servicePort: 3000
+          service:
+            name: nginx-service-cica-testing
+            port:
+              number: 3000
