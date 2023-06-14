@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      We cannot find any application matching those details
+    </h1>
+
+    <p>If the application you’re looking for cannot be found, this may be for one of the following reasons:</p>
+
+    <h2 class="govuk-heading-m">1. You've used incorrect information</h2>
+    <p>The information you’re using to try and retrieve the application may be incorrect. The information you need is the:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>email address or mobile phone number you provided when first saving the application</li>
+      <li>victim's name</li>
+      <li>victim's date of birth</li>
+    </ul>
+    <p>We kindly ask you to review this information and <a href="../return/" class="govuk-body govuk-link">try retrieving the application again</a>.</p>
+
+
+    <h2 class="govuk-heading-m">2. You've already submitted the application</h2>
+    <p>You may have already submitted the application. If this is the case you can <a href="../../govuk/update" class="govuk-body govuk-link">send an update to the submitted application</a>.</p>
+
+
+    <h2 class="govuk-heading-m">3. The time limit on your application has expired</h2>
+    <p>The <strong>time limit of 30 days</strong> on your saved application may have expired. If this is the case, you <a href="../eligibility/fatal-application" class="govuk-body govuk-link">need to restart the application</a>.</p>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

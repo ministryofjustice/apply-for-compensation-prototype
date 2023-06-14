@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--stacked",
+            idPrefix: "futureCapacity",
+            name: "futureCapacity",
+            fieldset: {
+            legend: {
+              text: "Has the victim’s ability to work in future been affected by their injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("futureCapacity", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("futureCapacity", "No")
+            },
+            {
+              value: "I do not know",
+              text: "I do not know",
+              checked: checked("futureCapacity", "I do not know")
+            }
+            ]
+            }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding the ability to work in future
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">They must have no capacity or very limited capacity to work because of the injury. This must be for longer than 28 weeks.</p>
+                      <p class="govuk-body">We cannot make a payment for the first 28 weeks of any loss of earnings suffered.</p>
+                    </div>
+              </details>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

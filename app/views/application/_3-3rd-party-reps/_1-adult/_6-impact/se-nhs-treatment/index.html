@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "nhsTreatment",
+            name: "nhsTreatment",
+            fieldset: {
+            legend: {
+              text: "Have they paid for any costs relating to treatments from the NHS or other state health service because of the injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "For example, paying for costs towards certain treatments. Or paying towards other related costs such as prescriptions, dental fees, opticians and travel."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("nhsTreatment", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("nhsTreatment", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with the costs of NHS and state health service treatments
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">This applies only to costs relating to treatments they have paid for. This includes payments to the National Health Service (NHS) or other state health service outside the United Kingdom.</p>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

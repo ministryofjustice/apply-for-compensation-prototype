@@ -15,12 +15,12 @@
           {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
           {{ govukTextarea({
-            "id": "convictions",
-            "name": "convictions",
+            id: "convictions",
+            name: "convictions",
             label: {
               text: "Tell us about your convictions",
-              "isPageHeading": true,
-              "classes": 'govuk-label--xl'
+              isPageHeading: true,
+              classes: 'govuk-label--xl'
             },
           hint: {
             text: "Include the date and location of the conviction and the length of the sentence you received"
@@ -30,7 +30,7 @@
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
           }) }}
 
           </form>

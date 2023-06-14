@@ -1,0 +1,16 @@
+{% from "./pages.html" import pages %}
+
+<p class="govuk-body-s">Contents</p>
+
+<ul class="govuk-list govuk-list--contents govuk-body-s">
+
+    {% for index, page in pages %}
+
+    <li>
+        {% if thisPage != page[0] %}<a href="{{ page[1] }}">{% endif %}
+            {{ page[2] }}
+        {{ '</a>' | safe if thisPage != page[0] }}
+    </li>
+
+    {% endfor %}
+</ul>

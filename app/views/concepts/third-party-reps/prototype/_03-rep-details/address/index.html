@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Enter your address - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+      {% call govukFieldset({
+      legend: {
+      text: "Enter your address",
+      classes: "govuk-fieldset__legend--xl",
+      isPageHeading: true
+      }
+      }) %}
+
+      {{ govukInput({
+            label: {
+              html: "Building and street"
+            },
+            id: "address-line-1",
+            name: "address-line-1",
+            value: data['rep-address-line-1']
+          }) }}
+
+      {{ govukInput({
+            id: "address-line-2",
+            name: "address-line-2",
+            value: data['rep-address-line-2']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town",
+            value: data['rep-address-town']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: "County (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "address-county",
+            value: data['rep-address-county']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: "Postcode (optional)"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "address-postcode",
+            value: data['rep-address-postcode']
+          }) }}
+
+      {% endcall %}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

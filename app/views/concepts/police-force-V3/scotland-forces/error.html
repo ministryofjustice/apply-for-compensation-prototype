@@ -8,7 +8,7 @@ Error: {{ scotlandForceQuestion }} - {{ serviceName }} - GOV.UK
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
-    text: "beta"
+    text: "prototype"
   },
   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
 }) }}
@@ -44,9 +44,9 @@ Error: {{ scotlandForceQuestion }} - {{ serviceName }} - GOV.UK
         {% from 'govuk/components/radios/macro.njk' import govukRadios %}
 
         {{ govukRadios({
-              "classes": "govuk-radios",
+              classes: "govuk-radios",
               "idPrefix": "policeScotland",
-              "name": "policeScotland",
+              name: "policeScotland",
               currentValue: data['policeScotland'],
               errorMessage: {
               text: scotlandForcesError
@@ -56,59 +56,59 @@ Error: {{ scotlandForceQuestion }} - {{ serviceName }} - GOV.UK
               "items": [
               {
                 "value": "Argyll and West Dunbartonshire",
-                "text": "Argyll and West Dunbartonshire"
+                text: "Argyll and West Dunbartonshire"
               },
               {
                 "value": "Ayrshire",
-                "text": "Ayrshire"
+                text: "Ayrshire"
               },
               {
                 "value": "British Transport Police",
-                "text": "British Transport Police"
+                text: "British Transport Police"
               },
               {
                 "value": "Dumfries and Galloway",
-                "text": "Dumfries and Galloway"
+                text: "Dumfries and Galloway"
               },
               {
                 "value": "Edinburgh",
-                "text": "Edinburgh"
+                text: "Edinburgh"
               },
               {
                 "value": "Fife",
-                "text": "Fife"
+                text: "Fife"
               },
               {
                 "value": "Forth Valley",
-                "text": "Forth Valley"
+                text: "Forth Valley"
               },
               {
                 "value": "Greater Glasgow",
-                "text": "Greater Glasgow"
+                text: "Greater Glasgow"
               },
               {
                 "value": "Highland and Islands",
-                "text": "Highland and Islands"
+                text: "Highland and Islands"
               },
               {
                 "value": "Lanarkshire",
-                "text": "Lanarkshire"
+                text: "Lanarkshire"
               },
               {
                 "value": "North East",
-                "text": "North East"
+                text: "North East"
               },
               {
                 "value": "Renfrewshire and Inverclyde",
-                "text": "Renfrewshire and Inverclyde"
+                text: "Renfrewshire and Inverclyde"
               },
               {
                 "value": "Tayside",
-                "text": "Tayside"
+                text: "Tayside"
               },
               {
                 "value": "The Lothians and Scottish Borders",
-                "text": "The Lothians and Scottish Borders"
+                text: "The Lothians and Scottish Borders"
               }
               ]
             }) }}
@@ -119,7 +119,7 @@ Error: {{ scotlandForceQuestion }} - {{ serviceName }} - GOV.UK
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

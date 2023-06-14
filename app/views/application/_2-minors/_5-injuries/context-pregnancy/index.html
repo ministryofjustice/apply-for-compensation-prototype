@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Pregnancy
+    </h1>
+    <p class="govuk-body">We need to ask questions about pregnancy related to the crime. These questions may be difficult to answer or may not be relevant to the victim.</p>
+    <p class="govuk-body">By answering them, it ensures the victim is considered for all correct compensation from us. This helps us better understand the case and if we need to ask for more evidence from you.</p>
+
+    <h2 class="govuk-heading-m">Help and support</h2>
+    <p class="govuk-body">The following links open in a new tab.</p>
+    <p class="govuk-body">You can get practical and emotional support after a crime. Visit <a href="https://www.victimandwitnessinformation.org.uk/" target="_blank">Victim and Witness information</a> if you’re in England and Wales. Or <a href="https://www.mygov.scot/victim-witness-support/" target="_blank">support as a victim or witness of crime</a> in Scotland.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you need help or support with the application
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">All links in this section open in a new tab.</p>
+        <p class="govuk-body">You can contact us for help with your application.</p>
+        <p class="govuk-body govuk-!-margin-bottom-1">Telephone: 0300 003 3601</p>
+        <p class="govuk-body govuk-!-margin-bottom-1">Outside the UK: +44 (0) 203 684 2517</p>
+        <p class="govuk-body"><a href="https://www.relayuk.bt.com/">Relay UK</a>: (if you cannot hear or speak on the phone) 18001 0300 003 3601 </p>
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--s">Opening times</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Day</th>
+              <th scope="col" class="govuk-table__header">Opening times</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Monday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Tuesday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Wednesday</th>
+              <td class="govuk-table__cell">8:30am to 3pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Thursday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Friday</th>
+              <td class="govuk-table__cell">8:30am to 5pm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="govuk-body"><a href="/call-charges">Find out about call charges</a></p>
+
+      </div>
+    </details>
+
+    <form class="form" method="post">
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

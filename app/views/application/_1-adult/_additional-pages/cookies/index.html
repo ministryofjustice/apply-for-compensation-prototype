@@ -1,0 +1,103 @@
+{% extends "layout-with-cookie-banner.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Cookies</h1>
+
+
+      <div class="moj-cookie-settings--success moj-banner moj-banner--success">
+
+      <div class="moj-banner__message">
+        <h2 class="govuk-heading-m">Your cookie settings were saved</h2>
+
+      </div>
+      <a class="govuk-button govuk-!-margin-bottom-1 govuk-!-margin-top-2" href="/application/consent/_index" data-module="track-click" data-track-category="cookieSettings" data-track-action="Back to previous page">
+        Continue your application
+      </a>
+      </div>
+
+      <p class="govuk-body">Cookies are files saved on your phone, tablet or computer when you visit a website.</p>
+
+      <p class="govuk-body">We use cookies to store information about how you use the 'Claim criminal injuries compensation' service, such as the pages you visit.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-top-5">
+              Cookies used to improve the service
+            </h1>
+          </legend>
+            <p class="govuk-hint">We use Google Analytics to measure how you use the website so we can improve it. We do not allow Google to use or share the data about how you use this site.</p>
+
+            <p class="govuk-hint">Google Analytics sets cookies that store anonymised information about:</p>
+
+            <ul class="govuk-hint">
+              <li>how you got to the site</li>
+              <li>the pages you visit on the site</li>
+              <li>how long you spend on each page</li>
+              <li>what you click on while you're visiting the site</li>
+            </ul>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="use-cookies" name="cookies-usage" type="radio" value="use-cookies">
+              <label class="govuk-label govuk-radios__label" for="use-cookies">
+                Use cookies that measure my website use
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-cookies" name="cookies-usage" type="radio" value="no-cookies" checked>
+              <label class="govuk-label govuk-radios__label" for="no-cookies">
+                Do not use cookies that measure my website use
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button id="save-cookie-prefs" class="govuk-button" data-module="govuk-button">
+        Save changes
+      </button>
+
+
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-5">Essential cookies</h2>
+
+      <p class="govuk-body">These cookies need to be on to allow you to use the 'Claim criminal injuries compensation' service.</p>
+
+      <h3 class="govuk-heading-m">Your progress when using the service</h3>
+
+      <p class="govuk-body">When you use the service, we’ll set a cookie to remember your progress through this site. This cookie does not store your personal data and is deleted when you close this website.</p>
+
+      <h3 class="govuk-heading-m">Your cookie preferences</h3>
+
+      <p class="govuk-body">When you use the service, we’ll set a cookie to remember your cookie preferences. This cookie does not store any personal data.</p>
+
+      <p class="govuk-body">It will be saved on your computer or phone for 1 year, or until you delete it.</p>
+
+      <h3 class="govuk-heading-m">Live chat</h3>
+      <p class="govuk-body">When you use the live chat feature, we’ll set a cookie so that you get responses to your messages. This cookie does not store your personal data and is deleted when you close this website.</p>
+
+    </div>
+
+
+  </div>
+</main>
+
+{% endblock %}

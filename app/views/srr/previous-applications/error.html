@@ -7,7 +7,7 @@ Error - {{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
-      text: "beta"
+      text: "prototype"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
@@ -49,15 +49,15 @@ Error - {{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
       {% endset -%}
 
       {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "previous-applications",
-            "name": "previous-applications",
+            name: "previous-applications",
             currentValue: 'previous-applications',
             "fieldset": {
               "legend": {
-              "text": previousApplicationsQuestion,
-              "isPageHeading": true,
-              "classes": 'govuk-fieldset__legend--xl'
+              text: previousApplicationsQuestion,
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
               }
               },
               errorMessage: {
@@ -66,25 +66,25 @@ Error - {{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
             "items": [
             {
             "value": "Yes",
-            "text": "Yes",
+            text: "Yes",
             conditional: {
                 html: referenceHtml
               }
             },
             {
             "value": "No",
-            "text": "No"
+            text: "No"
             },
             {
             "value": "I do not know",
-            "text": "I do not know"
+            text: "I do not know"
             }
             ]
             }) }}
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-            "text": "Continue"
+            text: "Continue"
             }) }}
 
     </form>

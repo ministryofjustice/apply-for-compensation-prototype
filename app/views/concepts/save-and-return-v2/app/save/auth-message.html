@@ -1,0 +1,104 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+<!-- <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  {% set authCode %}
+    {% include "../includes/auth-code.html" %}
+  {% endset %}
+
+    {% if data.contact == 'text' %}
+
+    <div class="govuk-grid-column-one-third">
+      <div class="overlay-container">
+        <img src="../../../../public/images/iphone.png" alt="mobile authentication code">
+        <div class="message">
+          <time class="moj-message-list__date" datetime="17 March 2019">{{0 | getDate}}</time>
+          <div class="moj-message-item moj-message-item--received">
+            <div class="moj-message-item__text moj-message-item__text--received">
+              <p class="govuk-body govuk-body-s">Claim criminal injuries compensation:
+                <span class="underline">{{ authCode }}</span> is your 6-digit security code.
+              </p>
+              <p class="govuk-body-s">The code expires in 15 minutes.</p>
+              <span class="govuk-body govuk-body-s">Do not reply to this message.</span>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h1 class="govuk-heading-m">
+        You have received a text message from CICA
+      </h1>
+
+      <form class="form" method="post" action="authentication">
+        <input type="hidden" name="auth-code" value="{{authCode}}">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+
+    {% else %}
+
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Inbox
+    </h1>
+
+    <div class="email-box">
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: { text: "From" },
+            value: { text: "notify@cica.gov.uk" }
+          },
+          {
+            key: { text: "Subject" },
+            value: { text: "Your security code" }
+          }
+        ]
+      }) }}
+
+      <p>Do not reply to this email.</p>
+      <p>You’ve received this email from the Criminal Injuries Compensation Authority.</p>
+
+      <h2 class="govuk-heading-m">Your 6-digit security code is:</h2>
+
+      {{ govukInsetText({
+        html: authCode
+      }) }}
+
+      <p>This code <strong>expires in 15 minutes</strong>.</p>
+
+      <form class="form" method="post" action="authentication">
+        <input type="hidden" name="auth-code" value="{{authCode}}">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+    {% endif %}
+
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

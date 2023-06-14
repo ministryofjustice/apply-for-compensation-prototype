@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Their treatment - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Their treatment
+    </h1>
+
+    <p class="govuk-body">We’re going to ask for some details about their treatment.</p>
+
+    <p class="govuk-body">We’ll use these to understand:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if they've told their GP about their injuries</li>
+        <li>who has evidence of their injuries</li>
+    </ul>
+    <p class="govuk-body">We often have to ask their GP or other health service provider for evidence about their injuries and treatment. We will let you know if we need to do this.</p>
+
+    <form class="form" method="post">
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

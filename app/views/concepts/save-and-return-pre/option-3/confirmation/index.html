@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Your progress has been saved
+        </h1>
+        <div class="govuk-panel__body">
+          Your save and return reference<br><strong>HDJ2123F</strong>
+          <br>
+          <br>
+          Your three-word passcode<br><strong>OriginalHenAngle</strong>
+        </div>
+      </div>
+
+      <p class="govuk-body">
+        If you want to resume the application now, <a href="javascript: history.go(-1)">click here</a>.
+      </p>
+
+      <h2 class="govuk-heading-m">Recording this information</h2>
+
+      <p class="govuk-body">
+        <p class="govuk-body">
+          You should print this screen or take a note of the information as you will need it to resume your application.
+        </p>
+
+        <p class="govuk-body">
+          {% if data['confirmationPreference'] !== '' %}
+
+            You can also
+
+            {% if data['confirmationPreference'] === 'Text' %}
+              <a href="link-telephone">link your telephone number to this application</a>
+            {% endif %}
+
+            {% if data['confirmationPreference'] === 'Email' %}
+              <a href="link-email">link your email address to this application</a>
+            {% endif %}
+
+            to provide additional security.
+
+          {% endif %}
+
+        </p>
+
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        You can resume your application at any time by entering your save and return reference and three-word passcode.
+      </p>
+
+      <h2 class="govuk-heading-m">How long we keep your information</h2>
+
+      <p class="govuk-body">
+        We store your information securely for 60 days. If you have not resumed your application after 60 days you will need to start your application again.
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

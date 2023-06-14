@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ resumeAppQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            What do you want to do?
+          </h1>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+            <label class="govuk-label govuk-radios__label" for="sign-in">
+              Review your answers
+            </label>
+            <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+              Read or change all of your answers starting at the first question of the form: <a href="#">Are you applying because someone died from their injuries?</a>
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+            <label class="govuk-label govuk-radios__label" for="sign-in-2">
+              Continue from where you left off
+            </label>
+            <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+              Answer the questions that come after the screen you last viewed: <a href="#">Enter your address</a>.
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+
+    <form class="form" method="post">
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

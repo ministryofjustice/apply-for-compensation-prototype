@@ -7,6 +7,21 @@ const express = require('express')
 const router = express.Router()
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 const viewContent = require('./routes-content');
+const utils = require('./utils')
+
+// Work around a bug where occasionally _unchecked would appear
+// Also coerce to array to be easier to work with
+const cleanInputData = data => {
+  if (!data || data == '_unchecked') {
+    return undefined
+  }
+  else {
+    data = [].concat(data) // coerce to arrays so we can filter them
+    // _unchecked sometimes appears - can't track down what's causing it
+    data = data.filter(item => item != '_unchecked')
+    return (data.length == 0) ? undefined : data // return undefined if array now empty
+  }
+}
 
 // Route index page
 router.get('/', function (req, res) {
@@ -15,429 +30,674 @@ router.get('/', function (req, res) {
 
 
 
-
-
-
-// CURRENT RELEASE - RELEASE 8 MVP PROJECT //
-require('./views/application/british-citizen/routes')(router, viewContent);
-require('./views/application/over-18/routes')(router, viewContent);
-require('./views/application/who-is-making-the-application/routes')(router, viewContent);
-require('./views/application/sexual-assault-application/routes')(router, viewContent);
-require('./views/application/you-have-a-choice/routes')(router, viewContent);
-require('./views/application/impact-on-you/routes')(router, viewContent);
-require('./views/application/your-choices/routes')(router, viewContent);
-require('./views/application/declaration/routes')(router, viewContent);
-require('./views/application/incident-reported/routes')(router, viewContent);
-require('./views/application/reporting-crime-not-reported/routes')(router, viewContent);
-require('./views/application/crime-reported-date/routes')(router, viewContent);
-require('./views/application/reporting-details-what-force/routes')(router, viewContent);
-require('./views/application/reporting-details-what-force-manual/routes')(router, viewContent);
-require('./views/application/crime-reference/routes')(router, viewContent);
-require('./views/application/single-or-multiple-incidents/routes')(router, viewContent);
-require('./views/application/period-of-abuse-start/routes')(router, viewContent);
-require('./views/application/period-of-abuse-end/routes')(router, viewContent);
-require('./views/application/incident-date/routes')(router, viewContent);
-require('./views/application/incident-location/routes')(router, viewContent);
-require('./views/application/do-you-know-offender/routes')(router, viewContent);
-require('./views/application/offender-name/routes')(router, viewContent);
-require('./views/application/what-is-relationship/routes')(router, viewContent);
-require('./views/application/name/routes')(router, viewContent);
-require('./views/application/name-have-other/routes')(router, viewContent);
-require('./views/application/name-other/routes')(router, viewContent);
-require('./views/application/gender/routes')(router, viewContent);
-require('./views/application/date-of-birth/routes')(router, viewContent);
-require('./views/application/email-address/routes')(router, viewContent);
-// require('./views/application/address/routes')(router, viewContent);
-require('./views/application/address-manually/routes')(router, viewContent);
-// require('./views/application/address-non-uk/routes')(router, viewContent);
-require('./views/application/phone-number/routes')(router, viewContent);
-require('./views/application/compensation/routes')(router, viewContent);
-// require('./views/application/compensation-why-not/routes')(router, viewContent);
-require('./views/application/other-compensation/routes')(router, viewContent);
-// require('./views/application/compensation-amount/routes')(router, viewContent);
-require('./views/application/check-your-answers-page/routes')(router, viewContent);
-// @todo these files need to go in the right place in the list above
-require('./views/application/previous-applications/routes')(router, viewContent);
-// require('./views/application/previous-not-eligible/routes')(router, viewContent);
-require('./views/application/application-delay/routes')(router, viewContent);
-// require('./views/application/find-uk-address/routes')(router, viewContent);
-require('./views/application/reporting-delay/routes')(router, viewContent);
-require('./views/application/confirmation-page-if-automatic-nil/routes')(router, viewContent);
-
-require('./views/application/transition/routes')(router, viewContent);
-
-// Police MVP //
-require('./views/application/england-location/routes')(router, viewContent);
-require('./views/application/england-forces/routes')(router, viewContent);
-require('./views/application/scotland-location/routes')(router, viewContent);
-require('./views/application/scotland-forces/routes')(router, viewContent);
-require('./views/application/wales-location/routes')(router, viewContent);
-require('./views/application/wales-forces/routes')(router, viewContent);
-require('./views/application/somewhere-else/routes')(router, viewContent);
-
-// Police Force Concept for possible testing //
-require('./views/concepts/police-force/incident-location/routes')(router, viewContent);
-require('./views/concepts/police-force/scotland-forces/routes')(router, viewContent);
-require('./views/concepts/police-force/england-location/routes')(router, viewContent);
-require('./views/concepts/police-force/england-forces/routes')(router, viewContent);
-require('./views/concepts/police-force/scotland-location/routes')(router, viewContent);
-require('./views/concepts/police-force/wales-location/routes')(router, viewContent);
-require('./views/concepts/police-force/welsh-forces/routes')(router, viewContent);
-require('./views/concepts/police-force/somewhere-else/routes')(router, viewContent);
-
-// Timeout Screens //
-require('./views/concepts/timeout/timed-out/routes')(router, viewContent);
-
-// Guidance Concept //
-require('./views/concepts/guidance/routes')(router, viewContent);
-
-//SRR Prototype //
-require('./views/srr/previous-applications/routes')(router, viewContent);
-require('./views/srr/name/routes')(router, viewContent);
-require('./views/srr/phone-number/routes')(router, viewContent);
-require('./views/srr/name-have-other/routes')(router, viewContent);
-require('./views/srr/other-names/routes')(router, viewContent);
-require('./views/srr/address/routes')(router, viewContent);
-require('./views/srr/date-of-birth/routes')(router, viewContent);
-require('./views/srr/preferred-days/routes')(router, viewContent);
-require('./views/srr/preferred-times/routes')(router, viewContent);
-require('./views/srr/check-your-answers-page/routes')(router, viewContent);
-
-
-
-//Police Force Concept V2 Prototype //
-require('./views/concepts/police-force-V2/routes')(router, viewContent);
-require('./views/concepts/police-force-V2/force-search/routes')(router, viewContent);
-
-//Police Force Concept V3 Prototype //
-require('./views/concepts/police-force-V3/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/country/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/scotland-forces/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/england-forces/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/wales-forces/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/somewhere-else/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/crime-reference/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/incident-date/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/location/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/single-or-multiple-incidents/routes')(router, viewContent);
-require('./views/concepts/police-force-V3/do-you-know-offender/routes')(router, viewContent);
-
-//Police Force Concept V4 AS IS Prototype //
-require('./views/concepts/police-force-V4/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/force/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/country/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/scotland-location/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/england-location/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/wales-location/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/somewhere-else/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/crime-reference/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/incident-date/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/incident-location/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/single-or-multiple-incidents/routes')(router, viewContent);
-require('./views/concepts/police-force-V4/do-you-know-offender/routes')(router, viewContent);
-
-
-// END OF MVP #################################################################################
-
-//Extra questions & equal oportunities //
-require('./views/concepts/survey/routes')(router, viewContent);
-
-// RELEASE 7 - 17.12.2018 /////////////////////////////////////////////////////////////////////
-
-
-// Route index page
-router.get('/', function (req, res) {
-  res.render('index')
-})
-
-router.get('/stepped-guide', function (req, res) {
-	var step = req.query.step;
-	return res.render('release-7/stepped-guide', { step: step});
-})
-
-router.post('/release-7/who-is-making-the-application', function (req, res) {
-  // Get the answer from the query string
-  var rep = req.session.data['rep']
-
-  if (rep === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/declaration')
-  }
-})
-
-
-router.post('/release-7/declaration', function (req, res) {
-  var declaration = req.session.data['declaration']
-
-    res.redirect('/release-7/what-are-you-applying-for')
-})
-
-
-router.post('/release-7/what-are-you-applying-for', function (req, res) {
-  // Get the answer from the query string
-  var applicationType = req.session.data['what-type-of-application-would-you-like-to-make?'];
-  if (applicationType === 'physical-injury') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/OCJ-service-option')
-  }
-})
-
-
-router.post('/release-7/OCJ-service-option', function (req, res) {
-  // Get the answer from the query string
-  var serviceOption = req.session.data['service-option']
-
-  if (serviceOption === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/compensation')
-  }
-})
-
-
-router.post('/release-7/compensation', function (req, res) {
-    res.redirect('/release-7/british-citizen')
-})
-
-router.post('/release-7/did-not-apply-for-compensation', function (req, res) {
-    res.redirect('/release-7/british-citizen')
-})
-
-
-router.post('/release-7/british-citizen', function (req, res) {
-  // Get the answer from the query string
-  var britishCitizen = req.session.data['britishCitizen']
-
-  if (britishCitizen === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/residence-1')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/criminal-convictions')
-  }
-})
-
-router.post('/release-7/residence-1', function (req, res) {
-  // Get the answer from the query string
-  var ordinarilyResident = req.session.data['ordinarily-resident']
-
-  if (ordinarilyResident === 'no') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/prototype')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/criminal-convictions')
-  }
-})
-
-router.post('/release-7/criminal-convictions', function (req, res) {
-  var criminalConvictions = req.session.data['criminalConvictions']
-
-  if (criminalConvictions === 'yes') {
-    res.redirect('/release-7/tell-criminal-convictions')
-  } else {
-    res.redirect('/release-7/name')
-  }
-})
-
-router.post('/release-7/tell-criminal-convictions', function (req, res) {
-  res.redirect('/release-7/name')
-})
-
-router.post('/release-7/name', function (req, res) {
-  res.redirect('/release-7/date-of-birth')
-})
-
-router.post('/release-7/date-of-birth', function (req, res) {
-  res.redirect('/release-7/email-address')
-})
-
-router.post('/release-7/email-address', function (req, res) {
-  if (!req.session.data['emailAddress']) {
-    req.session.data['emailAddress'] = 'name@domain.com'
-  }
-  res.redirect('/release-7/address')
-})
-
-router.post('/release-7/address', function (req, res) {
-  res.redirect('/release-7/phone-number')
-})
-
-router.post('/release-7/phone-number', function (req, res) {
-  res.redirect('/release-7/single-or-multiple-incidents')
-})
-
-router.post('/release-7/single-or-multiple-incidents', function (req, res) {
-  // Get the answer from the query string
-  var singleOrMultipleIncidents = req.session.data['single-or-multiple-incidents']
-
-  if (singleOrMultipleIncidents === 'It happened over a period of time') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/period-of-abuse-start')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/incident-date')
-  }
-})
-
-router.post('/release-7/period-of-abuse-start', function (req, res) {
-  res.redirect('/release-7/period-of-abuse-end')
-})
-
-router.post('/release-7/period-of-abuse-end', function (req, res) {
-  res.redirect('/release-7/incident-location')
-})
-
-router.post('/release-7/incident-date', function (req, res) {
-  // Get the answer from the query string
-  var incidentDateDay = req.session.data['incident-date-day']
-  var incidentDateMonth = req.session.data['incident-date-month']
-  var incidentDateYear = req.session.data['incident-date-year']
-
-  if ((incidentDateDay == 1) && (incidentDateMonth == 1) && (incidentDateYear == 2017)) {
-    // Redirect to the relevant page
-    res.redirect('/release-7/previous-applications')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/incident-location')
-  }
-})
-
-router.post('/release-7/previous-applications', function (req, res) {
-  // Get the answer from the query string
-  var previousApplications = req.session.data['previous-applications']
-
-  if (previousApplications === 'no')  {
-    // Redirect to the relevant page
-    res.redirect('/release-7/previous-not-eligible')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/incident-location')
-  }
-})
-
-router.post('/release-7/incident-location', function (req, res) {
-  res.redirect('/release-7/incident-reported')
-})
-
-
- router.post('/release-7/incident-reported', function (req, res) {
-   // Get the answer from the query string
-   var incidentReported = req.session.data['incidentReported']
-
-   if (incidentReported === 'no') {
-     // Redirect to the relevant page
-     res.redirect('/release-7/do-you-know-offender')
-   } else {
-     // If the variable is any other value (or is missing) render the page requested
-     res.redirect('/release-7/reporting-details-what-force')
-   }
- })
-
-router.post('/release-7/reporting-details-what-force', function (req, res) {
-  res.redirect('/release-7/reporting-details-police-officer')
-})
-
-router.post('/release-7/reporting-details-police-officer', function (req, res) {
-  res.redirect('/release-7/crime-reference')
-})
-
-router.post('/release-7/crime-reference', function (req, res) {
-  res.redirect('/release-7/do-you-know-offender')
-})
-
-router.post('/release-7/do-you-know-offender', function (req, res) {
-  // Get the answer from the query string
-  var knowOffender = req.session.data['know-offender']
-
-  if (knowOffender === 'no')  {
-    // Redirect to the relevant page
-    res.redirect('/release-7/check-your-answers-page')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/offender-name')
-  }
-})
-
-router.post('/release-7/offender-name', function (req, res) {
-
-    res.redirect('/release-7/living-with-offender-before')
-})
-
-router.post('/release-7/living-with-offender-before', function (req, res) {
-  // Get the answer from the query string
-  var withOffenderBefore = req.session.data['living-with-offender-before']
-
-  if (withOffenderBefore === 'no')  {
-    // Redirect to the relevant page
-    res.redirect('/release-7/ongoing-relationship')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/living-with-offender-now')
-  }
-})
-
-router.post('/release-7/living-with-offender-now', function (req, res) {
-  // Get the answer from the query string
-  var withOffenderNow = req.session.data['living-with-offender-now']
-
-  if (withOffenderNow === 'no')  {
-    // Redirect to the relevant page
-    res.redirect('/release-7/ongoing-relationship')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/prototype')
-  }
-})
-
-router.post('/release-7/ongoing-relationship', function (req, res) {
-  // Get the answer from the query string
-  var ongoingRelationship = req.session.data['ongoing-relationship']
-
-  if (ongoingRelationship === 'yes')  {
-    // Redirect to the relevant page
-    res.redirect('/release-7/what-is-relationship')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/check-your-answers-page')
-  }
-})
-
-router.post('/release-7/what-is-relationship', function (req, res) {
-  res.redirect('/release-7/check-your-answers-page')
-})
-
-router.post('/release-7/confirmation-page-if-automatic-nil', function (req, res) {
-  // Get the answer from the query string
-  var applyForReview = req.session.data['apply-for-review']
-
-  if (applyForReview  === 'yes') {
-    // Redirect to the relevant page
-    res.redirect('/release-7/confirmation-of-review')
-  } else {
-    // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/release-7/prototype')
-  }
-})
-
-// END OF RELEASE 7 #################################################################################
-
-// RELEASE 6 -  //
-
+//-------------------------------//
+//                               //
+//         ADULT JOURNEY         //
+//                               //
+//-------------------------------//
+
+
+// 0 - Start screen and qualifying questions
+require('./views/application/_0-start-and-qualifying/start-page/routes')(router, viewContent);
+
+require('./views/application/_0-start-and-qualifying/crime-reference/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/fatal-application/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/who-is-making-the-application/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/incident-reported/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/over-18-you/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/over-18-they/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/british-citizen-you/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/parent-guardian/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/british-citizen-they/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/parent-guardian/routes')(router, viewContent);
+require('./views/application/_0-start-and-qualifying/authority-to-apply-minor/routes')(router, viewContent);
+
+// 2 - Your details
+require('./views/application/_1-adult/_2-your-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/address/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/context-your-details/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/date-of-birth/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/email-address/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/name/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/name-have-other/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/name-other/routes')(router, viewContent);
+require('./views/application/_1-adult/_2-your-details/phone-number/routes')(router, viewContent);
+
+// 3 Incident details
+require('./views/application/_1-adult/_3-incident-details/application-delay/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/context-incident-details/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/crime-reference/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/crime-reported-date/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/england-location/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/incident-date/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/incident-location/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/incident-type/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/period-of-abuse-end/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/period-of-abuse-start/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/police-force/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/reporting-delay/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/scotland-location/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/somewhere-else/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/wales-location/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/own-words-question/routes')(router, viewContent);
+require('./views/application/_1-adult/_3-incident-details/own-words/routes')(router, viewContent);
+
+// 4 offender
+require('./views/application/_1-adult/_4-offender/contact-with-offender/routes')(router, viewContent);
+require('./views/application/_1-adult/_4-offender/context-contact-with-offender/routes')(router, viewContent);
+require('./views/application/_1-adult/_4-offender/do-you-know-offender-name/routes')(router, viewContent);
+require('./views/application/_1-adult/_4-offender/offender-name/routes')(router, viewContent);
+require('./views/application/_1-adult/_4-offender/what-is-relationship/routes')(router, viewContent);
+
+// 5 Injuries
+require('./views/application/_1-adult/_5-injuries/context-physical-injuries/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/have-physical-injuries/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/infection/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/context-pregnancy/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/pregnancy/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/arm/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/elbow/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/hand/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/skin/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/arms/tissue/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/leg/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/ankle/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/foot/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/hip/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/knee/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/skin/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/legs/tissue/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/back/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/chest/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/genitals/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/skin/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/injured-body-parts/torso/tissue/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/context-about-dmi/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/dmi/routes')(router, viewContent);
+require('./views/application/_1-adult/_5-injuries/dmi-duration/routes')(router, viewContent);
+
+// 6 Impact
+require('./views/application/_1-adult/_6-impact/loe-context/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/loe-stopped-working/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/loe-stopped-working-how-long/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/loe-working/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/loe-working-why-not/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-any-other/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-context/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-home-alterations/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-home-care/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-nhs-treatment/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_1-adult/_6-impact/se-special-equipment/routes')(router, viewContent);
+
+// 7 Treatment
+require('./views/application/_1-adult/_7-treatment/treatment-details/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/finished-treatment/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/context-treatment/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/gp-details/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/gp-registered/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/gp-visited/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/hospital-visited/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/hospital-details/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/application/_1-adult/_7-treatment/dentist-details/routes')(router, viewContent);
+
+// 8 Other comp
+require('./views/application/_1-adult/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/other-compensation/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/other-compensation-decision/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/other-compensation-provider/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/other-compensation-when/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
+require('./views/application/_1-adult/_8-other-comp/previous-applications/routes')(router, viewContent);
+
+// 9 Additional info
+require('./views/application/_1-adult/_9-additional-info/context-additional-info/routes')(router, viewContent);
+require('./views/application/_1-adult/_9-additional-info/additional-info-question/routes')(router, viewContent);
+require('./views/application/_1-adult/_9-additional-info/additional-info-details/routes')(router, viewContent);
+
+// End Screens
+require('./views/application/_1-adult/_10-end/check-your-answers-page/routes')(router, viewContent);
+require('./views/application/_1-adult/_10-end/declaration/routes')(router, viewContent);
+
+
+//-------------------------------//
+//                               //
+//         MINOR JOURNEY         //
+//                               //
+//-------------------------------//
+
+
+// 2 - Your details
+require('./views/application/_2-minors/_2-your-details/context-your-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/name/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/what-is-relationship/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/do-you-share-responsibility/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/responsibility-who-with/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/care-order/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/care-order-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/address/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/email-address/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-your-details/phone-number/routes')(router, viewContent);
+
+// 2 - Victim details
+require('./views/application/_2-minors/_2-victim-details/context-victim-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-victim-details/name/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-victim-details/name-have-other/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-victim-details/name-other/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-victim-details/date-of-birth/routes')(router, viewContent);
+require('./views/application/_2-minors/_2-victim-details/address/routes')(router, viewContent);
+
+// 3 Incident details
+require('./views/application/_2-minors/_3-incident-details/application-delay/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/context-incident-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/crime-reference/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/crime-reported-date/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/england-location/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/incident-date/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/incident-location/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/incident-type/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/period-of-abuse-end/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/period-of-abuse-start/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/police-force/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/reporting-delay/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/scotland-location/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/somewhere-else/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/wales-location/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/own-words-question/routes')(router, viewContent);
+require('./views/application/_2-minors/_3-incident-details/own-words/routes')(router, viewContent);
+
+// 4 offender
+require('./views/application/_2-minors/_4-offender/contact-with-offender/routes')(router, viewContent);
+require('./views/application/_2-minors/_4-offender/context-contact-with-offender/routes')(router, viewContent);
+require('./views/application/_2-minors/_4-offender/do-you-know-offender-name/routes')(router, viewContent);
+require('./views/application/_2-minors/_4-offender/offender-name/routes')(router, viewContent);
+require('./views/application/_2-minors/_4-offender/what-is-relationship/routes')(router, viewContent);
+
+// 5 Injuries
+require('./views/application/_2-minors/_5-injuries/context-physical-injuries/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/have-physical-injuries/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/infection/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/context-pregnancy/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/pregnancy/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/arm/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/elbow/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/hand/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/skin/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/arms/tissue/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/leg/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/ankle/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/foot/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/hip/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/knee/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/skin/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/legs/tissue/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/back/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/chest/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/genitals/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/skin/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/injured-body-parts/torso/tissue/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/context-about-dmi/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/dmi/routes')(router, viewContent);
+require('./views/application/_2-minors/_5-injuries/dmi-duration/routes')(router, viewContent);
+
+// 6 Treatment
+require('./views/application/_2-minors/_7-treatment/treatment-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/finished-treatment/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/context-treatment/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/gp-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/gp-registered/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/gp-visited/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/hospital-visited/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/hospital-details/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/application/_2-minors/_7-treatment/dentist-details/routes')(router, viewContent);
+
+// 7 Impact
+require('./views/application/_2-minors/_6-impact/loe-affected-six-months/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-affected-six-months-future/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-context/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-daily-capacity/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-se-future-capacity/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-stopped-working/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-stopped-working-how-long/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-working/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-working-age/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/loe-working-why-not/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-any-other/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-context/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-home-alterations/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-home-care/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-nhs-treatment/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_2-minors/_6-impact/se-special-equipment/routes')(router, viewContent);
+
+// 8 Other comp
+require('./views/application/_2-minors/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/other-compensation/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/other-compensation-decision/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/other-compensation-provider/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/other-compensation-when/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
+require('./views/application/_2-minors/_8-other-comp/previous-applications/routes')(router, viewContent);
+
+// 9 Additional info
+require('./views/application/_2-minors/_9-additional-info/context-additional-info/routes')(router, viewContent);
+require('./views/application/_2-minors/_9-additional-info/additional-info-question/routes')(router, viewContent);
+require('./views/application/_2-minors/_9-additional-info/additional-info-details/routes')(router, viewContent);
+
+// 10 End Screens
+require('./views/application/_2-minors/_10-end/check-your-answers-page/routes')(router, viewContent);
+require('./views/application/_2-minors/_10-end/declaration/routes')(router, viewContent);
+require('./views/application/_2-minors/_10-end/declaration-under-12/routes')(router, viewContent);
+
+
+//-------------------------------//
+//                               //
+//        THIRD PARTY REPS       //
+//         ADULT JOURNEY         //
+//                               //
+//-------------------------------//
+
+// 1 - Rep details
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/context-rep-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-type/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/name-org/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/address-org/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/company-reg-no/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-ref-no-question/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/rep-ref-no/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_1-rep-details/main-contact-name/routes')(router, viewContent);
+
+// 2 - Your details
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/context-your-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/date-of-birth/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-have-other/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/name-other/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/capable-own-affairs/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/are-you-responsible/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/someone-else-responsible/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_2-your-details/authority-to-apply-adult/routes')(router, viewContent);
+
+// 3 - Capable adult
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/context-capable-adult/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/have-responsibility/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-capable-adult/authority-to-apply-adult/routes')(router, viewContent);
+
+
+// 3 Incident details
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/application-delay/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/context-incident-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/crime-reference/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/crime-reported-date/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/england-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/incident-date/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/incident-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/incident-type/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/period-of-abuse-end/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/period-of-abuse-start/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/police-force/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/reporting-delay/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/scotland-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/somewhere-else/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/wales-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/own-words-question/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_3-incident-details/own-words/routes')(router, viewContent);
+
+// 4 offender
+require('./views/application/_3-3rd-party-reps/_1-adult/_4-offender/contact-with-offender/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_4-offender/context-contact-with-offender/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_4-offender/do-you-know-offender-name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_4-offender/offender-name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_4-offender/what-is-relationship/routes')(router, viewContent);
+
+// 5 Injuries
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/context-physical-injuries/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/have-physical-injuries/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/infection/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/context-pregnancy/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/pregnancy/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/arm/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/elbow/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/hand/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/arms/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/leg/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/ankle/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/foot/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/hip/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/knee/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/legs/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/back/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/chest/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/genitals/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/injured-body-parts/torso/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/context-about-dmi/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/dmi/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_5-injuries/dmi-duration/routes')(router, viewContent);
+
+// 6 Impact
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/loe-context/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/loe-stopped-working/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/loe-stopped-working-how-long/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/loe-working/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/loe-working-why-not/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-any-other/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-context/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-home-alterations/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-home-care/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-nhs-treatment/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_6-impact/se-special-equipment/routes')(router, viewContent);
+
+// 7 Treatment
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/treatment-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/finished-treatment/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/context-treatment/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/gp-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/gp-registered/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/gp-visited/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/hospital-visited/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/hospital-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_7-treatment/dentist-details/routes')(router, viewContent);
+
+// 8 Other comp
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/other-compensation/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/other-compensation-decision/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/other-compensation-provider/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/other-compensation-when/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_8-other-comp/previous-applications/routes')(router, viewContent);
+
+// 9 Additional info
+require('./views/application/_3-3rd-party-reps/_1-adult/_9-additional-info/context-additional-info/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_9-additional-info/additional-info-question/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_9-additional-info/additional-info-details/routes')(router, viewContent);
+
+// End Screens
+require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/check-your-answers-page/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/declaration/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_1-adult/_10-end/declaration-incapable-adult/routes')(router, viewContent);
+
+
+//-------------------------------//
+//                               //
+//        THIRD PARTY REPS       //
+//         MINOR JOURNEY         //
+//                               //
+//-------------------------------//
+
+
+// 2 - Rep details
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/context-rep-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/rep-type/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/name-org/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/address-org/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/company-reg-no/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/rep-ref-no-question/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_1-rep-details/rep-ref-no/routes')(router, viewContent);
+
+// 2 - Your details
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/context-your-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/confirmation-options/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/what-is-relationship/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/do-you-share-responsibility/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/responsibility-who-with/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/care-order/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/care-order-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/email-address/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/phone-number/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/authority-to-apply-minor/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-your-details/responsible-org/routes')(router, viewContent);
+
+// 2 - Victim details
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/context-victim-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/name-have-other/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/name-other/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/date-of-birth/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_2-victim-details/address/routes')(router, viewContent);
+
+// 3 Incident details
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/application-delay/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/context-incident-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/crime-reference/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/crime-reported-date/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/england-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/incident-date/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/incident-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/incident-type/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/period-of-abuse-end/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/period-of-abuse-start/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/police-force/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/reporting-delay/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/scotland-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/single-or-multiple-incidents/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/somewhere-else/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/wales-location/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/own-words-question/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_3-incident-details/own-words/routes')(router, viewContent);
+
+// 4 offender
+require('./views/application/_3-3rd-party-reps/_2-minors/_4-offender/contact-with-offender/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_4-offender/context-contact-with-offender/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_4-offender/do-you-know-offender-name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_4-offender/offender-name/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_4-offender/what-is-relationship/routes')(router, viewContent);
+
+// 5 Injuries
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/context-physical-injuries/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/have-physical-injuries/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/infection/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/context-pregnancy/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/pregnancy/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/arm/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/elbow/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/finger-thumb/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/hand/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/shoulder/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/wrist/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/arms/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/head/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/face/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/neck/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/ear-hearing/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/eye-sight/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/nose/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/mouth/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/head-face-neck/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/leg/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/ankle/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/foot/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/hip/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/knee/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/toes/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/legs/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/abdomen/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/back/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/chest/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/genitals/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/shoulder/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/pelvis/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/skin/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/injured-body-parts/torso/tissue/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/context-about-dmi/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/dmi/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_5-injuries/dmi-duration/routes')(router, viewContent);
+
+// 6 Treatment
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/treatment-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/finished-treatment/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/dmi-treatment-types/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/context-treatment/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/gp-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/gp-registered/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/gp-visited/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/hospital-visited/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/hospital-details/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/dentist-visited/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_7-treatment/dentist-details/routes')(router, viewContent);
+
+// 7 Impact
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-affected-six-months/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-affected-six-months-future/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-context/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-daily-capacity/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-se-affected-daily-life/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-se-future-capacity/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-stopped-working/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-stopped-working-how-long/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-working/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-working-age/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/loe-working-why-not/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-any-other/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-context/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-home-alterations/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-home-care/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-nhs-treatment/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-physical-aids/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_6-impact/se-special-equipment/routes')(router, viewContent);
+
+// 8 Other comp
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/context-prev-compensation/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/other-compensation/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/other-compensation-amount/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/other-compensation-decision/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/other-compensation-provider/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/other-compensation-when/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/other-compensation-why-not/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_8-other-comp/previous-applications/routes')(router, viewContent);
+
+// 9 Additional info
+require('./views/application/_3-3rd-party-reps/_2-minors/_9-additional-info/context-additional-info/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_9-additional-info/additional-info-question/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_9-additional-info/additional-info-details/routes')(router, viewContent);
+
+// 10 End Screens
+require('./views/application/_3-3rd-party-reps/_2-minors/_10-end/check-your-answers-page/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_10-end/declaration/routes')(router, viewContent);
+require('./views/application/_3-3rd-party-reps/_2-minors/_10-end/declaration-under-12/routes')(router, viewContent);
 
 
 
 // DO NOT DELETE THE FOLLOWING
-
-
+router.use('/', require('./routes/concepts.js'))
+router.use('/', require('./routes/concepts-injuries.js'))
+router.use('/', require('./routes/concepts-someone-else.js'))
 require('./routes-filelist')(router);
 
 // Add your routes here - above the module.exports line

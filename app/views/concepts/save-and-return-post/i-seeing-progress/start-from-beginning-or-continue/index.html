@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ resumeAppQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--stacked",
+            "idPrefix": "resumeApp",
+            name: "resumeApp",
+            currentValue: data['resumeApp'],
+            "fieldset": {
+              "legend": {
+                text: "What do you want to do?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Review your application from the start",
+                text: "Review your application from the start",
+                checked: checked("resumeApp", "Review your application from the start")
+              },
+              {
+                "value": "Continue from where you left off",
+                text: "Continue from where you left off",
+                checked: checked("resumeApp", "Continue from where you left off")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

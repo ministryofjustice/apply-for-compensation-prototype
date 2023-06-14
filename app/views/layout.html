@@ -38,7 +38,6 @@
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
@@ -53,17 +52,26 @@
   {{ govukFooter({
     meta: {
       items: [
+      {
+        href: "https://www.gov.uk/guidance/cica-privacy-notice",
+        text: "Privacy"
+      },
         {
-          href: "/application/cookies",
+          href: "/application/_1-adult/_additional-pages/cookies",
           text: "Cookies"
         },
+
         {
-          href: "https://www.gov.uk/guidance/cica-privacy-notice",
-          text: "Privacy notice"
+          href: "/application/_1-adult/_additional-pages/contact-us",
+          text: "Contact"
         },
         {
-          href: "/application/contact-us",
-          text: "Contact us"
+          href: "/application/_1-adult/_additional-pages/accessibility",
+          text: "Accessibility statement"
+        },
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
         }
       ]
     }

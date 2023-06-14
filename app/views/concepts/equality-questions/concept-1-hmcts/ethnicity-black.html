@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ incidentDateHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+   tag: {
+     text: "prototype"
+   },
+   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+ }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set blackOtherHtml %}
+        {{ govukInput({
+          id: "ethnicity-black-other",
+          name: "ethnicity-black-other",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Your black background (optional)"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "ethnic-group",
+          name: "ethnic-group",
+          fieldset: {
+            legend: {
+              text: "Which one best describes your Black, African, Black British or Caribbean background?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              text: "African"
+            },
+            {
+              text: "Caribbean"
+            },
+            {
+              text: "Another black background",
+              conditional: {
+                html: blackOtherHtml
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "prefer-not-to-say",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "confirmation"
+        }) }}
+
+        {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+        {{ govukDetails({
+          summaryText: "Why we are asking this question",
+          text: "This information helps us check that we’re treating people equally and fairly. It helps us to meet our commitment to equality (under the Equality Act 2010)."
+        }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

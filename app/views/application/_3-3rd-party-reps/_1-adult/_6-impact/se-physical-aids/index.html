@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "physicalAids",
+            name: "physicalAids",
+            fieldset: {
+            legend: {
+              text: "Have they paid to replace or repair physical aids because of the crime?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "These may have been damaged or they had to replace them because of the crime."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("physicalAids", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("physicalAids", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with physical aids
+                  </span>
+              </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">This applies to the cost of replacing physical aids they used before they were injured. These may include but are not limited to:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>walking stick</li>
+                      <li>spectacles</li>
+                      <li>dentures</li>
+                    </ul>
+                  </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      <!-- hidden field records screen exited for save and return functionality -->
+      {% include "../../includes/screen-exited.html" %}
+      <!-- button group for save and return -->
+      {% include "../../includes/buttons.html" %}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you have a crime reference number? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <form class="form" method="post"> -->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-6">
+            <h1 class="govuk-fieldset__heading">
+              Generic question page
+            </h1>
+          </legend>
+
+          {{ govukRadios({
+                idPrefix: "haveCrimeReference",
+                name: "haveCrimeReference",
+                currentValue : data['haveCrimeReference'],
+                classes: "govuk-radios--inline",
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("haveCrimeReference", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("haveCrimeReference", "No")
+                  }
+                ]
+              }) }}
+
+            <div class="govuk-button-group govuk-!-margin-bottom-0">
+              {{ govukButton({
+                text: "Continue",
+                href: "/concepts/timeout-2/end"
+              }) }}
+              <a onclick="showModal()" class="govuk-body govuk-link" href="#">Show timeout warning</a>
+            </div>
+
+        </fieldset>
+      </div>
+
+    <!-- </form> -->
+
+    {% set modelTitle = "Your application will time out in 2 minutes and 20 seconds" %}
+    {% set modelDescription = "We'll reset your application if you do not respond. We do this to keep your information secure." %}
+    {% set greenButton = "Continue application" %}
+    {% set link = "End session" %}
+    {% set linkHref = "/concepts/timeout-2/timeout" %}
+
+    {% include "../../includes/modal.html" %}
+
+  </div>
+</div>
+
+{% endblock %}

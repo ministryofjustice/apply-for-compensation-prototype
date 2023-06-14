@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Single or multiple incidents
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% include "../includes/save-btn.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" method="post" action="../saved">
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+            idPrefix: "single-or-multiple-incidents",
+            name: "single-or-multiple-incidents",
+            fieldset: {
+                legend: {
+                text: "Did the crime happen once or over a period of time?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+            },
+            items: [
+                {
+                value: "It happened once",
+                text: "It happened once"
+                },
+                {
+                value: "It happened over a period of time",
+                text: "It happened over a period of time"
+                }
+            ]
+            }) }}
+
+            {{ govukButton({
+                text: "Save and continue"
+            }) }}
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

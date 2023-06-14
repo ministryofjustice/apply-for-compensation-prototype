@@ -7,7 +7,7 @@ What other names have you used? - {{ serviceName }} - GOV.UK
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
     tag: {
-      text: "beta"
+      text: "prototype"
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
@@ -29,8 +29,8 @@ What other names have you used? - {{ serviceName }} - GOV.UK
               name: "nameOther",
               label: {
                 text: "What other names have you used?",
-                "isPageHeading": true,
-                "classes": 'govuk-label--xl'
+                isPageHeading: true,
+                classes: 'govuk-label--xl'
               },
               id: "nameOther",
               name: "nameOther",

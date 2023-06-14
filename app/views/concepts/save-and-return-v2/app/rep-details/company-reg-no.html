@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ nameQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% include "../includes/save-btn.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="rep-ref-no">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for=name>
+            What is your company registration number?
+          </label>
+        </h1>
+      </div>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+              id: "company-reg-no",
+              name: "company-reg-no",
+              value: data['company-reg-no'],
+              hint: {
+                text: "This is a unique 8-character code given to businesses in the United Kingdom. It may start with the letters ‘SC’."
+              }
+            }) }}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

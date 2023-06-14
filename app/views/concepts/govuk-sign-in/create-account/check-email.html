@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your email</h1>
+
+    <div class="govuk-inset-text">
+      <p>We have sent an email to:<br><strong>{{ data['email-address'] }}</strong></p>
+    </div>
+
+    <p>The email contains a 6 digit security code.</p>
+    <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+    <p>The code will expire after 2 hours.</p>
+
+    <form class="form" method="post" action="password">
+      <div class="govuk-form-group">
+        {{ govukInput({
+          label: {
+            text: "6-digit security code"
+          },
+          errorMessage: {
+            text: "Enter the 6-digit authentication code"
+          } if error === true,
+          classes: "govuk-input--width-5",
+          name: "otp",
+          id: "otp"
+        }) }}
+      </div>
+
+      {% set helpText %}
+      We can <a href="#">send the code again</a> or you can <a href="#">use a different email address</a>.
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Problems with the code?",
+        html: helpText
+      }) }}
+
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
+
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

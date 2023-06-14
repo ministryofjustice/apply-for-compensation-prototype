@@ -1,0 +1,32 @@
+<!-- create hidden divs to submit the js calculated age into a nunjucks variable -->
+
+<div>
+  <input class="govuk-input" id="ageOfVictim" name="ageOfVictim" type="text">
+
+  <span class="govuk-input" id="dob-day">{{data['dob-day']}}</span>
+  <span class="govuk-input" id="dob-month">{{data['dob-month']}}</span>
+  <span class="govuk-input" id="dob-year">{{data['dob-year']}}</span>
+</div>
+
+
+<script>
+
+  // getting the inputs to be able to calculate if the user is a minor or not on the day of application
+  var year = Number.parseInt(document.getElementById("dob-year").textContent, 10); // making sure with have a well formated number for year, month and day
+  var month = Number.parseInt(document.getElementById("dob-month").textContent, 10); // month are starting at 0 in javascript, that's why we need to subtract 1
+  var day = Number.parseInt(document.getElementById("dob-day").textContent, 10);
+
+
+
+  var currentDate = new Date();
+  var dateOfBirth = new Date([year, month, day]);
+  var diffInMilliseconds = (currentDate - dateOfBirth);
+  var ageInYears = (diffInMilliseconds/31536000000);
+
+  console.log(year);
+  console.log(month);
+  console.log(day);
+
+  document.getElementById("ageOfVictim").value = ageInYears;
+
+</script>

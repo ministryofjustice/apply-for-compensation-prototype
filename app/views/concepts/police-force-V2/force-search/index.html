@@ -8,7 +8,7 @@ Investigating Police Force - {{ serviceName }} - GOV.UK
  {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
  {{ govukPhaseBanner({
    tag: {
-     text: "beta"
+     text: "prototype"
    },
    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
  }) }}
@@ -48,136 +48,136 @@ Investigating Police Force - {{ serviceName }} - GOV.UK
 {% endcall %}
 <h2 class="govuk-heading-m">England</h2>
 {{ govukRadios({
-      "classes": "govuk-radios",
+      classes: "govuk-radios",
       "idPrefix": "policeScotland",
-      "name": "policeScotland",
+      name: "policeScotland",
       currentValue: data['policeScotland'],
       "fieldset": {
       },
       "items": [
       {
         "value": "Argyll and West Dunbartonshire",
-        "text": "Argyll and West Dunbartonshire"
+        text: "Argyll and West Dunbartonshire"
       },
       {
         "value": "Ayrshire",
-        "text": "Ayrshire"
+        text: "Ayrshire"
       },
       {
         "value": "Dumfries and Galloway",
-        "text": "Dumfries and Galloway"
+        text: "Dumfries and Galloway"
       },
       {
         "value": "Edinburgh",
-        "text": "Edinburgh"
+        text: "Edinburgh"
       },
       {
         "value": "Fife",
-        "text": "Fife"
+        text: "Fife"
       },
       {
         "value": "Forth Valley",
-        "text": "Forth Valley"
+        text: "Forth Valley"
       },
       {
         "value": "Greater Glasgow",
-        "text": "Greater Glasgow"
+        text: "Greater Glasgow"
       },
       {
         "value": "Highland and Islands",
-        "text": "Highland and Islands"
+        text: "Highland and Islands"
       },
       {
         "value": "Lanarkshire",
-        "text": "Lanarkshire"
+        text: "Lanarkshire"
       },
       {
         "value": "Lothians and Scottish Borders",
-        "text": "Lothians and Scottish Borders"
+        text: "Lothians and Scottish Borders"
       },
       {
         "value": "North East",
-        "text": "North East"
+        text: "North East"
       },
       {
         "value": "Renfrewshire and Inverclyde",
-        "text": "Renfrewshire and Inverclyde"
+        text: "Renfrewshire and Inverclyde"
       },
       {
         "value": "Tayside",
-        "text": "Tayside"
+        text: "Tayside"
       },
       {
         "value": "British Transport Police",
-        "text": "British Transport Police"
+        text: "British Transport Police"
       }
       ]
     }) }}
 
 <h2 class="govuk-heading-m">Scotland</h2>
 {{ govukRadios({
-      "classes": "govuk-radios",
+      classes: "govuk-radios",
       "idPrefix": "policeScotland",
-      "name": "policeScotland",
+      name: "policeScotland",
       currentValue: data['policeScotland'],
       "fieldset": {
       },
       "items": [
       {
         "value": "Argyll and West Dunbartonshire",
-        "text": "Argyll and West Dunbartonshire"
+        text: "Argyll and West Dunbartonshire"
       },
       {
         "value": "Ayrshire",
-        "text": "Ayrshire"
+        text: "Ayrshire"
       },
       {
         "value": "Dumfries and Galloway",
-        "text": "Dumfries and Galloway"
+        text: "Dumfries and Galloway"
       },
       {
         "value": "Edinburgh",
-        "text": "Edinburgh"
+        text: "Edinburgh"
       },
       {
         "value": "Fife",
-        "text": "Fife"
+        text: "Fife"
       },
       {
         "value": "Forth Valley",
-        "text": "Forth Valley"
+        text: "Forth Valley"
       },
       {
         "value": "Greater Glasgow",
-        "text": "Greater Glasgow"
+        text: "Greater Glasgow"
       },
       {
         "value": "Highland and Islands",
-        "text": "Highland and Islands"
+        text: "Highland and Islands"
       },
       {
         "value": "Lanarkshire",
-        "text": "Lanarkshire"
+        text: "Lanarkshire"
       },
       {
         "value": "Lothians and Scottish Borders",
-        "text": "Lothians and Scottish Borders"
+        text: "Lothians and Scottish Borders"
       },
       {
         "value": "North East",
-        "text": "North East"
+        text: "North East"
       },
       {
         "value": "Renfrewshire and Inverclyde",
-        "text": "Renfrewshire and Inverclyde"
+        text: "Renfrewshire and Inverclyde"
       },
       {
         "value": "Tayside",
-        "text": "Tayside"
+        text: "Tayside"
       },
       {
         "value": "British Transport Police",
-        "text": "British Transport Police"
+        text: "British Transport Police"
       }
       ]
     }) }}
@@ -185,48 +185,48 @@ Investigating Police Force - {{ serviceName }} - GOV.UK
     <h2 class="govuk-heading-m">Wales</h2>
 
     {{ govukRadios({
-          "classes": "govuk-radios",
+          classes: "govuk-radios",
           "idPrefix": "policeWales",
-          "name": "policeWales",
+          name: "policeWales",
           currentValue: data['policeWales'],
           "fieldset": {
           },
           "items": [
           {
             "value": "Dyfed-Powys",
-            "text": "Dyfed-Powys"
+            text: "Dyfed-Powys"
           },
           {
             "value": "Gwent",
-            "text": "Gwent"
+            text: "Gwent"
           },
           {
             "value": "North Wales",
-            "text": "North Wales"
+            text: "North Wales"
           },
           {
             "value": "South Wales",
-            "text": "South Wales"
+            text: "South Wales"
           },
           {
             "value": "British Transport Police",
-            "text": "British Transport Police"
+            text: "British Transport Police"
           }
           ]
         }) }}
 
             <h2 class="govuk-heading-m">Other</h2>
             {{ govukRadios({
-                  "classes": "govuk-radios",
+                  classes: "govuk-radios",
                   "idPrefix": "policeWales",
-                  "name": "policeWales",
+                  name: "policeWales",
                   currentValue: data['policeWales'],
                   "fieldset": {
                   },
                   "items": [
                   {
                     "value": "British Transport Police",
-                    "text": "British Transport Police"
+                    text: "British Transport Police"
                   }
                   ]
                 }) }}
@@ -237,7 +237,7 @@ Investigating Police Force - {{ serviceName }} - GOV.UK
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
           {{ govukButton({
-          "text": "Continue"
+          text: "Continue"
           }) }}
         </form>
 

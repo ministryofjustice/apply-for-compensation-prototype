@@ -25,14 +25,14 @@
 
 
           {{ govukRadios({
-            "classes": "govuk-radios--inline",
+            classes: "govuk-radios--inline",
             "idPrefix": "criminalConvictions",
-            "name": "criminalConvictions",
+            name: "criminalConvictions",
             "fieldset": {
               "legend": {
-                "text": 'Have you ever been convicted of a crime?',
-                "isPageHeading": true,
-                "classes": 'govuk-fieldset__legend--xl'
+                text: 'Have you ever been convicted of a crime?',
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
               }
             },
             hint: {
@@ -42,11 +42,11 @@
             "items": [
               {
                 "value": "yes",
-                "text": "Yes"
+                text: "Yes"
               },
               {
                 "value": "no",
-                "text": "No"
+                text: "No"
               }
             ]
           }) }}

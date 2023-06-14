@@ -1,5 +1,7 @@
 # ignore tracking usage data config - we want a different one for each user
 usage-data-config.json
+# ignore extension SCSS because it's dynamically generated
+lib/extensions/_extensions.scss
 .env
 .sass-cache
 .DS_Store
@@ -9,3 +11,10 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
+package.json
+lib/extensions/_extensions.scss
+# ignore continuous deployment files so they don't overwrite when merging
+kubernetes-deploy.tpl
+kubernetes-deploy-cica-testing.tpl
+.github/workflows/cd.yaml
+.github/workflows/cd-cica-testing.yaml

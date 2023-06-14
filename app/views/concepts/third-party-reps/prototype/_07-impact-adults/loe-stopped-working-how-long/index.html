@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "stoppedWorkingHowLong",
+            name: "stoppedWorkingHowLong",
+            fieldset: {
+            legend: {
+              text: "Has this been for more than 28 weeks?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "This must be 197 days or more. It can be a single period of time or cover several different times since the incident."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("stoppedWorkingHowLong", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("stoppedWorkingHowLong", "No")
+            }
+            ]
+            }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help understanding the timeframe
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">If they have been unable to work or look for a job for six months or more (197 days or 28 full weeks), they can apply for loss of earnings and special expenses.</p>
+                      <p class="govuk-body">This timeframe can be a single period of time or cover different time periods. For example, they may go back to work in the same week the crime happens. But, they then cannot continue attending work due to the injuries sustained during the crime.</p>
+                      <p class="govuk-body">Our team will ask you for more details about this when they get in touch with you after you've sent the application.</p>
+                    </div>
+              </details>
+
+      
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

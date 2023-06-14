@@ -62,7 +62,7 @@ Import the phase-banner component and supply tag and feedback text. The phase ba
 
     {{ govukPhaseBanner({
       tag: {
-        text: "beta"
+        text: "prototype"
       },
       html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
     }) }}

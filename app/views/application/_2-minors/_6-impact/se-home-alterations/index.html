@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "homeAlterations",
+            name: "homeAlterations",
+            fieldset: {
+            legend: {
+              text: "Have you paid for any changes to the home because of the injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "This may be costs for changes to both the inside and outside of the home to improve independence or ability to get around."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("homeAlterations", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("homeAlterations", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with changes to the home
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">Changes to the home may include but are not limited to:</p>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>building a ramp</li>
+                        <li>installing a stairlift</li>
+                      </ul>
+                      <p class="govuk-body">This payment does not apply to the cost of buying a new home because of the injuries.</p>
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "stoppedWorking",
+            name: "stoppedWorking",
+            fieldset: {
+            legend: {
+              text: "Are they incapable of working or do they have very limited capacity to work due to their injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "Very limited capacity means they are not capable of undertaking paid work for more than a few hours each week"
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("stoppedWorking", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("stoppedWorking", "No")
+            }
+            ]
+            }) }}
+
+      
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

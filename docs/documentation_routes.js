@@ -31,7 +31,7 @@ router.get('/install/:page', function (req, res) {
   redirectMarkdown(req.params.page, res)
   var doc = fs.readFileSync(path.join(__dirname, '/documentation/install/', req.params.page + '.md'), 'utf8')
   var html = marked(doc)
-  res.render('install_template', {'document': html})
+  res.render('install_template', { 'document': html })
 })
 
 // Redirect to the zip of the latest release of the Prototype Kit on GitHub
@@ -61,7 +61,7 @@ router.post('/examples/branching/over-18-answer', function (req, res) {
   let over18 = req.session.data['over-18']
 
   if (over18 === 'false') {
-    res.redirect('/docs/examples/branching/under-18')
+    res.redirect('/docs/examples/branching/over-18')
   } else {
     res.redirect('/docs/examples/branching/over-18')
   }

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Which local authority is the order with? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "What local authority is this with?",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          text: "We need to know this as it may be the local authority or other organisation that handles the application after you've submitted it."
+        },
+        classes: 'govuk-input--width-20',
+        id: "careOrderDetails",
+        name: "careOrderDetails",
+        value: data['careOrderDetails'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            text: "Continue",
+            href: "../../end"
+            }) }}
+
+
+
+
+    </form>
+  </div>
+</div>
+{% endblock %}

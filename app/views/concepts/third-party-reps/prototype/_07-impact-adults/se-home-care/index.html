@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "homeCare",
+            name: "homeCare",
+            fieldset: {
+            legend: {
+              text: "Have they required care or supervision because of their injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "This can be care or supervision provided by a family member or other provider."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("homeCare", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("homeCare", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help understanding care and supervision
+                  </span>
+              </summary>
+                  <div class="govuk-details__text">
+                    <h2 class="govuk-heading-s">Care</h2>
+                    <p class="govuk-body">This means they cannot do daily tasks themselves. For example, care may include but is not limited to.</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>preparing meals</li>
+                      <li>help to eat</li>
+                      <li>help going to the bathroom</li>
+                      <li>taking medication</li>
+                      <li>administering medical treatments</li>
+                    </ul>
+                    <h2 class="govuk-heading-s">Supervision</h2>
+                    <p class="govuk-body">This means they pose a substantial danger to themselves or others without supervision.</p>
+                  </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+        
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

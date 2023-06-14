@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% set hintHtml %}
+  <p class="govuk-!-margin-top-0">These are optional questions about you.</p>
+  <p class="govuk-!-margin-top-0">Your answers won't affect your application and they won't be shared with anyone involved in your case.</p>
+  <p class="govuk-!-margin-top-0">Your answers will help us check we are treating people fairly and equally.</p>
+{% endset -%}
+
+<h1 class="govuk-heading-l">We have received your application</h1>
+
+<p class="govuk-body">Before you finish using the service, we’d like to ask some equality questions.</p>
+
+<form class="form" method="post">
+
+  {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+  {{ govukRadios({
+        classes: "govuk-radios--stacked",
+        "idPrefix": "equalityQuestions",
+        name: "equalityQuestions",
+        "fieldset": {
+        "legend": {
+        text: "Do you want to answer the equality questions?",
+        isPageHeading: true,
+        classes: 'govuk-fieldset__legend--m'
+        }
+        },
+        "items": [
+        {
+          "value": "yes",
+          text: "Yes, answer the equality questions (takes 2 minutes)",
+          checked: checked("equalityQuestions", "Yes")
+        },
+        {
+          "value": "no",
+          text: "No, skip the equality questions",
+          checked: checked("equalityQuestions", "No")
+        }
+        ]
+        }) }}
+
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+    {{ govukDetails({
+      summaryText: "Why we ask equality questions",
+      text: "This information helps us check that we’re treating people equally and fairly. It helps us to meet our commitment to equality (under the Equality Act 2010)."
+    }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+</form>
+
+{% endblock %}

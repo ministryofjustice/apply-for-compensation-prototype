@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your sex? (optional) - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  <h1 class="govuk-heading-l">Sex and gender identity</h1>
+
+  {% set genderHtml %}
+    {{ govukInput({
+      id: "gender-description",
+      name: "gender-description",
+      type: "text",
+      classes: "govuk-!-width-one-half",
+      label: {
+        text: "What is your gender identity? (optional)"
+      }
+    }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "sex",
+    name: "sex",
+    fieldset: {
+      legend: {
+        text: "What is your sex?",
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "female",
+        text: "Female"
+      },
+      {
+        value: "male",
+        text: "Male"
+      },
+      {
+        value: "skip",
+        text: "Prefer not to say"
+      }
+    ]
+  }) }}
+
+  {{ govukRadios({
+    idPrefix: "gender-identity",
+    name: "gender-identity",
+    fieldset: {
+      legend: {
+        text: "Is the gender you identify with the same as your sex registered at birth?",
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No",
+        conditional: {
+          html: genderHtml
+        }
+      },
+      {
+        value: "skip",
+        text: "Prefer not to say"
+      }
+    ]
+  }) }}
+
+  {{ govukButton({
+    text: "Continue
+  }) }}
+
+    {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+      summaryText: "Why we are asking this question",
+      text: "This information helps us check that we’re treating people equally and fairly. It helps us to meet our commitment to equality (under the Equality Act 2010)."
+    }) }}
+
+{% endblock %}

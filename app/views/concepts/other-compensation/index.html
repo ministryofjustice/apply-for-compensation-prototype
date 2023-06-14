@@ -7,7 +7,7 @@
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
-    text: "beta"
+    text: "prototype"
   },
   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
 }) }}
@@ -23,7 +23,7 @@
 
             <div class="govuk-form-group">
               <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--xl" for="name">
+                <label class="govuk-label govuk-label--xl" for=name>
                   Have they made a decision?
                 </label>
               </h1>
@@ -34,7 +34,7 @@
 {#
             {{ govukInput({
                     label: {
-                      "text": "Who have you applied to or received compensation from?"
+                      text: "Who have you applied to or received compensation from?"
                     },
                     id: "comp-who",
                     name: "comp-who",
@@ -112,7 +112,7 @@
             }) }}
 
             {{ govukButton({
-                      "text": "Continue"
+                      text: "Continue"
                       }) }}
 
           </form>

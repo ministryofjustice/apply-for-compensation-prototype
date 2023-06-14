@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Do you have your own reference number for this application? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {% set referenceHtml %}
+      {{ govukInput({
+            id: "rep-ref-no",
+            name: "rep-ref-no",
+            value: data['rep-ref-no'],
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Your reference number:"
+            }
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            "idPrefix": "rep-ref-no-question",
+            name: "rep-ref-no-question",
+            value: data['rep-ref-no-question'],
+            "fieldset": {
+              "legend": {
+              text: "Do you have your own reference number for this application?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+              },
+              hint: {
+                text: "This is a specific number you have given this application for your own records. This was not provided by us."
+              },
+            "items": [
+            {
+            "value": "Yes",
+            text: "Yes",
+            checked: checked("rep-ref-no-question", "Yes"),
+            conditional: {
+                html: referenceHtml
+              }
+            },
+            {
+            "value": "No",
+            text: "No",
+            checked: checked("rep-ref-no-question", "No")
+            }
+            ]
+            }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      What do we use your reference number for?
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">As this is your reference number, we’ll use this in our correspondence with you to identify what application it relates to.</p>
+                    </div>
+            </details>
+
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+
+</div>
+</main>
+</div>
+{% endblock %}

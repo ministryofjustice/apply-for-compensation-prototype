@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Does the victim live at this address? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Does the victim live at this address?
+            </h1>
+          </legend>
+          <div class="govuk-inset-text">
+            18 Street Name <br>
+            Sherwood <br>
+            Nottingham <br>
+            Nottinghamshire <br>
+            NG1 1AA
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            "idPrefix": "victimLivesWithApplicant",
+            name: "victimLivesWithApplicant",
+            currentValue: data['victimLivesWithApplicant'],
+            "items": [
+              {
+                "value": "Yes",
+                text: "Yes",
+                checked: checked("victimLivesWithApplicant", "Yes")
+              },
+              {
+                "value": "No",
+                text: "No",
+                checked: checked("victimLivesWithApplicant", "No")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

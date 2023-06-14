@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ declarationHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "To submit your application, select the box to agree to the declaration",
+            href: "index"
+          }
+        ]
+      }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ declarationHeading }}
+    </h1>
+
+    <p class="govuk-body">By submitting this application I, Mr Enter Name, applying on behalf of Ms Child Name, agree that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the information the victim has given is true as far as I know</li>
+      <li>CICA can share the information given in this claim with:
+        <ul>
+          <li>police, prosecutors and ACRO Criminal Records Office — includes getting a record of the victim’s criminal convictions, if one exists</li>
+          <li>medical organisations and staff, including police medical staff</li>
+          <li>any other individuals or organisations needed to process this application (including medical or other experts)</li>
+          </ul>
+      <li>CICA can receive information from the organisations and individuals described above</li>
+      <li>if I or the victim deliberately provide information that we know is wrong or misleading, we may be prosecuted and the application for compensation may be refused.</li>
+    </ul>
+
+    <p class="govuk-body">We often have to ask the victim’s GP or other health service provider for evidence about their injuries and treatment. We will let you know if we need to do this.</p>
+
+    <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
+
+    <form class="form" method="post">
+
+      {{ govukCheckboxes({
+        idPrefix: "agreeToDeclaration",
+        name: "agreeToDeclaration",
+        errorMessage: {
+          text: "Select the box to agree to the declaration"
+        },
+        items: [
+          {
+            value: "agree",
+            text: "I agree with the information in the statement",
+            checked: checked("agreeToDeclaration", "agree")
+          }
+        ]
+      }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+          text: "Submit"
+        }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

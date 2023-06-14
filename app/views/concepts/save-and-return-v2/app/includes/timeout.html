@@ -1,0 +1,25 @@
+<div id="dialog"
+    class="hide"
+    role="dialog"
+    aria-labelledby="dialog-title"
+    aria-describedby="dialog-description"
+    aria-modal="true">
+    <div tabindex="0" class="dialog-focus"></div>
+    <h2 id="dialog-title" class="govuk-heading-l">Your application will time out in 2 minutes and 20 seconds</h2>
+    <p id="dialog-description">We'll reset your application if you do not respond. We do this to keep your information secure.</p>
+
+    <div class="govuk-button-group govuk-!-margin-bottom-0">
+        <a href="who-is-applying" class="govuk-button govuk-!-margin-bottom-0 govuk-!-margin-right-3" aria-label="Close Navigation" class="close-dialog" data-module="govuk-button">
+            Continue application
+        </a>
+        <a class="govuk-body govuk-link" data-module="govuk-button" href="timeout">
+            (trigger timeout)
+        </a>
+    </div>
+</div>
+
+<div id="dialog-overlay" class="hide" tabindex="-1"></div>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link" style="float:right; color:lightgrey">Timeout</a>
+</p>

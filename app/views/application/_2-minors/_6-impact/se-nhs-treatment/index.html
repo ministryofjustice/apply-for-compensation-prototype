@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "nhsTreatment",
+            name: "nhsTreatment",
+            fieldset: {
+            legend: {
+              text: "Have you paid for any costs relating to treatments from the NHS or other state health service because of the injuries?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: "For example, paying for costs towards certain treatments. Or paying towards other related costs such as prescriptions, dental fees, opticians and travel."
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: checked("nhsTreatment", "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: checked("nhsTreatment", "No")
+            }
+            ]
+            }) }}
+
+            <!-- DETAILS ELEMENT -->
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with the costs of NHS and state health service treatments
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">Not all treatments provided by the NHS or other state health services are free.</p>
+                      <p class="govuk-body">You can find out more about the <a href="https://www.nhs.uk/nhs-services/help-with-health-costs/when-you-need-to-pay-towards-nhs-care/" target="_blank">cost of NHS treatments (opens in new tab)</a> and <a href="https://www.nhsinform.scot/care-support-and-rights/health-rights/access/help-with-health-costs" target="_blank">cost of NHS Scotland treatments (opens in new tab)</a>.</p>
+
+                    </div>
+              </details>
+            <!-- DETAILS ELEMENT -->
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}

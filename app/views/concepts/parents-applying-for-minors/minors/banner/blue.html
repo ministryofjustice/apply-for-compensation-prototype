@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+What's the crime reference number? - {{ serviceName }} - GOV.UK
+{% endblock %}
+​
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+<div class="someone-else-banner blue">
+  <div class="someone-else-banner__message">Applying on behalf of Victoria Smith</div>
+</div>
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+​
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
+      {{ govukInput({
+            label: {
+            text: "What's the crime reference number?",
+            isPageHeading: true,
+            classes: "govuk-label--xl"
+            },
+            hint: {
+              text: "This is the reference number the police gave the crime when it was reported."
+            },
+            classes: "govuk-input--width-20",
+            id: "crimeReferenceNumber",
+            name: "crimeReferenceNumber",
+            value: data['crimeReferenceNumber']
+            }) }}
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help with crime reference number
+                    </span>
+                </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">If you don't have your crime reference number, you can call 101 to speak to your local police station. </p>
+                      <p class="govuk-body"> If you have more than one crime reference number, you can provide additional details later in this claim.</p>
+                    </div>
+              </details>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+​
+      {{ govukButton({
+            text: "Continue"
+      }) }}
+​
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      The impact the crime has had
+    </h1>
+
+    <p class="govuk-body">We’re going to ask you questions about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the victim's educational or employment status</li>
+        <li>the impact the crime has had on the victim</li>
+        <li>if it's affected their ability to work now or in future</li>
+      </ul>
+
+      <p class="govuk-body">The answers you give help build an understanding of the case. This also helps support the information we receive in the medical and police reports.</p>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

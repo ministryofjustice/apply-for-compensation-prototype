@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            classes: "govuk-radios--stacked",
+            "idPrefix": "haveDisability",
+            name: "haveDisability",
+            "fieldset": {
+            "legend": {
+            text: "Do you have any physical or mental health conditions or illnesses lasting or expected to last 12 months or more?",
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--l'
+            }
+            },
+            "items": [
+            {
+              "value": "yes",
+              text: "Yes",
+              checked: checked("haveDisability", "Yes")
+            },
+            {
+              "value": "no",
+              text: "No",
+              checked: checked("haveDisability", "No")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "prefer-not-to-say",
+              text: "Prefer not to say",
+              checked: checked("haveDisability", "prefer-not-to-say")
+            }
+            ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            text: "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

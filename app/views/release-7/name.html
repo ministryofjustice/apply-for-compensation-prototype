@@ -14,7 +14,7 @@
             <form action="/form-handler" method="post">
               <div class="govuk-form-group">
                 <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--xl" for="name">
+                  <label class="govuk-label govuk-label--xl" for=name>
                       What's your name?
                   </label>
                 </h1>
@@ -23,12 +23,12 @@
               {% from "govuk/components/input/macro.njk" import govukInput %}
 
               {{ govukInput({
-              "label": {
-              "text": "Title"
+              label: {
+              text: "Title"
               },
-              "classes": "govuk-input--width-10",
-              "id": "title",
-              "name": "title"
+              classes: "govuk-input--width-10",
+              id: "title",
+              name: "title"
               }) }}
 
               {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -62,7 +62,7 @@
                       <label class="govuk-label" for="other-names">
                           Tell us what  other names you've used (optional)
                       </label>
-                    <input class="govuk-input govuk-input--width-30" id="other-names" name="other-names" type="text">
+                    <input class="govuk-input govuk-input--width-30" id="other-names" name="other-names" type=text>
                   </div>
               </details>
               <input class="govuk-button" type="submit" value="Continue">

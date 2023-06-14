@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Claim compensation if you were the victim of a violent crime
+      </h1>
+
+      {% set thisPage = 'continue' %}
+      {% include "./includes/contents.html" %}
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        Continue a saved application
+      </h2>
+
+      <p>To let us know you’re in the right place and this is the correct service for you, we need to ask you a few initial questions. </p>
+
+            <p class="govuk-body">To do so, you'll need the:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>email address or mobile phone number you provided</li>
+              <li>victim's name</li>
+              <li>victim's date of birth</li>
+</ul>
+
+      <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Continue an application",
+          isStartButton: true,
+          href: "../app/return/"
+        }) }}
+
+    </div>
+
+      {% include "./includes/mainstream-buttons.html" %}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside role="complementary">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-section-break--blue">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/criminal-injuries-compensation-tribunal">
+                Criminal injuries compensation tribunal
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.gov.uk/get-support-as-a-victim-of-crime">
+                Get support as a victim of crime
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+</main>
+
+{% endblock %}

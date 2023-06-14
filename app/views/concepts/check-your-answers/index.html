@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers concepts - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Check your answers page concepts</h1>
+
+    <p class="govuk-body">These concepts are for VOSAA self application with physical and mental injuries. They were created to explore how the physical injuries and special expenses answers worked.</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/concepts/check-your-answers/no-spacing#your-injuries" class="govuk-link">As is (with no readability improvements)</a></li>
+      <li><a href="/concepts/check-your-answers/with-spacing/#your-injuries" class="govuk-link">With spacing</a> (links to injuries section)</li>
+      <li><a href="/concepts/check-your-answers/extra-headings#your-injuries" class="govuk-link">Extra headings (readability improvements)</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

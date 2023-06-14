@@ -1,0 +1,349 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Enter your full name"
+          },
+          value: {
+            text: data['full-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Enter your email address"
+          },
+          value: {
+            text: data['email-address']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "email"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Enter your telephone number (optional)"
+          },
+          value: {
+            text: data.telephone
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "phone"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Is your enquiry about an existing claim?"
+          },
+          value: {
+            text: data.existing
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "existing"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Who are you contacting us for?"
+          },
+          value: {
+            text: data.whoFor
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "who-for"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "Enter the name of the person you are contacting us for"
+          },
+          value: {
+            text: data['contacts-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contacts-name"
+              }
+            ]
+          }
+        } if data.whoFor == 'someone else',
+        {
+          key: {
+            text: "Enter the date of birth of the person you are contacting us for (optional)"
+          },
+          value: {
+            text: data['contacts-dob-day'] + ' ' + data['contacts-dob-month'] | toMonth + ' ' + data['contacts-dob-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contacts-dob"
+              }
+            ]
+          }
+        } if data.whoFor == 'someone else',
+        {
+          key: {
+            text: "Enter your date of birth	"
+          },
+          value: {
+            text: data['dob-day'] + ' ' + data['dob-month'] | toMonth + ' ' + data['dob-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        } if data.existing == 'yes' and data.whoFor != 'someone else',
+        {
+          key: {
+            text: "Building and street"
+          },
+          value: {
+            text: data['address-line-1'] if data.whoFor == 'myself' else data['contact-address-line-1']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "address"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "Address line 2"
+          },
+          value: {
+            text: data['address-line-2'] if data.whoFor == 'myself' else data['contact-address-line-2']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "address 2"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "Town or city"
+          },
+          value: {
+            text: data['address-town'] if data.whoFor == 'myself' else data['contact-address-town']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "town"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "County (optional)"
+          },
+          value: {
+            text: data['address-county'] if data.whoFor == 'myself' else data['contact-address-county']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "county"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "Postcode"
+          },
+          value: {
+            text: data['address-postcode'] if data.whoFor == 'myself' else data['contact-address-postcode']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "postcode"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "Enter your CICA reference"
+          },
+          value: {
+            text: data.reference
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "ref"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "Enter the date of the incident in your claim"
+          },
+          value: {
+            text: data['incident-day'] + ' ' + data['incident-month'] | toMonth + ' ' + data['incident-year']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "date"
+              }
+            ]
+          }
+        } if data.existing == 'yes',
+        {
+          key: {
+            text: "What is your enquiry about?"
+          },
+          value: {
+            text: data['enquiry-type']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "type"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Tell us about your enquiry"
+          },
+          value: {
+            text: data['more-detail']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Tell us how we can help"
+          },
+          value: {
+            text: data.help
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "help"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Ready to send?</h2>
+    <p>Your personal information will be handled sensitively and in line with our <a href="#">privacy notice</a>.</p>
+
+    {{ govukButton({ 
+        text: "Send your enquiry",
+        href: 'thank-you' })
+    }}
+    
+  </div>
+</div>
+
+{% endblock %}

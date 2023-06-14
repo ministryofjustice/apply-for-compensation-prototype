@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% set mainAppDetailsHeading = "The person with legal authority to act on behalf of the victim" %}
+
+
+{% block pageTitle %}
+{{ mainAppDetailsHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ mainAppDetailsHeading }}
+    </h1>
+
+      <p class="govuk-body">You’ve told us the person you’re applying for is unable to handle their own affairs in relation to this application.</p>
+
+      <p class="govuk-body">Therefore, we’re going to ask for details about the person who has legal authority to act on behalf of the victim.</p>
+
+      <p class="govuk-body">This could be:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a person appointed by a court</li>
+        <li>a person named on a power of attorney document</li>
+        <li>the local authority</li>
+      </ul>
+
+      <details class="govuk-details">
+          <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Can I apply if I do not have legal authority?
+              </span>
+          </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">You can still apply even if you do not have legal authority to act on behalf of the victim. This means you have to provide the details of who has authority to act on behalf of them in this application. This allows us to communicate with the person who has authority after you’ve sent this application.</p>
+              </div>
+      </details>
+
+
+    <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

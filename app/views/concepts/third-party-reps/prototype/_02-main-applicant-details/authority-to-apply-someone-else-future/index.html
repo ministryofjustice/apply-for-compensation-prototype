@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sending us details of the person with legal authority to act on behalf of the victim - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Sending us details of the person with legal authority to act on behalf of the victim
+      </h1>
+
+      <p class="govuk-body">We need the details of the person with legal authority to act on behalf of the victim to begin processing this application. However, we understand this might not be confirmed as yet. Unfortunately, we’re unable to progress the application any further until we have these details though.</p>
+
+      <p class="govuk-body">You can still submit this application today without providing these details. And then send this on to us at a later date.</p>
+
+      <p class="govuk-body">This proof should be a certified copy of a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>power of attorney document they're named on</li>
+        <li>court order showing they have legal authority to act on behalf of the victim</li>
+      </ul>
+
+      <h2 class="govuk-heading-s">Sending us certified documents</h2>
+
+      <p class="govuk-body">You must provide certified documentation when applying to us. This means it should be a photocopy of the original document that someone then certifies as a ‘true copy’.</p>
+
+      <p class="govuk-body">To certify a document as a true copy of the original document, you need to get it signed and dated by someone in a professional capacity – such as a solicitor.</p>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/certifying-a-document" target="_new">Discover more information about certifying documents (opens in new tab)</a> if you’re still unsure about sending these to us.</p>
+
+      <p class="govuk-body">We'll tell you more about this at the end of the application.</p>
+
+      {{ govukButton({
+      text: "Continue",
+      href: "/concepts/third-party-reps/prototype/_03-rep-details/context-rep-details"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

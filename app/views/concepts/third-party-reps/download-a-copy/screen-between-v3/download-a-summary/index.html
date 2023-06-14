@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% set summaryHeader = 'Download a summary of your answers' %}
+
+{% block pageTitle %}
+{{ summaryHeader }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      {{ summaryHeader }}
+    </h1>
+
+    <p class="govuk-body">
+      This is the only chance to download your answers when completing this application online. Select <strong>“Download your answers”</strong> to generate a file with your application answers.</p>
+<p>
+      If you do not download the application now and want a copy after you’ve submitted it, you need to contact us. There may be a waiting period before you receive this.
+    <p>
+
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        The application is still incomplete at this stage. To complete it, select “Continue to declaration” after downloading your answers.
+      </strong>
+    </div>
+
+    <form class="form" method="post">
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue to declaration",
+          href: "declaration"
+        }) }}
+
+        <a class="govuk-button govuk-button--secondary" href="/concepts/third-party-reps/download-a-copy/Application-Summary-09-06-2022-14-23-57-982.html" download>Download answers</a>
+
+      </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+ - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+            Example free text input
+          </label>
+        </h1>
+        <div id="more-detail-hint" class="govuk-hint">
+          Here for save and return button functionality demonstration only.
+        </div>
+        <textarea class="govuk-textarea" id="myInput" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+      <!-- some script to prevent above input clearing on return -->
+      <script>
+          var myInput = document.getElementById("myInput");
+
+          window.onload = function() {
+              if (sessionStorage.getItem("autosave"))
+                  myInput.value = sessionStorage.getItem("autosave");
+          }
+
+          myInput.addEventListener("keyup", function() {
+              sessionStorage.setItem("autosave", myInput.value);
+          });
+      </script>
+
+      <!-- Set screen-exited to name of screen exited in hidden input -->
+
+      <div class="hidden">
+        <input class="govuk-input" id="screenExited" name="screen-exited" type="text">
+      </div>
+
+      <script>
+        var pageURL = window.location.href;
+        var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
+        document.getElementById("screenExited").value = lastURLSegment;
+      </script>
+
+      {% include "../../includes/buttons.html" %}
+
+      <!-- end setting variable in hidden input -->
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

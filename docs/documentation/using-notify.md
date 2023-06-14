@@ -87,7 +87,7 @@ example:
           <label class="govuk-label" for="email-address">
             Email address
           </label>
-          <input class="govuk-input" id="email-address" name="emailAddress" type="text">
+          <input class="govuk-input" id="email-address" name="emailAddress" type=text>
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
@@ -139,4 +139,4 @@ get consent to use them before doing your research.
 
 ## More things you can do with GOV.UK Notify
 
-The complete documentation for using the GOV.UK Notify API is here: https://github.com/alphagov/notifications-node-client#govuk-notify-nodejs-client
+The complete documentation for using the GOV.UK Notify API is here: https://docs.notifications.service.gov.uk/node.html

@@ -1,0 +1,136 @@
+<!-- ** Your details including eligibility ************************************************************************************************************************ -->
+
+<h2 class="govuk-heading-l">
+  The victim's details
+</h2>
+
+<!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+<!--   * `app-check-your-answers--short` for short questions -->
+<!--   * `govuk-summary-list__key govuk-!-width-one-halfs-long` for long questions -->
+<!--   * none for single group of q&a -->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half ">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['victim-title'] }}&nbsp;{{ data['victim-first-name'] }}&nbsp;{{ data['victim-last-name'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-victim-details/name">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Have they ever been known by any other names?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['haveOtherName'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-victim-details/name-have-other">
+        Change<span class="govuk-visually-hidden">have they ever been known by any other names</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['haveOtherName'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Other names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['nameOther'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-victim-details/name-other">
+        Change<span class="govuk-visually-hidden"> other name</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['victimLivesWithApplicant'] === "Yes" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['address-line-1'] }}<br />
+      {% if data['address-line-2'] %}
+      {{ data['address-line-2'] }}<br />
+      {% endif %}
+      {{ data['address-town'] }}<br />
+      {% if data['address-county'] %}
+      {{ data['address-county'] }}<br />
+      {% endif %}
+      {% if data['address-postcode'] %}
+      {{ data['address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-your-details/address">
+        Change<span class="govuk-visually-hidden"> address</span>      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['victimLivesWithApplicant'] !== "Yes" %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['victim-address-line-1'] }}<br />
+      {% if data['victim-address-line-2'] %}
+      {{ data['victim-address-line-2'] }}<br />
+      {% endif %}
+      {{ data['victim-address-town'] }}<br />
+      {% if data['victim-address-county'] %}
+      {{ data['victim-address-county'] }}<br />
+      {% endif %}
+      {% if data['victim-address-postcode'] %}
+      {{ data['victim-address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-victim-details/address">
+        Change<span class="govuk-visually-hidden"> address</span>      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_2-victim-details/date-of-birth">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Are they a British citizen or EU national?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['britishCitizen'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_1-qualifying/british-citizen">
+        Change<span class="govuk-visually-hidden">Are they a British citizen or EU national?</span>
+      </a>
+    </dd>
+  </div>
+
+
+</dl>
+<!-- ** /Your eligibility ************************************************************************************************************************ -->

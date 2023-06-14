@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contacting CICA
+      </h1>
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body-l">You can use this page to contact us directly.</p>
+
+    <p>You can contact us for one of several reasons. This might be to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>speak to us before you apply</li>
+      <li>ask for an update on an existing application</li>
+      <li>add information to an existing application</li>
+      <li>ask us about the compensation you've received</li>
+      <li>ask us about the evidence we have asked you to provide to support your application</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Updating an existing application</h2>
+
+    <p>You'll have to provide specific personal information when you contact us about an existing application. This includes the victim's name, date of birth and address. You also have to include an application reference number in any contact you have with us about an existing application.</p>
+    <p>You need to contact us immediately to let us know if:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your contact or personal details change</li>
+      <li>you stop using or change representative</li>
+      <li>you get compensation or money from any other sources after you apply in relation to the incident</li>
+      <li>you have new information to add to your application</li>
+      <li>information you provided previously has changed</li>
+    </ul>
+
+    <p>Read more about how we protect your information in our <a href="https://www.gov.uk/guidance/cica-privacy-notice">privacy notice</a>.</p>
+
+    {{ govukButton({
+      text: "Contact us",
+      isStartButton: true,
+      href: "your-name"
+    }) }}
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Other ways of contacting CICA
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <!-- <li><a href="https://claim-criminal-injuries-compensation.service.justice.gov.uk/start-chat">Live chat</a></li> -->
+          <li>Telephone: 0300 003 3601</li>
+          <li>From outside the UK: +44 20 3684 2517</li>
+          <li><a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 0300 003 3601</li>
+          <li><a href="Find out about call charges">Find out about call charges</a></li>
+        </ul>
+    
+        <p class="govuk-body">Our phone lines are open:</p>
+    
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Monday, 8:30am to 5pm</li>
+          <li>Tuesday, 8:30am to 5pm</li>
+          <li>Wednesday, 8:30am to 3pm</li>
+          <li>Thursday, 8:30am to 5pm</li>
+          <li>Friday, 8:30am to 5pm</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</main>
+
+{% endblock %}

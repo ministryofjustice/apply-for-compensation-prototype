@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Are you the victim's parent? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--inline",
+            "idPrefix": "parent",
+            name: "parent",
+            "value": "parent",
+            "fieldset": {
+              "legend": {
+                text: "Are you the victim's parent?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "hint": {
+              text: 'This means you have parental responsibility for the victim as their birth, step or adoptive parent. This does not include foster carers.'
+            },
+            "items": [
+              {
+                "value": "Yes",
+                text: "Yes",
+                checked: checked("parent", "Yes")
+              },
+              {
+                "value": "No",
+                text: "No",
+                checked: checked("parent", "No")
+              }
+            ]
+          }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+    </form>
+
+    <details class="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Can I apply if I am a foster carer?
+            </span>
+        </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">If you are a foster carer, you can still apply to CICA for the victim. But only as their representative. Not their parent. In these cases, parental responsibility is usually held by the local authority.</p>
+
+              <p class="govuk-body">After you’ve sent the application, we will only speak to the person or organisation who has parental responsibility for the victim. This is unless they nominate you as the representative for this application.</p>
+
+              <p class="govuk-body">If you’re still unsure about parental responsibility and what it means, you can find out more <a href="https://www.gov.uk/parental-rights-responsibilities/who-has-parental-responsibility" target="_new">on the UK Government website (opens in new tab)</a>.</p>
+            </div>
+    </details>
+
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

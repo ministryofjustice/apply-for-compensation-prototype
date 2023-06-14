@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Task list
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Your progress
+      </h1>
+
+      <p class="govuk-body">
+        <strong>
+          Application incomplete
+        </strong>
+        <br>
+        You have completed 2 of 11 sections.
+      </p>
+
+      <br>
+
+      <ol class="app-task-list">
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> About you
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="eligibility">
+                  Check eligibility
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="your-details">
+                  Your details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> The crime and its impact
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="about-the-crime">
+                  About the crime
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__task-in-progress govuk-tag--blue" >In progress</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  About the offender
+              </span>
+              <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey govuk-tag--grey">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  About your injuries
+              </span>
+              <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey" >Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  The impact the crime has had
+              </span>
+              <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Your treatment
+              </span>
+              <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Other information
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="other-compensation"> -->
+                    Other compensation
+                  <!-- </a> -->
+                </span>
+                <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey">Cannot start yet</strong>
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <!-- <a href="#" aria-describedby="additional-information"> -->
+                    Additional information
+                  <!-- </a> -->
+                </span>
+                <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey">Cannot start yet</strong>
+              </li>
+            </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Check and apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Check your answers
+              </span>
+              <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey">Cannot start yet</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                  Declaration
+              </span>
+              <strong class="govuk-tag app-task-list__task-cannot-start-yet govuk-tag--grey">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <form class="form" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton(
+              { text: "Continue" })
+            }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

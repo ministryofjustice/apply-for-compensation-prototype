@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ phoneNumberQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    {% include "../includes/save-btn.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="company-reg-no">
+
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {% if data['contact'] == 'text' %}
+
+        {{ govukInput({
+            label: {
+                text: 'Enter your email address (optional)',
+                isPageHeading: true,
+                classes: 'govuk-label--xl'
+            },
+            hint: {
+                text: "We may use this to contact them if we cannot contact you for any reason."
+            },
+            classes: 'govuk-input--width-20',
+            id: "emailAddress",
+            name: "emailAddress",
+            value: data['emailAddress'],
+            type: "email"
+        }) }}
+
+    {% else %}
+
+        {{ govukInput({
+            label: {
+                text: 'Enter your telephone number (optional)',
+                isPageHeading: true,
+                classes: 'govuk-label--xl'
+            },
+            hint: {
+                text: "We may use this to contact them if we cannot contact you for any reason."
+            },
+            classes: 'govuk-input--width-20',
+            id: "phoneNumber",
+            name: "phoneNumber",
+            value: data['phoneNumber'],
+            type: "tel"
+        }) }}
+
+    {% endif %}
+
+    {{ govukButton({
+        text: "Save and continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+How should we tell you we've got your application? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set emailHtml %}
+      {{ govukInput({
+        id: "repEmailAddress",
+        name: "repEmailAddress",
+        type: "email",
+        classes: "govuk-!-width-one-half",
+        label: {
+          text: "Email address"
+        },
+        attributes: {
+          spellcheck: "false"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set textHtml %}
+      {{ govukInput({
+        id: "repPhoneNumber",
+        name: "repPhoneNumber",
+        type: "tel",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "UK mobile phone number"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "repConfirmationPreference",
+        name: "repConfirmationPreference",
+        fieldset: {
+          legend: {
+            text: "How should we tell you we've got your application?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+
+        items: [
+          {
+            value: "Email",
+            text: "Email",
+            checked: checked("repConfirmationPreference", "Email"),
+            conditional: {
+              html: emailHtml
+            }
+          },
+          {
+            value: "Text",
+            text: "Text message",
+            checked: checked("repConfirmationPreference", "Text"),
+            conditional: {
+              html: textHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Neither",
+            text: "I don't have an email address or UK mobile phone number",
+            checked: checked("repConfirmationPreference", "Neither")
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+          text: "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

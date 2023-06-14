@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What would you like to do? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            classes: "govuk-radios--stacked",
+            "idPrefix": "existingOrNew",
+            name: "existingOrNew",
+            currentValue: data['existingOrNew'],
+            "fieldset": {
+              "legend": {
+                text: "What do you want to do?",
+                isPageHeading: true,
+                classes: 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "new",
+                text: "Start a new application",
+                checked: checked("existingOrNew", "new")
+              },
+              {
+                "value": "continue",
+                text: "Continue a saved application",
+                checked: checked("existingOrNew", "continue")
+              },
+              {
+                "value": "update",
+                text: "Update a submitted application",
+                checked: checked("existingOrNew", "update")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+          text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

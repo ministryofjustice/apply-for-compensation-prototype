@@ -1,0 +1,74 @@
+<h2 class="govuk-heading-l">
+  About the offender
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Do they know the offender's name?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['know-offender'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_4-offender/do-you-know-offender-name">
+        Change<span class="govuk-visually-hidden"> Do they know the offender's name?</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['know-offender'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Offender's name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['first-name-offender'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_4-offender/offender-name">
+        Change<span class="govuk-visually-hidden"> offender's name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Does the victim have contact with the offender?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if data['contact-offender'] === 'No' %}
+          No
+      {% endif %}
+      {% if data['contact-offender'] === 'Yes' %}
+          Yes
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_4-offender/contact-with-offender">
+        Change<span class="govuk-visually-hidden">Does the victim have contact with the offender?
+</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['contact-offender'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Describe the victim's contact with the offender
+    </dt>
+    <dd class="govuk-summary-list__value">
+        {{ data['relationship-text'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="../_4-offender/what-is-relationship">
+        Change<span class="govuk-visually-hidden">Describe the victim's contact with the offender</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+</dl>
